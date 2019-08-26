@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Vulkan {
 
-    static class ResultHelper {
+    public static class ResultHelper {
         public static VkResult Check(this VkResult result) {
             if (result != VkResult.Success) { throw new ResultException(result); }
 
