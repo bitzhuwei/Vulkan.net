@@ -7,7 +7,7 @@ namespace Vulkan {
     /// unmanaged array.
     /// <para>Similar to array in <code>int array[Length];</code></para>
     /// </summary>
-    public abstract partial class UnmanagedArray<T> : IDisposable where T : struct {
+    public class UnmanagedArray<T> : IDisposable where T : struct {
         /// <summary>
         /// 此非托管数组中的数据在内存中的起始地址
         /// Start position of array; Head of array; first element's position of array.
