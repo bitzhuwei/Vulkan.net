@@ -7,13 +7,11 @@ namespace Vulkan {
         public readonly IntPtr handle;
         private readonly UnmanagedArray<VkAllocationCallbacks> callbacks;
 
-        public static VkResult Create(ref VkInstanceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkInstance instance) {
+        public static VkResult Create(InstanceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkInstance instance) {
             VkResult result = VkResult.Success;
             var handle = new IntPtr();
             VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
-            fixed (VkInstanceCreateInfo* pCreateInfo = &createInfo) {
-                result = vkAPI.vkCreateInstance(pCreateInfo, pAllocator, &handle).Check();
-            }
+            result = vkAPI.vkCreateInstance(createInfo.info, pAllocator, &handle).Check();
 
             instance = new VkInstance(callbacks, handle);
 

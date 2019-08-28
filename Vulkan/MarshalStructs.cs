@@ -33,6 +33,14 @@ namespace Vulkan {
         public UInt32 SpecVersion;
         public UInt32 ImplementationVersion;
         public unsafe fixed byte Description[256];
+
+        public unsafe override string ToString() {
+            fixed (byte* name = LayerName) {
+                fixed (byte* desc = Description) {
+                    return $"{StringHelper.ToStringAnsi(name)}, {this.SpecVersion}, {this.ImplementationVersion}, {StringHelper.ToStringAnsi(desc)}";
+                }
+            }
+        }
     }
 
     public partial struct VkApplicationInfo {

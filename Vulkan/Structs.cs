@@ -61,22 +61,16 @@ namespace Vulkan {
         public VkComponentSwizzle A;
     }
 
-
-
-
-
-
-
-
-
     unsafe public partial struct VkQueueFamilyProperties {
         public VkQueueFlags QueueFlags;
         public UInt32 QueueCount;
         public UInt32 TimestampValidBits;
         public VkExtent3D MinImageTransferGranularity;
+
+        public override string ToString() {
+            return $"{QueueFlags}, {QueueCount}, {TimestampValidBits}, {MinImageTransferGranularity}";
+        }
     }
-
-
 
     unsafe public partial struct VkMemoryRequirements {
         public VkDeviceSize Size;
@@ -704,16 +698,43 @@ namespace Vulkan {
 
 
     [StructLayout(LayoutKind.Explicit)]
-    public partial struct VkClearColorValue {
-        [FieldOffset(0)] internal unsafe fixed float Float32[4];
-        [FieldOffset(0)] internal unsafe fixed Int32 Int32[4];
-        [FieldOffset(0)] internal unsafe fixed UInt32 Uint32[4];
+    unsafe public partial struct VkClearColorValue {
+        [FieldOffset(0)] public unsafe fixed float Float32[4];
+        [FieldOffset(0)] public unsafe fixed Int32 Int32[4];
+        [FieldOffset(0)] public unsafe fixed UInt32 Uint32[4];
+
+        public VkClearColorValue(float r, float g, float b, float a) : this() {
+            fixed (float* pointer = Float32) {
+                pointer[0] = r;
+                pointer[1] = g;
+                pointer[2] = b;
+                pointer[3] = a;
+            }
+        }
+
+        public VkClearColorValue(Int32 r, Int32 g, Int32 b, Int32 a) : this() {
+            fixed (Int32* pointer = Int32) {
+                pointer[0] = r;
+                pointer[1] = g;
+                pointer[2] = b;
+                pointer[3] = a;
+            }
+        }
+
+        public VkClearColorValue(UInt32 r, UInt32 g, UInt32 b, UInt32 a) : this() {
+            fixed (UInt32* pointer = Uint32) {
+                pointer[0] = r;
+                pointer[1] = g;
+                pointer[2] = b;
+                pointer[3] = a;
+            }
+        }
     }
 
     [StructLayout(LayoutKind.Explicit)]
     public partial struct VkClearValue {
-        [FieldOffset(0)] internal VkClearColorValue Color;
-        [FieldOffset(0)] internal VkClearDepthStencilValue DepthStencil;
+        [FieldOffset(0)] public VkClearColorValue Color;
+        [FieldOffset(0)] public VkClearDepthStencilValue DepthStencil;
     }
 
     public struct VkBool32 {

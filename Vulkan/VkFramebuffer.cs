@@ -23,7 +23,7 @@ namespace Vulkan {
             return result;
         }
 
-        private VkFramebuffer(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
+        public VkFramebuffer(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
             this.device = device;
             this.callbacks = callbacks;
             this.handle = handle;

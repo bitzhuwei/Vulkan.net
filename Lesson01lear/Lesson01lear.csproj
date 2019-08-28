@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,6 +85,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Vulkan.Platforms\Vulkan.Platforms.csproj">
+      <Project>{f6aa46c3-be7c-439e-9413-8545a9c0402a}</Project>
+      <Name>Vulkan.Platforms</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Vulkan\Vulkan.csproj">
       <Project>{d948e0cc-ac90-4afa-803f-744d92bba406}</Project>
       <Name>Vulkan</Name>

@@ -7,7 +7,7 @@ namespace Vulkan {
     /// unmanaged array.
     /// <para>Similar to array in <code>int array[Length];</code></para>
     /// </summary>
-    public class UnmanagedArray<T> : IDisposable where T : struct {
+    public unsafe class UnmanagedArray<T> : IDisposable where T : struct {
         /// <summary>
         /// 此非托管数组中的数据在内存中的起始地址
         /// Start position of array; Head of array; first element's position of array.
@@ -40,7 +40,7 @@ namespace Vulkan {
         /// unmanaged array.
         /// </summary>
         /// <param name="elementCount"></param>
-        public UnmanagedArray(int elementCount) {
+        public UnmanagedArray(int elementCount, bool reset = true) {
             Debug.Assert(elementCount > 0);
 
             int elementSize = Marshal.SizeOf(typeof(T));
@@ -48,6 +48,36 @@ namespace Vulkan {
             this.header = Marshal.AllocHGlobal(memSize);
             this.length = elementCount;
             this.elementSize = elementSize;
+
+            if (reset) {
+                byte* bytes = (byte*)this.header;
+                int byteLength = this.length * this.elementSize;
+                for (int i = 0; i < byteLength; i++) {
+                    bytes[i] = 0;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Make sure that an unmanaged memory will be freed.
+        /// </summary>
+        /// <param name="header"></param>
+        /// <param name="elementCount"></param>
+        public UnmanagedArray(IntPtr header, int elementCount, bool reset = true) {
+            Debug.Assert(header != IntPtr.Zero && elementCount > 0);
+
+            int elementSize = Marshal.SizeOf(typeof(T));
+            this.header = header;
+            this.length = elementCount;
+            this.elementSize = elementSize;
+
+            if (reset) {
+                byte* bytes = (byte*)this.header;
+                int byteLength = this.length * this.elementSize;
+                for (int i = 0; i < byteLength; i++) {
+                    bytes[i] = 0;
+                }
+            }
         }
 
         //// Do not try to use less effitient way of accessing elements as we're using Vulkan.

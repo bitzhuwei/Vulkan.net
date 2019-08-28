@@ -11,11 +11,9 @@ namespace Vulkan {
 
             UInt32 count;
             VkResult result = vkAPI.vkEnumeratePhysicalDevices(instance.handle, &count, null).Check();
-            var handles = new IntPtr[count];
+            var handles = stackalloc IntPtr[(int)count];
             if (count > 0) {
-                fixed (IntPtr* pointer = handles) {
-                    result = vkAPI.vkEnumeratePhysicalDevices(instance.handle, &count, pointer).Check();
-                }
+                result = vkAPI.vkEnumeratePhysicalDevices(instance.handle, &count, handles).Check();
             }
 
             physicalDevices = new VkPhysicalDevice[count];

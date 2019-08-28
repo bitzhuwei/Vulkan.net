@@ -4,8 +4,8 @@ using System.Text;
 
 namespace Vulkan {
     public unsafe partial class VkPhysicalDevice {
-        public VkResult CreateDevice(ref VkDeviceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkDevice device) {
-            return VkDevice.Create(this, ref createInfo, callbacks, out device);
+        public VkResult CreateDevice(DeviceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkDevice device) {
+            return VkDevice.Create(this, createInfo, callbacks, out device);
         }
 
         public void GetMemoryProperties(out VkPhysicalDeviceMemoryProperties memoryProperties) {

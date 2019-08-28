@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace Lesson01lear {
     public partial class UCClear : UserControl {
@@ -19,6 +20,9 @@ namespace Lesson01lear {
             InitializeComponent();
 
             this.designMode = this.DesignMode || System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
+            if (this.designMode) {
+                this.BackColor = Color.Red;
+            }
         }
 
         protected override void OnLoad(EventArgs e) {
@@ -26,7 +30,7 @@ namespace Lesson01lear {
 
             if (!this.designMode) {
                 this.lesson = new LessonClear();
-                this.lesson.Init();
+                this.lesson.Init(this.Handle, Process.GetCurrentProcess().Handle);
             }
         }
 

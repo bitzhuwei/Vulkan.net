@@ -42,7 +42,7 @@ namespace Vulkan {
             return result;
         }
 
-        private VkSwapchainKhr(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
+        internal VkSwapchainKhr(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
             this.device = device;
             this.callbacks = callbacks;
             this.handle = handle;
@@ -106,8 +106,8 @@ namespace Vulkan {
                 }
 
                 // Dispose unmanaged resources.
-                VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
-                vkAPI.vkDestroySwapchainKHR(this.device.handle, this.handle, pAllocator);
+                //VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
+                //vkAPI.vkDestroySwapchainKHR(this.device.handle, this.handle, pAllocator);
             }
             this.disposedValue = true;
         }
