@@ -92,8 +92,8 @@ namespace Vulkan {
 
         /// <summary>
         /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.
+        /// <para>Enumeration types are not allowed to use this method.
+        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
         /// </summary>
         /// <param name="value"></param>
         /// <param name="target">address of first element/array.</param>

@@ -66,8 +66,10 @@ namespace Vulkan {
             }
         }
 
-        public VkResult Begin(VkCommandBufferBeginInfo* beginInfo) {
-            return vkAPI.vkBeginCommandBuffer(this.handle, beginInfo).Check();
+        public VkResult Begin(ref VkCommandBufferBeginInfo beginInfo) {
+            fixed (VkCommandBufferBeginInfo* pBeginInfo = &beginInfo) {
+                return vkAPI.vkBeginCommandBuffer(this.handle, pBeginInfo).Check();
+            }
         }
 
         public VkResult End() {

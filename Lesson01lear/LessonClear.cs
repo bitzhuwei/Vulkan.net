@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Vulkan;
 
 namespace Lesson01lear {
@@ -10,6 +7,7 @@ namespace Lesson01lear {
         VkInstance vkIntance;
         VkSurfaceKhr vkSurface;
         VkPhysicalDevice vkPhysicalDevice;
+
         VkDevice vkDevice;
         VkQueue vkQueue;
         VkSwapchainKhr vkSwapchain;
@@ -27,22 +25,23 @@ namespace Lesson01lear {
             this.vkIntance = InitInstance();
             this.vkSurface = InitSurface(this.vkIntance, hwnd, processHandle);
             this.vkPhysicalDevice = InitPhysicalDevice();
-            this.vkDevice = InitDevice(this.vkPhysicalDevice, this.vkSurface);
-
-            this.vkQueue = this.vkDevice.GetDeviceQueue(0, 0);
-
             VkSurfaceFormatKhr surfaceFormat = SelectFormat(this.vkPhysicalDevice, this.vkSurface);
             VkSurfaceCapabilitiesKhr surfaceCapabilities;
             this.vkPhysicalDevice.GetSurfaceCapabilitiesKhr(this.vkSurface, out surfaceCapabilities);
 
+            this.vkDevice = InitDevice(this.vkPhysicalDevice, this.vkSurface);
+
+            this.vkQueue = this.vkDevice.GetDeviceQueue(0, 0);
             this.vkSwapchain = CreateSwapchain(this.vkDevice, this.vkSurface, surfaceFormat, surfaceCapabilities);
             this.vkImages = this.vkDevice.GetSwapchainImagesKHR(this.vkSwapchain);
             this.vkRenderPass = CreateRenderPass(this.vkDevice, surfaceFormat);
             this.vkFramebuffers = CreateFramebuffers(this.vkDevice, this.vkImages, surfaceFormat, this.vkRenderPass, surfaceCapabilities);
+
             var fenceInfo = new VkFenceCreateInfo() { SType = VkStructureType.FenceCreateInfo };
-            this.vkFence = this.vkDevice.CreateFence(&fenceInfo);
+            this.vkFence = this.vkDevice.CreateFence(ref fenceInfo);
             var semaphoreInfo = new VkSemaphoreCreateInfo() { SType = VkStructureType.SemaphoreCreateInfo };
-            this.vkSemaphore = this.vkDevice.CreateSemaphore(&semaphoreInfo);
+            this.vkSemaphore = this.vkDevice.CreateSemaphore(ref semaphoreInfo);
+
             this.vkCommandBuffers = CreateCommandBuffers(this.vkDevice, this.vkImages, this.vkFramebuffers, this.vkRenderPass, surfaceCapabilities);
 
             this.isInitialized = true;
@@ -53,32 +52,37 @@ namespace Lesson01lear {
                 SType = VkStructureType.CommandPoolCreateInfo,
                 Flags = VkCommandPoolCreateFlags.ResetCommandBuffer
             };
-            var commandPool = device.CreateCommandPool(&createPoolInfo);
+            var commandPool = device.CreateCommandPool(ref createPoolInfo);
             var commandBufferAllocateInfo = new VkCommandBufferAllocateInfo {
                 SType = VkStructureType.CommandBufferAllocateInfo,
                 Level = VkCommandBufferLevel.Primary,
                 CommandPool = commandPool.handle,
                 CommandBufferCount = (uint)images.Length
             };
-            var buffers = device.AllocateCommandBuffers(&commandBufferAllocateInfo);
+            VkCommandBuffer[] buffers = device.AllocateCommandBuffers(ref commandBufferAllocateInfo);
             for (int i = 0; i < images.Length; i++) {
 
                 var commandBufferBeginInfo = new VkCommandBufferBeginInfo() {
                     SType = VkStructureType.CommandBufferBeginInfo
                 };
-                buffers[i].Begin(&commandBufferBeginInfo);
-                var renderPassBeginInfo = new VkRenderPassBeginInfo();
+                buffers[i].Begin(ref commandBufferBeginInfo);
                 {
-                    renderPassBeginInfo.SType = VkStructureType.RenderPassBeginInfo;
-                    renderPassBeginInfo.Framebuffer = framebuffers[i].handle;
-                    renderPassBeginInfo.RenderPass = renderPass.handle;
-                    new VkClearValue[] { new VkClearValue { Color = new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f) } }.Set(ref renderPassBeginInfo.ClearValues, ref renderPassBeginInfo.ClearValueCount);
-                    renderPassBeginInfo.RenderArea = new VkRect2D {
-                        Extent = surfaceCapabilities.CurrentExtent
+                    var renderPassBeginInfo = new VkRenderPassBeginInfo();
+                    {
+                        renderPassBeginInfo.SType = VkStructureType.RenderPassBeginInfo;
+                        renderPassBeginInfo.Framebuffer = framebuffers[i].handle;
+                        renderPassBeginInfo.RenderPass = renderPass.handle;
+                        new VkClearValue[] { new VkClearValue { Color = new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f) } }.Set(ref renderPassBeginInfo.ClearValues, ref renderPassBeginInfo.ClearValueCount);
+                        renderPassBeginInfo.RenderArea = new VkRect2D {
+                            Extent = surfaceCapabilities.CurrentExtent
+                        };
                     };
-                };
-                buffers[i].CmdBeginRenderPass(ref renderPassBeginInfo, VkSubpassContents.Inline);
-                buffers[i].CmdEndRenderPass();
+                    buffers[i].CmdBeginRenderPass(ref renderPassBeginInfo, VkSubpassContents.Inline);
+                    {
+                        // nothing to do in this lesson.
+                    }
+                    buffers[i].CmdEndRenderPass();
+                }
                 buffers[i].End();
             }
             return buffers;
@@ -86,7 +90,6 @@ namespace Lesson01lear {
 
         protected VkFramebuffer[] CreateFramebuffers(VkDevice device, VkImage[] images, VkSurfaceFormatKhr surfaceFormat, VkRenderPass renderPass, VkSurfaceCapabilitiesKhr surfaceCapabilities) {
             var displayViews = new VkImageView[images.Length];
-
             for (int i = 0; i < images.Length; i++) {
                 var viewCreateInfo = new VkImageViewCreateInfo {
                     SType = VkStructureType.ImageViewCreateInfo,
@@ -105,11 +108,10 @@ namespace Lesson01lear {
                         LayerCount = 1
                     }
                 };
-                displayViews[i] = device.CreateImageView(&viewCreateInfo);
+                displayViews[i] = device.CreateImageView(ref viewCreateInfo);
             }
 
             var framebuffers = new VkFramebuffer[images.Length];
-
             for (int i = 0; i < images.Length; i++) {
                 var frameBufferCreateInfo = new VkFramebufferCreateInfo();
                 {
@@ -157,7 +159,6 @@ namespace Lesson01lear {
             var compositeAlpha = surfaceCapabilities.SupportedCompositeAlpha.HasFlag(VkCompositeAlphaFlagsKhr.Inherit)
                 ? VkCompositeAlphaFlagsKhr.Inherit
                 : VkCompositeAlphaFlagsKhr.Opaque;
-
             var swapchainInfo = new VkSwapchainCreateInfoKhr();
             {
                 swapchainInfo.SType = VkStructureType.SwapchainCreateInfoKhr;
@@ -190,21 +191,20 @@ namespace Lesson01lear {
 
         private VkDevice InitDevice(VkPhysicalDevice physicalDevice, VkSurfaceKhr surface) {
             VkQueueFamilyProperties[] properties = physicalDevice.GetQueueFamilyProperties();
-
-            uint nextIndex;
-            for (nextIndex = 0; nextIndex < properties.Length; ++nextIndex) {
+            uint index;
+            for (index = 0; index < properties.Length; ++index) {
                 VkBool32 supported;
-                physicalDevice.GetSurfaceSupportKhr(nextIndex, surface, out supported);
+                physicalDevice.GetSurfaceSupportKhr(index, surface, out supported);
                 if (!supported) { continue; }
 
-                if (properties[nextIndex].QueueFlags.HasFlag(VkQueueFlags.QueueGraphics)) break;
+                if (properties[index].QueueFlags.HasFlag(VkQueueFlags.QueueGraphics)) break;
             }
 
             var queueInfo = new VkDeviceQueueCreateInfo();
             {
                 queueInfo.SType = VkStructureType.DeviceQueueCreateInfo;
                 new float[] { 1.0f }.Set(ref queueInfo.QueuePriorities, ref queueInfo.QueueCount);
-                queueInfo.QueueFamilyIndex = nextIndex;
+                queueInfo.QueueFamilyIndex = index;
             }
 
             var deviceInfo = new VkDeviceCreateInfo();
@@ -216,6 +216,7 @@ namespace Lesson01lear {
 
             VkDevice device;
             physicalDevice.CreateDevice(ref deviceInfo, null, out device);
+
             return device;
         }
 
@@ -234,22 +235,18 @@ namespace Lesson01lear {
             return instance.CreateWin32SurfaceKHR(ref info, null);
         }
 
-        /// <summary>
-        /// set up vkIntance.
-        /// </summary>
         private VkInstance InitInstance() {
             VkLayerProperties[] layerProperties;
-            Layer.EnumerateInstanceLayerProperties(out layerProperties).Check();
+            Layer.EnumerateInstanceLayerProperties(out layerProperties);
             string[] layersToEnable = layerProperties.Any(l => StringHelper.ToStringAnsi(l.LayerName) == "VK_LAYER_LUNARG_standard_validation")
                 ? new[] { "VK_LAYER_LUNARG_standard_validation" }
                 : new string[0];
 
-            var appInfo = new UnmanagedArray<VkApplicationInfo>(1);
+            var appInfo = new VkApplicationInfo();
             {
-                var item = (VkApplicationInfo*)appInfo.header;
-                item->SType = VkStructureType.ApplicationInfo;
+                appInfo.SType = VkStructureType.ApplicationInfo;
                 uint version = Vulkan.Version.Make(1, 0, 0);
-                item->ApiVersion = version;
+                appInfo.ApiVersion = version;
             }
 
             var extensions = new string[] { "VK_KHR_surface", "VK_KHR_win32_surface", "VK_EXT_debug_report" };
@@ -259,15 +256,11 @@ namespace Lesson01lear {
                 info.SType = VkStructureType.InstanceCreateInfo;
                 extensions.Set(ref info.EnabledExtensionNames, ref info.EnabledExtensionCount);
                 layersToEnable.Set(ref info.EnabledLayerNames, ref info.EnabledLayerCount);
-                info.ApplicationInfo = appInfo.header;
+                info.ApplicationInfo = (IntPtr)(&appInfo);
             }
 
             VkInstance result;
             VkInstance.Create(ref info, null, out result).Check();
-
-            //this.vkInstance.EnableDebug(DebugCallback);
-
-            appInfo.Dispose();
 
             return result;
         }

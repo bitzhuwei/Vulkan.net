@@ -75,11 +75,14 @@ namespace Vulkan {
             return new VkRenderPass(this, callbacks, handle);
         }
 
-        public VkImageView CreateImageView(VkImageViewCreateInfo* pCreateInfo, UnmanagedArray<VkAllocationCallbacks> pAllocator = null) {
+        public VkImageView CreateImageView(ref VkImageViewCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
             UInt64 handle;
-            vkAPI.vkCreateImageView(this.handle, pCreateInfo != null ? pCreateInfo : (VkImageViewCreateInfo*)default(IntPtr), pAllocator != null ? (VkAllocationCallbacks*)pAllocator.header : null, &handle).Check();
+            VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
+            fixed (VkImageViewCreateInfo* pCreateInfo = &createInfo) {
+                vkAPI.vkCreateImageView(this.handle, pCreateInfo, pAllocator, &handle).Check();
+            }
 
-            return new VkImageView(this, pAllocator, handle);
+            return new VkImageView(this, callbacks, handle);
         }
 
         public VkFramebuffer CreateFramebuffer(ref VkFramebufferCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
@@ -92,35 +95,45 @@ namespace Vulkan {
             return new VkFramebuffer(this, callbacks, handle);
         }
 
-        public VkFence CreateFence(VkFenceCreateInfo* pCreateInfo, UnmanagedArray<VkAllocationCallbacks> pAllocator = null) {
+        public VkFence CreateFence(ref VkFenceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
             UInt64 handle;
-            vkAPI.vkCreateFence(this.handle, pCreateInfo != null ? pCreateInfo : (VkFenceCreateInfo*)default(IntPtr), pAllocator != null ? (VkAllocationCallbacks*)pAllocator.header : null, &handle).Check();
+            VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
+            fixed (VkFenceCreateInfo* pCreateInfo = &createInfo) {
+                vkAPI.vkCreateFence(this.handle, pCreateInfo, pAllocator, &handle).Check();
+            }
 
-            return new VkFence(this, pAllocator, handle);
+            return new VkFence(this, callbacks, handle);
         }
 
 
-        public VkSemaphore CreateSemaphore(VkSemaphoreCreateInfo* pCreateInfo, UnmanagedArray<VkAllocationCallbacks> pAllocator = null) {
+        public VkSemaphore CreateSemaphore(ref VkSemaphoreCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
             UInt64 handle;
-            vkAPI.vkCreateSemaphore(this.handle, pCreateInfo != null ? pCreateInfo : (VkSemaphoreCreateInfo*)default(IntPtr), pAllocator != null ? (VkAllocationCallbacks*)pAllocator.header : null, &handle).Check();
+            VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
+            fixed (VkSemaphoreCreateInfo* pCreateInfo = &createInfo) {
+                vkAPI.vkCreateSemaphore(this.handle, pCreateInfo, pAllocator, &handle).Check();
+            }
 
-            return new VkSemaphore(this, pAllocator, handle);
+            return new VkSemaphore(this, callbacks, handle);
         }
 
-        public VkCommandPool CreateCommandPool(VkCommandPoolCreateInfo* pCreateInfo, UnmanagedArray<VkAllocationCallbacks> pAllocator = null) {
+        public VkCommandPool CreateCommandPool(ref VkCommandPoolCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
             UInt64 handle;
-            vkAPI.vkCreateCommandPool(this.handle, pCreateInfo != null ? pCreateInfo : (VkCommandPoolCreateInfo*)default(IntPtr), pAllocator != null ? (VkAllocationCallbacks*)pAllocator.header : null, &handle).Check();
-
-            return new VkCommandPool(this, pAllocator, handle);
+            VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
+            fixed (VkCommandPoolCreateInfo* pCreateInfo = &createInfo) {
+                vkAPI.vkCreateCommandPool(this.handle, pCreateInfo, pAllocator, &handle).Check();
+            }
+            return new VkCommandPool(this, callbacks, handle);
         }
 
-        public VkCommandBuffer[] AllocateCommandBuffers(VkCommandBufferAllocateInfo* pAllocateInfo) {
-            if (pAllocateInfo == null || pAllocateInfo->CommandBufferCount <= 0)
+        public VkCommandBuffer[] AllocateCommandBuffers(ref VkCommandBufferAllocateInfo allocateInfo) {
+            if (allocateInfo.CommandBufferCount <= 0)
                 return null;
 
-            int count = (int)pAllocateInfo->CommandBufferCount;
+            int count = (int)allocateInfo.CommandBufferCount;
             var array = stackalloc IntPtr[(int)count];
-            vkAPI.vkAllocateCommandBuffers(this.handle, pAllocateInfo, array).Check();
+            fixed (VkCommandBufferAllocateInfo* pAllocateInfo = &allocateInfo) {
+                vkAPI.vkAllocateCommandBuffers(this.handle, pAllocateInfo, array).Check();
+            }
 
             var result = new VkCommandBuffer[count];
             for (int i = 0; i < count; i++) {
