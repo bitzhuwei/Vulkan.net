@@ -37,12 +37,16 @@ namespace Vulkan {
             }
         }
 
-        public void Submit(SubmitInfo pSubmit, VkFence fence = null) {
-            vkAPI.vkQueueSubmit(this.handle, (UInt32)(pSubmit != null ? 1 : 0), pSubmit != null ? pSubmit.info : (VkSubmitInfo*)default(IntPtr), fence != null ? fence.handle : default(UInt64));
+        public void Submit(ref VkSubmitInfo submit, VkFence fence = null) {
+            fixed (VkSubmitInfo* pSubmit = &submit) {
+                vkAPI.vkQueueSubmit(this.handle, (UInt32)(pSubmit != null ? 1 : 0), pSubmit, fence != null ? fence.handle : default(UInt64));
+            }
         }
 
-        public void PresentKHR(PresentInfoKhr pPresentInfo) {
-            vkAPI.vkQueuePresentKHR(this.handle, pPresentInfo != null ? pPresentInfo.info : (VkPresentInfoKhr*)default(IntPtr)).Check();
+        public void PresentKHR(ref VkPresentInfoKhr presentInfo) {
+            fixed (VkPresentInfoKhr* pPresentInfo = &presentInfo) {
+                vkAPI.vkQueuePresentKHR(this.handle, pPresentInfo).Check();
+            }
         }
 
         public VkResult BindSparse(VkBindSparseInfo[] bindInfos, VkFence fence) {

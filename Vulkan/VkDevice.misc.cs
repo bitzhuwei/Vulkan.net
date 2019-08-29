@@ -36,11 +36,14 @@ namespace Vulkan {
         }
 
 
-        public VkSwapchainKhr CreateSwapchainKHR(SwapchainCreateInfoKhr pCreateInfo, UnmanagedArray<VkAllocationCallbacks> pAllocator = null) {
-            UInt64 ptrpSwapchain;
-            vkAPI.vkCreateSwapchainKHR(this.handle, pCreateInfo != null ? pCreateInfo.info : (VkSwapchainCreateInfoKhr*)default(IntPtr), pAllocator != null ? (VkAllocationCallbacks*)pAllocator.header : null, &ptrpSwapchain).Check();
+        public VkSwapchainKhr CreateSwapchainKHR(ref VkSwapchainCreateInfoKhr createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
+            UInt64 handle;
+            VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
+            fixed (VkSwapchainCreateInfoKhr* pCreateInfo = &createInfo) {
+                vkAPI.vkCreateSwapchainKHR(this.handle, pCreateInfo, pAllocator, &handle).Check();
+            }
 
-            return new VkSwapchainKhr(this, callbacks, ptrpSwapchain);
+            return new VkSwapchainKhr(this, callbacks, handle);
         }
 
         public VkImage[] GetSwapchainImagesKHR(VkSwapchainKhr swapchain) {
@@ -62,11 +65,14 @@ namespace Vulkan {
         }
 
 
-        public VkRenderPass CreateRenderPass(RenderPassCreateInfo pCreateInfo, UnmanagedArray<VkAllocationCallbacks> pAllocator = null) {
+        public VkRenderPass CreateRenderPass(ref VkRenderPassCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
             UInt64 handle;
-            vkAPI.vkCreateRenderPass(this.handle, pCreateInfo != null ? pCreateInfo.info : (VkRenderPassCreateInfo*)default(IntPtr), pAllocator != null ? (VkAllocationCallbacks*)pAllocator.header : null, &handle).Check();
+            VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
+            fixed (VkRenderPassCreateInfo* pCreateInfo = &createInfo) {
+                vkAPI.vkCreateRenderPass(this.handle, pCreateInfo, pAllocator, &handle).Check();
+            }
 
-            return new VkRenderPass(this, pAllocator, handle);
+            return new VkRenderPass(this, callbacks, handle);
         }
 
         public VkImageView CreateImageView(VkImageViewCreateInfo* pCreateInfo, UnmanagedArray<VkAllocationCallbacks> pAllocator = null) {
@@ -76,11 +82,14 @@ namespace Vulkan {
             return new VkImageView(this, pAllocator, handle);
         }
 
-        public VkFramebuffer CreateFramebuffer(FramebufferCreateInfo pCreateInfo, UnmanagedArray<VkAllocationCallbacks> pAllocator = null) {
+        public VkFramebuffer CreateFramebuffer(ref VkFramebufferCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
             UInt64 handle;
-            vkAPI.vkCreateFramebuffer(this.handle, pCreateInfo != null ? pCreateInfo.info : (VkFramebufferCreateInfo*)default(IntPtr), pAllocator != null ? (VkAllocationCallbacks*)pAllocator.header : null, &handle).Check();
+            VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
+            fixed (VkFramebufferCreateInfo* pCreateInfo = &createInfo) {
+                vkAPI.vkCreateFramebuffer(this.handle, pCreateInfo, pAllocator, &handle).Check();
+            }
 
-            return new VkFramebuffer(this, pAllocator, handle);
+            return new VkFramebuffer(this, callbacks, handle);
         }
 
         public VkFence CreateFence(VkFenceCreateInfo* pCreateInfo, UnmanagedArray<VkAllocationCallbacks> pAllocator = null) {

@@ -7,13 +7,15 @@ namespace Vulkan {
         public readonly IntPtr handle;
         private readonly UnmanagedArray<VkAllocationCallbacks> callbacks;
 
-        public static VkResult Create(VkPhysicalDevice physicalDevice, DeviceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkDevice device) {
+        public static VkResult Create(VkPhysicalDevice physicalDevice, ref VkDeviceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkDevice device) {
             if (physicalDevice == null) { throw new ArgumentNullException("physicalDevice"); }
 
             VkResult result = VkResult.Success;
             var handle = new IntPtr();
             VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
-            result = vkAPI.vkCreateDevice(physicalDevice.handle, createInfo.info, pAllocator, &handle).Check();
+            fixed (VkDeviceCreateInfo* pCreateInfo = &createInfo) {
+                result = vkAPI.vkCreateDevice(physicalDevice.handle, pCreateInfo, pAllocator, &handle).Check();
+            }
 
             device = new VkDevice(callbacks, handle);
             return result;

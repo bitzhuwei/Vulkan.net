@@ -9,4 +9,10 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="obsolete\**" />
+    <EmbeddedResource Remove="obsolete\**" />
+    <None Remove="obsolete\**" />
+  </ItemGroup>
+
 </Project>

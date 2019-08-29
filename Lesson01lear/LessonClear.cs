@@ -12,8 +12,7 @@ namespace Lesson01lear {
         VkPhysicalDevice vkPhysicalDevice;
         VkDevice vkDevice;
         VkQueue vkQueue;
-        VkSurfaceCapabilitiesKhr vkSurfaceCapabilities;
-        VkSwapchainKhr vKSwapchain;
+        VkSwapchainKhr vkSwapchain;
         VkImage[] vkImages;
         VkRenderPass vkRenderPass;
         VkFramebuffer[] vkFramebuffers;
@@ -26,21 +25,25 @@ namespace Lesson01lear {
             if (this.isInitialized) { return; }
 
             this.vkIntance = InitInstance();
-            this.vkSurface = InitSurface(hwnd, processHandle);
+            this.vkSurface = InitSurface(this.vkIntance, hwnd, processHandle);
             this.vkPhysicalDevice = InitPhysicalDevice();
             this.vkDevice = InitDevice(this.vkPhysicalDevice, this.vkSurface);
+
             this.vkQueue = this.vkDevice.GetDeviceQueue(0, 0);
-            this.vkPhysicalDevice.GetSurfaceCapabilitiesKhr(this.vkSurface, out this.vkSurfaceCapabilities);
+
             VkSurfaceFormatKhr surfaceFormat = SelectFormat(this.vkPhysicalDevice, this.vkSurface);
-            this.vKSwapchain = CreateSwapchain(this.vkSurface, surfaceFormat);
-            this.vkImages = this.vkDevice.GetSwapchainImagesKHR(this.vKSwapchain);
+            VkSurfaceCapabilitiesKhr surfaceCapabilities;
+            this.vkPhysicalDevice.GetSurfaceCapabilitiesKhr(this.vkSurface, out surfaceCapabilities);
+
+            this.vkSwapchain = CreateSwapchain(this.vkDevice, this.vkSurface, surfaceFormat, surfaceCapabilities);
+            this.vkImages = this.vkDevice.GetSwapchainImagesKHR(this.vkSwapchain);
             this.vkRenderPass = CreateRenderPass(this.vkDevice, surfaceFormat);
-            this.vkFramebuffers = CreateFramebuffers(this.vkDevice, this.vkImages, surfaceFormat, this.vkRenderPass, this.vkSurfaceCapabilities);
+            this.vkFramebuffers = CreateFramebuffers(this.vkDevice, this.vkImages, surfaceFormat, this.vkRenderPass, surfaceCapabilities);
             var fenceInfo = new VkFenceCreateInfo() { SType = VkStructureType.FenceCreateInfo };
             this.vkFence = this.vkDevice.CreateFence(&fenceInfo);
             var semaphoreInfo = new VkSemaphoreCreateInfo() { SType = VkStructureType.SemaphoreCreateInfo };
             this.vkSemaphore = this.vkDevice.CreateSemaphore(&semaphoreInfo);
-            this.vkCommandBuffers = CreateCommandBuffers(this.vkDevice, this.vkImages, this.vkFramebuffers, this.vkRenderPass, this.vkSurfaceCapabilities);
+            this.vkCommandBuffers = CreateCommandBuffers(this.vkDevice, this.vkImages, this.vkFramebuffers, this.vkRenderPass, surfaceCapabilities);
 
             this.isInitialized = true;
         }
@@ -64,15 +67,17 @@ namespace Lesson01lear {
                     SType = VkStructureType.CommandBufferBeginInfo
                 };
                 buffers[i].Begin(&commandBufferBeginInfo);
-                var renderPassBeginInfo = new RenderPassBeginInfo {
-                    Framebuffer = framebuffers[i].handle,
-                    RenderPass = renderPass.handle,
-                    ClearValues = new VkClearValue[] { new VkClearValue { Color = new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f) } },
-                    RenderArea = new VkRect2D {
+                var renderPassBeginInfo = new VkRenderPassBeginInfo();
+                {
+                    renderPassBeginInfo.SType = VkStructureType.RenderPassBeginInfo;
+                    renderPassBeginInfo.Framebuffer = framebuffers[i].handle;
+                    renderPassBeginInfo.RenderPass = renderPass.handle;
+                    new VkClearValue[] { new VkClearValue { Color = new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f) } }.Set(ref renderPassBeginInfo.ClearValues, ref renderPassBeginInfo.ClearValueCount);
+                    renderPassBeginInfo.RenderArea = new VkRect2D {
                         Extent = surfaceCapabilities.CurrentExtent
-                    }
+                    };
                 };
-                buffers[i].CmdBeginRenderPass(renderPassBeginInfo, VkSubpassContents.Inline);
+                buffers[i].CmdBeginRenderPass(ref renderPassBeginInfo, VkSubpassContents.Inline);
                 buffers[i].CmdEndRenderPass();
                 buffers[i].End();
             }
@@ -106,14 +111,16 @@ namespace Lesson01lear {
             var framebuffers = new VkFramebuffer[images.Length];
 
             for (int i = 0; i < images.Length; i++) {
-                var frameBufferCreateInfo = new FramebufferCreateInfo {
-                    Layers = 1,
-                    RenderPass = renderPass.handle,
-                    Attachments = new UInt64[] { displayViews[i].handle },// new VkImageView[] { displayViews[i] },
-                    Width = surfaceCapabilities.CurrentExtent.Width,
-                    Height = surfaceCapabilities.CurrentExtent.Height
+                var frameBufferCreateInfo = new VkFramebufferCreateInfo();
+                {
+                    frameBufferCreateInfo.SType = VkStructureType.FramebufferCreateInfo;
+                    frameBufferCreateInfo.Layers = 1;
+                    frameBufferCreateInfo.RenderPass = renderPass.handle;
+                    new UInt64[] { displayViews[i].handle }.Set(ref frameBufferCreateInfo.Attachments, ref frameBufferCreateInfo.AttachmentCount);
+                    frameBufferCreateInfo.Width = surfaceCapabilities.CurrentExtent.Width;
+                    frameBufferCreateInfo.Height = surfaceCapabilities.CurrentExtent.Height;
                 };
-                framebuffers[i] = device.CreateFramebuffer(frameBufferCreateInfo);
+                framebuffers[i] = device.CreateFramebuffer(ref frameBufferCreateInfo);
             }
 
             return framebuffers;
@@ -131,39 +138,44 @@ namespace Lesson01lear {
                 FinalLayout = VkImageLayout.PresentSrcKhr
             };
             var attRef = new VkAttachmentReference { Layout = VkImageLayout.ColorAttachmentOptimal };
-            var subpassDesc = new SubpassDescription {
-                PipelineBindPoint = VkPipelineBindPoint.Graphics,
-                ColorAttachments = new UInt32[] { attRef.Attachment }
+            var subpassDesc = new VkSubpassDescription();
+            {
+                subpassDesc.PipelineBindPoint = VkPipelineBindPoint.Graphics;
+                new UInt32[] { attRef.Attachment }.Set(ref subpassDesc.ColorAttachments, ref subpassDesc.ColorAttachmentCount);
             };
-            var renderPassCreateInfo = new RenderPassCreateInfo {
-                Attachments = new VkAttachmentDescription[] { attDesc },
-                Subpasses = new VkSubpassDescription[] { *subpassDesc.info }
+            var renderPassCreateInfo = new VkRenderPassCreateInfo();
+            {
+                renderPassCreateInfo.SType = VkStructureType.RenderPassCreateInfo;
+                new VkAttachmentDescription[] { attDesc }.Set(ref renderPassCreateInfo.Attachments, ref renderPassCreateInfo.AttachmentCount);
+                new VkSubpassDescription[] { subpassDesc }.Set(ref renderPassCreateInfo.Subpasses, ref renderPassCreateInfo.SubpassCount);
             };
 
-            return device.CreateRenderPass(renderPassCreateInfo);
+            return device.CreateRenderPass(ref renderPassCreateInfo);
         }
 
-        protected VkSwapchainKhr CreateSwapchain(VkSurfaceKhr surface, VkSurfaceFormatKhr surfaceFormat) {
-            var compositeAlpha = this.vkSurfaceCapabilities.SupportedCompositeAlpha.HasFlag(VkCompositeAlphaFlagsKhr.Inherit)
+        protected VkSwapchainKhr CreateSwapchain(VkDevice device, VkSurfaceKhr surface, VkSurfaceFormatKhr surfaceFormat, VkSurfaceCapabilitiesKhr surfaceCapabilities) {
+            var compositeAlpha = surfaceCapabilities.SupportedCompositeAlpha.HasFlag(VkCompositeAlphaFlagsKhr.Inherit)
                 ? VkCompositeAlphaFlagsKhr.Inherit
                 : VkCompositeAlphaFlagsKhr.Opaque;
 
-            var swapchainInfo = new SwapchainCreateInfoKhr {
-                Surface = surface.handle,
-                MinImageCount = this.vkSurfaceCapabilities.MinImageCount,
-                ImageFormat = surfaceFormat.Format,
-                ImageColorSpace = surfaceFormat.ColorSpace,
-                ImageExtent = this.vkSurfaceCapabilities.CurrentExtent,
-                ImageUsage = VkImageUsageFlags.ColorAttachment,
-                PreTransform = VkSurfaceTransformFlagsKhr.Identity,
-                ImageArrayLayers = 1,
-                ImageSharingMode = VkSharingMode.Exclusive,
-                QueueFamilyIndices = new uint[] { 0 },
-                PresentMode = VkPresentModeKhr.Fifo,
-                CompositeAlpha = compositeAlpha
-            };
+            var swapchainInfo = new VkSwapchainCreateInfoKhr();
+            {
+                swapchainInfo.SType = VkStructureType.SwapchainCreateInfoKhr;
+                swapchainInfo.Surface = surface.handle;
+                swapchainInfo.MinImageCount = surfaceCapabilities.MinImageCount;
+                swapchainInfo.ImageFormat = surfaceFormat.Format;
+                swapchainInfo.ImageColorSpace = surfaceFormat.ColorSpace;
+                swapchainInfo.ImageExtent = surfaceCapabilities.CurrentExtent;
+                swapchainInfo.ImageUsage = VkImageUsageFlags.ColorAttachment;
+                swapchainInfo.PreTransform = VkSurfaceTransformFlagsKhr.Identity;
+                swapchainInfo.ImageArrayLayers = 1;
+                swapchainInfo.ImageSharingMode = VkSharingMode.Exclusive;
+                new uint[] { 0 }.Set(ref swapchainInfo.QueueFamilyIndices, ref swapchainInfo.QueueFamilyIndexCount);
+                swapchainInfo.PresentMode = VkPresentModeKhr.Fifo;
+                swapchainInfo.CompositeAlpha = compositeAlpha;
+            }
 
-            return this.vkDevice.CreateSwapchainKHR(swapchainInfo, null);
+            return device.CreateSwapchainKHR(ref swapchainInfo, null);
         }
 
         protected VkSurfaceFormatKhr SelectFormat(VkPhysicalDevice physicalDevice, VkSurfaceKhr surface) {
@@ -189,18 +201,21 @@ namespace Lesson01lear {
             }
 
             var queueInfo = new VkDeviceQueueCreateInfo();
-            queueInfo.SType = VkStructureType.DeviceQueueCreateInfo;
-            //queueInfo.QueuePriorities = new float[] { 1.0f }.ToPtr();
-            Helper.Set(new float[] { 1.0f }, ref queueInfo.QueuePriorities, ref queueInfo.QueueCount);
-            queueInfo.QueueFamilyIndex = nextIndex;
+            {
+                queueInfo.SType = VkStructureType.DeviceQueueCreateInfo;
+                new float[] { 1.0f }.Set(ref queueInfo.QueuePriorities, ref queueInfo.QueueCount);
+                queueInfo.QueueFamilyIndex = nextIndex;
+            }
 
-            var deviceInfo = new DeviceCreateInfo {
-                EnabledExtensionNames = new string[] { "VK_KHR_swapchain" },
-                QueueCreateInfos = new VkDeviceQueueCreateInfo[] { queueInfo },
-            };
+            var deviceInfo = new VkDeviceCreateInfo();
+            {
+                deviceInfo.SType = VkStructureType.DeviceCreateInfo;
+                new string[] { "VK_KHR_swapchain" }.Set(ref deviceInfo.EnabledExtensionNames, ref deviceInfo.EnabledExtensionCount);
+                new VkDeviceQueueCreateInfo[] { queueInfo }.Set(ref deviceInfo.QueueCreateInfos, ref deviceInfo.QueueCreateInfoCount);
+            }
 
             VkDevice device;
-            physicalDevice.CreateDevice(deviceInfo, null, out device);
+            physicalDevice.CreateDevice(ref deviceInfo, null, out device);
             return device;
         }
 
@@ -210,13 +225,13 @@ namespace Lesson01lear {
             return physicalDevices[0];
         }
 
-        private VkSurfaceKhr InitSurface(IntPtr hwnd, IntPtr processHandle) {
+        private VkSurfaceKhr InitSurface(VkInstance instance, IntPtr hwnd, IntPtr processHandle) {
             var info = new VkWin32SurfaceCreateInfoKhr {
                 SType = VkStructureType.Win32SurfaceCreateInfoKhr,
                 Hwnd = hwnd,
                 Hinstance = processHandle, //Process.GetCurrentProcess().Handle
             };
-            return this.vkIntance.CreateWin32SurfaceKHR(ref info, null);
+            return instance.CreateWin32SurfaceKHR(ref info, null);
         }
 
         /// <summary>
@@ -225,26 +240,30 @@ namespace Lesson01lear {
         private VkInstance InitInstance() {
             VkLayerProperties[] layerProperties;
             Layer.EnumerateInstanceLayerProperties(out layerProperties).Check();
-
-            var layersToEnable = layerProperties.Any(l => StringHelper.ToStringAnsi(l.LayerName) == "VK_LAYER_LUNARG_standard_validation")
+            string[] layersToEnable = layerProperties.Any(l => StringHelper.ToStringAnsi(l.LayerName) == "VK_LAYER_LUNARG_standard_validation")
                 ? new[] { "VK_LAYER_LUNARG_standard_validation" }
                 : new string[0];
 
             var appInfo = new UnmanagedArray<VkApplicationInfo>(1);
-            var item = (VkApplicationInfo*)appInfo.header;
             {
+                var item = (VkApplicationInfo*)appInfo.header;
                 item->SType = VkStructureType.ApplicationInfo;
                 uint version = Vulkan.Version.Make(1, 0, 0);
                 item->ApiVersion = version;
             }
+
             var extensions = new string[] { "VK_KHR_surface", "VK_KHR_win32_surface", "VK_EXT_debug_report" };
-            var info = new InstanceCreateInfo();
-            info.EnabledExtensionNames = extensions;
-            info.EnabledLayerNames = layersToEnable;
-            info.ApplicationInfo = item;
+
+            var info = new VkInstanceCreateInfo();
+            {
+                info.SType = VkStructureType.InstanceCreateInfo;
+                extensions.Set(ref info.EnabledExtensionNames, ref info.EnabledExtensionCount);
+                layersToEnable.Set(ref info.EnabledLayerNames, ref info.EnabledLayerCount);
+                info.ApplicationInfo = appInfo.header;
+            }
 
             VkInstance result;
-            VkInstance.Create(info, null, out result).Check();
+            VkInstance.Create(ref info, null, out result).Check();
 
             //this.vkInstance.EnableDebug(DebugCallback);
 
@@ -256,24 +275,31 @@ namespace Lesson01lear {
         public void Render() {
             if (!isInitialized) return;
 
-            VkDevice device = this.vkDevice; VkSwapchainKhr swapchain = this.vKSwapchain;
+            VkDevice device = this.vkDevice; VkSwapchainKhr swapchain = this.vkSwapchain;
             VkSemaphore semaphore = this.vkSemaphore; VkFence fence = this.vkFence;
             VkCommandBuffer[] commandBuffers = this.vkCommandBuffers;
             VkQueue queue = this.vkQueue;
             uint nextIndex = device.AcquireNextImageKHR(swapchain, ulong.MaxValue, semaphore);
             device.ResetFence(fence);
-            var submitInfo = new SubmitInfo {
-                WaitSemaphores = new UInt64[] { semaphore.handle },
-                WaitDstStageMask = new VkPipelineStageFlags[] { VkPipelineStageFlags.AllGraphics },
-                CommandBuffers = new IntPtr[] { commandBuffers[nextIndex].handle }
+
+            var submitInfo = new VkSubmitInfo();
+            {
+                new UInt64[] { semaphore.handle }.Set(ref submitInfo.WaitSemaphores, ref submitInfo.WaitSemaphoreCount);
+                // I have to use int instead of enum VkPipelineStageFlags.
+                new int[] { (int)VkPipelineStageFlags.AllGraphics }.Set(ref submitInfo.WaitDstStageMask, ref submitInfo.WaitSemaphoreCount);
+                new IntPtr[] { commandBuffers[nextIndex].handle }.Set(ref submitInfo.CommandBuffers, ref submitInfo.CommandBufferCount);
+
             };
-            queue.Submit(submitInfo, fence);
+            queue.Submit(ref submitInfo, fence);
             device.WaitForFence(fence, true, 100000000);
-            var presentInfo = new PresentInfoKhr {
-                Swapchains = new UInt64[] { swapchain.handle },
-                ImageIndices = new uint[] { nextIndex }
+
+            var presentInfo = new VkPresentInfoKhr();
+            {
+                presentInfo.SType = VkStructureType.PresentInfoKhr;
+                new UInt64[] { swapchain.handle }.Set(ref presentInfo.Swapchains, ref presentInfo.SwapchainCount);
+                new uint[] { nextIndex }.Set(ref presentInfo.ImageIndices, ref presentInfo.SwapchainCount);
             };
-            queue.PresentKHR(presentInfo);
+            queue.PresentKHR(ref presentInfo);
         }
     }
 }

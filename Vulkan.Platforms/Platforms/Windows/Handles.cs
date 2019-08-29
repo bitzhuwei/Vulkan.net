@@ -4,8 +4,9 @@ namespace Vulkan {
     public unsafe static class InstanceExtension {
         public static VkSurfaceKhr CreateWin32SurfaceKHR(this VkInstance instance, ref VkWin32SurfaceCreateInfoKhr createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
             UInt64 pointer;
+            VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
             fixed (VkWin32SurfaceCreateInfoKhr* pCreateInfo = &createInfo) {
-                NativeMethods.vkCreateWin32SurfaceKHR(instance.handle, pCreateInfo, callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null, &pointer).Check();
+                NativeMethods.vkCreateWin32SurfaceKHR(instance.handle, pCreateInfo, pAllocator, &pointer).Check();
             }
 
             return new VkSurfaceKhr(instance, callbacks, pointer);

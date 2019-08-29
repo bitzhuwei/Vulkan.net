@@ -18,18 +18,24 @@ namespace Vulkan {
             return result;
         }
 
-        public static void DisposeStrings(ref IntPtr target, ref UInt32 count) {
-            var pointer = (IntPtr*)(target.ToPointer());
-            if (pointer != null) {
-                for (int i = 0; i < count; i++) {
-                    Marshal.FreeHGlobal(pointer[i]);
-                }
-                target = IntPtr.Zero;
-                count = 0;
-            }
-        }
+        //public static void DisposeStrings(ref IntPtr target, ref UInt32 count) {
+        //    var pointer = (IntPtr*)(target.ToPointer());
+        //    if (pointer != null) {
+        //        for (int i = 0; i < count; i++) {
+        //            Marshal.FreeHGlobal(pointer[i]);
+        //        }
+        //        target = IntPtr.Zero;
+        //        count = 0;
+        //    }
+        //}
 
-        public static void Set(string[] value, ref IntPtr target, ref UInt32 count) {
+        /// <summary>
+        /// Set an array of strings to specified <paramref name="target"/> and <paramref name="count"/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="target">address of first element/array.</param>
+        /// <param name="count">How many elements?</param>
+        public static void Set(this string[] value, ref IntPtr target, ref UInt32 count) {
             {   // free unmanaged memory.
                 var pointer = (IntPtr*)(target.ToPointer());
                 if (pointer != null) {
@@ -76,15 +82,23 @@ namespace Vulkan {
             return result;
         }
 
-        public static void DisposeStructs(ref IntPtr target, ref UInt32 count) {
-            if (target != IntPtr.Zero) {
-                Marshal.FreeHGlobal(target);
-                target = IntPtr.Zero;
-                count = 0;
-            }
-        }
+        //public static void DisposeStructs(ref IntPtr target, ref UInt32 count) {
+        //    if (target != IntPtr.Zero) {
+        //        Marshal.FreeHGlobal(target);
+        //        target = IntPtr.Zero;
+        //        count = 0;
+        //    }
+        //}
 
-        public static void Set<T>(T[] value, ref IntPtr target, ref UInt32 count) where T : struct {
+        /// <summary>
+        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        /// Enumeration types are not allowed to use this method.
+        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="target">address of first element/array.</param>
+        /// <param name="count">How many elements?</param>
+        public static void Set<T>(this T[] value, ref IntPtr target, ref UInt32 count) where T : struct {
             {   // free unmanaged memory.
                 if (target != IntPtr.Zero) {
                     Marshal.FreeHGlobal(target);
@@ -111,25 +125,25 @@ namespace Vulkan {
             }
         }
 
-        /// <summary>
-        ///
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="structObj"></param>
-        /// <returns></returns>
-        static byte[] ToBytes<T>(this T structObj) where T : struct {
-            Int32 size = Marshal.SizeOf(structObj);
-            Byte[] bytes = new Byte[size];
-            IntPtr buffer = IntPtr.Zero;
-            try {
-                buffer = Marshal.AllocHGlobal(size);
-                Marshal.StructureToPtr(structObj, buffer, false);
-                Marshal.Copy(buffer, bytes, 0, size);
-            } finally {
-                Marshal.FreeHGlobal(buffer);
-            }
+        ///// <summary>
+        /////
+        ///// </summary>
+        ///// <typeparam name="T"></typeparam>
+        ///// <param name="structObj"></param>
+        ///// <returns></returns>
+        //static byte[] ToBytes<T>(this T structObj) where T : struct {
+        //    Int32 size = Marshal.SizeOf(structObj);
+        //    Byte[] bytes = new Byte[size];
+        //    IntPtr buffer = IntPtr.Zero;
+        //    try {
+        //        buffer = Marshal.AllocHGlobal(size);
+        //        Marshal.StructureToPtr(structObj, buffer, false);
+        //        Marshal.Copy(buffer, bytes, 0, size);
+        //    } finally {
+        //        Marshal.FreeHGlobal(buffer);
+        //    }
 
-            return bytes;
-        }
+        //    return bytes;
+        //}
     }
 }
