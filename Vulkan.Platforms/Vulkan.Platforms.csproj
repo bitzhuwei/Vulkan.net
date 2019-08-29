@@ -6,13 +6,10 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Optimize>true</Optimize>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="obsolete\**" />
-    <EmbeddedResource Remove="obsolete\**" />
-    <None Remove="obsolete\**" />
+    <ProjectReference Include="..\Vulkan\Vulkan.csproj" />
   </ItemGroup>
 
 </Project>

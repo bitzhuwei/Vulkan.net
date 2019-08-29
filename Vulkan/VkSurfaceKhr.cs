@@ -22,7 +22,7 @@ namespace Vulkan {
             return result;
         }
 
-        private VkSurfaceKhr(VkInstance instance, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
+        public VkSurfaceKhr(VkInstance instance, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
             this.instance = instance;
             this.callbacks = callbacks;
             this.handle = handle;

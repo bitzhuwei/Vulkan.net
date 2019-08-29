@@ -29,7 +29,7 @@ namespace Vulkan {
             return result;
         }
 
-        private VkCommandBuffer(VkDevice device, IntPtr handle) {
+        public VkCommandBuffer(VkDevice device, IntPtr handle) {
             this.device = device;
             this.handle = handle;
         }
@@ -66,8 +66,10 @@ namespace Vulkan {
             }
         }
 
-        public VkResult Begin(VkCommandBufferBeginInfo* beginInfo) {
-            return vkAPI.vkBeginCommandBuffer(this.handle, beginInfo).Check();
+        public VkResult Begin(ref VkCommandBufferBeginInfo beginInfo) {
+            fixed (VkCommandBufferBeginInfo* pBeginInfo = &beginInfo) {
+                return vkAPI.vkBeginCommandBuffer(this.handle, pBeginInfo).Check();
+            }
         }
 
         public VkResult End() {
@@ -95,8 +97,10 @@ namespace Vulkan {
             return vkAPI.vkCmdResetEvent(this.handle, vkEvent.handle, stageMask).Check();
         }
 
-        public void CmdBeginRenderPass(VkRenderPassBeginInfo* pBegin, VkSubpassContents contents) {
-            vkAPI.vkCmdBeginRenderPass(this.handle, pBegin, contents);
+        public void CmdBeginRenderPass(ref VkRenderPassBeginInfo begin, VkSubpassContents contents) {
+            fixed (VkRenderPassBeginInfo* pBegin = &begin) {
+                vkAPI.vkCmdBeginRenderPass(this.handle, pBegin, contents);
+            }
         }
 
         public void CmdNextSubpass(VkSubpassContents contents) {

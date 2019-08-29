@@ -23,7 +23,7 @@ namespace Vulkan {
             return result;
         }
 
-        private VkFence(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
+        public VkFence(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
             this.device = device;
             this.callbacks = callbacks;
             this.handle = handle;

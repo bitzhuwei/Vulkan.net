@@ -23,7 +23,7 @@ namespace Vulkan {
             return result;
         }
 
-        private VkImageView(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
+        public VkImageView(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
             this.device = device;
             this.callbacks = callbacks;
             this.handle = handle;

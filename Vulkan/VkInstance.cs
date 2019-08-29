@@ -12,7 +12,7 @@ namespace Vulkan {
             var handle = new IntPtr();
             VkAllocationCallbacks* pAllocator = callbacks != null ? (VkAllocationCallbacks*)callbacks.header : null;
             fixed (VkInstanceCreateInfo* pCreateInfo = &createInfo) {
-                result = vkAPI.vkCreateInstance(pCreateInfo, pAllocator, &handle).Check();
+                vkAPI.vkCreateInstance(pCreateInfo, pAllocator, &handle).Check();
             }
 
             instance = new VkInstance(callbacks, handle);
