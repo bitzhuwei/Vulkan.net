@@ -29,7 +29,7 @@ namespace Vulkan {
             return result;
         }
 
-        private VkDescriptorSet(VkDevice device, UInt64 handle) {
+        internal VkDescriptorSet(VkDevice device, UInt64 handle) {
             this.device = device;
             this.handle = handle;
         }

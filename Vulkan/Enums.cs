@@ -125,23 +125,23 @@ namespace Vulkan {
 
     [Flags]
     public enum VkBufferUsageFlags : int {
-        BufferUsageTransferSrc = 0x1,
-        BufferUsageTransferDst = 0x2,
-        BufferUsageUniformTexelBuffer = 0x4,
-        BufferUsageStorageTexelBuffer = 0x8,
-        BufferUsageUniformBuffer = 0x10,
-        BufferUsageStorageBuffer = 0x20,
-        BufferUsageIndexBuffer = 0x40,
-        BufferUsageVertexBuffer = 0x80,
-        BufferUsageIndirectBuffer = 0x100,
+        TransferSrc = 0x1,
+        TransferDst = 0x2,
+        UniformTexelBuffer = 0x4,
+        StorageTexelBuffer = 0x8,
+        UniformBuffer = 0x10,
+        StorageBuffer = 0x20,
+        IndexBuffer = 0x40,
+        VertexBuffer = 0x80,
+        IndirectBuffer = 0x100,
     }
 
     [Flags]
     public enum VkColorComponentFlags : int {
-        ColorComponentR = 0x1,
-        ColorComponentG = 0x2,
-        ColorComponentB = 0x4,
-        ColorComponentA = 0x8,
+        R = 0x1,
+        G = 0x2,
+        B = 0x4,
+        A = 0x8,
     }
 
     public enum VkComponentSwizzle : int {
@@ -195,24 +195,24 @@ namespace Vulkan {
 
     [Flags]
     public enum VkCullModeFlags : int {
-        CullModeNone = 0,
-        CullModeFront = 0x1,
-        CullModeBack = 0x2,
-        CullModeFrontAndBack = 0x00000003,
+        None = 0,
+        Front = 0x1,
+        Back = 0x2,
+        FrontAndBack = 0x00000003,
     }
 
     public enum VkDescriptorType : int {
-        DescriptorTypeSampler = 0,
-        DescriptorTypeCombinedImageSampler = 1,
-        DescriptorTypeSampledImage = 2,
-        DescriptorTypeStorageImage = 3,
-        DescriptorTypeUniformTexelBuffer = 4,
-        DescriptorTypeStorageTexelBuffer = 5,
-        DescriptorTypeUniformBuffer = 6,
-        DescriptorTypeStorageBuffer = 7,
-        DescriptorTypeUniformBufferDynamic = 8,
-        DescriptorTypeStorageBufferDynamic = 9,
-        DescriptorTypeInputAttachment = 10,
+        Sampler = 0,
+        CombinedImageSampler = 1,
+        SampledImage = 2,
+        StorageImage = 3,
+        UniformTexelBuffer = 4,
+        StorageTexelBuffer = 5,
+        UniformBuffer = 6,
+        StorageBuffer = 7,
+        UniformBufferDynamic = 8,
+        StorageBufferDynamic = 9,
+        InputAttachment = 10,
     }
 
     public enum VkDynamicState : int {
@@ -236,10 +236,10 @@ namespace Vulkan {
     }
 
     public enum VkPolygonMode : int {
-        PolygonModeFill = 0,
-        PolygonModeLine = 1,
-        PolygonModePoint = 2,
-        PolygonModeFillRectangleNv = 1000153000,
+        Fill = 0,
+        Line = 1,
+        Point = 2,
+        FillRectangleNv = 1000153000,
     }
 
     public enum VkFormat : int {
@@ -501,8 +501,8 @@ namespace Vulkan {
     }
 
     public enum VkFrontFace : int {
-        FrontFaceCounterClockwise = 0,
-        FrontFaceClockwise = 1,
+        CounterClockwise = 0,
+        Clockwise = 1,
     }
 
     [Flags]
@@ -587,27 +587,27 @@ namespace Vulkan {
     }
 
     public enum VkIndexType : int {
-        IndexTypeUint16 = 0,
-        IndexTypeUint32 = 1,
+        Uint16 = 0,
+        Uint32 = 1,
     }
 
     public enum VkLogicOp : int {
-        LogicOpClear = 0,
-        LogicOpAnd = 1,
-        LogicOpAndReverse = 2,
-        LogicOpCopy = 3,
-        LogicOpAndInverted = 4,
-        LogicOpNoOp = 5,
-        LogicOpXor = 6,
-        LogicOpOr = 7,
-        LogicOpNor = 8,
-        LogicOpEquivalent = 9,
-        LogicOpInvert = 10,
-        LogicOpOrReverse = 11,
-        LogicOpCopyInverted = 12,
-        LogicOpOrInverted = 13,
-        LogicOpNand = 14,
-        LogicOpSet = 15,
+        Clear = 0,
+        And = 1,
+        AndReverse = 2,
+        Copy = 3,
+        AndInverted = 4,
+        NoOp = 5,
+        Xor = 6,
+        Or = 7,
+        Nor = 8,
+        Equivalent = 9,
+        Invert = 10,
+        OrReverse = 11,
+        CopyInverted = 12,
+        OrInverted = 13,
+        Nand = 14,
+        Set = 15,
     }
 
     [Flags]
@@ -642,11 +642,11 @@ namespace Vulkan {
 
     [Flags]
     public enum VkMemoryPropertyFlags : int {
-        MemoryPropertyDeviceLocal = 0x1,
-        MemoryPropertyHostVisible = 0x2,
-        MemoryPropertyHostCoherent = 0x4,
-        MemoryPropertyHostCached = 0x8,
-        MemoryPropertyLazilyAllocated = 0x10,
+        DeviceLocal = 0x1,
+        HostVisible = 0x2,
+        HostCoherent = 0x4,
+        HostCached = 0x8,
+        LazilyAllocated = 0x10,
     }
 
     public enum VkPhysicalDeviceType : int {
@@ -672,17 +672,17 @@ namespace Vulkan {
     }
 
     public enum VkPrimitiveTopology : int {
-        PrimitiveTopologyPointList = 0,
-        PrimitiveTopologyLineList = 1,
-        PrimitiveTopologyLineStrip = 2,
-        PrimitiveTopologyTriangleList = 3,
-        PrimitiveTopologyTriangleStrip = 4,
-        PrimitiveTopologyTriangleFan = 5,
-        PrimitiveTopologyLineListWithAdjacency = 6,
-        PrimitiveTopologyLineStripWithAdjacency = 7,
-        PrimitiveTopologyTriangleListWithAdjacency = 8,
-        PrimitiveTopologyTriangleStripWithAdjacency = 9,
-        PrimitiveTopologyPatchList = 10,
+        PointList = 0,
+        LineList = 1,
+        LineStrip = 2,
+        TriangleList = 3,
+        TriangleStrip = 4,
+        TriangleFan = 5,
+        LineListWithAdjacency = 6,
+        LineStripWithAdjacency = 7,
+        TriangleListWithAdjacency = 8,
+        TriangleStripWithAdjacency = 9,
+        PatchList = 10,
     }
 
     [Flags]
@@ -765,14 +765,14 @@ namespace Vulkan {
 
     [Flags]
     public enum VkShaderStageFlags : int {
-        ShaderStageVertex = 0x1,
-        ShaderStageTessellationControl = 0x2,
-        ShaderStageTessellationEvaluation = 0x4,
-        ShaderStageGeometry = 0x8,
-        ShaderStageFragment = 0x10,
-        ShaderStageCompute = 0x20,
-        ShaderStageAllGraphics = 0x0000001F,
-        ShaderStageAll = 0x7FFFFFFF,
+        Vertex = 0x1,
+        TessellationControl = 0x2,
+        TessellationEvaluation = 0x4,
+        Geometry = 0x8,
+        Fragment = 0x10,
+        Compute = 0x20,
+        AllGraphics = 0x0000001F,
+        All = 0x7FFFFFFF,
     }
 
     [Flags]
@@ -1038,8 +1038,8 @@ namespace Vulkan {
     }
 
     public enum VkVertexInputRate : int {
-        VertexInputRateVertex = 0,
-        VertexInputRateInstance = 1,
+        Vertex = 0,
+        Instance = 1,
     }
 
     [Flags]

@@ -30,6 +30,27 @@ namespace Vulkan {
         //}
 
         /// <summary>
+        /// Set a string to specified <paramref name="target"/>.
+        /// </summary>
+        /// <param name="value"></param>
+        /// <param name="target">address of string.</param>
+        public static void Set(this string value, ref IntPtr target) {
+            {   // free unmanaged memory.
+                if (target != IntPtr.Zero) {
+                    Marshal.FreeHGlobal(target);
+                    target = IntPtr.Zero;
+                }
+            }
+            {
+                if (value != null && value.Length > 0) {
+                    target = Marshal.StringToHGlobalAnsi(value);
+                } else {
+                    target = IntPtr.Zero;
+                }
+            }
+        }
+
+        /// <summary>
         /// Set an array of strings to specified <paramref name="target"/> and <paramref name="count"/>.
         /// </summary>
         /// <param name="value"></param>

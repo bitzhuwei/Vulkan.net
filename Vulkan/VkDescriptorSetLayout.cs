@@ -23,7 +23,7 @@ namespace Vulkan {
             return result;
         }
 
-        private VkDescriptorSetLayout(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
+        internal VkDescriptorSetLayout(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
             this.device = device;
             this.callbacks = callbacks;
             this.handle = handle;

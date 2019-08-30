@@ -1,4 +1,4 @@
-﻿namespace Lesson01Clear {
+﻿namespace Lesson02Shader {
     partial class Form1 {
         /// <summary>
         /// 必需的设计器变量。
@@ -23,26 +23,26 @@
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
         private void InitializeComponent() {
-            this.ucClear1 = new Lesson01Clear.UCClear();
+            this.ucShader1 = new Lesson02Shader.UCShader();
             this.SuspendLayout();
             // 
-            // ucClear1
+            // ucShader1
             // 
-            this.ucClear1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ucShader1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ucClear1.BackColor = System.Drawing.Color.Red;
-            this.ucClear1.Location = new System.Drawing.Point(12, 12);
-            this.ucClear1.Name = "ucClear1";
-            this.ucClear1.Size = new System.Drawing.Size(776, 426);
-            this.ucClear1.TabIndex = 0;
+            this.ucShader1.BackColor = System.Drawing.Color.Red;
+            this.ucShader1.Location = new System.Drawing.Point(12, 12);
+            this.ucShader1.Name = "ucShader1";
+            this.ucShader1.Size = new System.Drawing.Size(776, 426);
+            this.ucShader1.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ucClear1);
+            this.Controls.Add(this.ucShader1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -51,7 +51,7 @@
 
         #endregion
 
-        private UCClear ucClear1;
+        private UCShader ucShader1;
     }
 }
 

@@ -118,14 +118,16 @@ namespace Vulkan {
         }
 
         public void CmdBindDescriptorSets(VkPipelineBindPoint bindPoint, VkPipelineLayout layout, UInt32 firstSet, VkDescriptorSet[] sets, UInt32[] offsets) {
-            var handles = new UInt64[sets.Length];
-            for (int i = 0; i < handles.Length; i++) {
+            UInt32 setsLength = (UInt32)(sets != null ? sets.Length : 0);
+            UInt32 offsetsLength = (UInt32)(offsets != null ? offsets.Length : 0);
+            var handles = new UInt64[setsLength];
+            for (int i = 0; i < setsLength; i++) {
                 handles[i] = sets[i].handle;
             }
 
             fixed (UInt64* pSets = handles) {
                 fixed (UInt32* pOffsets = offsets) {
-                    vkAPI.vkCmdBindDescriptorSets(this.handle, bindPoint, layout.handle, firstSet, (UInt32)sets.Length, pSets, (UInt32)offsets.Length, pOffsets);
+                    vkAPI.vkCmdBindDescriptorSets(this.handle, bindPoint, layout != null ? layout.handle : 0, firstSet, setsLength, pSets, offsetsLength, pOffsets);
                 }
             }
         }
@@ -264,6 +266,11 @@ namespace Vulkan {
 
         public void CmdDrawIndexedIndirect(VkBuffer vkBuffer, VkDeviceSize offset, UInt32 drawCount, UInt32 stride) {
             vkAPI.vkCmdDrawIndexedIndirect(this.handle, vkBuffer != null ? vkBuffer.handle : default(UInt64), offset, drawCount, stride);
+        }
+
+        public void CmdBindVertexBuffer(UInt32 firstBinding, VkBuffer buffer, VkDeviceSize offset) {
+            UInt64 handle = buffer.handle;
+            vkAPI.vkCmdBindVertexBuffers(this.handle, firstBinding, 1, &handle, &offset);
         }
 
         public void CmdBindVertexBuffers(UInt32 firstBinding, VkBuffer[] vkBuffers, VkDeviceSize[] offsets) {

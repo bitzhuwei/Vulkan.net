@@ -23,7 +23,7 @@ namespace Vulkan {
             return result;
         }
 
-        private VkPipelineCache(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
+        internal VkPipelineCache(VkDevice device, UnmanagedArray<VkAllocationCallbacks> callbacks, UInt64 handle) {
             this.device = device;
             this.callbacks = callbacks;
             this.handle = handle;
