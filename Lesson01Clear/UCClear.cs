@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace Lesson01lear {
+namespace Lesson01Clear {
     public partial class UCClear : UserControl {
 
         LessonClear lesson;

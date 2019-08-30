@@ -1,4 +1,4 @@
-﻿namespace Lesson01lear {
+﻿namespace Lesson01Clear {
     partial class UCClear {
         /// <summary> 
         /// 必需的设计器变量。

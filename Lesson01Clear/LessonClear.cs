@@ -2,7 +2,7 @@
 using System.Linq;
 using Vulkan;
 
-namespace Lesson01lear {
+namespace Lesson01Clear {
     unsafe class LessonClear {
         VkInstance vkIntance;
         VkSurfaceKhr vkSurface;

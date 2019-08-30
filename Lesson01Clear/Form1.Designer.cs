@@ -1,4 +1,4 @@
-﻿namespace Lesson01lear {
+﻿namespace Lesson01Clear {
     partial class Form1 {
         /// <summary>
         /// 必需的设计器变量。
@@ -23,7 +23,7 @@
         /// 使用代码编辑器修改此方法的内容。
         /// </summary>
         private void InitializeComponent() {
-            this.ucClear1 = new Lesson01lear.UCClear();
+            this.ucClear1 = new Lesson01Clear.UCClear();
             this.SuspendLayout();
             // 
             // ucClear1
