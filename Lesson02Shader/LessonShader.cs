@@ -64,47 +64,6 @@ namespace Lesson02Shader {
             this.isInitialized = true;
         }
 
-        //VkCommandBuffer[] CreateCommandBuffers(VkDevice device, VkImage[] images, VkFramebuffer[] framebuffers, VkRenderPass renderPass, VkSurfaceCapabilitiesKhr surfaceCapabilities) {
-        //    var createPoolInfo = new VkCommandPoolCreateInfo {
-        //        SType = VkStructureType.CommandPoolCreateInfo,
-        //        Flags = VkCommandPoolCreateFlags.ResetCommandBuffer
-        //    };
-        //    var commandPool = device.CreateCommandPool(ref createPoolInfo);
-        //    var commandBufferAllocateInfo = new VkCommandBufferAllocateInfo {
-        //        SType = VkStructureType.CommandBufferAllocateInfo,
-        //        Level = VkCommandBufferLevel.Primary,
-        //        CommandPool = commandPool.handle,
-        //        CommandBufferCount = (uint)images.Length
-        //    };
-        //    VkCommandBuffer[] buffers = device.AllocateCommandBuffers(ref commandBufferAllocateInfo);
-        //    for (int i = 0; i < images.Length; i++) {
-
-        //        var commandBufferBeginInfo = new VkCommandBufferBeginInfo() {
-        //            SType = VkStructureType.CommandBufferBeginInfo
-        //        };
-        //        buffers[i].Begin(ref commandBufferBeginInfo);
-        //        {
-        //            var renderPassBeginInfo = new VkRenderPassBeginInfo();
-        //            {
-        //                renderPassBeginInfo.SType = VkStructureType.RenderPassBeginInfo;
-        //                renderPassBeginInfo.Framebuffer = framebuffers[i].handle;
-        //                renderPassBeginInfo.RenderPass = renderPass.handle;
-        //                new VkClearValue[] { new VkClearValue { Color = new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f) } }.Set(ref renderPassBeginInfo.ClearValues, ref renderPassBeginInfo.ClearValueCount);
-        //                renderPassBeginInfo.RenderArea = new VkRect2D {
-        //                    Extent = surfaceCapabilities.CurrentExtent
-        //                };
-        //            };
-        //            buffers[i].CmdBeginRenderPass(ref renderPassBeginInfo, VkSubpassContents.Inline);
-        //            {
-        //                // nothing to do in this lesson.
-        //            }
-        //            buffers[i].CmdEndRenderPass();
-        //        }
-        //        buffers[i].End();
-        //    }
-        //    return buffers;
-        //}
-
         VkCommandBuffer[] CreateCommandBuffers(
             VkDevice device, VkRenderPass renderPass, VkSurfaceCapabilitiesKhr surfaceCapabilities,
             VkImage[] images, VkFramebuffer[] framebuffers, VkPipeline pipeline,
@@ -134,11 +93,13 @@ namespace Lesson02Shader {
                     renderPassBeginInfo.RenderArea = new VkRect2D { Extent = surfaceCapabilities.CurrentExtent };
                 };
                 buffers[i].CmdBeginRenderPass(ref renderPassBeginInfo, VkSubpassContents.Inline);
-                buffers[i].CmdBindDescriptorSets(VkPipelineBindPoint.Graphics, pipelineLayout, 0, descriptorSets, null);
-                buffers[i].CmdBindPipeline(VkPipelineBindPoint.Graphics, pipeline);
-                buffers[i].CmdBindVertexBuffer(0, vertexBuffer, 0);
-                buffers[i].CmdBindIndexBuffer(indexBuffer, 0, VkIndexType.Uint16);
-                buffers[i].CmdDrawIndexed(indexLength, 1, 0, 0, 0);
+                {
+                    buffers[i].CmdBindDescriptorSets(VkPipelineBindPoint.Graphics, pipelineLayout, 0, descriptorSets, null);
+                    buffers[i].CmdBindPipeline(VkPipelineBindPoint.Graphics, pipeline);
+                    buffers[i].CmdBindVertexBuffer(0, vertexBuffer, 0);
+                    buffers[i].CmdBindIndexBuffer(indexBuffer, 0, VkIndexType.Uint16);
+                    buffers[i].CmdDrawIndexed(indexLength, 1, 0, 0, 0);
+                }
                 buffers[i].CmdEndRenderPass();
                 buffers[i].End();
             }
@@ -223,7 +184,7 @@ namespace Lesson02Shader {
                 viewportCreateInfo.SType = VkStructureType.PipelineViewportStateCreateInfo;
                 new VkViewport[] { viewport }.Set(ref viewportCreateInfo.Viewports, ref viewportCreateInfo.ViewportCount);
                 new VkRect2D[] { scissor }.Set(ref viewportCreateInfo.Scissors, ref viewportCreateInfo.ScissorCount);
-            };
+            }
 
             var multisampleCreateInfo = new VkPipelineMultisampleStateCreateInfo {
                 SType = VkStructureType.PipelineMultisampleStateCreateInfo,
@@ -237,7 +198,7 @@ namespace Lesson02Shader {
                 colorBlendStateCreatInfo.SType = VkStructureType.PipelineColorBlendStateCreateInfo;
                 colorBlendStateCreatInfo.LogicOp = VkLogicOp.Copy;
                 new VkPipelineColorBlendAttachmentState[] { colorBlendAttachmentState }.Set(ref colorBlendStateCreatInfo.Attachments, ref colorBlendStateCreatInfo.AttachmentCount);
-            };
+            }
             var rasterizationStateCreateInfo = new VkPipelineRasterizationStateCreateInfo {
                 SType = VkStructureType.PipelineRasterizationStateCreateInfo,
                 PolygonMode = VkPolygonMode.Fill,
@@ -261,7 +222,7 @@ namespace Lesson02Shader {
                 vertexInputStateCreateInfo.SType = VkStructureType.PipelineVertexInputStateCreateInfo;
                 new VkVertexInputBindingDescription[] { vertexInputBindingDescription }.Set(ref vertexInputStateCreateInfo.VertexBindingDescriptions, ref vertexInputStateCreateInfo.VertexBindingDescriptionCount);
                 new VkVertexInputAttributeDescription[] { vertexInputAttributeDescription }.Set(ref vertexInputStateCreateInfo.VertexAttributeDescriptions, ref vertexInputStateCreateInfo.VertexAttributeDescriptionCount);
-            };
+            }
 
             var pipelineCreateInfo = new VkGraphicsPipelineCreateInfo();
             {
@@ -275,7 +236,7 @@ namespace Lesson02Shader {
                 pipelineCreateInfo.InputAssemblyState = (IntPtr)(void*)&inputAssemblyStateCreateInfo;
                 pipelineCreateInfo.VertexInputState = (IntPtr)(void*)&vertexInputStateCreateInfo;
                 pipelineCreateInfo.RenderPass = vkRenderPass.handle;
-            };
+            }
 
             var cacheInfo = new VkPipelineCacheCreateInfo() { SType = VkStructureType.PipelineCacheCreateInfo };
             VkPipelineCache cache = device.CreatePipelineCache(ref cacheInfo);
@@ -569,7 +530,7 @@ namespace Lesson02Shader {
                 new int[] { (int)VkPipelineStageFlags.AllGraphics }.Set(ref submitInfo.WaitDstStageMask, ref submitInfo.WaitSemaphoreCount);
                 new IntPtr[] { commandBuffers[nextIndex].handle }.Set(ref submitInfo.CommandBuffers, ref submitInfo.CommandBufferCount);
 
-            };
+            }
             queue.Submit(ref submitInfo, fence);
             device.WaitForFence(fence, true, 100000000);
 
@@ -578,7 +539,7 @@ namespace Lesson02Shader {
                 presentInfo.SType = VkStructureType.PresentInfoKhr;
                 new UInt64[] { swapchain.handle }.Set(ref presentInfo.Swapchains, ref presentInfo.SwapchainCount);
                 new uint[] { nextIndex }.Set(ref presentInfo.ImageIndices, ref presentInfo.SwapchainCount);
-            };
+            }
             queue.PresentKHR(ref presentInfo);
         }
     }

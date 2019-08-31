@@ -62,7 +62,7 @@ namespace Lesson01Clear {
             VkCommandBuffer[] buffers = device.AllocateCommandBuffers(ref commandBufferAllocateInfo);
             for (int i = 0; i < images.Length; i++) {
 
-                var commandBufferBeginInfo = new VkCommandBufferBeginInfo() {
+                var commandBufferBeginInfo = new VkCommandBufferBeginInfo {
                     SType = VkStructureType.CommandBufferBeginInfo
                 };
                 buffers[i].Begin(ref commandBufferBeginInfo);
@@ -73,10 +73,8 @@ namespace Lesson01Clear {
                         renderPassBeginInfo.Framebuffer = framebuffers[i].handle;
                         renderPassBeginInfo.RenderPass = renderPass.handle;
                         new VkClearValue[] { new VkClearValue { Color = new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f) } }.Set(ref renderPassBeginInfo.ClearValues, ref renderPassBeginInfo.ClearValueCount);
-                        renderPassBeginInfo.RenderArea = new VkRect2D {
-                            Extent = surfaceCapabilities.CurrentExtent
-                        };
-                    };
+                        renderPassBeginInfo.RenderArea = new VkRect2D { Extent = surfaceCapabilities.CurrentExtent };
+                    }
                     buffers[i].CmdBeginRenderPass(ref renderPassBeginInfo, VkSubpassContents.Inline);
                     {
                         // nothing to do in this lesson.
@@ -121,7 +119,7 @@ namespace Lesson01Clear {
                     new UInt64[] { displayViews[i].handle }.Set(ref frameBufferCreateInfo.Attachments, ref frameBufferCreateInfo.AttachmentCount);
                     frameBufferCreateInfo.Width = surfaceCapabilities.CurrentExtent.Width;
                     frameBufferCreateInfo.Height = surfaceCapabilities.CurrentExtent.Height;
-                };
+                }
                 framebuffers[i] = device.CreateFramebuffer(ref frameBufferCreateInfo);
             }
 
@@ -144,13 +142,13 @@ namespace Lesson01Clear {
             {
                 subpassDesc.PipelineBindPoint = VkPipelineBindPoint.Graphics;
                 new UInt32[] { attRef.Attachment }.Set(ref subpassDesc.ColorAttachments, ref subpassDesc.ColorAttachmentCount);
-            };
+            }
             var renderPassCreateInfo = new VkRenderPassCreateInfo();
             {
                 renderPassCreateInfo.SType = VkStructureType.RenderPassCreateInfo;
                 new VkAttachmentDescription[] { attDesc }.Set(ref renderPassCreateInfo.Attachments, ref renderPassCreateInfo.AttachmentCount);
                 new VkSubpassDescription[] { subpassDesc }.Set(ref renderPassCreateInfo.Subpasses, ref renderPassCreateInfo.SubpassCount);
-            };
+            }
 
             return device.CreateRenderPass(ref renderPassCreateInfo);
         }
@@ -281,8 +279,7 @@ namespace Lesson01Clear {
                 // I have to use int instead of enum VkPipelineStageFlags.
                 new int[] { (int)VkPipelineStageFlags.AllGraphics }.Set(ref submitInfo.WaitDstStageMask, ref submitInfo.WaitSemaphoreCount);
                 new IntPtr[] { commandBuffers[nextIndex].handle }.Set(ref submitInfo.CommandBuffers, ref submitInfo.CommandBufferCount);
-
-            };
+            }
             queue.Submit(ref submitInfo, fence);
             device.WaitForFence(fence, true, 100000000);
 
@@ -291,7 +288,7 @@ namespace Lesson01Clear {
                 presentInfo.SType = VkStructureType.PresentInfoKhr;
                 new UInt64[] { swapchain.handle }.Set(ref presentInfo.Swapchains, ref presentInfo.SwapchainCount);
                 new uint[] { nextIndex }.Set(ref presentInfo.ImageIndices, ref presentInfo.SwapchainCount);
-            };
+            }
             queue.PresentKHR(ref presentInfo);
         }
     }
