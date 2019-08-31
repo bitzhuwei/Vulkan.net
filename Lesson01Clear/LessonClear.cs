@@ -37,9 +37,9 @@ namespace Lesson01Clear {
             this.vkRenderPass = CreateRenderPass(this.vkDevice, surfaceFormat);
             this.vkFramebuffers = CreateFramebuffers(this.vkDevice, this.vkImages, surfaceFormat, this.vkRenderPass, surfaceCapabilities);
 
-            var fenceInfo = new VkFenceCreateInfo() { SType = VkStructureType.FenceCreateInfo };
+            var fenceInfo = new VkFenceCreateInfo { SType = VkStructureType.FenceCreateInfo };
             this.vkFence = this.vkDevice.CreateFence(ref fenceInfo);
-            var semaphoreInfo = new VkSemaphoreCreateInfo() { SType = VkStructureType.SemaphoreCreateInfo };
+            var semaphoreInfo = new VkSemaphoreCreateInfo { SType = VkStructureType.SemaphoreCreateInfo };
             this.vkSemaphore = this.vkDevice.CreateSemaphore(ref semaphoreInfo);
 
             this.vkCommandBuffers = CreateCommandBuffers(this.vkDevice, this.vkImages, this.vkFramebuffers, this.vkRenderPass, surfaceCapabilities);

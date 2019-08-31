@@ -43,9 +43,9 @@ namespace Lesson02Shader {
             this.vkRenderPass = CreateRenderPass(this.vkDevice, surfaceFormat);
             this.vkFramebuffers = CreateFramebuffers(this.vkDevice, this.vkImages, surfaceFormat, this.vkRenderPass, surfaceCapabilities);
 
-            var fenceInfo = new VkFenceCreateInfo() { SType = VkStructureType.FenceCreateInfo };
+            var fenceInfo = new VkFenceCreateInfo { SType = VkStructureType.FenceCreateInfo };
             this.vkFence = this.vkDevice.CreateFence(ref fenceInfo);
-            var semaphoreInfo = new VkSemaphoreCreateInfo() { SType = VkStructureType.SemaphoreCreateInfo };
+            var semaphoreInfo = new VkSemaphoreCreateInfo { SType = VkStructureType.SemaphoreCreateInfo };
             this.vkSemaphore = this.vkDevice.CreateSemaphore(ref semaphoreInfo);
 
             // buffers for vertex data.
@@ -91,7 +91,7 @@ namespace Lesson02Shader {
                     renderPassBeginInfo.RenderPass = renderPass.handle;
                     new VkClearValue[] { new VkClearValue { Color = new VkClearColorValue(0.9f, 0.87f, 0.75f, 1.0f) } }.Set(ref renderPassBeginInfo.ClearValues, ref renderPassBeginInfo.ClearValueCount);
                     renderPassBeginInfo.RenderArea = new VkRect2D { Extent = surfaceCapabilities.CurrentExtent };
-                };
+                }
                 buffers[i].CmdBeginRenderPass(ref renderPassBeginInfo, VkSubpassContents.Inline);
                 {
                     buffers[i].CmdBindDescriptorSets(VkPipelineBindPoint.Graphics, pipelineLayout, 0, descriptorSets, null);
@@ -119,7 +119,7 @@ namespace Lesson02Shader {
                 writeDescriptorSet.DstSet = descriptorSets[0].handle;
                 writeDescriptorSet.DescriptorType = VkDescriptorType.UniformBuffer;
                 new VkDescriptorBufferInfo[] { uniformBufferInfo }.Set(ref writeDescriptorSet.BufferInfo, ref writeDescriptorSet.DescriptorCount);
-            };
+            }
 
             device.UpdateDescriptorSets(new VkWriteDescriptorSet[] { writeDescriptorSet }, null);
         }
@@ -238,7 +238,7 @@ namespace Lesson02Shader {
                 pipelineCreateInfo.RenderPass = vkRenderPass.handle;
             }
 
-            var cacheInfo = new VkPipelineCacheCreateInfo() { SType = VkStructureType.PipelineCacheCreateInfo };
+            var cacheInfo = new VkPipelineCacheCreateInfo { SType = VkStructureType.PipelineCacheCreateInfo };
             VkPipelineCache cache = device.CreatePipelineCache(ref cacheInfo);
             var infos = new VkGraphicsPipelineCreateInfo[] { pipelineCreateInfo };
             return device.CreateGraphicsPipelines(ref cache, infos);
@@ -271,7 +271,7 @@ namespace Lesson02Shader {
         }
 
         VkBuffer CreateUniformBuffer(VkPhysicalDevice physicalDevice, VkDevice device, VkSurfaceCapabilitiesKhr surfaceCapabilities) {
-            var uniformBufferData = new AreaUniformBuffer() {
+            var uniformBufferData = new AreaUniformBuffer {
                 width = surfaceCapabilities.CurrentExtent.Width,
                 height = surfaceCapabilities.CurrentExtent.Height
             };
@@ -334,7 +334,7 @@ namespace Lesson02Shader {
         struct AreaUniformBuffer {
             public float width;
             public float height;
-        };
+        }
 
         protected VkFramebuffer[] CreateFramebuffers(VkDevice device, VkImage[] images, VkSurfaceFormatKhr surfaceFormat, VkRenderPass renderPass, VkSurfaceCapabilitiesKhr surfaceCapabilities) {
             var displayViews = new VkImageView[images.Length];
@@ -369,7 +369,7 @@ namespace Lesson02Shader {
                     new UInt64[] { displayViews[i].handle }.Set(ref frameBufferCreateInfo.Attachments, ref frameBufferCreateInfo.AttachmentCount);
                     frameBufferCreateInfo.Width = surfaceCapabilities.CurrentExtent.Width;
                     frameBufferCreateInfo.Height = surfaceCapabilities.CurrentExtent.Height;
-                };
+                }
                 framebuffers[i] = device.CreateFramebuffer(ref frameBufferCreateInfo);
             }
 
@@ -392,13 +392,13 @@ namespace Lesson02Shader {
             {
                 subpassDesc.PipelineBindPoint = VkPipelineBindPoint.Graphics;
                 new UInt32[] { attRef.Attachment }.Set(ref subpassDesc.ColorAttachments, ref subpassDesc.ColorAttachmentCount);
-            };
+            }
             var renderPassCreateInfo = new VkRenderPassCreateInfo();
             {
                 renderPassCreateInfo.SType = VkStructureType.RenderPassCreateInfo;
                 new VkAttachmentDescription[] { attDesc }.Set(ref renderPassCreateInfo.Attachments, ref renderPassCreateInfo.AttachmentCount);
                 new VkSubpassDescription[] { subpassDesc }.Set(ref renderPassCreateInfo.Subpasses, ref renderPassCreateInfo.SubpassCount);
-            };
+            }
 
             return device.CreateRenderPass(ref renderPassCreateInfo);
         }
