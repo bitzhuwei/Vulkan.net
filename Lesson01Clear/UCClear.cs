@@ -16,6 +16,8 @@ namespace Lesson01Clear {
 
         protected readonly bool designMode;
 
+        private Timer timer;
+
         public UCClear() {
             InitializeComponent();
 
@@ -31,7 +33,16 @@ namespace Lesson01Clear {
             if (!this.designMode) {
                 this.lesson = new LessonClear();
                 this.lesson.Init(this.Handle, Process.GetCurrentProcess().Handle);
+
+                this.timer = new Timer();
+                this.timer.Tick += Timer_Tick;
+                this.timer.Interval = 1000;
+                this.Enabled = true;
             }
+        }
+
+        private void Timer_Tick(object sender, EventArgs e) {
+            this.Invalidate(); // render again.
         }
 
         protected override void OnPaintBackground(PaintEventArgs e) {

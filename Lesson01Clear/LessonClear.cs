@@ -60,11 +60,12 @@ namespace Lesson01Clear {
                 CommandBufferCount = (uint)images.Length
             };
             VkCommandBuffer[] buffers = device.AllocateCommandBuffers(ref commandBufferAllocateInfo);
+            var clearColors = new[] {
+                new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f),
+                new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f),
+            };
             for (int i = 0; i < images.Length; i++) {
-
-                var commandBufferBeginInfo = new VkCommandBufferBeginInfo {
-                    SType = VkStructureType.CommandBufferBeginInfo
-                };
+                var commandBufferBeginInfo = new VkCommandBufferBeginInfo { SType = VkStructureType.CommandBufferBeginInfo };
                 buffers[i].Begin(ref commandBufferBeginInfo);
                 {
                     var renderPassBeginInfo = new VkRenderPassBeginInfo();
@@ -72,7 +73,7 @@ namespace Lesson01Clear {
                         renderPassBeginInfo.SType = VkStructureType.RenderPassBeginInfo;
                         renderPassBeginInfo.Framebuffer = framebuffers[i].handle;
                         renderPassBeginInfo.RenderPass = renderPass.handle;
-                        new VkClearValue[] { new VkClearValue { Color = new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f) } }.Set(ref renderPassBeginInfo.ClearValues, ref renderPassBeginInfo.ClearValueCount);
+                        new VkClearValue[] { new VkClearValue { Color = clearColors[i] } }.Set(ref renderPassBeginInfo.ClearValues, ref renderPassBeginInfo.ClearValueCount);
                         renderPassBeginInfo.RenderArea = new VkRect2D { Extent = surfaceCapabilities.CurrentExtent };
                     }
                     buffers[i].CmdBeginRenderPass(ref renderPassBeginInfo, VkSubpassContents.Inline);
