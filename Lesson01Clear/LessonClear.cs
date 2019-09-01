@@ -62,7 +62,7 @@ namespace Lesson01Clear {
             VkCommandBuffer[] buffers = device.AllocateCommandBuffers(ref commandBufferAllocateInfo);
             var clearColors = new[] {
                 new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f),
-                new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f),
+                new VkClearColorValue(0.1f, 0.3f, 1.0f, 1.0f),
             };
             for (int i = 0; i < images.Length; i++) {
                 var commandBufferBeginInfo = new VkCommandBufferBeginInfo { SType = VkStructureType.CommandBufferBeginInfo };
