@@ -264,7 +264,6 @@ namespace Lesson01Clear {
             return result;
         }
 
-
         private VkSubmitInfo[] submitInfos;
         private VkPresentInfoKhr[] presentInfos;
 

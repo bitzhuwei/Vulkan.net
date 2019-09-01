@@ -516,8 +516,40 @@ namespace Lesson02Shader {
             return result;
         }
 
+        private VkSubmitInfo[] submitInfos;
+        private VkPresentInfoKhr[] presentInfos;
+
+        private void InitRenderParams() {
+            VkDevice device = this.vkDevice; VkSwapchainKhr swapchain = this.vkSwapchain;
+            VkSemaphore semaphore = this.vkSemaphore; VkFence fence = this.vkFence;
+            VkCommandBuffer[] commandBuffers = this.vkCommandBuffers;
+            VkQueue queue = this.vkQueue;
+
+            submitInfos = new VkSubmitInfo[2]; presentInfos = new VkPresentInfoKhr[2];
+            for (uint index = 0; index < 2; index++) {
+                var submitInfo = new VkSubmitInfo();
+                {
+                    new UInt64[] { semaphore.handle }.Set(ref submitInfo.WaitSemaphores, ref submitInfo.WaitSemaphoreCount);
+                    // I have to use int instead of enum VkPipelineStageFlags.
+                    new int[] { (int)VkPipelineStageFlags.AllGraphics }.Set(ref submitInfo.WaitDstStageMask, ref submitInfo.WaitSemaphoreCount);
+                    new IntPtr[] { commandBuffers[index].handle }.Set(ref submitInfo.CommandBuffers, ref submitInfo.CommandBufferCount);
+                }
+                submitInfos[index] = submitInfo;
+                var presentInfo = new VkPresentInfoKhr();
+                {
+                    presentInfo.SType = VkStructureType.PresentInfoKhr;
+                    new UInt64[] { swapchain.handle }.Set(ref presentInfo.Swapchains, ref presentInfo.SwapchainCount);
+                    new uint[] { index }.Set(ref presentInfo.ImageIndices, ref presentInfo.SwapchainCount);
+                }
+                presentInfos[index] = presentInfo;
+            }
+        }
+
         public void Render() {
             if (!isInitialized) return;
+            if (this.submitInfos == null) {
+                InitRenderParams();
+            }
 
             VkDevice device = this.vkDevice; VkSwapchainKhr swapchain = this.vkSwapchain;
             VkSemaphore semaphore = this.vkSemaphore; VkFence fence = this.vkFence;
@@ -526,24 +558,9 @@ namespace Lesson02Shader {
             uint nextIndex = device.AcquireNextImageKHR(swapchain, ulong.MaxValue, semaphore);
             device.ResetFence(fence);
 
-            var submitInfo = new VkSubmitInfo();
-            {
-                new UInt64[] { semaphore.handle }.Set(ref submitInfo.WaitSemaphores, ref submitInfo.WaitSemaphoreCount);
-                // I have to use int instead of enum VkPipelineStageFlags.
-                new int[] { (int)VkPipelineStageFlags.AllGraphics }.Set(ref submitInfo.WaitDstStageMask, ref submitInfo.WaitSemaphoreCount);
-                new IntPtr[] { commandBuffers[nextIndex].handle }.Set(ref submitInfo.CommandBuffers, ref submitInfo.CommandBufferCount);
-
-            }
-            queue.Submit(ref submitInfo, fence);
+            queue.Submit(ref this.submitInfos[nextIndex], fence);
             device.WaitForFence(fence, true, 100000000);
-
-            var presentInfo = new VkPresentInfoKhr();
-            {
-                presentInfo.SType = VkStructureType.PresentInfoKhr;
-                new UInt64[] { swapchain.handle }.Set(ref presentInfo.Swapchains, ref presentInfo.SwapchainCount);
-                new uint[] { nextIndex }.Set(ref presentInfo.ImageIndices, ref presentInfo.SwapchainCount);
-            }
-            queue.PresentKHR(ref presentInfo);
+            queue.PresentKHR(ref this.presentInfos[nextIndex]);
         }
     }
 }
