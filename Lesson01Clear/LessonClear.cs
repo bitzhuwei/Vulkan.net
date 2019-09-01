@@ -24,7 +24,7 @@ namespace Lesson01Clear {
 
             this.vkIntance = InitInstance();
             this.vkSurface = InitSurface(this.vkIntance, hwnd, processHandle);
-            this.vkPhysicalDevice = InitPhysicalDevice();
+            this.vkPhysicalDevice = InitPhysicalDevice(this.vkIntance);
             VkSurfaceFormatKhr surfaceFormat = SelectFormat(this.vkPhysicalDevice, this.vkSurface);
             VkSurfaceCapabilitiesKhr surfaceCapabilities;
             this.vkPhysicalDevice.GetSurfaceCapabilitiesKhr(this.vkSurface, out surfaceCapabilities);
