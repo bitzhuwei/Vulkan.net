@@ -37,7 +37,7 @@ namespace Lesson01Clear {
                 this.timer = new Timer();
                 this.timer.Tick += Timer_Tick;
                 this.timer.Interval = 1000;
-                this.Enabled = true;
+                this.timer.Enabled = true;
             }
         }
 
