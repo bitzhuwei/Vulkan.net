@@ -17,10 +17,10 @@ namespace Lesson02Shader {
         VkFence vkFence;
         VkSemaphore vkSemaphore;
         //
-        VkBuffer uniformBuffer;
-        VkDescriptorSetLayout descriptorSetLayout;
-        VkPipelineLayout pipelineLayout;
-        VkDescriptorSet[] descriptorSets;
+        VkBuffer vkUniformBuffer;
+        VkDescriptorSetLayout vkDescriptorSetLayout;
+        VkPipelineLayout vkPipelineLayout;
+        VkDescriptorSet[] vkDescriptorSets;
 
         VkCommandBuffer[] vkCommandBuffers;
         bool isInitialized = false;
@@ -30,7 +30,7 @@ namespace Lesson02Shader {
 
             this.vkIntance = InitInstance();
             this.vkSurface = InitSurface(this.vkIntance, hwnd, processHandle);
-            this.vkPhysicalDevice = InitPhysicalDevice();
+            this.vkPhysicalDevice = InitPhysicalDevice(this.vkIntance);
             VkSurfaceFormatKhr surfaceFormat = SelectFormat(this.vkPhysicalDevice, this.vkSurface);
             VkSurfaceCapabilitiesKhr surfaceCapabilities;
             this.vkPhysicalDevice.GetSurfaceCapabilitiesKhr(this.vkSurface, out surfaceCapabilities);
@@ -51,15 +51,17 @@ namespace Lesson02Shader {
             // buffers for vertex data.
             VkBuffer vertexBuffer = CreateBuffer(this.vkPhysicalDevice, this.vkDevice, Logo.Vertices, VkBufferUsageFlags.VertexBuffer, typeof(float));
             VkBuffer indexBuffer = CreateBuffer(this.vkPhysicalDevice, this.vkDevice, Logo.Indexes, VkBufferUsageFlags.IndexBuffer, typeof(short));
-            this.uniformBuffer = CreateUniformBuffer(this.vkPhysicalDevice, this.vkDevice, surfaceCapabilities);
-            this.descriptorSetLayout = CreateDescriptorSetLayout(this.vkDevice);
-            var pipelines = CreatePipelines(this.vkDevice, this.descriptorSetLayout, surfaceCapabilities, this.vkRenderPass, out this.pipelineLayout);
-            this.descriptorSets = CreateDescriptorSets(this.vkDevice);
-            UpdateDescriptorSets(this.vkDevice);
+            this.vkUniformBuffer = CreateUniformBuffer(this.vkPhysicalDevice, this.vkDevice, surfaceCapabilities);
+            this.vkDescriptorSetLayout = CreateDescriptorSetLayout(this.vkDevice);
+            var pipelines = CreatePipelines(this.vkDevice, this.vkDescriptorSetLayout, surfaceCapabilities, this.vkRenderPass, out this.vkPipelineLayout);
+            this.vkDescriptorSets = CreateDescriptorSets(this.vkDevice, this.vkDescriptorSetLayout);
+            UpdateDescriptorSets(this.vkDevice, this.vkUniformBuffer, this.vkDescriptorSets);
 
             this.vkCommandBuffers = CreateCommandBuffers(
                 this.vkDevice, this.vkRenderPass, surfaceCapabilities,
-                this.vkImages, this.vkFramebuffers, pipelines[0], vertexBuffer, indexBuffer, (uint)Logo.Indexes.Length);
+                this.vkImages, this.vkFramebuffers, pipelines[0],
+                vertexBuffer, indexBuffer, (uint)Logo.Indexes.Length,
+                this.vkPipelineLayout, this.vkDescriptorSets);
 
             this.isInitialized = true;
         }
@@ -67,7 +69,8 @@ namespace Lesson02Shader {
         VkCommandBuffer[] CreateCommandBuffers(
             VkDevice device, VkRenderPass renderPass, VkSurfaceCapabilitiesKhr surfaceCapabilities,
             VkImage[] images, VkFramebuffer[] framebuffers, VkPipeline pipeline,
-            VkBuffer vertexBuffer, VkBuffer indexBuffer, uint indexLength) {
+            VkBuffer vertexBuffer, VkBuffer indexBuffer, uint indexLength,
+            VkPipelineLayout pipelineLayout, VkDescriptorSet[] descriptorSets) {
             var createPoolInfo = new VkCommandPoolCreateInfo {
                 SType = VkStructureType.CommandPoolCreateInfo,
                 Flags = VkCommandPoolCreateFlags.ResetCommandBuffer
@@ -107,7 +110,7 @@ namespace Lesson02Shader {
             return buffers;
         }
 
-        void UpdateDescriptorSets(VkDevice device) {
+        void UpdateDescriptorSets(VkDevice device, VkBuffer uniformBuffer, VkDescriptorSet[] descriptorSets) {
             var uniformBufferInfo = new VkDescriptorBufferInfo {
                 Buffer = uniformBuffer.handle,
                 Offset = 0,
@@ -124,7 +127,7 @@ namespace Lesson02Shader {
             device.UpdateDescriptorSets(new VkWriteDescriptorSet[] { writeDescriptorSet }, null);
         }
 
-        VkDescriptorSet[] CreateDescriptorSets(VkDevice device) {
+        VkDescriptorSet[] CreateDescriptorSets(VkDevice device, VkDescriptorSetLayout descriptorSetLayout) {
             var typeCount = new VkDescriptorPoolSize {
                 Type = VkDescriptorType.UniformBuffer,
                 DescriptorCount = 1
@@ -148,7 +151,7 @@ namespace Lesson02Shader {
         }
 
         VkPipeline[] CreatePipelines(VkDevice device, VkDescriptorSetLayout descriptorSetLayout, VkSurfaceCapabilitiesKhr surfaceCapabilities,
-            VkRenderPass vkRenderPass, out VkPipelineLayout pipelineLayout) {
+            VkRenderPass renderPass, out VkPipelineLayout pipelineLayout) {
             var pipelineLayoutCreateInfo = new VkPipelineLayoutCreateInfo();
             {
                 pipelineLayoutCreateInfo.SType = VkStructureType.PipelineLayoutCreateInfo;
@@ -235,7 +238,7 @@ namespace Lesson02Shader {
                 pipelineCreateInfo.RasterizationState = (IntPtr)(void*)&rasterizationStateCreateInfo;
                 pipelineCreateInfo.InputAssemblyState = (IntPtr)(void*)&inputAssemblyStateCreateInfo;
                 pipelineCreateInfo.VertexInputState = (IntPtr)(void*)&vertexInputStateCreateInfo;
-                pipelineCreateInfo.RenderPass = vkRenderPass.handle;
+                pipelineCreateInfo.RenderPass = renderPass.handle;
             }
 
             var cacheInfo = new VkPipelineCacheCreateInfo { SType = VkStructureType.PipelineCacheCreateInfo };
@@ -468,9 +471,9 @@ namespace Lesson02Shader {
             return device;
         }
 
-        private VkPhysicalDevice InitPhysicalDevice() {
+        private VkPhysicalDevice InitPhysicalDevice(VkInstance instance) {
             VkPhysicalDevice[] physicalDevices;
-            this.vkIntance.EnumeratePhysicalDevices(out physicalDevices);
+            instance.EnumeratePhysicalDevices(out physicalDevices);
             return physicalDevices[0];
         }
 

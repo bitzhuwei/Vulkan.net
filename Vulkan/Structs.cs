@@ -95,11 +95,19 @@ namespace Vulkan {
     unsafe public partial struct VkMemoryType {
         public VkMemoryPropertyFlags PropertyFlags;
         public UInt32 HeapIndex;
+
+        public override string ToString() {
+            return $"{PropertyFlags}, {HeapIndex}";
+        }
     }
 
     unsafe public partial struct VkMemoryHeap {
         public VkDeviceSize Size;
         public VkMemoryHeapFlags Flags;
+
+        public override string ToString() {
+            return $"{Size}, {Flags}";
+        }
     }
 
 
@@ -770,6 +778,10 @@ namespace Vulkan {
 
         public static implicit operator UInt64(VkDeviceSize size) {
             return size.value;
+        }
+
+        public override string ToString() {
+            return $"{value}";
         }
     }
 

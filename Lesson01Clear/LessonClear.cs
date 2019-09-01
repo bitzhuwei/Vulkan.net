@@ -218,9 +218,9 @@ namespace Lesson01Clear {
             return device;
         }
 
-        private VkPhysicalDevice InitPhysicalDevice() {
+        private VkPhysicalDevice InitPhysicalDevice(VkInstance instance) {
             VkPhysicalDevice[] physicalDevices;
-            this.vkIntance.EnumeratePhysicalDevices(out physicalDevices);
+            instance.EnumeratePhysicalDevices(out physicalDevices);
             return physicalDevices[0];
         }
 
