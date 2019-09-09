@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Vulkan {
+    /// <summary>
+    /// container of <see cref="VkDescriptorSetLayoutBinding"/>s.
+    /// </summary>
     public unsafe partial class VkDescriptorSetLayout : IDisposable {
         public readonly UInt64 handle;
         private VkDevice device;
@@ -70,4 +71,3 @@ namespace Vulkan {
         }
     }
 }
-

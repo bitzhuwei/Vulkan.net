@@ -7,7 +7,23 @@ namespace Vulkan {
         public readonly UInt64 handle;
         private VkDevice device;
         private readonly UnmanagedArray<VkAllocationCallbacks> callbacks;
+#if DEBUG
+        public IntPtr Next;
+        public UInt32 Flags;
+        public UInt64 RenderPass;
+        public UInt64[] Attachments;
+        public UInt32 Width;
+        public UInt32 Height;
+        public UInt32 Layers;
 
+        internal static void Fill(VkFramebuffer framebuffer, VkFramebufferCreateInfo createInfo) {
+            framebuffer.Next = createInfo.Next; framebuffer.Flags = createInfo.Flags;
+            framebuffer.RenderPass = createInfo.RenderPass;
+            framebuffer.Attachments = Helper.Get<UInt64>(createInfo.Attachments, createInfo.AttachmentCount);
+            framebuffer.Width = createInfo.Width; framebuffer.Height = createInfo.Height;
+            framebuffer.Layers = createInfo.Layers;
+        }
+#endif 
         public static VkResult Create(VkDevice device, ref VkFramebufferCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkFramebuffer framebuffer) {
             if (device == null) { throw new ArgumentNullException("device"); }
 
@@ -19,7 +35,9 @@ namespace Vulkan {
             }
 
             framebuffer = new VkFramebuffer(device, callbacks, handle);
-
+#if DEBUG
+            VkFramebuffer.Fill(framebuffer, createInfo);
+#endif 
             return result;
         }
 
@@ -70,4 +88,3 @@ namespace Vulkan {
         }
     }
 }
-

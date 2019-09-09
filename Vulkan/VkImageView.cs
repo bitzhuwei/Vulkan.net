@@ -8,7 +8,24 @@ namespace Vulkan {
         private VkDevice device;
         private readonly UnmanagedArray<VkAllocationCallbacks> callbacks;
 
-        public static VkResult Create(VkDevice device, ref VkImageViewCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkImageView vkImageView) {
+#if DEBUG
+        public IntPtr Next;
+        public UInt32 Flags;
+        public UInt64 Image;
+        public VkImageViewType ViewType;
+        public VkFormat Format;
+        public VkComponentMapping Components;
+        public VkImageSubresourceRange SubresourceRange;
+
+        internal static void Fill(VkImageView imageView, VkImageViewCreateInfo createInfo) {
+            imageView.Next = createInfo.Next; imageView.Flags = createInfo.Flags;
+            imageView.Image = createInfo.Image; imageView.ViewType = createInfo.ViewType;
+            imageView.Format = createInfo.Format; imageView.Components = createInfo.Components;
+            imageView.SubresourceRange = createInfo.SubresourceRange;
+        }
+#endif 
+
+        public static VkResult Create(VkDevice device, ref VkImageViewCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkImageView imageView) {
             if (device == null) { throw new ArgumentNullException("device"); }
 
             VkResult result = VkResult.Success;
@@ -18,8 +35,10 @@ namespace Vulkan {
                 result = vkAPI.vkCreateImageView(device.handle, pCreateInfo, pAllocator, &handle).Check();
             }
 
-            vkImageView = new VkImageView(device, callbacks, handle);
-
+            imageView = new VkImageView(device, callbacks, handle);
+#if DEBUG
+            VkImageView.Fill(imageView, createInfo);
+#endif 
             return result;
         }
 
@@ -70,4 +89,3 @@ namespace Vulkan {
         }
     }
 }
-

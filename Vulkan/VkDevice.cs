@@ -7,6 +7,17 @@ namespace Vulkan {
         public readonly IntPtr handle;
         private readonly UnmanagedArray<VkAllocationCallbacks> callbacks;
 
+#if DEBUG
+        public IntPtr Next;
+        public UInt32 Flags;
+        public VkDeviceQueueCreateInfo[] QueueCreateInfos;
+        public string[] EnabledLayerNames;
+        public string[] EnabledExtensionNames;
+        public IntPtr EnabledFeatures;
+        //
+        VkQueueFamilyProperties[] properties;
+#endif
+
         public static VkResult Create(VkPhysicalDevice physicalDevice, ref VkDeviceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkDevice device) {
             if (physicalDevice == null) { throw new ArgumentNullException("physicalDevice"); }
 
@@ -18,6 +29,16 @@ namespace Vulkan {
             }
 
             device = new VkDevice(callbacks, handle);
+#if DEBUG
+            device.Next = createInfo.Next;
+            device.Flags = createInfo.Flags;
+            device.QueueCreateInfos = Helper.Get<VkDeviceQueueCreateInfo>(createInfo.QueueCreateInfos, createInfo.QueueCreateInfoCount);
+            device.EnabledLayerNames = Helper.Get(createInfo.EnabledLayerNames, createInfo.EnabledLayerCount);
+            device.EnabledExtensionNames = Helper.Get(createInfo.EnabledExtensionNames, createInfo.EnabledExtensionCount);
+            device.EnabledFeatures = createInfo.EnabledFeatures;
+            //
+            device.properties = physicalDevice.GetQueueFamilyProperties();
+#endif
             return result;
         }
 
@@ -79,4 +100,3 @@ namespace Vulkan {
         }
     }
 }
-

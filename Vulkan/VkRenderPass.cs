@@ -8,6 +8,21 @@ namespace Vulkan {
         private VkDevice device;
         private readonly UnmanagedArray<VkAllocationCallbacks> callbacks;
 
+#if DEBUG
+        public IntPtr Next;
+        public UInt32 Flags;
+        public VkAttachmentDescription[] Attachments;
+        public VkSubpassDescription[] Subpasses;
+        public VkSubpassDependency[] Dependencies;
+
+        internal static void Fill(VkRenderPass renderpass, VkRenderPassCreateInfo createInfo) {
+            renderpass.Next = createInfo.Next; renderpass.Flags = createInfo.Flags;
+            renderpass.Attachments = Helper.Get<VkAttachmentDescription>(createInfo.Attachments, createInfo.AttachmentCount);
+            renderpass.Subpasses = Helper.Get<VkSubpassDescription>(createInfo.Subpasses, createInfo.SubpassCount);
+            renderpass.Dependencies = Helper.Get<VkSubpassDependency>(createInfo.Dependencies, createInfo.DependencyCount);
+        }
+#endif
+
         public static VkResult Create(VkDevice device, ref VkRenderPassCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkRenderPass renderPass) {
             if (device == null) { throw new ArgumentNullException("device"); }
 
@@ -18,7 +33,9 @@ namespace Vulkan {
                 result = vkAPI.vkCreateRenderPass(device.handle, pCreateInfo, pAllocator, &handle).Check();
             }
             renderPass = new VkRenderPass(device, callbacks, handle);
-
+#if DEBUG
+            Fill(renderPass, createInfo);
+#endif
             return result;
         }
 
@@ -77,4 +94,3 @@ namespace Vulkan {
         }
     }
 }
-

@@ -15,23 +15,28 @@ namespace Vulkan {
     unsafe public partial struct VkOffset2D {
         public Int32 X;
         public Int32 Y;
+        public override string ToString() => $"{X}, {Y}";
     }
 
     unsafe public partial struct VkOffset3D {
         public Int32 X;
         public Int32 Y;
         public Int32 Z;
+        public override string ToString() => $"{X}, {Y}, {Z}";
     }
 
     unsafe public partial struct VkExtent2D {
         public UInt32 Width;
         public UInt32 Height;
+        public override string ToString() => $"{Width}, {Height}";
     }
 
     unsafe public partial struct VkExtent3D {
         public UInt32 Width;
         public UInt32 Height;
         public UInt32 Depth;
+
+        public override string ToString() => $"{Width}, {Height}, {Depth}";
     }
 
     unsafe public partial struct VkViewport {
@@ -41,11 +46,13 @@ namespace Vulkan {
         public float Height;
         public float MinDepth;
         public float MaxDepth;
+        public override string ToString() => $"{X}, {Y}, {Width}, {Height}, {MinDepth}, {MaxDepth}";
     }
 
     unsafe public partial struct VkRect2D {
         public VkOffset2D Offset;
         public VkExtent2D Extent;
+        public override string ToString() => $"{Offset}, {Extent}";
     }
 
     unsafe public partial struct VkClearRect {
@@ -59,6 +66,7 @@ namespace Vulkan {
         public VkComponentSwizzle G;
         public VkComponentSwizzle B;
         public VkComponentSwizzle A;
+        public override string ToString() => $"{R}, {G}, {B}, {A}";
     }
 
     unsafe public partial struct VkQueueFamilyProperties {

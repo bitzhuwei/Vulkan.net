@@ -3,9 +3,24 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Vulkan {
+    /// <summary>
+    ///  store all per-application state.
+    ///  a Vulkan application is linked to a Vulkan library which is commonly referred to as the loader. 
+    ///  Creating an instance initializes the loader. 
+    ///  The loader also loads and initializes the low-level graphics driver, 
+    ///  usually provided by the vendor of the GPU hardware.
+    /// </summary>
     public unsafe partial class VkInstance : IDisposable {
         public readonly IntPtr handle;
         private readonly UnmanagedArray<VkAllocationCallbacks> callbacks;
+
+#if DEBUG
+        public IntPtr Next;
+        public UInt32 Flags;
+        public VkApplicationInfo ApplicationInfo;
+        public string[] EnabledLayerNames;
+        public string[] EnabledExtensionNames;
+#endif
 
         public static VkResult Create(ref VkInstanceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkInstance instance) {
             VkResult result = VkResult.Success;
@@ -16,6 +31,12 @@ namespace Vulkan {
             }
 
             instance = new VkInstance(callbacks, handle);
+#if DEBUG
+            instance.Next = createInfo.Next; instance.Flags = createInfo.Flags;
+            instance.ApplicationInfo = *(VkApplicationInfo*)createInfo.ApplicationInfo;
+            instance.EnabledLayerNames = Helper.Get(createInfo.EnabledLayerNames, createInfo.EnabledLayerCount);
+            instance.EnabledExtensionNames = Helper.Get(createInfo.EnabledExtensionNames, createInfo.EnabledExtensionCount);
+#endif
 
             return result;
         }
@@ -66,4 +87,3 @@ namespace Vulkan {
         }
     }
 }
-

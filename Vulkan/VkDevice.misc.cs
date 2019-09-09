@@ -45,7 +45,11 @@ namespace Vulkan {
                 vkAPI.vkCreateSwapchainKHR(this.handle, pCreateInfo, pAllocator, &handle).Check();
             }
 
-            return new VkSwapchainKhr(this, callbacks, handle);
+            var swapchain = new VkSwapchainKhr(this, callbacks, handle);
+#if DEBUG
+            VkSwapchainKhr.Fill(swapchain, ref createInfo);
+#endif
+            return swapchain;
         }
 
         public VkImage[] GetSwapchainImagesKHR(VkSwapchainKhr swapchain) {
@@ -74,7 +78,12 @@ namespace Vulkan {
                 vkAPI.vkCreateRenderPass(this.handle, pCreateInfo, pAllocator, &handle).Check();
             }
 
-            return new VkRenderPass(this, callbacks, handle);
+            var renderPass = new VkRenderPass(this, callbacks, handle);
+#if DEBUG
+            VkRenderPass.Fill(renderPass, createInfo);
+#endif
+
+            return renderPass;
         }
 
         public VkImageView CreateImageView(ref VkImageViewCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
@@ -84,7 +93,11 @@ namespace Vulkan {
                 vkAPI.vkCreateImageView(this.handle, pCreateInfo, pAllocator, &handle).Check();
             }
 
-            return new VkImageView(this, callbacks, handle);
+            var imageView = new VkImageView(this, callbacks, handle);
+#if DEBUG
+            VkImageView.Fill(imageView, createInfo);
+#endif
+            return imageView;
         }
 
         public VkFramebuffer CreateFramebuffer(ref VkFramebufferCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
@@ -94,7 +107,12 @@ namespace Vulkan {
                 vkAPI.vkCreateFramebuffer(this.handle, pCreateInfo, pAllocator, &handle).Check();
             }
 
-            return new VkFramebuffer(this, callbacks, handle);
+            var framebuffer = new VkFramebuffer(this, callbacks, handle);
+#if DEBUG
+            VkFramebuffer.Fill(framebuffer, createInfo);
+#endif 
+
+            return framebuffer;
         }
 
         public VkFence CreateFence(ref VkFenceCreateInfo createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks = null) {
@@ -310,4 +328,3 @@ namespace Vulkan {
         }
     }
 }
-

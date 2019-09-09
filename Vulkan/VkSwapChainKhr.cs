@@ -8,7 +8,38 @@ namespace Vulkan {
         private VkDevice device;
         private readonly UnmanagedArray<VkAllocationCallbacks> callbacks;
 
-        public static VkResult Create(VkDevice device, ref VkSwapchainCreateInfoKhr createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkSwapchainKhr swapchainKhr) {
+#if DEBUG
+        public IntPtr Next;
+        public VkSwapchainCreateFlagsKhr Flags;
+        public UInt64 Surface;
+        public UInt32 MinImageCount;
+        public VkFormat ImageFormat;
+        public VkColorSpaceKhr ImageColorSpace;
+        public VkExtent2D ImageExtent;
+        public UInt32 ImageArrayLayers;
+        public VkImageUsageFlags ImageUsage;
+        public VkSharingMode ImageSharingMode;
+        public UInt32[] QueueFamilyIndices;
+        public VkSurfaceTransformFlagsKhr PreTransform;
+        public VkCompositeAlphaFlagsKhr CompositeAlpha;
+        public VkPresentModeKhr PresentMode;
+        public VkBool32 Clipped;
+        public UInt64 OldSwapchain;
+
+        internal static void Fill(VkSwapchainKhr swapchain, ref VkSwapchainCreateInfoKhr createInfo) {
+            swapchain.Next = createInfo.Next; swapchain.Flags = createInfo.Flags; swapchain.Surface = createInfo.Surface;
+            swapchain.MinImageCount = createInfo.MinImageCount; swapchain.ImageFormat = createInfo.ImageFormat;
+            swapchain.ImageColorSpace = createInfo.ImageColorSpace; swapchain.ImageExtent = createInfo.ImageExtent;
+            swapchain.ImageArrayLayers = createInfo.ImageArrayLayers; swapchain.ImageUsage = createInfo.ImageUsage;
+            swapchain.ImageSharingMode = createInfo.ImageSharingMode;
+            swapchain.QueueFamilyIndices = Helper.Get<UInt32>(createInfo.QueueFamilyIndices, createInfo.QueueFamilyIndexCount);
+            swapchain.PreTransform = createInfo.PreTransform; swapchain.CompositeAlpha = createInfo.CompositeAlpha;
+            swapchain.PresentMode = createInfo.PresentMode; swapchain.Clipped = createInfo.Clipped;
+            swapchain.OldSwapchain = createInfo.OldSwapchain;
+        }
+#endif
+
+        public static VkResult Create(VkDevice device, ref VkSwapchainCreateInfoKhr createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkSwapchainKhr swapchain) {
             if (device == null) { throw new ArgumentNullException("device"); }
 
             VkResult result = VkResult.Success;
@@ -18,12 +49,14 @@ namespace Vulkan {
                 result = vkAPI.vkCreateSwapchainKHR(device.handle, pCreateInfo, pAllocator, &handle).Check();
             }
 
-            swapchainKhr = new VkSwapchainKhr(device, callbacks, handle);
-
+            swapchain = new VkSwapchainKhr(device, callbacks, handle);
+#if DEBUG
+            Fill(swapchain, ref createInfo);
+#endif
             return result;
         }
 
-        public static VkResult CreateShared(VkDevice device, ref VkSwapchainCreateInfoKhr[] createInfos, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkSwapchainKhr[] swapchainKhrs) {
+        public static VkResult CreateShared(VkDevice device, ref VkSwapchainCreateInfoKhr[] createInfos, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkSwapchainKhr[] swapchains) {
             if (device == null) { throw new ArgumentNullException("device"); }
 
             VkResult result = VkResult.Success;
@@ -34,9 +67,12 @@ namespace Vulkan {
                     result = vkAPI.vkCreateSharedSwapchainsKHR(device.handle, (UInt32)createInfos.Length, pCreateInfos, pAllocator, pointer).Check();
             }
 
-            swapchainKhrs = new VkSwapchainKhr[handles.Length];
+            swapchains = new VkSwapchainKhr[handles.Length];
             for (int i = 0; i < handles.Length; i++) {
-                swapchainKhrs[i] = new VkSwapchainKhr(device, callbacks, handles[i]);
+                swapchains[i] = new VkSwapchainKhr(device, callbacks, handles[i]);
+#if DEBUG
+                Fill(swapchains[i], ref createInfos[i]);
+#endif
             }
 
             return result;
@@ -113,4 +149,3 @@ namespace Vulkan {
         }
     }
 }
-

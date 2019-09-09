@@ -7,6 +7,9 @@ namespace Vulkan {
         public readonly IntPtr handle;
         public readonly UInt32 queueFamilyIndex;
         public readonly UInt32 queueIndex;
+#if DEBUG
+        public VkDevice device;
+#endif
 
         public static VkQueue Create(VkDevice device, UInt32 queueFamilyIndex, UInt32 queueIndex) {
             if (device == null) { throw new ArgumentNullException("device"); }
@@ -14,7 +17,10 @@ namespace Vulkan {
             var handle = new IntPtr();
             vkAPI.vkGetDeviceQueue(device.handle, queueFamilyIndex, queueIndex, &handle);
 
-            return new VkQueue(queueFamilyIndex, queueIndex, handle);
+            var queue = new VkQueue(queueFamilyIndex, queueIndex, handle);
+            queue.device = device;
+
+            return queue;
         }
 
         private VkQueue(UInt32 queueFamilyIndex, UInt32 queueIndex, IntPtr handle) {
@@ -62,4 +68,3 @@ namespace Vulkan {
         }
     }
 }
-

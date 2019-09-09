@@ -8,6 +8,13 @@ namespace Vulkan {
         public readonly UInt64 handle;
         private readonly UnmanagedArray<VkAllocationCallbacks> callbacks;
 
+#if DEBUG
+        public IntPtr Next;
+        public UInt32 Flags;
+        public IntPtr Hinstance;
+        public IntPtr Hwnd;
+#endif
+
         public static VkResult Create(VkInstance instance, ref VkDisplaySurfaceCreateInfoKhr createInfo, UnmanagedArray<VkAllocationCallbacks> callbacks, out VkSurfaceKhr SurfaceKhr) {
             if (instance == null) { throw new ArgumentNullException("instance"); }
 
@@ -69,4 +76,3 @@ namespace Vulkan {
         }
     }
 }
-
