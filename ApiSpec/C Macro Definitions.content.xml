@@ -1,0 +1,712 @@
+<root>
+<div class="sect1">
+<h2 id="defines">C Macro Definitions</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_ahardwarebuffer3">AHardwareBuffer(3)</h3>
+<div class="sect3">
+<h4 id="_name_1053">Name</h4>
+<div class="paragraph">
+<p>AHardwareBuffer - Android hardware buffer type</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1053">C Specification</h4>
+<div class="paragraph">
+<p>To remove an unnecessary compile-time dependency, an incomplete type
+definition of <a href="#AHardwareBuffer">AHardwareBuffer</a> is provided in the Vulkan headers:</p>
+</div>
+<div id="AHardwareBuffer" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">struct AHardwareBuffer;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1053">Description</h4>
+<div class="paragraph">
+<p>The actual <a href="#AHardwareBuffer">AHardwareBuffer</a> type is defined in Android NDK headers.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1053">See Also</h4>
+<div class="paragraph">
+<p>No cross-references are available</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1053">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#AHardwareBuffer" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#AHardwareBuffer</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_anativewindow3">ANativeWindow(3)</h3>
+<div class="sect3">
+<h4 id="_name_1054">Name</h4>
+<div class="paragraph">
+<p>ANativeWindow - Android native window type</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1054">C Specification</h4>
+<div class="paragraph">
+<p>To remove an unnecessary compile-time dependency, an incomplete type
+definition of <a href="#ANativeWindow">ANativeWindow</a> is provided in the Vulkan headers:</p>
+</div>
+<div id="ANativeWindow" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">struct ANativeWindow;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1054">Description</h4>
+<div class="paragraph">
+<p>The actual <a href="#ANativeWindow">ANativeWindow</a> type is defined in Android NDK headers.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1054">See Also</h4>
+<div class="paragraph">
+<p>No cross-references are available</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1054">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#ANativeWindow" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#ANativeWindow</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_cametallayer3">CAMetalLayer(3)</h3>
+<div class="sect3">
+<h4 id="_name_1055">Name</h4>
+<div class="paragraph">
+<p>CAMetalLayer - CoreAnimation native layer type for Metal</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1055">C Specification</h4>
+<div class="paragraph">
+<p>To remove an unnecessary compile-time dependency, an incomplete type
+definition of <a href="#CAMetalLayer">CAMetalLayer</a> is provided in the Vulkan headers:</p>
+</div>
+<div id="CAMetalLayer" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">#ifdef __OBJC__
+@class CAMetalLayer;
+#else
+typedef void CAMetalLayer;
+#endif</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1055">Description</h4>
+<div class="paragraph">
+<p>The actual <a href="#CAMetalLayer">CAMetalLayer</a> type is defined in the QuartzCore framework.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1055">See Also</h4>
+<div class="paragraph">
+<p>No cross-references are available</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1055">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#CAMetalLayer" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#CAMetalLayer</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_api_version3">VK_API_VERSION(3)</h3>
+<div class="sect3">
+<h4 id="_name_1056">Name</h4>
+<div class="paragraph">
+<p>VK_API_VERSION - Deprecated version number macro</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1056">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_API_VERSION</code> is now commented out of <code>vulkan_core.h</code> and <strong class="purple">cannot</strong> be
+used.</p>
+</div>
+<div id="VK_API_VERSION" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">// DEPRECATED: This define has been removed. Specific version defines (e.g. VK_API_VERSION_1_0), or the VK_MAKE_VERSION macro, should be used instead.
+//#define VK_API_VERSION VK_MAKE_VERSION(1, 0, 0) // Patch version should always be set to 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1056">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1056">See Also</h4>
+<div class="paragraph">
+<p>No cross-references are available</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1056">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_API_VERSION" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_API_VERSION</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_api_version_1_03">VK_API_VERSION_1_0(3)</h3>
+<div class="sect3">
+<h4 id="_name_1057">Name</h4>
+<div class="paragraph">
+<p>VK_API_VERSION_1_0 - Return API version number for Vulkan 1.0</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1057">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_API_VERSION_1_0</code> returns the API version number for Vulkan 1.0.0.</p>
+</div>
+<div id="VK_API_VERSION_1_0" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">// Vulkan 1.0 version number
+#define VK_API_VERSION_1_0 VK_MAKE_VERSION(1, 0, 0)// Patch version should always be set to 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1057">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1057">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkCreateInstance">vkCreateInstance</a>, <a href="#vkGetPhysicalDeviceProperties">vkGetPhysicalDeviceProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1057">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_API_VERSION_1_0" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_API_VERSION_1_0</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_api_version_1_13">VK_API_VERSION_1_1(3)</h3>
+<div class="sect3">
+<h4 id="_name_1058">Name</h4>
+<div class="paragraph">
+<p>VK_API_VERSION_1_1 - Return API version number for Vulkan 1.1</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1058">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_API_VERSION_1_1</code> returns the API version number for Vulkan 1.1.0.</p>
+</div>
+<div id="VK_API_VERSION_1_1" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">// Vulkan 1.1 version number
+#define VK_API_VERSION_1_1 VK_MAKE_VERSION(1, 1, 0)// Patch version should always be set to 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1058">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1058">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkCreateInstance">vkCreateInstance</a>, <a href="#vkGetPhysicalDeviceProperties">vkGetPhysicalDeviceProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1058">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_API_VERSION_1_1" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_API_VERSION_1_1</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_define_handle3">VK_DEFINE_HANDLE(3)</h3>
+<div class="sect3">
+<h4 id="_name_1059">Name</h4>
+<div class="paragraph">
+<p>VK_DEFINE_HANDLE - Declare a dispatchable object handle</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1059">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_DEFINE_HANDLE</code> defines a <a href="vkspec.html#fundamentals-objectmodel-overview">dispatchable handle</a> type.</p>
+</div>
+<div id="VK_DEFINE_HANDLE" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">#define VK_DEFINE_HANDLE(object) typedef struct object##_T* object;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1059">Description</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>object</code> is the name of the resulting C type.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The only dispatchable handle types are those related to device and instance
+management, such as <a href="#VkDevice">VkDevice</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1059">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandBuffer">VkCommandBuffer</a>, <a href="#VkDevice">VkDevice</a>, <a href="#VkInstance">VkInstance</a>, <a href="#VkPhysicalDevice">VkPhysicalDevice</a>, <a href="#VkQueue">VkQueue</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1059">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_DEFINE_HANDLE" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_DEFINE_HANDLE</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_define_non_dispatchable_handle3">VK_DEFINE_NON_DISPATCHABLE_HANDLE(3)</h3>
+<div class="sect3">
+<h4 id="_name_1060">Name</h4>
+<div class="paragraph">
+<p>VK_DEFINE_NON_DISPATCHABLE_HANDLE - Declare a non-dispatchable object handle</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1060">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_DEFINE_NON_DISPATCHABLE_HANDLE</code> defines a
+<a href="vkspec.html#fundamentals-objectmodel-overview">non-dispatchable handle</a> type.</p>
+</div>
+<div id="VK_DEFINE_NON_DISPATCHABLE_HANDLE" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">#if !defined(VK_DEFINE_NON_DISPATCHABLE_HANDLE)
+#if defined(__LP64__) || defined(_WIN64) || (defined(__x86_64__) &amp;&amp; !defined(__ILP32__) ) || defined(_M_X64) || defined(__ia64) || defined (_M_IA64) || defined(__aarch64__) || defined(__powerpc64__)
+        #define VK_DEFINE_NON_DISPATCHABLE_HANDLE(object) typedef struct object##_T *object;
+#else
+        #define VK_DEFINE_NON_DISPATCHABLE_HANDLE(object) typedef uint64_t object;
+#endif
+#endif</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1060">Description</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>object</code> is the name of the resulting C type.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Most Vulkan handle types, such as <a href="#VkBuffer">VkBuffer</a>, are non-dispatchable.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
+<div class="paragraph">
+<p>The <code>vulkan_core.h</code> header allows the
+<code>VK_DEFINE_NON_DISPATCHABLE_HANDLE</code> definition to be overridden by the
+application.
+If <code>VK_DEFINE_NON_DISPATCHABLE_HANDLE</code> is already defined when
+<code>vulkan_core.h</code> is compiled, the default definition is skipped.
+This allows the application to define a binary-compatible custom handle
+which <strong class="purple">may</strong> provide more type-safety or other features needed by the
+application.
+Applications <strong class="purple">must</strong> not define handles in a way that is not binary compatible
+- where binary compatibility is platform dependent.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1060">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkBuffer">VkBuffer</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1060">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_DEFINE_NON_DISPATCHABLE_HANDLE" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_DEFINE_NON_DISPATCHABLE_HANDLE</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_header_version3">VK_HEADER_VERSION(3)</h3>
+<div class="sect3">
+<h4 id="_name_1061">Name</h4>
+<div class="paragraph">
+<p>VK_HEADER_VERSION - Vulkan header file version number</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1061">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_HEADER_VERSION</code> is the version number of the <code>vulkan_core.h</code> header.
+This value is kept synchronized with the patch version of the released
+Specification.</p>
+</div>
+<div id="VK_HEADER_VERSION" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">// Version of this file
+#define VK_HEADER_VERSION 106</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1061">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1061">See Also</h4>
+<div class="paragraph">
+<p>No cross-references are available</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1061">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_HEADER_VERSION" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_HEADER_VERSION</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_make_version3">VK_MAKE_VERSION(3)</h3>
+<div class="sect3">
+<h4 id="_name_1062">Name</h4>
+<div class="paragraph">
+<p>VK_MAKE_VERSION - Construct an API version number</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1062">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_MAKE_VERSION</code> constructs an API version number.</p>
+</div>
+<div id="VK_MAKE_VERSION" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">#define VK_MAKE_VERSION(major, minor, patch) \
+    (((major) &lt;&lt; 22) | ((minor) &lt;&lt; 12) | (patch))</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1062">Description</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>major</code> is the major version number.</p>
+</li>
+<li>
+<p><code>minor</code> is the minor version number.</p>
+</li>
+<li>
+<p><code>patch</code> is the patch version number.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1062">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkApplicationInfo">VkApplicationInfo</a>, <a href="#vkCreateInstance">vkCreateInstance</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1062">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_MAKE_VERSION" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_MAKE_VERSION</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_null_handle3">VK_NULL_HANDLE(3)</h3>
+<div class="sect3">
+<h4 id="_name_1063">Name</h4>
+<div class="paragraph">
+<p>VK_NULL_HANDLE - Reserved non-valid object handle</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1063">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_NULL_HANDLE</code> is a reserved value representing a non-valid object
+handle.
+It may be passed to and returned from Vulkan commands only when
+<a href="vkspec.html#fundamentals-validusage-handles">specifically allowed</a>.</p>
+</div>
+<div id="VK_NULL_HANDLE" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">#define VK_NULL_HANDLE 0</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1063">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1063">See Also</h4>
+<div class="paragraph">
+<p>No cross-references are available</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1063">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_NULL_HANDLE" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_NULL_HANDLE</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_version_major3">VK_VERSION_MAJOR(3)</h3>
+<div class="sect3">
+<h4 id="_name_1064">Name</h4>
+<div class="paragraph">
+<p>VK_VERSION_MAJOR - Extract API major version number</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1064">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_VERSION_MAJOR</code> extracts the API major version number from a packed
+version number:</p>
+</div>
+<div id="VK_VERSION_MAJOR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">#define VK_VERSION_MAJOR(version) ((uint32_t)(version) &gt;&gt; 22)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1064">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1064">See Also</h4>
+<div class="paragraph">
+<p>No cross-references are available</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1064">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_VERSION_MAJOR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_VERSION_MAJOR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_version_minor3">VK_VERSION_MINOR(3)</h3>
+<div class="sect3">
+<h4 id="_name_1065">Name</h4>
+<div class="paragraph">
+<p>VK_VERSION_MINOR - Extract API minor version number</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1065">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_VERSION_MINOR</code> extracts the API minor version number from a packed
+version number:</p>
+</div>
+<div id="VK_VERSION_MINOR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">#define VK_VERSION_MINOR(version) (((uint32_t)(version) &gt;&gt; 12) &amp; 0x3ff)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1065">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1065">See Also</h4>
+<div class="paragraph">
+<p>No cross-references are available</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1065">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_VERSION_MINOR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_VERSION_MINOR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vk_version_patch3">VK_VERSION_PATCH(3)</h3>
+<div class="sect3">
+<h4 id="_name_1066">Name</h4>
+<div class="paragraph">
+<p>VK_VERSION_PATCH - Extract API patch version number</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1066">C Specification</h4>
+<div class="paragraph">
+<p><code>VK_VERSION_PATCH</code> extracts the API patch version number from a packed
+version number:</p>
+</div>
+<div id="VK_VERSION_PATCH" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">#define VK_VERSION_PATCH(version) ((uint32_t)(version) &amp; 0xfff)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1066">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1066">See Also</h4>
+<div class="paragraph">
+<p>No cross-references are available</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1066">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_VERSION_PATCH" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VK_VERSION_PATCH</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+</root>

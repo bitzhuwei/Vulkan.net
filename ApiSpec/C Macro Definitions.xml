@@ -1,0 +1,19 @@
+<root>
+<li><a href="#C Macro Definitions"></a>
+<ul class="sectlevel2">
+<li><a href="#_ahardwarebuffer3">AHardwareBuffer(3)</a></li>
+<li><a href="#_anativewindow3">ANativeWindow(3)</a></li>
+<li><a href="#_cametallayer3">CAMetalLayer(3)</a></li>
+<li><a href="#_vk_api_version3">VK_API_VERSION(3)</a></li>
+<li><a href="#_vk_api_version_1_03">VK_API_VERSION_1_0(3)</a></li>
+<li><a href="#_vk_api_version_1_13">VK_API_VERSION_1_1(3)</a></li>
+<li><a href="#_vk_define_handle3">VK_DEFINE_HANDLE(3)</a></li>
+<li><a href="#_vk_define_non_dispatchable_handle3">VK_DEFINE_NON_DISPATCHABLE_HANDLE(3)</a></li>
+<li><a href="#_vk_header_version3">VK_HEADER_VERSION(3)</a></li>
+<li><a href="#_vk_make_version3">VK_MAKE_VERSION(3)</a></li>
+<li><a href="#_vk_null_handle3">VK_NULL_HANDLE(3)</a></li>
+<li><a href="#_vk_version_major3">VK_VERSION_MAJOR(3)</a></li>
+<li><a href="#_vk_version_minor3">VK_VERSION_MINOR(3)</a></li>
+<li><a href="#_vk_version_patch3">VK_VERSION_PATCH(3)</a></li>
+</li>
+</root>

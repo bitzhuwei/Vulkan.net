@@ -48,35 +48,35 @@ namespace Lesson01Clear {
         }
 
         VkCommandBuffer[] CreateCommandBuffers(VkDevice device, VkImage[] images, VkFramebuffer[] framebuffers, VkRenderPass renderPass, VkSurfaceCapabilitiesKhr surfaceCapabilities) {
-            var createPoolInfo = new VkCommandPoolCreateInfo {
+            var poolInfo = new VkCommandPoolCreateInfo {
                 SType = VkStructureType.CommandPoolCreateInfo,
                 Flags = VkCommandPoolCreateFlags.ResetCommandBuffer
             };
-            var commandPool = device.CreateCommandPool(ref createPoolInfo);
-            var commandBufferAllocateInfo = new VkCommandBufferAllocateInfo {
+            var commandPool = device.CreateCommandPool(ref poolInfo);
+            var bufferInfo = new VkCommandBufferAllocateInfo {
                 SType = VkStructureType.CommandBufferAllocateInfo,
                 Level = VkCommandBufferLevel.Primary,
                 CommandPool = commandPool.handle,
                 CommandBufferCount = (uint)images.Length
             };
-            VkCommandBuffer[] buffers = device.AllocateCommandBuffers(ref commandBufferAllocateInfo);
+            VkCommandBuffer[] buffers = device.AllocateCommandBuffers(ref bufferInfo);
             var clearColors = new[] {
                 new VkClearColorValue(0.9f, 0.7f, 0.0f, 1.0f),
                 new VkClearColorValue(0.1f, 0.3f, 1.0f, 1.0f),
             };
             for (int i = 0; i < images.Length; i++) {
-                var commandBufferBeginInfo = new VkCommandBufferBeginInfo { SType = VkStructureType.CommandBufferBeginInfo };
-                buffers[i].Begin(ref commandBufferBeginInfo);
+                var beginInfo = new VkCommandBufferBeginInfo { SType = VkStructureType.CommandBufferBeginInfo };
+                buffers[i].Begin(ref beginInfo);
                 {
-                    var renderPassBeginInfo = new VkRenderPassBeginInfo();
+                    var renderPassInfo = new VkRenderPassBeginInfo();
                     {
-                        renderPassBeginInfo.SType = VkStructureType.RenderPassBeginInfo;
-                        renderPassBeginInfo.Framebuffer = framebuffers[i].handle;
-                        renderPassBeginInfo.RenderPass = renderPass.handle;
-                        new VkClearValue[] { new VkClearValue { Color = clearColors[i] } }.Set(ref renderPassBeginInfo.ClearValues, ref renderPassBeginInfo.ClearValueCount);
-                        renderPassBeginInfo.RenderArea = new VkRect2D { Extent = surfaceCapabilities.CurrentExtent };
+                        renderPassInfo.SType = VkStructureType.RenderPassBeginInfo;
+                        renderPassInfo.Framebuffer = framebuffers[i].handle;
+                        renderPassInfo.RenderPass = renderPass.handle;
+                        new VkClearValue[] { new VkClearValue { Color = clearColors[i] } }.Set(ref renderPassInfo.ClearValues, ref renderPassInfo.ClearValueCount);
+                        renderPassInfo.RenderArea = new VkRect2D { Extent = surfaceCapabilities.CurrentExtent };
                     }
-                    buffers[i].CmdBeginRenderPass(ref renderPassBeginInfo, VkSubpassContents.Inline);
+                    buffers[i].CmdBeginRenderPass(ref renderPassInfo, VkSubpassContents.Inline);
                     {
                         // nothing to do in this lesson.
                     }
@@ -90,7 +90,7 @@ namespace Lesson01Clear {
         protected VkFramebuffer[] CreateFramebuffers(VkDevice device, VkImage[] images, VkSurfaceFormatKhr surfaceFormat, VkRenderPass renderPass, VkSurfaceCapabilitiesKhr surfaceCapabilities) {
             var displayViews = new VkImageView[images.Length];
             for (int i = 0; i < images.Length; i++) {
-                var viewCreateInfo = new VkImageViewCreateInfo {
+                var viewInfo = new VkImageViewCreateInfo {
                     SType = VkStructureType.ImageViewCreateInfo,
                     Image = images[i].handle,
                     ViewType = VkImageViewType.View2D,
@@ -107,21 +107,21 @@ namespace Lesson01Clear {
                         LayerCount = 1
                     }
                 };
-                displayViews[i] = device.CreateImageView(ref viewCreateInfo);
+                displayViews[i] = device.CreateImageView(ref viewInfo);
             }
 
             var framebuffers = new VkFramebuffer[images.Length];
             for (int i = 0; i < images.Length; i++) {
-                var frameBufferCreateInfo = new VkFramebufferCreateInfo();
+                var fboInfo = new VkFramebufferCreateInfo();
                 {
-                    frameBufferCreateInfo.SType = VkStructureType.FramebufferCreateInfo;
-                    frameBufferCreateInfo.Layers = 1;
-                    frameBufferCreateInfo.RenderPass = renderPass.handle;
-                    new UInt64[] { displayViews[i].handle }.Set(ref frameBufferCreateInfo.Attachments, ref frameBufferCreateInfo.AttachmentCount);
-                    frameBufferCreateInfo.Width = surfaceCapabilities.CurrentExtent.Width;
-                    frameBufferCreateInfo.Height = surfaceCapabilities.CurrentExtent.Height;
+                    fboInfo.SType = VkStructureType.FramebufferCreateInfo;
+                    fboInfo.Layers = 1;
+                    fboInfo.RenderPass = renderPass.handle;
+                    new UInt64[] { displayViews[i].handle }.Set(ref fboInfo.Attachments, ref fboInfo.AttachmentCount);
+                    fboInfo.Width = surfaceCapabilities.CurrentExtent.Width;
+                    fboInfo.Height = surfaceCapabilities.CurrentExtent.Height;
                 }
-                framebuffers[i] = device.CreateFramebuffer(ref frameBufferCreateInfo);
+                framebuffers[i] = device.CreateFramebuffer(ref fboInfo);
             }
 
             return framebuffers;
@@ -255,7 +255,7 @@ namespace Lesson01Clear {
                 info.SType = VkStructureType.InstanceCreateInfo;
                 extensions.Set(ref info.EnabledExtensionNames, ref info.EnabledExtensionCount);
                 layersToEnable.Set(ref info.EnabledLayerNames, ref info.EnabledLayerCount);
-                info.ApplicationInfo = (IntPtr)(&appInfo);
+                info.ApplicationInfo = &appInfo;
             }
 
             VkInstance result;

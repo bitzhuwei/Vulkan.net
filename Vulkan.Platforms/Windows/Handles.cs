@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 
 namespace Vulkan {
     public unsafe static class InstanceExtension {
@@ -9,7 +9,15 @@ namespace Vulkan {
                 NativeMethods.vkCreateWin32SurfaceKHR(instance.handle, pCreateInfo, pAllocator, &pointer).Check();
             }
 
-            return new VkSurfaceKhr(instance, callbacks, pointer);
+            var surface = new VkSurfaceKhr(instance, callbacks, pointer);
+#if DEBUG
+            surface.Next = createInfo.Next;
+            surface.Flags = createInfo.Flags;
+            surface.Hinstance = createInfo.Hinstance;
+            surface.Hwnd = createInfo.Hwnd;
+#endif
+
+            return surface;
         }
     }
 

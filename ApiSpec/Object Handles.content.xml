@@ -1,0 +1,2042 @@
+<root>
+<div class="sect1">
+<h2 id="handles">Object Handles</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_vkaccelerationstructurenv3">VkAccelerationStructureNV(3)</h3>
+<div class="sect3">
+<h4 id="_name_327">Name</h4>
+<div class="paragraph">
+<p>VkAccelerationStructureNV - Opaque handle to an acceleration structure object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_327">C Specification</h4>
+<div class="paragraph">
+<p>Acceleration structures are an opaque structure that is built by the
+implementation to more efficiently perform spatial queries on the provided
+geometric data.
+For this extension, an acceleration structure is either a top-level
+acceleration structure containing a set of bottom-level acceleration
+structures or a bottom-level acceleration structure containing either a set
+of axis-aligned bounding boxes for custom geometry or a set of triangles.</p>
+</div>
+<div class="paragraph">
+<p>Each instance in the top-level acceleration structure contains a reference
+to a bottom-level acceleration structure as well as an instance transform
+plus information required to index into the shader bindings.
+The top-level acceleration structure is what is bound to the acceleration
+descriptor to trace inside the shader in the ray tracing pipeline.</p>
+</div>
+<div class="paragraph">
+<p>Acceleration structures are represented by <code>VkAccelerationStructureNV</code>
+handles:</p>
+</div>
+<div id="VkAccelerationStructureNV" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkAccelerationStructureNV)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_327">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_327">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAccelerationStructureMemoryRequirementsInfoNV">VkAccelerationStructureMemoryRequirementsInfoNV</a>, <a href="#VkBindAccelerationStructureMemoryInfoNV">VkBindAccelerationStructureMemoryInfoNV</a>, <a href="#VkWriteDescriptorSetAccelerationStructureNV">VkWriteDescriptorSetAccelerationStructureNV</a>, <a href="#vkCmdBuildAccelerationStructureNV">vkCmdBuildAccelerationStructureNV</a>, <a href="#vkCmdCopyAccelerationStructureNV">vkCmdCopyAccelerationStructureNV</a>, <a href="#vkCmdWriteAccelerationStructuresPropertiesNV">vkCmdWriteAccelerationStructuresPropertiesNV</a>, <a href="#vkCreateAccelerationStructureNV">vkCreateAccelerationStructureNV</a>, <a href="#vkDestroyAccelerationStructureNV">vkDestroyAccelerationStructureNV</a>, <a href="#vkGetAccelerationStructureHandleNV">vkGetAccelerationStructureHandleNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_327">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkAccelerationStructureNV" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkAccelerationStructureNV</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkbuffer3">VkBuffer(3)</h3>
+<div class="sect3">
+<h4 id="_name_328">Name</h4>
+<div class="paragraph">
+<p>VkBuffer - Opaque handle to a buffer object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_328">C Specification</h4>
+<div class="paragraph">
+<p>Buffers represent linear arrays of data which are used for various purposes
+by binding them to a graphics or compute pipeline via descriptor sets or via
+certain commands, or by directly specifying them as parameters to certain
+commands.</p>
+</div>
+<div class="paragraph">
+<p>Buffers are represented by <code>VkBuffer</code> handles:</p>
+</div>
+<div id="VkBuffer" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkBuffer)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_328">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_328">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkBindBufferMemoryInfo">VkBindBufferMemoryInfo</a>, <a href="#VkBufferDeviceAddressInfoEXT">VkBufferDeviceAddressInfoEXT</a>, <a href="#VkBufferMemoryBarrier">VkBufferMemoryBarrier</a>, <a href="#VkBufferMemoryRequirementsInfo2">VkBufferMemoryRequirementsInfo2</a>, <a href="#VkBufferViewCreateInfo">VkBufferViewCreateInfo</a>, <a href="#VkCmdProcessCommandsInfoNVX">VkCmdProcessCommandsInfoNVX</a>, <a href="#VkConditionalRenderingBeginInfoEXT">VkConditionalRenderingBeginInfoEXT</a>, <a href="#VkDedicatedAllocationMemoryAllocateInfoNV">VkDedicatedAllocationMemoryAllocateInfoNV</a>, <a href="#VkDescriptorBufferInfo">VkDescriptorBufferInfo</a>, <a href="#VkGeometryAABBNV">VkGeometryAABBNV</a>, <a href="#VkGeometryTrianglesNV">VkGeometryTrianglesNV</a>, <a href="#VkIndirectCommandsTokenNVX">VkIndirectCommandsTokenNVX</a>, <a href="#VkMemoryDedicatedAllocateInfo">VkMemoryDedicatedAllocateInfo</a>, <a href="#VkObjectTableIndexBufferEntryNVX">VkObjectTableIndexBufferEntryNVX</a>, <a href="#VkObjectTableVertexBufferEntryNVX">VkObjectTableVertexBufferEntryNVX</a>, <a href="#VkSparseBufferMemoryBindInfo">VkSparseBufferMemoryBindInfo</a>, <a href="#vkBindBufferMemory">vkBindBufferMemory</a>, <a href="#vkCmdBeginTransformFeedbackEXT">vkCmdBeginTransformFeedbackEXT</a>, <a href="#vkCmdBindIndexBuffer">vkCmdBindIndexBuffer</a>, <a href="#vkCmdBindTransformFeedbackBuffersEXT">vkCmdBindTransformFeedbackBuffersEXT</a>, <a href="#vkCmdBindVertexBuffers">vkCmdBindVertexBuffers</a>, <a href="#vkCmdBuildAccelerationStructureNV">vkCmdBuildAccelerationStructureNV</a>, <a href="#vkCmdCopyBuffer">vkCmdCopyBuffer</a>, <a href="#vkCmdCopyBufferToImage">vkCmdCopyBufferToImage</a>, <a href="#vkCmdCopyImageToBuffer">vkCmdCopyImageToBuffer</a>, <a href="#vkCmdCopyQueryPoolResults">vkCmdCopyQueryPoolResults</a>, <a href="#vkCmdDispatchIndirect">vkCmdDispatchIndirect</a>, <a href="#vkCmdDrawIndexedIndirect">vkCmdDrawIndexedIndirect</a>, <a href="#vkCmdDrawIndexedIndirectCountAMD">vkCmdDrawIndexedIndirectCountAMD</a>, <a href="#vkCmdDrawIndexedIndirectCountKHR">vkCmdDrawIndexedIndirectCountKHR</a>, <a href="#vkCmdDrawIndirect">vkCmdDrawIndirect</a>, <a href="#vkCmdDrawIndirectByteCountEXT">vkCmdDrawIndirectByteCountEXT</a>, <a href="#vkCmdDrawIndirectCountAMD">vkCmdDrawIndirectCountAMD</a>, <a href="#vkCmdDrawIndirectCountKHR">vkCmdDrawIndirectCountKHR</a>, <a href="#vkCmdDrawMeshTasksIndirectCountNV">vkCmdDrawMeshTasksIndirectCountNV</a>, <a href="#vkCmdDrawMeshTasksIndirectNV">vkCmdDrawMeshTasksIndirectNV</a>, <a href="#vkCmdEndTransformFeedbackEXT">vkCmdEndTransformFeedbackEXT</a>, <a href="#vkCmdFillBuffer">vkCmdFillBuffer</a>, <a href="#vkCmdTraceRaysNV">vkCmdTraceRaysNV</a>, <a href="#vkCmdUpdateBuffer">vkCmdUpdateBuffer</a>, <a href="#vkCmdWriteBufferMarkerAMD">vkCmdWriteBufferMarkerAMD</a>, <a href="#vkCreateBuffer">vkCreateBuffer</a>, <a href="#vkDestroyBuffer">vkDestroyBuffer</a>, <a href="#vkGetBufferMemoryRequirements">vkGetBufferMemoryRequirements</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_328">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBuffer" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBuffer</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkbufferview3">VkBufferView(3)</h3>
+<div class="sect3">
+<h4 id="_name_329">Name</h4>
+<div class="paragraph">
+<p>VkBufferView - Opaque handle to a buffer view object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_329">C Specification</h4>
+<div class="paragraph">
+<p>A <em>buffer view</em> represents a contiguous range of a buffer and a specific
+format to be used to interpret the data.
+Buffer views are used to enable shaders to access buffer contents
+interpreted as formatted data.
+In order to create a valid buffer view, the buffer <strong class="purple">must</strong> have been created
+with at least one of the following usage flags:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>VK_BUFFER_USAGE_UNIFORM_TEXEL_BUFFER_BIT</code></p>
+</li>
+<li>
+<p><code>VK_BUFFER_USAGE_STORAGE_TEXEL_BUFFER_BIT</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Buffer views are represented by <code>VkBufferView</code> handles:</p>
+</div>
+<div id="VkBufferView" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkBufferView)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_329">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_329">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkWriteDescriptorSet">VkWriteDescriptorSet</a>, <a href="#vkCreateBufferView">vkCreateBufferView</a>, <a href="#vkDestroyBufferView">vkDestroyBufferView</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_329">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBufferView" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBufferView</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcommandbuffer3">VkCommandBuffer(3)</h3>
+<div class="sect3">
+<h4 id="_name_330">Name</h4>
+<div class="paragraph">
+<p>VkCommandBuffer - Opaque handle to a command buffer object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_330">C Specification</h4>
+<div class="paragraph">
+<p>Command buffers are objects used to record commands which <strong class="purple">can</strong> be
+subsequently submitted to a device queue for execution.
+There are two levels of command buffers - <em>primary command buffers</em>, which
+<strong class="purple">can</strong> execute secondary command buffers, and which are submitted to queues,
+and <em>secondary command buffers</em>, which <strong class="purple">can</strong> be executed by primary command
+buffers, and which are not directly submitted to queues.</p>
+</div>
+<div class="paragraph">
+<p>Command buffers are represented by <code>VkCommandBuffer</code> handles:</p>
+</div>
+<div id="VkCommandBuffer" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_HANDLE(VkCommandBuffer)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_330">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_330">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCmdProcessCommandsInfoNVX">VkCmdProcessCommandsInfoNVX</a>, <a href="#VkSubmitInfo">VkSubmitInfo</a>, <a href="#vkAllocateCommandBuffers">vkAllocateCommandBuffers</a>, <a href="#vkBeginCommandBuffer">vkBeginCommandBuffer</a>, <a href="#vkCmdBeginConditionalRenderingEXT">vkCmdBeginConditionalRenderingEXT</a>, <a href="#vkCmdBeginDebugUtilsLabelEXT">vkCmdBeginDebugUtilsLabelEXT</a>, <a href="#vkCmdBeginQuery">vkCmdBeginQuery</a>, <a href="#vkCmdBeginQueryIndexedEXT">vkCmdBeginQueryIndexedEXT</a>, <a href="#vkCmdBeginRenderPass">vkCmdBeginRenderPass</a>, <a href="#vkCmdBeginRenderPass2KHR">vkCmdBeginRenderPass2KHR</a>, <a href="#vkCmdBeginTransformFeedbackEXT">vkCmdBeginTransformFeedbackEXT</a>, <a href="#vkCmdBindDescriptorSets">vkCmdBindDescriptorSets</a>, <a href="#vkCmdBindIndexBuffer">vkCmdBindIndexBuffer</a>, <a href="#vkCmdBindPipeline">vkCmdBindPipeline</a>, <a href="#vkCmdBindShadingRateImageNV">vkCmdBindShadingRateImageNV</a>, <a href="#vkCmdBindTransformFeedbackBuffersEXT">vkCmdBindTransformFeedbackBuffersEXT</a>, <a href="#vkCmdBindVertexBuffers">vkCmdBindVertexBuffers</a>, <a href="#vkCmdBlitImage">vkCmdBlitImage</a>, <a href="#vkCmdBuildAccelerationStructureNV">vkCmdBuildAccelerationStructureNV</a>, <a href="#vkCmdClearAttachments">vkCmdClearAttachments</a>, <a href="#vkCmdClearColorImage">vkCmdClearColorImage</a>, <a href="#vkCmdClearDepthStencilImage">vkCmdClearDepthStencilImage</a>, <a href="#vkCmdCopyAccelerationStructureNV">vkCmdCopyAccelerationStructureNV</a>, <a href="#vkCmdCopyBuffer">vkCmdCopyBuffer</a>, <a href="#vkCmdCopyBufferToImage">vkCmdCopyBufferToImage</a>, <a href="#vkCmdCopyImage">vkCmdCopyImage</a>, <a href="#vkCmdCopyImageToBuffer">vkCmdCopyImageToBuffer</a>, <a href="#vkCmdCopyQueryPoolResults">vkCmdCopyQueryPoolResults</a>, <a href="#vkCmdDebugMarkerBeginEXT">vkCmdDebugMarkerBeginEXT</a>, <a href="#vkCmdDebugMarkerEndEXT">vkCmdDebugMarkerEndEXT</a>, <a href="#vkCmdDebugMarkerInsertEXT">vkCmdDebugMarkerInsertEXT</a>, <a href="#vkCmdDispatch">vkCmdDispatch</a>, <a href="#vkCmdDispatchBase">vkCmdDispatchBase</a>, <a href="#vkCmdDispatchBaseKHR">vkCmdDispatchBaseKHR</a>, <a href="#vkCmdDispatchIndirect">vkCmdDispatchIndirect</a>, <a href="#vkCmdDraw">vkCmdDraw</a>, <a href="#vkCmdDrawIndexed">vkCmdDrawIndexed</a>, <a href="#vkCmdDrawIndexedIndirect">vkCmdDrawIndexedIndirect</a>, <a href="#vkCmdDrawIndexedIndirectCountAMD">vkCmdDrawIndexedIndirectCountAMD</a>, <a href="#vkCmdDrawIndexedIndirectCountKHR">vkCmdDrawIndexedIndirectCountKHR</a>, <a href="#vkCmdDrawIndirect">vkCmdDrawIndirect</a>, <a href="#vkCmdDrawIndirectByteCountEXT">vkCmdDrawIndirectByteCountEXT</a>, <a href="#vkCmdDrawIndirectCountAMD">vkCmdDrawIndirectCountAMD</a>, <a href="#vkCmdDrawIndirectCountKHR">vkCmdDrawIndirectCountKHR</a>, <a href="#vkCmdDrawMeshTasksIndirectCountNV">vkCmdDrawMeshTasksIndirectCountNV</a>, <a href="#vkCmdDrawMeshTasksIndirectNV">vkCmdDrawMeshTasksIndirectNV</a>, <a href="#vkCmdDrawMeshTasksNV">vkCmdDrawMeshTasksNV</a>, <a href="#vkCmdEndConditionalRenderingEXT">vkCmdEndConditionalRenderingEXT</a>, <a href="#vkCmdEndDebugUtilsLabelEXT">vkCmdEndDebugUtilsLabelEXT</a>, <a href="#vkCmdEndQuery">vkCmdEndQuery</a>, <a href="#vkCmdEndQueryIndexedEXT">vkCmdEndQueryIndexedEXT</a>, <a href="#vkCmdEndRenderPass">vkCmdEndRenderPass</a>, <a href="#vkCmdEndRenderPass2KHR">vkCmdEndRenderPass2KHR</a>, <a href="#vkCmdEndTransformFeedbackEXT">vkCmdEndTransformFeedbackEXT</a>, <a href="#vkCmdExecuteCommands">vkCmdExecuteCommands</a>, <a href="#vkCmdFillBuffer">vkCmdFillBuffer</a>, <a href="#vkCmdInsertDebugUtilsLabelEXT">vkCmdInsertDebugUtilsLabelEXT</a>, <a href="#vkCmdNextSubpass">vkCmdNextSubpass</a>, <a href="#vkCmdNextSubpass2KHR">vkCmdNextSubpass2KHR</a>, <a href="#vkCmdPipelineBarrier">vkCmdPipelineBarrier</a>, <a href="#vkCmdProcessCommandsNVX">vkCmdProcessCommandsNVX</a>, <a href="#vkCmdPushConstants">vkCmdPushConstants</a>, <a href="#vkCmdPushDescriptorSetKHR">vkCmdPushDescriptorSetKHR</a>, <a href="#vkCmdPushDescriptorSetWithTemplateKHR">vkCmdPushDescriptorSetWithTemplateKHR</a>, <a href="#vkCmdReserveSpaceForCommandsNVX">vkCmdReserveSpaceForCommandsNVX</a>, <a href="#vkCmdResetEvent">vkCmdResetEvent</a>, <a href="#vkCmdResetQueryPool">vkCmdResetQueryPool</a>, <a href="#vkCmdResolveImage">vkCmdResolveImage</a>, <a href="#vkCmdSetBlendConstants">vkCmdSetBlendConstants</a>, <a href="#vkCmdSetCheckpointNV">vkCmdSetCheckpointNV</a>, <a href="#vkCmdSetCoarseSampleOrderNV">vkCmdSetCoarseSampleOrderNV</a>, <a href="#vkCmdSetDepthBias">vkCmdSetDepthBias</a>, <a href="#vkCmdSetDepthBounds">vkCmdSetDepthBounds</a>, <a href="#vkCmdSetDeviceMask">vkCmdSetDeviceMask</a>, <a href="#vkCmdSetDeviceMaskKHR">vkCmdSetDeviceMaskKHR</a>, <a href="#vkCmdSetDiscardRectangleEXT">vkCmdSetDiscardRectangleEXT</a>, <a href="#vkCmdSetEvent">vkCmdSetEvent</a>, <a href="#vkCmdSetExclusiveScissorNV">vkCmdSetExclusiveScissorNV</a>, <a href="#vkCmdSetLineWidth">vkCmdSetLineWidth</a>, <a href="#vkCmdSetSampleLocationsEXT">vkCmdSetSampleLocationsEXT</a>, <a href="#vkCmdSetScissor">vkCmdSetScissor</a>, <a href="#vkCmdSetStencilCompareMask">vkCmdSetStencilCompareMask</a>, <a href="#vkCmdSetStencilReference">vkCmdSetStencilReference</a>, <a href="#vkCmdSetStencilWriteMask">vkCmdSetStencilWriteMask</a>, <a href="#vkCmdSetViewport">vkCmdSetViewport</a>, <a href="#vkCmdSetViewportShadingRatePaletteNV">vkCmdSetViewportShadingRatePaletteNV</a>, <a href="#vkCmdSetViewportWScalingNV">vkCmdSetViewportWScalingNV</a>, <a href="#vkCmdTraceRaysNV">vkCmdTraceRaysNV</a>, <a href="#vkCmdUpdateBuffer">vkCmdUpdateBuffer</a>, <a href="#vkCmdWaitEvents">vkCmdWaitEvents</a>, <a href="#vkCmdWriteAccelerationStructuresPropertiesNV">vkCmdWriteAccelerationStructuresPropertiesNV</a>, <a href="#vkCmdWriteBufferMarkerAMD">vkCmdWriteBufferMarkerAMD</a>, <a href="#vkCmdWriteTimestamp">vkCmdWriteTimestamp</a>, <a href="#vkEndCommandBuffer">vkEndCommandBuffer</a>, <a href="#vkFreeCommandBuffers">vkFreeCommandBuffers</a>, <a href="#vkResetCommandBuffer">vkResetCommandBuffer</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_330">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandBuffer" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandBuffer</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcommandpool3">VkCommandPool(3)</h3>
+<div class="sect3">
+<h4 id="_name_331">Name</h4>
+<div class="paragraph">
+<p>VkCommandPool - Opaque handle to a command pool object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_331">C Specification</h4>
+<div class="paragraph">
+<p>Command pools are opaque objects that command buffer memory is allocated
+from, and which allow the implementation to amortize the cost of resource
+creation across multiple command buffers.
+Command pools are externally synchronized, meaning that a command pool <strong class="purple">must</strong>
+not be used concurrently in multiple threads.
+That includes use via recording commands on any command buffers allocated
+from the pool, as well as operations that allocate, free, and reset command
+buffers or the pool itself.</p>
+</div>
+<div class="paragraph">
+<p>Command pools are represented by <code>VkCommandPool</code> handles:</p>
+</div>
+<div id="VkCommandPool" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkCommandPool)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_331">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_331">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandBufferAllocateInfo">VkCommandBufferAllocateInfo</a>, <a href="#vkCreateCommandPool">vkCreateCommandPool</a>, <a href="#vkDestroyCommandPool">vkDestroyCommandPool</a>, <a href="#vkFreeCommandBuffers">vkFreeCommandBuffers</a>, <a href="#vkResetCommandPool">vkResetCommandPool</a>, <a href="#vkTrimCommandPool">vkTrimCommandPool</a>, <a href="#vkTrimCommandPoolKHR">vkTrimCommandPoolKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_331">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandPool" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandPool</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdebugreportcallbackext3">VkDebugReportCallbackEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_332">Name</h4>
+<div class="paragraph">
+<p>VkDebugReportCallbackEXT - Opaque handle to a debug report callback object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_332">C Specification</h4>
+<div class="paragraph">
+<p>Debug report callbacks are represented by <code>VkDebugReportCallbackEXT</code>
+handles:</p>
+</div>
+<div id="VkDebugReportCallbackEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkDebugReportCallbackEXT)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_332">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_332">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkCreateDebugReportCallbackEXT">vkCreateDebugReportCallbackEXT</a>, <a href="#vkDestroyDebugReportCallbackEXT">vkDestroyDebugReportCallbackEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_332">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugReportCallbackEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugReportCallbackEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdebugutilsmessengerext3">VkDebugUtilsMessengerEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_333">Name</h4>
+<div class="paragraph">
+<p>VkDebugUtilsMessengerEXT - Opaque handle to a debug messenger object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_333">C Specification</h4>
+<div class="paragraph">
+<p>A <code>VkDebugUtilsMessengerEXT</code> is a messenger object which handles passing
+along debug messages to a provided debug callback.</p>
+</div>
+<div id="VkDebugUtilsMessengerEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkDebugUtilsMessengerEXT)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_333">Description</h4>
+<div class="paragraph">
+<p>The debug messenger will provide detailed feedback on the application&#8217;s use
+of Vulkan when events of interest occur.
+When an event of interest does occur, the debug messenger will submit a
+debug message to the debug callback that was provided during its creation.
+Additionally, the debug messenger is responsible with filtering out debug
+messages that the callback is not interested in and will only provide
+desired debug messages.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_333">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkCreateDebugUtilsMessengerEXT">vkCreateDebugUtilsMessengerEXT</a>, <a href="#vkDestroyDebugUtilsMessengerEXT">vkDestroyDebugUtilsMessengerEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_333">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugUtilsMessengerEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugUtilsMessengerEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdescriptorpool3">VkDescriptorPool(3)</h3>
+<div class="sect3">
+<h4 id="_name_334">Name</h4>
+<div class="paragraph">
+<p>VkDescriptorPool - Opaque handle to a descriptor pool object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_334">C Specification</h4>
+<div class="paragraph">
+<p>A <em>descriptor pool</em> maintains a pool of descriptors, from which descriptor
+sets are allocated.
+Descriptor pools are externally synchronized, meaning that the application
+<strong class="purple">must</strong> not allocate and/or free descriptor sets from the same pool in
+multiple threads simultaneously.</p>
+</div>
+<div class="paragraph">
+<p>Descriptor pools are represented by <code>VkDescriptorPool</code> handles:</p>
+</div>
+<div id="VkDescriptorPool" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkDescriptorPool)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_334">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_334">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDescriptorSetAllocateInfo">VkDescriptorSetAllocateInfo</a>, <a href="#vkCreateDescriptorPool">vkCreateDescriptorPool</a>, <a href="#vkDestroyDescriptorPool">vkDestroyDescriptorPool</a>, <a href="#vkFreeDescriptorSets">vkFreeDescriptorSets</a>, <a href="#vkResetDescriptorPool">vkResetDescriptorPool</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_334">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorPool" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorPool</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdescriptorset3">VkDescriptorSet(3)</h3>
+<div class="sect3">
+<h4 id="_name_335">Name</h4>
+<div class="paragraph">
+<p>VkDescriptorSet - Opaque handle to a descriptor set object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_335">C Specification</h4>
+<div class="paragraph">
+<p>Descriptor sets are allocated from descriptor pool objects, and are
+represented by <code>VkDescriptorSet</code> handles:</p>
+</div>
+<div id="VkDescriptorSet" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkDescriptorSet)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_335">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_335">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCopyDescriptorSet">VkCopyDescriptorSet</a>, <a href="#VkObjectTableDescriptorSetEntryNVX">VkObjectTableDescriptorSetEntryNVX</a>, <a href="#VkWriteDescriptorSet">VkWriteDescriptorSet</a>, <a href="#vkAllocateDescriptorSets">vkAllocateDescriptorSets</a>, <a href="#vkCmdBindDescriptorSets">vkCmdBindDescriptorSets</a>, <a href="#vkFreeDescriptorSets">vkFreeDescriptorSets</a>, <a href="#vkUpdateDescriptorSetWithTemplate">vkUpdateDescriptorSetWithTemplate</a>, <a href="#vkUpdateDescriptorSetWithTemplateKHR">vkUpdateDescriptorSetWithTemplateKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_335">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorSet" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorSet</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdescriptorsetlayout3">VkDescriptorSetLayout(3)</h3>
+<div class="sect3">
+<h4 id="_name_336">Name</h4>
+<div class="paragraph">
+<p>VkDescriptorSetLayout - Opaque handle to a descriptor set layout object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_336">C Specification</h4>
+<div class="paragraph">
+<p>A descriptor set layout object is defined by an array of zero or more
+descriptor bindings.
+Each individual descriptor binding is specified by a descriptor type, a
+count (array size) of the number of descriptors in the binding, a set of
+shader stages that <strong class="purple">can</strong> access the binding, and (if using immutable
+samplers) an array of sampler descriptors.</p>
+</div>
+<div class="paragraph">
+<p>Descriptor set layout objects are represented by <code>VkDescriptorSetLayout</code>
+handles:</p>
+</div>
+<div id="VkDescriptorSetLayout" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkDescriptorSetLayout)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_336">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_336">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDescriptorSetAllocateInfo">VkDescriptorSetAllocateInfo</a>, <a href="#VkDescriptorUpdateTemplateCreateInfo">VkDescriptorUpdateTemplateCreateInfo</a>, <a href="#VkPipelineLayoutCreateInfo">VkPipelineLayoutCreateInfo</a>, <a href="#vkCreateDescriptorSetLayout">vkCreateDescriptorSetLayout</a>, <a href="#vkDestroyDescriptorSetLayout">vkDestroyDescriptorSetLayout</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_336">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorSetLayout" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorSetLayout</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdescriptorupdatetemplate3">VkDescriptorUpdateTemplate(3)</h3>
+<div class="sect3">
+<h4 id="_name_337">Name</h4>
+<div class="paragraph">
+<p>VkDescriptorUpdateTemplate - Opaque handle to a descriptor update template</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_337">C Specification</h4>
+<div class="paragraph">
+<p>A descriptor update template specifies a mapping from descriptor update
+information in host memory to descriptors in a descriptor set.
+It is designed to avoid passing redundant information to the driver when
+frequently updating the same set of descriptors in descriptor sets.</p>
+</div>
+<div class="paragraph">
+<p>Descriptor update template objects are represented by
+<code>VkDescriptorUpdateTemplate</code> handles:</p>
+</div>
+<div id="VkDescriptorUpdateTemplate" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkDescriptorUpdateTemplate)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkDescriptorUpdateTemplateKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkDescriptorUpdateTemplate VkDescriptorUpdateTemplateKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_337">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_337">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkCmdPushDescriptorSetWithTemplateKHR">vkCmdPushDescriptorSetWithTemplateKHR</a>, <a href="#vkCreateDescriptorUpdateTemplate">vkCreateDescriptorUpdateTemplate</a>, <a href="#vkCreateDescriptorUpdateTemplateKHR">vkCreateDescriptorUpdateTemplateKHR</a>, <a href="#vkDestroyDescriptorUpdateTemplate">vkDestroyDescriptorUpdateTemplate</a>, <a href="#vkDestroyDescriptorUpdateTemplateKHR">vkDestroyDescriptorUpdateTemplateKHR</a>, <a href="#vkUpdateDescriptorSetWithTemplate">vkUpdateDescriptorSetWithTemplate</a>, <a href="#vkUpdateDescriptorSetWithTemplateKHR">vkUpdateDescriptorSetWithTemplateKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_337">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorUpdateTemplate" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorUpdateTemplate</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdevice3">VkDevice(3)</h3>
+<div class="sect3">
+<h4 id="_name_338">Name</h4>
+<div class="paragraph">
+<p>VkDevice - Opaque handle to a device object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_338">C Specification</h4>
+<div class="paragraph">
+<p>Logical devices are represented by <code>VkDevice</code> handles:</p>
+</div>
+<div id="VkDevice" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_HANDLE(VkDevice)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_338">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_338">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkAcquireFullScreenExclusiveModeEXT">vkAcquireFullScreenExclusiveModeEXT</a>, <a href="#vkAcquireNextImage2KHR">vkAcquireNextImage2KHR</a>, <a href="#vkAcquireNextImageKHR">vkAcquireNextImageKHR</a>, <a href="#vkAllocateCommandBuffers">vkAllocateCommandBuffers</a>, <a href="#vkAllocateDescriptorSets">vkAllocateDescriptorSets</a>, <a href="#vkAllocateMemory">vkAllocateMemory</a>, <a href="#vkBindAccelerationStructureMemoryNV">vkBindAccelerationStructureMemoryNV</a>, <a href="#vkBindBufferMemory">vkBindBufferMemory</a>, <a href="#vkBindBufferMemory2">vkBindBufferMemory2</a>, <a href="#vkBindBufferMemory2KHR">vkBindBufferMemory2KHR</a>, <a href="#vkBindImageMemory">vkBindImageMemory</a>, <a href="#vkBindImageMemory2">vkBindImageMemory2</a>, <a href="#vkBindImageMemory2KHR">vkBindImageMemory2KHR</a>, <a href="#vkCompileDeferredNV">vkCompileDeferredNV</a>, <a href="#vkCreateAccelerationStructureNV">vkCreateAccelerationStructureNV</a>, <a href="#vkCreateBuffer">vkCreateBuffer</a>, <a href="#vkCreateBufferView">vkCreateBufferView</a>, <a href="#vkCreateCommandPool">vkCreateCommandPool</a>, <a href="#vkCreateComputePipelines">vkCreateComputePipelines</a>, <a href="#vkCreateDescriptorPool">vkCreateDescriptorPool</a>, <a href="#vkCreateDescriptorSetLayout">vkCreateDescriptorSetLayout</a>, <a href="#vkCreateDescriptorUpdateTemplate">vkCreateDescriptorUpdateTemplate</a>, <a href="#vkCreateDescriptorUpdateTemplateKHR">vkCreateDescriptorUpdateTemplateKHR</a>, <a href="#vkCreateDevice">vkCreateDevice</a>, <a href="#vkCreateEvent">vkCreateEvent</a>, <a href="#vkCreateFence">vkCreateFence</a>, <a href="#vkCreateFramebuffer">vkCreateFramebuffer</a>, <a href="#vkCreateGraphicsPipelines">vkCreateGraphicsPipelines</a>, <a href="#vkCreateImage">vkCreateImage</a>, <a href="#vkCreateImageView">vkCreateImageView</a>, <a href="#vkCreateIndirectCommandsLayoutNVX">vkCreateIndirectCommandsLayoutNVX</a>, <a href="#vkCreateObjectTableNVX">vkCreateObjectTableNVX</a>, <a href="#vkCreatePipelineCache">vkCreatePipelineCache</a>, <a href="#vkCreatePipelineLayout">vkCreatePipelineLayout</a>, <a href="#vkCreateQueryPool">vkCreateQueryPool</a>, <a href="#vkCreateRayTracingPipelinesNV">vkCreateRayTracingPipelinesNV</a>, <a href="#vkCreateRenderPass">vkCreateRenderPass</a>, <a href="#vkCreateRenderPass2KHR">vkCreateRenderPass2KHR</a>, <a href="#vkCreateSampler">vkCreateSampler</a>, <a href="#vkCreateSamplerYcbcrConversion">vkCreateSamplerYcbcrConversion</a>, <a href="#vkCreateSamplerYcbcrConversionKHR">vkCreateSamplerYcbcrConversionKHR</a>, <a href="#vkCreateSemaphore">vkCreateSemaphore</a>, <a href="#vkCreateShaderModule">vkCreateShaderModule</a>, <a href="#vkCreateSharedSwapchainsKHR">vkCreateSharedSwapchainsKHR</a>, <a href="#vkCreateSwapchainKHR">vkCreateSwapchainKHR</a>, <a href="#vkCreateValidationCacheEXT">vkCreateValidationCacheEXT</a>, <a href="#vkDebugMarkerSetObjectNameEXT">vkDebugMarkerSetObjectNameEXT</a>, <a href="#vkDebugMarkerSetObjectTagEXT">vkDebugMarkerSetObjectTagEXT</a>, <a href="#vkDestroyAccelerationStructureNV">vkDestroyAccelerationStructureNV</a>, <a href="#vkDestroyBuffer">vkDestroyBuffer</a>, <a href="#vkDestroyBufferView">vkDestroyBufferView</a>, <a href="#vkDestroyCommandPool">vkDestroyCommandPool</a>, <a href="#vkDestroyDescriptorPool">vkDestroyDescriptorPool</a>, <a href="#vkDestroyDescriptorSetLayout">vkDestroyDescriptorSetLayout</a>, <a href="#vkDestroyDescriptorUpdateTemplate">vkDestroyDescriptorUpdateTemplate</a>, <a href="#vkDestroyDescriptorUpdateTemplateKHR">vkDestroyDescriptorUpdateTemplateKHR</a>, <a href="#vkDestroyDevice">vkDestroyDevice</a>, <a href="#vkDestroyEvent">vkDestroyEvent</a>, <a href="#vkDestroyFence">vkDestroyFence</a>, <a href="#vkDestroyFramebuffer">vkDestroyFramebuffer</a>, <a href="#vkDestroyImage">vkDestroyImage</a>, <a href="#vkDestroyImageView">vkDestroyImageView</a>, <a href="#vkDestroyIndirectCommandsLayoutNVX">vkDestroyIndirectCommandsLayoutNVX</a>, <a href="#vkDestroyObjectTableNVX">vkDestroyObjectTableNVX</a>, <a href="#vkDestroyPipeline">vkDestroyPipeline</a>, <a href="#vkDestroyPipelineCache">vkDestroyPipelineCache</a>, <a href="#vkDestroyPipelineLayout">vkDestroyPipelineLayout</a>, <a href="#vkDestroyQueryPool">vkDestroyQueryPool</a>, <a href="#vkDestroyRenderPass">vkDestroyRenderPass</a>, <a href="#vkDestroySampler">vkDestroySampler</a>, <a href="#vkDestroySamplerYcbcrConversion">vkDestroySamplerYcbcrConversion</a>, <a href="#vkDestroySamplerYcbcrConversionKHR">vkDestroySamplerYcbcrConversionKHR</a>, <a href="#vkDestroySemaphore">vkDestroySemaphore</a>, <a href="#vkDestroyShaderModule">vkDestroyShaderModule</a>, <a href="#vkDestroySwapchainKHR">vkDestroySwapchainKHR</a>, <a href="#vkDestroyValidationCacheEXT">vkDestroyValidationCacheEXT</a>, <a href="#vkDeviceWaitIdle">vkDeviceWaitIdle</a>, <a href="#vkDisplayPowerControlEXT">vkDisplayPowerControlEXT</a>, <a href="#vkFlushMappedMemoryRanges">vkFlushMappedMemoryRanges</a>, <a href="#vkFreeCommandBuffers">vkFreeCommandBuffers</a>, <a href="#vkFreeDescriptorSets">vkFreeDescriptorSets</a>, <a href="#vkFreeMemory">vkFreeMemory</a>, <a href="#vkGetAccelerationStructureHandleNV">vkGetAccelerationStructureHandleNV</a>, <a href="#vkGetAccelerationStructureMemoryRequirementsNV">vkGetAccelerationStructureMemoryRequirementsNV</a>, <a href="#vkGetAndroidHardwareBufferPropertiesANDROID">vkGetAndroidHardwareBufferPropertiesANDROID</a>, <a href="#vkGetBufferDeviceAddressEXT">vkGetBufferDeviceAddressEXT</a>, <a href="#vkGetBufferMemoryRequirements">vkGetBufferMemoryRequirements</a>, <a href="#vkGetBufferMemoryRequirements2">vkGetBufferMemoryRequirements2</a>, <a href="#vkGetBufferMemoryRequirements2KHR">vkGetBufferMemoryRequirements2KHR</a>, <a href="#vkGetCalibratedTimestampsEXT">vkGetCalibratedTimestampsEXT</a>, <a href="#vkGetDescriptorSetLayoutSupport">vkGetDescriptorSetLayoutSupport</a>, <a href="#vkGetDescriptorSetLayoutSupportKHR">vkGetDescriptorSetLayoutSupportKHR</a>, <a href="#vkGetDeviceGroupPeerMemoryFeatures">vkGetDeviceGroupPeerMemoryFeatures</a>, <a href="#vkGetDeviceGroupPeerMemoryFeaturesKHR">vkGetDeviceGroupPeerMemoryFeaturesKHR</a>, <a href="#vkGetDeviceGroupPresentCapabilitiesKHR">vkGetDeviceGroupPresentCapabilitiesKHR</a>, <a href="#vkGetDeviceGroupSurfacePresentModes2EXT">vkGetDeviceGroupSurfacePresentModes2EXT</a>, <a href="#vkGetDeviceGroupSurfacePresentModesKHR">vkGetDeviceGroupSurfacePresentModesKHR</a>, <a href="#vkGetDeviceMemoryCommitment">vkGetDeviceMemoryCommitment</a>, <a href="#vkGetDeviceProcAddr">vkGetDeviceProcAddr</a>, <a href="#vkGetDeviceQueue">vkGetDeviceQueue</a>, <a href="#vkGetDeviceQueue2">vkGetDeviceQueue2</a>, <a href="#vkGetEventStatus">vkGetEventStatus</a>, <a href="#vkGetFenceFdKHR">vkGetFenceFdKHR</a>, <a href="#vkGetFenceStatus">vkGetFenceStatus</a>, <a href="#vkGetFenceWin32HandleKHR">vkGetFenceWin32HandleKHR</a>, <a href="#vkGetImageDrmFormatModifierPropertiesEXT">vkGetImageDrmFormatModifierPropertiesEXT</a>, <a href="#vkGetImageMemoryRequirements">vkGetImageMemoryRequirements</a>, <a href="#vkGetImageMemoryRequirements2">vkGetImageMemoryRequirements2</a>, <a href="#vkGetImageMemoryRequirements2KHR">vkGetImageMemoryRequirements2KHR</a>, <a href="#vkGetImageSparseMemoryRequirements">vkGetImageSparseMemoryRequirements</a>, <a href="#vkGetImageSparseMemoryRequirements2">vkGetImageSparseMemoryRequirements2</a>, <a href="#vkGetImageSparseMemoryRequirements2KHR">vkGetImageSparseMemoryRequirements2KHR</a>, <a href="#vkGetImageSubresourceLayout">vkGetImageSubresourceLayout</a>, <a href="#vkGetImageViewHandleNVX">vkGetImageViewHandleNVX</a>, <a href="#vkGetMemoryAndroidHardwareBufferANDROID">vkGetMemoryAndroidHardwareBufferANDROID</a>, <a href="#vkGetMemoryFdKHR">vkGetMemoryFdKHR</a>, <a href="#vkGetMemoryFdPropertiesKHR">vkGetMemoryFdPropertiesKHR</a>, <a href="#vkGetMemoryHostPointerPropertiesEXT">vkGetMemoryHostPointerPropertiesEXT</a>, <a href="#vkGetMemoryWin32HandleKHR">vkGetMemoryWin32HandleKHR</a>, <a href="#vkGetMemoryWin32HandleNV">vkGetMemoryWin32HandleNV</a>, <a href="#vkGetMemoryWin32HandlePropertiesKHR">vkGetMemoryWin32HandlePropertiesKHR</a>, <a href="#vkGetPastPresentationTimingGOOGLE">vkGetPastPresentationTimingGOOGLE</a>, <a href="#vkGetPipelineCacheData">vkGetPipelineCacheData</a>, <a href="#vkGetQueryPoolResults">vkGetQueryPoolResults</a>, <a href="#vkGetRayTracingShaderGroupHandlesNV">vkGetRayTracingShaderGroupHandlesNV</a>, <a href="#vkGetRefreshCycleDurationGOOGLE">vkGetRefreshCycleDurationGOOGLE</a>, <a href="#vkGetRenderAreaGranularity">vkGetRenderAreaGranularity</a>, <a href="#vkGetSemaphoreFdKHR">vkGetSemaphoreFdKHR</a>, <a href="#vkGetSemaphoreWin32HandleKHR">vkGetSemaphoreWin32HandleKHR</a>, <a href="#vkGetShaderInfoAMD">vkGetShaderInfoAMD</a>, <a href="#vkGetSwapchainCounterEXT">vkGetSwapchainCounterEXT</a>, <a href="#vkGetSwapchainImagesKHR">vkGetSwapchainImagesKHR</a>, <a href="#vkGetSwapchainStatusKHR">vkGetSwapchainStatusKHR</a>, <a href="#vkGetValidationCacheDataEXT">vkGetValidationCacheDataEXT</a>, <a href="#vkImportFenceFdKHR">vkImportFenceFdKHR</a>, <a href="#vkImportFenceWin32HandleKHR">vkImportFenceWin32HandleKHR</a>, <a href="#vkImportSemaphoreFdKHR">vkImportSemaphoreFdKHR</a>, <a href="#vkImportSemaphoreWin32HandleKHR">vkImportSemaphoreWin32HandleKHR</a>, <a href="#vkInvalidateMappedMemoryRanges">vkInvalidateMappedMemoryRanges</a>, <a href="#vkMapMemory">vkMapMemory</a>, <a href="#vkMergePipelineCaches">vkMergePipelineCaches</a>, <a href="#vkMergeValidationCachesEXT">vkMergeValidationCachesEXT</a>, <a href="#vkRegisterDeviceEventEXT">vkRegisterDeviceEventEXT</a>, <a href="#vkRegisterDisplayEventEXT">vkRegisterDisplayEventEXT</a>, <a href="#vkRegisterObjectsNVX">vkRegisterObjectsNVX</a>, <a href="#vkReleaseFullScreenExclusiveModeEXT">vkReleaseFullScreenExclusiveModeEXT</a>, <a href="#vkResetCommandPool">vkResetCommandPool</a>, <a href="#vkResetDescriptorPool">vkResetDescriptorPool</a>, <a href="#vkResetEvent">vkResetEvent</a>, <a href="#vkResetFences">vkResetFences</a>, <a href="#vkResetQueryPoolEXT">vkResetQueryPoolEXT</a>, <a href="#vkSetDebugUtilsObjectNameEXT">vkSetDebugUtilsObjectNameEXT</a>, <a href="#vkSetDebugUtilsObjectTagEXT">vkSetDebugUtilsObjectTagEXT</a>, <a href="#vkSetEvent">vkSetEvent</a>, <a href="#vkSetHdrMetadataEXT">vkSetHdrMetadataEXT</a>, <a href="#vkSetLocalDimmingAMD">vkSetLocalDimmingAMD</a>, <a href="#vkTrimCommandPool">vkTrimCommandPool</a>, <a href="#vkTrimCommandPoolKHR">vkTrimCommandPoolKHR</a>, <a href="#vkUnmapMemory">vkUnmapMemory</a>, <a href="#vkUnregisterObjectsNVX">vkUnregisterObjectsNVX</a>, <a href="#vkUpdateDescriptorSetWithTemplate">vkUpdateDescriptorSetWithTemplate</a>, <a href="#vkUpdateDescriptorSetWithTemplateKHR">vkUpdateDescriptorSetWithTemplateKHR</a>, <a href="#vkUpdateDescriptorSets">vkUpdateDescriptorSets</a>, <a href="#vkWaitForFences">vkWaitForFences</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_338">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDevice" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDevice</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdevicememory3">VkDeviceMemory(3)</h3>
+<div class="sect3">
+<h4 id="_name_339">Name</h4>
+<div class="paragraph">
+<p>VkDeviceMemory - Opaque handle to a device memory object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_339">C Specification</h4>
+<div class="paragraph">
+<p>A Vulkan device operates on data in device memory via memory objects that
+are represented in the API by a <code>VkDeviceMemory</code> handle:</p>
+</div>
+<div id="VkDeviceMemory" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkDeviceMemory)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_339">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_339">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkBindAccelerationStructureMemoryInfoNV">VkBindAccelerationStructureMemoryInfoNV</a>, <a href="#VkBindBufferMemoryInfo">VkBindBufferMemoryInfo</a>, <a href="#VkBindImageMemoryInfo">VkBindImageMemoryInfo</a>, <a href="#VkMappedMemoryRange">VkMappedMemoryRange</a>, <a href="#VkMemoryGetAndroidHardwareBufferInfoANDROID">VkMemoryGetAndroidHardwareBufferInfoANDROID</a>, <a href="#VkMemoryGetFdInfoKHR">VkMemoryGetFdInfoKHR</a>, <a href="#VkMemoryGetWin32HandleInfoKHR">VkMemoryGetWin32HandleInfoKHR</a>, <a href="#VkSparseImageMemoryBind">VkSparseImageMemoryBind</a>, <a href="#VkSparseMemoryBind">VkSparseMemoryBind</a>, <a href="#VkWin32KeyedMutexAcquireReleaseInfoKHR">VkWin32KeyedMutexAcquireReleaseInfoKHR</a>, <a href="#VkWin32KeyedMutexAcquireReleaseInfoNV">VkWin32KeyedMutexAcquireReleaseInfoNV</a>, <a href="#vkAllocateMemory">vkAllocateMemory</a>, <a href="#vkBindBufferMemory">vkBindBufferMemory</a>, <a href="#vkBindImageMemory">vkBindImageMemory</a>, <a href="#vkFreeMemory">vkFreeMemory</a>, <a href="#vkGetDeviceMemoryCommitment">vkGetDeviceMemoryCommitment</a>, <a href="#vkGetMemoryWin32HandleNV">vkGetMemoryWin32HandleNV</a>, <a href="#vkMapMemory">vkMapMemory</a>, <a href="#vkUnmapMemory">vkUnmapMemory</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_339">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceMemory" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceMemory</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdisplaykhr3">VkDisplayKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_340">Name</h4>
+<div class="paragraph">
+<p>VkDisplayKHR - Opaque handle to a display object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_340">C Specification</h4>
+<div class="paragraph">
+<p>Displays are represented by <code>VkDisplayKHR</code> handles:</p>
+</div>
+<div id="VkDisplayKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkDisplayKHR)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_340">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_340">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDisplayPlanePropertiesKHR">VkDisplayPlanePropertiesKHR</a>, <a href="#VkDisplayPropertiesKHR">VkDisplayPropertiesKHR</a>, <a href="#vkAcquireXlibDisplayEXT">vkAcquireXlibDisplayEXT</a>, <a href="#vkCreateDisplayModeKHR">vkCreateDisplayModeKHR</a>, <a href="#vkDisplayPowerControlEXT">vkDisplayPowerControlEXT</a>, <a href="#vkGetDisplayModeProperties2KHR">vkGetDisplayModeProperties2KHR</a>, <a href="#vkGetDisplayModePropertiesKHR">vkGetDisplayModePropertiesKHR</a>, <a href="#vkGetDisplayPlaneSupportedDisplaysKHR">vkGetDisplayPlaneSupportedDisplaysKHR</a>, <a href="#vkGetRandROutputDisplayEXT">vkGetRandROutputDisplayEXT</a>, <a href="#vkRegisterDisplayEventEXT">vkRegisterDisplayEventEXT</a>, <a href="#vkReleaseDisplayEXT">vkReleaseDisplayEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_340">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDisplayKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDisplayKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdisplaymodekhr3">VkDisplayModeKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_341">Name</h4>
+<div class="paragraph">
+<p>VkDisplayModeKHR - Opaque handle to a display mode object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_341">C Specification</h4>
+<div class="paragraph">
+<p>Display modes are represented by <code>VkDisplayModeKHR</code> handles:</p>
+</div>
+<div id="VkDisplayModeKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkDisplayModeKHR)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_341">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_341">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDisplayModePropertiesKHR">VkDisplayModePropertiesKHR</a>, <a href="#VkDisplayPlaneInfo2KHR">VkDisplayPlaneInfo2KHR</a>, <a href="#VkDisplaySurfaceCreateInfoKHR">VkDisplaySurfaceCreateInfoKHR</a>, <a href="#vkCreateDisplayModeKHR">vkCreateDisplayModeKHR</a>, <a href="#vkGetDisplayPlaneCapabilitiesKHR">vkGetDisplayPlaneCapabilitiesKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_341">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDisplayModeKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDisplayModeKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkevent3">VkEvent(3)</h3>
+<div class="sect3">
+<h4 id="_name_342">Name</h4>
+<div class="paragraph">
+<p>VkEvent - Opaque handle to an event object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_342">C Specification</h4>
+<div class="paragraph">
+<p>Events are a synchronization primitive that <strong class="purple">can</strong> be used to insert a
+fine-grained dependency between commands submitted to the same queue, or
+between the host and a queue.
+Events <strong class="purple">must</strong> not be used to insert a dependency between commands submitted
+to different queues.
+Events have two states - signaled and unsignaled.
+An application <strong class="purple">can</strong> signal an event, or unsignal it, on either the host or
+the device.
+A device <strong class="purple">can</strong> wait for an event to become signaled before executing further
+operations.
+No command exists to wait for an event to become signaled on the host, but
+the current state of an event <strong class="purple">can</strong> be queried.</p>
+</div>
+<div class="paragraph">
+<p>Events are represented by <code>VkEvent</code> handles:</p>
+</div>
+<div id="VkEvent" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkEvent)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_342">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_342">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkCmdResetEvent">vkCmdResetEvent</a>, <a href="#vkCmdSetEvent">vkCmdSetEvent</a>, <a href="#vkCmdWaitEvents">vkCmdWaitEvents</a>, <a href="#vkCreateEvent">vkCreateEvent</a>, <a href="#vkDestroyEvent">vkDestroyEvent</a>, <a href="#vkGetEventStatus">vkGetEventStatus</a>, <a href="#vkResetEvent">vkResetEvent</a>, <a href="#vkSetEvent">vkSetEvent</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_342">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkEvent" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkEvent</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkfence3">VkFence(3)</h3>
+<div class="sect3">
+<h4 id="_name_343">Name</h4>
+<div class="paragraph">
+<p>VkFence - Opaque handle to a fence object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_343">C Specification</h4>
+<div class="paragraph">
+<p>Fences are a synchronization primitive that <strong class="purple">can</strong> be used to insert a
+dependency from a queue to the host.
+Fences have two states - signaled and unsignaled.
+A fence <strong class="purple">can</strong> be signaled as part of the execution of a
+<a href="vkspec.html#devsandqueues-submission">queue submission</a> command.
+Fences <strong class="purple">can</strong> be unsignaled on the host with <a href="#vkResetFences">vkResetFences</a>.
+Fences <strong class="purple">can</strong> be waited on by the host with the <a href="#vkWaitForFences">vkWaitForFences</a> command,
+and the current state <strong class="purple">can</strong> be queried with <a href="#vkGetFenceStatus">vkGetFenceStatus</a>.</p>
+</div>
+<div id="synchronization-fences-payloads" class="paragraph">
+<p>As with most objects in Vulkan, fences are an interface to internal data
+which is typically opaque to applications.
+This internal data is referred to as a fence&#8217;s <em>payload</em>.</p>
+</div>
+<div class="paragraph">
+<p>However, in order to enable communication with agents outside of the current
+device, it is necessary to be able to export that payload to a commonly
+understood format, and subsequently import from that format as well.</p>
+</div>
+<div class="paragraph">
+<p>The internal data of a fence <strong class="purple">may</strong> include a reference to any resources and
+pending work associated with signal or unsignal operations performed on that
+fence object.
+Mechanisms to import and export that internal data to and from fences are
+provided <a href="vkspec.html#VkExportFenceCreateInfo">below</a>.
+These mechanisms indirectly enable applications to share fence state between
+two or more fences and other synchronization primitives across process and
+API boundaries.</p>
+</div>
+<div class="paragraph">
+<p>Fences are represented by <code>VkFence</code> handles:</p>
+</div>
+<div id="VkFence" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkFence)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_343">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_343">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAcquireNextImageInfoKHR">VkAcquireNextImageInfoKHR</a>, <a href="#VkFenceGetFdInfoKHR">VkFenceGetFdInfoKHR</a>, <a href="#VkFenceGetWin32HandleInfoKHR">VkFenceGetWin32HandleInfoKHR</a>, <a href="#VkImportFenceFdInfoKHR">VkImportFenceFdInfoKHR</a>, <a href="#VkImportFenceWin32HandleInfoKHR">VkImportFenceWin32HandleInfoKHR</a>, <a href="#vkAcquireNextImageKHR">vkAcquireNextImageKHR</a>, <a href="#vkCreateFence">vkCreateFence</a>, <a href="#vkDestroyFence">vkDestroyFence</a>, <a href="#vkGetFenceStatus">vkGetFenceStatus</a>, <a href="#vkQueueBindSparse">vkQueueBindSparse</a>, <a href="#vkQueueSubmit">vkQueueSubmit</a>, <a href="#vkRegisterDeviceEventEXT">vkRegisterDeviceEventEXT</a>, <a href="#vkRegisterDisplayEventEXT">vkRegisterDisplayEventEXT</a>, <a href="#vkResetFences">vkResetFences</a>, <a href="#vkWaitForFences">vkWaitForFences</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_343">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFence" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFence</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkframebuffer3">VkFramebuffer(3)</h3>
+<div class="sect3">
+<h4 id="_name_344">Name</h4>
+<div class="paragraph">
+<p>VkFramebuffer - Opaque handle to a framebuffer object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_344">C Specification</h4>
+<div class="paragraph">
+<p>Render passes operate in conjunction with <em>framebuffers</em>.
+Framebuffers represent a collection of specific memory attachments that a
+render pass instance uses.</p>
+</div>
+<div class="paragraph">
+<p>Framebuffers are represented by <code>VkFramebuffer</code> handles:</p>
+</div>
+<div id="VkFramebuffer" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkFramebuffer)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_344">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_344">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandBufferInheritanceInfo">VkCommandBufferInheritanceInfo</a>, <a href="#VkRenderPassBeginInfo">VkRenderPassBeginInfo</a>, <a href="#vkCreateFramebuffer">vkCreateFramebuffer</a>, <a href="#vkDestroyFramebuffer">vkDestroyFramebuffer</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_344">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFramebuffer" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFramebuffer</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkimage3">VkImage(3)</h3>
+<div class="sect3">
+<h4 id="_name_345">Name</h4>
+<div class="paragraph">
+<p>VkImage - Opaque handle to an image object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_345">C Specification</h4>
+<div class="paragraph">
+<p>Images represent multidimensional - up to 3 - arrays of data which <strong class="purple">can</strong> be
+used for various purposes (e.g. attachments, textures), by binding them to a
+graphics or compute pipeline via descriptor sets, or by directly specifying
+them as parameters to certain commands.</p>
+</div>
+<div class="paragraph">
+<p>Images are represented by <code>VkImage</code> handles:</p>
+</div>
+<div id="VkImage" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkImage)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_345">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_345">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkBindImageMemoryInfo">VkBindImageMemoryInfo</a>, <a href="#VkDedicatedAllocationMemoryAllocateInfoNV">VkDedicatedAllocationMemoryAllocateInfoNV</a>, <a href="#VkImageMemoryBarrier">VkImageMemoryBarrier</a>, <a href="#VkImageMemoryRequirementsInfo2">VkImageMemoryRequirementsInfo2</a>, <a href="#VkImageSparseMemoryRequirementsInfo2">VkImageSparseMemoryRequirementsInfo2</a>, <a href="#VkImageViewCreateInfo">VkImageViewCreateInfo</a>, <a href="#VkMemoryDedicatedAllocateInfo">VkMemoryDedicatedAllocateInfo</a>, <a href="#VkSparseImageMemoryBindInfo">VkSparseImageMemoryBindInfo</a>, <a href="#VkSparseImageOpaqueMemoryBindInfo">VkSparseImageOpaqueMemoryBindInfo</a>, <a href="#vkBindImageMemory">vkBindImageMemory</a>, <a href="#vkCmdBlitImage">vkCmdBlitImage</a>, <a href="#vkCmdClearColorImage">vkCmdClearColorImage</a>, <a href="#vkCmdClearDepthStencilImage">vkCmdClearDepthStencilImage</a>, <a href="#vkCmdCopyBufferToImage">vkCmdCopyBufferToImage</a>, <a href="#vkCmdCopyImage">vkCmdCopyImage</a>, <a href="#vkCmdCopyImageToBuffer">vkCmdCopyImageToBuffer</a>, <a href="#vkCmdResolveImage">vkCmdResolveImage</a>, <a href="#vkCreateImage">vkCreateImage</a>, <a href="#vkDestroyImage">vkDestroyImage</a>, <a href="#vkGetImageDrmFormatModifierPropertiesEXT">vkGetImageDrmFormatModifierPropertiesEXT</a>, <a href="#vkGetImageMemoryRequirements">vkGetImageMemoryRequirements</a>, <a href="#vkGetImageSparseMemoryRequirements">vkGetImageSparseMemoryRequirements</a>, <a href="#vkGetImageSubresourceLayout">vkGetImageSubresourceLayout</a>, <a href="#vkGetSwapchainImagesKHR">vkGetSwapchainImagesKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_345">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImage" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImage</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkimageview3">VkImageView(3)</h3>
+<div class="sect3">
+<h4 id="_name_346">Name</h4>
+<div class="paragraph">
+<p>VkImageView - Opaque handle to an image view object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_346">C Specification</h4>
+<div class="paragraph">
+<p>Image objects are not directly accessed by pipeline shaders for reading or
+writing image data.
+Instead, <em>image views</em> representing contiguous ranges of the image
+subresources and containing additional metadata are used for that purpose.
+Views <strong class="purple">must</strong> be created on images of compatible types, and <strong class="purple">must</strong> represent a
+valid subset of image subresources.</p>
+</div>
+<div class="paragraph">
+<p>Image views are represented by <code>VkImageView</code> handles:</p>
+</div>
+<div id="VkImageView" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkImageView)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_346">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_346">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDescriptorImageInfo">VkDescriptorImageInfo</a>, <a href="#VkFramebufferCreateInfo">VkFramebufferCreateInfo</a>, <a href="#VkImageViewHandleInfoNVX">VkImageViewHandleInfoNVX</a>, <a href="#vkCmdBindShadingRateImageNV">vkCmdBindShadingRateImageNV</a>, <a href="#vkCreateImageView">vkCreateImageView</a>, <a href="#vkDestroyImageView">vkDestroyImageView</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_346">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageView" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageView</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkindirectcommandslayoutnvx3">VkIndirectCommandsLayoutNVX(3)</h3>
+<div class="sect3">
+<h4 id="_name_347">Name</h4>
+<div class="paragraph">
+<p>VkIndirectCommandsLayoutNVX - Opaque handle to an indirect commands layout object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_347">C Specification</h4>
+<div class="paragraph">
+<p>The device-side command generation happens through an iterative processing
+of an atomic sequence comprised of command tokens, which are represented by:</p>
+</div>
+<div id="VkIndirectCommandsLayoutNVX" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkIndirectCommandsLayoutNVX)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_347">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_347">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCmdProcessCommandsInfoNVX">VkCmdProcessCommandsInfoNVX</a>, <a href="#VkCmdReserveSpaceForCommandsInfoNVX">VkCmdReserveSpaceForCommandsInfoNVX</a>, <a href="#vkCreateIndirectCommandsLayoutNVX">vkCreateIndirectCommandsLayoutNVX</a>, <a href="#vkDestroyIndirectCommandsLayoutNVX">vkDestroyIndirectCommandsLayoutNVX</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_347">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkIndirectCommandsLayoutNVX" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkIndirectCommandsLayoutNVX</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkinstance3">VkInstance(3)</h3>
+<div class="sect3">
+<h4 id="_name_348">Name</h4>
+<div class="paragraph">
+<p>VkInstance - Opaque handle to an instance object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_348">C Specification</h4>
+<div class="paragraph">
+<p>There is no global state in Vulkan and all per-application state is stored
+in a <code>VkInstance</code> object.
+Creating a <code>VkInstance</code> object initializes the Vulkan library and allows
+the application to pass information about itself to the implementation.</p>
+</div>
+<div class="paragraph">
+<p>Instances are represented by <code>VkInstance</code> handles:</p>
+</div>
+<div id="VkInstance" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_HANDLE(VkInstance)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_348">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_348">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkCreateAndroidSurfaceKHR">vkCreateAndroidSurfaceKHR</a>, <a href="#vkCreateDebugReportCallbackEXT">vkCreateDebugReportCallbackEXT</a>, <a href="#vkCreateDebugUtilsMessengerEXT">vkCreateDebugUtilsMessengerEXT</a>, <a href="#vkCreateDisplayPlaneSurfaceKHR">vkCreateDisplayPlaneSurfaceKHR</a>, <a href="#vkCreateIOSSurfaceMVK">vkCreateIOSSurfaceMVK</a>, <a href="#vkCreateImagePipeSurfaceFUCHSIA">vkCreateImagePipeSurfaceFUCHSIA</a>, <a href="#vkCreateInstance">vkCreateInstance</a>, <a href="#vkCreateMacOSSurfaceMVK">vkCreateMacOSSurfaceMVK</a>, <a href="#vkCreateMetalSurfaceEXT">vkCreateMetalSurfaceEXT</a>, <a href="#vkCreateStreamDescriptorSurfaceGGP">vkCreateStreamDescriptorSurfaceGGP</a>, <a href="#vkCreateViSurfaceNN">vkCreateViSurfaceNN</a>, <a href="#vkCreateWaylandSurfaceKHR">vkCreateWaylandSurfaceKHR</a>, <a href="#vkCreateWin32SurfaceKHR">vkCreateWin32SurfaceKHR</a>, <a href="#vkCreateXcbSurfaceKHR">vkCreateXcbSurfaceKHR</a>, <a href="#vkCreateXlibSurfaceKHR">vkCreateXlibSurfaceKHR</a>, <a href="#vkDebugReportMessageEXT">vkDebugReportMessageEXT</a>, <a href="#vkDestroyDebugReportCallbackEXT">vkDestroyDebugReportCallbackEXT</a>, <a href="#vkDestroyDebugUtilsMessengerEXT">vkDestroyDebugUtilsMessengerEXT</a>, <a href="#vkDestroyInstance">vkDestroyInstance</a>, <a href="#vkDestroySurfaceKHR">vkDestroySurfaceKHR</a>, <a href="#vkEnumeratePhysicalDeviceGroups">vkEnumeratePhysicalDeviceGroups</a>, <a href="#vkEnumeratePhysicalDeviceGroupsKHR">vkEnumeratePhysicalDeviceGroupsKHR</a>, <a href="#vkEnumeratePhysicalDevices">vkEnumeratePhysicalDevices</a>, <a href="#vkGetInstanceProcAddr">vkGetInstanceProcAddr</a>, <a href="#vkSubmitDebugUtilsMessageEXT">vkSubmitDebugUtilsMessageEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_348">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkInstance" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkInstance</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkobjecttablenvx3">VkObjectTableNVX(3)</h3>
+<div class="sect3">
+<h4 id="_name_349">Name</h4>
+<div class="paragraph">
+<p>VkObjectTableNVX - Opaque handle to an object table</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_349">C Specification</h4>
+<div class="paragraph">
+<p>The device-side bindings are registered inside a table:</p>
+</div>
+<div id="VkObjectTableNVX" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkObjectTableNVX)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_349">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_349">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCmdProcessCommandsInfoNVX">VkCmdProcessCommandsInfoNVX</a>, <a href="#VkCmdReserveSpaceForCommandsInfoNVX">VkCmdReserveSpaceForCommandsInfoNVX</a>, <a href="#vkCreateObjectTableNVX">vkCreateObjectTableNVX</a>, <a href="#vkDestroyObjectTableNVX">vkDestroyObjectTableNVX</a>, <a href="#vkRegisterObjectsNVX">vkRegisterObjectsNVX</a>, <a href="#vkUnregisterObjectsNVX">vkUnregisterObjectsNVX</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_349">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkObjectTableNVX" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkObjectTableNVX</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkphysicaldevice3">VkPhysicalDevice(3)</h3>
+<div class="sect3">
+<h4 id="_name_350">Name</h4>
+<div class="paragraph">
+<p>VkPhysicalDevice - Opaque handle to a physical device object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_350">C Specification</h4>
+<div class="paragraph">
+<p>Vulkan separates the concept of <em>physical</em> and <em>logical</em> devices.
+A physical device usually represents a single complete implementation of
+Vulkan (excluding instance-level functionality) available to the host, of
+which there are a finite number.
+A logical device represents an instance of that implementation with its own
+state and resources independent of other logical devices.</p>
+</div>
+<div class="paragraph">
+<p>Physical devices are represented by <code>VkPhysicalDevice</code> handles:</p>
+</div>
+<div id="VkPhysicalDevice" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_HANDLE(VkPhysicalDevice)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_350">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_350">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDeviceGroupDeviceCreateInfo">VkDeviceGroupDeviceCreateInfo</a>, <a href="#VkPhysicalDeviceGroupProperties">VkPhysicalDeviceGroupProperties</a>, <a href="#vkAcquireXlibDisplayEXT">vkAcquireXlibDisplayEXT</a>, <a href="#vkCreateDevice">vkCreateDevice</a>, <a href="#vkCreateDisplayModeKHR">vkCreateDisplayModeKHR</a>, <a href="#vkEnumerateDeviceExtensionProperties">vkEnumerateDeviceExtensionProperties</a>, <a href="#vkEnumerateDeviceLayerProperties">vkEnumerateDeviceLayerProperties</a>, <a href="#vkEnumeratePhysicalDevices">vkEnumeratePhysicalDevices</a>, <a href="#vkGetDisplayModeProperties2KHR">vkGetDisplayModeProperties2KHR</a>, <a href="#vkGetDisplayModePropertiesKHR">vkGetDisplayModePropertiesKHR</a>, <a href="#vkGetDisplayPlaneCapabilities2KHR">vkGetDisplayPlaneCapabilities2KHR</a>, <a href="#vkGetDisplayPlaneCapabilitiesKHR">vkGetDisplayPlaneCapabilitiesKHR</a>, <a href="#vkGetDisplayPlaneSupportedDisplaysKHR">vkGetDisplayPlaneSupportedDisplaysKHR</a>, <a href="#vkGetPhysicalDeviceCalibrateableTimeDomainsEXT">vkGetPhysicalDeviceCalibrateableTimeDomainsEXT</a>, <a href="#vkGetPhysicalDeviceCooperativeMatrixPropertiesNV">vkGetPhysicalDeviceCooperativeMatrixPropertiesNV</a>, <a href="#vkGetPhysicalDeviceDisplayPlaneProperties2KHR">vkGetPhysicalDeviceDisplayPlaneProperties2KHR</a>, <a href="#vkGetPhysicalDeviceDisplayPlanePropertiesKHR">vkGetPhysicalDeviceDisplayPlanePropertiesKHR</a>, <a href="#vkGetPhysicalDeviceDisplayProperties2KHR">vkGetPhysicalDeviceDisplayProperties2KHR</a>, <a href="#vkGetPhysicalDeviceDisplayPropertiesKHR">vkGetPhysicalDeviceDisplayPropertiesKHR</a>, <a href="#vkGetPhysicalDeviceExternalBufferProperties">vkGetPhysicalDeviceExternalBufferProperties</a>, <a href="#vkGetPhysicalDeviceExternalBufferPropertiesKHR">vkGetPhysicalDeviceExternalBufferPropertiesKHR</a>, <a href="#vkGetPhysicalDeviceExternalFenceProperties">vkGetPhysicalDeviceExternalFenceProperties</a>, <a href="#vkGetPhysicalDeviceExternalFencePropertiesKHR">vkGetPhysicalDeviceExternalFencePropertiesKHR</a>, <a href="#vkGetPhysicalDeviceExternalImageFormatPropertiesNV">vkGetPhysicalDeviceExternalImageFormatPropertiesNV</a>, <a href="#vkGetPhysicalDeviceExternalSemaphoreProperties">vkGetPhysicalDeviceExternalSemaphoreProperties</a>, <a href="#vkGetPhysicalDeviceExternalSemaphorePropertiesKHR">vkGetPhysicalDeviceExternalSemaphorePropertiesKHR</a>, <a href="#vkGetPhysicalDeviceFeatures">vkGetPhysicalDeviceFeatures</a>, <a href="#vkGetPhysicalDeviceFeatures2">vkGetPhysicalDeviceFeatures2</a>, <a href="#vkGetPhysicalDeviceFeatures2KHR">vkGetPhysicalDeviceFeatures2KHR</a>, <a href="#vkGetPhysicalDeviceFormatProperties">vkGetPhysicalDeviceFormatProperties</a>, <a href="#vkGetPhysicalDeviceFormatProperties2">vkGetPhysicalDeviceFormatProperties2</a>, <a href="#vkGetPhysicalDeviceFormatProperties2KHR">vkGetPhysicalDeviceFormatProperties2KHR</a>, <a href="#vkGetPhysicalDeviceGeneratedCommandsPropertiesNVX">vkGetPhysicalDeviceGeneratedCommandsPropertiesNVX</a>, <a href="#vkGetPhysicalDeviceImageFormatProperties">vkGetPhysicalDeviceImageFormatProperties</a>, <a href="#vkGetPhysicalDeviceImageFormatProperties2">vkGetPhysicalDeviceImageFormatProperties2</a>, <a href="#vkGetPhysicalDeviceImageFormatProperties2KHR">vkGetPhysicalDeviceImageFormatProperties2KHR</a>, <a href="#vkGetPhysicalDeviceMemoryProperties">vkGetPhysicalDeviceMemoryProperties</a>, <a href="#vkGetPhysicalDeviceMemoryProperties2">vkGetPhysicalDeviceMemoryProperties2</a>, <a href="#vkGetPhysicalDeviceMemoryProperties2KHR">vkGetPhysicalDeviceMemoryProperties2KHR</a>, <a href="#vkGetPhysicalDeviceMultisamplePropertiesEXT">vkGetPhysicalDeviceMultisamplePropertiesEXT</a>, <a href="#vkGetPhysicalDevicePresentRectanglesKHR">vkGetPhysicalDevicePresentRectanglesKHR</a>, <a href="#vkGetPhysicalDeviceProperties">vkGetPhysicalDeviceProperties</a>, <a href="#vkGetPhysicalDeviceProperties2">vkGetPhysicalDeviceProperties2</a>, <a href="#vkGetPhysicalDeviceProperties2KHR">vkGetPhysicalDeviceProperties2KHR</a>, <a href="#vkGetPhysicalDeviceQueueFamilyProperties">vkGetPhysicalDeviceQueueFamilyProperties</a>, <a href="#vkGetPhysicalDeviceQueueFamilyProperties2">vkGetPhysicalDeviceQueueFamilyProperties2</a>, <a href="#vkGetPhysicalDeviceQueueFamilyProperties2KHR">vkGetPhysicalDeviceQueueFamilyProperties2KHR</a>, <a href="#vkGetPhysicalDeviceSparseImageFormatProperties">vkGetPhysicalDeviceSparseImageFormatProperties</a>, <a href="#vkGetPhysicalDeviceSparseImageFormatProperties2">vkGetPhysicalDeviceSparseImageFormatProperties2</a>, <a href="#vkGetPhysicalDeviceSparseImageFormatProperties2KHR">vkGetPhysicalDeviceSparseImageFormatProperties2KHR</a>, <a href="#vkGetPhysicalDeviceSurfaceCapabilities2EXT">vkGetPhysicalDeviceSurfaceCapabilities2EXT</a>, <a href="#vkGetPhysicalDeviceSurfaceCapabilities2KHR">vkGetPhysicalDeviceSurfaceCapabilities2KHR</a>, <a href="#vkGetPhysicalDeviceSurfaceCapabilitiesKHR">vkGetPhysicalDeviceSurfaceCapabilitiesKHR</a>, <a href="#vkGetPhysicalDeviceSurfaceFormats2KHR">vkGetPhysicalDeviceSurfaceFormats2KHR</a>, <a href="#vkGetPhysicalDeviceSurfaceFormatsKHR">vkGetPhysicalDeviceSurfaceFormatsKHR</a>, <a href="#vkGetPhysicalDeviceSurfacePresentModes2EXT">vkGetPhysicalDeviceSurfacePresentModes2EXT</a>, <a href="#vkGetPhysicalDeviceSurfacePresentModesKHR">vkGetPhysicalDeviceSurfacePresentModesKHR</a>, <a href="#vkGetPhysicalDeviceSurfaceSupportKHR">vkGetPhysicalDeviceSurfaceSupportKHR</a>, <a href="#vkGetPhysicalDeviceWaylandPresentationSupportKHR">vkGetPhysicalDeviceWaylandPresentationSupportKHR</a>, <a href="#vkGetPhysicalDeviceWin32PresentationSupportKHR">vkGetPhysicalDeviceWin32PresentationSupportKHR</a>, <a href="#vkGetPhysicalDeviceXcbPresentationSupportKHR">vkGetPhysicalDeviceXcbPresentationSupportKHR</a>, <a href="#vkGetPhysicalDeviceXlibPresentationSupportKHR">vkGetPhysicalDeviceXlibPresentationSupportKHR</a>, <a href="#vkGetRandROutputDisplayEXT">vkGetRandROutputDisplayEXT</a>, <a href="#vkReleaseDisplayEXT">vkReleaseDisplayEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_350">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPhysicalDevice" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPhysicalDevice</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipeline3">VkPipeline(3)</h3>
+<div class="sect3">
+<h4 id="_name_351">Name</h4>
+<div class="paragraph">
+<p>VkPipeline - Opaque handle to a pipeline object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_351">C Specification</h4>
+<div class="paragraph">
+<p>Compute, graphics, and ray tracing pipelines are each represented by
+<code>VkPipeline</code> handles:</p>
+</div>
+<div id="VkPipeline" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkPipeline)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_351">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_351">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkComputePipelineCreateInfo">VkComputePipelineCreateInfo</a>, <a href="#VkGraphicsPipelineCreateInfo">VkGraphicsPipelineCreateInfo</a>, <a href="#VkObjectTablePipelineEntryNVX">VkObjectTablePipelineEntryNVX</a>, <a href="#VkRayTracingPipelineCreateInfoNV">VkRayTracingPipelineCreateInfoNV</a>, <a href="#vkCmdBindPipeline">vkCmdBindPipeline</a>, <a href="#vkCompileDeferredNV">vkCompileDeferredNV</a>, <a href="#vkCreateComputePipelines">vkCreateComputePipelines</a>, <a href="#vkCreateGraphicsPipelines">vkCreateGraphicsPipelines</a>, <a href="#vkCreateRayTracingPipelinesNV">vkCreateRayTracingPipelinesNV</a>, <a href="#vkDestroyPipeline">vkDestroyPipeline</a>, <a href="#vkGetRayTracingShaderGroupHandlesNV">vkGetRayTracingShaderGroupHandlesNV</a>, <a href="#vkGetShaderInfoAMD">vkGetShaderInfoAMD</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_351">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipeline" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipeline</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinecache3">VkPipelineCache(3)</h3>
+<div class="sect3">
+<h4 id="_name_352">Name</h4>
+<div class="paragraph">
+<p>VkPipelineCache - Opaque handle to a pipeline cache object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_352">C Specification</h4>
+<div class="paragraph">
+<p>Pipeline cache objects allow the result of pipeline construction to be
+reused between pipelines and between runs of an application.
+Reuse between pipelines is achieved by passing the same pipeline cache
+object when creating multiple related pipelines.
+Reuse across runs of an application is achieved by retrieving pipeline cache
+contents in one run of an application, saving the contents, and using them
+to preinitialize a pipeline cache on a subsequent run.
+The contents of the pipeline cache objects are managed by the
+implementation.
+Applications <strong class="purple">can</strong> manage the host memory consumed by a pipeline cache object
+and control the amount of data retrieved from a pipeline cache object.</p>
+</div>
+<div class="paragraph">
+<p>Pipeline cache objects are represented by <code>VkPipelineCache</code> handles:</p>
+</div>
+<div id="VkPipelineCache" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkPipelineCache)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_352">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_352">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkCreateComputePipelines">vkCreateComputePipelines</a>, <a href="#vkCreateGraphicsPipelines">vkCreateGraphicsPipelines</a>, <a href="#vkCreatePipelineCache">vkCreatePipelineCache</a>, <a href="#vkCreateRayTracingPipelinesNV">vkCreateRayTracingPipelinesNV</a>, <a href="#vkDestroyPipelineCache">vkDestroyPipelineCache</a>, <a href="#vkGetPipelineCacheData">vkGetPipelineCacheData</a>, <a href="#vkMergePipelineCaches">vkMergePipelineCaches</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_352">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCache" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCache</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinelayout3">VkPipelineLayout(3)</h3>
+<div class="sect3">
+<h4 id="_name_353">Name</h4>
+<div class="paragraph">
+<p>VkPipelineLayout - Opaque handle to a pipeline layout object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_353">C Specification</h4>
+<div class="paragraph">
+<p>Access to descriptor sets from a pipeline is accomplished through a
+<em>pipeline layout</em>.
+Zero or more descriptor set layouts and zero or more push constant ranges
+are combined to form a pipeline layout object which describes the complete
+set of resources that <strong class="purple">can</strong> be accessed by a pipeline.
+The pipeline layout represents a sequence of descriptor sets with each
+having a specific layout.
+This sequence of layouts is used to determine the interface between shader
+stages and shader resources.
+Each pipeline is created using a pipeline layout.</p>
+</div>
+<div class="paragraph">
+<p>Pipeline layout objects are represented by <code>VkPipelineLayout</code> handles:</p>
+</div>
+<div id="VkPipelineLayout" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkPipelineLayout)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_353">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_353">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkComputePipelineCreateInfo">VkComputePipelineCreateInfo</a>, <a href="#VkDescriptorUpdateTemplateCreateInfo">VkDescriptorUpdateTemplateCreateInfo</a>, <a href="#VkGraphicsPipelineCreateInfo">VkGraphicsPipelineCreateInfo</a>, <a href="#VkObjectTableDescriptorSetEntryNVX">VkObjectTableDescriptorSetEntryNVX</a>, <a href="#VkObjectTablePushConstantEntryNVX">VkObjectTablePushConstantEntryNVX</a>, <a href="#VkRayTracingPipelineCreateInfoNV">VkRayTracingPipelineCreateInfoNV</a>, <a href="#vkCmdBindDescriptorSets">vkCmdBindDescriptorSets</a>, <a href="#vkCmdPushConstants">vkCmdPushConstants</a>, <a href="#vkCmdPushDescriptorSetKHR">vkCmdPushDescriptorSetKHR</a>, <a href="#vkCmdPushDescriptorSetWithTemplateKHR">vkCmdPushDescriptorSetWithTemplateKHR</a>, <a href="#vkCreatePipelineLayout">vkCreatePipelineLayout</a>, <a href="#vkDestroyPipelineLayout">vkDestroyPipelineLayout</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_353">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineLayout" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineLayout</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkquerypool3">VkQueryPool(3)</h3>
+<div class="sect3">
+<h4 id="_name_354">Name</h4>
+<div class="paragraph">
+<p>VkQueryPool - Opaque handle to a query pool object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_354">C Specification</h4>
+<div class="paragraph">
+<p>Queries are managed using <em>query pool</em> objects.
+Each query pool is a collection of a specific number of queries of a
+particular type.</p>
+</div>
+<div class="paragraph">
+<p>Query pools are represented by <code>VkQueryPool</code> handles:</p>
+</div>
+<div id="VkQueryPool" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkQueryPool)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_354">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_354">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkCmdBeginQuery">vkCmdBeginQuery</a>, <a href="#vkCmdBeginQueryIndexedEXT">vkCmdBeginQueryIndexedEXT</a>, <a href="#vkCmdCopyQueryPoolResults">vkCmdCopyQueryPoolResults</a>, <a href="#vkCmdEndQuery">vkCmdEndQuery</a>, <a href="#vkCmdEndQueryIndexedEXT">vkCmdEndQueryIndexedEXT</a>, <a href="#vkCmdResetQueryPool">vkCmdResetQueryPool</a>, <a href="#vkCmdWriteAccelerationStructuresPropertiesNV">vkCmdWriteAccelerationStructuresPropertiesNV</a>, <a href="#vkCmdWriteTimestamp">vkCmdWriteTimestamp</a>, <a href="#vkCreateQueryPool">vkCreateQueryPool</a>, <a href="#vkDestroyQueryPool">vkDestroyQueryPool</a>, <a href="#vkGetQueryPoolResults">vkGetQueryPoolResults</a>, <a href="#vkResetQueryPoolEXT">vkResetQueryPoolEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_354">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryPool" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryPool</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkqueue3">VkQueue(3)</h3>
+<div class="sect3">
+<h4 id="_name_355">Name</h4>
+<div class="paragraph">
+<p>VkQueue - Opaque handle to a queue object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_355">C Specification</h4>
+<div class="paragraph">
+<p>Creating a logical device also creates the queues associated with that
+device.
+The queues to create are described by a set of <a href="#VkDeviceQueueCreateInfo">VkDeviceQueueCreateInfo</a>
+structures that are passed to <a href="#vkCreateDevice">vkCreateDevice</a> in
+<code>pQueueCreateInfos</code>.</p>
+</div>
+<div class="paragraph">
+<p>Queues are represented by <code>VkQueue</code> handles:</p>
+</div>
+<div id="VkQueue" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_HANDLE(VkQueue)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_355">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_355">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkGetDeviceQueue">vkGetDeviceQueue</a>, <a href="#vkGetDeviceQueue2">vkGetDeviceQueue2</a>, <a href="#vkGetQueueCheckpointDataNV">vkGetQueueCheckpointDataNV</a>, <a href="#vkQueueBeginDebugUtilsLabelEXT">vkQueueBeginDebugUtilsLabelEXT</a>, <a href="#vkQueueBindSparse">vkQueueBindSparse</a>, <a href="#vkQueueEndDebugUtilsLabelEXT">vkQueueEndDebugUtilsLabelEXT</a>, <a href="#vkQueueInsertDebugUtilsLabelEXT">vkQueueInsertDebugUtilsLabelEXT</a>, <a href="#vkQueuePresentKHR">vkQueuePresentKHR</a>, <a href="#vkQueueSubmit">vkQueueSubmit</a>, <a href="#vkQueueWaitIdle">vkQueueWaitIdle</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_355">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueue" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueue</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkrenderpass3">VkRenderPass(3)</h3>
+<div class="sect3">
+<h4 id="_name_356">Name</h4>
+<div class="paragraph">
+<p>VkRenderPass - Opaque handle to a render pass object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_356">C Specification</h4>
+<div class="paragraph">
+<p>A <em>render pass</em> represents a collection of attachments, subpasses, and
+dependencies between the subpasses, and describes how the attachments are
+used over the course of the subpasses.
+The use of a render pass in a command buffer is a <em>render pass instance</em>.</p>
+</div>
+<div class="paragraph">
+<p>Render passes are represented by <code>VkRenderPass</code> handles:</p>
+</div>
+<div id="VkRenderPass" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkRenderPass)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_356">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_356">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandBufferInheritanceInfo">VkCommandBufferInheritanceInfo</a>, <a href="#VkFramebufferCreateInfo">VkFramebufferCreateInfo</a>, <a href="#VkGraphicsPipelineCreateInfo">VkGraphicsPipelineCreateInfo</a>, <a href="#VkRenderPassBeginInfo">VkRenderPassBeginInfo</a>, <a href="#vkCreateRenderPass">vkCreateRenderPass</a>, <a href="#vkCreateRenderPass2KHR">vkCreateRenderPass2KHR</a>, <a href="#vkDestroyRenderPass">vkDestroyRenderPass</a>, <a href="#vkGetRenderAreaGranularity">vkGetRenderAreaGranularity</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_356">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkRenderPass" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkRenderPass</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksampler3">VkSampler(3)</h3>
+<div class="sect3">
+<h4 id="_name_357">Name</h4>
+<div class="paragraph">
+<p>VkSampler - Opaque handle to a sampler object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_357">C Specification</h4>
+<div class="paragraph">
+<p><code>VkSampler</code> objects represent the state of an image sampler which is
+used by the implementation to read image data and apply filtering and other
+transformations for the shader.</p>
+</div>
+<div class="paragraph">
+<p>Samplers are represented by <code>VkSampler</code> handles:</p>
+</div>
+<div id="VkSampler" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkSampler)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_357">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_357">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDescriptorImageInfo">VkDescriptorImageInfo</a>, <a href="#VkDescriptorSetLayoutBinding">VkDescriptorSetLayoutBinding</a>, <a href="#VkImageViewHandleInfoNVX">VkImageViewHandleInfoNVX</a>, <a href="#vkCreateSampler">vkCreateSampler</a>, <a href="#vkDestroySampler">vkDestroySampler</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_357">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSampler" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSampler</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksamplerycbcrconversion3">VkSamplerYcbcrConversion(3)</h3>
+<div class="sect3">
+<h4 id="_name_358">Name</h4>
+<div class="paragraph">
+<p>VkSamplerYcbcrConversion - Opaque handle to a device-specific sampler Y&#8217;C<sub>B</sub>C<sub>R</sub> conversion description</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_358">C Specification</h4>
+<div class="paragraph">
+<p>A sampler Y&#8217;C<sub>B</sub>C<sub>R</sub> conversion is an opaque representation of a
+device-specific sampler Y&#8217;C<sub>B</sub>C<sub>R</sub> conversion description, represented as a
+<code>VkSamplerYcbcrConversion</code> handle:</p>
+</div>
+<div id="VkSamplerYcbcrConversion" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkSamplerYcbcrConversion)</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkSamplerYcbcrConversionKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkSamplerYcbcrConversion VkSamplerYcbcrConversionKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_358">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_358">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkSamplerYcbcrConversionInfo">VkSamplerYcbcrConversionInfo</a>, <a href="#vkCreateSamplerYcbcrConversion">vkCreateSamplerYcbcrConversion</a>, <a href="#vkCreateSamplerYcbcrConversionKHR">vkCreateSamplerYcbcrConversionKHR</a>, <a href="#vkDestroySamplerYcbcrConversion">vkDestroySamplerYcbcrConversion</a>, <a href="#vkDestroySamplerYcbcrConversionKHR">vkDestroySamplerYcbcrConversionKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_358">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSamplerYcbcrConversion" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSamplerYcbcrConversion</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksemaphore3">VkSemaphore(3)</h3>
+<div class="sect3">
+<h4 id="_name_359">Name</h4>
+<div class="paragraph">
+<p>VkSemaphore - Opaque handle to a semaphore object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_359">C Specification</h4>
+<div class="paragraph">
+<p>Semaphores are a synchronization primitive that <strong class="purple">can</strong> be used to insert a
+dependency between batches submitted to queues.
+Semaphores have two states - signaled and unsignaled.
+The state of a semaphore <strong class="purple">can</strong> be signaled after execution of a batch of
+commands is completed.
+A batch <strong class="purple">can</strong> wait for a semaphore to become signaled before it begins
+execution, and the semaphore is also unsignaled before the batch begins
+execution.</p>
+</div>
+<div id="synchronization-semaphores-payloads" class="paragraph">
+<p>As with most objects in Vulkan, semaphores are an interface to internal data
+which is typically opaque to applications.
+This internal data is referred to as a semaphore&#8217;s <em>payload</em>.</p>
+</div>
+<div class="paragraph">
+<p>However, in order to enable communication with agents outside of the current
+device, it is necessary to be able to export that payload to a commonly
+understood format, and subsequently import from that format as well.</p>
+</div>
+<div class="paragraph">
+<p>The internal data of a semaphore <strong class="purple">may</strong> include a reference to any resources
+and pending work associated with signal or unsignal operations performed on
+that semaphore object.
+Mechanisms to import and export that internal data to and from semaphores
+are provided <a href="vkspec.html#VkExportSemaphoreCreateInfo">below</a>.
+These mechanisms indirectly enable applications to share semaphore state
+between two or more semaphores and other synchronization primitives across
+process and API boundaries.</p>
+</div>
+<div class="paragraph">
+<p>Semaphores are represented by <code>VkSemaphore</code> handles:</p>
+</div>
+<div id="VkSemaphore" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkSemaphore)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_359">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_359">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAcquireNextImageInfoKHR">VkAcquireNextImageInfoKHR</a>, <a href="#VkBindSparseInfo">VkBindSparseInfo</a>, <a href="#VkImportSemaphoreFdInfoKHR">VkImportSemaphoreFdInfoKHR</a>, <a href="#VkImportSemaphoreWin32HandleInfoKHR">VkImportSemaphoreWin32HandleInfoKHR</a>, <a href="#VkPresentInfoKHR">VkPresentInfoKHR</a>, <a href="#VkSemaphoreGetFdInfoKHR">VkSemaphoreGetFdInfoKHR</a>, <a href="#VkSemaphoreGetWin32HandleInfoKHR">VkSemaphoreGetWin32HandleInfoKHR</a>, <a href="#VkSubmitInfo">VkSubmitInfo</a>, <a href="#vkAcquireNextImageKHR">vkAcquireNextImageKHR</a>, <a href="#vkCreateSemaphore">vkCreateSemaphore</a>, <a href="#vkDestroySemaphore">vkDestroySemaphore</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_359">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSemaphore" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSemaphore</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkshadermodule3">VkShaderModule(3)</h3>
+<div class="sect3">
+<h4 id="_name_360">Name</h4>
+<div class="paragraph">
+<p>VkShaderModule - Opaque handle to a shader module object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_360">C Specification</h4>
+<div class="paragraph">
+<p><em>Shader modules</em> contain <em>shader code</em> and one or more entry points.
+Shaders are selected from a shader module by specifying an entry point as
+part of <a href="vkspec.html#pipelines">pipeline</a> creation.
+The stages of a pipeline <strong class="purple">can</strong> use shaders that come from different modules.
+The shader code defining a shader module <strong class="purple">must</strong> be in the SPIR-V format, as
+described by the <a href="vkspec.html#spirvenv">Vulkan Environment for SPIR-V</a> appendix.</p>
+</div>
+<div class="paragraph">
+<p>Shader modules are represented by <code>VkShaderModule</code> handles:</p>
+</div>
+<div id="VkShaderModule" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkShaderModule)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_360">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_360">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineShaderStageCreateInfo">VkPipelineShaderStageCreateInfo</a>, <a href="#vkCreateShaderModule">vkCreateShaderModule</a>, <a href="#vkDestroyShaderModule">vkDestroyShaderModule</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_360">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkShaderModule" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkShaderModule</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksurfacekhr3">VkSurfaceKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_361">Name</h4>
+<div class="paragraph">
+<p>VkSurfaceKHR - Opaque handle to a surface object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_361">C Specification</h4>
+<div class="paragraph">
+<p>Native platform surface or window objects are abstracted by surface objects,
+which are represented by <code>VkSurfaceKHR</code> handles:</p>
+</div>
+<div id="VkSurfaceKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkSurfaceKHR)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_361">Description</h4>
+<div class="paragraph">
+<p>The <code>VK_KHR_surface</code> extension declares the <code>VkSurfaceKHR</code> object, and
+provides a function for destroying <code>VkSurfaceKHR</code> objects.
+Separate platform-specific extensions each provide a function for creating a
+<code>VkSurfaceKHR</code> object for the respective platform.
+From the application&#8217;s perspective this is an opaque handle, just like the
+handles of other Vulkan objects.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
+<div class="paragraph">
+<p>On certain platforms, the Vulkan loader and ICDs <strong class="purple">may</strong> have conventions that
+treat the handle as a pointer to a struct that contains the
+platform-specific information about the surface.
+This will be described in the documentation for the loader-ICD interface,
+and in the <code>vk_icd.h</code> header file of the LoaderAndTools source-code
+repository.
+This does not affect the loader-layer interface; layers <strong class="purple">may</strong> wrap
+<code>VkSurfaceKHR</code> objects.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_361">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPhysicalDeviceSurfaceInfo2KHR">VkPhysicalDeviceSurfaceInfo2KHR</a>, <a href="#VkSwapchainCreateInfoKHR">VkSwapchainCreateInfoKHR</a>, <a href="#vkCreateAndroidSurfaceKHR">vkCreateAndroidSurfaceKHR</a>, <a href="#vkCreateDisplayPlaneSurfaceKHR">vkCreateDisplayPlaneSurfaceKHR</a>, <a href="#vkCreateIOSSurfaceMVK">vkCreateIOSSurfaceMVK</a>, <a href="#vkCreateImagePipeSurfaceFUCHSIA">vkCreateImagePipeSurfaceFUCHSIA</a>, <a href="#vkCreateMacOSSurfaceMVK">vkCreateMacOSSurfaceMVK</a>, <a href="#vkCreateMetalSurfaceEXT">vkCreateMetalSurfaceEXT</a>, <a href="#vkCreateStreamDescriptorSurfaceGGP">vkCreateStreamDescriptorSurfaceGGP</a>, <a href="#vkCreateViSurfaceNN">vkCreateViSurfaceNN</a>, <a href="#vkCreateWaylandSurfaceKHR">vkCreateWaylandSurfaceKHR</a>, <a href="#vkCreateWin32SurfaceKHR">vkCreateWin32SurfaceKHR</a>, <a href="#vkCreateXcbSurfaceKHR">vkCreateXcbSurfaceKHR</a>, <a href="#vkCreateXlibSurfaceKHR">vkCreateXlibSurfaceKHR</a>, <a href="#vkDestroySurfaceKHR">vkDestroySurfaceKHR</a>, <a href="#vkGetDeviceGroupSurfacePresentModesKHR">vkGetDeviceGroupSurfacePresentModesKHR</a>, <a href="#vkGetPhysicalDevicePresentRectanglesKHR">vkGetPhysicalDevicePresentRectanglesKHR</a>, <a href="#vkGetPhysicalDeviceSurfaceCapabilities2EXT">vkGetPhysicalDeviceSurfaceCapabilities2EXT</a>, <a href="#vkGetPhysicalDeviceSurfaceCapabilitiesKHR">vkGetPhysicalDeviceSurfaceCapabilitiesKHR</a>, <a href="#vkGetPhysicalDeviceSurfaceFormatsKHR">vkGetPhysicalDeviceSurfaceFormatsKHR</a>, <a href="#vkGetPhysicalDeviceSurfacePresentModesKHR">vkGetPhysicalDeviceSurfacePresentModesKHR</a>, <a href="#vkGetPhysicalDeviceSurfaceSupportKHR">vkGetPhysicalDeviceSurfaceSupportKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_361">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSurfaceKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSurfaceKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkswapchainkhr3">VkSwapchainKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_362">Name</h4>
+<div class="paragraph">
+<p>VkSwapchainKHR - Opaque handle to a swapchain object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_362">C Specification</h4>
+<div class="paragraph">
+<p>A swapchain object (a.k.a.
+swapchain) provides the ability to present rendering results to a surface.
+Swapchain objects are represented by <code>VkSwapchainKHR</code> handles:</p>
+</div>
+<div id="VkSwapchainKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkSwapchainKHR)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_362">Description</h4>
+<div class="paragraph">
+<p>A swapchain is an abstraction for an array of presentable images that are
+associated with a surface.
+The presentable images are represented by <code>VkImage</code> objects created by
+the platform.
+One image (which <strong class="purple">can</strong> be an array image for multiview/stereoscopic-3D
+surfaces) is displayed at a time, but multiple images <strong class="purple">can</strong> be queued for
+presentation.
+An application renders to the image, and then queues the image for
+presentation to the surface.</p>
+</div>
+<div class="paragraph">
+<p>A native window <strong class="purple">cannot</strong> be associated with more than one non-retired
+swapchain at a time.
+Further, swapchains <strong class="purple">cannot</strong> be created for native windows that have a
+non-Vulkan graphics API surface associated with them.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
+<div class="paragraph">
+<p>The presentation engine is an abstraction for the platform&#8217;s compositor or
+display engine.</p>
+</div>
+<div class="paragraph">
+<p>The presentation engine <strong class="purple">may</strong> be synchronous or asynchronous with respect to
+the application and/or logical device.</p>
+</div>
+<div class="paragraph">
+<p>Some implementations <strong class="purple">may</strong> use the device&#8217;s graphics queue or dedicated
+presentation hardware to perform presentation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The presentable images of a swapchain are owned by the presentation engine.
+An application <strong class="purple">can</strong> acquire use of a presentable image from the presentation
+engine.
+Use of a presentable image <strong class="purple">must</strong> occur only after the image is returned by
+<code>vkAcquireNextImageKHR</code>, and before it is presented by
+<code>vkQueuePresentKHR</code>.
+This includes transitioning the image layout and rendering commands.</p>
+</div>
+<div class="paragraph">
+<p>An application <strong class="purple">can</strong> acquire use of a presentable image with
+<code>vkAcquireNextImageKHR</code>.
+After acquiring a presentable image and before modifying it, the application
+<strong class="purple">must</strong> use a synchronization primitive to ensure that the presentation engine
+has finished reading from the image.
+The application <strong class="purple">can</strong> then transition the image&#8217;s layout, queue rendering
+commands to it, etc.
+Finally, the application presents the image with <code>vkQueuePresentKHR</code>,
+which releases the acquisition of the image.</p>
+</div>
+<div class="paragraph">
+<p>The presentation engine controls the order in which presentable images are
+acquired for use by the application.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
+<div class="paragraph">
+<p>This allows the platform to handle situations which require out-of-order
+return of images after presentation.
+At the same time, it allows the application to generate command buffers
+referencing all of the images in the swapchain at initialization time,
+rather than in its main loop.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_362">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAcquireNextImageInfoKHR">VkAcquireNextImageInfoKHR</a>, <a href="#VkBindImageMemorySwapchainInfoKHR">VkBindImageMemorySwapchainInfoKHR</a>, <a href="#VkImageSwapchainCreateInfoKHR">VkImageSwapchainCreateInfoKHR</a>, <a href="#VkPresentInfoKHR">VkPresentInfoKHR</a>, <a href="#VkSwapchainCreateInfoKHR">VkSwapchainCreateInfoKHR</a>, <a href="#vkAcquireFullScreenExclusiveModeEXT">vkAcquireFullScreenExclusiveModeEXT</a>, <a href="#vkAcquireNextImageKHR">vkAcquireNextImageKHR</a>, <a href="#vkCreateSharedSwapchainsKHR">vkCreateSharedSwapchainsKHR</a>, <a href="#vkCreateSwapchainKHR">vkCreateSwapchainKHR</a>, <a href="#vkDestroySwapchainKHR">vkDestroySwapchainKHR</a>, <a href="#vkGetPastPresentationTimingGOOGLE">vkGetPastPresentationTimingGOOGLE</a>, <a href="#vkGetRefreshCycleDurationGOOGLE">vkGetRefreshCycleDurationGOOGLE</a>, <a href="#vkGetSwapchainCounterEXT">vkGetSwapchainCounterEXT</a>, <a href="#vkGetSwapchainImagesKHR">vkGetSwapchainImagesKHR</a>, <a href="#vkGetSwapchainStatusKHR">vkGetSwapchainStatusKHR</a>, <a href="#vkReleaseFullScreenExclusiveModeEXT">vkReleaseFullScreenExclusiveModeEXT</a>, <a href="#vkSetHdrMetadataEXT">vkSetHdrMetadataEXT</a>, <a href="#vkSetLocalDimmingAMD">vkSetLocalDimmingAMD</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_362">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSwapchainKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSwapchainKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkvalidationcacheext3">VkValidationCacheEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_363">Name</h4>
+<div class="paragraph">
+<p>VkValidationCacheEXT - Opaque handle to a validation cache object</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_363">C Specification</h4>
+<div class="paragraph">
+<p>Validation cache objects allow the result of internal validation to be
+reused, both within a single application run and between multiple runs.
+Reuse within a single run is achieved by passing the same validation cache
+object when creating supported Vulkan objects.
+Reuse across runs of an application is achieved by retrieving validation
+cache contents in one run of an application, saving the contents, and using
+them to preinitialize a validation cache on a subsequent run.
+The contents of the validation cache objects are managed by the validation
+layers.
+Applications <strong class="purple">can</strong> manage the host memory consumed by a validation cache
+object and control the amount of data retrieved from a validation cache
+object.</p>
+</div>
+<div class="paragraph">
+<p>Validation cache objects are represented by <code>VkValidationCacheEXT</code>
+handles:</p>
+</div>
+<div id="VkValidationCacheEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">VK_DEFINE_NON_DISPATCHABLE_HANDLE(VkValidationCacheEXT)</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_363">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_363">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkShaderModuleValidationCacheCreateInfoEXT">VkShaderModuleValidationCacheCreateInfoEXT</a>, <a href="#vkCreateValidationCacheEXT">vkCreateValidationCacheEXT</a>, <a href="#vkDestroyValidationCacheEXT">vkDestroyValidationCacheEXT</a>, <a href="#vkGetValidationCacheDataEXT">vkGetValidationCacheDataEXT</a>, <a href="#vkMergeValidationCachesEXT">vkMergeValidationCachesEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_363">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkValidationCacheEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkValidationCacheEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+</root>
