@@ -44,7 +44,7 @@ namespace ApiSpec {
             }
         }
 
-        class EnumComment {
+        class EnumItemComment {
             public List<string> lstComment = new List<string>();
 
             public Dictionary<string, string> Dump() {
@@ -66,23 +66,33 @@ namespace ApiSpec {
 
         public static void DumpEnums() {
             XElement root = XElement.Load(filename);
-            var lstDefinition = new List<EnumDefinetion>();
-            TraverseNodesEnumDefinitions(root, lstDefinition);
-            var dictComment = new Dictionary<int, EnumComment>(); int index = -1; bool inside = false;
-            TraverseNodesEnumComments(root, dictComment, ref index, ref inside);
+            var lstDefinition = new List<EnumDefinetion>(); int index = -1; bool inside = false;
+            TraverseNodesEnumDefinitions(root, lstDefinition, ref index, ref inside);
+            var dictItemComment = new Dictionary<int, EnumItemComment>(); index = -1; inside = false;
+            TraverseNodesEnumItemComments(root, dictItemComment, ref index, ref inside);
+            var dictEnumComment = new Dictionary<int, string>(); index = -1; inside = false;
+            TraverseNodesEnumComments(root, dictEnumComment, ref index, ref inside);
 
             using (var sw = new System.IO.StreamWriter("Enums.gen.cs")) {
                 for (int i = 0; i < lstDefinition.Count; i++) {
                     EnumDefinetion definition = lstDefinition[i];
                     //sw.WriteLine(definition.raw);
                     string[] definitionLines = definition.Dump();
-                    EnumComment comment = null;
-                    if (dictComment.ContainsKey(i)) { comment = dictComment[i]; }
-                    Dictionary<string, string> dict = null;
-                    if (comment != null) { dict = comment.Dump(); }
+
+                    EnumItemComment itemComment = null;
+                    if (dictItemComment.ContainsKey(i)) { itemComment = dictItemComment[i]; }
+                    Dictionary<string, string> item2Comment = null;
+                    if (itemComment != null) { item2Comment = itemComment.Dump(); }
+
+                    string enumComment = string.Empty;
+                    if (dictEnumComment.ContainsKey(i)) { enumComment = dictEnumComment[i]; }
+
+                    if (enumComment != string.Empty) {
+                        sw.WriteLine($"/// <summary>{enumComment}/// </summary>");
+                    }
                     foreach (var line in definitionLines) {
-                        if (dict != null) {
-                            string strComment = ParseComment(line, dict);
+                        if (item2Comment != null) {
+                            string strComment = ParseItemComment(line, item2Comment);
                             if (strComment != string.Empty) {
                                 strComment = strComment.Replace("\r\n", "\n");
                                 strComment = strComment.Replace("\r", "\n");
@@ -97,6 +107,32 @@ namespace ApiSpec {
             Console.WriteLine("Done");
         }
 
+        /*<h4 id="_name_800">Name</h4>
+<div class="paragraph">
+<p>VkAccessFlagBits - Bitmask specifying memory access types that will participate in a memory dependency</p>
+</div>*/
+        private static void TraverseNodesEnumComments(XElement node, Dictionary<int, string> dict, ref int index, ref bool inside) {
+            if (node.Name == "h4") {
+                if (node.Value == "Name") {
+                    index++; // ready for next EnumComment.
+                    inside = true;
+                }
+            }
+            else if (node.Name == "p") {
+                if (inside) {
+                    string text = node.ToString();
+                    text = text.Substring("<p>".Length, text.Length - "<p></p>".Length);
+                    text = text.Trim();
+                    dict.Add(index, text);
+                    inside = false;
+                }
+            }
+
+            foreach (XElement item in node.Elements()) {
+                TraverseNodesEnumComments(item, dict, ref index, ref inside);
+            }
+        }
+
         /* line:    VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV = 0,
          *     
         comment: <code>VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV</code> is a top-level
@@ -107,7 +143,7 @@ acceleration structure containing the AABBs or geometry to be
 intersected.
     */
         static readonly char[] equalSeparator = new char[] { '=', ' ', '\t', '\r', '\n', };
-        private static string ParseComment(string line, Dictionary<string, string> dict) {
+        private static string ParseItemComment(string line, Dictionary<string, string> dict) {
             string result = string.Empty;
             string[] parts = line.Split(equalSeparator, StringSplitOptions.RemoveEmptyEntries);
             if (parts.Length == 2) {
@@ -126,14 +162,14 @@ intersected.
         /// <param name="node"></param>
         /// <param name="list"></param>
         /// <param name="inside"></param>
-        private static void TraverseNodesEnumComments(XElement node, Dictionary<int, EnumComment> dict, ref int index, ref bool inside) {
+        private static void TraverseNodesEnumItemComments(XElement node, Dictionary<int, EnumItemComment> dict, ref int index, ref bool inside) {
             if (node.Name == "h4") {
                 if (node.Value == "C Specification") {
                     index++; // ready for next EnumComment.
                 }
                 else if (node.Value == "Description") {
                     inside = true;
-                    var comment = new EnumComment();
+                    var comment = new EnumItemComment();
                     dict.Add(index, comment);
                 }
                 else if (node.Value == "See Also") {
@@ -142,7 +178,7 @@ intersected.
             }
             else if (node.Name == "p") {
                 if (inside) {
-                    EnumComment comment = dict[index];
+                    EnumItemComment comment = dict[index];
                     string text = node.ToString();
                     text = text.Substring("<p>".Length, text.Length - "<p></p>".Length);
                     text = text.Trim();
@@ -151,25 +187,33 @@ intersected.
             }
 
             foreach (XElement item in node.Elements()) {
-                TraverseNodesEnumComments(item, dict, ref index, ref inside);
+                TraverseNodesEnumItemComments(item, dict, ref index, ref inside);
             }
         }
 
 
-        private static void TraverseNodesEnumDefinitions(XElement node, List<EnumDefinetion> list) {
-            if (node.Name == "code") {
-                XAttribute attrClass = node.Attribute("class");
-                if (attrClass != null && attrClass.Value == "language-c++") {
-                    string v = node.Value;
-                    var item = new EnumDefinetion() { raw = v, };
-                    list.Add(item);
+        private static void TraverseNodesEnumDefinitions(XElement node, List<EnumDefinetion> list, ref int index, ref bool inside) {
+            if (node.Name == "h4") {
+                if (node.Value == "C Specification") {
+                    index++; // ready for next EnumComment.
+                    inside = true;
+                }
+            }
+            else if (node.Name == "code") {
+                if (inside) {
+                    XAttribute attrClass = node.Attribute("class");
+                    if (attrClass != null && attrClass.Value == "language-c++") {
+                        string v = node.Value;
+                        var item = new EnumDefinetion() { raw = v, };
+                        list.Add(item);
+                        inside = false;
+                    }
                 }
             }
 
             foreach (XElement item in node.Elements()) {
-                TraverseNodesEnumDefinitions(item, list);
+                TraverseNodesEnumDefinitions(item, list, ref index, ref inside);
             }
-
         }
 
         public static void h4Counts() {
