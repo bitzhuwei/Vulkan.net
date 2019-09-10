@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using System.Text;
 
 namespace Vulkan {
     public unsafe static partial class Helper {
@@ -44,7 +42,8 @@ namespace Vulkan {
             {
                 if (value != null && value.Length > 0) {
                     target = Marshal.StringToHGlobalAnsi(value);
-                } else {
+                }
+                else {
                     target = IntPtr.Zero;
                 }
             }
@@ -189,7 +188,7 @@ namespace Vulkan {
     }
 
     public class Version {
-        public static uint Make(uint major, uint minor, uint patch) {
+        public static UInt32 Make(uint major, uint minor, uint patch) {
             return (major << 22) | (minor << 12) | patch;
         }
 

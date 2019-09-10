@@ -1,29 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Xml.Linq;
 
 namespace ApiSpec {
-    class EnumsParser {
+    class StructsParser {
 
         static readonly char[] inLineSeparator = new char[] { ' ', '\t', '\r', '\n', };
         static readonly char[] lineSeparator = new char[] { '\r', '\n' };
         const string leftBrace = "{";
         const string rightBrace = "}";
 
-        const string filename = "Enumerations.content.xml";
+        const string filename = "Structures.content.xml";
         const string strName = "Name";
         const string strCSpecification = "C Specification";
+        const string strMembers = "Members";
         const string strDescription = "Description";
         const string strSeeAlso = "See Also";
         const string strDocNotes = "Document Notes";
 
-        class EnumDefinetion {
-            /*typedef enum VkAccelerationStructureMemoryRequirementsTypeNV {
-    VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV = 0,
-    VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV = 1,
-    VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV = 2,
-    VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_MAX_ENUM_NV = 0x7FFFFFFF
-} VkAccelerationStructureMemoryRequirementsTypeNV;
+        class StructDefinition {
+            /*typedef struct VkAccelerationStructureCreateInfoNV {
+    VkStructureType                  sType;
+    const void*                      pNext;
+    VkDeviceSize                     compactedSize;
+    VkAccelerationStructureInfoNV    info;
+} VkAccelerationStructureCreateInfoNV;
              */
             public string raw;
 
@@ -33,7 +35,12 @@ namespace ApiSpec {
 
                 {
                     string[] parts = lines[0].Split(inLineSeparator, StringSplitOptions.RemoveEmptyEntries);
-                    lines[0] = $"public enum {parts[2]} {leftBrace}";
+                    if (parts[1] == "union") {
+                        lines[0] = $"/*union*/[StructLayout(LayoutKind.Explicit)] public struct {parts[2]} {leftBrace}";
+                    }
+                    else {
+                        lines[0] = $"public struct {parts[2]} {leftBrace}";
+                    }
                 }
                 {
                     int last = lines.Length - 1;
@@ -44,7 +51,7 @@ namespace ApiSpec {
             }
         }
 
-        class EnumItemComment {
+        class StructItemComment {
             public List<string> lstComment = new List<string>();
 
             public Dictionary<string, string> Dump() {
@@ -64,48 +71,104 @@ namespace ApiSpec {
             }
         }
 
-        public static void DumpEnums() {
+        public static void DumpStructs() {
             XElement root = XElement.Load(filename);
-            var lstDefinition = new List<EnumDefinetion>(); bool inside = false;
-            TraverseNodesEnumDefinitions(root, lstDefinition, ref inside);
-            var listEnumItemComment = new List<EnumItemComment>(); inside = false;
-            TraverseNodesEnumItemComments(root, listEnumItemComment, ref inside);
-            var lstEnumComment = new List<string>(); inside = false;
-            TraverseNodesEnumComments(root, lstEnumComment, ref inside);
+            var lstDefinition = new List<StructDefinition>(); bool inside = false;
+            TraverseNodesStructDefinitions(root, lstDefinition, ref inside);
+            var listStructItemComment = new List<StructItemComment>(); inside = false;
+            TraverseNodesStructItemComments(root, listStructItemComment, ref inside);
+            var lstStructComment = new List<string>(); inside = false;
+            TraverseNodesStructComments(root, lstStructComment, ref inside);
 
-            using (var sw = new System.IO.StreamWriter("Enums.gen.cs")) {
+            using (var sw = new System.IO.StreamWriter("Structs.gen.cs")) {
                 for (int i = 0; i < lstDefinition.Count; i++) {
-                    EnumDefinetion definition = lstDefinition[i];
+                    StructDefinition definition = lstDefinition[i];
                     //sw.WriteLine(definition.raw);
                     string[] definitionLines = definition.Dump();
-                    EnumItemComment itemComment = listEnumItemComment[i];
+                    StructItemComment itemComment = listStructItemComment[i];
                     Dictionary<string, string> item2Comment = itemComment.Dump();
 
-                    sw.WriteLine($"// Enum: {i}");
-                    string enumComment = lstEnumComment[i];
+                    sw.WriteLine($"// Struct: {i}");
+                    string enumComment = lstStructComment[i];
                     sw.WriteLine($"/// <summary>{enumComment}</summary>");
-                    foreach (var line in definitionLines) {
+                    bool isUnion = false;
+                    {
+                        string line = definitionLines[0];
+                        if (line.StartsWith("/*union*/")) {
+                            isUnion = true;
+                        }
+                        sw.WriteLine(line); // public struct XXX {
+                    }
+                    for (int j = 1; j < definitionLines.Length - 1; j++) {
+                        string line = definitionLines[j];
                         if (item2Comment != null) {
                             string strComment = ParseItemComment(line, item2Comment);
                             if (strComment != string.Empty) {
                                 strComment = strComment.Replace("\r\n", "\n");
                                 strComment = strComment.Replace("\r", "\n");
                                 strComment = strComment.Replace("\n", $"{Environment.NewLine}    /// ");
+                                strComment = RemoveBraces(strComment);
                                 sw.WriteLine($"    /// <summary>{strComment}</summary>");
                             }
                         }
-                        sw.WriteLine(line);
+                        {
+                            line = line.Trim();
+                            var l = line.Replace("const char* ", " IntPtr ");
+                            l = l.Replace("const ", " /* const */ ");
+                            l = l.Replace("uint8_t* ", " byte* ");
+                            l = l.Replace("uint8_t ", " byte ");
+                            l = l.Replace("uint16_t* ", " UInt16* ");
+                            l = l.Replace("uint16_t ", " UInt16 ");
+                            l = l.Replace("uint32_t* ", " UInt32* ");
+                            l = l.Replace("uint32_t ", " UInt32 ");
+                            l = l.Replace("uint64_t* ", " UInt64* ");
+                            l = l.Replace("uint64_t ", " UInt64 ");
+                            l = l.Replace("int32_t* ", " Int32* ");
+                            l = l.Replace("int32_t ", " Int32 ");
+                            l = l.Replace("int64_t* ", " Int64* ");
+                            l = l.Replace("int64_t ", " Int64 ");
+                            l = l.Replace("struct ", " /* struct */ ");
+                            l = l.Replace(" object;", " _object;");
+                            if (l.Contains("[")) { l = "fixed " + l; }
+                            l = "public " + l;
+                            if (isUnion) { l = "[FieldOffset(0)] " + l; }
+                            l = "    " + l;
+                            sw.WriteLine(l);
+                        }
                     }
+                    {
+                        string line = definitionLines[definitionLines.Length - 1];
+                        sw.WriteLine(line); // }
+                    }
+
                 }
             }
             Console.WriteLine("Done");
         }
 
-        /*<h4 id="_name_800">Name</h4>
+        static readonly char[] braceSeparator = new char[] { '<', '>', };
+        // remove <> </>
+        private static string RemoveBraces(string strComment) {
+            var builder = new StringBuilder();
+            bool inside = false;
+            foreach (var item in strComment) {
+                if (item == '<') { inside = true; }
+                else if (item == '>') { inside = false; }
+                else {
+                    if (!inside) {
+                        builder.Append(item);
+                    }
+                }
+            }
+
+            return builder.ToString();
+        }
+
+        /*<h4 id="_name_364">Name</h4>
 <div class="paragraph">
-<p>VkAccessFlagBits - Bitmask specifying memory access types that will participate in a memory dependency</p>
+<p>VkAccelerationStructureCreateInfoNV - Structure specifying the parameters of a newly created acceleration structure object</p>
 </div>*/
-        private static void TraverseNodesEnumComments(XElement node, List<string> list, ref bool inside) {
+        private static void TraverseNodesStructComments(XElement node, List<string> list, ref bool inside) {
             if (node.Name == "h4") {
                 if (node.Value == "Name") {
                     inside = true;
@@ -122,25 +185,20 @@ namespace ApiSpec {
             }
 
             foreach (XElement item in node.Elements()) {
-                TraverseNodesEnumComments(item, list, ref inside);
+                TraverseNodesStructComments(item, list, ref inside);
             }
         }
 
-        /* line:    VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV = 0,
-         *     
-        comment: <code>VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV</code> is a top-level
-        acceleration structure containing instance data referring to
-bottom-level level acceleration structures.
-<code>VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV</code> is a bottom-level
-acceleration structure containing the AABBs or geometry to be
-intersected.
-    */
-        static readonly char[] equalSeparator = new char[] { '=', ' ', '\t', '\r', '\n', };
+        /* line:    VkStructureType                  sType;
+         * line:    const void*                      pNext;
+         * comment: <code>sType</code> is the type of this structure.
+        */
+        static readonly char[] itemSeparator = new char[] { ' ', ';', '\t', '\r', '\n', };
         private static string ParseItemComment(string line, Dictionary<string, string> dict) {
             string result = string.Empty;
-            string[] parts = line.Split(equalSeparator, StringSplitOptions.RemoveEmptyEntries);
-            if (parts.Length == 2) {
-                string key = parts[0];
+            string[] parts = line.Split(itemSeparator, StringSplitOptions.RemoveEmptyEntries);
+            if (parts.Length > 0) {
+                string key = parts[parts.Length - 1];
                 if (dict.ContainsKey(key)) {
                     result = dict[key];
                 }
@@ -155,20 +213,20 @@ intersected.
         /// <param name="node"></param>
         /// <param name="list"></param>
         /// <param name="inside"></param>
-        private static void TraverseNodesEnumItemComments(XElement node, List<EnumItemComment> list, ref bool inside) {
+        private static void TraverseNodesStructItemComments(XElement node, List<StructItemComment> list, ref bool inside) {
             if (node.Name == "h4") {
-                if (node.Value == "Description") {
+                if (node.Value == "Members") {
                     inside = true;
-                    var comment = new EnumItemComment();
+                    var comment = new StructItemComment();
                     list.Add(comment);
                 }
-                else if (node.Value == "See Also") {
+                else if (node.Value == "Description") {
                     inside = false;
                 }
             }
             else if (node.Name == "p") {
                 if (inside) {
-                    EnumItemComment comment = list[list.Count - 1];
+                    StructItemComment comment = list[list.Count - 1];
                     string text = node.ToString();
                     text = text.Substring("<p>".Length, text.Length - "<p></p>".Length);
                     text = text.Trim();
@@ -177,12 +235,12 @@ intersected.
             }
 
             foreach (XElement item in node.Elements()) {
-                TraverseNodesEnumItemComments(item, list, ref inside);
+                TraverseNodesStructItemComments(item, list, ref inside);
             }
         }
 
 
-        private static void TraverseNodesEnumDefinitions(XElement node, List<EnumDefinetion> list, ref bool inside) {
+        private static void TraverseNodesStructDefinitions(XElement node, List<StructDefinition> list, ref bool inside) {
             if (node.Name == "h4") {
                 if (node.Value == "C Specification") {
                     inside = true;
@@ -193,7 +251,7 @@ intersected.
                     XAttribute attrClass = node.Attribute("class");
                     if (attrClass != null && attrClass.Value == "language-c++") {
                         string v = node.Value;
-                        var item = new EnumDefinetion() { raw = v, };
+                        var item = new StructDefinition() { raw = v, };
                         list.Add(item);
                         inside = false;
                     }
@@ -201,7 +259,7 @@ intersected.
             }
 
             foreach (XElement item in node.Elements()) {
-                TraverseNodesEnumDefinitions(item, list, ref inside);
+                TraverseNodesStructDefinitions(item, list, ref inside);
             }
         }
 
@@ -210,16 +268,17 @@ intersected.
             var info = new h4Count();
             TraverseNodesCounts(root, info);
 
-            // all are 143. Great!
+            // all are 434. Great!
             Console.WriteLine("Name: {0}", info.names);
             Console.WriteLine("C Specification: {0}", info.cSpecifications);
+            Console.WriteLine("Members: {0}", info.members);
             Console.WriteLine("Description: {0}", info.descriptions);
             Console.WriteLine("See Also: {0}", info.seeAlsos);
             Console.WriteLine("Document Notes: {0}", info.docNotes);
 
         }
         class h4Count {
-            public int names = 0, cSpecifications = 0, descriptions = 0, seeAlsos = 0, docNotes = 0;
+            public int names = 0, cSpecifications = 0, members = 0, descriptions = 0, seeAlsos = 0, docNotes = 0;
         }
 
         private static void TraverseNodesCounts(XElement node, h4Count info) {
@@ -230,6 +289,9 @@ intersected.
                 }
                 else if (v == strCSpecification) {
                     info.cSpecifications++;
+                }
+                else if (v == strMembers) {
+                    info.members++;
                 }
                 else if (v == strDescription) {
                     info.descriptions++;
@@ -260,6 +322,7 @@ intersected.
         /// gathered h4 contents are:
         /// Name
         /// C Specification
+        /// strMembers
         /// Description
         /// See Also
         /// Document Notes

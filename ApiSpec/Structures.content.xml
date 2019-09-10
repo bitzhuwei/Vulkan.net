@@ -2863,7 +2863,7 @@ subresource</p>
 The <code>extent.height</code> member of any element of
 <code>pSplitInstanceBindRegions</code> <strong class="purple">must</strong> either be a multiple of the sparse
 image block height of all non-metadata aspects of the image, or else
-<code>extent.height</code><br>
+<code>extent.height</code><br />
 <code>offset.y</code> <strong class="purple">must</strong> equal the width of the image subresource</p>
 </li>
 </ul>
@@ -24246,9 +24246,9 @@ reconstruction operations operate on the same (<em>u<sub>plane</sub></em>, <em>v
 <table id="resources-image-views-compatibility" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 7. Image and image view parameter compatibility requirements</caption>
 <colgroup>
-<col style="width: 15%;">
-<col style="width: 35%;">
-<col style="width: 50%;">
+<col style="width: 15%;" />
+<col style="width: 35%;" />
+<col style="width: 50%;" />
 </colgroup>
 <thead>
 <tr>
@@ -24260,156 +24260,156 @@ reconstruction operations operate on the same (<em>u<sub>plane</sub></em>, <em>v
 <tbody>
 <tr>
 <th class="tableblock halign-left valign-top"></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = ci.<code>imageType</code><br>
-    <code>width</code> = ci.<code>extent.width</code><br>
-    <code>height</code> = ci.<code>extent.height</code><br>
-    <code>depth</code> = ci.<code>extent.depth</code><br>
-    <code>arrayLayers</code> = ci.<code>arrayLayers</code><br>
-    <code>samples</code> = ci.<code>samples</code><br>
-    <code>flags</code> = ci.<code>flags</code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = ci.<code>imageType</code><br />
+    <code>width</code> = ci.<code>extent.width</code><br />
+    <code>height</code> = ci.<code>extent.height</code><br />
+    <code>depth</code> = ci.<code>extent.depth</code><br />
+    <code>arrayLayers</code> = ci.<code>arrayLayers</code><br />
+    <code>samples</code> = ci.<code>samples</code><br />
+    <code>flags</code> = ci.<code>flags</code><br />
     where ci is the <a href="#VkImageCreateInfo">VkImageCreateInfo</a> used to create <code>image</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>baseArrayLayer</code>, <code>layerCount</code>, and <code>levelCount</code>
     are members of the <code>subresourceRange</code> member.</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">1D, 0, 0</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_1D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> = 1<br>
-<code>depth</code> = 1<br>
-<code>arrayLayers</code> ≥ 1<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_1D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> = 1<br />
+<code>depth</code> = 1<br />
+<code>arrayLayers</code> ≥ 1<br />
 <code>samples</code> = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_1D</code><br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_1D</code><br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> = 1</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">1D, 1, 0</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_1D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> = 1<br>
-<code>depth</code> = 1<br>
-<code>arrayLayers</code> ≥ 1<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_1D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> = 1<br />
+<code>depth</code> = 1<br />
+<code>arrayLayers</code> ≥ 1<br />
 <code>samples</code> = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_1D_ARRAY</code><br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_1D_ARRAY</code><br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> ≥ 1</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">2D, 0, 0</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> ≥ 1<br>
-<code>depth</code> = 1<br>
-<code>arrayLayers</code> ≥ 1<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> ≥ 1<br />
+<code>depth</code> = 1<br />
+<code>arrayLayers</code> ≥ 1<br />
 <code>samples</code> = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D</code><br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D</code><br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> = 1</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">2D, 1, 0</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> ≥ 1<br>
-<code>depth</code> = 1<br>
-<code>arrayLayers</code> ≥ 1<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> ≥ 1<br />
+<code>depth</code> = 1<br />
+<code>arrayLayers</code> ≥ 1<br />
 <code>samples</code> = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code><br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code><br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> ≥ 1</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">2D, 0, 1</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> ≥ 1<br>
-<code>depth</code> = 1<br>
-<code>arrayLayers</code> ≥ 1<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> ≥ 1<br />
+<code>depth</code> = 1<br />
+<code>arrayLayers</code> ≥ 1<br />
 <code>samples</code> &gt; 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D</code><br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D</code><br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> = 1</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">2D, 1, 1</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> ≥ 1<br>
-<code>depth</code> = 1<br>
-<code>arrayLayers</code> ≥ 1<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> ≥ 1<br />
+<code>depth</code> = 1<br />
+<code>arrayLayers</code> ≥ 1<br />
 <code>samples</code> &gt; 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code><br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code><br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> ≥ 1</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">CUBE, 0, 0</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> = <code>width</code><br>
-<code>depth</code> = 1<br>
-<code>arrayLayers</code> ≥ 6<br>
-<code>samples</code> = 1<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> = <code>width</code><br />
+<code>depth</code> = 1<br />
+<code>arrayLayers</code> ≥ 6<br />
+<code>samples</code> = 1<br />
 <code>flags</code> includes <code>VK_IMAGE_CREATE_CUBE_COMPATIBLE_BIT</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_CUBE</code><br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_CUBE</code><br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> = 6</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">CUBE, 1, 0</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> = width<br>
-<code>depth</code> = 1<br>
-<em>N</em> ≥ 1<br>
-<code>arrayLayers</code> ≥ 6 × <em>N</em><br>
-<code>samples</code> = 1<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_2D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> = width<br />
+<code>depth</code> = 1<br />
+<em>N</em> ≥ 1<br />
+<code>arrayLayers</code> ≥ 6 × <em>N</em><br />
+<code>samples</code> = 1<br />
 <code>flags</code> includes <code>VK_IMAGE_CREATE_CUBE_COMPATIBLE_BIT</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_CUBE_ARRAY</code><br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_CUBE_ARRAY</code><br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> = 6 × <em>N</em>, <em>N</em> ≥ 1</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">3D, 0, 0</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_3D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> ≥ 1<br>
-<code>depth</code> ≥ 1<br>
-<code>arrayLayers</code> = 1<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_3D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> ≥ 1<br />
+<code>depth</code> ≥ 1<br />
+<code>arrayLayers</code> = 1<br />
 <code>samples</code> = 1</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_3D</code><br>
-<code>baseArrayLayer</code> = 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_3D</code><br />
+<code>baseArrayLayer</code> = 0<br />
 <code>layerCount</code> = 1</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">3D, 0, 0</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_3D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> ≥ 1<br>
-<code>depth</code> ≥ 1<br>
-<code>arrayLayers</code> = 1<br>
-<code>samples</code> = 1<br>
-<code>flags</code> includes <code>VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT</code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_3D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> ≥ 1<br />
+<code>depth</code> ≥ 1<br />
+<code>arrayLayers</code> = 1<br />
+<code>samples</code> = 1<br />
+<code>flags</code> includes <code>VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT</code><br />
 <code>flags</code> does not include <code>VK_IMAGE_CREATE_SPARSE_BINDING_BIT</code>, <code>VK_IMAGE_CREATE_SPARSE_RESIDENCY_BIT</code>, and <code>VK_IMAGE_CREATE_SPARSE_ALIASED_BIT</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D</code><br>
-<code>levelCount</code> = 1<br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D</code><br />
+<code>levelCount</code> = 1<br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> = 1</p></td>
 </tr>
 <tr>
 <th class="tableblock halign-left valign-top"><p class="tableblock">3D, 0, 0</p></th>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_3D</code><br>
-<code>width</code> ≥ 1<br>
-<code>height</code> ≥ 1<br>
-<code>depth</code> ≥ 1<br>
-<code>arrayLayers</code> = 1<br>
-<code>samples</code> = 1<br>
-<code>flags</code> includes <code>VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT</code><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>imageType</code> = <code>VK_IMAGE_TYPE_3D</code><br />
+<code>width</code> ≥ 1<br />
+<code>height</code> ≥ 1<br />
+<code>depth</code> ≥ 1<br />
+<code>arrayLayers</code> = 1<br />
+<code>samples</code> = 1<br />
+<code>flags</code> includes <code>VK_IMAGE_CREATE_2D_ARRAY_COMPATIBLE_BIT</code><br />
 <code>flags</code> does not include <code>VK_IMAGE_CREATE_SPARSE_BINDING_BIT</code>, <code>VK_IMAGE_CREATE_SPARSE_RESIDENCY_BIT</code>, and <code>VK_IMAGE_CREATE_SPARSE_ALIASED_BIT</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code><br>
-<code>levelCount</code> = 1<br>
-<code>baseArrayLayer</code> ≥ 0<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>viewType</code> = <code>VK_IMAGE_VIEW_TYPE_2D_ARRAY</code><br />
+<code>levelCount</code> = 1<br />
+<code>baseArrayLayer</code> ≥ 0<br />
 <code>layerCount</code> ≥ 1</p></td>
 </tr>
 </tbody>
@@ -25188,9 +25188,9 @@ additional parameters for the fence payload import operation.</p>
 <table id="synchronization-fence-handletypes-fd" class="tableblock frame-all grid-all" style="width: 80%;">
 <caption class="title">Table 8. Handle Types Supported by <a href="#VkImportFenceFdInfoKHR">VkImportFenceFdInfoKHR</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 33.3333%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3334%;" />
 </colgroup>
 <thead>
 <tr>
@@ -25385,9 +25385,9 @@ synchronization primitive to import, or <code>NULL</code>.</p>
 <table id="synchronization-fence-handletypes-win32" class="tableblock frame-all grid-all" style="width: 80%;">
 <caption class="title">Table 9. Handle Types Supported by <a href="#VkImportFenceWin32HandleInfoKHR">VkImportFenceWin32HandleInfoKHR</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 33.3333%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3334%;" />
 </colgroup>
 <thead>
 <tr>
@@ -26149,9 +26149,9 @@ additional parameters for the semaphore payload import operation.</p>
 <table id="synchronization-semaphore-handletypes-fd" class="tableblock frame-all grid-all" style="width: 80%;">
 <caption class="title">Table 10. Handle Types Supported by <a href="#VkImportSemaphoreFdInfoKHR">VkImportSemaphoreFdInfoKHR</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 33.3333%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3334%;" />
 </colgroup>
 <thead>
 <tr>
@@ -26318,9 +26318,9 @@ synchronization primitive to import, or <code>NULL</code>.</p>
 <table id="synchronization-semaphore-handletypes-win32" class="tableblock frame-all grid-all" style="width: 80%;">
 <caption class="title">Table 11. Handle Types Supported by <a href="#VkImportSemaphoreWin32HandleInfoKHR">VkImportSemaphoreWin32HandleInfoKHR</a></caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 33.3333%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3334%;" />
 </colgroup>
 <thead>
 <tr>
@@ -37710,39 +37710,39 @@ have its <code>propertyFlags</code> set to one of the following values:</p>
 <p>0</p>
 </li>
 <li>
-<p><code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br>
+<p><code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br />
 <code>VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</code></p>
 </li>
 <li>
-<p><code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br>
+<p><code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br />
 <code>VK_MEMORY_PROPERTY_HOST_CACHED_BIT</code></p>
 </li>
 <li>
-<p><code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br>
-<code>VK_MEMORY_PROPERTY_HOST_CACHED_BIT</code> |<br>
+<p><code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br />
+<code>VK_MEMORY_PROPERTY_HOST_CACHED_BIT</code> |<br />
 <code>VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</code></p>
 </li>
 <li>
 <p><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code></p>
 </li>
 <li>
-<p><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code> |<br>
-<code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br>
+<p><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code> |<br />
+<code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br />
 <code>VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</code></p>
 </li>
 <li>
-<p><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code> |<br>
-<code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br>
+<p><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code> |<br />
+<code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br />
 <code>VK_MEMORY_PROPERTY_HOST_CACHED_BIT</code></p>
 </li>
 <li>
-<p><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code> |<br>
-<code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br>
-<code>VK_MEMORY_PROPERTY_HOST_CACHED_BIT</code> |<br>
+<p><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code> |<br />
+<code>VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT</code> |<br />
+<code>VK_MEMORY_PROPERTY_HOST_CACHED_BIT</code> |<br />
 <code>VK_MEMORY_PROPERTY_HOST_COHERENT_BIT</code></p>
 </li>
 <li>
-<p><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code> |<br>
+<p><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code> |<br />
 <code>VK_MEMORY_PROPERTY_LAZILY_ALLOCATED_BIT</code></p>
 </li>
 <li>

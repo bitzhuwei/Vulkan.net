@@ -534,7 +534,7 @@ layout (set = 0, binding = 0) uniform AreaUB
             var appInfo = new VkApplicationInfo();
             {
                 appInfo.SType = VkStructureType.ApplicationInfo;
-                uint version = Vulkan.Version.Make(1, 0, 0);
+                UInt32 version = Vulkan.Version.Make(1, 0, 0);
                 appInfo.ApiVersion = version;
             }
 
