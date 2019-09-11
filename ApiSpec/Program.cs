@@ -15,6 +15,10 @@ namespace ApiSpec {
             //HandlesParser.h4Counts();
             //HandlesParser.DumpHandles();
 
+            //FlagsParser.Testh4();
+            //FlagsParser.h4Counts();
+            //FlagsParser.DumpFlags();
+
             //PFNsParser.Testh4();
             //PFNsParser.h4Counts();
             //PFNsParser.DumpPFNs();
@@ -27,7 +31,7 @@ namespace ApiSpec {
             //CommandsParser.h4Counts();
             //CommandsParser.DumpCommands();
 
-            //Console.ReadKey();
+            Console.ReadKey();
         }
     }
 

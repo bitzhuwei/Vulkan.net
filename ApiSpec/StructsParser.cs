@@ -36,7 +36,7 @@ namespace ApiSpec {
                 {
                     string[] parts = lines[0].Split(inLineSeparator, StringSplitOptions.RemoveEmptyEntries);
                     if (parts[1] == "union") {
-                        lines[0] = $"/*union*/[StructLayout(LayoutKind.Explicit)] public struct {parts[2]} {leftBrace}";
+                        lines[0] = $"/*union*/[StructLayout(LayoutKind.Explicit)] public unsafe struct {parts[2]} {leftBrace}";
                     }
                     else {
                         lines[0] = $"public unsafe struct {parts[2]} {leftBrace}";
@@ -112,6 +112,7 @@ namespace ApiSpec {
                         if (line.StartsWith("/*union*/")) {
                             isUnion = true;
                         }
+                        if (line.Contains("FlagBits")) { sw.WriteLine("[Flags]"); }
                         sw.WriteLine(line); // public struct XXX {
                     }
                     for (int j = 1; j < definitionLines.Length - 1; j++) {
