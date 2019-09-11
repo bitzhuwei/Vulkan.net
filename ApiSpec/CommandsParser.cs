@@ -116,7 +116,29 @@ namespace ApiSpec {
                     {
                         sw.WriteLine("[DllImport(VulkanLibrary, CallingConvention = CallingConvention.Winapi)]");
                         string line = definitionLines[0];
-                        sw.WriteLine(line); // public static extern VkResult vkAcquireFullScreenExclusiveModeEXT( ...
+                        line = line.Trim();
+                        var l = line.Replace("const char* ", "IntPtr ");
+                        l = l.Replace("const*", "/*-const-*/ *");
+                        l = l.Replace("const ", "/*-const-*/ ");
+                        l = l.Replace(" const", " /*-const-*/");
+                        l = l.Replace("size_t ", "Int32 ");
+                        l = l.Replace("size_t*", "Int32*");
+                        l = l.Replace("uint8_t* ", "byte* ");
+                        l = l.Replace("uint8_t ", " byte ");
+                        l = l.Replace("uint16_t* ", "UInt16* ");
+                        l = l.Replace("uint16_t ", "UInt16 ");
+                        l = l.Replace("uint32_t* ", "UInt32* ");
+                        l = l.Replace("uint32_t ", "UInt32 ");
+                        l = l.Replace("uint64_t* ", "UInt64* ");
+                        l = l.Replace("uint64_t ", "UInt64 ");
+                        l = l.Replace("int32_t* ", "Int32* ");
+                        l = l.Replace("int32_t ", "Int32 ");
+                        l = l.Replace("int64_t* ", "Int64* ");
+                        l = l.Replace("int64_t ", "Int64 ");
+                        l = l.Replace("struct ", "/* struct */ ");
+                        l = l.Replace(" object", " _object");
+                        l = l.Replace(" event", " _event");
+                        sw.WriteLine(l); // public static extern VkResult vkAcquireFullScreenExclusiveModeEXT( ...
                     }
                     for (int j = 1; j < definitionLines.Length; j++) {
                         string line = definitionLines[j];
@@ -126,6 +148,7 @@ namespace ApiSpec {
                         l = l.Replace("const ", "/*-const-*/ ");
                         l = l.Replace(" const", " /*-const-*/");
                         l = l.Replace("size_t ", "Int32 ");
+                        l = l.Replace("size_t*", "Int32*");
                         l = l.Replace("uint8_t* ", "byte* ");
                         l = l.Replace("uint8_t ", " byte ");
                         l = l.Replace("uint16_t* ", "UInt16* ");
