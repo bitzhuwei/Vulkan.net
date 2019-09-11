@@ -4,54 +4,44 @@ using System.Text;
 using System.Xml.Linq;
 
 namespace ApiSpec {
-    class StructsParser {
+    class PFNsParser {
 
-        static readonly char[] inLineSeparator = new char[] { ' ', '\t', '\r', '\n', };
+        static readonly char[] inLineSeparator = new char[] { ' ', '\t', '\r', '\n', '(', ')' };
         static readonly char[] lineSeparator = new char[] { '\r', '\n' };
-        const string leftBrace = "{";
-        const string rightBrace = "}";
+        const string leftBrace = "(";
+        const string rightBrace = ")";
 
-        const string filename = "Structs.content.xml";
+        const string filename = "PFNs.content.xml";
         const string strName = "Name";
         const string strCSpecification = "C Specification";
-        const string strMembers = "Members";
+        const string strParameters = "Parameters";
         const string strDescription = "Description";
         const string strSeeAlso = "See Also";
         const string strDocNotes = "Document Notes";
 
-        class StructDefinition {
-            /*typedef struct VkAccelerationStructureCreateInfoNV {
-    VkStructureType                  sType;
-    const void*                      pNext;
-    VkDeviceSize                     compactedSize;
-    VkAccelerationStructureInfoNV    info;
-} VkAccelerationStructureCreateInfoNV;
+        class PFNDefinition {
+            /*typedef void* (VKAPI_PTR *PFN_vkAllocationFunction)(
+    void*                                       pUserData,
+    size_t                                      size,
+    size_t                                      alignment,
+    VkSystemAllocationScope                     allocationScope);
              */
             public string raw;
 
             public string[] Dump() {
                 string[] lines = this.raw.Split(lineSeparator, StringSplitOptions.RemoveEmptyEntries);
-                if (lines == null || lines.Length < 2) { return lines; }
+                if (lines == null || lines.Length < 1) { return lines; }
 
                 {
                     string[] parts = lines[0].Split(inLineSeparator, StringSplitOptions.RemoveEmptyEntries);
-                    if (parts[1] == "union") {
-                        lines[0] = $"/*union*/[StructLayout(LayoutKind.Explicit)] public struct {parts[2]} {leftBrace}";
-                    }
-                    else {
-                        lines[0] = $"public unsafe struct {parts[2]} {leftBrace}";
-                    }
-                }
-                {
-                    int last = lines.Length - 1;
-                    lines[last] = $"{rightBrace}";
+                    lines[0] = $"public unsafe delegate {parts[1]} {parts[3].Substring(1)} {leftBrace}";
                 }
 
                 return lines;
             }
         }
 
-        class StructItemComment {
+        class PFNItemComment {
             public List<string> lstComment = new List<string>();
 
             public Dictionary<string, string> Dump() {
@@ -71,50 +61,31 @@ namespace ApiSpec {
             }
         }
 
-        class ItemDescription {
-            public List<string> lstComment = new List<string>();
-        }
-
-        public static void DumpStructs() {
+        public static void DumpPFNs() {
             XElement root = XElement.Load(filename);
-            var lstDefinition = new List<StructDefinition>(); bool inside = false;
+            var lstDefinition = new List<PFNDefinition>(); bool inside = false;
             TraverseDefinitions(root, lstDefinition, ref inside);
-            var lstItemComment = new List<StructItemComment>(); inside = false;
+            var lstItemComment = new List<PFNItemComment>(); inside = false;
             TraverseItemComments(root, lstItemComment, ref inside);
             var lstComment = new List<string>(); inside = false;
             TraverseComments(root, lstComment, ref inside);
-            //var lstItemDescription = new List<ItemDescription>(); inside = false;
-            //TraverseDescriptions(root, lstItemDescription, ref inside);
 
-            using (var sw = new System.IO.StreamWriter("Structs.gen.cs")) {
+            using (var sw = new System.IO.StreamWriter("PFNs.gen.cs")) {
                 for (int i = 0; i < lstDefinition.Count; i++) {
-                    StructDefinition definition = lstDefinition[i];
+                    PFNDefinition definition = lstDefinition[i];
                     //sw.WriteLine(definition.raw);
                     string[] definitionLines = definition.Dump();
-                    StructItemComment itemComment = lstItemComment[i];
+                    PFNItemComment itemComment = lstItemComment[i];
                     Dictionary<string, string> item2Comment = itemComment.Dump();
-                    //ItemDescription itemDescription = lstItemDescription[i];
 
-                    sw.WriteLine($"// Struct: {i}");
+                    sw.WriteLine($"// PFN: {i}");
                     string comment = lstComment[i];
-                    sw.WriteLine($"/// <summary>{comment}");
-                    // description is too long.
-                    //foreach (var item in itemDescription.lstComment) {
-                    //    string s = item.Replace("\r", "");
-                    //    s = s.Replace("\n", "");
-                    //    string c = RemoveBraces(s);
-                    //    sw.WriteLine($"/// <para>{c}</para>");
-                    //}
-                    sw.WriteLine($"/// </summary>");
-                    bool isUnion = false;
+                    sw.WriteLine($"/// <summary>{comment}</summary>");
                     {
                         string line = definitionLines[0];
-                        if (line.StartsWith("/*union*/")) {
-                            isUnion = true;
-                        }
-                        sw.WriteLine(line); // public struct XXX {
+                        sw.WriteLine(line); // public unsafe delegate ...
                     }
-                    for (int j = 1; j < definitionLines.Length - 1; j++) {
+                    for (int j = 1; j < definitionLines.Length; j++) {
                         string line = definitionLines[j];
                         if (item2Comment != null) {
                             string strComment = ParseItemComment(line, item2Comment);
@@ -145,21 +116,16 @@ namespace ApiSpec {
                             l = l.Replace("int32_t ", "Int32 ");
                             l = l.Replace("int64_t* ", "Int64* ");
                             l = l.Replace("int64_t ", "Int64 ");
-                            l = l.Replace("struct ", "/*-struct-*/ ");
+                            l = l.Replace("struct ", "/* struct */ ");
                             l = l.Replace(" object", " _object");
                             l = l.Replace(" event", " _event");
-                            if (l.Contains("[")) { l = "fixed " + l; }
-                            l = "public " + l;
-                            if (isUnion) { l = "[FieldOffset(0)] " + l; }
                             l = "    " + l;
                             sw.WriteLine(l);
                         }
                     }
-                    {
-                        string line = definitionLines[definitionLines.Length - 1];
-                        sw.WriteLine(line); // }
+                    if (definitionLines.Length < 2) {
+                        sw.WriteLine(");");
                     }
-
                 }
             }
             Console.WriteLine("Done");
@@ -168,72 +134,24 @@ namespace ApiSpec {
         static readonly char[] braceSeparator = new char[] { '<', '>', };
         // remove <> </>
         private static string RemoveBraces(string strComment) {
-            var leftBraces = new List<int>();
-            var rightBraces = new List<int>();
-            for (int i = 0; i < strComment.Length; i++) {
-                char c = strComment[i];
-                if (c == '<') { leftBraces.Add(i); }
-                else if (c == '>') { rightBraces.Add(i); }
-            }
-
-            if (leftBraces.Count != rightBraces.Count) { return strComment; }
-
             var builder = new StringBuilder();
-            int current = 0; leftBraces.Add(strComment.Length); rightBraces.Insert(0, -1);
-            for (int i = 0; i < leftBraces.Count; i++) {
-                current = rightBraces[i] + 1;
-                int left = leftBraces[i];
-                string segment = strComment.Substring(current, left - current);
-                if (!string.IsNullOrWhiteSpace(segment)) {
-                    builder.Append(segment);
-                }
+            bool inside = false;
+            foreach (var item in strComment) {
+                if (item == '<') { inside = true; }
+                else if (item == '>') { inside = false; }
                 else {
-                    builder.Append(" ");
+                    if (!inside) {
+                        builder.Append(item);
+                    }
                 }
             }
 
             return builder.ToString();
         }
 
-        /*<h4 id="_description_364">Description</h4>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Valid Usage</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a id="VUID-VkAccelerationStructureCreateInfoNV-compactedSize-02421"></a>
-If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometryCount</code> and
-<code>info.instanceCount</code> <strong class="purple">must</strong> be <code>0</code></p>*/
-        private static void TraverseDescriptions(XElement node, List<ItemDescription> list, ref bool inside) {
-            if (node.Name == "h4") {
-                if (node.Value == "Description") {
-                    inside = true;
-                    var comment = new ItemDescription();
-                    list.Add(comment);
-                }
-                else if (node.Value == "See Also") {
-                    inside = false;
-                }
-            }
-            else if (node.Name == "p") {
-                if (inside) {
-                    ItemDescription comment = list[list.Count - 1];
-                    string text = node.ToString();
-                    text = text.Substring("<p>".Length, text.Length - "<p></p>".Length);
-                    text = text.Trim();
-                    comment.lstComment.Add(text);
-                }
-            }
-
-            foreach (XElement item in node.Elements()) {
-                TraverseDescriptions(item, list, ref inside);
-            }
-        }
-
-        /*<h4 id="_name_364">Name</h4>
+        /*<h4 id="_name_1040">Name</h4>
 <div class="paragraph">
-<p>VkAccelerationStructureCreateInfoNV - Structure specifying the parameters of a newly created acceleration structure object</p>
+<p>PFN_vkAllocationFunction - Application-defined memory allocation function</p>
 </div>*/
         private static void TraverseComments(XElement node, List<string> list, ref bool inside) {
             if (node.Name == "h4") {
@@ -256,11 +174,13 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
             }
         }
 
-        /* line:    VkStructureType                  sType;
-         * line:    const void*                      pNext;
-         * comment: <code>sType</code> is the type of this structure.
+        /* line:    void*                                       pUserData,
+         * line:    VkSystemAllocationScope                     allocationScope);
+         * comment: <code>pUserData</code> is the value specified for
+<a href="#VkAllocationCallbacks">VkAllocationCallbacks</a>::<code>pUserData</code> in the allocator specified
+by the application.
         */
-        static readonly char[] itemSeparator = new char[] { ' ', ';', '\t', '\r', '\n', };
+        static readonly char[] itemSeparator = new char[] { ' ', ',', ';', '\t', '\r', '\n', ')', };
         private static string ParseItemComment(string line, Dictionary<string, string> dict) {
             string result = string.Empty;
             string[] parts = line.Split(itemSeparator, StringSplitOptions.RemoveEmptyEntries);
@@ -280,11 +200,11 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
         /// <param name="node"></param>
         /// <param name="list"></param>
         /// <param name="inside"></param>
-        private static void TraverseItemComments(XElement node, List<StructItemComment> list, ref bool inside) {
+        private static void TraverseItemComments(XElement node, List<PFNItemComment> list, ref bool inside) {
             if (node.Name == "h4") {
-                if (node.Value == "Members") {
+                if (node.Value == "Parameters") {
                     inside = true;
-                    var comment = new StructItemComment();
+                    var comment = new PFNItemComment();
                     list.Add(comment);
                 }
                 else if (node.Value == "Description") {
@@ -293,7 +213,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
             }
             else if (node.Name == "p") {
                 if (inside) {
-                    StructItemComment comment = list[list.Count - 1];
+                    PFNItemComment comment = list[list.Count - 1];
                     string text = node.ToString();
                     text = text.Substring("<p>".Length, text.Length - "<p></p>".Length);
                     text = text.Trim();
@@ -307,7 +227,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
         }
 
 
-        private static void TraverseDefinitions(XElement node, List<StructDefinition> list, ref bool inside) {
+        private static void TraverseDefinitions(XElement node, List<PFNDefinition> list, ref bool inside) {
             if (node.Name == "h4") {
                 if (node.Value == "C Specification") {
                     inside = true;
@@ -318,7 +238,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
                     XAttribute attrClass = node.Attribute("class");
                     if (attrClass != null && attrClass.Value == "language-c++") {
                         string v = node.Value;
-                        var item = new StructDefinition() { raw = v, };
+                        var item = new PFNDefinition() { raw = v, };
                         list.Add(item);
                         inside = false;
                     }
@@ -335,7 +255,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
             var info = new h4Count();
             TraverseNodesCounts(root, info);
 
-            // all are 434. Great!
+            // all are 8. Great!
             Console.WriteLine("Name: {0}", info.names);
             Console.WriteLine("C Specification: {0}", info.cSpecifications);
             Console.WriteLine("Members: {0}", info.members);
@@ -357,7 +277,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
                 else if (v == strCSpecification) {
                     info.cSpecifications++;
                 }
-                else if (v == strMembers) {
+                else if (v == strParameters) {
                     info.members++;
                 }
                 else if (v == strDescription) {
@@ -389,7 +309,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
         /// gathered h4 contents are:
         /// Name
         /// C Specification
-        /// strMembers
+        /// Parameters
         /// Description
         /// See Also
         /// Document Notes

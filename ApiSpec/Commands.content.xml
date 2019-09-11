@@ -2343,10 +2343,10 @@ Conditional rendering <strong class="purple">must</strong> not already be
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -2358,10 +2358,10 @@ Conditional rendering <strong class="purple">must</strong> not already be
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -2468,10 +2468,10 @@ label region to open.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -2483,10 +2483,10 @@ label region to open.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -2700,10 +2700,10 @@ If the <code>queryType</code> used to create <code>queryPool</code> was
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -2715,10 +2715,10 @@ If the <code>queryType</code> used to create <code>queryPool</code> was
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -2944,10 +2944,10 @@ If the <code>queryType</code> used to create <code>queryPool</code> was
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -2959,10 +2959,10 @@ If the <code>queryType</code> used to create <code>queryPool</code> was
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -3191,10 +3191,10 @@ had the <code>VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT</code> set</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -3437,10 +3437,10 @@ had the <code>VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT</code> set</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -3668,10 +3668,10 @@ with multiview enabled</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -3683,7 +3683,7 @@ with multiview enabled</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -3977,10 +3977,10 @@ size of the buffer</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -3992,10 +3992,10 @@ size of the buffer</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -4152,10 +4152,10 @@ contiguously to a single <code>VkDeviceMemory</code> object</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -4167,7 +4167,7 @@ contiguously to a single <code>VkDeviceMemory</code> object</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -4376,10 +4376,10 @@ a ray tracing pipeline</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -4391,10 +4391,10 @@ a ray tracing pipeline</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -4560,10 +4560,10 @@ be <code>VK_IMAGE_LAYOUT_SHADING_RATE_OPTIMAL_NV</code> or
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -4575,7 +4575,7 @@ be <code>VK_IMAGE_LAYOUT_SHADING_RATE_OPTIMAL_NV</code> or
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -4796,10 +4796,10 @@ Transform feedback <strong class="purple">must</strong> not be active when the
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -4811,7 +4811,7 @@ Transform feedback <strong class="purple">must</strong> not be active when the
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -4990,10 +4990,10 @@ completely and contiguously to a single <code>VkDeviceMemory</code> object</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -5005,7 +5005,7 @@ completely and contiguously to a single <code>VkDeviceMemory</code> object</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -5491,10 +5491,10 @@ be less than or equal to the <code>arrayLayers</code> specified in
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -5506,7 +5506,7 @@ be less than or equal to the <code>arrayLayers</code> specified in
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -5726,10 +5726,10 @@ set to <code>dst</code> and
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -5741,7 +5741,7 @@ set to <code>dst</code> and
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compute</p></td>
@@ -5980,10 +5980,10 @@ If the render pass instance this is recorded in uses multiview, then
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -5995,7 +5995,7 @@ If the render pass instance this is recorded in uses multiview, then
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -6244,10 +6244,10 @@ If <code>commandBuffer</code> is a protected command buffer, then <code>image</c
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -6259,10 +6259,10 @@ If <code>commandBuffer</code> is a protected command buffer, then <code>image</c
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -6525,10 +6525,10 @@ If <code>commandBuffer</code> is a protected command buffer, then <code>image</c
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -6540,7 +6540,7 @@ If <code>commandBuffer</code> is a protected command buffer, then <code>image</c
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -6685,10 +6685,10 @@ or <code>VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_NV</code></p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -6700,7 +6700,7 @@ or <code>VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_NV</code></p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compute</p></td>
@@ -6915,10 +6915,10 @@ If <code>commandBuffer</code> is a protected command buffer, then
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -6930,11 +6930,11 @@ If <code>commandBuffer</code> is a protected command buffer, then
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -7211,10 +7211,10 @@ of <code>commandBuffer</code>&#8217;s command pool&#8217;s queue family, as desc
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -7226,11 +7226,11 @@ of <code>commandBuffer</code>&#8217;s command pool&#8217;s queue family, as desc
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -7710,10 +7710,10 @@ of <code>commandBuffer</code>&#8217;s command pool&#8217;s queue family, as desc
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -7725,11 +7725,11 @@ of <code>commandBuffer</code>&#8217;s command pool&#8217;s queue family, as desc
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -8005,10 +8005,10 @@ of <code>commandBuffer</code>&#8217;s command pool&#8217;s queue family, as desc
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -8020,11 +8020,11 @@ of <code>commandBuffer</code>&#8217;s command pool&#8217;s queue family, as desc
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -8291,10 +8291,10 @@ If the <code>queryType</code> used to create <code>queryPool</code> was
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -8306,10 +8306,10 @@ If the <code>queryType</code> used to create <code>queryPool</code> was
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -8416,10 +8416,10 @@ the marker region to open.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -8431,10 +8431,10 @@ the marker region to open.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -8562,10 +8562,10 @@ outstanding <a href="#vkCmdDebugMarkerBeginEXT">vkCmdDebugMarkerBeginEXT</a> com
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -8577,10 +8577,10 @@ outstanding <a href="#vkCmdDebugMarkerBeginEXT">vkCmdDebugMarkerBeginEXT</a> com
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -8687,10 +8687,10 @@ the marker to insert.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -8702,10 +8702,10 @@ the marker to insert.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -8989,10 +8989,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -9004,7 +9004,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compute</p></td>
@@ -9217,10 +9217,10 @@ the <code>VK_PIPELINE_CREATE_DISPATCH_BASE</code> flag.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -9232,7 +9232,7 @@ the <code>VK_PIPELINE_CREATE_DISPATCH_BASE</code> flag.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compute</p></td>
@@ -9513,10 +9513,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -9528,7 +9528,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compute</p></td>
@@ -9861,10 +9861,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -9876,7 +9876,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -10239,10 +10239,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -10254,7 +10254,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -10629,10 +10629,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -10644,7 +10644,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -11021,10 +11021,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -11036,7 +11036,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -11438,10 +11438,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -11453,7 +11453,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -11827,10 +11827,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -11842,7 +11842,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -12193,10 +12193,10 @@ attachment, then that attachment <strong class="purple">must</strong> have been 
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -12208,7 +12208,7 @@ attachment, then that attachment <strong class="purple">must</strong> have been 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -12585,10 +12585,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -12600,7 +12600,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -13002,10 +13002,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -13017,7 +13017,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -13396,10 +13396,10 @@ attachment, then that attachment <strong class="purple">must</strong> have been 
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -13411,7 +13411,7 @@ attachment, then that attachment <strong class="purple">must</strong> have been 
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -13794,10 +13794,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -13809,7 +13809,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -14127,10 +14127,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -14142,7 +14142,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -14273,10 +14273,10 @@ ended in the same subpass</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -14288,10 +14288,10 @@ ended in the same subpass</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -14419,10 +14419,10 @@ outstanding <code>vkCmdBeginDebugUtilsLabelEXT</code> command recorded to
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -14434,10 +14434,10 @@ outstanding <code>vkCmdBeginDebugUtilsLabelEXT</code> command recorded to
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -14597,10 +14597,10 @@ mask <strong class="purple">must</strong> be less than or equal to the number of
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -14612,10 +14612,10 @@ mask <strong class="purple">must</strong> be less than or equal to the number of
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -14784,10 +14784,10 @@ be zero</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -14799,10 +14799,10 @@ be zero</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -14932,10 +14932,10 @@ This command <strong class="purple">must</strong> not be recorded when transform
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -15087,10 +15087,10 @@ This command <strong class="purple">must</strong> not be recorded when transform
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -15302,10 +15302,10 @@ containing
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -15317,7 +15317,7 @@ containing
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -15599,10 +15599,10 @@ This command <strong class="purple">must</strong> not be recorded when transform
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -15616,8 +15616,8 @@ This command <strong class="purple">must</strong> not be recorded when transform
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Primary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -15809,10 +15809,10 @@ If <code>commandBuffer</code> is a protected command buffer, then
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -15824,11 +15824,11 @@ If <code>commandBuffer</code> is a protected command buffer, then
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -15935,10 +15935,10 @@ label to insert.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -15950,10 +15950,10 @@ label to insert.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16113,10 +16113,10 @@ This command <strong class="purple">must</strong> not be recorded when transform
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -16279,10 +16279,10 @@ This command <strong class="purple">must</strong> not be recorded when transform
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -16684,10 +16684,10 @@ If the <a href="vkspec.html#features-taskShader">task shaders</a> feature is not
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -16699,11 +16699,11 @@ If the <a href="vkspec.html#features-taskShader">task shaders</a> feature is not
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -16816,10 +16816,10 @@ affecting the processing of commands.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -16831,10 +16831,10 @@ affecting the processing of commands.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17037,10 +17037,10 @@ for each push constant range that overlaps that byte, <code>stageFlags</code>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -17052,10 +17052,10 @@ for each push constant range that overlaps that byte, <code>stageFlags</code>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17278,10 +17278,10 @@ uses a descriptor set layout that was created with
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -17293,10 +17293,10 @@ uses a descriptor set layout that was created with
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17455,10 +17455,10 @@ by <code>descriptorUpdateTemplate</code> when it was created with
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -17470,10 +17470,10 @@ by <code>descriptorUpdateTemplate</code> when it was created with
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17660,10 +17660,10 @@ commands within the sequence provided by the
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -17677,7 +17677,7 @@ commands within the sequence provided by the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Inside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -17873,10 +17873,10 @@ If the <a href="vkspec.html#features-taskShader">task shaders</a> feature is not
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -17888,10 +17888,10 @@ If the <a href="vkspec.html#features-taskShader">task shaders</a> feature is not
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -18038,10 +18038,10 @@ equal to the number of queries in <code>queryPool</code></p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -18053,10 +18053,10 @@ equal to the number of queries in <code>queryPool</code></p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -18356,10 +18356,10 @@ be less than or equal to the <code>arrayLayers</code> specified in
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -18371,7 +18371,7 @@ be less than or equal to the <code>arrayLayers</code> specified in
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -18494,10 +18494,10 @@ The bound graphics pipeline <strong class="purple">must</strong> have been creat
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -18509,7 +18509,7 @@ The bound graphics pipeline <strong class="purple">must</strong> have been creat
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -18614,10 +18614,10 @@ will be associated with the checkpoint.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -18629,11 +18629,11 @@ will be associated with the checkpoint.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
-Compute<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
+Compute<br />
 Transfer</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -18786,10 +18786,10 @@ with matching values for both the <code>shadingRate</code> and
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -18801,7 +18801,7 @@ with matching values for both the <code>shadingRate</code> and
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -19043,10 +19043,10 @@ enabled, <code>depthBiasClamp</code> <strong class="purple">must</strong> be <co
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -19058,7 +19058,7 @@ enabled, <code>depthBiasClamp</code> <strong class="purple">must</strong> be <co
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -19204,10 +19204,10 @@ Unless the <code><a href="vkspec.html#VK_EXT_depth_range_unrestricted" class="ba
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -19219,7 +19219,7 @@ Unless the <code><a href="vkspec.html#VK_EXT_depth_range_unrestricted" class="ba
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -19376,10 +19376,10 @@ render pass instance began recording.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -19391,11 +19391,11 @@ render pass instance began recording.</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
-Compute<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
+Compute<br />
 Transfer</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -19563,10 +19563,10 @@ signed integer addition overflow</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -19578,7 +19578,7 @@ signed integer addition overflow</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -19770,10 +19770,10 @@ If the <a href="vkspec.html#features-taskShader">task shaders</a> feature is not
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -19785,10 +19785,10 @@ If the <a href="vkspec.html#features-taskShader">task shaders</a> feature is not
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -19981,10 +19981,10 @@ addition overflow</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -19996,7 +19996,7 @@ addition overflow</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -20128,10 +20128,10 @@ If the <a href="vkspec.html#features-wideLines">wide lines</a> feature is not en
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -20143,7 +20143,7 @@ If the <a href="vkspec.html#features-wideLines">wide lines</a> feature is not en
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -20294,10 +20294,10 @@ locations state pointed to by <code>pSampleLocationsInfo</code></p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -20309,7 +20309,7 @@ locations state pointed to by <code>pSampleLocationsInfo</code></p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -20501,10 +20501,10 @@ not cause a signed integer addition overflow</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -20516,7 +20516,7 @@ not cause a signed integer addition overflow</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -20650,10 +20650,10 @@ The bound graphics pipeline <strong class="purple">must</strong> have been creat
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -20665,7 +20665,7 @@ The bound graphics pipeline <strong class="purple">must</strong> have been creat
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -20800,10 +20800,10 @@ The bound graphics pipeline <strong class="purple">must</strong> have been creat
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -20815,7 +20815,7 @@ The bound graphics pipeline <strong class="purple">must</strong> have been creat
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -20950,10 +20950,10 @@ The bound graphics pipeline <strong class="purple">must</strong> have been creat
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -20965,7 +20965,7 @@ The bound graphics pipeline <strong class="purple">must</strong> have been creat
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -21134,10 +21134,10 @@ enabled, <code>viewportCount</code> <strong class="purple">must</strong> be <cod
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -21149,7 +21149,7 @@ enabled, <code>viewportCount</code> <strong class="purple">must</strong> be <cod
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -21316,10 +21316,10 @@ enabled, <code>viewportCount</code> <strong class="purple">must</strong> be <cod
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -21331,7 +21331,7 @@ enabled, <code>viewportCount</code> <strong class="purple">must</strong> be <cod
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -21493,10 +21493,10 @@ The sum of <code>firstViewport</code> and <code>viewportCount</code> <strong cla
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -21508,7 +21508,7 @@ The sum of <code>firstViewport</code> and <code>viewportCount</code> <strong cla
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Graphics</p></td>
@@ -21919,10 +21919,10 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -21934,7 +21934,7 @@ result of this command <strong class="purple">must</strong> only be sampled usin
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compute</p></td>
@@ -22166,10 +22166,10 @@ If <code>commandBuffer</code> is a protected command buffer, then
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -22181,11 +22181,11 @@ If <code>commandBuffer</code> is a protected command buffer, then
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Outside</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -22561,10 +22561,10 @@ If the <a href="vkspec.html#features-taskShader">task shaders</a> feature is not
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -22576,10 +22576,10 @@ If the <a href="vkspec.html#features-taskShader">task shaders</a> feature is not
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -22749,10 +22749,10 @@ been built with
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -22764,7 +22764,7 @@ been built with
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Compute</p></td>
@@ -22976,10 +22976,10 @@ contiguously to a single <code>VkDeviceMemory</code> object</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -22991,11 +22991,11 @@ contiguously to a single <code>VkDeviceMemory</code> object</p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -23245,10 +23245,10 @@ in <code>queryPool</code></p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -23260,11 +23260,11 @@ in <code>queryPool</code></p>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primary<br />
 Secondary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Both</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br>
-Graphics<br>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transfer<br />
+Graphics<br />
 Compute</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Transfer</p></td>
 </tr>
@@ -37437,9 +37437,9 @@ first parameter) that is <code>device</code> or a child of <code>device</code>.<
 <table class="tableblock frame-all grid-all" style="width: 80%;">
 <caption class="title">Table 1. vkGetDeviceProcAddr behavior</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 33.3333%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3334%;" />
 </colgroup>
 <thead>
 <tr>
@@ -38447,8 +38447,8 @@ with the following return codes:</p>
 <table class="tableblock frame-all grid-all" style="width: 80%;">
 <caption class="title">Table 2. Event Object Status Codes</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 50%;" />
+<col style="width: 50%;" />
 </colgroup>
 <thead>
 <tr>
@@ -38756,8 +38756,8 @@ with the following return codes:</p>
 <table class="tableblock frame-all grid-all" style="width: 80%;">
 <caption class="title">Table 3. Fence Object Status Codes</caption>
 <colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
+<col style="width: 50%;" />
+<col style="width: 50%;" />
 </colgroup>
 <thead>
 <tr>
@@ -39863,9 +39863,9 @@ be cast to the type of the command being queried.</p>
 <table class="tableblock frame-all grid-all" style="width: 80%;">
 <caption class="title">Table 4. vkGetInstanceProcAddr behavior</caption>
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 33.3333%;" />
+<col style="width: 33.3333%;" />
+<col style="width: 33.3334%;" />
 </colgroup>
 <thead>
 <tr>
@@ -45800,9 +45800,9 @@ be a header consisting of the following members:</p>
 <table class="tableblock frame-all grid-all" style="width: 85%;">
 <caption class="title">Table 5. Layout for pipeline cache header version <code>VK_PIPELINE_CACHE_HEADER_VERSION_ONE</code></caption>
 <colgroup>
-<col style="width: 8%;">
-<col style="width: 21%;">
-<col style="width: 71%;">
+<col style="width: 8%;" />
+<col style="width: 21%;" />
+<col style="width: 71%;" />
 </colgroup>
 <thead>
 <tr>
@@ -47860,9 +47860,9 @@ be a header consisting of the following members:</p>
 <table class="tableblock frame-all grid-all" style="width: 85%;">
 <caption class="title">Table 6. Layout for validation cache header version <code>VK_VALIDATION_CACHE_HEADER_VERSION_ONE_EXT</code></caption>
 <colgroup>
-<col style="width: 8%;">
-<col style="width: 21%;">
-<col style="width: 71%;">
+<col style="width: 8%;" />
+<col style="width: 21%;" />
+<col style="width: 71%;" />
 </colgroup>
 <thead>
 <tr>
@@ -49295,10 +49295,10 @@ label region to open.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -49513,10 +49513,10 @@ previously submitted for execution.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -49661,10 +49661,10 @@ command prior to the <code>vkQueueEndDebugUtilsLabelEXT</code> on the queue</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -49765,10 +49765,10 @@ label to insert.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -49985,10 +49985,10 @@ implementation-specific reasons outside of the application&#8217;s control.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -50339,10 +50339,10 @@ the definition of such <a href="vkspec.html#synchronization-queue-transfers-acqu
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>
@@ -50486,10 +50486,10 @@ waiting with an infinite timeout for that fence to signal.</p>
 <div class="title">Command Properties</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
+<col style="width: 25%;" />
 </colgroup>
 <thead>
 <tr>

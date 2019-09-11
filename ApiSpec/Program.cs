@@ -10,12 +10,26 @@ namespace ApiSpec {
             //EnumsParser.Testh4();
             //EnumsParser.h4Counts();
             //EnumsParser.DumpEnums();
+
+            //HandlesParser.Testh4();
+            //HandlesParser.h4Counts();
+            //HandlesParser.DumpHandles();
+
+            //PFNsParser.Testh4();
+            //PFNsParser.h4Counts();
+            //PFNsParser.DumpPFNs();
+
             //StructsParser.Testh4();
             //StructsParser.h4Counts();
             StructsParser.DumpStructs();
 
+            //CommandsParser.Testh4();
+            //CommandsParser.h4Counts();
+            //CommandsParser.DumpCommands();
+
             //Console.ReadKey();
         }
     }
+
 
 }

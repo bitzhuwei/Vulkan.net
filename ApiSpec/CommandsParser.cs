@@ -4,28 +4,27 @@ using System.Text;
 using System.Xml.Linq;
 
 namespace ApiSpec {
-    class StructsParser {
+    class CommandsParser {
 
-        static readonly char[] inLineSeparator = new char[] { ' ', '\t', '\r', '\n', };
+        static readonly char[] inLineSeparator = new char[] { ' ', '\t', '\r', '\n', '(', ')' };
         static readonly char[] lineSeparator = new char[] { '\r', '\n' };
-        const string leftBrace = "{";
-        const string rightBrace = "}";
+        const string leftBrace = "(";
+        const string rightBrace = ")";
 
-        const string filename = "Structs.content.xml";
+        const string filename = "Commands.content.xml";
         const string strName = "Name";
         const string strCSpecification = "C Specification";
-        const string strMembers = "Members";
+        const string strParameters = "Parameters";
         const string strDescription = "Description";
         const string strSeeAlso = "See Also";
         const string strDocNotes = "Document Notes";
 
-        class StructDefinition {
-            /*typedef struct VkAccelerationStructureCreateInfoNV {
-    VkStructureType                  sType;
-    const void*                      pNext;
-    VkDeviceSize                     compactedSize;
-    VkAccelerationStructureInfoNV    info;
-} VkAccelerationStructureCreateInfoNV;
+        class Definition {
+            /*typedef void* (VKAPI_PTR *PFN_vkAllocationFunction)(
+    void*                                       pUserData,
+    size_t                                      size,
+    size_t                                      alignment,
+    VkSystemAllocationScope                     allocationScope);
              */
             public string raw;
 
@@ -34,24 +33,16 @@ namespace ApiSpec {
                 if (lines == null || lines.Length < 2) { return lines; }
 
                 {
-                    string[] parts = lines[0].Split(inLineSeparator, StringSplitOptions.RemoveEmptyEntries);
-                    if (parts[1] == "union") {
-                        lines[0] = $"/*union*/[StructLayout(LayoutKind.Explicit)] public struct {parts[2]} {leftBrace}";
-                    }
-                    else {
-                        lines[0] = $"public unsafe struct {parts[2]} {leftBrace}";
-                    }
-                }
-                {
-                    int last = lines.Length - 1;
-                    lines[last] = $"{rightBrace}";
+                    //string[] parts = lines[0].Split(inLineSeparator, StringSplitOptions.RemoveEmptyEntries);
+                    //lines[0] = $"public {parts[0]} {parts[3].Substring(1)} {leftBrace}";
+                    lines[0] = $"public static extern {lines[0]}";
                 }
 
                 return lines;
             }
         }
 
-        class StructItemComment {
+        class ItemComment {
             public List<string> lstComment = new List<string>();
 
             public Dictionary<string, string> Dump() {
@@ -75,27 +66,28 @@ namespace ApiSpec {
             public List<string> lstComment = new List<string>();
         }
 
-        public static void DumpStructs() {
+        public static void DumpCommands() {
             XElement root = XElement.Load(filename);
-            var lstDefinition = new List<StructDefinition>(); bool inside = false;
+            var lstDefinition = new List<Definition>(); bool inside = false;
             TraverseDefinitions(root, lstDefinition, ref inside);
-            var lstItemComment = new List<StructItemComment>(); inside = false;
+            var lstItemComment = new List<ItemComment>(); inside = false;
             TraverseItemComments(root, lstItemComment, ref inside);
             var lstComment = new List<string>(); inside = false;
             TraverseComments(root, lstComment, ref inside);
             //var lstItemDescription = new List<ItemDescription>(); inside = false;
             //TraverseDescriptions(root, lstItemDescription, ref inside);
 
-            using (var sw = new System.IO.StreamWriter("Structs.gen.cs")) {
+            using (var sw = new System.IO.StreamWriter("Commands.gen.cs")) {
+                sw.WriteLine("const string VulkanLibrary = \"vulkan-1\";");
                 for (int i = 0; i < lstDefinition.Count; i++) {
-                    StructDefinition definition = lstDefinition[i];
+                    Definition definition = lstDefinition[i];
                     //sw.WriteLine(definition.raw);
                     string[] definitionLines = definition.Dump();
-                    StructItemComment itemComment = lstItemComment[i];
+                    ItemComment itemComment = lstItemComment[i];
                     Dictionary<string, string> item2Comment = itemComment.Dump();
                     //ItemDescription itemDescription = lstItemDescription[i];
 
-                    sw.WriteLine($"// Struct: {i}");
+                    sw.WriteLine($"// Command: {i}");
                     string comment = lstComment[i];
                     sw.WriteLine($"/// <summary>{comment}");
                     // description is too long.
@@ -106,60 +98,52 @@ namespace ApiSpec {
                     //    sw.WriteLine($"/// <para>{c}</para>");
                     //}
                     sw.WriteLine($"/// </summary>");
-                    bool isUnion = false;
-                    {
-                        string line = definitionLines[0];
-                        if (line.StartsWith("/*union*/")) {
-                            isUnion = true;
-                        }
-                        sw.WriteLine(line); // public struct XXX {
-                    }
-                    for (int j = 1; j < definitionLines.Length - 1; j++) {
+                    // /// <param name="device"></param>
+                    for (int j = 1; j < definitionLines.Length; j++) {
                         string line = definitionLines[j];
                         if (item2Comment != null) {
-                            string strComment = ParseItemComment(line, item2Comment);
+                            string key;
+                            string strComment = ParseItemComment(line, item2Comment, out key);
                             if (strComment != string.Empty) {
                                 strComment = strComment.Replace("\r\n", "\n");
                                 strComment = strComment.Replace("\r", "\n");
                                 strComment = strComment.Replace("\n", $"{Environment.NewLine}    /// ");
                                 strComment = RemoveBraces(strComment);
-                                sw.WriteLine($"    /// <summary>{strComment}</summary>");
+                                sw.WriteLine(string.Format("/// <param name=\"{0}\">{1}</param>", key, strComment));
                             }
-                        }
-                        {
-                            line = line.Trim();
-                            var l = line.Replace("const char* ", "IntPtr ");
-                            l = l.Replace("const*", "/*-const-*/ *");
-                            l = l.Replace("const ", "/*-const-*/ ");
-                            l = l.Replace(" const", " /*-const-*/");
-                            l = l.Replace("size_t ", "Int32 ");
-                            l = l.Replace("uint8_t* ", "byte* ");
-                            l = l.Replace("uint8_t ", " byte ");
-                            l = l.Replace("uint16_t* ", "UInt16* ");
-                            l = l.Replace("uint16_t ", "UInt16 ");
-                            l = l.Replace("uint32_t* ", "UInt32* ");
-                            l = l.Replace("uint32_t ", "UInt32 ");
-                            l = l.Replace("uint64_t* ", "UInt64* ");
-                            l = l.Replace("uint64_t ", "UInt64 ");
-                            l = l.Replace("int32_t* ", "Int32* ");
-                            l = l.Replace("int32_t ", "Int32 ");
-                            l = l.Replace("int64_t* ", "Int64* ");
-                            l = l.Replace("int64_t ", "Int64 ");
-                            l = l.Replace("struct ", "/*-struct-*/ ");
-                            l = l.Replace(" object", " _object");
-                            l = l.Replace(" event", " _event");
-                            if (l.Contains("[")) { l = "fixed " + l; }
-                            l = "public " + l;
-                            if (isUnion) { l = "[FieldOffset(0)] " + l; }
-                            l = "    " + l;
-                            sw.WriteLine(l);
                         }
                     }
                     {
-                        string line = definitionLines[definitionLines.Length - 1];
-                        sw.WriteLine(line); // }
+                        sw.WriteLine("[DllImport(VulkanLibrary, CallingConvention = CallingConvention.Winapi)]");
+                        string line = definitionLines[0];
+                        sw.WriteLine(line); // public static extern VkResult vkAcquireFullScreenExclusiveModeEXT( ...
                     }
-
+                    for (int j = 1; j < definitionLines.Length; j++) {
+                        string line = definitionLines[j];
+                        line = line.Trim();
+                        var l = line.Replace("const char* ", "IntPtr ");
+                        l = l.Replace("const*", "/*-const-*/ *");
+                        l = l.Replace("const ", "/*-const-*/ ");
+                        l = l.Replace(" const", " /*-const-*/");
+                        l = l.Replace("size_t ", "Int32 ");
+                        l = l.Replace("uint8_t* ", "byte* ");
+                        l = l.Replace("uint8_t ", " byte ");
+                        l = l.Replace("uint16_t* ", "UInt16* ");
+                        l = l.Replace("uint16_t ", "UInt16 ");
+                        l = l.Replace("uint32_t* ", "UInt32* ");
+                        l = l.Replace("uint32_t ", "UInt32 ");
+                        l = l.Replace("uint64_t* ", "UInt64* ");
+                        l = l.Replace("uint64_t ", "UInt64 ");
+                        l = l.Replace("int32_t* ", "Int32* ");
+                        l = l.Replace("int32_t ", "Int32 ");
+                        l = l.Replace("int64_t* ", "Int64* ");
+                        l = l.Replace("int64_t ", "Int64 ");
+                        l = l.Replace("struct ", "/* struct */ ");
+                        l = l.Replace(" object", " _object");
+                        l = l.Replace(" event", " _event");
+                        l = "    " + l;
+                        sw.WriteLine(l);
+                    }
                 }
             }
             Console.WriteLine("Done");
@@ -195,16 +179,15 @@ namespace ApiSpec {
             return builder.ToString();
         }
 
-        /*<h4 id="_description_364">Description</h4>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">Valid Usage</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a id="VUID-VkAccelerationStructureCreateInfoNV-compactedSize-02421"></a>
-If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometryCount</code> and
-<code>info.instanceCount</code> <strong class="purple">must</strong> be <code>0</code></p>*/
+        /*<h4 id="_description">Description</h4>
+        <div class="sidebarblock">
+        <div class="content">
+        <div class="title">Valid Usage</div>
+        <div class="ulist">
+        <ul>
+        <li>
+        <p><a id="VUID-vkAcquireFullScreenExclusiveModeEXT-swapchain-02674"></a>
+        <code>swapchain</code> <strong class="purple">must</strong> not be in the retired state</p>*/
         private static void TraverseDescriptions(XElement node, List<ItemDescription> list, ref bool inside) {
             if (node.Name == "h4") {
                 if (node.Value == "Description") {
@@ -231,10 +214,10 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
             }
         }
 
-        /*<h4 id="_name_364">Name</h4>
-<div class="paragraph">
-<p>VkAccelerationStructureCreateInfoNV - Structure specifying the parameters of a newly created acceleration structure object</p>
-</div>*/
+        /*<h4 id="_name">Name</h4>
+        <div class="paragraph">
+        <p>vkAcquireFullScreenExclusiveModeEXT - Acquire full-screen exclusive mode for a swapchain</p>
+        </div>*/
         private static void TraverseComments(XElement node, List<string> list, ref bool inside) {
             if (node.Name == "h4") {
                 if (node.Value == "Name") {
@@ -256,16 +239,18 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
             }
         }
 
-        /* line:    VkStructureType                  sType;
-         * line:    const void*                      pNext;
-         * comment: <code>sType</code> is the type of this structure.
+        /* line:    void*                                       pUserData,
+         * line:    VkSystemAllocationScope                     allocationScope);
+         * comment: <code>pUserData</code> is the value specified for
+        <a href="#VkAllocationCallbacks">VkAllocationCallbacks</a>::<code>pUserData</code> in the allocator specified
+        by the application.
         */
-        static readonly char[] itemSeparator = new char[] { ' ', ';', '\t', '\r', '\n', };
-        private static string ParseItemComment(string line, Dictionary<string, string> dict) {
-            string result = string.Empty;
+        static readonly char[] itemSeparator = new char[] { ' ', ',', ';', '\t', '\r', '\n', ')', };
+        private static string ParseItemComment(string line, Dictionary<string, string> dict, out string key) {
+            string result = string.Empty; key = "???";
             string[] parts = line.Split(itemSeparator, StringSplitOptions.RemoveEmptyEntries);
             if (parts.Length > 0) {
-                string key = parts[parts.Length - 1];
+                key = parts[parts.Length - 1];
                 if (dict.ContainsKey(key)) {
                     result = dict[key];
                 }
@@ -280,11 +265,11 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
         /// <param name="node"></param>
         /// <param name="list"></param>
         /// <param name="inside"></param>
-        private static void TraverseItemComments(XElement node, List<StructItemComment> list, ref bool inside) {
+        private static void TraverseItemComments(XElement node, List<ItemComment> list, ref bool inside) {
             if (node.Name == "h4") {
-                if (node.Value == "Members") {
+                if (node.Value == "Parameters") {
                     inside = true;
-                    var comment = new StructItemComment();
+                    var comment = new ItemComment();
                     list.Add(comment);
                 }
                 else if (node.Value == "Description") {
@@ -293,7 +278,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
             }
             else if (node.Name == "p") {
                 if (inside) {
-                    StructItemComment comment = list[list.Count - 1];
+                    ItemComment comment = list[list.Count - 1];
                     string text = node.ToString();
                     text = text.Substring("<p>".Length, text.Length - "<p></p>".Length);
                     text = text.Trim();
@@ -307,7 +292,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
         }
 
 
-        private static void TraverseDefinitions(XElement node, List<StructDefinition> list, ref bool inside) {
+        private static void TraverseDefinitions(XElement node, List<Definition> list, ref bool inside) {
             if (node.Name == "h4") {
                 if (node.Value == "C Specification") {
                     inside = true;
@@ -318,7 +303,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
                     XAttribute attrClass = node.Attribute("class");
                     if (attrClass != null && attrClass.Value == "language-c++") {
                         string v = node.Value;
-                        var item = new StructDefinition() { raw = v, };
+                        var item = new Definition() { raw = v, };
                         list.Add(item);
                         inside = false;
                     }
@@ -335,7 +320,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
             var info = new h4Count();
             TraverseNodesCounts(root, info);
 
-            // all are 434. Great!
+            // all are 326. Great!
             Console.WriteLine("Name: {0}", info.names);
             Console.WriteLine("C Specification: {0}", info.cSpecifications);
             Console.WriteLine("Members: {0}", info.members);
@@ -357,7 +342,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
                 else if (v == strCSpecification) {
                     info.cSpecifications++;
                 }
-                else if (v == strMembers) {
+                else if (v == strParameters) {
                     info.members++;
                 }
                 else if (v == strDescription) {
@@ -389,7 +374,7 @@ If <code>compactedSize</code> is not <code>0</code> then both <code>info.geometr
         /// gathered h4 contents are:
         /// Name
         /// C Specification
-        /// strMembers
+        /// Parameters
         /// Description
         /// See Also
         /// Document Notes
