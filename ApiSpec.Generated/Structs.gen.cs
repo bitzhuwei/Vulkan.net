@@ -1,4 +1,5 @@
 using System;
+
 // hand-coded.
 using VkFlags = System.UInt32;
 using VkAndroidSurfaceCreateFlagsKHR = System.UInt32;
@@ -128,7 +129,6 @@ using VkSubpassDescriptionFlags = ApiSpec.Generated.VkSubpassDescriptionFlagBits
 using VkSurfaceCounterFlagsEXT = ApiSpec.Generated.VkSurfaceCounterFlagBitsEXT;
 using VkSurfaceTransformFlagsKHR = ApiSpec.Generated.VkSurfaceTransformFlagBitsKHR;
 using VkSwapchainCreateFlagsKHR = ApiSpec.Generated.VkSwapchainCreateFlagBitsKHR;
-using System.Runtime.InteropServices;
 // VkValidationCacheCreateFlagsEXT - Reserved for future use
 
 namespace ApiSpec.Generated {
@@ -871,11 +871,11 @@ namespace ApiSpec.Generated {
     /// <summary>VkClearColorValue - Structure specifying a clear color value
     /// </summary>
     /*union*/
-    [StructLayout(LayoutKind.Explicit)]
+    [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Explicit)]
     public unsafe struct VkClearColorValue {
-        [FieldOffset(0)] public fixed float float32[4];
-        [FieldOffset(0)] public fixed Int32 int32[4];
-        [FieldOffset(0)] public fixed UInt32 uint32[4];
+        [System.Runtime.InteropServices.FieldOffset(0)] public fixed float float32[4];
+        [System.Runtime.InteropServices.FieldOffset(0)] public fixed Int32 int32[4];
+        [System.Runtime.InteropServices.FieldOffset(0)] public fixed UInt32 uint32[4];
     }
     // Struct: 37
     /// <summary>VkClearDepthStencilValue - Structure specifying a clear depth stencil value
@@ -907,14 +907,14 @@ namespace ApiSpec.Generated {
     /// <summary>VkClearValue - Structure specifying a clear value
     /// </summary>
     /*union*/
-    [StructLayout(LayoutKind.Explicit)]
+    [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Explicit)]
     public struct VkClearValue {
         /// <summary> color specifies the color image clear values to use when clearing
         /// a color image or attachment.</summary>
-        [FieldOffset(0)] public VkClearColorValue color;
+        [System.Runtime.InteropServices.FieldOffset(0)] public VkClearColorValue color;
         /// <summary> depthStencil specifies the depth and stencil clear values to use
         /// when clearing a depth/stencil image or attachment.</summary>
-        [FieldOffset(0)] public VkClearDepthStencilValue depthStencil;
+        [System.Runtime.InteropServices.FieldOffset(0)] public VkClearDepthStencilValue depthStencil;
     }
     // Struct: 40
     /// <summary>VkCmdProcessCommandsInfoNVX - Structure specifying parameters for the generation of commands
