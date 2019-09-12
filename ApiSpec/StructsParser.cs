@@ -112,7 +112,6 @@ namespace ApiSpec {
                         if (line.StartsWith("/*union*/")) {
                             isUnion = true;
                         }
-                        if (line.Contains("FlagBits")) { sw.WriteLine("[Flags]"); }
                         sw.WriteLine(line); // public struct XXX {
                     }
                     for (int j = 1; j < definitionLines.Length - 1; j++) {
