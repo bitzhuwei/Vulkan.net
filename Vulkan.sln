@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson02Shader", "Lesson02S
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiSpec", "ApiSpec\ApiSpec.csproj", "{C36E2A44-7427-4C8B-BE95-FCFC1F979E4F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSpec.Generated", "ApiSpec.Generated\ApiSpec.Generated.csproj", "{FAC3B7A7-96E6-4473-98D8-28C97F938871}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiSpec.Generated", "ApiSpec.Generated\ApiSpec.Generated.csproj", "{FAC3B7A7-96E6-4473-98D8-28C97F938871}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSpec.Lesson02Shader", "ApiSpec.Lesson02Shader\ApiSpec.Lesson02Shader.csproj", "{4B78F253-8B4C-4E12-9943-E2157F0EF057}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
