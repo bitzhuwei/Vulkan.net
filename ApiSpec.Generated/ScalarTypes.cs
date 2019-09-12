@@ -38,6 +38,14 @@ namespace ApiSpec.Generated {
             return left != (right.value != 0);
         }
 
+        public static implicit operator VkBool32(bool v) {
+            return new VkBool32(v);
+        }
+
+        public static implicit operator bool(VkBool32 v) {
+            return (v.value != 0);
+        }
+
         public override bool Equals(object obj) {
             return this.value.Equals(obj);
         }
@@ -129,6 +137,23 @@ namespace ApiSpec.Generated {
         }
         public static bool operator <=(UInt64 left, VkDeviceSize right) {
             return left <= right.value;
+        }
+
+        // implicit
+        public static implicit operator VkDeviceSize(UInt64 v) {
+            return new VkDeviceSize(v);
+        }
+
+        public static implicit operator VkDeviceSize(UInt32 v) {
+            return new VkDeviceSize(v);
+        }
+
+        public static implicit operator VkDeviceSize(Int32 v) {
+            return new VkDeviceSize((UInt64)v);
+        }
+
+        public static implicit operator UInt64(VkDeviceSize size) {
+            return size.value;
         }
 
         public override bool Equals(object obj) {
