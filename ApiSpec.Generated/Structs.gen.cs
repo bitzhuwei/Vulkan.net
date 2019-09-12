@@ -1982,7 +1982,7 @@ namespace ApiSpec.Generated {
     /// <summary>VkDeviceGroupPresentCapabilitiesKHR - Present capabilities from other physical devices
     /// </summary>
     public unsafe struct VkDeviceGroupPresentCapabilitiesKHR {
-        const Int32 VK_MAX_DEVICE_GROUP_SIZE = 100;
+        const Int32 VK_MAX_DEVICE_GROUP_SIZE = 32;
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2652,8 +2652,8 @@ namespace ApiSpec.Generated {
     /// <summary>VkExtensionProperties - Structure specifying an extension properties
     /// </summary>
     public unsafe struct VkExtensionProperties {
-        const Int32 VK_MAX_EXTENSION_NAME_SIZE = 1024;
-        public fixed char extensionName[VK_MAX_EXTENSION_NAME_SIZE];
+        const Int32 VK_MAX_EXTENSION_NAME_SIZE = 256;
+        public fixed byte/*char*/ extensionName[VK_MAX_EXTENSION_NAME_SIZE];
         /// <summary> specVersion is the version of this extension.
         /// It is an integer, incremented with backward compatible changes.</summary>
         public UInt32 specVersion;
@@ -3853,16 +3853,16 @@ namespace ApiSpec.Generated {
     /// <summary>VkLayerProperties - Structure specifying layer properties
     /// </summary>
     public unsafe struct VkLayerProperties {
-        const Int32 VK_MAX_EXTENSION_NAME_SIZE = 1024;
-        const Int32 VK_MAX_DESCRIPTION_SIZE = 1024;
-        public fixed char layerName[VK_MAX_EXTENSION_NAME_SIZE];
+        const Int32 VK_MAX_EXTENSION_NAME_SIZE = 256;
+        const Int32 VK_MAX_DESCRIPTION_SIZE = 256;
+        public fixed byte layerName[VK_MAX_EXTENSION_NAME_SIZE];
         /// <summary> specVersion is the Vulkan version the layer was written to,
         /// encoded as described in html/vkspec.html#extendingvulkan-coreversions-versionnumbers.</summary>
         public UInt32 specVersion;
         /// <summary> implementationVersion is the version of this layer.
         /// It is an integer, increasing with backward compatible changes.</summary>
         public UInt32 implementationVersion;
-        public fixed char description[VK_MAX_DESCRIPTION_SIZE];
+        public fixed byte description[VK_MAX_DESCRIPTION_SIZE];
     }
     // Struct: 195
     ///// <summary>VkMacOSSurfaceCreateInfoMVK - Structure specifying parameters of a newly created macOS surface object
@@ -4606,8 +4606,8 @@ namespace ApiSpec.Generated {
     /// <summary>VkPhysicalDeviceDriverPropertiesKHR - Structure containing driver identification information
     /// </summary>
     public unsafe struct VkPhysicalDeviceDriverPropertiesKHR {
-        const Int32 VK_MAX_DRIVER_NAME_SIZE_KHR = 1024;
-        const Int32 VK_MAX_DRIVER_INFO_SIZE_KHR = 1024;
+        const Int32 VK_MAX_DRIVER_NAME_SIZE_KHR = 256;
+        const Int32 VK_MAX_DRIVER_INFO_SIZE_KHR = 256;
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension specific structure.</summary>
@@ -4615,8 +4615,8 @@ namespace ApiSpec.Generated {
         /// <summary> driverID is a unique identifier for the driver of the physical
         /// device.</summary>
         public VkDriverIdKHR driverID;
-        public fixed char driverName[VK_MAX_DRIVER_NAME_SIZE_KHR];
-        public fixed char driverInfo[VK_MAX_DRIVER_INFO_SIZE_KHR];
+        public fixed byte/*char*/ driverName[VK_MAX_DRIVER_NAME_SIZE_KHR];
+        public fixed byte/*char*/ driverInfo[VK_MAX_DRIVER_INFO_SIZE_KHR];
         /// <summary> conformanceVersion is the version of the Vulkan conformance test
         /// this driver is conformant against (see VkConformanceVersionKHR).</summary>
         public VkConformanceVersionKHR conformanceVersion;
@@ -4940,7 +4940,7 @@ namespace ApiSpec.Generated {
     /// <summary>VkPhysicalDeviceGroupProperties - Structure specifying physical device group properties
     /// </summary>
     public unsafe struct VkPhysicalDeviceGroupProperties {
-        const Int32 VK_MAX_DEVICE_GROUP_SIZE = 1024;
+        const Int32 VK_MAX_DEVICE_GROUP_SIZE = 32;
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4970,8 +4970,8 @@ namespace ApiSpec.Generated {
     /// <summary>VkPhysicalDeviceIDProperties - Structure specifying IDs related to the physical device
     /// </summary>
     public unsafe struct VkPhysicalDeviceIDProperties {
-        const Int32 VK_UUID_SIZE = 1024;
-        const Int32 VK_LUID_SIZE = 1024;
+        const Int32 VK_UUID_SIZE = 16;
+        const Int32 VK_LUID_SIZE = 8;
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -5892,7 +5892,7 @@ namespace ApiSpec.Generated {
     /// <summary>VkPhysicalDeviceMemoryBudgetPropertiesEXT - Structure specifying physical device memory budget and usage
     /// </summary>
     public unsafe struct VkPhysicalDeviceMemoryBudgetPropertiesEXT {
-        const Int32 VK_MAX_MEMORY_HEAPS = 1024;
+        const Int32 VK_MAX_MEMORY_HEAPS = 32;
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -5916,8 +5916,8 @@ namespace ApiSpec.Generated {
     /// <summary>VkPhysicalDeviceMemoryProperties - Structure specifying physical device memory properties
     /// </summary>
     public unsafe struct VkPhysicalDeviceMemoryProperties {
-        const Int32 VK_MAX_MEMORY_TYPES = 1024;
-        const Int32 VK_MAX_MEMORY_HEAPS = 1024;
+        const Int32 VK_MAX_MEMORY_TYPES = 32;
+        const Int32 VK_MAX_MEMORY_HEAPS = 16;
         /// <summary> memoryTypeCount is the number of valid elements in the
         /// memoryTypes array.</summary>
         public UInt32 memoryTypeCount;
@@ -6036,8 +6036,8 @@ namespace ApiSpec.Generated {
     /// <summary>VkPhysicalDeviceProperties - Structure specifying physical device properties
     /// </summary>
     public unsafe struct VkPhysicalDeviceProperties {
-        const Int32 VK_MAX_PHYSICAL_DEVICE_NAME_SIZE = 1024;
-        const Int32 VK_UUID_SIZE = 1024;
+        const Int32 VK_MAX_PHYSICAL_DEVICE_NAME_SIZE = 256;
+        const Int32 VK_UUID_SIZE = 16;
         /// <summary> apiVersion is the version of Vulkan supported by the device,
         /// encoded as described in html/vkspec.html#extendingvulkan-coreversions-versionnumbers.</summary>
         public UInt32 apiVersion;
@@ -6052,7 +6052,7 @@ namespace ApiSpec.Generated {
         /// <summary> deviceType is a VkPhysicalDeviceType specifying the type of
         /// device.</summary>
         public VkPhysicalDeviceType deviceType;
-        public fixed char deviceName[VK_MAX_PHYSICAL_DEVICE_NAME_SIZE];
+        public fixed byte/*char*/ deviceName[VK_MAX_PHYSICAL_DEVICE_NAME_SIZE];
         public fixed byte pipelineCacheUUID[VK_UUID_SIZE];
         /// <summary> limits is the VkPhysicalDeviceLimits structure which
         /// specifies device-specific limits of the physical device.
