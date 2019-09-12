@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Enums.gen.cs" />
+    <Compile Remove="PFNs.gen.cs" />
+    <Compile Remove="Structs.gen.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="apispec.html" />
+    <None Remove="apispec.txt" />
+    <None Remove="C Macro Definitions.content.xml" />
+    <None Remove="C Macro Definitions.xml" />
+    <None Remove="Commands.content.xml" />
+    <None Remove="Commands.xml" />
+    <None Remove="Enumerations.content.xml" />
+    <None Remove="Enumerations.xml" />
+    <None Remove="Enums.content.xml" />
+    <None Remove="Enums.xml" />
+    <None Remove="Extensions.content.xml" />
+    <None Remove="Extensions.xml" />
+    <None Remove="Flags.content.xml" />
+    <None Remove="Flags.xml" />
+    <None Remove="Function Pointer Types.content.xml" />
+    <None Remove="Function Pointer Types.xml" />
+    <None Remove="Handles.content.xml" />
+    <None Remove="Handles.xml" />
+    <None Remove="Object Handles.content.xml" />
+    <None Remove="Object Handles.xml" />
+    <None Remove="PFNs.content.xml" />
+    <None Remove="PFNs.xml" />
+    <None Remove="Scalar types.content.xml" />
+    <None Remove="Scalar types.xml" />
+    <None Remove="Structs.content.xml" />
+    <None Remove="Structs.xml" />
+    <None Remove="Structures.content.xml" />
+    <None Remove="Structures.xml" />
+    <None Remove="version.xml" />
+    <None Remove="Vulkan Commands.content.xml" />
+    <None Remove="Vulkan Commands.xml" />
+    <None Remove="Vulkan Extensions.content.xml" />
+    <None Remove="Vulkan Extensions.xml" />
+    <None Remove="Vulkan Scalar types.content.xml" />
+    <None Remove="Vulkan Scalar types.xml" />
+  </ItemGroup>
+
+</Project>

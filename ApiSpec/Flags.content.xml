@@ -1,0 +1,4494 @@
+<root>
+<div class="sect1">
+<h2 id="flags">Flags</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_vkaccessflags3">VkAccessFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_941">Name</h4>
+<div class="paragraph">
+<p>VkAccessFlags - Bitmask of VkAccessFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_941">C Specification</h4>
+<div id="VkAccessFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkAccessFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_941">Description</h4>
+<div class="paragraph">
+<p><code>VkAccessFlags</code> is a bitmask type for setting a mask of zero or more
+<a href="#VkAccessFlagBits">VkAccessFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_941">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAccessFlagBits">VkAccessFlagBits</a>, <a href="#VkBufferMemoryBarrier">VkBufferMemoryBarrier</a>, <a href="#VkImageMemoryBarrier">VkImageMemoryBarrier</a>, <a href="#VkMemoryBarrier">VkMemoryBarrier</a>, <a href="#VkSubpassDependency">VkSubpassDependency</a>, <a href="#VkSubpassDependency2KHR">VkSubpassDependency2KHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_941">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkAccessFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkAccessFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkAndroidSurfaceCreateFlagsKHR.txt[]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkattachmentdescriptionflags3">VkAttachmentDescriptionFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_942">Name</h4>
+<div class="paragraph">
+<p>VkAttachmentDescriptionFlags - Bitmask of VkAttachmentDescriptionFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_942">C Specification</h4>
+<div id="VkAttachmentDescriptionFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkAttachmentDescriptionFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_942">Description</h4>
+<div class="paragraph">
+<p><code>VkAttachmentDescriptionFlags</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkAttachmentDescriptionFlagBits">VkAttachmentDescriptionFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_942">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAttachmentDescription">VkAttachmentDescription</a>, <a href="#VkAttachmentDescription2KHR">VkAttachmentDescription2KHR</a>, <a href="#VkAttachmentDescriptionFlagBits">VkAttachmentDescriptionFlagBits</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_942">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkAttachmentDescriptionFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkAttachmentDescriptionFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkbuffercreateflags3">VkBufferCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_943">Name</h4>
+<div class="paragraph">
+<p>VkBufferCreateFlags - Bitmask of VkBufferCreateFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_943">C Specification</h4>
+<div id="VkBufferCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkBufferCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_943">Description</h4>
+<div class="paragraph">
+<p><code>VkBufferCreateFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkBufferCreateFlagBits">VkBufferCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_943">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkBufferCreateFlagBits">VkBufferCreateFlagBits</a>, <a href="#VkBufferCreateInfo">VkBufferCreateInfo</a>, <a href="#VkPhysicalDeviceExternalBufferInfo">VkPhysicalDeviceExternalBufferInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_943">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBufferCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBufferCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkbufferusageflags3">VkBufferUsageFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_944">Name</h4>
+<div class="paragraph">
+<p>VkBufferUsageFlags - Bitmask of VkBufferUsageFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_944">C Specification</h4>
+<div id="VkBufferUsageFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkBufferUsageFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_944">Description</h4>
+<div class="paragraph">
+<p><code>VkBufferUsageFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkBufferUsageFlagBits">VkBufferUsageFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_944">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkBufferCreateInfo">VkBufferCreateInfo</a>, <a href="#VkBufferUsageFlagBits">VkBufferUsageFlagBits</a>, <a href="#VkPhysicalDeviceExternalBufferInfo">VkPhysicalDeviceExternalBufferInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_944">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBufferUsageFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBufferUsageFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkbufferviewcreateflags3">VkBufferViewCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_945">Name</h4>
+<div class="paragraph">
+<p>VkBufferViewCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_945">C Specification</h4>
+<div id="VkBufferViewCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkBufferViewCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_945">Description</h4>
+<div class="paragraph">
+<p><code>VkBufferViewCreateFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_945">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkBufferViewCreateInfo">VkBufferViewCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_945">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBufferViewCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBufferViewCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkbuildaccelerationstructureflagsnv3">VkBuildAccelerationStructureFlagsNV(3)</h3>
+<div class="sect3">
+<h4 id="_name_946">Name</h4>
+<div class="paragraph">
+<p>VkBuildAccelerationStructureFlagsNV - Bitmask of VkBuildAccelerationStructureFlagBitsNV</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_946">C Specification</h4>
+<div id="VkBuildAccelerationStructureFlagsNV" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkBuildAccelerationStructureFlagsNV;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_946">Description</h4>
+<div class="paragraph">
+<p><code>VkBuildAccelerationStructureFlagsNV</code> is a bitmask type for setting a
+mask of zero or more <a href="#VkBuildAccelerationStructureFlagBitsNV">VkBuildAccelerationStructureFlagBitsNV</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_946">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAccelerationStructureInfoNV">VkAccelerationStructureInfoNV</a>, <a href="#VkBuildAccelerationStructureFlagBitsNV">VkBuildAccelerationStructureFlagBitsNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_946">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBuildAccelerationStructureFlagsNV" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBuildAccelerationStructureFlagsNV</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcolorcomponentflags3">VkColorComponentFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_947">Name</h4>
+<div class="paragraph">
+<p>VkColorComponentFlags - Bitmask of VkColorComponentFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_947">C Specification</h4>
+<div id="VkColorComponentFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkColorComponentFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_947">Description</h4>
+<div class="paragraph">
+<p><code>VkColorComponentFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkColorComponentFlagBits">VkColorComponentFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_947">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkColorComponentFlagBits">VkColorComponentFlagBits</a>, <a href="#VkPipelineColorBlendAttachmentState">VkPipelineColorBlendAttachmentState</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_947">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkColorComponentFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkColorComponentFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcommandbufferresetflags3">VkCommandBufferResetFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_948">Name</h4>
+<div class="paragraph">
+<p>VkCommandBufferResetFlags - Bitmask of VkCommandBufferResetFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_948">C Specification</h4>
+<div id="VkCommandBufferResetFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkCommandBufferResetFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_948">Description</h4>
+<div class="paragraph">
+<p><code>VkCommandBufferResetFlags</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkCommandBufferResetFlagBits">VkCommandBufferResetFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_948">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandBufferResetFlagBits">VkCommandBufferResetFlagBits</a>, <a href="#vkResetCommandBuffer">vkResetCommandBuffer</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_948">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandBufferResetFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandBufferResetFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcommandbufferusageflags3">VkCommandBufferUsageFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_949">Name</h4>
+<div class="paragraph">
+<p>VkCommandBufferUsageFlags - Bitmask of VkCommandBufferUsageFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_949">C Specification</h4>
+<div id="VkCommandBufferUsageFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkCommandBufferUsageFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_949">Description</h4>
+<div class="paragraph">
+<p><code>VkCommandBufferUsageFlags</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkCommandBufferUsageFlagBits">VkCommandBufferUsageFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_949">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandBufferBeginInfo">VkCommandBufferBeginInfo</a>, <a href="#VkCommandBufferUsageFlagBits">VkCommandBufferUsageFlagBits</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_949">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandBufferUsageFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandBufferUsageFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcommandpoolcreateflags3">VkCommandPoolCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_950">Name</h4>
+<div class="paragraph">
+<p>VkCommandPoolCreateFlags - Bitmask of VkCommandPoolCreateFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_950">C Specification</h4>
+<div id="VkCommandPoolCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkCommandPoolCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_950">Description</h4>
+<div class="paragraph">
+<p><code>VkCommandPoolCreateFlags</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkCommandPoolCreateFlagBits">VkCommandPoolCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_950">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandPoolCreateFlagBits">VkCommandPoolCreateFlagBits</a>, <a href="#VkCommandPoolCreateInfo">VkCommandPoolCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_950">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandPoolCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandPoolCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcommandpoolresetflags3">VkCommandPoolResetFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_951">Name</h4>
+<div class="paragraph">
+<p>VkCommandPoolResetFlags - Bitmask of VkCommandPoolResetFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_951">C Specification</h4>
+<div id="VkCommandPoolResetFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkCommandPoolResetFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_951">Description</h4>
+<div class="paragraph">
+<p><code>VkCommandPoolResetFlags</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkCommandPoolResetFlagBits">VkCommandPoolResetFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_951">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandPoolResetFlagBits">VkCommandPoolResetFlagBits</a>, <a href="#vkResetCommandPool">vkResetCommandPool</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_951">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandPoolResetFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandPoolResetFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcommandpooltrimflags3">VkCommandPoolTrimFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_952">Name</h4>
+<div class="paragraph">
+<p>VkCommandPoolTrimFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_952">C Specification</h4>
+<div id="VkCommandPoolTrimFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkCommandPoolTrimFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkCommandPoolTrimFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkCommandPoolTrimFlags VkCommandPoolTrimFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_952">Description</h4>
+<div class="paragraph">
+<p><code>VkCommandPoolTrimFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_952">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkTrimCommandPool">vkTrimCommandPool</a>, <a href="#vkTrimCommandPoolKHR">vkTrimCommandPoolKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_952">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandPoolTrimFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCommandPoolTrimFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcompositealphaflagskhr3">VkCompositeAlphaFlagsKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_953">Name</h4>
+<div class="paragraph">
+<p>VkCompositeAlphaFlagsKHR - Bitmask of VkCompositeAlphaFlagBitsKHR</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_953">C Specification</h4>
+<div id="VkCompositeAlphaFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkCompositeAlphaFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_953">Description</h4>
+<div class="paragraph">
+<p><code>VkCompositeAlphaFlagsKHR</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkCompositeAlphaFlagBitsKHR">VkCompositeAlphaFlagBitsKHR</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_953">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCompositeAlphaFlagBitsKHR">VkCompositeAlphaFlagBitsKHR</a>, <a href="#VkSurfaceCapabilities2EXT">VkSurfaceCapabilities2EXT</a>, <a href="#VkSurfaceCapabilitiesKHR">VkSurfaceCapabilitiesKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_953">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCompositeAlphaFlagsKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCompositeAlphaFlagsKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkconditionalrenderingflagsext3">VkConditionalRenderingFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_954">Name</h4>
+<div class="paragraph">
+<p>VkConditionalRenderingFlagsEXT - Bitmask of VkConditionalRenderingFlagBitsEXT</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_954">C Specification</h4>
+<div id="VkConditionalRenderingFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkConditionalRenderingFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_954">Description</h4>
+<div class="paragraph">
+<p><code>VkConditionalRenderingFlagsEXT</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkConditionalRenderingFlagBitsEXT">VkConditionalRenderingFlagBitsEXT</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_954">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkConditionalRenderingBeginInfoEXT">VkConditionalRenderingBeginInfoEXT</a>, <a href="#VkConditionalRenderingFlagBitsEXT">VkConditionalRenderingFlagBitsEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_954">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkConditionalRenderingFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkConditionalRenderingFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkcullmodeflags3">VkCullModeFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_955">Name</h4>
+<div class="paragraph">
+<p>VkCullModeFlags - Bitmask of VkCullModeFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_955">C Specification</h4>
+<div id="VkCullModeFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkCullModeFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_955">Description</h4>
+<div class="paragraph">
+<p><code>VkCullModeFlags</code> is a bitmask type for setting a mask of zero or more
+<a href="#VkCullModeFlagBits">VkCullModeFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_955">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCullModeFlagBits">VkCullModeFlagBits</a>, <a href="#VkPipelineRasterizationStateCreateInfo">VkPipelineRasterizationStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_955">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCullModeFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkCullModeFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdebugreportflagsext3">VkDebugReportFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_956">Name</h4>
+<div class="paragraph">
+<p>VkDebugReportFlagsEXT - Bitmask of VkDebugReportFlagBitsEXT</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_956">C Specification</h4>
+<div id="VkDebugReportFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDebugReportFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_956">Description</h4>
+<div class="paragraph">
+<p><code>VkDebugReportFlagsEXT</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkDebugReportFlagBitsEXT">VkDebugReportFlagBitsEXT</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_956">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDebugReportCallbackCreateInfoEXT">VkDebugReportCallbackCreateInfoEXT</a>, <a href="#VkDebugReportFlagBitsEXT">VkDebugReportFlagBitsEXT</a>, <a href="#vkDebugReportMessageEXT">vkDebugReportMessageEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_956">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugReportFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugReportFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdebugutilsmessageseverityflagsext3">VkDebugUtilsMessageSeverityFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_957">Name</h4>
+<div class="paragraph">
+<p>VkDebugUtilsMessageSeverityFlagsEXT - Bitmask of VkDebugUtilsMessageSeverityFlagBitsEXT</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_957">C Specification</h4>
+<div id="VkDebugUtilsMessageSeverityFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDebugUtilsMessageSeverityFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_957">Description</h4>
+<div class="paragraph">
+<p><code>VkDebugUtilsMessageSeverityFlagsEXT</code> is a bitmask type for setting a
+mask of zero or more <a href="#VkDebugUtilsMessageSeverityFlagBitsEXT">VkDebugUtilsMessageSeverityFlagBitsEXT</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_957">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDebugUtilsMessageSeverityFlagBitsEXT">VkDebugUtilsMessageSeverityFlagBitsEXT</a>, <a href="#VkDebugUtilsMessengerCreateInfoEXT">VkDebugUtilsMessengerCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_957">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugUtilsMessageSeverityFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugUtilsMessageSeverityFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdebugutilsmessagetypeflagsext3">VkDebugUtilsMessageTypeFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_958">Name</h4>
+<div class="paragraph">
+<p>VkDebugUtilsMessageTypeFlagsEXT - Bitmask of VkDebugUtilsMessageTypeFlagBitsEXT</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_958">C Specification</h4>
+<div id="VkDebugUtilsMessageTypeFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDebugUtilsMessageTypeFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_958">Description</h4>
+<div class="paragraph">
+<p><code>VkDebugUtilsMessageTypeFlagsEXT</code> is a bitmask type for setting a mask
+of zero or more <a href="#VkDebugUtilsMessageTypeFlagBitsEXT">VkDebugUtilsMessageTypeFlagBitsEXT</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_958">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDebugUtilsMessageTypeFlagBitsEXT">VkDebugUtilsMessageTypeFlagBitsEXT</a>, <a href="#VkDebugUtilsMessengerCreateInfoEXT">VkDebugUtilsMessengerCreateInfoEXT</a>, <a href="#vkSubmitDebugUtilsMessageEXT">vkSubmitDebugUtilsMessageEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_958">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugUtilsMessageTypeFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDebugUtilsMessageTypeFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkDebugUtilsMessengerCallbackDataFlagsEXT.txt[]
+Unresolved directive in apispec.txt - include::VkDebugUtilsMessengerCreateFlagsEXT.txt[]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdependencyflags3">VkDependencyFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_959">Name</h4>
+<div class="paragraph">
+<p>VkDependencyFlags - Bitmask of VkDependencyFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_959">C Specification</h4>
+<div id="VkDependencyFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDependencyFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_959">Description</h4>
+<div class="paragraph">
+<p><code>VkDependencyFlags</code> is a bitmask type for setting a mask of zero or more
+<a href="#VkDependencyFlagBits">VkDependencyFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_959">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDependencyFlagBits">VkDependencyFlagBits</a>, <a href="#VkSubpassDependency">VkSubpassDependency</a>, <a href="#VkSubpassDependency2KHR">VkSubpassDependency2KHR</a>, <a href="#vkCmdPipelineBarrier">vkCmdPipelineBarrier</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_959">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDependencyFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDependencyFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdescriptorbindingflagsext3">VkDescriptorBindingFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_960">Name</h4>
+<div class="paragraph">
+<p>VkDescriptorBindingFlagsEXT - Bitmask of VkDescriptorBindingFlagBitsEXT</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_960">C Specification</h4>
+<div id="VkDescriptorBindingFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDescriptorBindingFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_960">Description</h4>
+<div class="paragraph">
+<p><code>VkDescriptorBindingFlagsEXT</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkDescriptorBindingFlagBitsEXT">VkDescriptorBindingFlagBitsEXT</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_960">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDescriptorBindingFlagBitsEXT">VkDescriptorBindingFlagBitsEXT</a>, <a href="#VkDescriptorSetLayoutBindingFlagsCreateInfoEXT">VkDescriptorSetLayoutBindingFlagsCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_960">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorBindingFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorBindingFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdescriptorpoolcreateflags3">VkDescriptorPoolCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_961">Name</h4>
+<div class="paragraph">
+<p>VkDescriptorPoolCreateFlags - Bitmask of VkDescriptorPoolCreateFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_961">C Specification</h4>
+<div id="VkDescriptorPoolCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDescriptorPoolCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_961">Description</h4>
+<div class="paragraph">
+<p><code>VkDescriptorPoolCreateFlags</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkDescriptorPoolCreateFlagBits">VkDescriptorPoolCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_961">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDescriptorPoolCreateFlagBits">VkDescriptorPoolCreateFlagBits</a>, <a href="#VkDescriptorPoolCreateInfo">VkDescriptorPoolCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_961">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorPoolCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorPoolCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdescriptorpoolresetflags3">VkDescriptorPoolResetFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_962">Name</h4>
+<div class="paragraph">
+<p>VkDescriptorPoolResetFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_962">C Specification</h4>
+<div id="VkDescriptorPoolResetFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDescriptorPoolResetFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_962">Description</h4>
+<div class="paragraph">
+<p><code>VkDescriptorPoolResetFlags</code> is a bitmask type for setting a mask, but
+is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_962">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkResetDescriptorPool">vkResetDescriptorPool</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_962">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorPoolResetFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorPoolResetFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdescriptorsetlayoutcreateflags3">VkDescriptorSetLayoutCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_963">Name</h4>
+<div class="paragraph">
+<p>VkDescriptorSetLayoutCreateFlags - Bitmask of VkDescriptorSetLayoutCreateFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_963">C Specification</h4>
+<div id="VkDescriptorSetLayoutCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDescriptorSetLayoutCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_963">Description</h4>
+<div class="paragraph">
+<p><code>VkDescriptorSetLayoutCreateFlags</code> is a bitmask type for setting a mask
+of zero or more <a href="#VkDescriptorSetLayoutCreateFlagBits">VkDescriptorSetLayoutCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_963">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDescriptorSetLayoutCreateFlagBits">VkDescriptorSetLayoutCreateFlagBits</a>, <a href="#VkDescriptorSetLayoutCreateInfo">VkDescriptorSetLayoutCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_963">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorSetLayoutCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorSetLayoutCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdescriptorupdatetemplatecreateflags3">VkDescriptorUpdateTemplateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_964">Name</h4>
+<div class="paragraph">
+<p>VkDescriptorUpdateTemplateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_964">C Specification</h4>
+<div id="VkDescriptorUpdateTemplateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDescriptorUpdateTemplateCreateFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkDescriptorUpdateTemplateCreateFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkDescriptorUpdateTemplateCreateFlags VkDescriptorUpdateTemplateCreateFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_964">Description</h4>
+<div class="paragraph">
+<p><code>VkDescriptorUpdateTemplateCreateFlags</code> is a bitmask type for setting a
+mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_964">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDescriptorUpdateTemplateCreateInfo">VkDescriptorUpdateTemplateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_964">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorUpdateTemplateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDescriptorUpdateTemplateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdevicecreateflags3">VkDeviceCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_965">Name</h4>
+<div class="paragraph">
+<p>VkDeviceCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_965">C Specification</h4>
+<div id="VkDeviceCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDeviceCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_965">Description</h4>
+<div class="paragraph">
+<p><code>VkDeviceCreateFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_965">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDeviceCreateInfo">VkDeviceCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_965">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdevicegrouppresentmodeflagskhr3">VkDeviceGroupPresentModeFlagsKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_966">Name</h4>
+<div class="paragraph">
+<p>VkDeviceGroupPresentModeFlagsKHR - Bitmask of VkDeviceGroupPresentModeFlagBitsKHR</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_966">C Specification</h4>
+<div id="VkDeviceGroupPresentModeFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDeviceGroupPresentModeFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_966">Description</h4>
+<div class="paragraph">
+<p><code>VkDeviceGroupPresentModeFlagsKHR</code> is a bitmask type for setting a mask
+of zero or more <a href="#VkDeviceGroupPresentModeFlagBitsKHR">VkDeviceGroupPresentModeFlagBitsKHR</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_966">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDeviceGroupPresentCapabilitiesKHR">VkDeviceGroupPresentCapabilitiesKHR</a>, <a href="#VkDeviceGroupPresentModeFlagBitsKHR">VkDeviceGroupPresentModeFlagBitsKHR</a>, <a href="#VkDeviceGroupSwapchainCreateInfoKHR">VkDeviceGroupSwapchainCreateInfoKHR</a>, <a href="#vkGetDeviceGroupSurfacePresentModes2EXT">vkGetDeviceGroupSurfacePresentModes2EXT</a>, <a href="#vkGetDeviceGroupSurfacePresentModesKHR">vkGetDeviceGroupSurfacePresentModesKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_966">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceGroupPresentModeFlagsKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceGroupPresentModeFlagsKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdevicequeuecreateflags3">VkDeviceQueueCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_967">Name</h4>
+<div class="paragraph">
+<p>VkDeviceQueueCreateFlags - Bitmask of VkDeviceQueueCreateFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_967">C Specification</h4>
+<div id="VkDeviceQueueCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDeviceQueueCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_967">Description</h4>
+<div class="paragraph">
+<p><code>VkDeviceQueueCreateFlags</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkDeviceQueueCreateFlagBits">VkDeviceQueueCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_967">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDeviceQueueCreateFlagBits">VkDeviceQueueCreateFlagBits</a>, <a href="#VkDeviceQueueCreateInfo">VkDeviceQueueCreateInfo</a>, <a href="#VkDeviceQueueInfo2">VkDeviceQueueInfo2</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_967">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceQueueCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceQueueCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkDisplayModeCreateFlagsKHR.txt[]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdisplayplanealphaflagskhr3">VkDisplayPlaneAlphaFlagsKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_968">Name</h4>
+<div class="paragraph">
+<p>VkDisplayPlaneAlphaFlagsKHR - Bitmask of VkDisplayPlaneAlphaFlagBitsKHR</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_968">C Specification</h4>
+<div id="VkDisplayPlaneAlphaFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkDisplayPlaneAlphaFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_968">Description</h4>
+<div class="paragraph">
+<p><code>VkDisplayPlaneAlphaFlagsKHR</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkDisplayPlaneAlphaFlagBitsKHR">VkDisplayPlaneAlphaFlagBitsKHR</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_968">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDisplayPlaneAlphaFlagBitsKHR">VkDisplayPlaneAlphaFlagBitsKHR</a>, <a href="#VkDisplayPlaneCapabilitiesKHR">VkDisplayPlaneCapabilitiesKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_968">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDisplayPlaneAlphaFlagsKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDisplayPlaneAlphaFlagsKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkDisplaySurfaceCreateFlagsKHR.txt[]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkeventcreateflags3">VkEventCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_969">Name</h4>
+<div class="paragraph">
+<p>VkEventCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_969">C Specification</h4>
+<div id="VkEventCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkEventCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_969">Description</h4>
+<div class="paragraph">
+<p><code>VkEventCreateFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_969">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkEventCreateInfo">VkEventCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_969">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkEventCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkEventCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkexternalfencefeatureflags3">VkExternalFenceFeatureFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_970">Name</h4>
+<div class="paragraph">
+<p>VkExternalFenceFeatureFlags - Bitmask of VkExternalFenceFeatureFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_970">C Specification</h4>
+<div id="VkExternalFenceFeatureFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkExternalFenceFeatureFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkExternalFenceFeatureFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkExternalFenceFeatureFlags VkExternalFenceFeatureFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_970">Description</h4>
+<div class="paragraph">
+<p><code>VkExternalFenceFeatureFlags</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkExternalFenceFeatureFlagBits">VkExternalFenceFeatureFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_970">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkExternalFenceFeatureFlagBits">VkExternalFenceFeatureFlagBits</a>, <a href="#VkExternalFenceProperties">VkExternalFenceProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_970">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalFenceFeatureFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalFenceFeatureFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkexternalfencehandletypeflags3">VkExternalFenceHandleTypeFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_971">Name</h4>
+<div class="paragraph">
+<p>VkExternalFenceHandleTypeFlags - Bitmask of VkExternalFenceHandleTypeFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_971">C Specification</h4>
+<div id="VkExternalFenceHandleTypeFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkExternalFenceHandleTypeFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkExternalFenceHandleTypeFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkExternalFenceHandleTypeFlags VkExternalFenceHandleTypeFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_971">Description</h4>
+<div class="paragraph">
+<p><code>VkExternalFenceHandleTypeFlags</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkExternalFenceHandleTypeFlagBits">VkExternalFenceHandleTypeFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_971">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkExportFenceCreateInfo">VkExportFenceCreateInfo</a>, <a href="#VkExternalFenceHandleTypeFlagBits">VkExternalFenceHandleTypeFlagBits</a>, <a href="#VkExternalFenceProperties">VkExternalFenceProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_971">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalFenceHandleTypeFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalFenceHandleTypeFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkexternalmemoryfeatureflags3">VkExternalMemoryFeatureFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_972">Name</h4>
+<div class="paragraph">
+<p>VkExternalMemoryFeatureFlags - Bitmask of VkExternalMemoryFeatureFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_972">C Specification</h4>
+<div id="VkExternalMemoryFeatureFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkExternalMemoryFeatureFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkExternalMemoryFeatureFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkExternalMemoryFeatureFlags VkExternalMemoryFeatureFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_972">Description</h4>
+<div class="paragraph">
+<p><code>VkExternalMemoryFeatureFlags</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkExternalMemoryFeatureFlagBits">VkExternalMemoryFeatureFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_972">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkExternalMemoryFeatureFlagBits">VkExternalMemoryFeatureFlagBits</a>, <a href="#VkExternalMemoryProperties">VkExternalMemoryProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_972">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalMemoryFeatureFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalMemoryFeatureFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkexternalmemoryfeatureflagsnv3">VkExternalMemoryFeatureFlagsNV(3)</h3>
+<div class="sect3">
+<h4 id="_name_973">Name</h4>
+<div class="paragraph">
+<p>VkExternalMemoryFeatureFlagsNV - Bitmask of VkExternalMemoryFeatureFlagBitsNV</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_973">C Specification</h4>
+<div id="VkExternalMemoryFeatureFlagsNV" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkExternalMemoryFeatureFlagsNV;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_973">Description</h4>
+<div class="paragraph">
+<p><code>VkExternalMemoryFeatureFlagsNV</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkExternalMemoryFeatureFlagBitsNV">VkExternalMemoryFeatureFlagBitsNV</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_973">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkExternalImageFormatPropertiesNV">VkExternalImageFormatPropertiesNV</a>, <a href="#VkExternalMemoryFeatureFlagBitsNV">VkExternalMemoryFeatureFlagBitsNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_973">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalMemoryFeatureFlagsNV" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalMemoryFeatureFlagsNV</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkexternalmemoryhandletypeflags3">VkExternalMemoryHandleTypeFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_974">Name</h4>
+<div class="paragraph">
+<p>VkExternalMemoryHandleTypeFlags - Bitmask of VkExternalMemoryHandleTypeFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_974">C Specification</h4>
+<div id="VkExternalMemoryHandleTypeFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkExternalMemoryHandleTypeFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkExternalMemoryHandleTypeFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkExternalMemoryHandleTypeFlags VkExternalMemoryHandleTypeFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_974">Description</h4>
+<div class="paragraph">
+<p><code>VkExternalMemoryHandleTypeFlags</code> is a bitmask type for setting a mask
+of zero or more <a href="#VkExternalMemoryHandleTypeFlagBits">VkExternalMemoryHandleTypeFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_974">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkExportMemoryAllocateInfo">VkExportMemoryAllocateInfo</a>, <a href="#VkExternalMemoryBufferCreateInfo">VkExternalMemoryBufferCreateInfo</a>, <a href="#VkExternalMemoryHandleTypeFlagBits">VkExternalMemoryHandleTypeFlagBits</a>, <a href="#VkExternalMemoryImageCreateInfo">VkExternalMemoryImageCreateInfo</a>, <a href="#VkExternalMemoryProperties">VkExternalMemoryProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_974">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalMemoryHandleTypeFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalMemoryHandleTypeFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkexternalmemoryhandletypeflagsnv3">VkExternalMemoryHandleTypeFlagsNV(3)</h3>
+<div class="sect3">
+<h4 id="_name_975">Name</h4>
+<div class="paragraph">
+<p>VkExternalMemoryHandleTypeFlagsNV - Bitmask of VkExternalMemoryHandleTypeFlagBitsNV</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_975">C Specification</h4>
+<div id="VkExternalMemoryHandleTypeFlagsNV" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkExternalMemoryHandleTypeFlagsNV;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_975">Description</h4>
+<div class="paragraph">
+<p><code>VkExternalMemoryHandleTypeFlagsNV</code> is a bitmask type for setting a mask
+of zero or more <a href="#VkExternalMemoryHandleTypeFlagBitsNV">VkExternalMemoryHandleTypeFlagBitsNV</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_975">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkExportMemoryAllocateInfoNV">VkExportMemoryAllocateInfoNV</a>, <a href="#VkExternalImageFormatPropertiesNV">VkExternalImageFormatPropertiesNV</a>, <a href="#VkExternalMemoryHandleTypeFlagBitsNV">VkExternalMemoryHandleTypeFlagBitsNV</a>, <a href="#VkExternalMemoryImageCreateInfoNV">VkExternalMemoryImageCreateInfoNV</a>, <a href="#VkImportMemoryWin32HandleInfoNV">VkImportMemoryWin32HandleInfoNV</a>, <a href="#vkGetMemoryWin32HandleNV">vkGetMemoryWin32HandleNV</a>, <a href="#vkGetPhysicalDeviceExternalImageFormatPropertiesNV">vkGetPhysicalDeviceExternalImageFormatPropertiesNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_975">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalMemoryHandleTypeFlagsNV" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalMemoryHandleTypeFlagsNV</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkexternalsemaphorefeatureflags3">VkExternalSemaphoreFeatureFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_976">Name</h4>
+<div class="paragraph">
+<p>VkExternalSemaphoreFeatureFlags - Bitmask of VkExternalSemaphoreFeatureFlagBitsKHR</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_976">C Specification</h4>
+<div id="VkExternalSemaphoreFeatureFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkExternalSemaphoreFeatureFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkExternalSemaphoreFeatureFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkExternalSemaphoreFeatureFlags VkExternalSemaphoreFeatureFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_976">Description</h4>
+<div class="paragraph">
+<p><code>VkExternalSemaphoreFeatureFlags</code> is a bitmask type for setting a mask
+of zero or more <a href="#VkExternalSemaphoreFeatureFlagBits">VkExternalSemaphoreFeatureFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_976">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkExternalSemaphoreFeatureFlagBits">VkExternalSemaphoreFeatureFlagBits</a>, <a href="#VkExternalSemaphoreProperties">VkExternalSemaphoreProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_976">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalSemaphoreFeatureFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalSemaphoreFeatureFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkexternalsemaphorehandletypeflags3">VkExternalSemaphoreHandleTypeFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_977">Name</h4>
+<div class="paragraph">
+<p>VkExternalSemaphoreHandleTypeFlags - Bitmask of VkExternalSemaphoreHandleTypeFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_977">C Specification</h4>
+<div id="VkExternalSemaphoreHandleTypeFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkExternalSemaphoreHandleTypeFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkExternalSemaphoreHandleTypeFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkExternalSemaphoreHandleTypeFlags VkExternalSemaphoreHandleTypeFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_977">Description</h4>
+<div class="paragraph">
+<p><code>VkExternalSemaphoreHandleTypeFlags</code> is a bitmask type for setting a
+mask of zero or more <a href="#VkExternalSemaphoreHandleTypeFlagBits">VkExternalSemaphoreHandleTypeFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_977">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkExportSemaphoreCreateInfo">VkExportSemaphoreCreateInfo</a>, <a href="#VkExternalSemaphoreHandleTypeFlagBits">VkExternalSemaphoreHandleTypeFlagBits</a>, <a href="#VkExternalSemaphoreProperties">VkExternalSemaphoreProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_977">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalSemaphoreHandleTypeFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkExternalSemaphoreHandleTypeFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkfencecreateflags3">VkFenceCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_978">Name</h4>
+<div class="paragraph">
+<p>VkFenceCreateFlags - Bitmask of VkFenceCreateFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_978">C Specification</h4>
+<div id="VkFenceCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkFenceCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_978">Description</h4>
+<div class="paragraph">
+<p><code>VkFenceCreateFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkFenceCreateFlagBits">VkFenceCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_978">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkFenceCreateFlagBits">VkFenceCreateFlagBits</a>, <a href="#VkFenceCreateInfo">VkFenceCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_978">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFenceCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFenceCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkfenceimportflags3">VkFenceImportFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_979">Name</h4>
+<div class="paragraph">
+<p>VkFenceImportFlags - Bitmask of VkFenceImportFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_979">C Specification</h4>
+<div id="VkFenceImportFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkFenceImportFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkFenceImportFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFenceImportFlags VkFenceImportFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_979">Description</h4>
+<div class="paragraph">
+<p><code>VkFenceImportFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkFenceImportFlagBits">VkFenceImportFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_979">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkFenceImportFlagBits">VkFenceImportFlagBits</a>, <a href="#VkImportFenceFdInfoKHR">VkImportFenceFdInfoKHR</a>, <a href="#VkImportFenceWin32HandleInfoKHR">VkImportFenceWin32HandleInfoKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_979">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFenceImportFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFenceImportFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkformatfeatureflags3">VkFormatFeatureFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_980">Name</h4>
+<div class="paragraph">
+<p>VkFormatFeatureFlags - Bitmask of VkFormatFeatureFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_980">C Specification</h4>
+<div id="VkFormatFeatureFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkFormatFeatureFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_980">Description</h4>
+<div class="paragraph">
+<p><code>VkFormatFeatureFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkFormatFeatureFlagBits">VkFormatFeatureFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_980">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAndroidHardwareBufferFormatPropertiesANDROID">VkAndroidHardwareBufferFormatPropertiesANDROID</a>, <a href="#VkDrmFormatModifierPropertiesEXT">VkDrmFormatModifierPropertiesEXT</a>, <a href="#VkFormatFeatureFlagBits">VkFormatFeatureFlagBits</a>, <a href="#VkFormatProperties">VkFormatProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_980">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFormatFeatureFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFormatFeatureFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkframebuffercreateflags3">VkFramebufferCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_981">Name</h4>
+<div class="paragraph">
+<p>VkFramebufferCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_981">C Specification</h4>
+<div id="VkFramebufferCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkFramebufferCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_981">Description</h4>
+<div class="paragraph">
+<p><code>VkFramebufferCreateFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_981">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkFramebufferCreateInfo">VkFramebufferCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_981">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFramebufferCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFramebufferCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkgeometryflagsnv3">VkGeometryFlagsNV(3)</h3>
+<div class="sect3">
+<h4 id="_name_982">Name</h4>
+<div class="paragraph">
+<p>VkGeometryFlagsNV - Bitmask of VkGeometryFlagBitsNV</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_982">C Specification</h4>
+<div id="VkGeometryFlagsNV" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkGeometryFlagsNV;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_982">Description</h4>
+<div class="paragraph">
+<p><code>VkGeometryFlagsNV</code> is a bitmask type for setting a mask of zero or more
+<a href="#VkGeometryFlagBitsNV">VkGeometryFlagBitsNV</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_982">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkGeometryFlagBitsNV">VkGeometryFlagBitsNV</a>, <a href="#VkGeometryNV">VkGeometryNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_982">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkGeometryFlagsNV" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkGeometryFlagsNV</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkgeometryinstanceflagsnv3">VkGeometryInstanceFlagsNV(3)</h3>
+<div class="sect3">
+<h4 id="_name_983">Name</h4>
+<div class="paragraph">
+<p>VkGeometryInstanceFlagsNV - Bitmask of VkGeometryInstanceFlagBitsNV</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_983">C Specification</h4>
+<div id="VkGeometryInstanceFlagsNV" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkGeometryInstanceFlagsNV;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_983">Description</h4>
+<div class="paragraph">
+<p><code>VkGeometryInstanceFlagsNV</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkGeometryInstanceFlagBitsNV">VkGeometryInstanceFlagBitsNV</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_983">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkGeometryInstanceFlagBitsNV">VkGeometryInstanceFlagBitsNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_983">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkGeometryInstanceFlagsNV" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkGeometryInstanceFlagsNV</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkIOSSurfaceCreateFlagsMVK.txt[]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkimageaspectflags3">VkImageAspectFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_984">Name</h4>
+<div class="paragraph">
+<p>VkImageAspectFlags - Bitmask of VkImageAspectFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_984">C Specification</h4>
+<div id="VkImageAspectFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkImageAspectFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_984">Description</h4>
+<div class="paragraph">
+<p><code>VkImageAspectFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkImageAspectFlagBits">VkImageAspectFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_984">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAttachmentReference2KHR">VkAttachmentReference2KHR</a>, <a href="#VkClearAttachment">VkClearAttachment</a>, <a href="#VkImageAspectFlagBits">VkImageAspectFlagBits</a>, <a href="#VkImageSubresource">VkImageSubresource</a>, <a href="#VkImageSubresourceLayers">VkImageSubresourceLayers</a>, <a href="#VkImageSubresourceRange">VkImageSubresourceRange</a>, <a href="#VkInputAttachmentAspectReference">VkInputAttachmentAspectReference</a>, <a href="#VkSparseImageFormatProperties">VkSparseImageFormatProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_984">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageAspectFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageAspectFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkimagecreateflags3">VkImageCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_985">Name</h4>
+<div class="paragraph">
+<p>VkImageCreateFlags - Bitmask of VkImageCreateFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_985">C Specification</h4>
+<div id="VkImageCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkImageCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_985">Description</h4>
+<div class="paragraph">
+<p><code>VkImageCreateFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkImageCreateFlagBits">VkImageCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_985">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkImageCreateFlagBits">VkImageCreateFlagBits</a>, <a href="#VkImageCreateInfo">VkImageCreateInfo</a>, <a href="#VkPhysicalDeviceImageFormatInfo2">VkPhysicalDeviceImageFormatInfo2</a>, <a href="#vkGetPhysicalDeviceExternalImageFormatPropertiesNV">vkGetPhysicalDeviceExternalImageFormatPropertiesNV</a>, <a href="#vkGetPhysicalDeviceImageFormatProperties">vkGetPhysicalDeviceImageFormatProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_985">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkImagePipeSurfaceCreateFlagsFUCHSIA.txt[]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkimageusageflags3">VkImageUsageFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_986">Name</h4>
+<div class="paragraph">
+<p>VkImageUsageFlags - Bitmask of VkImageUsageFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_986">C Specification</h4>
+<div id="VkImageUsageFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkImageUsageFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_986">Description</h4>
+<div class="paragraph">
+<p><code>VkImageUsageFlags</code> is a bitmask type for setting a mask of zero or more
+<a href="#VkImageUsageFlagBits">VkImageUsageFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_986">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkImageCreateInfo">VkImageCreateInfo</a>, <a href="#VkImageStencilUsageCreateInfoEXT">VkImageStencilUsageCreateInfoEXT</a>, <a href="#VkImageUsageFlagBits">VkImageUsageFlagBits</a>, <a href="#VkImageViewUsageCreateInfo">VkImageViewUsageCreateInfo</a>, <a href="#VkPhysicalDeviceImageFormatInfo2">VkPhysicalDeviceImageFormatInfo2</a>, <a href="#VkPhysicalDeviceSparseImageFormatInfo2">VkPhysicalDeviceSparseImageFormatInfo2</a>, <a href="#VkSharedPresentSurfaceCapabilitiesKHR">VkSharedPresentSurfaceCapabilitiesKHR</a>, <a href="#VkSurfaceCapabilities2EXT">VkSurfaceCapabilities2EXT</a>, <a href="#VkSurfaceCapabilitiesKHR">VkSurfaceCapabilitiesKHR</a>, <a href="#VkSwapchainCreateInfoKHR">VkSwapchainCreateInfoKHR</a>, <a href="#vkGetPhysicalDeviceExternalImageFormatPropertiesNV">vkGetPhysicalDeviceExternalImageFormatPropertiesNV</a>, <a href="#vkGetPhysicalDeviceImageFormatProperties">vkGetPhysicalDeviceImageFormatProperties</a>, <a href="#vkGetPhysicalDeviceSparseImageFormatProperties">vkGetPhysicalDeviceSparseImageFormatProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_986">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageUsageFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageUsageFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkimageviewcreateflags3">VkImageViewCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_987">Name</h4>
+<div class="paragraph">
+<p>VkImageViewCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_987">C Specification</h4>
+<div id="VkImageViewCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkImageViewCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_987">Description</h4>
+<div class="paragraph">
+<p><code>VkImageViewCreateFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkImageViewCreateFlagBits">VkImageViewCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_987">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkImageViewCreateFlagBits">VkImageViewCreateFlagBits</a>, <a href="#VkImageViewCreateInfo">VkImageViewCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_987">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageViewCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkImageViewCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkindirectcommandslayoutusageflagsnvx3">VkIndirectCommandsLayoutUsageFlagsNVX(3)</h3>
+<div class="sect3">
+<h4 id="_name_988">Name</h4>
+<div class="paragraph">
+<p>VkIndirectCommandsLayoutUsageFlagsNVX - Bitmask of VkIndirectCommandsLayoutUsageFlagBitsNVX</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_988">C Specification</h4>
+<div id="VkIndirectCommandsLayoutUsageFlagsNVX" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkIndirectCommandsLayoutUsageFlagsNVX;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_988">Description</h4>
+<div class="paragraph">
+<p><code>VkIndirectCommandsLayoutUsageFlagsNVX</code> is a bitmask type for setting a
+mask of zero or more <a href="#VkIndirectCommandsLayoutUsageFlagBitsNVX">VkIndirectCommandsLayoutUsageFlagBitsNVX</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_988">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkIndirectCommandsLayoutCreateInfoNVX">VkIndirectCommandsLayoutCreateInfoNVX</a>, <a href="#VkIndirectCommandsLayoutUsageFlagBitsNVX">VkIndirectCommandsLayoutUsageFlagBitsNVX</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_988">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkIndirectCommandsLayoutUsageFlagsNVX" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkIndirectCommandsLayoutUsageFlagsNVX</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkinstancecreateflags3">VkInstanceCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_989">Name</h4>
+<div class="paragraph">
+<p>VkInstanceCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_989">C Specification</h4>
+<div id="VkInstanceCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkInstanceCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_989">Description</h4>
+<div class="paragraph">
+<p><code>VkInstanceCreateFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_989">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkInstanceCreateInfo">VkInstanceCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_989">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkInstanceCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkInstanceCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkMacOSSurfaceCreateFlagsMVK.txt[]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkmemoryallocateflags3">VkMemoryAllocateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_990">Name</h4>
+<div class="paragraph">
+<p>VkMemoryAllocateFlags - Bitmask of VkMemoryAllocateFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_990">C Specification</h4>
+<div id="VkMemoryAllocateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkMemoryAllocateFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkMemoryAllocateFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkMemoryAllocateFlags VkMemoryAllocateFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_990">Description</h4>
+<div class="paragraph">
+<p><code>VkMemoryAllocateFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkMemoryAllocateFlagBits">VkMemoryAllocateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_990">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkMemoryAllocateFlagBits">VkMemoryAllocateFlagBits</a>, <a href="#VkMemoryAllocateFlagsInfo">VkMemoryAllocateFlagsInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_990">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkMemoryAllocateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkMemoryAllocateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkmemoryheapflags3">VkMemoryHeapFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_991">Name</h4>
+<div class="paragraph">
+<p>VkMemoryHeapFlags - Bitmask of VkMemoryHeapFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_991">C Specification</h4>
+<div id="VkMemoryHeapFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkMemoryHeapFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_991">Description</h4>
+<div class="paragraph">
+<p><code>VkMemoryHeapFlags</code> is a bitmask type for setting a mask of zero or more
+<a href="#VkMemoryHeapFlagBits">VkMemoryHeapFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_991">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkMemoryHeap">VkMemoryHeap</a>, <a href="#VkMemoryHeapFlagBits">VkMemoryHeapFlagBits</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_991">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkMemoryHeapFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkMemoryHeapFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkmemorymapflags3">VkMemoryMapFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_992">Name</h4>
+<div class="paragraph">
+<p>VkMemoryMapFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_992">C Specification</h4>
+<div id="VkMemoryMapFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkMemoryMapFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_992">Description</h4>
+<div class="paragraph">
+<p><code>VkMemoryMapFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_992">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkMapMemory">vkMapMemory</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_992">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkMemoryMapFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkMemoryMapFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkmemorypropertyflags3">VkMemoryPropertyFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_993">Name</h4>
+<div class="paragraph">
+<p>VkMemoryPropertyFlags - Bitmask of VkMemoryPropertyFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_993">C Specification</h4>
+<div id="VkMemoryPropertyFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkMemoryPropertyFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_993">Description</h4>
+<div class="paragraph">
+<p><code>VkMemoryPropertyFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkMemoryPropertyFlagBits">VkMemoryPropertyFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_993">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkMemoryPropertyFlagBits">VkMemoryPropertyFlagBits</a>, <a href="#VkMemoryType">VkMemoryType</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_993">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkMemoryPropertyFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkMemoryPropertyFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkMetalSurfaceCreateFlagsEXT.txt[]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkobjectentryusageflagsnvx3">VkObjectEntryUsageFlagsNVX(3)</h3>
+<div class="sect3">
+<h4 id="_name_994">Name</h4>
+<div class="paragraph">
+<p>VkObjectEntryUsageFlagsNVX - Bitmask of VkObjectEntryUsageFlagBitsNVX</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_994">C Specification</h4>
+<div id="VkObjectEntryUsageFlagsNVX" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkObjectEntryUsageFlagsNVX;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_994">Description</h4>
+<div class="paragraph">
+<p><code>VkObjectEntryUsageFlagsNVX</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkObjectEntryUsageFlagBitsNVX">VkObjectEntryUsageFlagBitsNVX</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_994">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkObjectEntryUsageFlagBitsNVX">VkObjectEntryUsageFlagBitsNVX</a>, <a href="#VkObjectTableCreateInfoNVX">VkObjectTableCreateInfoNVX</a>, <a href="#VkObjectTableDescriptorSetEntryNVX">VkObjectTableDescriptorSetEntryNVX</a>, <a href="#VkObjectTableEntryNVX">VkObjectTableEntryNVX</a>, <a href="#VkObjectTableIndexBufferEntryNVX">VkObjectTableIndexBufferEntryNVX</a>, <a href="#VkObjectTablePipelineEntryNVX">VkObjectTablePipelineEntryNVX</a>, <a href="#VkObjectTablePushConstantEntryNVX">VkObjectTablePushConstantEntryNVX</a>, <a href="#VkObjectTableVertexBufferEntryNVX">VkObjectTableVertexBufferEntryNVX</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_994">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkObjectEntryUsageFlagsNVX" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkObjectEntryUsageFlagsNVX</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpeermemoryfeatureflags3">VkPeerMemoryFeatureFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_995">Name</h4>
+<div class="paragraph">
+<p>VkPeerMemoryFeatureFlags - Bitmask of VkPeerMemoryFeatureFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_995">C Specification</h4>
+<div id="VkPeerMemoryFeatureFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPeerMemoryFeatureFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkPeerMemoryFeatureFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkPeerMemoryFeatureFlags VkPeerMemoryFeatureFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_995">Description</h4>
+<div class="paragraph">
+<p><code>VkPeerMemoryFeatureFlags</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkPeerMemoryFeatureFlagBits">VkPeerMemoryFeatureFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_995">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPeerMemoryFeatureFlagBits">VkPeerMemoryFeatureFlagBits</a>, <a href="#vkGetDeviceGroupPeerMemoryFeatures">vkGetDeviceGroupPeerMemoryFeatures</a>, <a href="#vkGetDeviceGroupPeerMemoryFeaturesKHR">vkGetDeviceGroupPeerMemoryFeaturesKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_995">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPeerMemoryFeatureFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPeerMemoryFeatureFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinecachecreateflags3">VkPipelineCacheCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_996">Name</h4>
+<div class="paragraph">
+<p>VkPipelineCacheCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_996">C Specification</h4>
+<div id="VkPipelineCacheCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineCacheCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_996">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineCacheCreateFlags</code> is a bitmask type for setting a mask, but
+is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_996">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineCacheCreateInfo">VkPipelineCacheCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_996">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCacheCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCacheCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinecolorblendstatecreateflags3">VkPipelineColorBlendStateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_997">Name</h4>
+<div class="paragraph">
+<p>VkPipelineColorBlendStateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_997">C Specification</h4>
+<div id="VkPipelineColorBlendStateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineColorBlendStateCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_997">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineColorBlendStateCreateFlags</code> is a bitmask type for setting a
+mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_997">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineColorBlendStateCreateInfo">VkPipelineColorBlendStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_997">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineColorBlendStateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineColorBlendStateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinecoveragemodulationstatecreateflagsnv3">VkPipelineCoverageModulationStateCreateFlagsNV(3)</h3>
+<div class="sect3">
+<h4 id="_name_998">Name</h4>
+<div class="paragraph">
+<p>VkPipelineCoverageModulationStateCreateFlagsNV - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_998">C Specification</h4>
+<div id="VkPipelineCoverageModulationStateCreateFlagsNV" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineCoverageModulationStateCreateFlagsNV;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_998">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineCoverageModulationStateCreateFlagsNV</code> is a bitmask type for
+setting a mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_998">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineCoverageModulationStateCreateInfoNV">VkPipelineCoverageModulationStateCreateInfoNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_998">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCoverageModulationStateCreateFlagsNV" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCoverageModulationStateCreateFlagsNV</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinecoveragetocolorstatecreateflagsnv3">VkPipelineCoverageToColorStateCreateFlagsNV(3)</h3>
+<div class="sect3">
+<h4 id="_name_999">Name</h4>
+<div class="paragraph">
+<p>VkPipelineCoverageToColorStateCreateFlagsNV - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_999">C Specification</h4>
+<div id="VkPipelineCoverageToColorStateCreateFlagsNV" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineCoverageToColorStateCreateFlagsNV;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_999">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineCoverageToColorStateCreateFlagsNV</code> is a bitmask type for
+setting a mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_999">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineCoverageToColorStateCreateInfoNV">VkPipelineCoverageToColorStateCreateInfoNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_999">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCoverageToColorStateCreateFlagsNV" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCoverageToColorStateCreateFlagsNV</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinecreateflags3">VkPipelineCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1000">Name</h4>
+<div class="paragraph">
+<p>VkPipelineCreateFlags - Bitmask of VkPipelineCreateFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1000">C Specification</h4>
+<div id="VkPipelineCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1000">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineCreateFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkPipelineCreateFlagBits">VkPipelineCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1000">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkComputePipelineCreateInfo">VkComputePipelineCreateInfo</a>, <a href="#VkGraphicsPipelineCreateInfo">VkGraphicsPipelineCreateInfo</a>, <a href="#VkPipelineCreateFlagBits">VkPipelineCreateFlagBits</a>, <a href="#VkRayTracingPipelineCreateInfoNV">VkRayTracingPipelineCreateInfoNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1000">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinecreationfeedbackflagsext3">VkPipelineCreationFeedbackFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_1001">Name</h4>
+<div class="paragraph">
+<p>VkPipelineCreationFeedbackFlagsEXT - Bitmask of VkPipelineCreationFeedbackFlagBitsEXT</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1001">C Specification</h4>
+<div id="VkPipelineCreationFeedbackFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineCreationFeedbackFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1001">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineCreationFeedbackFlagsEXT</code> is a bitmask type for providing
+zero or more <a href="#VkPipelineCreationFeedbackFlagBitsEXT">VkPipelineCreationFeedbackFlagBitsEXT</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1001">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineCreationFeedbackEXT">VkPipelineCreationFeedbackEXT</a>, <a href="#VkPipelineCreationFeedbackFlagBitsEXT">VkPipelineCreationFeedbackFlagBitsEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1001">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCreationFeedbackFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineCreationFeedbackFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinedepthstencilstatecreateflags3">VkPipelineDepthStencilStateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1002">Name</h4>
+<div class="paragraph">
+<p>VkPipelineDepthStencilStateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1002">C Specification</h4>
+<div id="VkPipelineDepthStencilStateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineDepthStencilStateCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1002">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineDepthStencilStateCreateFlags</code> is a bitmask type for setting a
+mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1002">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineDepthStencilStateCreateInfo">VkPipelineDepthStencilStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1002">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineDepthStencilStateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineDepthStencilStateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinediscardrectanglestatecreateflagsext3">VkPipelineDiscardRectangleStateCreateFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_1003">Name</h4>
+<div class="paragraph">
+<p>VkPipelineDiscardRectangleStateCreateFlagsEXT - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1003">C Specification</h4>
+<div id="VkPipelineDiscardRectangleStateCreateFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineDiscardRectangleStateCreateFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1003">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineDiscardRectangleStateCreateFlagsEXT</code> is a bitmask type for
+setting a mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1003">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineDiscardRectangleStateCreateInfoEXT">VkPipelineDiscardRectangleStateCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1003">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineDiscardRectangleStateCreateFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineDiscardRectangleStateCreateFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinedynamicstatecreateflags3">VkPipelineDynamicStateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1004">Name</h4>
+<div class="paragraph">
+<p>VkPipelineDynamicStateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1004">C Specification</h4>
+<div id="VkPipelineDynamicStateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineDynamicStateCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1004">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineDynamicStateCreateFlags</code> is a bitmask type for setting a
+mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1004">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineDynamicStateCreateInfo">VkPipelineDynamicStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1004">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineDynamicStateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineDynamicStateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelineinputassemblystatecreateflags3">VkPipelineInputAssemblyStateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1005">Name</h4>
+<div class="paragraph">
+<p>VkPipelineInputAssemblyStateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1005">C Specification</h4>
+<div id="VkPipelineInputAssemblyStateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineInputAssemblyStateCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1005">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineInputAssemblyStateCreateFlags</code> is a bitmask type for setting
+a mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1005">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineInputAssemblyStateCreateInfo">VkPipelineInputAssemblyStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1005">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineInputAssemblyStateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineInputAssemblyStateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinelayoutcreateflags3">VkPipelineLayoutCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1006">Name</h4>
+<div class="paragraph">
+<p>VkPipelineLayoutCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1006">C Specification</h4>
+<div id="VkPipelineLayoutCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineLayoutCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1006">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineLayoutCreateFlags</code> is a bitmask type for setting a mask, but
+is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1006">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineLayoutCreateInfo">VkPipelineLayoutCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1006">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineLayoutCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineLayoutCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinemultisamplestatecreateflags3">VkPipelineMultisampleStateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1007">Name</h4>
+<div class="paragraph">
+<p>VkPipelineMultisampleStateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1007">C Specification</h4>
+<div id="VkPipelineMultisampleStateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineMultisampleStateCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1007">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineMultisampleStateCreateFlags</code> is a bitmask type for setting a
+mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1007">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineMultisampleStateCreateInfo">VkPipelineMultisampleStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1007">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineMultisampleStateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineMultisampleStateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinerasterizationconservativestatecreateflagsext3">VkPipelineRasterizationConservativeStateCreateFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_1008">Name</h4>
+<div class="paragraph">
+<p>VkPipelineRasterizationConservativeStateCreateFlagsEXT - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1008">C Specification</h4>
+<div id="VkPipelineRasterizationConservativeStateCreateFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineRasterizationConservativeStateCreateFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1008">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineRasterizationConservativeStateCreateFlagsEXT</code> is a bitmask
+type for setting a mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1008">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineRasterizationConservativeStateCreateInfoEXT">VkPipelineRasterizationConservativeStateCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1008">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineRasterizationConservativeStateCreateFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineRasterizationConservativeStateCreateFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinerasterizationdepthclipstatecreateflagsext3">VkPipelineRasterizationDepthClipStateCreateFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_1009">Name</h4>
+<div class="paragraph">
+<p>VkPipelineRasterizationDepthClipStateCreateFlagsEXT - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1009">C Specification</h4>
+<div id="VkPipelineRasterizationDepthClipStateCreateFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineRasterizationDepthClipStateCreateFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1009">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineRasterizationDepthClipStateCreateFlagsEXT</code> is a bitmask type
+for setting a mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1009">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineRasterizationDepthClipStateCreateInfoEXT">VkPipelineRasterizationDepthClipStateCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1009">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineRasterizationDepthClipStateCreateFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineRasterizationDepthClipStateCreateFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinerasterizationstatecreateflags3">VkPipelineRasterizationStateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1010">Name</h4>
+<div class="paragraph">
+<p>VkPipelineRasterizationStateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1010">C Specification</h4>
+<div id="VkPipelineRasterizationStateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineRasterizationStateCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1010">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineRasterizationStateCreateFlags</code> is a bitmask type for setting
+a mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1010">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineRasterizationStateCreateInfo">VkPipelineRasterizationStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1010">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineRasterizationStateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineRasterizationStateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinerasterizationstatestreamcreateflagsext3">VkPipelineRasterizationStateStreamCreateFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_1011">Name</h4>
+<div class="paragraph">
+<p>VkPipelineRasterizationStateStreamCreateFlagsEXT - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1011">C Specification</h4>
+<div id="VkPipelineRasterizationStateStreamCreateFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineRasterizationStateStreamCreateFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1011">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineRasterizationStateStreamCreateFlagsEXT</code> is a bitmask type for
+setting a mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1011">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineRasterizationStateStreamCreateInfoEXT">VkPipelineRasterizationStateStreamCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1011">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineRasterizationStateStreamCreateFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineRasterizationStateStreamCreateFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelineshaderstagecreateflags3">VkPipelineShaderStageCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1012">Name</h4>
+<div class="paragraph">
+<p>VkPipelineShaderStageCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1012">C Specification</h4>
+<div id="VkPipelineShaderStageCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineShaderStageCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1012">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineShaderStageCreateFlags</code> is a bitmask type for setting a mask,
+but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1012">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineShaderStageCreateInfo">VkPipelineShaderStageCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1012">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineShaderStageCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineShaderStageCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinestageflags3">VkPipelineStageFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1013">Name</h4>
+<div class="paragraph">
+<p>VkPipelineStageFlags - Bitmask of VkPipelineStageFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1013">C Specification</h4>
+<div id="VkPipelineStageFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineStageFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1013">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineStageFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkPipelineStageFlagBits">VkPipelineStageFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1013">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineStageFlagBits">VkPipelineStageFlagBits</a>, <a href="#VkQueueFamilyCheckpointPropertiesNV">VkQueueFamilyCheckpointPropertiesNV</a>, <a href="#VkSubmitInfo">VkSubmitInfo</a>, <a href="#VkSubpassDependency">VkSubpassDependency</a>, <a href="#VkSubpassDependency2KHR">VkSubpassDependency2KHR</a>, <a href="#vkCmdPipelineBarrier">vkCmdPipelineBarrier</a>, <a href="#vkCmdResetEvent">vkCmdResetEvent</a>, <a href="#vkCmdSetEvent">vkCmdSetEvent</a>, <a href="#vkCmdWaitEvents">vkCmdWaitEvents</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1013">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineStageFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineStageFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinetessellationstatecreateflags3">VkPipelineTessellationStateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1014">Name</h4>
+<div class="paragraph">
+<p>VkPipelineTessellationStateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1014">C Specification</h4>
+<div id="VkPipelineTessellationStateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineTessellationStateCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1014">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineTessellationStateCreateFlags</code> is a bitmask type for setting a
+mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1014">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineTessellationStateCreateInfo">VkPipelineTessellationStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1014">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineTessellationStateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineTessellationStateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelinevertexinputstatecreateflags3">VkPipelineVertexInputStateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1015">Name</h4>
+<div class="paragraph">
+<p>VkPipelineVertexInputStateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1015">C Specification</h4>
+<div id="VkPipelineVertexInputStateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineVertexInputStateCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1015">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineVertexInputStateCreateFlags</code> is a bitmask type for setting a
+mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1015">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineVertexInputStateCreateInfo">VkPipelineVertexInputStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1015">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineVertexInputStateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineVertexInputStateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelineviewportstatecreateflags3">VkPipelineViewportStateCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1016">Name</h4>
+<div class="paragraph">
+<p>VkPipelineViewportStateCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1016">C Specification</h4>
+<div id="VkPipelineViewportStateCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineViewportStateCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1016">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineViewportStateCreateFlags</code> is a bitmask type for setting a
+mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1016">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineViewportStateCreateInfo">VkPipelineViewportStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1016">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineViewportStateCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineViewportStateCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkpipelineviewportswizzlestatecreateflagsnv3">VkPipelineViewportSwizzleStateCreateFlagsNV(3)</h3>
+<div class="sect3">
+<h4 id="_name_1017">Name</h4>
+<div class="paragraph">
+<p>VkPipelineViewportSwizzleStateCreateFlagsNV - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1017">C Specification</h4>
+<div id="VkPipelineViewportSwizzleStateCreateFlagsNV" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkPipelineViewportSwizzleStateCreateFlagsNV;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1017">Description</h4>
+<div class="paragraph">
+<p><code>VkPipelineViewportSwizzleStateCreateFlagsNV</code> is a bitmask type for
+setting a mask, but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1017">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineViewportSwizzleStateCreateInfoNV">VkPipelineViewportSwizzleStateCreateInfoNV</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1017">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineViewportSwizzleStateCreateFlagsNV" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkPipelineViewportSwizzleStateCreateFlagsNV</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkquerycontrolflags3">VkQueryControlFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1018">Name</h4>
+<div class="paragraph">
+<p>VkQueryControlFlags - Bitmask of VkQueryControlFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1018">C Specification</h4>
+<div id="VkQueryControlFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkQueryControlFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1018">Description</h4>
+<div class="paragraph">
+<p><code>VkQueryControlFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkQueryControlFlagBits">VkQueryControlFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1018">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandBufferInheritanceInfo">VkCommandBufferInheritanceInfo</a>, <a href="#VkQueryControlFlagBits">VkQueryControlFlagBits</a>, <a href="#vkCmdBeginQuery">vkCmdBeginQuery</a>, <a href="#vkCmdBeginQueryIndexedEXT">vkCmdBeginQueryIndexedEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1018">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryControlFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryControlFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkquerypipelinestatisticflags3">VkQueryPipelineStatisticFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1019">Name</h4>
+<div class="paragraph">
+<p>VkQueryPipelineStatisticFlags - Bitmask of VkQueryPipelineStatisticFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1019">C Specification</h4>
+<div id="VkQueryPipelineStatisticFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkQueryPipelineStatisticFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1019">Description</h4>
+<div class="paragraph">
+<p><code>VkQueryPipelineStatisticFlags</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkQueryPipelineStatisticFlagBits">VkQueryPipelineStatisticFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1019">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandBufferInheritanceInfo">VkCommandBufferInheritanceInfo</a>, <a href="#VkQueryPipelineStatisticFlagBits">VkQueryPipelineStatisticFlagBits</a>, <a href="#VkQueryPoolCreateInfo">VkQueryPoolCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1019">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryPipelineStatisticFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryPipelineStatisticFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkquerypoolcreateflags3">VkQueryPoolCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1020">Name</h4>
+<div class="paragraph">
+<p>VkQueryPoolCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1020">C Specification</h4>
+<div id="VkQueryPoolCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkQueryPoolCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1020">Description</h4>
+<div class="paragraph">
+<p><code>VkQueryPoolCreateFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1020">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkQueryPoolCreateInfo">VkQueryPoolCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1020">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryPoolCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryPoolCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkqueryresultflags3">VkQueryResultFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1021">Name</h4>
+<div class="paragraph">
+<p>VkQueryResultFlags - Bitmask of VkQueryResultFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1021">C Specification</h4>
+<div id="VkQueryResultFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkQueryResultFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1021">Description</h4>
+<div class="paragraph">
+<p><code>VkQueryResultFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkQueryResultFlagBits">VkQueryResultFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1021">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkQueryResultFlagBits">VkQueryResultFlagBits</a>, <a href="#vkCmdCopyQueryPoolResults">vkCmdCopyQueryPoolResults</a>, <a href="#vkGetQueryPoolResults">vkGetQueryPoolResults</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1021">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryResultFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueryResultFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkqueueflags3">VkQueueFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1022">Name</h4>
+<div class="paragraph">
+<p>VkQueueFlags - Bitmask of VkQueueFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1022">C Specification</h4>
+<div id="VkQueueFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkQueueFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1022">Description</h4>
+<div class="paragraph">
+<p><code>VkQueueFlags</code> is a bitmask type for setting a mask of zero or more
+<a href="#VkQueueFlagBits">VkQueueFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1022">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkQueueFamilyProperties">VkQueueFamilyProperties</a>, <a href="#VkQueueFlagBits">VkQueueFlagBits</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1022">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueueFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkQueueFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkrenderpasscreateflags3">VkRenderPassCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1023">Name</h4>
+<div class="paragraph">
+<p>VkRenderPassCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1023">C Specification</h4>
+<div id="VkRenderPassCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkRenderPassCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1023">Description</h4>
+<div class="paragraph">
+<p><code>VkRenderPassCreateFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1023">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkRenderPassCreateInfo">VkRenderPassCreateInfo</a>, <a href="#VkRenderPassCreateInfo2KHR">VkRenderPassCreateInfo2KHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1023">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkRenderPassCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkRenderPassCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkresolvemodeflagskhr3">VkResolveModeFlagsKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_1024">Name</h4>
+<div class="paragraph">
+<p>VkResolveModeFlagsKHR - Bitmask of VkResolveModeFlagBitsKHR</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1024">C Specification</h4>
+<div id="VkResolveModeFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkResolveModeFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1024">Description</h4>
+<div class="paragraph">
+<p><code>VkResolveModeFlagsKHR</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkResolveModeFlagBitsKHR">VkResolveModeFlagBitsKHR</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1024">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPhysicalDeviceDepthStencilResolvePropertiesKHR">VkPhysicalDeviceDepthStencilResolvePropertiesKHR</a>, <a href="#VkResolveModeFlagBitsKHR">VkResolveModeFlagBitsKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1024">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkResolveModeFlagsKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkResolveModeFlagsKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksamplecountflags3">VkSampleCountFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1025">Name</h4>
+<div class="paragraph">
+<p>VkSampleCountFlags - Bitmask of VkSampleCountFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1025">C Specification</h4>
+<div id="VkSampleCountFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSampleCountFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1025">Description</h4>
+<div class="paragraph">
+<p><code>VkSampleCountFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkSampleCountFlagBits">VkSampleCountFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1025">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkImageFormatProperties">VkImageFormatProperties</a>, <a href="#VkPhysicalDeviceLimits">VkPhysicalDeviceLimits</a>, <a href="#VkPhysicalDeviceSampleLocationsPropertiesEXT">VkPhysicalDeviceSampleLocationsPropertiesEXT</a>, <a href="#VkSampleCountFlagBits">VkSampleCountFlagBits</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1025">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSampleCountFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSampleCountFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksamplercreateflags3">VkSamplerCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1026">Name</h4>
+<div class="paragraph">
+<p>VkSamplerCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1026">C Specification</h4>
+<div id="VkSamplerCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSamplerCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1026">Description</h4>
+<div class="paragraph">
+<p><code>VkSamplerCreateFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkSamplerCreateFlagBits">VkSamplerCreateFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1026">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkSamplerCreateFlagBits">VkSamplerCreateFlagBits</a>, <a href="#VkSamplerCreateInfo">VkSamplerCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1026">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSamplerCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSamplerCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksemaphorecreateflags3">VkSemaphoreCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1027">Name</h4>
+<div class="paragraph">
+<p>VkSemaphoreCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1027">C Specification</h4>
+<div id="VkSemaphoreCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSemaphoreCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1027">Description</h4>
+<div class="paragraph">
+<p><code>VkSemaphoreCreateFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1027">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkSemaphoreCreateInfo">VkSemaphoreCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1027">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSemaphoreCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSemaphoreCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksemaphoreimportflags3">VkSemaphoreImportFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1028">Name</h4>
+<div class="paragraph">
+<p>VkSemaphoreImportFlags - Bitmask of VkSemaphoreImportFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1028">C Specification</h4>
+<div id="VkSemaphoreImportFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSemaphoreImportFlags;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>or the equivalent</p>
+</div>
+<div id="VkSemaphoreImportFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkSemaphoreImportFlags VkSemaphoreImportFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1028">Description</h4>
+<div class="paragraph">
+<p><code>VkSemaphoreImportFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkSemaphoreImportFlagBits">VkSemaphoreImportFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1028">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkImportSemaphoreFdInfoKHR">VkImportSemaphoreFdInfoKHR</a>, <a href="#VkImportSemaphoreWin32HandleInfoKHR">VkImportSemaphoreWin32HandleInfoKHR</a>, <a href="#VkSemaphoreImportFlagBits">VkSemaphoreImportFlagBits</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1028">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSemaphoreImportFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSemaphoreImportFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkshadermodulecreateflags3">VkShaderModuleCreateFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1029">Name</h4>
+<div class="paragraph">
+<p>VkShaderModuleCreateFlags - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1029">C Specification</h4>
+<div id="VkShaderModuleCreateFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkShaderModuleCreateFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1029">Description</h4>
+<div class="paragraph">
+<p><code>VkShaderModuleCreateFlags</code> is a bitmask type for setting a mask, but is
+currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1029">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkShaderModuleCreateInfo">VkShaderModuleCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1029">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkShaderModuleCreateFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkShaderModuleCreateFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkshaderstageflags3">VkShaderStageFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1030">Name</h4>
+<div class="paragraph">
+<p>VkShaderStageFlags - Bitmask of VkShaderStageFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1030">C Specification</h4>
+<div id="VkShaderStageFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkShaderStageFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1030">Description</h4>
+<div class="paragraph">
+<p><code>VkShaderStageFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkShaderStageFlagBits">VkShaderStageFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1030">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDescriptorSetLayoutBinding">VkDescriptorSetLayoutBinding</a>, <a href="#VkObjectTablePushConstantEntryNVX">VkObjectTablePushConstantEntryNVX</a>, <a href="#VkPhysicalDeviceCooperativeMatrixPropertiesNV">VkPhysicalDeviceCooperativeMatrixPropertiesNV</a>, <a href="#VkPhysicalDeviceSubgroupProperties">VkPhysicalDeviceSubgroupProperties</a>, <a href="#VkPushConstantRange">VkPushConstantRange</a>, <a href="#VkShaderStageFlagBits">VkShaderStageFlagBits</a>, <a href="#VkShaderStatisticsInfoAMD">VkShaderStatisticsInfoAMD</a>, <a href="#vkCmdPushConstants">vkCmdPushConstants</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1030">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkShaderStageFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkShaderStageFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksparseimageformatflags3">VkSparseImageFormatFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1031">Name</h4>
+<div class="paragraph">
+<p>VkSparseImageFormatFlags - Bitmask of VkSparseImageFormatFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1031">C Specification</h4>
+<div id="VkSparseImageFormatFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSparseImageFormatFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1031">Description</h4>
+<div class="paragraph">
+<p><code>VkSparseImageFormatFlags</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkSparseImageFormatFlagBits">VkSparseImageFormatFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1031">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkSparseImageFormatFlagBits">VkSparseImageFormatFlagBits</a>, <a href="#VkSparseImageFormatProperties">VkSparseImageFormatProperties</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1031">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSparseImageFormatFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSparseImageFormatFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksparsememorybindflags3">VkSparseMemoryBindFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1032">Name</h4>
+<div class="paragraph">
+<p>VkSparseMemoryBindFlags - Bitmask of VkSparseMemoryBindFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1032">C Specification</h4>
+<div id="VkSparseMemoryBindFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSparseMemoryBindFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1032">Description</h4>
+<div class="paragraph">
+<p><code>VkSparseMemoryBindFlags</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkSparseMemoryBindFlagBits">VkSparseMemoryBindFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1032">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkSparseImageMemoryBind">VkSparseImageMemoryBind</a>, <a href="#VkSparseMemoryBind">VkSparseMemoryBind</a>, <a href="#VkSparseMemoryBindFlagBits">VkSparseMemoryBindFlagBits</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1032">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSparseMemoryBindFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSparseMemoryBindFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkstencilfaceflags3">VkStencilFaceFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1033">Name</h4>
+<div class="paragraph">
+<p>VkStencilFaceFlags - Bitmask of VkStencilFaceFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1033">C Specification</h4>
+<div id="VkStencilFaceFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkStencilFaceFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1033">Description</h4>
+<div class="paragraph">
+<p><code>VkStencilFaceFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkStencilFaceFlagBits">VkStencilFaceFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1033">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkStencilFaceFlagBits">VkStencilFaceFlagBits</a>, <a href="#vkCmdSetStencilCompareMask">vkCmdSetStencilCompareMask</a>, <a href="#vkCmdSetStencilReference">vkCmdSetStencilReference</a>, <a href="#vkCmdSetStencilWriteMask">vkCmdSetStencilWriteMask</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1033">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkStencilFaceFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkStencilFaceFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkStreamDescriptorSurfaceCreateFlagsGGP.txt[]</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksubgroupfeatureflags3">VkSubgroupFeatureFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1034">Name</h4>
+<div class="paragraph">
+<p>VkSubgroupFeatureFlags - Bitmask of VkSubgroupFeatureFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1034">C Specification</h4>
+<div id="VkSubgroupFeatureFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSubgroupFeatureFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1034">Description</h4>
+<div class="paragraph">
+<p><code>VkSubgroupFeatureFlags</code> is a bitmask type for setting a mask of zero or
+more <a href="#VkSubgroupFeatureFlagBits">VkSubgroupFeatureFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1034">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPhysicalDeviceSubgroupProperties">VkPhysicalDeviceSubgroupProperties</a>, <a href="#VkSubgroupFeatureFlagBits">VkSubgroupFeatureFlagBits</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1034">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSubgroupFeatureFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSubgroupFeatureFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksubpassdescriptionflags3">VkSubpassDescriptionFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1035">Name</h4>
+<div class="paragraph">
+<p>VkSubpassDescriptionFlags - Bitmask of VkSubpassDescriptionFlagBits</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1035">C Specification</h4>
+<div id="VkSubpassDescriptionFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSubpassDescriptionFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1035">Description</h4>
+<div class="paragraph">
+<p><code>VkSubpassDescriptionFlags</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkSubpassDescriptionFlagBits">VkSubpassDescriptionFlagBits</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1035">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkSubpassDescription">VkSubpassDescription</a>, <a href="#VkSubpassDescription2KHR">VkSubpassDescription2KHR</a>, <a href="#VkSubpassDescriptionFlagBits">VkSubpassDescriptionFlagBits</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1035">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSubpassDescriptionFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSubpassDescriptionFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksurfacecounterflagsext3">VkSurfaceCounterFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_1036">Name</h4>
+<div class="paragraph">
+<p>VkSurfaceCounterFlagsEXT - Bitmask of VkSurfaceCounterFlagBitsEXT</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1036">C Specification</h4>
+<div id="VkSurfaceCounterFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSurfaceCounterFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1036">Description</h4>
+<div class="paragraph">
+<p><code>VkSurfaceCounterFlagsEXT</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkSurfaceCounterFlagBitsEXT">VkSurfaceCounterFlagBitsEXT</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1036">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkSurfaceCapabilities2EXT">VkSurfaceCapabilities2EXT</a>, <a href="#VkSurfaceCounterFlagBitsEXT">VkSurfaceCounterFlagBitsEXT</a>, <a href="#VkSwapchainCounterCreateInfoEXT">VkSwapchainCounterCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1036">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSurfaceCounterFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSurfaceCounterFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksurfacetransformflagskhr3">VkSurfaceTransformFlagsKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_1037">Name</h4>
+<div class="paragraph">
+<p>VkSurfaceTransformFlagsKHR - Bitmask of VkSurfaceTransformFlagBitsKHR</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1037">C Specification</h4>
+<div id="VkSurfaceTransformFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSurfaceTransformFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1037">Description</h4>
+<div class="paragraph">
+<p><code>VkSurfaceTransformFlagsKHR</code> is a bitmask type for setting a mask of
+zero or more <a href="#VkSurfaceTransformFlagBitsKHR">VkSurfaceTransformFlagBitsKHR</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1037">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDisplayPropertiesKHR">VkDisplayPropertiesKHR</a>, <a href="#VkSurfaceCapabilities2EXT">VkSurfaceCapabilities2EXT</a>, <a href="#VkSurfaceCapabilitiesKHR">VkSurfaceCapabilitiesKHR</a>, <a href="#VkSurfaceTransformFlagBitsKHR">VkSurfaceTransformFlagBitsKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1037">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSurfaceTransformFlagsKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSurfaceTransformFlagsKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkswapchaincreateflagskhr3">VkSwapchainCreateFlagsKHR(3)</h3>
+<div class="sect3">
+<h4 id="_name_1038">Name</h4>
+<div class="paragraph">
+<p>VkSwapchainCreateFlagsKHR - Bitmask of VkSwapchainCreateFlagBitsKHR</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1038">C Specification</h4>
+<div id="VkSwapchainCreateFlagsKHR" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkSwapchainCreateFlagsKHR;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1038">Description</h4>
+<div class="paragraph">
+<p><code>VkSwapchainCreateFlagsKHR</code> is a bitmask type for setting a mask of zero
+or more <a href="#VkSwapchainCreateFlagBitsKHR">VkSwapchainCreateFlagBitsKHR</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1038">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkSwapchainCreateFlagBitsKHR">VkSwapchainCreateFlagBitsKHR</a>, <a href="#VkSwapchainCreateInfoKHR">VkSwapchainCreateInfoKHR</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1038">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSwapchainCreateFlagsKHR" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSwapchainCreateFlagsKHR</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkvalidationcachecreateflagsext3">VkValidationCacheCreateFlagsEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_1039">Name</h4>
+<div class="paragraph">
+<p>VkValidationCacheCreateFlagsEXT - Reserved for future use</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1039">C Specification</h4>
+<div id="VkValidationCacheCreateFlagsEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkFlags VkValidationCacheCreateFlagsEXT;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1039">Description</h4>
+<div class="paragraph">
+<p><code>VkValidationCacheCreateFlagsEXT</code> is a bitmask type for setting a mask,
+but is currently reserved for future use.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1039">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkValidationCacheCreateInfoEXT">VkValidationCacheCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1039">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkValidationCacheCreateFlagsEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkValidationCacheCreateFlagsEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p>Unresolved directive in apispec.txt - include::VkViSurfaceCreateFlagsNN.txt[]
+Unresolved directive in apispec.txt - include::VkWaylandSurfaceCreateFlagsKHR.txt[]
+Unresolved directive in apispec.txt - include::VkWin32SurfaceCreateFlagsKHR.txt[]
+Unresolved directive in apispec.txt - include::VkXcbSurfaceCreateFlagsKHR.txt[]
+Unresolved directive in apispec.txt - include::VkXlibSurfaceCreateFlagsKHR.txt[]</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</root>

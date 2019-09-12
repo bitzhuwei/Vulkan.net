@@ -1,0 +1,689 @@
+<root>
+<div class="sect1">
+<h2 id="funcpointers">Function Pointer Types</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_pfn_vkallocationfunction3">PFN_vkAllocationFunction(3)</h3>
+<div class="sect3">
+<h4 id="_name_1040">Name</h4>
+<div class="paragraph">
+<p>PFN_vkAllocationFunction - Application-defined memory allocation function</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1040">C Specification</h4>
+<div class="paragraph">
+<p>The type of <code>pfnAllocation</code> is:</p>
+</div>
+<div id="PFN_vkAllocationFunction" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef void* (VKAPI_PTR *PFN_vkAllocationFunction)(
+    void*                                       pUserData,
+    size_t                                      size,
+    size_t                                      alignment,
+    VkSystemAllocationScope                     allocationScope);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameters_327">Parameters</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pUserData</code> is the value specified for
+<a href="#VkAllocationCallbacks">VkAllocationCallbacks</a>::<code>pUserData</code> in the allocator specified
+by the application.</p>
+</li>
+<li>
+<p><code>size</code> is the size in bytes of the requested allocation.</p>
+</li>
+<li>
+<p><code>alignment</code> is the requested alignment of the allocation in bytes
+and <strong class="purple">must</strong> be a power of two.</p>
+</li>
+<li>
+<p><code>allocationScope</code> is a <a href="#VkSystemAllocationScope">VkSystemAllocationScope</a> value
+specifying the allocation scope of the lifetime of the allocation, as
+described <a href="vkspec.html#memory-host-allocation-scope">here</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1040">Description</h4>
+<div id="vkAllocationFunction_return_rules" class="paragraph">
+<p>If <code>pfnAllocation</code> is unable to allocate the requested memory, it <strong class="purple">must</strong>
+return <code>NULL</code>.
+If the allocation was successful, it <strong class="purple">must</strong> return a valid pointer to memory
+allocation containing at least <code>size</code> bytes, and with the pointer value
+being a multiple of <code>alignment</code>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="title">Note</div>
+<div class="paragraph">
+<p>Correct Vulkan operation <strong class="purple">cannot</strong> be assumed if the application does not
+follow these rules.</p>
+</div>
+<div class="paragraph">
+<p>For example, <code>pfnAllocation</code> (or <code>pfnReallocation</code>) could cause
+termination of running Vulkan instance(s) on a failed allocation for
+debugging purposes, either directly or indirectly.
+In these circumstances, it <strong class="purple">cannot</strong> be assumed that any part of any affected
+<a href="#VkInstance">VkInstance</a> objects are going to operate correctly (even
+<a href="#vkDestroyInstance">vkDestroyInstance</a>), and the application <strong class="purple">must</strong> ensure it cleans up
+properly via other means (e.g. process termination).</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If <code>pfnAllocation</code> returns <code>NULL</code>, and if the implementation is unable
+to continue correct processing of the current command without the requested
+allocation, it <strong class="purple">must</strong> treat this as a run-time error, and generate
+<code>VK_ERROR_OUT_OF_HOST_MEMORY</code> at the appropriate time for the command in
+which the condition was detected, as described in <a href="vkspec.html#fundamentals-errorcodes">Return Codes</a>.</p>
+</div>
+<div class="paragraph">
+<p>If the implementation is able to continue correct processing of the current
+command without the requested allocation, then it <strong class="purple">may</strong> do so, and <strong class="purple">must</strong> not
+generate <code>VK_ERROR_OUT_OF_HOST_MEMORY</code> as a result of this failed
+allocation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1040">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAllocationCallbacks">VkAllocationCallbacks</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1040">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkAllocationFunction" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkAllocationFunction</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pfn_vkdebugreportcallbackext3">PFN_vkDebugReportCallbackEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_1041">Name</h4>
+<div class="paragraph">
+<p>PFN_vkDebugReportCallbackEXT - Application-defined debug report callback function</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1041">C Specification</h4>
+<div class="paragraph">
+<p>The prototype for the
+<a href="#VkDebugReportCallbackCreateInfoEXT">VkDebugReportCallbackCreateInfoEXT</a>::<code>pfnCallback</code> function
+implemented by the application is:</p>
+</div>
+<div id="PFN_vkDebugReportCallbackEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkBool32 (VKAPI_PTR *PFN_vkDebugReportCallbackEXT)(
+    VkDebugReportFlagsEXT                       flags,
+    VkDebugReportObjectTypeEXT                  objectType,
+    uint64_t                                    object,
+    size_t                                      location,
+    int32_t                                     messageCode,
+    const char*                                 pLayerPrefix,
+    const char*                                 pMessage,
+    void*                                       pUserData);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameters_328">Parameters</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>flags</code> specifies the <a href="#VkDebugReportFlagBitsEXT">VkDebugReportFlagBitsEXT</a> that triggered
+this callback.</p>
+</li>
+<li>
+<p><code>objectType</code> is a <a href="#VkDebugReportObjectTypeEXT">VkDebugReportObjectTypeEXT</a> value specifying
+the type of object being used or created at the time the event was
+triggered.</p>
+</li>
+<li>
+<p><code>object</code> is the object where the issue was detected.
+If <code>objectType</code> is <code>VK_DEBUG_REPORT_OBJECT_TYPE_UNKNOWN_EXT</code>,
+<code>object</code> is undefined.</p>
+</li>
+<li>
+<p><code>location</code> is a component (layer, driver, loader) defined value that
+specifies the <em>location</em> of the trigger.
+This is an <strong class="purple">optional</strong> value.</p>
+</li>
+<li>
+<p><code>messageCode</code> is a layer-defined value indicating what test
+triggered this callback.</p>
+</li>
+<li>
+<p><code>pLayerPrefix</code> is a null-terminated string that is an abbreviation
+of the name of the component making the callback.
+<code>pLayerPrefix</code> is only valid for the duration of the callback.</p>
+</li>
+<li>
+<p><code>pMessage</code> is a null-terminated string detailing the trigger
+conditions.
+<code>pMessage</code> is only valid for the duration of the callback.</p>
+</li>
+<li>
+<p><code>pUserData</code> is the user data given when the
+<a href="#VkDebugReportCallbackEXT">VkDebugReportCallbackEXT</a> was created.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1041">Description</h4>
+<div class="paragraph">
+<p>The callback <strong class="purple">must</strong> not call <code>vkDestroyDebugReportCallbackEXT</code>.</p>
+</div>
+<div class="paragraph">
+<p>The callback returns a <code>VkBool32</code>, which is interpreted in a
+layer-specified manner.
+The application <strong class="purple">should</strong> always return <code>VK_FALSE</code>.
+The <code>VK_TRUE</code> value is reserved for use in layer development.</p>
+</div>
+<div class="paragraph">
+<p><code>object</code> <strong class="purple">must</strong> be a Vulkan object or <a href="#VK_NULL_HANDLE">VK_NULL_HANDLE</a>.
+If <code>objectType</code> is not <code>VK_DEBUG_REPORT_OBJECT_TYPE_UNKNOWN_EXT</code> and
+<code>object</code> is not <a href="#VK_NULL_HANDLE">VK_NULL_HANDLE</a>, <code>object</code> <strong class="purple">must</strong> be a Vulkan
+object of the corresponding type associated with <code>objectType</code> as defined
+in <a href="vkspec.html#debug-report-object-types" class="bare">html/vkspec.html#debug-report-object-types</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1041">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDebugReportCallbackCreateInfoEXT">VkDebugReportCallbackCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1041">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkDebugReportCallbackEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkDebugReportCallbackEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pfn_vkdebugutilsmessengercallbackext3">PFN_vkDebugUtilsMessengerCallbackEXT(3)</h3>
+<div class="sect3">
+<h4 id="_name_1042">Name</h4>
+<div class="paragraph">
+<p>PFN_vkDebugUtilsMessengerCallbackEXT - Application-defined debug messenger callback function</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1042">C Specification</h4>
+<div class="paragraph">
+<p>The prototype for the
+<a href="#VkDebugUtilsMessengerCreateInfoEXT">VkDebugUtilsMessengerCreateInfoEXT</a>::<code>pfnUserCallback</code> function
+implemented by the application is:</p>
+</div>
+<div id="PFN_vkDebugUtilsMessengerCallbackEXT" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef VkBool32 (VKAPI_PTR *PFN_vkDebugUtilsMessengerCallbackEXT)(
+    VkDebugUtilsMessageSeverityFlagBitsEXT           messageSeverity,
+    VkDebugUtilsMessageTypeFlagsEXT                  messageTypes,
+    const VkDebugUtilsMessengerCallbackDataEXT*      pCallbackData,
+    void*                                            pUserData);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameters_329">Parameters</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>messageSeverity</code> specifies the
+<a href="#VkDebugUtilsMessageSeverityFlagBitsEXT">VkDebugUtilsMessageSeverityFlagBitsEXT</a> that triggered this
+callback.</p>
+</li>
+<li>
+<p><code>messageTypes</code> is a bitmask of
+<a href="#VkDebugUtilsMessageTypeFlagBitsEXT">VkDebugUtilsMessageTypeFlagBitsEXT</a> specifying which type of
+event(s) triggered this callback.</p>
+</li>
+<li>
+<p><code>pCallbackData</code> contains all the callback related data in the
+<a href="#VkDebugUtilsMessengerCallbackDataEXT">VkDebugUtilsMessengerCallbackDataEXT</a> structure.</p>
+</li>
+<li>
+<p><code>pUserData</code> is the user data provided when the
+<a href="#VkDebugUtilsMessengerEXT">VkDebugUtilsMessengerEXT</a> was created.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1042">Description</h4>
+<div class="paragraph">
+<p>The callback <strong class="purple">must</strong> not call <a href="#vkDestroyDebugUtilsMessengerEXT">vkDestroyDebugUtilsMessengerEXT</a>.</p>
+</div>
+<div class="paragraph">
+<p>The callback returns a <code>VkBool32</code>, which is interpreted in a
+layer-specified manner.
+The application <strong class="purple">should</strong> always return <code>VK_FALSE</code>.
+The <code>VK_TRUE</code> value is reserved for use in layer development.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1042">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkDebugUtilsMessengerCreateInfoEXT">VkDebugUtilsMessengerCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1042">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkDebugUtilsMessengerCallbackEXT" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkDebugUtilsMessengerCallbackEXT</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pfn_vkfreefunction3">PFN_vkFreeFunction(3)</h3>
+<div class="sect3">
+<h4 id="_name_1043">Name</h4>
+<div class="paragraph">
+<p>PFN_vkFreeFunction - Application-defined memory free function</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1043">C Specification</h4>
+<div class="paragraph">
+<p>The type of <code>pfnFree</code> is:</p>
+</div>
+<div id="PFN_vkFreeFunction" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef void (VKAPI_PTR *PFN_vkFreeFunction)(
+    void*                                       pUserData,
+    void*                                       pMemory);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameters_330">Parameters</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pUserData</code> is the value specified for
+<a href="#VkAllocationCallbacks">VkAllocationCallbacks</a>::<code>pUserData</code> in the allocator specified
+by the application.</p>
+</li>
+<li>
+<p><code>pMemory</code> is the allocation to be freed.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1043">Description</h4>
+<div class="paragraph">
+<p><code>pMemory</code> <strong class="purple">may</strong> be <code>NULL</code>, which the callback <strong class="purple">must</strong> handle safely.
+If <code>pMemory</code> is non-<code>NULL</code>, it <strong class="purple">must</strong> be a pointer previously allocated
+by <code>pfnAllocation</code> or <code>pfnReallocation</code>.
+The application <strong class="purple">should</strong> free this memory.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1043">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAllocationCallbacks">VkAllocationCallbacks</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1043">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkFreeFunction" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkFreeFunction</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pfn_vkinternalallocationnotification3">PFN_vkInternalAllocationNotification(3)</h3>
+<div class="sect3">
+<h4 id="_name_1044">Name</h4>
+<div class="paragraph">
+<p>PFN_vkInternalAllocationNotification - Application-defined memory allocation notification function</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1044">C Specification</h4>
+<div class="paragraph">
+<p>The type of <code>pfnInternalAllocation</code> is:</p>
+</div>
+<div id="PFN_vkInternalAllocationNotification" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef void (VKAPI_PTR *PFN_vkInternalAllocationNotification)(
+    void*                                       pUserData,
+    size_t                                      size,
+    VkInternalAllocationType                    allocationType,
+    VkSystemAllocationScope                     allocationScope);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameters_331">Parameters</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pUserData</code> is the value specified for
+<a href="#VkAllocationCallbacks">VkAllocationCallbacks</a>::<code>pUserData</code> in the allocator specified
+by the application.</p>
+</li>
+<li>
+<p><code>size</code> is the requested size of an allocation.</p>
+</li>
+<li>
+<p><code>allocationType</code> is a <a href="#VkInternalAllocationType">VkInternalAllocationType</a> value
+specifying the requested type of an allocation.</p>
+</li>
+<li>
+<p><code>allocationScope</code> is a <a href="#VkSystemAllocationScope">VkSystemAllocationScope</a> value
+specifying the allocation scope of the lifetime of the allocation, as
+described <a href="vkspec.html#memory-host-allocation-scope">here</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1044">Description</h4>
+<div class="paragraph">
+<p>This is a purely informational callback.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1044">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAllocationCallbacks">VkAllocationCallbacks</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1044">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkInternalAllocationNotification" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkInternalAllocationNotification</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pfn_vkinternalfreenotification3">PFN_vkInternalFreeNotification(3)</h3>
+<div class="sect3">
+<h4 id="_name_1045">Name</h4>
+<div class="paragraph">
+<p>PFN_vkInternalFreeNotification - Application-defined memory free notification function</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1045">C Specification</h4>
+<div class="paragraph">
+<p>The type of <code>pfnInternalFree</code> is:</p>
+</div>
+<div id="PFN_vkInternalFreeNotification" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef void (VKAPI_PTR *PFN_vkInternalFreeNotification)(
+    void*                                       pUserData,
+    size_t                                      size,
+    VkInternalAllocationType                    allocationType,
+    VkSystemAllocationScope                     allocationScope);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameters_332">Parameters</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pUserData</code> is the value specified for
+<a href="#VkAllocationCallbacks">VkAllocationCallbacks</a>::<code>pUserData</code> in the allocator specified
+by the application.</p>
+</li>
+<li>
+<p><code>size</code> is the requested size of an allocation.</p>
+</li>
+<li>
+<p><code>allocationType</code> is a <a href="#VkInternalAllocationType">VkInternalAllocationType</a> value
+specifying the requested type of an allocation.</p>
+</li>
+<li>
+<p><code>allocationScope</code> is a <a href="#VkSystemAllocationScope">VkSystemAllocationScope</a> value
+specifying the allocation scope of the lifetime of the allocation, as
+described <a href="vkspec.html#memory-host-allocation-scope">here</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1045">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1045">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAllocationCallbacks">VkAllocationCallbacks</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1045">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkInternalFreeNotification" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkInternalFreeNotification</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pfn_vkreallocationfunction3">PFN_vkReallocationFunction(3)</h3>
+<div class="sect3">
+<h4 id="_name_1046">Name</h4>
+<div class="paragraph">
+<p>PFN_vkReallocationFunction - Application-defined memory reallocation function</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1046">C Specification</h4>
+<div class="paragraph">
+<p>The type of <code>pfnReallocation</code> is:</p>
+</div>
+<div id="PFN_vkReallocationFunction" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef void* (VKAPI_PTR *PFN_vkReallocationFunction)(
+    void*                                       pUserData,
+    void*                                       pOriginal,
+    size_t                                      size,
+    size_t                                      alignment,
+    VkSystemAllocationScope                     allocationScope);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameters_333">Parameters</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><code>pUserData</code> is the value specified for
+<a href="#VkAllocationCallbacks">VkAllocationCallbacks</a>::<code>pUserData</code> in the allocator specified
+by the application.</p>
+</li>
+<li>
+<p><code>pOriginal</code> <strong class="purple">must</strong> be either <code>NULL</code> or a pointer previously returned
+by <code>pfnReallocation</code> or <code>pfnAllocation</code> of the same allocator.</p>
+</li>
+<li>
+<p><code>size</code> is the size in bytes of the requested allocation.</p>
+</li>
+<li>
+<p><code>alignment</code> is the requested alignment of the allocation in bytes
+and <strong class="purple">must</strong> be a power of two.</p>
+</li>
+<li>
+<p><code>allocationScope</code> is a <a href="#VkSystemAllocationScope">VkSystemAllocationScope</a> value
+specifying the allocation scope of the lifetime of the allocation, as
+described <a href="vkspec.html#memory-host-allocation-scope">here</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1046">Description</h4>
+<div class="paragraph">
+<p><code>pfnReallocation</code> <strong class="purple">must</strong> return an allocation with enough space for
+<code>size</code> bytes, and the contents of the original allocation from bytes
+zero to <span class="eq">min(original size, new size) - 1</span> <strong class="purple">must</strong> be preserved in the
+returned allocation.
+If <code>size</code> is larger than the old size, the contents of the additional
+space are undefined.
+If satisfying these requirements involves creating a new allocation, then
+the old allocation <strong class="purple">should</strong> be freed.</p>
+</div>
+<div class="paragraph">
+<p>If <code>pOriginal</code> is <code>NULL</code>, then <code>pfnReallocation</code> <strong class="purple">must</strong> behave
+equivalently to a call to <a href="#PFN_vkAllocationFunction">PFN_vkAllocationFunction</a> with the same
+parameter values (without <code>pOriginal</code>).</p>
+</div>
+<div class="paragraph">
+<p>If <code>size</code> is zero, then <code>pfnReallocation</code> <strong class="purple">must</strong> behave equivalently
+to a call to <a href="#PFN_vkFreeFunction">PFN_vkFreeFunction</a> with the same <code>pUserData</code>
+parameter value, and <code>pMemory</code> equal to <code>pOriginal</code>.</p>
+</div>
+<div class="paragraph">
+<p>If <code>pOriginal</code> is non-<code>NULL</code>, the implementation <strong class="purple">must</strong> ensure that
+<code>alignment</code> is equal to the <code>alignment</code> used to originally allocate
+<code>pOriginal</code>.</p>
+</div>
+<div class="paragraph">
+<p>If this function fails and <code>pOriginal</code> is non-<code>NULL</code> the application
+<strong class="purple">must</strong> not free the old allocation.</p>
+</div>
+<div class="paragraph">
+<p><code>pfnReallocation</code> <strong class="purple">must</strong> follow the same
+<a href="vkspec.html#vkAllocationFunction_return_rules">rules for return values as
+<code>PFN_vkAllocationFunction</code></a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1046">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAllocationCallbacks">VkAllocationCallbacks</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1046">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkReallocationFunction" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkReallocationFunction</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_pfn_vkvoidfunction3">PFN_vkVoidFunction(3)</h3>
+<div class="sect3">
+<h4 id="_name_1047">Name</h4>
+<div class="paragraph">
+<p>PFN_vkVoidFunction - Dummy function pointer type returned by queries</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1047">C Specification</h4>
+<div class="paragraph">
+<p>The definition of <a href="#PFN_vkVoidFunction">PFN_vkVoidFunction</a> is:</p>
+</div>
+<div id="PFN_vkVoidFunction" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef void (VKAPI_PTR *PFN_vkVoidFunction)(void);</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_parameters_334">Parameters</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_description_1047">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1047">See Also</h4>
+<div class="paragraph">
+<p><a href="#vkGetDeviceProcAddr">vkGetDeviceProcAddr</a>, <a href="#vkGetInstanceProcAddr">vkGetInstanceProcAddr</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1047">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkVoidFunction" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#PFN_vkVoidFunction</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+</root>

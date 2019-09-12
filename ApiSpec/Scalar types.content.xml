@@ -1,0 +1,248 @@
+<root>
+<div class="sect1">
+<h2 id="basetypes">Vulkan Scalar types</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_vkbool323">VkBool32(3)</h3>
+<div class="sect3">
+<h4 id="_name_1048">Name</h4>
+<div class="paragraph">
+<p>VkBool32 - Vulkan boolean type</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1048">C Specification</h4>
+<div class="paragraph">
+<p><code>VkBool32</code> represents boolean <code>True</code> and <code>False</code> values, since C does
+not have a sufficiently portable built-in boolean type:</p>
+</div>
+<div id="VkBool32" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef uint32_t VkBool32;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1048">Description</h4>
+<div class="paragraph">
+<p><code>VK_TRUE</code> represents a boolean <strong>True</strong> (integer 1) value, and
+<code>VK_FALSE</code> a boolean <strong>False</strong> (integer 0) value.</p>
+</div>
+<div class="paragraph">
+<p>All values returned from a Vulkan implementation in a <code>VkBool32</code> will
+be either <code>VK_TRUE</code> or <code>VK_FALSE</code>.</p>
+</div>
+<div class="paragraph">
+<p>Applications <strong class="purple">must</strong> not pass any other values than <code>VK_TRUE</code> or
+<code>VK_FALSE</code> into a Vulkan implementation where a <code>VkBool32</code> is
+expected.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1048">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkCommandBufferInheritanceConditionalRenderingInfoEXT">VkCommandBufferInheritanceConditionalRenderingInfoEXT</a>, <a href="#VkCommandBufferInheritanceInfo">VkCommandBufferInheritanceInfo</a>, <a href="#VkDedicatedAllocationBufferCreateInfoNV">VkDedicatedAllocationBufferCreateInfoNV</a>, <a href="#VkDedicatedAllocationImageCreateInfoNV">VkDedicatedAllocationImageCreateInfoNV</a>, <a href="#VkDescriptorSetLayoutSupport">VkDescriptorSetLayoutSupport</a>, <a href="#VkDeviceGeneratedCommandsFeaturesNVX">VkDeviceGeneratedCommandsFeaturesNVX</a>, <a href="#VkDisplayNativeHdrSurfaceCapabilitiesAMD">VkDisplayNativeHdrSurfaceCapabilitiesAMD</a>, <a href="#VkDisplayPresentInfoKHR">VkDisplayPresentInfoKHR</a>, <a href="#VkDisplayPropertiesKHR">VkDisplayPropertiesKHR</a>, <a href="#VkFilterCubicImageViewImageFormatPropertiesEXT">VkFilterCubicImageViewImageFormatPropertiesEXT</a>, <a href="#VkMemoryDedicatedRequirements">VkMemoryDedicatedRequirements</a>, <a href="#VkPhysicalDevice16BitStorageFeatures">VkPhysicalDevice16BitStorageFeatures</a>, <a href="#VkPhysicalDevice8BitStorageFeaturesKHR">VkPhysicalDevice8BitStorageFeaturesKHR</a>, <a href="#VkPhysicalDeviceASTCDecodeFeaturesEXT">VkPhysicalDeviceASTCDecodeFeaturesEXT</a>, <a href="#VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT">VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT</a>, <a href="#VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT">VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT</a>, <a href="#VkPhysicalDeviceBufferDeviceAddressFeaturesEXT">VkPhysicalDeviceBufferDeviceAddressFeaturesEXT</a>, <a href="#VkPhysicalDeviceComputeShaderDerivativesFeaturesNV">VkPhysicalDeviceComputeShaderDerivativesFeaturesNV</a>, <a href="#VkPhysicalDeviceConditionalRenderingFeaturesEXT">VkPhysicalDeviceConditionalRenderingFeaturesEXT</a>, <a href="#VkPhysicalDeviceConservativeRasterizationPropertiesEXT">VkPhysicalDeviceConservativeRasterizationPropertiesEXT</a>, <a href="#VkPhysicalDeviceCooperativeMatrixFeaturesNV">VkPhysicalDeviceCooperativeMatrixFeaturesNV</a>, <a href="#VkPhysicalDeviceCornerSampledImageFeaturesNV">VkPhysicalDeviceCornerSampledImageFeaturesNV</a>, <a href="#VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV">VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV</a>, <a href="#VkPhysicalDeviceDepthClipEnableFeaturesEXT">VkPhysicalDeviceDepthClipEnableFeaturesEXT</a>, <a href="#VkPhysicalDeviceDepthStencilResolvePropertiesKHR">VkPhysicalDeviceDepthStencilResolvePropertiesKHR</a>, <a href="#VkPhysicalDeviceDescriptorIndexingFeaturesEXT">VkPhysicalDeviceDescriptorIndexingFeaturesEXT</a>, <a href="#VkPhysicalDeviceDescriptorIndexingPropertiesEXT">VkPhysicalDeviceDescriptorIndexingPropertiesEXT</a>, <a href="#VkPhysicalDeviceExclusiveScissorFeaturesNV">VkPhysicalDeviceExclusiveScissorFeaturesNV</a>, <a href="#VkPhysicalDeviceFeatures">VkPhysicalDeviceFeatures</a>, <a href="#VkPhysicalDeviceFloat16Int8FeaturesKHR">VkPhysicalDeviceFloat16Int8FeaturesKHR</a>, <a href="#VkPhysicalDeviceFloatControlsPropertiesKHR">VkPhysicalDeviceFloatControlsPropertiesKHR</a>, <a href="#VkPhysicalDeviceFragmentDensityMapFeaturesEXT">VkPhysicalDeviceFragmentDensityMapFeaturesEXT</a>, <a href="#VkPhysicalDeviceFragmentDensityMapPropertiesEXT">VkPhysicalDeviceFragmentDensityMapPropertiesEXT</a>, <a href="#VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV">VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV</a>, <a href="#VkPhysicalDeviceGroupProperties">VkPhysicalDeviceGroupProperties</a>, <a href="#VkPhysicalDeviceHostQueryResetFeaturesEXT">VkPhysicalDeviceHostQueryResetFeaturesEXT</a>, <a href="#VkPhysicalDeviceIDProperties">VkPhysicalDeviceIDProperties</a>, <a href="#VkPhysicalDeviceInlineUniformBlockFeaturesEXT">VkPhysicalDeviceInlineUniformBlockFeaturesEXT</a>, <a href="#VkPhysicalDeviceLimits">VkPhysicalDeviceLimits</a>, <a href="#VkPhysicalDeviceMemoryPriorityFeaturesEXT">VkPhysicalDeviceMemoryPriorityFeaturesEXT</a>, <a href="#VkPhysicalDeviceMeshShaderFeaturesNV">VkPhysicalDeviceMeshShaderFeaturesNV</a>, <a href="#VkPhysicalDeviceMultiviewFeatures">VkPhysicalDeviceMultiviewFeatures</a>, <a href="#VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX">VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX</a>, <a href="#VkPhysicalDeviceProtectedMemoryFeatures">VkPhysicalDeviceProtectedMemoryFeatures</a>, <a href="#VkPhysicalDeviceProtectedMemoryProperties">VkPhysicalDeviceProtectedMemoryProperties</a>, <a href="#VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV">VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV</a>, <a href="#VkPhysicalDeviceSampleLocationsPropertiesEXT">VkPhysicalDeviceSampleLocationsPropertiesEXT</a>, <a href="#VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT">VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT</a>, <a href="#VkPhysicalDeviceSamplerYcbcrConversionFeatures">VkPhysicalDeviceSamplerYcbcrConversionFeatures</a>, <a href="#VkPhysicalDeviceScalarBlockLayoutFeaturesEXT">VkPhysicalDeviceScalarBlockLayoutFeaturesEXT</a>, <a href="#VkPhysicalDeviceShaderAtomicInt64FeaturesKHR">VkPhysicalDeviceShaderAtomicInt64FeaturesKHR</a>, <a href="#VkPhysicalDeviceShaderDrawParametersFeatures">VkPhysicalDeviceShaderDrawParametersFeatures</a>, <a href="#VkPhysicalDeviceShaderImageFootprintFeaturesNV">VkPhysicalDeviceShaderImageFootprintFeaturesNV</a>, <a href="#VkPhysicalDeviceShadingRateImageFeaturesNV">VkPhysicalDeviceShadingRateImageFeaturesNV</a>, <a href="#VkPhysicalDeviceSparseProperties">VkPhysicalDeviceSparseProperties</a>, <a href="#VkPhysicalDeviceSubgroupProperties">VkPhysicalDeviceSubgroupProperties</a>, <a href="#VkPhysicalDeviceTransformFeedbackFeaturesEXT">VkPhysicalDeviceTransformFeedbackFeaturesEXT</a>, <a href="#VkPhysicalDeviceTransformFeedbackPropertiesEXT">VkPhysicalDeviceTransformFeedbackPropertiesEXT</a>, <a href="#VkPhysicalDeviceVariablePointersFeatures">VkPhysicalDeviceVariablePointersFeatures</a>, <a href="#VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT">VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT</a>, <a href="#VkPhysicalDeviceVulkanMemoryModelFeaturesKHR">VkPhysicalDeviceVulkanMemoryModelFeaturesKHR</a>, <a href="#VkPhysicalDeviceYcbcrImageArraysFeaturesEXT">VkPhysicalDeviceYcbcrImageArraysFeaturesEXT</a>, <a href="#VkPipelineColorBlendAdvancedStateCreateInfoEXT">VkPipelineColorBlendAdvancedStateCreateInfoEXT</a>, <a href="#VkPipelineColorBlendAttachmentState">VkPipelineColorBlendAttachmentState</a>, <a href="#VkPipelineColorBlendStateCreateInfo">VkPipelineColorBlendStateCreateInfo</a>, <a href="#VkPipelineCoverageModulationStateCreateInfoNV">VkPipelineCoverageModulationStateCreateInfoNV</a>, <a href="#VkPipelineCoverageToColorStateCreateInfoNV">VkPipelineCoverageToColorStateCreateInfoNV</a>, <a href="#VkPipelineDepthStencilStateCreateInfo">VkPipelineDepthStencilStateCreateInfo</a>, <a href="#VkPipelineInputAssemblyStateCreateInfo">VkPipelineInputAssemblyStateCreateInfo</a>, <a href="#VkPipelineMultisampleStateCreateInfo">VkPipelineMultisampleStateCreateInfo</a>, <a href="#VkPipelineRasterizationDepthClipStateCreateInfoEXT">VkPipelineRasterizationDepthClipStateCreateInfoEXT</a>, <a href="#VkPipelineRasterizationStateCreateInfo">VkPipelineRasterizationStateCreateInfo</a>, <a href="#VkPipelineRepresentativeFragmentTestStateCreateInfoNV">VkPipelineRepresentativeFragmentTestStateCreateInfoNV</a>, <a href="#VkPipelineSampleLocationsStateCreateInfoEXT">VkPipelineSampleLocationsStateCreateInfoEXT</a>, <a href="#VkPipelineViewportShadingRateImageStateCreateInfoNV">VkPipelineViewportShadingRateImageStateCreateInfoNV</a>, <a href="#VkPipelineViewportWScalingStateCreateInfoNV">VkPipelineViewportWScalingStateCreateInfoNV</a>, <a href="#VkProtectedSubmitInfo">VkProtectedSubmitInfo</a>, <a href="#VkSamplerCreateInfo">VkSamplerCreateInfo</a>, <a href="#VkSamplerYcbcrConversionCreateInfo">VkSamplerYcbcrConversionCreateInfo</a>, <a href="#VkSurfaceCapabilitiesFullScreenExclusiveEXT">VkSurfaceCapabilitiesFullScreenExclusiveEXT</a>, <a href="#VkSurfaceProtectedCapabilitiesKHR">VkSurfaceProtectedCapabilitiesKHR</a>, <a href="#VkSwapchainCreateInfoKHR">VkSwapchainCreateInfoKHR</a>, <a href="#VkSwapchainDisplayNativeHdrCreateInfoAMD">VkSwapchainDisplayNativeHdrCreateInfoAMD</a>, <a href="#VkTextureLODGatherFormatPropertiesAMD">VkTextureLODGatherFormatPropertiesAMD</a>, <a href="#vkCmdBuildAccelerationStructureNV">vkCmdBuildAccelerationStructureNV</a>, <a href="#vkGetPhysicalDeviceSurfaceSupportKHR">vkGetPhysicalDeviceSurfaceSupportKHR</a>, <a href="#vkSetLocalDimmingAMD">vkSetLocalDimmingAMD</a>, <a href="#vkWaitForFences">vkWaitForFences</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1048">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBool32" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkBool32</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdeviceaddress3">VkDeviceAddress(3)</h3>
+<div class="sect3">
+<h4 id="_name_1049">Name</h4>
+<div class="paragraph">
+<p>VkDeviceAddress - Vulkan device address type</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1049">C Specification</h4>
+<div class="paragraph">
+<p><code>VkDeviceAddress</code> represents device buffer address values:</p>
+</div>
+<div id="VkDeviceAddress" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef uint64_t VkDeviceAddress;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1049">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1049">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkBufferDeviceAddressCreateInfoEXT">VkBufferDeviceAddressCreateInfoEXT</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1049">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceAddress" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceAddress</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkdevicesize3">VkDeviceSize(3)</h3>
+<div class="sect3">
+<h4 id="_name_1050">Name</h4>
+<div class="paragraph">
+<p>VkDeviceSize - Vulkan device memory size and offsets</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1050">C Specification</h4>
+<div class="paragraph">
+<p><code>VkDeviceSize</code> represents device memory size and offset values:</p>
+</div>
+<div id="VkDeviceSize" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef uint64_t VkDeviceSize;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1050">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1050">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkAccelerationStructureCreateInfoNV">VkAccelerationStructureCreateInfoNV</a>, <a href="#VkAndroidHardwareBufferPropertiesANDROID">VkAndroidHardwareBufferPropertiesANDROID</a>, <a href="#VkBindAccelerationStructureMemoryInfoNV">VkBindAccelerationStructureMemoryInfoNV</a>, <a href="#VkBindBufferMemoryInfo">VkBindBufferMemoryInfo</a>, <a href="#VkBindImageMemoryInfo">VkBindImageMemoryInfo</a>, <a href="#VkBufferCopy">VkBufferCopy</a>, <a href="#VkBufferCreateInfo">VkBufferCreateInfo</a>, <a href="#VkBufferImageCopy">VkBufferImageCopy</a>, <a href="#VkBufferMemoryBarrier">VkBufferMemoryBarrier</a>, <a href="#VkBufferViewCreateInfo">VkBufferViewCreateInfo</a>, <a href="#VkCmdProcessCommandsInfoNVX">VkCmdProcessCommandsInfoNVX</a>, <a href="#VkConditionalRenderingBeginInfoEXT">VkConditionalRenderingBeginInfoEXT</a>, <a href="#VkDescriptorBufferInfo">VkDescriptorBufferInfo</a>, <a href="#VkGeometryAABBNV">VkGeometryAABBNV</a>, <a href="#VkGeometryTrianglesNV">VkGeometryTrianglesNV</a>, <a href="#VkImageFormatProperties">VkImageFormatProperties</a>, <a href="#VkIndirectCommandsTokenNVX">VkIndirectCommandsTokenNVX</a>, <a href="#VkMappedMemoryRange">VkMappedMemoryRange</a>, <a href="#VkMemoryAllocateInfo">VkMemoryAllocateInfo</a>, <a href="#VkMemoryHeap">VkMemoryHeap</a>, <a href="#VkMemoryRequirements">VkMemoryRequirements</a>, <a href="#VkPhysicalDeviceExternalMemoryHostPropertiesEXT">VkPhysicalDeviceExternalMemoryHostPropertiesEXT</a>, <a href="#VkPhysicalDeviceLimits">VkPhysicalDeviceLimits</a>, <a href="#VkPhysicalDeviceMaintenance3Properties">VkPhysicalDeviceMaintenance3Properties</a>, <a href="#VkPhysicalDeviceMemoryBudgetPropertiesEXT">VkPhysicalDeviceMemoryBudgetPropertiesEXT</a>, <a href="#VkPhysicalDeviceTransformFeedbackPropertiesEXT">VkPhysicalDeviceTransformFeedbackPropertiesEXT</a>, <a href="#VkSparseImageMemoryBind">VkSparseImageMemoryBind</a>, <a href="#VkSparseImageMemoryRequirements">VkSparseImageMemoryRequirements</a>, <a href="#VkSparseMemoryBind">VkSparseMemoryBind</a>, <a href="#VkSubresourceLayout">VkSubresourceLayout</a>, <a href="#vkBindBufferMemory">vkBindBufferMemory</a>, <a href="#vkBindImageMemory">vkBindImageMemory</a>, <a href="#vkCmdBeginTransformFeedbackEXT">vkCmdBeginTransformFeedbackEXT</a>, <a href="#vkCmdBindIndexBuffer">vkCmdBindIndexBuffer</a>, <a href="#vkCmdBindTransformFeedbackBuffersEXT">vkCmdBindTransformFeedbackBuffersEXT</a>, <a href="#vkCmdBindVertexBuffers">vkCmdBindVertexBuffers</a>, <a href="#vkCmdBuildAccelerationStructureNV">vkCmdBuildAccelerationStructureNV</a>, <a href="#vkCmdCopyQueryPoolResults">vkCmdCopyQueryPoolResults</a>, <a href="#vkCmdDispatchIndirect">vkCmdDispatchIndirect</a>, <a href="#vkCmdDrawIndexedIndirect">vkCmdDrawIndexedIndirect</a>, <a href="#vkCmdDrawIndexedIndirectCountAMD">vkCmdDrawIndexedIndirectCountAMD</a>, <a href="#vkCmdDrawIndexedIndirectCountKHR">vkCmdDrawIndexedIndirectCountKHR</a>, <a href="#vkCmdDrawIndirect">vkCmdDrawIndirect</a>, <a href="#vkCmdDrawIndirectByteCountEXT">vkCmdDrawIndirectByteCountEXT</a>, <a href="#vkCmdDrawIndirectCountAMD">vkCmdDrawIndirectCountAMD</a>, <a href="#vkCmdDrawIndirectCountKHR">vkCmdDrawIndirectCountKHR</a>, <a href="#vkCmdDrawMeshTasksIndirectCountNV">vkCmdDrawMeshTasksIndirectCountNV</a>, <a href="#vkCmdDrawMeshTasksIndirectNV">vkCmdDrawMeshTasksIndirectNV</a>, <a href="#vkCmdEndTransformFeedbackEXT">vkCmdEndTransformFeedbackEXT</a>, <a href="#vkCmdFillBuffer">vkCmdFillBuffer</a>, <a href="#vkCmdTraceRaysNV">vkCmdTraceRaysNV</a>, <a href="#vkCmdUpdateBuffer">vkCmdUpdateBuffer</a>, <a href="#vkCmdWriteBufferMarkerAMD">vkCmdWriteBufferMarkerAMD</a>, <a href="#vkGetDeviceMemoryCommitment">vkGetDeviceMemoryCommitment</a>, <a href="#vkGetQueryPoolResults">vkGetQueryPoolResults</a>, <a href="#vkMapMemory">vkMapMemory</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1050">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceSize" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkDeviceSize</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vkflags3">VkFlags(3)</h3>
+<div class="sect3">
+<h4 id="_name_1051">Name</h4>
+<div class="paragraph">
+<p>VkFlags - Vulkan bitmasks</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1051">C Specification</h4>
+<div class="paragraph">
+<p>A collection of flags is represented by a bitmask using the type
+<code>VkFlags</code>:</p>
+</div>
+<div id="VkFlags" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef uint32_t VkFlags;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1051">Description</h4>
+<div class="paragraph">
+<p>Bitmasks are passed to many commands and structures to compactly represent
+options, but <code>VkFlags</code> is not used directly in the API.
+Instead, a <code>Vk*Flags</code> type which is an alias of <code>VkFlags</code>, and
+whose name matches the corresponding <code>Vk*FlagBits</code> that are valid for
+that type, is used.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_see_also_1051">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkColorComponentFlags">VkColorComponentFlags</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1051">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFlags" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkFlags</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vksamplemask3">VkSampleMask(3)</h3>
+<div class="sect3">
+<h4 id="_name_1052">Name</h4>
+<div class="paragraph">
+<p>VkSampleMask - Mask of sample coverage information</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_c_specification_1052">C Specification</h4>
+<div class="paragraph">
+<p>The elements of the sample mask array are of type <code>VkSampleMask</code>,
+each representing 32 bits of coverage information:</p>
+</div>
+<div id="VkSampleMask" class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-c++" data-lang="c++">typedef uint32_t VkSampleMask;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_description_1052">Description</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_see_also_1052">See Also</h4>
+<div class="paragraph">
+<p><a href="#VkPipelineMultisampleStateCreateInfo">VkPipelineMultisampleStateCreateInfo</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_document_notes_1052">Document Notes</h4>
+<div class="paragraph">
+<p>For more information, see the Vulkan Specification at URL</p>
+</div>
+<div class="paragraph">
+<p><a href="https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSampleMask" class="bare">https://www.khronos.org/registry/vulkan/specs/1.1-extensions/html/vkspec.html#VkSampleMask</a></p>
+</div>
+<div class="paragraph">
+<p>This page is extracted from the Vulkan Specification.
+Fixes and changes should be made to the Specification, not directly.</p>
+</div>
+<div style="page-break-after: always;"></div>
+</div>
+</div>
+</div>
+</div>
+</root>

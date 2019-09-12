@@ -1,0 +1,41 @@
+<root>
+<li><a href="#Object Handles"></a>
+<li><a href="#_vkaccelerationstructurenv3">VkAccelerationStructureNV(3)</a></li>
+<li><a href="#_vkbuffer3">VkBuffer(3)</a></li>
+<li><a href="#_vkbufferview3">VkBufferView(3)</a></li>
+<li><a href="#_vkcommandbuffer3">VkCommandBuffer(3)</a></li>
+<li><a href="#_vkcommandpool3">VkCommandPool(3)</a></li>
+<li><a href="#_vkdebugreportcallbackext3">VkDebugReportCallbackEXT(3)</a></li>
+<li><a href="#_vkdebugutilsmessengerext3">VkDebugUtilsMessengerEXT(3)</a></li>
+<li><a href="#_vkdescriptorpool3">VkDescriptorPool(3)</a></li>
+<li><a href="#_vkdescriptorset3">VkDescriptorSet(3)</a></li>
+<li><a href="#_vkdescriptorsetlayout3">VkDescriptorSetLayout(3)</a></li>
+<li><a href="#_vkdescriptorupdatetemplate3">VkDescriptorUpdateTemplate(3)</a></li>
+<li><a href="#_vkdevice3">VkDevice(3)</a></li>
+<li><a href="#_vkdevicememory3">VkDeviceMemory(3)</a></li>
+<li><a href="#_vkdisplaykhr3">VkDisplayKHR(3)</a></li>
+<li><a href="#_vkdisplaymodekhr3">VkDisplayModeKHR(3)</a></li>
+<li><a href="#_vkevent3">VkEvent(3)</a></li>
+<li><a href="#_vkfence3">VkFence(3)</a></li>
+<li><a href="#_vkframebuffer3">VkFramebuffer(3)</a></li>
+<li><a href="#_vkimage3">VkImage(3)</a></li>
+<li><a href="#_vkimageview3">VkImageView(3)</a></li>
+<li><a href="#_vkindirectcommandslayoutnvx3">VkIndirectCommandsLayoutNVX(3)</a></li>
+<li><a href="#_vkinstance3">VkInstance(3)</a></li>
+<li><a href="#_vkobjecttablenvx3">VkObjectTableNVX(3)</a></li>
+<li><a href="#_vkphysicaldevice3">VkPhysicalDevice(3)</a></li>
+<li><a href="#_vkpipeline3">VkPipeline(3)</a></li>
+<li><a href="#_vkpipelinecache3">VkPipelineCache(3)</a></li>
+<li><a href="#_vkpipelinelayout3">VkPipelineLayout(3)</a></li>
+<li><a href="#_vkquerypool3">VkQueryPool(3)</a></li>
+<li><a href="#_vkqueue3">VkQueue(3)</a></li>
+<li><a href="#_vkrenderpass3">VkRenderPass(3)</a></li>
+<li><a href="#_vksampler3">VkSampler(3)</a></li>
+<li><a href="#_vksamplerycbcrconversion3">VkSamplerYcbcrConversion(3)</a></li>
+<li><a href="#_vksemaphore3">VkSemaphore(3)</a></li>
+<li><a href="#_vkshadermodule3">VkShaderModule(3)</a></li>
+<li><a href="#_vksurfacekhr3">VkSurfaceKHR(3)</a></li>
+<li><a href="#_vkswapchainkhr3">VkSwapchainKHR(3)</a></li>
+<li><a href="#_vkvalidationcacheext3">VkValidationCacheEXT(3)</a></li>
+</li>
+</root>

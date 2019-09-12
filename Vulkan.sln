@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson01Clear", "Lesson01Clear\Lesson01Clear.csproj", "{EFDE9AE2-DC90-4CB6-BBEA-3F98AAEF1322}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiSpec", "ApiSpec\ApiSpec.csproj", "{C36E2A44-7427-4C8B-BE95-FCFC1F979E4F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulkan", "Vulkan\Vulkan.csproj", "{D948E0CC-AC90-4AFA-803F-744D92BBA406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiSpec.Generated", "ApiSpec.Generated\ApiSpec.Generated.csproj", "{FAC3B7A7-96E6-4473-98D8-28C97F938871}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulkan.Platforms", "Vulkan.Platforms\Vulkan.Platforms.csproj", "{F6AA46C3-BE7C-439E-9413-8545A9C0402A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lesson02Shader", "Lesson02Shader\Lesson02Shader.csproj", "{9A0D84E1-364B-41D3-A0D9-0C4270447F45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSpec.Lesson02Shader", "ApiSpec.Lesson02Shader\ApiSpec.Lesson02Shader.csproj", "{4B78F253-8B4C-4E12-9943-E2157F0EF057}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,22 +15,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EFDE9AE2-DC90-4CB6-BBEA-3F98AAEF1322}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFDE9AE2-DC90-4CB6-BBEA-3F98AAEF1322}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFDE9AE2-DC90-4CB6-BBEA-3F98AAEF1322}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFDE9AE2-DC90-4CB6-BBEA-3F98AAEF1322}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D948E0CC-AC90-4AFA-803F-744D92BBA406}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D948E0CC-AC90-4AFA-803F-744D92BBA406}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D948E0CC-AC90-4AFA-803F-744D92BBA406}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D948E0CC-AC90-4AFA-803F-744D92BBA406}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F6AA46C3-BE7C-439E-9413-8545A9C0402A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F6AA46C3-BE7C-439E-9413-8545A9C0402A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F6AA46C3-BE7C-439E-9413-8545A9C0402A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F6AA46C3-BE7C-439E-9413-8545A9C0402A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9A0D84E1-364B-41D3-A0D9-0C4270447F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9A0D84E1-364B-41D3-A0D9-0C4270447F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9A0D84E1-364B-41D3-A0D9-0C4270447F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9A0D84E1-364B-41D3-A0D9-0C4270447F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C36E2A44-7427-4C8B-BE95-FCFC1F979E4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C36E2A44-7427-4C8B-BE95-FCFC1F979E4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C36E2A44-7427-4C8B-BE95-FCFC1F979E4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C36E2A44-7427-4C8B-BE95-FCFC1F979E4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

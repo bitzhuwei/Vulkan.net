@@ -1,1 +1,0 @@
-﻿Use Vulkan in C#.
