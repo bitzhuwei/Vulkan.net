@@ -29,7 +29,7 @@ namespace Lesson02Shader {
         VkDescriptorSet[] vkDescriptorSets;
 
         VkCommandBuffer[] vkCommandBuffers;
-        bool isInitialized = false;
+        bool isInitialized = false;;
 
         public void Init(IntPtr hwnd, IntPtr processHandle) {
             if (this.isInitialized) { return; }

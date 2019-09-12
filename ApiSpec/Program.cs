@@ -9,19 +9,19 @@ namespace ApiSpec {
 
             //EnumsParser.Testh4();
             //EnumsParser.h4Counts();
-            //EnumsParser.DumpEnums();
+            EnumsParser.DumpEnums();
 
             //HandlesParser.Testh4();
             //HandlesParser.h4Counts();
-            //HandlesParser.DumpHandles();
+            HandlesParser.DumpHandles();
 
             //FlagsParser.Testh4();
             //FlagsParser.h4Counts();
-            //FlagsParser.DumpFlags();
+            FlagsParser.DumpFlags();
 
             //PFNsParser.Testh4();
             //PFNsParser.h4Counts();
-            //PFNsParser.DumpPFNs();
+            PFNsParser.DumpPFNs();
 
             //StructsParser.Testh4();
             //StructsParser.h4Counts();
@@ -29,7 +29,7 @@ namespace ApiSpec {
 
             //CommandsParser.Testh4();
             //CommandsParser.h4Counts();
-            //CommandsParser.DumpCommands();
+            CommandsParser.DumpCommands();
 
             Console.ReadKey();
         }
