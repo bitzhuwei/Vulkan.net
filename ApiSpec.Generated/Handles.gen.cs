@@ -37,7 +37,7 @@ namespace ApiSpec.Generated {
     /// <para>Command buffers are represented by VkCommandBuffer handles:</para>
     /// </summary>
     public struct VkCommandBuffer {
-        public UInt64 handle;
+        public UInt32 handle;
     }
 
     // Object Handles: 4
@@ -106,7 +106,7 @@ namespace ApiSpec.Generated {
     /// <para>Logical devices are represented by VkDevice handles:</para>
     /// </summary>
     public struct VkDevice {
-        public UInt64 handle;
+        public UInt32 handle;
     }
 
     // Object Handles: 12
@@ -195,7 +195,7 @@ namespace ApiSpec.Generated {
     /// <para>Instances are represented by VkInstance handles:</para>
     /// </summary>
     public struct VkInstance {
-        public UInt64 handle;
+        public UInt32 handle;
     }
 
     // Object Handles: 22
@@ -212,7 +212,7 @@ namespace ApiSpec.Generated {
     /// <para>Physical devices are represented by VkPhysicalDevice handles:</para>
     /// </summary>
     public struct VkPhysicalDevice {
-        public UInt64 handle;
+        public UInt32 handle;
     }
 
     // Object Handles: 24
@@ -256,7 +256,7 @@ namespace ApiSpec.Generated {
     /// <para>Queues are represented by VkQueue handles:</para>
     /// </summary>
     public struct VkQueue {
-        public UInt64 handle;
+        public UInt32 handle;
     }
 
     // Object Handles: 29
