@@ -215,7 +215,8 @@ namespace Vulkan {
 
         public VkResult MapMemory(VkDeviceMemory memory, VkDeviceSize offset, VkDeviceSize size, UInt32 flags, out IntPtr data) {
             IntPtr ppData = new IntPtr();
-            VkResult result = vkAPI.vkMapMemory(this.handle, memory != null ? memory.handle : default(UInt64), offset, size, flags, &ppData).Check();
+            VkResult result = vkAPI.vkMapMemory(this.handle,
+                memory != null ? memory.handle : default(UInt64), offset, size, flags, &ppData).Check();
             data = ppData;
 
             return result;

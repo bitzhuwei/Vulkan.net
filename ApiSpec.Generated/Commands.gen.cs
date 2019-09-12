@@ -4918,7 +4918,7 @@ namespace ApiSpec.Generated {
             VkDeviceSize offset,
             VkDeviceSize size,
             VkMemoryMapFlags flags,
-            void** ppData);
+            IntPtr* ppData);
         // Command: 294
         /// <summary>vkMergePipelineCaches - Combine the data stores of pipeline caches
         /// </summary>

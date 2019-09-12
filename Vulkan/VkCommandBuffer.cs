@@ -117,7 +117,8 @@ namespace Vulkan {
             vkAPI.vkCmdBindPipeline(this.handle, bindPoint, pipeline.handle);
         }
 
-        public void CmdBindDescriptorSets(VkPipelineBindPoint bindPoint, VkPipelineLayout layout, UInt32 firstSet, VkDescriptorSet[] sets, UInt32[] offsets) {
+        public void CmdBindDescriptorSets(VkPipelineBindPoint bindPoint, VkPipelineLayout layout,
+            UInt32 firstSet, VkDescriptorSet[] sets, UInt32[] offsets) {
             UInt32 setsLength = (UInt32)(sets != null ? sets.Length : 0);
             UInt32 offsetsLength = (UInt32)(offsets != null ? offsets.Length : 0);
             var handles = new UInt64[setsLength];
@@ -127,7 +128,8 @@ namespace Vulkan {
 
             fixed (UInt64* pSets = handles) {
                 fixed (UInt32* pOffsets = offsets) {
-                    vkAPI.vkCmdBindDescriptorSets(this.handle, bindPoint, layout != null ? layout.handle : 0, firstSet, setsLength, pSets, offsetsLength, pOffsets);
+                    vkAPI.vkCmdBindDescriptorSets(this.handle, bindPoint,
+                        layout != null ? layout.handle : 0, firstSet, setsLength, pSets, offsetsLength, pOffsets);
                 }
             }
         }
