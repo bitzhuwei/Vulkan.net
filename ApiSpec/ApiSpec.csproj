@@ -38,7 +38,6 @@
     <None Remove="Object Handles.xml" />
     <None Remove="PFNs.content.xml" />
     <None Remove="PFNs.xml" />
-    <None Remove="readme.md" />
     <None Remove="Scalar types.content.xml" />
     <None Remove="Scalar types.xml" />
     <None Remove="Structs.content.xml" />
@@ -52,10 +51,6 @@
     <None Remove="Vulkan Extensions.xml" />
     <None Remove="Vulkan Scalar types.content.xml" />
     <None Remove="Vulkan Scalar types.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="readme.md" />
   </ItemGroup>
 
 </Project>
