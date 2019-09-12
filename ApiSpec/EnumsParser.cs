@@ -10,7 +10,7 @@ namespace ApiSpec {
         const string leftBrace = "{";
         const string rightBrace = "}";
 
-        const string filename = "Enumerations.content.xml";
+        const string filename = "Enums.content.xml";
         const string strName = "Name";
         const string strCSpecification = "C Specification";
         const string strDescription = "Description";
@@ -84,7 +84,13 @@ namespace ApiSpec {
                     sw.WriteLine($"// Enum: {i}");
                     string enumComment = lstEnumComment[i];
                     sw.WriteLine($"/// <summary>{enumComment}</summary>");
-                    foreach (var line in definitionLines) {
+                    {
+                        string line = definitionLines[0];
+                        if (line.Contains("FlagBits")) { sw.WriteLine("[Flags]"); }
+                        sw.WriteLine(line);
+                    }
+                    for (int j = 1; j < definitionLines.Length - 1; j++) {
+                        string line = definitionLines[j];
                         if (item2Comment != null) {
                             string strComment = ParseItemComment(line, item2Comment);
                             if (strComment != string.Empty) {
@@ -95,6 +101,10 @@ namespace ApiSpec {
                             }
                         }
                         sw.WriteLine(line);
+                    }
+                    {
+                        string line = definitionLines[definitionLines.Length - 1];
+                        sw.WriteLine(line); // }
                     }
                 }
             }

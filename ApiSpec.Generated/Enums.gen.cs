@@ -32,6 +32,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 2
     /// <summary>VkAccessFlagBits - Bitmask specifying memory access types that will participate in a memory dependency</summary>
+    [Flags]
     public enum VkAccessFlagBits {
         /// <summary><code>VK_ACCESS_INDIRECT_COMMAND_READ_BIT</code> specifies read access to
         /// indirect command data read as part of an indirect drawing or dispatch
@@ -164,6 +165,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 3
     /// <summary>VkAttachmentDescriptionFlagBits - Bitmask specifying additional properties of an attachment</summary>
+    [Flags]
     public enum VkAttachmentDescriptionFlagBits {
         /// <summary><code>VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT</code> specifies that the
         /// attachment aliases the same device memory as other attachments.</summary>
@@ -385,6 +387,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 10
     /// <summary>VkBufferCreateFlagBits - Bitmask specifying additional parameters of a buffer</summary>
+    [Flags]
     public enum VkBufferCreateFlagBits {
         /// <summary><code>VK_BUFFER_CREATE_SPARSE_BINDING_BIT</code> specifies that the buffer will
         /// be backed using sparse memory binding.</summary>
@@ -413,6 +416,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 11
     /// <summary>VkBufferUsageFlagBits - Bitmask specifying allowed usage of a buffer</summary>
+    [Flags]
     public enum VkBufferUsageFlagBits {
         /// <summary><code>VK_BUFFER_USAGE_TRANSFER_SRC_BIT</code> specifies that the buffer <strong class="purple">can</strong> be
         /// used as the source of a <em>transfer command</em> (see the definition of
@@ -552,6 +556,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 15
     /// <summary>VkColorComponentFlagBits - Bitmask controlling which components are written to the framebuffer</summary>
+    [Flags]
     public enum VkColorComponentFlagBits {
         /// <summary><code>VK_COLOR_COMPONENT_R_BIT</code> specifies that the <span class="eq">R</span> value is
         /// written to the color attachment for the appropriate sample.
@@ -645,6 +650,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 18
     /// <summary>VkCommandBufferResetFlagBits - Bitmask controlling behavior of a command buffer reset</summary>
+    [Flags]
     public enum VkCommandBufferResetFlagBits {
         /// <summary><code>VK_COMMAND_BUFFER_RESET_RELEASE_RESOURCES_BIT</code> specifies that most
         /// or all memory resources currently owned by the command buffer <strong class="purple">should</strong> be
@@ -658,6 +664,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 19
     /// <summary>VkCommandBufferUsageFlagBits - Bitmask specifying usage behavior for command buffer</summary>
+    [Flags]
     public enum VkCommandBufferUsageFlagBits {
         /// <summary><code>VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT</code> specifies that each
         /// recording of the command buffer will only be submitted once, and the
@@ -676,6 +683,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 20
     /// <summary>VkCommandPoolCreateFlagBits - Bitmask specifying usage behavior for a command pool</summary>
+    [Flags]
     public enum VkCommandPoolCreateFlagBits {
         /// <summary><code>VK_COMMAND_POOL_CREATE_TRANSIENT_BIT</code> specifies that command
         /// buffers allocated from the pool will be short-lived, meaning that they
@@ -701,6 +709,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 21
     /// <summary>VkCommandPoolResetFlagBits - Bitmask controlling behavior of a command pool reset</summary>
+    [Flags]
     public enum VkCommandPoolResetFlagBits {
         /// <summary><code>VK_COMMAND_POOL_RESET_RELEASE_RESOURCES_BIT</code> specifies that
         /// resetting a command pool recycles all of the resources from the command
@@ -804,6 +813,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 25
     /// <summary>VkCompositeAlphaFlagBitsKHR - alpha compositing modes supported on a device</summary>
+    [Flags]
     public enum VkCompositeAlphaFlagBitsKHR {
         /// <summary><code>VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR</code>: The alpha channel, if it
         /// exists, of the images is ignored in the compositing process.
@@ -833,6 +843,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 26
     /// <summary>VkConditionalRenderingFlagBitsEXT - Specify the behavior of conditional rendering</summary>
+    [Flags]
     public enum VkConditionalRenderingFlagBitsEXT {
         /// <summary><code>VK_CONDITIONAL_RENDERING_INVERTED_BIT_EXT</code> specifies the condition
         /// used to determine whether to discard rendering commands or not.
@@ -894,6 +905,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 30
     /// <summary>VkCullModeFlagBits - Bitmask controlling triangle culling</summary>
+    [Flags]
     public enum VkCullModeFlagBits {
         /// <summary><code>VK_CULL_MODE_NONE</code> specifies that no triangles are discarded</summary>
         VK_CULL_MODE_NONE = 0,
@@ -1055,6 +1067,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 33
     /// <summary>VkDebugUtilsMessageSeverityFlagBitsEXT - Bitmask specifying which severities of events cause a debug messenger callback</summary>
+    [Flags]
     public enum VkDebugUtilsMessageSeverityFlagBitsEXT {
         /// <summary><code>VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT</code> specifies the most
         /// verbose output indicating all diagnostic messages from the Vulkan
@@ -1100,6 +1113,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 35
     /// <summary>VkDependencyFlagBits - Bitmask specifying how execution and memory dependencies are formed</summary>
+    [Flags]
     public enum VkDependencyFlagBits {
         /// <summary><code>VK_DEPENDENCY_BY_REGION_BIT</code> specifies that dependencies will be
         /// <a href="vkspec.html#synchronization-framebuffer-regions">framebuffer-local</a>.</summary>
@@ -1118,6 +1132,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 36
     /// <summary>VkDescriptorBindingFlagBitsEXT - Bitmask specifying descriptor set layout binding properties</summary>
+    [Flags]
     public enum VkDescriptorBindingFlagBitsEXT {
         /// <summary><code>VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT_EXT</code> indicates that if
         /// descriptors in this binding are updated between when the descriptor set
@@ -1171,6 +1186,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 37
     /// <summary>VkDescriptorPoolCreateFlagBits - Bitmask specifying certain supported operations on a descriptor pool</summary>
+    [Flags]
     public enum VkDescriptorPoolCreateFlagBits {
         /// <summary><code>VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT</code> specifies that
         /// descriptor sets <strong class="purple">can</strong> return their individual allocations to the pool,
@@ -1193,6 +1209,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 38
     /// <summary>VkDescriptorSetLayoutCreateFlagBits - Bitmask specifying descriptor set layout properties</summary>
+    [Flags]
     public enum VkDescriptorSetLayoutCreateFlagBits {
         /// <summary><code>VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR</code> specifies
         /// that descriptor sets <strong class="purple">must</strong> not be allocated using this layout, and
@@ -1282,6 +1299,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 42
     /// <summary>VkDeviceGroupPresentModeFlagBitsKHR - Bitmask specifying supported device group present modes</summary>
+    [Flags]
     public enum VkDeviceGroupPresentModeFlagBitsKHR {
         /// <summary><code>VK_DEVICE_GROUP_PRESENT_MODE_LOCAL_BIT_KHR</code> specifies that any
         /// physical device with a presentation engine <strong class="purple">can</strong> present its own
@@ -1303,6 +1321,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 43
     /// <summary>VkDeviceQueueCreateFlagBits - Bitmask specifying behavior of the queue</summary>
+    [Flags]
     public enum VkDeviceQueueCreateFlagBits {
         /// <summary><code>VK_DEVICE_QUEUE_CREATE_PROTECTED_BIT</code> specifies that the device
         /// queue is a protected-capable queue.
@@ -1334,6 +1353,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 46
     /// <summary>VkDisplayPlaneAlphaFlagBitsKHR - Alpha blending type</summary>
+    [Flags]
     public enum VkDisplayPlaneAlphaFlagBitsKHR {
         /// <summary><code>VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR</code> specifies that the source
         /// image will be treated as opaque.</summary>
@@ -1512,6 +1532,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 50
     /// <summary>VkExternalFenceFeatureFlagBits - Bitfield describing features of an external fence handle type</summary>
+    [Flags]
     public enum VkExternalFenceFeatureFlagBits {
         /// <summary><code>VK_EXTERNAL_FENCE_FEATURE_EXPORTABLE_BIT</code> specifies handles of this
         /// type <strong class="purple">can</strong> be exported from Vulkan fence objects.</summary>
@@ -1525,6 +1546,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 51
     /// <summary>VkExternalFenceHandleTypeFlagBits - Bitmask of valid external fence handle types</summary>
+    [Flags]
     public enum VkExternalFenceHandleTypeFlagBits {
         /// <summary><code>VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD_BIT</code> specifies a POSIX file
         /// descriptor handle that has only limited valid usage outside of Vulkan
@@ -1571,6 +1593,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 52
     /// <summary>VkExternalMemoryFeatureFlagBits - Bitmask specifying features of an external memory handle type</summary>
+    [Flags]
     public enum VkExternalMemoryFeatureFlagBits {
         /// <summary><code>VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT</code> specifies that
         /// images or buffers created with the specified parameters and handle type
@@ -1591,6 +1614,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 53
     /// <summary>VkExternalMemoryFeatureFlagBitsNV - Bitmask specifying external memory features</summary>
+    [Flags]
     public enum VkExternalMemoryFeatureFlagBitsNV {
         /// <summary><code>VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT_NV</code> specifies that
         /// external memory of the specified type <strong class="purple">must</strong> be created as a dedicated
@@ -1606,6 +1630,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 54
     /// <summary>VkExternalMemoryHandleTypeFlagBits - Bit specifying external memory handle types</summary>
+    [Flags]
     public enum VkExternalMemoryHandleTypeFlagBits {
         /// <summary><code>VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_FD_BIT</code> specifies a POSIX
         /// file descriptor handle that has only limited valid usage outside of
@@ -1688,6 +1713,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 55
     /// <summary>VkExternalMemoryHandleTypeFlagBitsNV - Bitmask specifying external memory handle types</summary>
+    [Flags]
     public enum VkExternalMemoryHandleTypeFlagBitsNV {
         /// <summary><code>VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_NV</code> specifies a
         /// handle to memory returned by <a href="#vkGetMemoryWin32HandleNV">vkGetMemoryWin32HandleNV</a>, or one
@@ -1708,6 +1734,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 56
     /// <summary>VkExternalSemaphoreFeatureFlagBits - Bitfield describing features of an external semaphore handle type</summary>
+    [Flags]
     public enum VkExternalSemaphoreFeatureFlagBits {
         /// <summary><code>VK_EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE_BIT</code> specifies that
         /// handles of this type <strong class="purple">can</strong> be exported from Vulkan semaphore objects.</summary>
@@ -1721,6 +1748,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 57
     /// <summary>VkExternalSemaphoreHandleTypeFlagBits - Bitmask of valid external semaphore handle types</summary>
+    [Flags]
     public enum VkExternalSemaphoreHandleTypeFlagBits {
         /// <summary><code>VK_EXTERNAL_SEMAPHORE_HANDLE_TYPE_OPAQUE_FD_BIT</code> specifies a POSIX
         /// file descriptor handle that has only limited valid usage outside of
@@ -1775,6 +1803,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 58
     /// <summary>VkFenceCreateFlagBits - Bitmask specifying initial state and behavior of a fence</summary>
+    [Flags]
     public enum VkFenceCreateFlagBits {
         /// <summary><code>VK_FENCE_CREATE_SIGNALED_BIT</code> specifies that the fence object is
         /// created in the signaled state.
@@ -1784,6 +1813,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 59
     /// <summary>VkFenceImportFlagBits - Bitmask specifying additional parameters of fence payload import</summary>
+    [Flags]
     public enum VkFenceImportFlagBits {
         /// <summary><code>VK_FENCE_IMPORT_TEMPORARY_BIT</code> specifies that the fence payload
         /// will be imported only temporarily, as described in
@@ -3174,6 +3204,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 62
     /// <summary>VkFormatFeatureFlagBits - Bitmask specifying features supported by a buffer</summary>
+    [Flags]
     public enum VkFormatFeatureFlagBits {
         /// <summary><code>VK_FORMAT_FEATURE_SAMPLED_IMAGE_BIT</code> specifies that an image view
         /// <strong class="purple">can</strong> be <a href="vkspec.html#descriptorsets-sampledimage">sampled from</a>.</summary>
@@ -3355,6 +3386,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 65
     /// <summary>VkGeometryFlagBitsNV - Bitmask specifying additional parameters for a geometry</summary>
+    [Flags]
     public enum VkGeometryFlagBitsNV {
         /// <summary><code>VK_GEOMETRY_OPAQUE_BIT_NV</code> indicates that this geometry does not
         /// invoke the any-hit shaders even if present in a hit group.</summary>
@@ -3369,6 +3401,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 66
     /// <summary>VkGeometryInstanceFlagBitsNV - Instance flag bits</summary>
+    [Flags]
     public enum VkGeometryInstanceFlagBitsNV {
         /// <summary><code>VK_GEOMETRY_INSTANCE_TRIANGLE_CULL_DISABLE_BIT_NV</code> disables face
         /// culling for this instance.</summary>
@@ -3407,6 +3440,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 68
     /// <summary>VkImageAspectFlagBits - Bitmask specifying which aspects of an image are included in a view</summary>
+    [Flags]
     public enum VkImageAspectFlagBits {
         /// <summary><code>VK_IMAGE_ASPECT_COLOR_BIT</code> specifies the color aspect.</summary>
         VK_IMAGE_ASPECT_COLOR_BIT = 0x00000001,
@@ -3431,6 +3465,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 69
     /// <summary>VkImageCreateFlagBits - Bitmask specifying additional parameters of an image</summary>
+    [Flags]
     public enum VkImageCreateFlagBits {
         /// <summary><code>VK_IMAGE_CREATE_SPARSE_BINDING_BIT</code> specifies that the image will
         /// be backed using sparse memory binding.</summary>
@@ -3690,6 +3725,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 73
     /// <summary>VkImageUsageFlagBits - Bitmask specifying intended usage of an image</summary>
+    [Flags]
     public enum VkImageUsageFlagBits {
         /// <summary><code>VK_IMAGE_USAGE_TRANSFER_SRC_BIT</code> specifies that the image <strong class="purple">can</strong> be
         /// used as the source of a transfer command.</summary>
@@ -3742,6 +3778,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 74
     /// <summary>VkImageViewCreateFlagBits - Bitmask specifying additional parameters of an image view</summary>
+    [Flags]
     public enum VkImageViewCreateFlagBits {
         /// <summary><code>VK_IMAGE_VIEW_CREATE_FRAGMENT_DENSITY_MAP_DYNAMIC_BIT_EXT</code>
         /// prohibits the implementation from accessing the fragment density map by
@@ -3777,6 +3814,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 77
     /// <summary>VkIndirectCommandsLayoutUsageFlagBitsNVX - Bitmask specifying allowed usage of an indirect commands layout</summary>
+    [Flags]
     public enum VkIndirectCommandsLayoutUsageFlagBitsNVX {
         /// <summary><code>VK_INDIRECT_COMMANDS_LAYOUT_USAGE_UNORDERED_SEQUENCES_BIT_NVX</code>
         /// specifies that the processing of sequences <strong class="purple">can</strong> happen at an
@@ -3890,6 +3928,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 81
     /// <summary>VkMemoryAllocateFlagBits - Bitmask specifying flags for a device memory allocation</summary>
+    [Flags]
     public enum VkMemoryAllocateFlagBits {
         /// <summary><code>VK_MEMORY_ALLOCATE_DEVICE_MASK_BIT</code> specifies that memory will be
         /// allocated for the devices in
@@ -3900,6 +3939,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 82
     /// <summary>VkMemoryHeapFlagBits - Bitmask specifying attribute flags for a heap</summary>
+    [Flags]
     public enum VkMemoryHeapFlagBits {
         /// <summary><code>VK_MEMORY_HEAP_DEVICE_LOCAL_BIT</code> specifies that the heap
         /// corresponds to device local memory.
@@ -3934,6 +3974,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 84
     /// <summary>VkMemoryPropertyFlagBits - Bitmask specifying properties for a memory type</summary>
+    [Flags]
     public enum VkMemoryPropertyFlagBits {
         /// <summary><code>VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT</code> bit specifies that memory
         /// allocated with this type is the most efficient for device access.
@@ -3998,6 +4039,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 86
     /// <summary>VkObjectEntryUsageFlagBitsNVX - Bitmask specifying allowed usage of an object entry</summary>
+    [Flags]
     public enum VkObjectEntryUsageFlagBitsNVX {
         /// <summary><code>VK_OBJECT_ENTRY_USAGE_GRAPHICS_BIT_NVX</code> specifies that the resource
         /// is bound to <code>VK_PIPELINE_BIND_POINT_GRAPHICS</code></summary>
@@ -4130,6 +4172,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 88
     /// <summary>VkPeerMemoryFeatureFlagBits - Bitmask specifying supported peer memory features</summary>
+    [Flags]
     public enum VkPeerMemoryFeatureFlagBits {
         /// <summary><code>VK_PEER_MEMORY_FEATURE_COPY_SRC_BIT</code> specifies that the memory <strong class="purple">can</strong>
         /// be accessed as the source of a <a href="#vkCmdCopyBuffer">vkCmdCopyBuffer</a>,
@@ -4198,6 +4241,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 92
     /// <summary>VkPipelineCreateFlagBits - Bitmask controlling how a pipeline is created</summary>
+    [Flags]
     public enum VkPipelineCreateFlagBits {
         /// <summary><code>VK_PIPELINE_CREATE_DISABLE_OPTIMIZATION_BIT</code> specifies that the
         /// created pipeline will not be optimized.
@@ -4231,6 +4275,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 93
     /// <summary>VkPipelineCreationFeedbackFlagBitsEXT - Bitmask specifying pipeline or pipeline stage creation feedback</summary>
+    [Flags]
     public enum VkPipelineCreationFeedbackFlagBitsEXT {
         /// <summary><code>VK_PIPELINE_CREATION_FEEDBACK_VALID_BIT_EXT</code> indicates that the
         /// feedback information is valid.</summary>
@@ -4250,6 +4295,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 94
     /// <summary>VkPipelineStageFlagBits - Bitmask specifying pipeline stages</summary>
+    [Flags]
     public enum VkPipelineStageFlagBits {
         /// <summary><code>VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT</code> specifies the stage of the
         /// pipeline where any commands are initially received by the queue.</summary>
@@ -4512,6 +4558,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 99
     /// <summary>VkQueryControlFlagBits - Bitmask specifying constraints on a query</summary>
+    [Flags]
     public enum VkQueryControlFlagBits {
         /// <summary><code>VK_QUERY_CONTROL_PRECISE_BIT</code> specifies the precision of
         /// <a href="vkspec.html#queries-occlusion">occlusion queries</a>.</summary>
@@ -4520,6 +4567,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 100
     /// <summary>VkQueryPipelineStatisticFlagBits - Bitmask specifying queried pipeline statistics</summary>
+    [Flags]
     public enum VkQueryPipelineStatisticFlagBits {
         /// <summary><code>VK_QUERY_PIPELINE_STATISTIC_INPUT_ASSEMBLY_VERTICES_BIT</code> specifies
         /// that queries managed by the pool will count the number of vertices
@@ -4608,6 +4656,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 101
     /// <summary>VkQueryResultFlagBits - Bitmask specifying how and when query results are returned</summary>
+    [Flags]
     public enum VkQueryResultFlagBits {
         /// <summary><code>VK_QUERY_RESULT_64_BIT</code> specifies the results will be written as an
         /// array of 64-bit unsigned integer values.
@@ -4642,6 +4691,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 103
     /// <summary>VkQueueFlagBits - Bitmask specifying capabilities of queues in a queue family</summary>
+    [Flags]
     public enum VkQueueFlagBits {
         /// <summary><code>VK_QUEUE_GRAPHICS_BIT</code> specifies that queues in this queue family
         /// support graphics operations.</summary>
@@ -4715,6 +4765,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 107
     /// <summary>VkResolveModeFlagBitsKHR - Bitmask indicating supported depth and stencil resolve modes</summary>
+    [Flags]
     public enum VkResolveModeFlagBitsKHR {
         /// <summary><code>VK_RESOLVE_MODE_NONE_KHR</code> indicates that no resolve operation is
         /// done.</summary>
@@ -4844,6 +4895,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 109
     /// <summary>VkSampleCountFlagBits - Bitmask specifying sample counts supported for an image used for storage operations</summary>
+    [Flags]
     public enum VkSampleCountFlagBits {
         /// <summary><code>VK_SAMPLE_COUNT_1_BIT</code> specifies an image with one sample per
         /// pixel.</summary>
@@ -4889,6 +4941,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 111
     /// <summary>VkSamplerCreateFlagBits - Bitmask specifying additional parameters of sampler</summary>
+    [Flags]
     public enum VkSamplerCreateFlagBits {
         /// <summary><a id="samplers-subsamplesampler"></a>
         ///   <code>VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT</code>
@@ -4992,6 +5045,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 117
     /// <summary>VkSemaphoreImportFlagBits - Bitmask specifying additional parameters of semaphore payload import</summary>
+    [Flags]
     public enum VkSemaphoreImportFlagBits {
         /// <summary><code>VK_SEMAPHORE_IMPORT_TEMPORARY_BIT</code> specifies that the semaphore
         /// payload will be imported only temporarily, as described in
@@ -5017,6 +5071,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 119
     /// <summary>VkShaderStageFlagBits - Bitmask specifying a pipeline stage</summary>
+    [Flags]
     public enum VkShaderStageFlagBits {
         /// <summary><code>VK_SHADER_STAGE_VERTEX_BIT</code> specifies the vertex stage.</summary>
         VK_SHADER_STAGE_VERTEX_BIT = 0x00000001,
@@ -5120,6 +5175,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 122
     /// <summary>VkSparseImageFormatFlagBits - Bitmask specifying additional information about a sparse image resource</summary>
+    [Flags]
     public enum VkSparseImageFormatFlagBits {
         /// <summary><code>VK_SPARSE_IMAGE_FORMAT_SINGLE_MIPTAIL_BIT</code> specifies that the image
         /// uses a single mip tail region for all array layers.</summary>
@@ -5138,6 +5194,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 123
     /// <summary>VkSparseMemoryBindFlagBits - Bitmask specifying usage of a sparse memory binding operation</summary>
+    [Flags]
     public enum VkSparseMemoryBindFlagBits {
         /// <summary><code>VK_SPARSE_MEMORY_BIND_METADATA_BIT</code> specifies that the memory being
         /// bound is only for the metadata aspect.</summary>
@@ -5146,6 +5203,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 124
     /// <summary>VkStencilFaceFlagBits - Bitmask specifying sets of stencil state for which to update the compare mask</summary>
+    [Flags]
     public enum VkStencilFaceFlagBits {
         /// <summary><code>VK_STENCIL_FACE_FRONT_BIT</code> specifies that only the front set of
         /// stencil state is updated.</summary>
@@ -5594,6 +5652,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 127
     /// <summary>VkSubgroupFeatureFlagBits - Enum describing what subgroup operations are supported</summary>
+    [Flags]
     public enum VkSubgroupFeatureFlagBits {
         /// <summary><a id="features-subgroup-basic"></a>
         ///   <code>VK_SUBGROUP_FEATURE_BASIC_BIT</code>
@@ -5659,6 +5718,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 129
     /// <summary>VkSubpassDescriptionFlagBits - Bitmask specifying usage of a subpass</summary>
+    [Flags]
     public enum VkSubpassDescriptionFlagBits {
         /// <summary><code>VK_SUBPASS_DESCRIPTION_PER_VIEW_ATTRIBUTES_BIT_NVX</code> specifies that
         /// shaders compiled for this subpass write the attributes for all views in
@@ -5676,6 +5736,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 130
     /// <summary>VkSurfaceCounterFlagBitsEXT - Surface-relative counter types</summary>
+    [Flags]
     public enum VkSurfaceCounterFlagBitsEXT {
         /// <summary><code>VK_SURFACE_COUNTER_VBLANK_EXT</code> specifies a counter incrementing
         /// once every time a vertical blanking period occurs on the display
@@ -5685,6 +5746,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 131
     /// <summary>VkSurfaceTransformFlagBitsKHR - presentation transforms supported on a device</summary>
+    [Flags]
     public enum VkSurfaceTransformFlagBitsKHR {
         /// <summary><code>VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR</code> specifies that image content
         /// is presented without being transformed.</summary>
@@ -5721,6 +5783,7 @@ namespace ApiSpec.Generated {
     }
     // Enum: 132
     /// <summary>VkSwapchainCreateFlagBitsKHR - Bitmask controlling swapchain creation</summary>
+    [Flags]
     public enum VkSwapchainCreateFlagBitsKHR {
         /// <summary><code>VK_SWAPCHAIN_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR</code> specifies
         /// that images created from the swapchain (i.e. with the <code>swapchain</code>
@@ -5910,4 +5973,6 @@ namespace ApiSpec.Generated {
         VK_VIEWPORT_COORDINATE_SWIZZLE_NEGATIVE_W_NV = 7,
         VK_VIEWPORT_COORDINATE_SWIZZLE_MAX_ENUM_NV = 0x7FFFFFFF
     }
+
 }
+
