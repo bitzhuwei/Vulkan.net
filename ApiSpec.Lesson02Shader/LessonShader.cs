@@ -292,96 +292,100 @@ namespace ApiSpec.Lesson02Shader {
                 fs.module = fsModule;
                 "main".Set(ref fs.pName);
             }
-            VkPipelineShaderStageCreateInfo[] pipelineShaderStages = { vs, fs };
-            var viewport = new VkViewport {
+            VkPipelineShaderStageCreateInfo[] stages = { vs, fs };
+            var vp = new VkViewport {
                 minDepth = 0,
                 maxDepth = 1.0f,
                 width = surfaceCapabilities.currentExtent.width,
                 height = surfaceCapabilities.currentExtent.height
             };
             var scissor = new VkRect2D { extent = surfaceCapabilities.currentExtent };
-            var viewportCreateInfo = new VkPipelineViewportStateCreateInfo();
+            var viewport = new VkPipelineViewportStateCreateInfo();
             {
-                viewportCreateInfo.sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
+                viewport.sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_STATE_CREATE_INFO;
                 //new VkViewport[] { viewport }.Set(ref viewportCreateInfo.Viewports, ref viewportCreateInfo.ViewportCount);
-                viewportCreateInfo.pViewports = &viewport; viewportCreateInfo.viewportCount = 1;
+                viewport.pViewports = &vp; viewport.viewportCount = 1;
                 //new VkRect2D[] { scissor }.Set(ref viewportCreateInfo.Scissors, ref viewportCreateInfo.ScissorCount);
-                viewportCreateInfo.pScissors = &scissor; viewportCreateInfo.scissorCount = 1;
+                viewport.pScissors = &scissor; viewport.scissorCount = 1;
             }
 
-            var multisampleCreateInfo = new VkPipelineMultisampleStateCreateInfo {
+            var multisample = new VkPipelineMultisampleStateCreateInfo {
                 sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_MULTISAMPLE_STATE_CREATE_INFO,
                 rasterizationSamples = VkSampleCountFlagBits.VK_SAMPLE_COUNT_1_BIT
             };
-            var colorBlendAttachmentState = new VkPipelineColorBlendAttachmentState {
+            var blend = new VkPipelineColorBlendAttachmentState {
                 colorWriteMask = VkColorComponentFlagBits.VK_COLOR_COMPONENT_R_BIT
                 | VkColorComponentFlagBits.VK_COLOR_COMPONENT_G_BIT
                 | VkColorComponentFlagBits.VK_COLOR_COMPONENT_B_BIT
                 | VkColorComponentFlagBits.VK_COLOR_COMPONENT_A_BIT
             };
-            var colorBlendStateCreatInfo = new VkPipelineColorBlendStateCreateInfo();
+            var colorBlend = new VkPipelineColorBlendStateCreateInfo();
             {
-                colorBlendStateCreatInfo.sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
-                colorBlendStateCreatInfo.logicOp = VkLogicOp.VK_LOGIC_OP_COPY;
+                colorBlend.sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
+                colorBlend.logicOp = VkLogicOp.VK_LOGIC_OP_COPY;
                 //new VkPipelineColorBlendAttachmentState[] { colorBlendAttachmentState }.Set(ref colorBlendStateCreatInfo.Attachments, ref colorBlendStateCreatInfo.AttachmentCount);
-                colorBlendStateCreatInfo.pAttachments = &colorBlendAttachmentState; colorBlendStateCreatInfo.attachmentCount = 1;
+                colorBlend.pAttachments = &blend; colorBlend.attachmentCount = 1;
             }
-            var rasterizationStateCreateInfo = new VkPipelineRasterizationStateCreateInfo {
+            var rasterization = new VkPipelineRasterizationStateCreateInfo {
                 sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_CREATE_INFO,
                 polygonMode = VkPolygonMode.VK_POLYGON_MODE_FILL,
                 cullMode = VkCullModeFlagBits.VK_CULL_MODE_NONE,
                 frontFace = VkFrontFace.VK_FRONT_FACE_CLOCKWISE,
                 lineWidth = 1.0f
             };
-            var inputAssemblyStateCreateInfo = new VkPipelineInputAssemblyStateCreateInfo {
+            var inputAssem = new VkPipelineInputAssemblyStateCreateInfo {
                 sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO,
                 topology = VkPrimitiveTopology.VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST
             };
-            var vertexInputBindingDescription = new VkVertexInputBindingDescription {
+            var binding = new VkVertexInputBindingDescription {
                 stride = 3 * sizeof(float),
                 inputRate = VkVertexInputRate.VK_VERTEX_INPUT_RATE_VERTEX
             };
-            var vertexInputAttributeDescription = new VkVertexInputAttributeDescription {
+            var attribute = new VkVertexInputAttributeDescription {
                 format = VkFormat.VK_FORMAT_R32G32B32_SFLOAT
             };
-            var vertexInputStateCreateInfo = new VkPipelineVertexInputStateCreateInfo();
+            var input = new VkPipelineVertexInputStateCreateInfo();
             {
-                vertexInputStateCreateInfo.sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
+                input.sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO;
                 //new VkVertexInputBindingDescription[] { vertexInputBindingDescription }.Set(ref vertexInputStateCreateInfo.VertexBindingDescriptions, ref vertexInputStateCreateInfo.VertexBindingDescriptionCount);
-                vertexInputStateCreateInfo.pVertexBindingDescriptions = &vertexInputBindingDescription;
-                vertexInputStateCreateInfo.vertexBindingDescriptionCount = 1;
+                input.pVertexBindingDescriptions = &binding;
+                input.vertexBindingDescriptionCount = 1;
                 //new VkVertexInputAttributeDescription[] { vertexInputAttributeDescription }.Set(ref vertexInputStateCreateInfo.VertexAttributeDescriptions, ref vertexInputStateCreateInfo.VertexAttributeDescriptionCount);
-                vertexInputStateCreateInfo.pVertexAttributeDescriptions = &vertexInputAttributeDescription;
-                vertexInputStateCreateInfo.vertexAttributeDescriptionCount = 1;
+                input.pVertexAttributeDescriptions = &attribute;
+                input.vertexAttributeDescriptionCount = 1;
             }
 
-            var pipelineCreateInfo = new VkGraphicsPipelineCreateInfo();
-            {
-                pipelineCreateInfo.sType = VkStructureType.VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
-                pipelineCreateInfo.layout = pipelineLayout;
-                pipelineCreateInfo.pViewportState = &viewportCreateInfo;
-
-                //pipelineShaderStages.Set(ref pipelineCreateInfo.Stages, ref pipelineCreateInfo.StageCount);
-                var ptr = IntPtr.Zero;
-                pipelineShaderStages.Set(ref ptr, ref pipelineCreateInfo.stageCount);
-                pipelineCreateInfo.pStages = (VkPipelineShaderStageCreateInfo*)ptr;
-
-                pipelineCreateInfo.pMultisampleState = &multisampleCreateInfo;
-                pipelineCreateInfo.pColorBlendState = &colorBlendStateCreatInfo;
-                pipelineCreateInfo.pRasterizationState = &rasterizationStateCreateInfo;
-                pipelineCreateInfo.pInputAssemblyState = &inputAssemblyStateCreateInfo;
-                pipelineCreateInfo.pVertexInputState = &vertexInputStateCreateInfo;
-                pipelineCreateInfo.renderPass = renderPass;
-            }
-
-            var cacheInfo = new VkPipelineCacheCreateInfo { sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_CACHE_CREATE_INFO };
             //VkPipelineCache cache = device.CreatePipelineCache(ref cacheInfo);
             VkPipelineCache cache;
-            vkAPI.vkCreatePipelineCache(device, &cacheInfo, null, &cache);
+            {
+                var info = new VkPipelineCacheCreateInfo { sType = VkStructureType.VK_STRUCTURE_TYPE_PIPELINE_CACHE_CREATE_INFO };
+                vkAPI.vkCreatePipelineCache(device, &info, null, &cache);
+            }
             //var infos = new VkGraphicsPipelineCreateInfo[] { pipelineCreateInfo };
             //return device.CreateGraphicsPipelines(ref cache, infos);
             VkPipeline pipeline;
-            vkAPI.vkCreateGraphicsPipelines(device, cache, 1, &pipelineCreateInfo, null, &pipeline);
+            {
+                var info = new VkGraphicsPipelineCreateInfo();
+                {
+                    info.sType = VkStructureType.VK_STRUCTURE_TYPE_GRAPHICS_PIPELINE_CREATE_INFO;
+                    info.layout = pipelineLayout;
+                    info.pViewportState = &viewport;
+
+                    //pipelineShaderStages.Set(ref pipelineCreateInfo.Stages, ref pipelineCreateInfo.StageCount);
+                    var ptr = IntPtr.Zero;
+                    stages.Set(ref ptr, ref info.stageCount);
+                    info.pStages = (VkPipelineShaderStageCreateInfo*)ptr;
+
+                    info.pMultisampleState = &multisample;
+                    info.pColorBlendState = &colorBlend;
+                    info.pRasterizationState = &rasterization;
+                    info.pInputAssemblyState = &inputAssem;
+                    info.pVertexInputState = &input;
+                    info.renderPass = renderPass;
+                }
+
+                vkAPI.vkCreateGraphicsPipelines(device, cache, 1, &info, null, &pipeline);
+            }
 
             FreeHelper.Free(ref vs);
             FreeHelper.Free(ref fs);
@@ -812,7 +816,6 @@ namespace ApiSpec.Lesson02Shader {
                     new[] { swapchain }.Set(ref ptr, ref presentInfo.swapchainCount);
                     presentInfo.pSwapchains = (VkSwapchainKHR*)ptr;
 
-                    ptr = IntPtr.Zero;
                     new[] { index }.Set(ref presentInfo.pImageIndices, ref presentInfo.swapchainCount);
                 }
                 presentInfos[index] = presentInfo;
