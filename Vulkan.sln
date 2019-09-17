@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiSpec.Generated", "ApiSpec.Generated\ApiSpec.Generated.csproj", "{FAC3B7A7-96E6-4473-98D8-28C97F938871}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulkan", "Vulkan\Vulkan.csproj", "{FAC3B7A7-96E6-4473-98D8-28C97F938871}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiSpec.Lesson02Shader", "ApiSpec.Lesson02Shader\ApiSpec.Lesson02Shader.csproj", "{4B78F253-8B4C-4E12-9943-E2157F0EF057}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obselete", "ApiSpec.Lesson02Shader\Obselete.csproj", "{4B78F253-8B4C-4E12-9943-E2157F0EF057}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

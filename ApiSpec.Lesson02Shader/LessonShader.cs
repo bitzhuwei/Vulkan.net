@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Linq;
 using System.Runtime.InteropServices;
-using ApiSpec.Generated;
-using static ApiSpec.Generated.VkStructureType;
+using Vulkan;
+using static Vulkan.VkStructureType;
 
 namespace ApiSpec.Lesson02Shader {
     unsafe class LessonShader {
@@ -759,7 +759,7 @@ namespace ApiSpec.Lesson02Shader {
             var appInfo = new VkApplicationInfo();
             {
                 appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-                UInt32 version = ApiSpec.Generated.Version.Make(1, 0, 0);
+                UInt32 version = Vulkan.VkVersion.Make(1, 0, 0);
                 appInfo.apiVersion = version;
             }
 
