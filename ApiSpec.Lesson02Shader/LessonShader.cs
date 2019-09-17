@@ -30,8 +30,58 @@ namespace ApiSpec.Lesson02Shader {
         VkDescriptorSet[] vkDescriptorSets;
 
         VkCommandBuffer[] vkCommandBuffers;
+
+        VkBuffer vkBuffer;
+        VkDeviceMemory vkDeviceMemory;
+        VkDeviceSize uniformSize;
+
         bool isInitialized = false;
 
+        private float originalWidth;
+        private float originalHeight;
+        private float width;
+        private float height;
+
+        public void UpdateSize() {
+            if (width == originalWidth) {
+                width = originalWidth / 2;
+            }
+            else {
+                width = originalWidth;
+            }
+            var uniformBufferData = new AreaUniformBuffer(width, height);
+            var length = 1;
+            var size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(AreaUniformBuffer)) * length;
+            VkDevice device = this.vkDevice; VkDeviceMemory deviceMemory = this.vkDeviceMemory;
+            {
+                IntPtr memPtr = IntPtr.Zero;
+                vkAPI.vkMapMemory(device, deviceMemory, new VkDeviceSize(), new VkDeviceSize((UInt64)size), 0, &memPtr);
+
+                System.Runtime.InteropServices.Marshal.StructureToPtr(uniformBufferData, memPtr, false);
+                //GCHandle pin = GCHandle.Alloc(uniformBufferData, GCHandleType.Pinned);
+                //IntPtr address = pin.AddrOfPinnedObject();
+                //var src = (byte*)address;
+                //var dst = (byte*)memPtr;
+                //for (int i = 0; i < size; i++) {
+                //    dst[i] = src[i];
+                //}
+                //pin.Free();
+
+                //// Flush to make changes visible to the host 
+                //var memoryRange = new VkMappedMemoryRange();
+                //{
+                //    memoryRange.sType = VkStructureType.VK_STRUCTURE_TYPE_MAPPED_MEMORY_RANGE;
+                //    memoryRange.memory = deviceMemory;
+                //    memoryRange.size = this.uniformSize;
+                //}
+
+                //vkAPI.vkFlushMappedMemoryRanges(device, 1, &memoryRange);
+                vkAPI.vkUnmapMemory(device, deviceMemory);
+                //vkAPI.vkBindBufferMemory(device, this.vkBuffer, deviceMemory, new VkDeviceSize());
+            }
+
+            //UpdateDescriptorSets(this.vkDevice, this.vkUniformBuffer, this.vkDescriptorSets);
+        }
         public void Init(IntPtr hwnd, IntPtr processHandle) {
             if (this.isInitialized) { return; }
 
@@ -42,56 +92,74 @@ namespace ApiSpec.Lesson02Shader {
 
             VkSurfaceCapabilitiesKHR surfaceCapabilities;
             //this.vkPhysicalDevice.GetSurfaceCapabilitiesKhr(this.vkSurface, out surfaceCapabilities);
-            vkAPI.vkGetPhysicalDeviceSurfaceCapabilitiesKHR(this.vkPhysicalDevice, this.vkSurface, &surfaceCapabilities);
+            vkAPI.vkGetPhysicalDeviceSurfaceCapabilitiesKHR(this.vkPhysicalDevice, this.vkSurface, &surfaceCapabilities).Check();
 
             this.vkDevice = CreateDevice(this.vkPhysicalDevice, this.vkSurface);
 
-            //this.vkQueue = this.vkDevice.GetDeviceQueue(0, 0);
             {
-                VkQueue queue;
-                vkAPI.vkGetDeviceQueue(this.vkDevice, 0, 0, &queue);
-                this.vkQueue = queue;
+                //VkQueue queue;
+                //vkAPI.vkGetDeviceQueue(this.vkDevice, 0, 0, &queue);
+                //this.vkQueue = queue;
+                this.vkQueue = this.vkDevice.GetQueue(0, 0);
             }
+
             this.vkSwapchain = CreateSwapchain(this.vkDevice, this.vkSurface, surfaceFormat, surfaceCapabilities);
-            //this.vkImages = this.vkDevice.GetSwapchainImagesKHR(this.vkSwapchain);
+
             {
-                UInt32 count;
-                vkAPI.vkGetSwapchainImagesKHR(this.vkDevice, this.vkSwapchain, &count, null);
-                this.vkImages = new VkImage[count];
-                if (count > 0) {
-                    fixed (VkImage* pointer = this.vkImages) {
-                        vkAPI.vkGetSwapchainImagesKHR(this.vkDevice, this.vkSwapchain, &count, pointer);
-                    }
-                }
+                //UInt32 count;
+                //vkAPI.vkGetSwapchainImagesKHR(this.vkDevice, this.vkSwapchain, &count, null).Check();
+                //this.vkImages = new VkImage[count];
+                //if (count > 0) {
+                //    fixed (VkImage* pointer = this.vkImages) {
+                //        vkAPI.vkGetSwapchainImagesKHR(this.vkDevice, this.vkSwapchain, &count, pointer).Check();
+                //    }
+                //}
+                //
+                //this.vkImages = this.vkSwapchain.GetImages(this.vkDevice);
+                this.vkImages = this.vkDevice.GetSwapchainImages(this.vkSwapchain);
             }
+
             this.vkRenderPass = CreateRenderPass(this.vkDevice, surfaceFormat);
+
             this.vkFramebuffers = CreateFramebuffers(this.vkDevice, this.vkImages, surfaceFormat, this.vkRenderPass, surfaceCapabilities);
 
-            //this.vkFence = this.vkDevice.CreateFence(ref fenceInfo);
             {
-                VkFence fence;
-                var info = new VkFenceCreateInfo { sType = VkStructureType.VK_STRUCTURE_TYPE_FENCE_CREATE_INFO };
-                vkAPI.vkCreateFence(this.vkDevice, &info, null, &fence);
-                this.vkFence = fence;
+                //VkFence fence;
+                //var info = new VkFenceCreateInfo { sType = VkStructureType.VK_STRUCTURE_TYPE_FENCE_CREATE_INFO };
+                //vkAPI.vkCreateFence(this.vkDevice, &info, null, &fence);
+                //this.vkFence = fence;
+                this.vkFence = this.vkDevice.CreateFence();
             }
-            //this.vkSemaphore = this.vkDevice.CreateSemaphore(ref semaphoreInfo);
+
             {
-                VkSemaphore semaphore;
-                var info = new VkSemaphoreCreateInfo { sType = VkStructureType.VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO };
-                vkAPI.vkCreateSemaphore(this.vkDevice, &info, null, &semaphore);
-                this.vkSemaphore = semaphore;
+                //VkSemaphore semaphore;
+                //var info = new VkSemaphoreCreateInfo { sType = VkStructureType.VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO };
+                //vkAPI.vkCreateSemaphore(this.vkDevice, &info, null, &semaphore);
+                //this.vkSemaphore = semaphore;
+                this.vkSemaphore = this.vkDevice.CreateSemaphore();
             }
 
             // buffers for vertex data.
             VkBuffer vertexBuffer = CreateBuffer(this.vkPhysicalDevice, this.vkDevice, Logo.Vertices, VkBufferUsageFlagBits.VK_BUFFER_USAGE_VERTEX_BUFFER_BIT, typeof(float));
+
             VkBuffer indexBuffer = CreateBuffer(this.vkPhysicalDevice, this.vkDevice, Logo.Indexes, VkBufferUsageFlagBits.VK_BUFFER_USAGE_INDEX_BUFFER_BIT, typeof(short));
-            var uniformBufferData = new AreaUniformBuffer(surfaceCapabilities.currentExtent.width, surfaceCapabilities.currentExtent.height);
+
+            //var uniformBufferData = new AreaUniformBuffer(surfaceCapabilities.currentExtent.width, surfaceCapabilities.currentExtent.height);
+            var uniformBufferData = new AreaUniformBuffer(40, 50);
+            this.originalWidth = 40; this.width = this.originalWidth;
+            this.originalHeight = 50; this.height = this.originalHeight;
+            //uniformBufferData.width /= 2;
+
             this.vkUniformBuffer = CreateBuffer(this.vkPhysicalDevice, this.vkDevice, uniformBufferData, VkBufferUsageFlagBits.VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, typeof(AreaUniformBuffer));
 
             this.vkDescriptorSetLayout = CreateDescriptorSetLayout(this.vkDevice);
+
             this.vkPipelineLayout = CreatePipelineLayout(this.vkDevice, this.vkDescriptorSetLayout);
-            var pipelines = CreatePipelines(this.vkDevice, this.vkDescriptorSetLayout, surfaceCapabilities, this.vkRenderPass, this.vkPipelineLayout);
+
+            var pipelines = CreatePipelines(this.vkDevice, surfaceCapabilities, this.vkRenderPass, this.vkPipelineLayout);
+
             this.vkDescriptorSets = CreateDescriptorSets(this.vkDevice, this.vkDescriptorSetLayout);
+
             UpdateDescriptorSets(this.vkDevice, this.vkUniformBuffer, this.vkDescriptorSets);
 
             this.vkCommandBuffers = CreateCommandBuffers(
@@ -186,9 +254,6 @@ namespace ApiSpec.Lesson02Shader {
                 write.sType = VkStructureType.VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
                 write.dstSet = descriptorSets[0];
                 write.descriptorType = VkDescriptorType.VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-                //var ptr = (IntPtr)write.pBufferInfo;
-                //new VkDescriptorBufferInfo[] { info }.Set(ref ptr, ref write.descriptorCount);
-                //write.pBufferInfo = (VkDescriptorBufferInfo*)ptr;
                 write.pBufferInfo = &info; write.descriptorCount = 1;
             }
 
@@ -240,7 +305,7 @@ namespace ApiSpec.Lesson02Shader {
         }
 
 
-        VkPipeline[] CreatePipelines(VkDevice device, VkDescriptorSetLayout descriptorSetLayout, VkSurfaceCapabilitiesKHR surfaceCapabilities,
+        VkPipeline[] CreatePipelines(VkDevice device, VkSurfaceCapabilitiesKHR surfaceCapabilities,
             VkRenderPass renderPass, VkPipelineLayout pipelineLayout) {
             //VkShaderModule vertexShaderModule = device.CreateShaderModule(LoadResource(@"Shaders\shader.vert.spv"));
             VkShaderModule vsModule;
@@ -424,17 +489,17 @@ namespace ApiSpec.Lesson02Shader {
     float height;
     } area;
              */
-            var layoutBinding = new VkDescriptorSetLayoutBinding();
+            var binding = new VkDescriptorSetLayoutBinding();
             {
-                layoutBinding.descriptorType = VkDescriptorType.VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER; // uniform
-                layoutBinding.descriptorCount = 1; // single variable, not array.
-                layoutBinding.stageFlags = VkShaderStageFlagBits.VK_SHADER_STAGE_VERTEX_BIT; // in vertex shader.
+                binding.descriptorType = VkDescriptorType.VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER; // uniform
+                binding.descriptorCount = 1; // single variable, not array.
+                binding.stageFlags = VkShaderStageFlagBits.VK_SHADER_STAGE_VERTEX_BIT; // in vertex shader.
             }
             var info = new VkDescriptorSetLayoutCreateInfo();
             {
                 info.sType = VkStructureType.VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
                 //new VkDescriptorSetLayoutBinding[] { layoutBinding }.Set(ref info.Bindings, ref info.BindingCount);
-                info.pBindings = &layoutBinding; info.bindingCount = 1;
+                info.pBindings = &binding; info.bindingCount = 1;
             }
 
             //return device.CreateDescriptorSetLayout(ref info);
@@ -443,77 +508,85 @@ namespace ApiSpec.Lesson02Shader {
             return layout;
         }
 
-        VkBuffer CreateUniformBuffer(VkPhysicalDevice physicalDevice, VkDevice device, VkSurfaceCapabilitiesKHR surfaceCapabilities) {
-            var uniformBufferData = new AreaUniformBuffer {
-                width = surfaceCapabilities.currentExtent.width,
-                height = surfaceCapabilities.currentExtent.height
-            };
-
-            return CreateBuffer(physicalDevice, device, uniformBufferData, VkBufferUsageFlagBits.VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT, typeof(AreaUniformBuffer));
-        }
-
         VkBuffer CreateBuffer(VkPhysicalDevice physicalDevice, VkDevice device, object values, VkBufferUsageFlagBits usageFlags, System.Type type) {
             var array = values as System.Array;
             var length = (array != null) ? array.Length : 1;
             var size = System.Runtime.InteropServices.Marshal.SizeOf(type) * length;
-            var info = new VkBufferCreateInfo();
-            UInt32 index = 0;
-            {
-                info.sType = VkStructureType.VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
-                info.size = new VkDeviceSize((UInt64)size);
-                info.usage = usageFlags;
-                info.sharingMode = VkSharingMode.VK_SHARING_MODE_EXCLUSIVE;
-                //new uint[] { index }.Set(ref info.QueueFamilyIndices, ref info.QueueFamilyIndexCount);
-                info.pQueueFamilyIndices = &index; info.queueFamilyIndexCount = 1;
-            }
-            //VkBuffer buffer = device.CreateBuffer(ref info);
             VkBuffer buffer;
-            vkAPI.vkCreateBuffer(device, &info, null, &buffer);
-            //VkMemoryRequirements memoryReq = device.GetBufferMemoryRequirements(buffer);
-            VkMemoryRequirements memoryReq;
-            vkAPI.vkGetBufferMemoryRequirements(device, buffer, &memoryReq);
-            var allocInfo = new VkMemoryAllocateInfo();
             {
+                var info = new VkBufferCreateInfo();
+                UInt32 index = 0;
+                {
+                    info.sType = VkStructureType.VK_STRUCTURE_TYPE_BUFFER_CREATE_INFO;
+                    info.size = new VkDeviceSize((UInt64)size);
+                    info.usage = usageFlags;
+                    info.sharingMode = VkSharingMode.VK_SHARING_MODE_EXCLUSIVE;
+                    //new uint[] { index }.Set(ref info.QueueFamilyIndices, ref info.QueueFamilyIndexCount);
+                    info.pQueueFamilyIndices = &index; info.queueFamilyIndexCount = 1;
+                }
+                //VkBuffer buffer = device.CreateBuffer(ref info);
+                vkAPI.vkCreateBuffer(device, &info, null, &buffer);
+            }
+            VkDeviceMemory deviceMemory; // = device.AllocateMemory(ref allocInfo);
+            VkMemoryRequirements memoryReq;
+            {
+                //VkMemoryRequirements memoryReq = device.GetBufferMemoryRequirements(buffer);
+                vkAPI.vkGetBufferMemoryRequirements(device, buffer, &memoryReq);
+                var allocInfo = new VkMemoryAllocateInfo();
                 allocInfo.sType = VkStructureType.VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO;
                 allocInfo.allocationSize = memoryReq.size;
+                VkPhysicalDeviceMemoryProperties memoryProperties;
+                //physicalDevice.GetMemoryProperties(out memoryProperties);
+                vkAPI.vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memoryProperties);
+                allocInfo.memoryTypeIndex = GetMemoryTypeIndex(memoryProperties, memoryReq,
+                    VkMemoryPropertyFlagBits.VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT
+                    | VkMemoryPropertyFlagBits.VK_MEMORY_PROPERTY_HOST_COHERENT_BIT);
+                vkAPI.vkAllocateMemory(device, &allocInfo, null, &deviceMemory);
             }
-            VkPhysicalDeviceMemoryProperties memoryProperties;
-            //physicalDevice.GetMemoryProperties(out memoryProperties);
-            vkAPI.vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memoryProperties);
+            //IntPtr memPtr;
+            //device.MapMemory(deviceMemory, 0, size, 0, out memPtr);
+            {
+                IntPtr memPtr = IntPtr.Zero;
+                vkAPI.vkMapMemory(device, deviceMemory, new VkDeviceSize(), new VkDeviceSize((UInt64)size), 0, &memPtr);
+
+                if (type == typeof(float))
+                    System.Runtime.InteropServices.Marshal.Copy(values as float[], 0, memPtr, length);
+                else if (type == typeof(short))
+                    System.Runtime.InteropServices.Marshal.Copy(values as short[], 0, memPtr, length);
+                else if (type == typeof(AreaUniformBuffer)) {
+                    System.Runtime.InteropServices.Marshal.StructureToPtr(values, memPtr, false);
+                    this.vkBuffer = buffer;
+                    this.vkDeviceMemory = deviceMemory;
+                    this.uniformSize = memoryReq.size;
+                }
+
+                //device.UnmapMemory(deviceMemory);
+                vkAPI.vkUnmapMemory(device, deviceMemory);
+            }
+            //device.BindBufferMemory(buffer, deviceMemory, 0);
+            vkAPI.vkBindBufferMemory(device, buffer, deviceMemory, new VkDeviceSize());
+
+            return buffer;
+        }
+
+        //VkMemoryPropertyFlagBits.VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT
+        private uint GetMemoryTypeIndex(VkPhysicalDeviceMemoryProperties memoryProperties, VkMemoryRequirements memoryReq, VkMemoryPropertyFlagBits flags) {
+            uint result = 0;
             bool heapIndexSet = false;
             VkMemoryType* memoryTypes = (VkMemoryType*)memoryProperties.memoryTypes;
 
             for (uint i = 0; i < memoryProperties.memoryTypeCount; i++) {
                 if (((memoryReq.memoryTypeBits >> (int)i) & 1) == 1 &&
-                    (memoryTypes[i].propertyFlags & VkMemoryPropertyFlagBits.VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT) == VkMemoryPropertyFlagBits.VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT) {
-                    allocInfo.memoryTypeIndex = i;
+                    (memoryTypes[i].propertyFlags & flags) == flags) {
+                    result = i;
                     heapIndexSet = true;
                 }
             }
 
             if (!heapIndexSet)
-                allocInfo.memoryTypeIndex = memoryTypes[0].heapIndex;
+                result = memoryTypes[0].heapIndex;
 
-            VkDeviceMemory deviceMemory; // = device.AllocateMemory(ref allocInfo);
-            vkAPI.vkAllocateMemory(device, &allocInfo, null, &deviceMemory);
-            //IntPtr memPtr;
-            //device.MapMemory(deviceMemory, 0, size, 0, out memPtr);
-            IntPtr memPtr = IntPtr.Zero;
-            vkAPI.vkMapMemory(device, deviceMemory, new VkDeviceSize(), new VkDeviceSize((UInt64)size), 0, &memPtr);
-
-            if (type == typeof(float))
-                System.Runtime.InteropServices.Marshal.Copy(values as float[], 0, memPtr, length);
-            else if (type == typeof(short))
-                System.Runtime.InteropServices.Marshal.Copy(values as short[], 0, memPtr, length);
-            else if (type == typeof(AreaUniformBuffer))
-                System.Runtime.InteropServices.Marshal.StructureToPtr(values, memPtr, false);
-
-            //device.UnmapMemory(deviceMemory);
-            vkAPI.vkUnmapMemory(device, deviceMemory);
-            //device.BindBufferMemory(buffer, deviceMemory, 0);
-            vkAPI.vkBindBufferMemory(device, buffer, deviceMemory, new VkDeviceSize());
-
-            return buffer;
+            return result;
         }
 
         struct AreaUniformBuffer {
@@ -521,7 +594,7 @@ namespace ApiSpec.Lesson02Shader {
             public float height;
 
             public AreaUniformBuffer(float width, float height) {
-                this.width = height; this.height = height;
+                this.width = width; this.height = height;
             }
         }
 
@@ -547,7 +620,7 @@ namespace ApiSpec.Lesson02Shader {
                 };
                 //displayViews[i] = device.CreateImageView(ref info);
                 VkImageView view;
-                vkAPI.vkCreateImageView(device, &info, null, &view);
+                vkAPI.vkCreateImageView(device, &info, null, &view).Check();
                 displayViews[i] = view;
             }
 
@@ -603,7 +676,7 @@ namespace ApiSpec.Lesson02Shader {
 
             //return device.CreateRenderPass(ref info);
             VkRenderPass renderpass;
-            vkAPI.vkCreateRenderPass(device, &info, null, &renderpass);
+            vkAPI.vkCreateRenderPass(device, &info, null, &renderpass).Check();
             return renderpass;
         }
 
@@ -632,7 +705,7 @@ namespace ApiSpec.Lesson02Shader {
 
             //return device.CreateSwapchainKHR(ref info, null);
             VkSwapchainKHR swapchain;
-            vkAPI.vkCreateSwapchainKHR(device, &info, null, &swapchain);
+            vkAPI.vkCreateSwapchainKHR(device, &info, null, &swapchain).Check();
             return swapchain;
         }
 
@@ -641,10 +714,10 @@ namespace ApiSpec.Lesson02Shader {
             //physicalDevice.GetSurfaceFormatsKHR(surface, out formats);
             {
                 UInt32 count;
-                vkAPI.vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface, &count, null);
+                vkAPI.vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface, &count, null).Check();
                 formats = new VkSurfaceFormatKHR[count];
                 fixed (VkSurfaceFormatKHR* pointer = formats) {
-                    vkAPI.vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface, &count, pointer);
+                    vkAPI.vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface, &count, pointer).Check();
                 }
             }
             foreach (var f in formats)
@@ -669,7 +742,7 @@ namespace ApiSpec.Lesson02Shader {
             for (index = 0; index < properties.Length; ++index) {
                 VkBool32 supported;
                 //physicalDevice.GetSurfaceSupportKHR(index, surface, out supported);
-                vkAPI.vkGetPhysicalDeviceSurfaceSupportKHR(physicalDevice, index, surface, &supported);
+                vkAPI.vkGetPhysicalDeviceSurfaceSupportKHR(physicalDevice, index, surface, &supported).Check();
                 if (!supported) { continue; }
 
                 if (properties[index].queueFlags.HasFlag(VkQueueFlagBits.VK_QUEUE_GRAPHICS_BIT)) break;
@@ -701,7 +774,7 @@ namespace ApiSpec.Lesson02Shader {
 
             VkDevice device;
             //physicalDevice.CreateDevice(ref deviceInfo, null, out device);
-            vkAPI.vkCreateDevice(physicalDevice, &deviceInfo, null, &device);
+            vkAPI.vkCreateDevice(physicalDevice, &deviceInfo, null, &device).Check();
 
             FreeHelper.Free(ref deviceInfo);
             FreeHelper.Free(ref queueInfo);
@@ -714,11 +787,11 @@ namespace ApiSpec.Lesson02Shader {
             //instance.EnumeratePhysicalDevices(out physicalDevices);
             {
                 UInt32 count;
-                vkAPI.vkEnumeratePhysicalDevices(instance, &count, null);
+                vkAPI.vkEnumeratePhysicalDevices(instance, &count, null).Check();
                 physicalDevices = new VkPhysicalDevice[count];
                 if (count > 0) {
                     fixed (VkPhysicalDevice* pointer = physicalDevices) {
-                        vkAPI.vkEnumeratePhysicalDevices(instance, &count, pointer);
+                        vkAPI.vkEnumeratePhysicalDevices(instance, &count, pointer).Check();
                     }
                 }
             }
@@ -734,7 +807,7 @@ namespace ApiSpec.Lesson02Shader {
             //return instance.CreateWin32SurfaceKHR(ref info, null);
             //VkSurfaceKHR surface;
             VkSurfaceKHR surface;
-            vkAPI.vkCreateWin32SurfaceKHR(instance, &info, null, &surface);
+            vkAPI.vkCreateWin32SurfaceKHR(instance, &info, null, &surface).Check();
             return surface;
         }
 
@@ -824,6 +897,9 @@ namespace ApiSpec.Lesson02Shader {
 
         public void Render() {
             if (!isInitialized) return;
+
+            //this.UpdateSize();
+
             if (this.submitInfos == null) {
                 InitRenderParams();
             }
