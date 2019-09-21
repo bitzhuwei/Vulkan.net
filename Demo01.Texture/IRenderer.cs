@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Demo01.Cubes {
+namespace Demo01.Texture {
     /// <summary>
     /// 
     /// </summary>
@@ -13,7 +14,7 @@ namespace Demo01.Cubes {
         /// 
         /// </summary>
         /// <param name="canvas"></param>
-        void Init(IntPtr canvas);
+        void Init(Control canvas);
 
         /// <summary>
         /// 

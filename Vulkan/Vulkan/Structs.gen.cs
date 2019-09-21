@@ -876,7 +876,7 @@ namespace Vulkan {
     /// </summary>
     /*union*/
     [System.Runtime.InteropServices.StructLayout(System.Runtime.InteropServices.LayoutKind.Explicit)]
-    public unsafe struct VkClearColorValue {
+    public unsafe partial struct VkClearColorValue {
         [System.Runtime.InteropServices.FieldOffset(0)] public fixed float float32[4];
         [System.Runtime.InteropServices.FieldOffset(0)] public fixed Int32 int32[4];
         [System.Runtime.InteropServices.FieldOffset(0)] public fixed UInt32 uint32[4];

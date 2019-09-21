@@ -17,7 +17,7 @@ namespace Vulkan {
         public static VkFence CreateFence(this VkDevice device, VkFenceCreateInfo* pCreateInfo = null, VkAllocationCallbacks* pAllocator = null) {
             VkFence fence;
             if (pCreateInfo == null) {
-                var info = new VkFenceCreateInfo { sType = VkStructureType.VK_STRUCTURE_TYPE_FENCE_CREATE_INFO };
+                var info = new VkFenceCreateInfo { sType = VkStructureType.FenceCreateInfo };
                 pCreateInfo = &info;
             }
 

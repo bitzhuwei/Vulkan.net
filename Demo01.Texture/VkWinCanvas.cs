@@ -9,21 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
-namespace Demo01.Cubes {
+namespace Demo01.Texture {
     public partial class VkWinCanvas : UserControl {
 
-        IRenderer renderer;
+        IRenderer renderer = new TextureDemo();
 
         protected readonly bool designMode;
 
         private Timer timer = new Timer();
 
-        public VkWinCanvas() : this(null) { }
-
-        public VkWinCanvas(IRenderer renderer) {
+        public VkWinCanvas() {
             InitializeComponent();
-
-            this.renderer = renderer;
 
             this.designMode = this.DesignMode || System.ComponentModel.LicenseManager.UsageMode == System.ComponentModel.LicenseUsageMode.Designtime;
             if (this.designMode) {
@@ -35,7 +31,7 @@ namespace Demo01.Cubes {
             base.OnLoad(e);
 
             if (!this.designMode) {
-                this.renderer.Init(this.Handle);
+                this.renderer.Init(this);
                 this.timer.Interval = 50;
                 this.timer.Tick += Timer_Tick;
                 this.timer.Enabled = true;

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulkan", "Vulkan\Vulkan.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obselete", "ApiSpec.Lesson02Shader\Obselete.csproj", "{4B78F253-8B4C-4E12-9943-E2157F0EF057}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo01.Texture", "Demo01.Texture\Demo01.Texture.csproj", "{9B1802BD-A1E4-4B89-A03D-C1F47BC772C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1802BD-A1E4-4B89-A03D-C1F47BC772C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1802BD-A1E4-4B89-A03D-C1F47BC772C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1802BD-A1E4-4B89-A03D-C1F47BC772C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1802BD-A1E4-4B89-A03D-C1F47BC772C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

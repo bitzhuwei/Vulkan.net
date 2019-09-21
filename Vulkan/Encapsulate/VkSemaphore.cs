@@ -17,7 +17,7 @@ namespace Vulkan {
         public static VkSemaphore CreateSemaphore(this VkDevice device, VkSemaphoreCreateInfo* pCreateInfo = null, VkAllocationCallbacks* pAllocator = null) {
             VkSemaphore semaphore;
             if (pCreateInfo == null) {
-                var info = new VkSemaphoreCreateInfo { sType = VkStructureType.VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO };
+                var info = new VkSemaphoreCreateInfo { sType = VkStructureType.SemaphoreCreateInfo };
                 pCreateInfo = &info;
             }
 

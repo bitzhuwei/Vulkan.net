@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Demo01.Cubes.Properties {
+namespace Demo01.Texture.Properties {
 
 
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

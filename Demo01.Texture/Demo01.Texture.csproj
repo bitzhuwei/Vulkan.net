@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,14 +49,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KtxFile.cs" />
+    <Compile Include="Camera.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="DemoBase.cs" />
+    <Compile Include="FrameTimeAverager.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="Util.cs" />
+    <Compile Include="VkPhysicalDeviceMemoryPropertiesEx.cs" />
+    <Compile Include="UboVS.cs" />
+    <Compile Include="Unsafe.cs" />
+    <Compile Include="vksVulkanDevice.cs" />
+    <Compile Include="VulkanNative.cs" />
+    <Compile Include="vksBuffer.cs" />
+    <Compile Include="VertexDescription.cs" />
+    <Compile Include="Texture.cs" />
+    <Compile Include="Vertex.cs" />
+    <Compile Include="TextureDemo.cs" />
+    <Compile Include="IRenderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VkWinCanvas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="VkWinCanvas.Designer.cs">
+      <DependentUpon>VkWinCanvas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VulkanSwapchain.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -63,6 +94,18 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="data\shaders\texture\generate-spirv.bat" />
+    <None Include="data\shaders\texture\texture.frag" />
+    <None Include="data\shaders\texture\texture.frag.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="data\shaders\texture\texture.vert" />
+    <None Include="data\shaders\texture\texture.vert.spv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="data\textures\metalplate01_bc2_unorm.ktx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vulkan\Vulkan.csproj">
+      <Project>{fac3b7a7-96e6-4473-98d8-28c97f938871}</Project>
+      <Name>Vulkan</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

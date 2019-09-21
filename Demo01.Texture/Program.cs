@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Demo01.Cubes {
+namespace Demo01.Texture {
     static class Program {
         /// <summary>
         /// 应用程序的主入口点。

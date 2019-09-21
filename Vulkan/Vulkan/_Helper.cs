@@ -128,19 +128,56 @@ namespace Vulkan {
             {
                 count = (UInt32)value.Length;
 
-                int elementSize = Marshal.SizeOf<T>();
-                int byteLength = (int)(count * elementSize);
-                IntPtr array = Marshal.AllocHGlobal(byteLength);
-                var dst = (byte*)array;
-                GCHandle pin = GCHandle.Alloc(value, GCHandleType.Pinned);
-                IntPtr address = Marshal.UnsafeAddrOfPinnedArrayElement(value, 0);
-                var src = (byte*)address;
-                for (int i = 0; i < byteLength; i++) {
-                    dst[i] = src[i];
-                }
-                pin.Free();
+                if (typeof(T).IsEnum) {
+                    Type underlying = typeof(T).GetEnumUnderlyingType();
+                    int elementSize = Marshal.SizeOf(underlying);
 
-                target = array;
+                    int byteLength = (int)(count * elementSize);
+                    IntPtr array = Marshal.AllocHGlobal(byteLength);
+                    if (elementSize == 1) {
+                        var dst = (byte*)array;
+                        for (int i = 0; i < value.Length; i++) {
+                            dst[i] = Convert.ToByte(value[i]);
+                        }
+                    }
+                    else if (elementSize == 2) {
+                        var dst = (Int16*)array;
+                        for (int i = 0; i < value.Length; i++) {
+                            dst[i] = Convert.ToInt16(value[i]);
+                        }
+                    }
+                    else if (elementSize == 4) {
+                        var dst = (Int32*)array;
+                        for (int i = 0; i < value.Length; i++) {
+                            dst[i] = Convert.ToInt32(value[i]);
+                        }
+                    }
+                    else if (elementSize == 8) {
+                        var dst = (Int64*)array;
+                        for (int i = 0; i < value.Length; i++) {
+                            dst[i] = Convert.ToInt64(value[i]);
+                        }
+                    }
+                    else { throw new ArgumentException(string.Format("Unknown type({0}) length", typeof(T))); }
+
+                    target = array;
+                }
+                else {
+                    int elementSize = Marshal.SizeOf<T>();
+
+                    int byteLength = (int)(count * elementSize);
+                    IntPtr array = Marshal.AllocHGlobal(byteLength);
+                    var dst = (byte*)array;
+                    GCHandle pin = GCHandle.Alloc(value, GCHandleType.Pinned);
+                    IntPtr address = Marshal.UnsafeAddrOfPinnedArrayElement(value, 0);
+                    var src = (byte*)address;
+                    for (int i = 0; i < byteLength; i++) {
+                        dst[i] = src[i];
+                    }
+                    pin.Free();
+
+                    target = array;
+                }
             }
         }
 
@@ -325,7 +362,7 @@ namespace Vulkan {
 
     public static class ResultHelper {
         public static VkResult Check(this VkResult result) {
-            if (result != VkResult.VK_SUCCESS) { throw new ResultException(result); }
+            if (result != VkResult.Success) { throw new ResultException(result); }
 
             return result;
         }
