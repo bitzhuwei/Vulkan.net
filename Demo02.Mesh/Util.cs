@@ -1,7 +1,7 @@
 ﻿using System;
 using Vulkan;
 
-namespace Demo01.Texture {
+namespace Demo02.Mesh {
     public static class Util {
         //public static VkResult CheckResult(this VkResult result) {
         //    if (result != VkResult.Success) {

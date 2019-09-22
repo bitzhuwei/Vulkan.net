@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using Vulkan;
 using static Vulkan.VkStructureType;
 using static Vulkan.vkAPI;
-using static Demo01.Texture.VulkanNative;
+using static Demo02.Mesh.VulkanNative;
 using System.Numerics;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Demo01.Texture {
+namespace Demo02.Mesh {
     public unsafe class DemoBase : IRenderer {
         public string title { get; set; } = "Vulkan Example";
         public string Name { get; set; } = "VulkanExample";
@@ -306,41 +306,6 @@ namespace Demo01.Texture {
 
         public void InitSwapchain() {
             Swapchain.InitSurface(NativeWindow.Handle);
-        }
-
-        public virtual void Prepare() {
-            if (vulkanDevice.EnableDebugMarkers) {
-                // vks::debugmarker::setup(Device);
-            }
-
-            CreateCommandPool();
-            SetupSwapChain();
-            createCommandBuffers();
-            SetupDepthStencil();
-            SetupRenderPass();
-            CreatePipelineCache();
-            SetupFrameBuffer();
-
-            /* TODO: Implement text rendering
-            if (enableTextOverlay)
-            {
-                // Load the text rendering shaders
-                std::vector<VkPipelineShaderStageCreateInfo> shaderStages;
-                shaderStages.push_back(loadShader(getAssetPath() + "shaders/base/textoverlay.vert.spv", VK_SHADER_STAGE_VERTEX_BIT));
-                shaderStages.push_back(loadShader(getAssetPath() + "shaders/base/textoverlay.frag.spv", VK_SHADER_STAGE_FRAGMENT_BIT));
-                textOverlay = new VulkanTextOverlay(
-                    vulkanDevice,
-                    queue,
-                    frameBuffers,
-                    swapChain.colorFormat,
-                    depthFormat,
-                    &width,
-                    &height,
-                    shaderStages
-                    );
-                updateTextOverlay();
-            }
-            */
         }
 
         protected void prepareFrame() {
@@ -683,13 +648,6 @@ namespace Demo01.Texture {
             return windowTitle;
         }
 
-        protected virtual void render() {
-            if (viewUpdated) {
-                viewUpdated = false;
-                viewChanged();
-            }
-        }
-
         void windowResize() {
             if (!prepared) {
                 return;
@@ -794,16 +752,51 @@ namespace Demo01.Texture {
             return Path.Combine(AppContext.BaseDirectory, "data/");
         }
 
-        public void Init(Control canvas) {
+        public virtual void Init(Control canvas) {
             this.NativeWindow = canvas;
             InitVulkan();
             SetupWin32Window();
             InitSwapchain();
-            Prepare();
+
+            if (vulkanDevice.EnableDebugMarkers) {
+                // vks::debugmarker::setup(Device);
+            }
+
+            CreateCommandPool();
+            SetupSwapChain();
+            createCommandBuffers();
+            SetupDepthStencil();
+            SetupRenderPass();
+            CreatePipelineCache();
+            SetupFrameBuffer();
+
+            /* TODO: Implement text rendering
+            if (enableTextOverlay)
+            {
+                // Load the text rendering shaders
+                std::vector<VkPipelineShaderStageCreateInfo> shaderStages;
+                shaderStages.push_back(loadShader(getAssetPath() + "shaders/base/textoverlay.vert.spv", VK_SHADER_STAGE_VERTEX_BIT));
+                shaderStages.push_back(loadShader(getAssetPath() + "shaders/base/textoverlay.frag.spv", VK_SHADER_STAGE_FRAGMENT_BIT));
+                textOverlay = new VulkanTextOverlay(
+                    vulkanDevice,
+                    queue,
+                    frameBuffers,
+                    swapChain.colorFormat,
+                    depthFormat,
+                    &width,
+                    &height,
+                    shaderStages
+                    );
+                updateTextOverlay();
+            }
+            */
         }
 
-        public void Render() {
-            this.render();
+        public virtual void Render() {
+            if (viewUpdated) {
+                viewUpdated = false;
+                viewChanged();
+            }
         }
 
         protected virtual void windowResized() {

@@ -108,7 +108,6 @@ namespace Vulkan {
         //        count = 0;
         //    }
         //}
-
         /// <summary>
         /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
         /// <para>Enumeration types are not allowed to use this method.

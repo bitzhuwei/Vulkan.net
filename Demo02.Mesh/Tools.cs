@@ -17,9 +17,9 @@ using System.IO;
 using Vulkan;
 using static Vulkan.vkAPI;
 using static Vulkan.VkStructureType;
-using static Demo01.Texture.VulkanNative;
+using static Demo02.Mesh.VulkanNative;
 
-namespace Demo01.Texture {
+namespace Demo02.Mesh {
     public unsafe class Tools {
         public static uint getSupportedDepthFormat(VkPhysicalDevice physicalDevice, VkFormat* depthFormat) {
             // Since all depth formats may be optional, we need to find a suitable depth format to use

@@ -192,12 +192,12 @@ namespace Demo01.Texture {
                 memAllocInfo.memoryTypeIndex = vulkanDevice.getMemoryType(memReqs.memoryTypeBits,
                     VkMemoryPropertyFlagBits.HostVisible | VkMemoryPropertyFlagBits.HostCoherent);
 
-                Util.CheckResult(vkAllocateMemory(device, &memAllocInfo, null, &stagingMemory));
-                Util.CheckResult(vkBindBufferMemory(device, stagingBuffer, stagingMemory, 0));
+                vkAllocateMemory(device, &memAllocInfo, null, &stagingMemory);
+                vkBindBufferMemory(device, stagingBuffer, stagingMemory, 0);
 
                 // Copy texture data into staging buffer
                 IntPtr data;
-                Util.CheckResult(vkMapMemory(device, stagingMemory, 0, memReqs.size, 0, &data));
+                vkMapMemory(device, stagingMemory, 0, memReqs.size, 0, &data);
                 byte[] allData = tex2D.GetAllTextureData();
                 fixed (byte* tex2DDataPtr = &allData[0]) {
                     Unsafe.CopyBlock(data, tex2DDataPtr, (uint)allData.Length);
@@ -225,21 +225,21 @@ namespace Demo01.Texture {
                 }
                 {
                     // Create optimal tiled target image
-                    VkImageCreateInfo info = new VkImageCreateInfo();
-                    info.sType = ImageCreateInfo;
-                    info.imageType = VkImageType._2d;
-                    info.format = format;
-                    info.mipLevels = texture.mipLevels;
-                    info.arrayLayers = 1;
-                    info.samples = VkSampleCountFlagBits._1;
-                    info.tiling = VkImageTiling.Optimal;
-                    info.sharingMode = VkSharingMode.Exclusive;
-                    // Set initial layout of the image to undefined
-                    info.initialLayout = VkImageLayout.Undefined;
-                    info.extent = new VkExtent3D { width = texture.width, height = texture.height, depth = 1 };
-                    info.usage = VkImageUsageFlagBits.TransferDst | VkImageUsageFlagBits.Sampled;
-
                     {
+                        VkImageCreateInfo info = new VkImageCreateInfo();
+                        info.sType = ImageCreateInfo;
+                        info.imageType = VkImageType._2d;
+                        info.format = format;
+                        info.mipLevels = texture.mipLevels;
+                        info.arrayLayers = 1;
+                        info.samples = VkSampleCountFlagBits._1;
+                        info.tiling = VkImageTiling.Optimal;
+                        info.sharingMode = VkSharingMode.Exclusive;
+                        // Set initial layout of the image to undefined
+                        info.initialLayout = VkImageLayout.Undefined;
+                        info.extent = new VkExtent3D { width = texture.width, height = texture.height, depth = 1 };
+                        info.usage = VkImageUsageFlagBits.TransferDst | VkImageUsageFlagBits.Sampled;
+
                         VkImage image;
                         vkCreateImage(device, &info, null, &image);
                         texture.image = image;
@@ -345,10 +345,10 @@ namespace Demo01.Texture {
                     VkMemoryPropertyFlagBits.HostVisible | VkMemoryPropertyFlagBits.HostCoherent);
 
                 // Allocate host memory
-                Util.CheckResult(vkAllocateMemory(device, &memAllocInfo, null, &mappableMemory));
+                vkAllocateMemory(device, &memAllocInfo, null, &mappableMemory);
 
                 // Bind allocated image for use
-                Util.CheckResult(vkBindImageMemory(device, mappableImage, mappableMemory, 0));
+                vkBindImageMemory(device, mappableImage, mappableMemory, 0);
 
                 // Get sub resource layout
                 // Mip map count, array layer, etc.
@@ -540,7 +540,7 @@ namespace Demo01.Texture {
                 // Set target frame buffer
                 renderPassBeginInfo.framebuffer = frameBuffers[i];
 
-                Util.CheckResult(vkBeginCommandBuffer(drawCmdBuffers[i], &cmdBufInfo));
+                vkBeginCommandBuffer(drawCmdBuffers[i], &cmdBufInfo);
 
                 vkCmdBeginRenderPass(drawCmdBuffers[i], &renderPassBeginInfo, VkSubpassContents.Inline);
 
@@ -566,7 +566,7 @@ namespace Demo01.Texture {
 
                 vkCmdEndRenderPass(drawCmdBuffers[i]);
 
-                Util.CheckResult(vkEndCommandBuffer(drawCmdBuffers[i]));
+                vkEndCommandBuffer(drawCmdBuffers[i]);
             }
         }
 
@@ -855,12 +855,12 @@ namespace Demo01.Texture {
         void prepareUniformBuffers() {
             var localUboVS = uboVS;
             // Vertex shader uniform buffer block
-            Util.CheckResult(vulkanDevice.createBuffer(
+            vulkanDevice.createBuffer(
                 VkBufferUsageFlagBits.UniformBuffer,
                 VkMemoryPropertyFlagBits.HostVisible | VkMemoryPropertyFlagBits.HostCoherent,
                 uniformBufferVS,
                 (uint)sizeof(UboVS),
-                &localUboVS));
+                &localUboVS);
 
             updateUniformBuffers();
         }
@@ -877,7 +877,7 @@ namespace Demo01.Texture {
 
             uboVS.viewPos = new Vector4(0.0f, 0.0f, -zoom, 0.0f);
 
-            Util.CheckResult(uniformBufferVS.map());
+            uniformBufferVS.map();
             var local = uboVS;
             Unsafe.CopyBlock(uniformBufferVS.mapped, &local, (uint)sizeof(UboVS));
             uniformBufferVS.unmap();
