@@ -308,41 +308,6 @@ namespace Demo01.Texture {
             Swapchain.InitSurface(NativeWindow.Handle);
         }
 
-        public virtual void Prepare() {
-            if (vulkanDevice.EnableDebugMarkers) {
-                // vks::debugmarker::setup(Device);
-            }
-
-            CreateCommandPool();
-            SetupSwapChain();
-            createCommandBuffers();
-            SetupDepthStencil();
-            SetupRenderPass();
-            CreatePipelineCache();
-            SetupFrameBuffer();
-
-            /* TODO: Implement text rendering
-            if (enableTextOverlay)
-            {
-                // Load the text rendering shaders
-                std::vector<VkPipelineShaderStageCreateInfo> shaderStages;
-                shaderStages.push_back(loadShader(getAssetPath() + "shaders/base/textoverlay.vert.spv", VK_SHADER_STAGE_VERTEX_BIT));
-                shaderStages.push_back(loadShader(getAssetPath() + "shaders/base/textoverlay.frag.spv", VK_SHADER_STAGE_FRAGMENT_BIT));
-                textOverlay = new VulkanTextOverlay(
-                    vulkanDevice,
-                    queue,
-                    frameBuffers,
-                    swapChain.colorFormat,
-                    depthFormat,
-                    &width,
-                    &height,
-                    shaderStages
-                    );
-                updateTextOverlay();
-            }
-            */
-        }
-
         protected void prepareFrame() {
             // Acquire the next image from the swap chaing
             Swapchain.AcquireNextImage(((Semaphores*)semaphores.header)[0].PresentComplete, ref currentBuffer);
@@ -683,13 +648,6 @@ namespace Demo01.Texture {
             return windowTitle;
         }
 
-        protected virtual void render() {
-            if (viewUpdated) {
-                viewUpdated = false;
-                viewChanged();
-            }
-        }
-
         void windowResize() {
             if (!prepared) {
                 return;
@@ -794,16 +752,51 @@ namespace Demo01.Texture {
             return Path.Combine(AppContext.BaseDirectory, "data/");
         }
 
-        public void Init(Control canvas) {
+        public virtual void Init(Control canvas) {
             this.NativeWindow = canvas;
             InitVulkan();
             SetupWin32Window();
             InitSwapchain();
-            Prepare();
+
+            if (vulkanDevice.EnableDebugMarkers) {
+                // vks::debugmarker::setup(Device);
+            }
+
+            CreateCommandPool();
+            SetupSwapChain();
+            createCommandBuffers();
+            SetupDepthStencil();
+            SetupRenderPass();
+            CreatePipelineCache();
+            SetupFrameBuffer();
+
+            /* TODO: Implement text rendering
+            if (enableTextOverlay)
+            {
+                // Load the text rendering shaders
+                std::vector<VkPipelineShaderStageCreateInfo> shaderStages;
+                shaderStages.push_back(loadShader(getAssetPath() + "shaders/base/textoverlay.vert.spv", VK_SHADER_STAGE_VERTEX_BIT));
+                shaderStages.push_back(loadShader(getAssetPath() + "shaders/base/textoverlay.frag.spv", VK_SHADER_STAGE_FRAGMENT_BIT));
+                textOverlay = new VulkanTextOverlay(
+                    vulkanDevice,
+                    queue,
+                    frameBuffers,
+                    swapChain.colorFormat,
+                    depthFormat,
+                    &width,
+                    &height,
+                    shaderStages
+                    );
+                updateTextOverlay();
+            }
+            */
         }
 
-        public void Render() {
-            this.render();
+        public virtual void Render() {
+            if (viewUpdated) {
+                viewUpdated = false;
+                viewChanged();
+            }
         }
 
         protected virtual void windowResized() {

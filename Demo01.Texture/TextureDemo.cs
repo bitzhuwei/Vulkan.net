@@ -9,6 +9,7 @@ using static Vulkan.VkStructureType;
 using static Vulkan.vkAPI;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace Demo01.Texture {
     /// <summary>
@@ -570,21 +571,6 @@ namespace Demo01.Texture {
             }
         }
 
-        void draw() {
-            base.prepareFrame();
-
-            // Command buffer to be sumitted to the queue
-            submitInfo.commandBufferCount = 1;
-            VkCommandBuffer buffer = drawCmdBuffers[currentBuffer];
-            submitInfo.pCommandBuffers = &buffer;
-
-            VkSubmitInfo info = submitInfo;
-            // Submit to queue
-            vkQueueSubmit(queue, 1, &info, new VkFence());
-
-            submitFrame();
-        }
-
         void generateQuad() {
             // Setup vertices for a single uv-mapped quad made from two triangles
             var vertices = new Vertex[]
@@ -883,9 +869,9 @@ namespace Demo01.Texture {
             uniformBufferVS.unmap();
         }
 
+        public override void Init(Control canvas) {
+            base.Init(canvas);
 
-        public override void Prepare() {
-            base.Prepare();
             loadTextures();
             generateQuad();
             setupVertexDescriptions();
@@ -898,12 +884,26 @@ namespace Demo01.Texture {
             prepared = true;
         }
 
-        protected override void render() {
-            if (!prepared)
-                return;
+        public override void Render() {
+            base.Render();
 
-            base.render();
-            draw();
+            if (!prepared) { return; }
+
+            base.prepareFrame();
+
+            // Command buffer to be sumitted to the Queue
+            //submitInfo.commandBufferCount = 1;
+            //submitInfo.pCommandBuffers = (VkCommandBuffer*)drawCmdBuffers.GetAddress(currentBuffer);
+            VkCommandBuffer buffer = drawCmdBuffers[currentBuffer];
+            IntPtr ptr = (IntPtr)submitInfo.pCommandBuffers;
+            new[] { buffer }.Set(ref ptr, ref submitInfo.commandBufferCount);
+            submitInfo.pCommandBuffers = (VkCommandBuffer*)ptr;
+
+            VkSubmitInfo info = submitInfo;
+            // Submit to Queue
+            vkQueueSubmit(queue, 1, &info, new VkFence());
+
+            submitFrame();
         }
 
         protected override void viewChanged() {
