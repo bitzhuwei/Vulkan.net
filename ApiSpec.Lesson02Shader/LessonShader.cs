@@ -262,10 +262,8 @@ namespace ApiSpec.Lesson02Shader {
                 {
                     info.sType = ShaderModuleCreateInfo;
                     byte[] bytes = LoadResource(@"Shaders\shader.vert.spv");
-                    var ptr = IntPtr.Zero; UInt32 size = 0;
-                    bytes.Set(ref ptr, ref size);
-                    info.pCode = (UInt32*)ptr; info.codeSize = (int)size;
-                    //info.flags = 0;
+                    bytes.Set(ref info);
+                    info.flags = 0;
                 }
                 //vkAPI.vkCreateShaderModule(device, bytes);
                 vkAPI.vkCreateShaderModule(device, &info, null, &vsModule);
@@ -278,10 +276,8 @@ namespace ApiSpec.Lesson02Shader {
                 {
                     info.sType = ShaderModuleCreateInfo;
                     byte[] bytes = LoadResource(@"Shaders\shader.frag.spv");
-                    var ptr = IntPtr.Zero; UInt32 size = 0;
-                    bytes.Set(ref ptr, ref size);
-                    info.pCode = (UInt32*)ptr; info.codeSize = (int)size;
-                    //info.flags = 0;
+                    bytes.Set(ref info);
+                    info.flags = 0;
                 }
                 //vkAPI.vkCreateShaderModule(device, bytes);
                 vkAPI.vkCreateShaderModule(device, &info, null, &fsModule);
@@ -374,11 +370,7 @@ namespace ApiSpec.Lesson02Shader {
                     info.sType = GraphicsPipelineCreateInfo;
                     info.layout = pipelineLayout;
                     info.pViewportState = &viewport;
-
-                    var ptr = IntPtr.Zero;
-                    stages.Set(ref ptr, ref info.stageCount);
-                    info.pStages = (VkPipelineShaderStageCreateInfo*)ptr;
-
+                    stages.Set(ref info);
                     info.pMultisampleState = &multisample;
                     info.pColorBlendState = &colorBlend;
                     info.pRasterizationState = &rasterization;
@@ -676,21 +668,19 @@ namespace ApiSpec.Lesson02Shader {
             }
 
             //float priority = 1.0f;
-            var priorities = new float[] { 1.0f };
             var queueInfo = new VkDeviceQueueCreateInfo();
             {
                 queueInfo.sType = DeviceQueueCreateInfo;
-                new float[] { 1.0f }.Set(ref queueInfo.pQueuePriorities, ref queueInfo.queueCount);
+                var priorities = new float[] { 1.0f };
+                priorities.Set(ref queueInfo);
                 queueInfo.queueFamilyIndex = index;
             }
 
             var deviceInfo = new VkDeviceCreateInfo();
             {
                 deviceInfo.sType = DeviceCreateInfo;
-                new string[] { "VK_KHR_swapchain" }.Set(ref deviceInfo.ppEnabledExtensionNames, ref deviceInfo.enabledExtensionCount);
-                IntPtr ptr = IntPtr.Zero;
-                new VkDeviceQueueCreateInfo[] { queueInfo }.Set(ref ptr, ref deviceInfo.queueCreateInfoCount);
-                deviceInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)ptr;
+                new[] { "VK_KHR_swapchain" }.Set(ref deviceInfo.ppEnabledExtensionNames, ref deviceInfo.enabledExtensionCount);
+                queueInfo.Set(ref deviceInfo);
             }
 
             VkDevice device;
@@ -782,27 +772,17 @@ namespace ApiSpec.Lesson02Shader {
             for (uint index = 0; index < 2; index++) {
                 var submitInfo = new VkSubmitInfo();
                 {
-                    IntPtr ptr = IntPtr.Zero;
-                    new[] { semaphore }.Set(ref ptr, ref submitInfo.waitSemaphoreCount);
-                    submitInfo.pWaitSemaphores = (VkSemaphore*)ptr;
-
-                    // I have to use int instead of enum VkPipelineStageFlags.
-                    ptr = IntPtr.Zero;
-                    new[] { VkPipelineStageFlagBits.AllGraphics }.Set(ref ptr, ref submitInfo.waitSemaphoreCount);
-                    submitInfo.pWaitDstStageMask = (VkPipelineStageFlagBits*)ptr;
-
-                    ptr = IntPtr.Zero;
-                    new[] { commandBuffers[index] }.Set(ref ptr, ref submitInfo.commandBufferCount);
-                    submitInfo.pCommandBuffers = (VkCommandBuffer*)ptr;
+                    submitInfo.sType = SubmitInfo;
+                    semaphore.SetWaitSemaphores(ref submitInfo);
+                    VkPipelineStageFlagBits.AllGraphics.Set(ref submitInfo);
+                    commandBuffers[index].Set(ref submitInfo);
                 }
                 submitInfos[index] = submitInfo;
                 var presentInfo = new VkPresentInfoKHR();
                 {
                     presentInfo.sType = PresentInfoKHR;
 
-                    IntPtr ptr = IntPtr.Zero;
-                    new[] { swapchain }.Set(ref ptr, ref presentInfo.swapchainCount);
-                    presentInfo.pSwapchains = (VkSwapchainKHR*)ptr;
+                    swapchain.Set(ref presentInfo);
 
                     new[] { index }.Set(ref presentInfo.pImageIndices, ref presentInfo.swapchainCount);
                 }

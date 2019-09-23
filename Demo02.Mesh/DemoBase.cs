@@ -392,11 +392,6 @@ namespace Demo02.Mesh {
             VkFramebufferCreateInfo frameBufferCreateInfo = new VkFramebufferCreateInfo();
             frameBufferCreateInfo.sType = FramebufferCreateInfo;
             frameBufferCreateInfo.renderPass = renderPass;
-            {
-                IntPtr ptr = IntPtr.Zero;
-                attachments.Set(ref ptr, ref frameBufferCreateInfo.attachmentCount);
-                frameBufferCreateInfo.pAttachments = (VkImageView*)ptr;
-            }
             attachments.Set(ref frameBufferCreateInfo);
             frameBufferCreateInfo.width = width;
             frameBufferCreateInfo.height = height;

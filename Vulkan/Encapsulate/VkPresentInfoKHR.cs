@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Vulkan {
+    public unsafe static class VkPresentInfoKHRHelper {
+        public static void Set(this VkSwapchainKHR value, ref VkPresentInfoKHR info) {
+            new[] { value }.Set(ref info);
+        }
+
+        public static void Set(this VkSwapchainKHR[] values, ref VkPresentInfoKHR info) {
+            IntPtr ptr = (IntPtr)info.pSwapchains;
+            values.Set(ref ptr, ref info.swapchainCount);
+            info.pSwapchains = (VkSwapchainKHR*)ptr;
+        }
+    }
+}

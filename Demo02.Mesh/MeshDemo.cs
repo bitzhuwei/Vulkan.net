@@ -369,16 +369,8 @@ namespace Demo02.Mesh {
 
             vertices_inputState = new VkPipelineVertexInputStateCreateInfo();
             vertices_inputState.sType = PipelineVertexInputStateCreateInfo;
-            {
-                IntPtr ptr = IntPtr.Zero;
-                vertices_bindingDescriptions.Set(ref ptr, ref vertices_inputState.vertexBindingDescriptionCount);
-                vertices_inputState.pVertexBindingDescriptions = (VkVertexInputBindingDescription*)ptr;
-            }
-            {
-                IntPtr ptr = IntPtr.Zero;
-                vertices_attributeDescriptions.Set(ref ptr, ref vertices_inputState.vertexAttributeDescriptionCount);
-                vertices_inputState.pVertexAttributeDescriptions = (VkVertexInputAttributeDescription*)ptr;
-            }
+            vertices_bindingDescriptions.Set(ref vertices_inputState);
+            vertices_attributeDescriptions.Set(ref vertices_inputState);
         }
 
         void setupDescriptorPool() {
@@ -393,13 +385,8 @@ namespace Demo02.Mesh {
 
             VkDescriptorPoolCreateInfo descriptorPoolInfo = new VkDescriptorPoolCreateInfo();
             descriptorPoolInfo.sType = DescriptorPoolCreateInfo;
-            {
-                IntPtr ptr = IntPtr.Zero;
-                poolSizes.Set(ref ptr, ref descriptorPoolInfo.poolSizeCount);
-                descriptorPoolInfo.pPoolSizes = (VkDescriptorPoolSize*)ptr;
-            }
+            poolSizes.Set(ref descriptorPoolInfo);
             descriptorPoolInfo.maxSets = 1;
-
             {
                 VkDescriptorPool pool;
                 vkCreateDescriptorPool(device, &descriptorPoolInfo, null, &pool);
@@ -424,11 +411,7 @@ namespace Demo02.Mesh {
 
             VkDescriptorSetLayoutCreateInfo descriptorLayout = new VkDescriptorSetLayoutCreateInfo();
             descriptorLayout.sType = DescriptorSetLayoutCreateInfo;
-            {
-                IntPtr ptr = IntPtr.Zero;
-                setLayoutBindings.Set(ref ptr, ref descriptorLayout.bindingCount);
-                descriptorLayout.pBindings = (VkDescriptorSetLayoutBinding*)ptr;
-            }
+            setLayoutBindings.Set(ref descriptorLayout);
 
             VkDescriptorSetLayout dsl;
             vkCreateDescriptorSetLayout(device, &descriptorLayout, null, &dsl);
@@ -534,11 +517,7 @@ namespace Demo02.Mesh {
             dynamicStateEnables[1] = VkDynamicState.Scissor;
             VkPipelineDynamicStateCreateInfo dynamicState = new VkPipelineDynamicStateCreateInfo();
             dynamicState.sType = PipelineDynamicStateCreateInfo;
-            {
-                IntPtr ptr = IntPtr.Zero;
-                dynamicStateEnables.Set(ref ptr, ref dynamicState.dynamicStateCount);
-                dynamicState.pDynamicStates = (VkDynamicState*)ptr;
-            }
+            dynamicStateEnables.Set(ref dynamicState);
             dynamicState.flags = 0;
 
             // Solid rendering pipeline
@@ -562,12 +541,7 @@ namespace Demo02.Mesh {
             pipelineCreateInfo.pViewportState = &viewportState;
             pipelineCreateInfo.pDepthStencilState = &depthStencilState;
             pipelineCreateInfo.pDynamicState = &dynamicState;
-            {
-                IntPtr ptr = IntPtr.Zero;
-                shaderStages.Set(ref ptr, ref pipelineCreateInfo.stageCount);
-                pipelineCreateInfo.pStages = (VkPipelineShaderStageCreateInfo*)ptr;
-            }
-
+            shaderStages.Set(ref pipelineCreateInfo);
             {
                 VkPipeline pipeline;
                 vkCreateGraphicsPipelines(device, pipelineCache, 1, &pipelineCreateInfo, null, &pipeline);
@@ -636,9 +610,7 @@ namespace Demo02.Mesh {
             //submitInfo.commandBufferCount = 1;
             //submitInfo.pCommandBuffers = (VkCommandBuffer*)drawCmdBuffers.GetAddress(currentBuffer);
             VkCommandBuffer buffer = drawCmdBuffers[currentBuffer];
-            IntPtr ptr = (IntPtr)submitInfo.pCommandBuffers;
-            new[] { buffer }.Set(ref ptr, ref submitInfo.commandBufferCount);
-            submitInfo.pCommandBuffers = (VkCommandBuffer*)ptr;
+            buffer.Set(ref submitInfo);
 
             VkSubmitInfo info = submitInfo;
             // Submit to Queue
