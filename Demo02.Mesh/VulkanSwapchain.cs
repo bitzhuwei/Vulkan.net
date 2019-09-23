@@ -342,14 +342,11 @@ namespace Demo02.Mesh {
             VkPresentInfoKHR presentInfo = new VkPresentInfoKHR();
             presentInfo.sType = PresentInfoKHR;
             presentInfo.pNext = null;
-            presentInfo.swapchainCount = 1;
-            var sc = Swapchain;
-            presentInfo.pSwapchains = &sc;
+            Swapchain.Set(ref presentInfo);
             presentInfo.pImageIndices = &imageIndex;
             // Check if a wait semaphore has been specified to wait for before presenting the image
             if (waitSemaphore.handle != 0) {
-                presentInfo.pWaitSemaphores = &waitSemaphore;
-                presentInfo.waitSemaphoreCount = 1;
+                waitSemaphore.Set(ref presentInfo);
             }
             return vkQueuePresentKHR(queue, &presentInfo);
         }

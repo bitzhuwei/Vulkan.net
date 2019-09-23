@@ -112,7 +112,7 @@ namespace ApiSpec.Lesson02Shader {
 
             VkBuffer indexBuffer = CreateBuffer(this.vkPhysicalDevice, this.vkDevice, Logo.Indexes, VkBufferUsageFlagBits.IndexBuffer, typeof(short));
 
-            var uniformBufferData = new AreaUniformBuffer(surfaceCapabilities.currentExtent.width, surfaceCapabilities.currentExtent.height);
+            var uniformBufferData = new AreaUniformBuffer(40, 50);
             this.originalWidth = 40; this.width = this.originalWidth;
             this.originalHeight = 50; this.height = this.originalHeight;
 
@@ -174,15 +174,13 @@ namespace ApiSpec.Lesson02Shader {
                 //cmds.Begin(ref cmdBeginInfo);
                 vkAPI.vkBeginCommandBuffer(cmds, &cmdBeginInfo);
                 {
-                    var color = new VkClearColorValue(0.9f, 0.87f, 0.75f, 1.0f);
-                    var clearValue = new VkClearValue { color = color };
-                    var clearValues = new[] { clearValue };
+                    var clearValue = new VkClearValue { color = new VkClearColorValue(0.9f, 0.87f, 0.75f, 1.0f) };
                     var info = new VkRenderPassBeginInfo();
                     {
                         info.sType = RenderPassBeginInfo;
                         info.framebuffer = framebuffers[i];
                         info.renderPass = renderPass;
-                        info.pClearValues = &clearValue; info.clearValueCount = 1;
+                        clearValue.Set(ref info);
                         info.renderArea = new VkRect2D { extent = surfaceCapabilities.currentExtent };
                     }
                     vkAPI.vkCmdBeginRenderPass(cmds, &info, VkSubpassContents.Inline);
@@ -392,7 +390,7 @@ namespace ApiSpec.Lesson02Shader {
             var info = new VkPipelineLayoutCreateInfo();
             {
                 info.sType = PipelineLayoutCreateInfo;
-                info.pSetLayouts = &descriptorSetLayout; info.setLayoutCount = 1;
+                descriptorSetLayout.Set(ref info);
             }
             //return device.CreatePipelineLayout(ref info);
             VkPipelineLayout layout;
@@ -427,7 +425,7 @@ namespace ApiSpec.Lesson02Shader {
             var info = new VkDescriptorSetLayoutCreateInfo();
             {
                 info.sType = DescriptorSetLayoutCreateInfo;
-                info.pBindings = &binding; info.bindingCount = 1;
+                binding.Set(ref info);
             }
 
             //return device.CreateDescriptorSetLayout(ref info);
@@ -449,7 +447,7 @@ namespace ApiSpec.Lesson02Shader {
                     info.size = new VkDeviceSize((UInt64)size);
                     info.usage = usageFlags;
                     info.sharingMode = VkSharingMode.Exclusive;
-                    info.pQueueFamilyIndices = &index; info.queueFamilyIndexCount = 1;
+                    index.Set(ref info);
                 }
                 //VkBuffer buffer = device.CreateBuffer(ref info);
                 vkAPI.vkCreateBuffer(device, &info, null, &buffer);
@@ -549,15 +547,12 @@ namespace ApiSpec.Lesson02Shader {
 
             var framebuffers = new VkFramebuffer[images.Length];
             for (int i = 0; i < images.Length; i++) {
-                VkImageView view;
                 var info = new VkFramebufferCreateInfo();
                 {
                     info.sType = FramebufferCreateInfo;
                     info.layers = 1;
                     info.renderPass = renderPass;
-                    view = displayViews[i];
-                    //new UInt64[] { displayViews[i].handle }.Set(ref info.Attachments, ref info.AttachmentCount);
-                    info.pAttachments = &view; info.attachmentCount = 1;
+                    displayViews[i].Set(ref info);
                     info.width = surfaceCapabilities.currentExtent.width;
                     info.height = surfaceCapabilities.currentExtent.height;
                 }
@@ -585,13 +580,13 @@ namespace ApiSpec.Lesson02Shader {
             VkSubpassDescription subpassDesc = new VkSubpassDescription();
             {
                 subpassDesc.pipelineBindPoint = VkPipelineBindPoint.Graphics;
-                subpassDesc.pColorAttachments = &attRef; subpassDesc.colorAttachmentCount = 1;
+                attRef.Set(ref subpassDesc);
             }
             VkRenderPassCreateInfo info = new VkRenderPassCreateInfo();
             {
                 info.sType = RenderPassCreateInfo;
-                info.pAttachments = &attDesc; info.attachmentCount = 1;
-                info.pSubpasses = &subpassDesc; info.subpassCount = 1;
+                attDesc.Set(ref info);
+                subpassDesc.Set(ref info);
             }
 
             //return device.CreateRenderPass(ref info);
@@ -617,7 +612,7 @@ namespace ApiSpec.Lesson02Shader {
                 info.preTransform = VkSurfaceTransformFlagBitsKHR.IdentityKHR;
                 info.imageArrayLayers = 1;
                 info.imageSharingMode = VkSharingMode.Exclusive;
-                info.pQueueFamilyIndices = &index; info.queueFamilyIndexCount = 1;
+                index.Set(ref info);
                 info.presentMode = VkPresentModeKHR.FifoKHR;
                 info.compositeAlpha = compositeAlpha;
             }

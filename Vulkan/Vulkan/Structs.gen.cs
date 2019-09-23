@@ -139,7 +139,7 @@ namespace Vulkan {
     // Struct: 0
     /// <summary>VkAccelerationStructureCreateInfoNV - Structure specifying the parameters of a newly created acceleration structure object
     /// </summary>
-    public unsafe struct VkAccelerationStructureCreateInfoNV {
+    public unsafe partial struct VkAccelerationStructureCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -155,7 +155,7 @@ namespace Vulkan {
     // Struct: 1
     /// <summary>VkAccelerationStructureInfoNV - Structure specifying the parameters of acceleration structure object
     /// </summary>
-    public unsafe struct VkAccelerationStructureInfoNV {
+    public unsafe partial struct VkAccelerationStructureInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -179,7 +179,7 @@ namespace Vulkan {
     // Struct: 2
     /// <summary>VkAccelerationStructureMemoryRequirementsInfoNV - Structure specifying acceleration to query for memory requirements
     /// </summary>
-    public unsafe struct VkAccelerationStructureMemoryRequirementsInfoNV {
+    public unsafe partial struct VkAccelerationStructureMemoryRequirementsInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -201,7 +201,7 @@ namespace Vulkan {
     // Struct: 3
     /// <summary>VkAcquireNextImageInfoKHR - Structure specifying parameters of the acquire
     /// </summary>
-    public unsafe struct VkAcquireNextImageInfoKHR {
+    public unsafe partial struct VkAcquireNextImageInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -223,7 +223,7 @@ namespace Vulkan {
     // Struct: 4
     /// <summary>VkAllocationCallbacks - Structure containing callback function pointers for memory allocation
     /// </summary>
-    public unsafe struct VkAllocationCallbacks {
+    public unsafe partial struct VkAllocationCallbacks {
         /// <summary> pUserData is a value to be interpreted by the implementation of
         /// the callbacks.
         /// When any of the callbacks in VkAllocationCallbacks are called, the
@@ -255,7 +255,7 @@ namespace Vulkan {
     // Struct: 5
     /// <summary>VkAndroidHardwareBufferFormatPropertiesANDROID - Structure describing the image format properties of an Android hardware buffer
     /// </summary>
-    public unsafe struct VkAndroidHardwareBufferFormatPropertiesANDROID {
+    public unsafe partial struct VkAndroidHardwareBufferFormatPropertiesANDROID {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -290,7 +290,7 @@ namespace Vulkan {
     // Struct: 6
     /// <summary>VkAndroidHardwareBufferPropertiesANDROID - Properties of External Memory Android Hardware Buffers
     /// </summary>
-    public unsafe struct VkAndroidHardwareBufferPropertiesANDROID {
+    public unsafe partial struct VkAndroidHardwareBufferPropertiesANDROID {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -305,7 +305,7 @@ namespace Vulkan {
     // Struct: 7
     /// <summary>VkAndroidHardwareBufferUsageANDROID - Struct containing Android hardware buffer usage flags
     /// </summary>
-    public unsafe struct VkAndroidHardwareBufferUsageANDROID {
+    public unsafe partial struct VkAndroidHardwareBufferUsageANDROID {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -317,7 +317,7 @@ namespace Vulkan {
     // Struct: 8
     ///// <summary>VkAndroidSurfaceCreateInfoKHR - Structure specifying parameters of a newly created Android surface object
     ///// </summary>
-    //public unsafe struct VkAndroidSurfaceCreateInfoKHR {
+    //public unsafe partial struct VkAndroidSurfaceCreateInfoKHR {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -331,7 +331,7 @@ namespace Vulkan {
     // Struct: 9
     /// <summary>VkApplicationInfo - Structure specifying application info
     /// </summary>
-    public unsafe struct VkApplicationInfo {
+    public unsafe partial struct VkApplicationInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -363,7 +363,7 @@ namespace Vulkan {
     // Struct: 10
     /// <summary>VkAttachmentDescription - Structure specifying an attachment description
     /// </summary>
-    public unsafe struct VkAttachmentDescription {
+    public unsafe partial struct VkAttachmentDescription {
         /// <summary> flags is a bitmask of VkAttachmentDescriptionFlagBits
         /// specifying additional properties of the attachment.</summary>
         public VkAttachmentDescriptionFlags flags;
@@ -399,7 +399,7 @@ namespace Vulkan {
     // Struct: 11
     /// <summary>VkAttachmentDescription2KHR - Structure specifying an attachment description
     /// </summary>
-    public unsafe struct VkAttachmentDescription2KHR {
+    public unsafe partial struct VkAttachmentDescription2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -439,7 +439,7 @@ namespace Vulkan {
     // Struct: 12
     /// <summary>VkAttachmentReference - Structure specifying an attachment reference
     /// </summary>
-    public unsafe struct VkAttachmentReference {
+    public unsafe partial struct VkAttachmentReference {
         /// <summary> attachment is either an integer value identifying an attachment at
         /// the corresponding index in
         /// VkRenderPassCreateInfo::pAttachments, or
@@ -452,7 +452,7 @@ namespace Vulkan {
     // Struct: 13
     /// <summary>VkAttachmentReference2KHR - Structure specifying an attachment reference
     /// </summary>
-    public unsafe struct VkAttachmentReference2KHR {
+    public unsafe partial struct VkAttachmentReference2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -472,7 +472,7 @@ namespace Vulkan {
     // Struct: 14
     /// <summary>VkAttachmentSampleLocationsEXT - Structure specifying the sample locations state to use in the initial layout transition of attachments
     /// </summary>
-    public unsafe struct VkAttachmentSampleLocationsEXT {
+    public unsafe partial struct VkAttachmentSampleLocationsEXT {
         /// <summary> attachmentIndex is the index of the attachment for which the
         /// sample locations state is provided.</summary>
         public UInt32 attachmentIndex;
@@ -485,7 +485,7 @@ namespace Vulkan {
     // Struct: 15
     /// <summary>VkBaseInStructure - Base structure for a read-only pointer chain
     /// </summary>
-    public unsafe struct VkBaseInStructure {
+    public unsafe partial struct VkBaseInStructure {
         /// <summary> sType is the structure type of the structure being iterated
         /// through.</summary>
         public VkStructureType sType;
@@ -496,7 +496,7 @@ namespace Vulkan {
     // Struct: 16
     /// <summary>VkBaseOutStructure - Base structure for a read-only pointer chain
     /// </summary>
-    public unsafe struct VkBaseOutStructure {
+    public unsafe partial struct VkBaseOutStructure {
         /// <summary> sType is the structure type of the structure being iterated
         /// through.</summary>
         public VkStructureType sType;
@@ -507,7 +507,7 @@ namespace Vulkan {
     // Struct: 17
     /// <summary>VkBindAccelerationStructureMemoryInfoNV - Structure specifying acceleration structure memory binding
     /// </summary>
-    public unsafe struct VkBindAccelerationStructureMemoryInfoNV {
+    public unsafe partial struct VkBindAccelerationStructureMemoryInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -534,7 +534,7 @@ namespace Vulkan {
     // Struct: 18
     /// <summary>VkBindBufferMemoryDeviceGroupInfo - Structure specifying device within a group to bind to
     /// </summary>
-    public unsafe struct VkBindBufferMemoryDeviceGroupInfo {
+    public unsafe partial struct VkBindBufferMemoryDeviceGroupInfo {
         public VkStructureType sType;
         /// <summary>If the pNext list of VkBindBufferMemoryInfo includes a
         /// VkBindBufferMemoryDeviceGroupInfo structure, then that structure
@@ -547,7 +547,7 @@ namespace Vulkan {
     // Struct: 19
     /// <summary>VkBindBufferMemoryInfo - Structure specifying how to bind a buffer to memory
     /// </summary>
-    public unsafe struct VkBindBufferMemoryInfo {
+    public unsafe partial struct VkBindBufferMemoryInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -567,7 +567,7 @@ namespace Vulkan {
     // Struct: 20
     /// <summary>VkBindImageMemoryDeviceGroupInfo - Structure specifying device within a group to bind to
     /// </summary>
-    public unsafe struct VkBindImageMemoryDeviceGroupInfo {
+    public unsafe partial struct VkBindImageMemoryDeviceGroupInfo {
         public VkStructureType sType;
         /// <summary>If the pNext list of VkBindImageMemoryInfo includes a
         /// VkBindImageMemoryDeviceGroupInfo structure, then that structure
@@ -582,7 +582,7 @@ namespace Vulkan {
     // Struct: 21
     /// <summary>VkBindImageMemoryInfo - Structure specifying how to bind an image to memory
     /// </summary>
-    public unsafe struct VkBindImageMemoryInfo {
+    public unsafe partial struct VkBindImageMemoryInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -602,7 +602,7 @@ namespace Vulkan {
     // Struct: 22
     /// <summary>VkBindImageMemorySwapchainInfoKHR - Structure specifying swapchain image memory to bind to
     /// </summary>
-    public unsafe struct VkBindImageMemorySwapchainInfoKHR {
+    public unsafe partial struct VkBindImageMemorySwapchainInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -615,7 +615,7 @@ namespace Vulkan {
     // Struct: 23
     /// <summary>VkBindImagePlaneMemoryInfo - Structure specifying how to bind an image plane to memory
     /// </summary>
-    public unsafe struct VkBindImagePlaneMemoryInfo {
+    public unsafe partial struct VkBindImagePlaneMemoryInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -626,7 +626,7 @@ namespace Vulkan {
     // Struct: 24
     /// <summary>VkBindSparseInfo - Structure specifying a sparse binding operation
     /// </summary>
-    public unsafe struct VkBindSparseInfo {
+    public unsafe partial struct VkBindSparseInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -673,7 +673,7 @@ namespace Vulkan {
     // Struct: 25
     /// <summary>VkBufferCopy - Structure specifying a buffer copy operation
     /// </summary>
-    public unsafe struct VkBufferCopy {
+    public unsafe partial struct VkBufferCopy {
         /// <summary> srcOffset is the starting offset in bytes from the start of
         /// srcBuffer.</summary>
         public VkDeviceSize srcOffset;
@@ -686,7 +686,7 @@ namespace Vulkan {
     // Struct: 26
     /// <summary>VkBufferCreateInfo - Structure specifying the parameters of a newly created buffer object
     /// </summary>
-    public unsafe struct VkBufferCreateInfo {
+    public unsafe partial struct VkBufferCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -713,7 +713,7 @@ namespace Vulkan {
     // Struct: 27
     /// <summary>VkBufferDeviceAddressCreateInfoEXT - Request a specific address for a buffer
     /// </summary>
-    public unsafe struct VkBufferDeviceAddressCreateInfoEXT {
+    public unsafe partial struct VkBufferDeviceAddressCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -724,7 +724,7 @@ namespace Vulkan {
     // Struct: 28
     /// <summary>VkBufferDeviceAddressInfoEXT - Structure specifying the buffer to query an address for
     /// </summary>
-    public unsafe struct VkBufferDeviceAddressInfoEXT {
+    public unsafe partial struct VkBufferDeviceAddressInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -735,7 +735,7 @@ namespace Vulkan {
     // Struct: 29
     /// <summary>VkBufferImageCopy - Structure specifying a buffer image copy operation
     /// </summary>
-    public unsafe struct VkBufferImageCopy {
+    public unsafe partial struct VkBufferImageCopy {
         /// <summary> bufferOffset is the offset in bytes from the start of the buffer
         /// object where the image data is copied from or to.</summary>
         public VkDeviceSize bufferOffset;
@@ -760,7 +760,7 @@ namespace Vulkan {
     // Struct: 30
     /// <summary>VkBufferMemoryBarrier - Structure specifying a buffer memory barrier
     /// </summary>
-    public unsafe struct VkBufferMemoryBarrier {
+    public unsafe partial struct VkBufferMemoryBarrier {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -792,7 +792,7 @@ namespace Vulkan {
     // Struct: 31
     /// <summary>VkBufferMemoryRequirementsInfo2 - (None)
     /// </summary>
-    public unsafe struct VkBufferMemoryRequirementsInfo2 {
+    public unsafe partial struct VkBufferMemoryRequirementsInfo2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -803,7 +803,7 @@ namespace Vulkan {
     // Struct: 32
     /// <summary>VkBufferViewCreateInfo - Structure specifying parameters of a newly created buffer view
     /// </summary>
-    public unsafe struct VkBufferViewCreateInfo {
+    public unsafe partial struct VkBufferViewCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -830,7 +830,7 @@ namespace Vulkan {
     // Struct: 33
     /// <summary>VkCalibratedTimestampInfoEXT - Structure specifying the input parameters of a calibrated timestamp query
     /// </summary>
-    public unsafe struct VkCalibratedTimestampInfoEXT {
+    public unsafe partial struct VkCalibratedTimestampInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -842,7 +842,7 @@ namespace Vulkan {
     // Struct: 34
     /// <summary>VkCheckpointDataNV - return structure for command buffer checkpoint data
     /// </summary>
-    public unsafe struct VkCheckpointDataNV {
+    public unsafe partial struct VkCheckpointDataNV {
         /// <summary> sType is the type of this structure</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -857,7 +857,7 @@ namespace Vulkan {
     // Struct: 35
     /// <summary>VkClearAttachment - Structure specifying a clear attachment
     /// </summary>
-    public unsafe struct VkClearAttachment {
+    public unsafe partial struct VkClearAttachment {
         /// <summary> aspectMask is a mask selecting the color, depth and/or stencil
         /// aspects of the attachment to be cleared.</summary>
         public VkImageAspectFlags aspectMask;
@@ -884,7 +884,7 @@ namespace Vulkan {
     // Struct: 37
     /// <summary>VkClearDepthStencilValue - Structure specifying a clear depth stencil value
     /// </summary>
-    public unsafe struct VkClearDepthStencilValue {
+    public unsafe partial struct VkClearDepthStencilValue {
         /// <summary> depth is the clear value for the depth aspect of the depth/stencil
         /// attachment.
         /// It is a floating-point value which is automatically converted to the
@@ -899,7 +899,7 @@ namespace Vulkan {
     // Struct: 38
     /// <summary>VkClearRect - Structure specifying a clear rectangle
     /// </summary>
-    public unsafe struct VkClearRect {
+    public unsafe partial struct VkClearRect {
         /// <summary> rect is the two-dimensional region to be cleared.</summary>
         public VkRect2D rect;
         /// <summary> baseArrayLayer is the first layer to be cleared.</summary>
@@ -923,7 +923,7 @@ namespace Vulkan {
     // Struct: 40
     /// <summary>VkCmdProcessCommandsInfoNVX - Structure specifying parameters for the generation of commands
     /// </summary>
-    public unsafe struct VkCmdProcessCommandsInfoNVX {
+    public unsafe partial struct VkCmdProcessCommandsInfoNVX {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -976,7 +976,7 @@ namespace Vulkan {
     // Struct: 41
     /// <summary>VkCmdReserveSpaceForCommandsInfoNVX - Structure specifying parameters for the reservation of command buffer space
     /// </summary>
-    public unsafe struct VkCmdReserveSpaceForCommandsInfoNVX {
+    public unsafe partial struct VkCmdReserveSpaceForCommandsInfoNVX {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -997,7 +997,7 @@ namespace Vulkan {
     // Struct: 42
     /// <summary>VkCoarseSampleLocationNV - Structure specifying parameters controlling shading rate image usage
     /// </summary>
-    public unsafe struct VkCoarseSampleLocationNV {
+    public unsafe partial struct VkCoarseSampleLocationNV {
         /// <summary> pixelX is added to the x coordinate of the upper-leftmost pixel of
         /// each fragment to identify the pixel containing the coverage sample.</summary>
         public UInt32 pixelX;
@@ -1011,7 +1011,7 @@ namespace Vulkan {
     // Struct: 43
     /// <summary>VkCoarseSampleOrderCustomNV - Structure specifying parameters controlling shading rate image usage
     /// </summary>
-    public unsafe struct VkCoarseSampleOrderCustomNV {
+    public unsafe partial struct VkCoarseSampleOrderCustomNV {
         /// <summary> shadingRate is a shading rate palette entry that identifies the
         /// fragment width and height for the combination of fragment area and
         /// per-pixel coverage sample count to control.</summary>
@@ -1030,7 +1030,7 @@ namespace Vulkan {
     // Struct: 44
     /// <summary>VkCommandBufferAllocateInfo - Structure specifying the allocation parameters for command buffer object
     /// </summary>
-    public unsafe struct VkCommandBufferAllocateInfo {
+    public unsafe partial struct VkCommandBufferAllocateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1048,7 +1048,7 @@ namespace Vulkan {
     // Struct: 45
     /// <summary>VkCommandBufferBeginInfo - Structure specifying a command buffer begin operation
     /// </summary>
-    public unsafe struct VkCommandBufferBeginInfo {
+    public unsafe partial struct VkCommandBufferBeginInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1065,7 +1065,7 @@ namespace Vulkan {
     // Struct: 46
     /// <summary>VkCommandBufferInheritanceConditionalRenderingInfoEXT - Structure specifying command buffer inheritance info
     /// </summary>
-    public unsafe struct VkCommandBufferInheritanceConditionalRenderingInfoEXT {
+    public unsafe partial struct VkCommandBufferInheritanceConditionalRenderingInfoEXT {
         /// <summary> sType is the type of this structure</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure</summary>
@@ -1083,7 +1083,7 @@ namespace Vulkan {
     // Struct: 47
     /// <summary>VkCommandBufferInheritanceInfo - Structure specifying command buffer inheritance info
     /// </summary>
-    public unsafe struct VkCommandBufferInheritanceInfo {
+    public unsafe partial struct VkCommandBufferInheritanceInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1135,7 +1135,7 @@ namespace Vulkan {
     // Struct: 48
     /// <summary>VkCommandPoolCreateInfo - Structure specifying parameters of a newly created command pool
     /// </summary>
-    public unsafe struct VkCommandPoolCreateInfo {
+    public unsafe partial struct VkCommandPoolCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1152,7 +1152,7 @@ namespace Vulkan {
     // Struct: 49
     /// <summary>VkComponentMapping - Structure specifying a color component mapping
     /// </summary>
-    public unsafe struct VkComponentMapping {
+    public unsafe partial struct VkComponentMapping {
         /// <summary> r is a VkComponentSwizzle specifying the component value
         /// placed in the R component of the output vector.</summary>
         public VkComponentSwizzle r;
@@ -1169,7 +1169,7 @@ namespace Vulkan {
     // Struct: 50
     /// <summary>VkComputePipelineCreateInfo - Structure specifying parameters of a newly created compute pipeline
     /// </summary>
-    public unsafe struct VkComputePipelineCreateInfo {
+    public unsafe partial struct VkComputePipelineCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1192,7 +1192,7 @@ namespace Vulkan {
     // Struct: 51
     /// <summary>VkConditionalRenderingBeginInfoEXT - Structure specifying conditional rendering begin info
     /// </summary>
-    public unsafe struct VkConditionalRenderingBeginInfoEXT {
+    public unsafe partial struct VkConditionalRenderingBeginInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1210,7 +1210,7 @@ namespace Vulkan {
     // Struct: 52
     /// <summary>VkConformanceVersionKHR - Structure containing the conformance test suite version the implementation is compliant with
     /// </summary>
-    public unsafe struct VkConformanceVersionKHR {
+    public unsafe partial struct VkConformanceVersionKHR {
         /// <summary> major is the major version number of the conformance test suite.</summary>
         public byte major;
         /// <summary> minor is the minor version number of the conformance test suite.</summary>
@@ -1224,7 +1224,7 @@ namespace Vulkan {
     // Struct: 53
     /// <summary>VkCooperativeMatrixPropertiesNV - Structure specifying cooperative matrix properties
     /// </summary>
-    public unsafe struct VkCooperativeMatrixPropertiesNV {
+    public unsafe partial struct VkCooperativeMatrixPropertiesNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1254,7 +1254,7 @@ namespace Vulkan {
     // Struct: 54
     /// <summary>VkCopyDescriptorSet - Structure specifying a copy descriptor set operation
     /// </summary>
-    public unsafe struct VkCopyDescriptorSet {
+    public unsafe partial struct VkCopyDescriptorSet {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1295,7 +1295,7 @@ namespace Vulkan {
     // Struct: 55
     /// <summary>VkD3D12FenceSubmitInfoKHR - Structure specifying values for Direct3D 12 fence-backed semaphores
     /// </summary>
-    public unsafe struct VkD3D12FenceSubmitInfoKHR {
+    public unsafe partial struct VkD3D12FenceSubmitInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1319,7 +1319,7 @@ namespace Vulkan {
     // Struct: 56
     /// <summary>VkDebugMarkerMarkerInfoEXT - Specify parameters of a command buffer marker region
     /// </summary>
-    public unsafe struct VkDebugMarkerMarkerInfoEXT {
+    public unsafe partial struct VkDebugMarkerMarkerInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1332,7 +1332,7 @@ namespace Vulkan {
     // Struct: 57
     /// <summary>VkDebugMarkerObjectNameInfoEXT - Specify parameters of a name to give to an object
     /// </summary>
-    public unsafe struct VkDebugMarkerObjectNameInfoEXT {
+    public unsafe partial struct VkDebugMarkerObjectNameInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1349,7 +1349,7 @@ namespace Vulkan {
     // Struct: 58
     /// <summary>VkDebugMarkerObjectTagInfoEXT - Specify parameters of a tag to attach to an object
     /// </summary>
-    public unsafe struct VkDebugMarkerObjectTagInfoEXT {
+    public unsafe partial struct VkDebugMarkerObjectTagInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1370,7 +1370,7 @@ namespace Vulkan {
     // Struct: 59
     /// <summary>VkDebugReportCallbackCreateInfoEXT - Structure specifying parameters of a newly created debug report callback
     /// </summary>
-    public unsafe struct VkDebugReportCallbackCreateInfoEXT {
+    public unsafe partial struct VkDebugReportCallbackCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1386,7 +1386,7 @@ namespace Vulkan {
     // Struct: 60
     /// <summary>VkDebugUtilsLabelEXT - Specify parameters of a label region
     /// </summary>
-    public unsafe struct VkDebugUtilsLabelEXT {
+    public unsafe partial struct VkDebugUtilsLabelEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1399,7 +1399,7 @@ namespace Vulkan {
     // Struct: 61
     /// <summary>VkDebugUtilsMessengerCallbackDataEXT - Structure specifying parameters returned to the callback
     /// </summary>
-    public unsafe struct VkDebugUtilsMessengerCallbackDataEXT {
+    public unsafe partial struct VkDebugUtilsMessengerCallbackDataEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1450,7 +1450,7 @@ namespace Vulkan {
     // Struct: 62
     /// <summary>VkDebugUtilsMessengerCreateInfoEXT - Structure specifying parameters of a newly created debug messenger
     /// </summary>
-    public unsafe struct VkDebugUtilsMessengerCreateInfoEXT {
+    public unsafe partial struct VkDebugUtilsMessengerCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1473,7 +1473,7 @@ namespace Vulkan {
     // Struct: 63
     /// <summary>VkDebugUtilsObjectNameInfoEXT - Specify parameters of a name to give to an object
     /// </summary>
-    public unsafe struct VkDebugUtilsObjectNameInfoEXT {
+    public unsafe partial struct VkDebugUtilsObjectNameInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1490,7 +1490,7 @@ namespace Vulkan {
     // Struct: 64
     /// <summary>VkDebugUtilsObjectTagInfoEXT - Specify parameters of a tag to attach to an object
     /// </summary>
-    public unsafe struct VkDebugUtilsObjectTagInfoEXT {
+    public unsafe partial struct VkDebugUtilsObjectTagInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1511,7 +1511,7 @@ namespace Vulkan {
     // Struct: 65
     /// <summary>VkDedicatedAllocationBufferCreateInfoNV - Specify that a buffer is bound to a dedicated memory resource
     /// </summary>
-    public unsafe struct VkDedicatedAllocationBufferCreateInfoNV {
+    public unsafe partial struct VkDedicatedAllocationBufferCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1523,7 +1523,7 @@ namespace Vulkan {
     // Struct: 66
     /// <summary>VkDedicatedAllocationImageCreateInfoNV - Specify that an image is bound to a dedicated memory resource
     /// </summary>
-    public unsafe struct VkDedicatedAllocationImageCreateInfoNV {
+    public unsafe partial struct VkDedicatedAllocationImageCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1535,7 +1535,7 @@ namespace Vulkan {
     // Struct: 67
     /// <summary>VkDedicatedAllocationMemoryAllocateInfoNV - Specify a dedicated memory allocation resource
     /// </summary>
-    public unsafe struct VkDedicatedAllocationMemoryAllocateInfoNV {
+    public unsafe partial struct VkDedicatedAllocationMemoryAllocateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1550,7 +1550,7 @@ namespace Vulkan {
     // Struct: 68
     /// <summary>VkDescriptorBufferInfo - Structure specifying descriptor buffer info
     /// </summary>
-    public unsafe struct VkDescriptorBufferInfo {
+    public unsafe partial struct VkDescriptorBufferInfo {
         /// <summary> buffer is the buffer resource.</summary>
         public VkBuffer buffer;
         /// <summary> offset is the offset in bytes from the start of buffer.
@@ -1565,7 +1565,7 @@ namespace Vulkan {
     // Struct: 69
     /// <summary>VkDescriptorImageInfo - Structure specifying descriptor image info
     /// </summary>
-    public unsafe struct VkDescriptorImageInfo {
+    public unsafe partial struct VkDescriptorImageInfo {
         /// <summary> sampler is a sampler handle, and is used in descriptor updates for
         /// types VK_DESCRIPTOR_TYPE_SAMPLER and
         /// VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER if the binding being
@@ -1589,7 +1589,7 @@ namespace Vulkan {
     // Struct: 70
     /// <summary>VkDescriptorPoolCreateInfo - Structure specifying parameters of a newly created descriptor pool
     /// </summary>
-    public unsafe struct VkDescriptorPoolCreateInfo {
+    public unsafe partial struct VkDescriptorPoolCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1610,7 +1610,7 @@ namespace Vulkan {
     // Struct: 71
     /// <summary>VkDescriptorPoolInlineUniformBlockCreateInfoEXT - Structure specifying the maximum number of inline uniform block bindings of a newly created descriptor pool
     /// </summary>
-    public unsafe struct VkDescriptorPoolInlineUniformBlockCreateInfoEXT {
+    public unsafe partial struct VkDescriptorPoolInlineUniformBlockCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1622,7 +1622,7 @@ namespace Vulkan {
     // Struct: 72
     /// <summary>VkDescriptorPoolSize - Structure specifying descriptor pool size
     /// </summary>
-    public unsafe struct VkDescriptorPoolSize {
+    public unsafe partial struct VkDescriptorPoolSize {
         /// <summary> type is the type of descriptor.</summary>
         public VkDescriptorType type;
         /// <summary> descriptorCount is the number of descriptors of that type to
@@ -1635,7 +1635,7 @@ namespace Vulkan {
     // Struct: 73
     /// <summary>VkDescriptorSetAllocateInfo - Structure specifying the allocation parameters for descriptor sets
     /// </summary>
-    public unsafe struct VkDescriptorSetAllocateInfo {
+    public unsafe partial struct VkDescriptorSetAllocateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1652,7 +1652,7 @@ namespace Vulkan {
     // Struct: 74
     /// <summary>VkDescriptorSetLayoutBinding - Structure specifying a descriptor set layout binding
     /// </summary>
-    public unsafe struct VkDescriptorSetLayoutBinding {
+    public unsafe partial struct VkDescriptorSetLayoutBinding {
         /// <summary> binding is the binding number of this entry and corresponds to a
         /// resource of the same binding number in the shader stages.</summary>
         public UInt32 binding;
@@ -1681,7 +1681,7 @@ namespace Vulkan {
     // Struct: 75
     /// <summary>VkDescriptorSetLayoutBindingFlagsCreateInfoEXT - Structure specifying creation flags for descriptor set layout bindings
     /// </summary>
-    public unsafe struct VkDescriptorSetLayoutBindingFlagsCreateInfoEXT {
+    public unsafe partial struct VkDescriptorSetLayoutBindingFlagsCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1697,7 +1697,7 @@ namespace Vulkan {
     // Struct: 76
     /// <summary>VkDescriptorSetLayoutCreateInfo - Structure specifying parameters of a newly created descriptor set layout
     /// </summary>
-    public unsafe struct VkDescriptorSetLayoutCreateInfo {
+    public unsafe partial struct VkDescriptorSetLayoutCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1715,7 +1715,7 @@ namespace Vulkan {
     // Struct: 77
     /// <summary>VkDescriptorSetLayoutSupport - Structure returning information about whether a descriptor set layout can be supported
     /// </summary>
-    public unsafe struct VkDescriptorSetLayoutSupport {
+    public unsafe partial struct VkDescriptorSetLayoutSupport {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1727,7 +1727,7 @@ namespace Vulkan {
     // Struct: 78
     /// <summary>VkDescriptorSetVariableDescriptorCountAllocateInfoEXT - Structure specifying additional allocation parameters for descriptor sets
     /// </summary>
-    public unsafe struct VkDescriptorSetVariableDescriptorCountAllocateInfoEXT {
+    public unsafe partial struct VkDescriptorSetVariableDescriptorCountAllocateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1743,7 +1743,7 @@ namespace Vulkan {
     // Struct: 79
     /// <summary>VkDescriptorSetVariableDescriptorCountLayoutSupportEXT - Structure returning information about whether a descriptor set layout can be supported
     /// </summary>
-    public unsafe struct VkDescriptorSetVariableDescriptorCountLayoutSupportEXT {
+    public unsafe partial struct VkDescriptorSetVariableDescriptorCountLayoutSupportEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1760,7 +1760,7 @@ namespace Vulkan {
     // Struct: 80
     /// <summary>VkDescriptorUpdateTemplateCreateInfo - Structure specifying parameters of a newly created descriptor update template
     /// </summary>
-    public unsafe struct VkDescriptorUpdateTemplateCreateInfo {
+    public unsafe partial struct VkDescriptorUpdateTemplateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1814,7 +1814,7 @@ namespace Vulkan {
     // Struct: 81
     /// <summary>VkDescriptorUpdateTemplateEntry - Describes a single descriptor update of the descriptor update template
     /// </summary>
-    public unsafe struct VkDescriptorUpdateTemplateEntry {
+    public unsafe partial struct VkDescriptorUpdateTemplateEntry {
         /// <summary> dstBinding is the descriptor binding to update when using this
         /// descriptor update template.</summary>
         public UInt32 dstBinding;
@@ -1850,7 +1850,7 @@ namespace Vulkan {
     // Struct: 82
     /// <summary>VkDeviceCreateInfo - Structure specifying parameters of a newly created device
     /// </summary>
-    public unsafe struct VkDeviceCreateInfo {
+    public unsafe partial struct VkDeviceCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1890,7 +1890,7 @@ namespace Vulkan {
     // Struct: 83
     /// <summary>VkDeviceEventInfoEXT - Describe a device event to create
     /// </summary>
-    public unsafe struct VkDeviceEventInfoEXT {
+    public unsafe partial struct VkDeviceEventInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1900,7 +1900,7 @@ namespace Vulkan {
     // Struct: 84
     /// <summary>VkDeviceGeneratedCommandsFeaturesNVX - Structure specifying physical device support
     /// </summary>
-    public unsafe struct VkDeviceGeneratedCommandsFeaturesNVX {
+    public unsafe partial struct VkDeviceGeneratedCommandsFeaturesNVX {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1915,7 +1915,7 @@ namespace Vulkan {
     // Struct: 85
     /// <summary>VkDeviceGeneratedCommandsLimitsNVX - Structure specifying physical device limits
     /// </summary>
-    public unsafe struct VkDeviceGeneratedCommandsLimitsNVX {
+    public unsafe partial struct VkDeviceGeneratedCommandsLimitsNVX {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1939,7 +1939,7 @@ namespace Vulkan {
     // Struct: 86
     /// <summary>VkDeviceGroupBindSparseInfo - Structure indicating which instances are bound
     /// </summary>
-    public unsafe struct VkDeviceGroupBindSparseInfo {
+    public unsafe partial struct VkDeviceGroupBindSparseInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1954,7 +1954,7 @@ namespace Vulkan {
     // Struct: 87
     /// <summary>VkDeviceGroupCommandBufferBeginInfo - Set the initial device mask for a command buffer
     /// </summary>
-    public unsafe struct VkDeviceGroupCommandBufferBeginInfo {
+    public unsafe partial struct VkDeviceGroupCommandBufferBeginInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1966,7 +1966,7 @@ namespace Vulkan {
     // Struct: 88
     /// <summary>VkDeviceGroupDeviceCreateInfo - Create a logical device from multiple physical devices
     /// </summary>
-    public unsafe struct VkDeviceGroupDeviceCreateInfo {
+    public unsafe partial struct VkDeviceGroupDeviceCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -1981,7 +1981,7 @@ namespace Vulkan {
     // Struct: 89
     /// <summary>VkDeviceGroupPresentCapabilitiesKHR - Present capabilities from other physical devices
     /// </summary>
-    public unsafe struct VkDeviceGroupPresentCapabilitiesKHR {
+    public unsafe partial struct VkDeviceGroupPresentCapabilitiesKHR {
         const Int32 VK_MAX_DEVICE_GROUP_SIZE = 32;
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
@@ -1995,7 +1995,7 @@ namespace Vulkan {
     // Struct: 90
     /// <summary>VkDeviceGroupPresentInfoKHR - Mode and mask controlling which physical devices' images are presented
     /// </summary>
-    public unsafe struct VkDeviceGroupPresentInfoKHR {
+    public unsafe partial struct VkDeviceGroupPresentInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2013,7 +2013,7 @@ namespace Vulkan {
     // Struct: 91
     /// <summary>VkDeviceGroupRenderPassBeginInfo - Set the initial device mask and render areas for a render pass instance
     /// </summary>
-    public unsafe struct VkDeviceGroupRenderPassBeginInfo {
+    public unsafe partial struct VkDeviceGroupRenderPassBeginInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2030,7 +2030,7 @@ namespace Vulkan {
     // Struct: 92
     /// <summary>VkDeviceGroupSubmitInfo - Structure indicating which physical devices execute semaphore operations and command buffers
     /// </summary>
-    public unsafe struct VkDeviceGroupSubmitInfo {
+    public unsafe partial struct VkDeviceGroupSubmitInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2064,7 +2064,7 @@ namespace Vulkan {
     // Struct: 93
     /// <summary>VkDeviceGroupSwapchainCreateInfoKHR - Structure specifying parameters of a newly created swapchain object
     /// </summary>
-    public unsafe struct VkDeviceGroupSwapchainCreateInfoKHR {
+    public unsafe partial struct VkDeviceGroupSwapchainCreateInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2075,7 +2075,7 @@ namespace Vulkan {
     // Struct: 94
     /// <summary>VkDeviceMemoryOverallocationCreateInfoAMD - Specify memory overallocation behavior for a Vulkan device
     /// </summary>
-    public unsafe struct VkDeviceMemoryOverallocationCreateInfoAMD {
+    public unsafe partial struct VkDeviceMemoryOverallocationCreateInfoAMD {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2086,7 +2086,7 @@ namespace Vulkan {
     // Struct: 95
     /// <summary>VkDeviceQueueCreateInfo - Structure specifying parameters of a newly created device queue
     /// </summary>
-    public unsafe struct VkDeviceQueueCreateInfo {
+    public unsafe partial struct VkDeviceQueueCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2111,7 +2111,7 @@ namespace Vulkan {
     // Struct: 96
     /// <summary>VkDeviceQueueGlobalPriorityCreateInfoEXT - Specify a system wide priority
     /// </summary>
-    public unsafe struct VkDeviceQueueGlobalPriorityCreateInfoEXT {
+    public unsafe partial struct VkDeviceQueueGlobalPriorityCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2123,7 +2123,7 @@ namespace Vulkan {
     // Struct: 97
     /// <summary>VkDeviceQueueInfo2 - Structure specifying the parameters used for device queue creation
     /// </summary>
-    public unsafe struct VkDeviceQueueInfo2 {
+    public unsafe partial struct VkDeviceQueueInfo2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.
@@ -2143,7 +2143,7 @@ namespace Vulkan {
     // Struct: 98
     /// <summary>VkDispatchIndirectCommand - Structure specifying a dispatch indirect command
     /// </summary>
-    public unsafe struct VkDispatchIndirectCommand {
+    public unsafe partial struct VkDispatchIndirectCommand {
         /// <summary> x is the number of local workgroups to dispatch in the X
         /// dimension.</summary>
         public UInt32 x;
@@ -2157,7 +2157,7 @@ namespace Vulkan {
     // Struct: 99
     /// <summary>VkDisplayEventInfoEXT - Describe a display event to create
     /// </summary>
-    public unsafe struct VkDisplayEventInfoEXT {
+    public unsafe partial struct VkDisplayEventInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2169,7 +2169,7 @@ namespace Vulkan {
     // Struct: 100
     /// <summary>VkDisplayModeCreateInfoKHR - Structure specifying parameters of a newly created display mode object
     /// </summary>
-    public unsafe struct VkDisplayModeCreateInfoKHR {
+    public unsafe partial struct VkDisplayModeCreateInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2185,7 +2185,7 @@ namespace Vulkan {
     // Struct: 101
     /// <summary>VkDisplayModeParametersKHR - Structure describing display parameters associated with a display mode
     /// </summary>
-    public unsafe struct VkDisplayModeParametersKHR {
+    public unsafe partial struct VkDisplayModeParametersKHR {
         /// <summary> visibleRegion is the 2D extents of the visible region.</summary>
         public VkExtent2D visibleRegion;
         /// <summary> refreshRate is a uint32_t that is the number of times the
@@ -2195,7 +2195,7 @@ namespace Vulkan {
     // Struct: 102
     /// <summary>VkDisplayModeProperties2KHR - Structure describing an available display mode
     /// </summary>
-    public unsafe struct VkDisplayModeProperties2KHR {
+    public unsafe partial struct VkDisplayModeProperties2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2207,7 +2207,7 @@ namespace Vulkan {
     // Struct: 103
     /// <summary>VkDisplayModePropertiesKHR - Structure describing display mode properties
     /// </summary>
-    public unsafe struct VkDisplayModePropertiesKHR {
+    public unsafe partial struct VkDisplayModePropertiesKHR {
         /// <summary> displayMode is a handle to the display mode described in this
         /// structure.
         /// This handle will be valid for the lifetime of the Vulkan instance.</summary>
@@ -2219,7 +2219,7 @@ namespace Vulkan {
     // Struct: 104
     /// <summary>VkDisplayNativeHdrSurfaceCapabilitiesAMD - Structure describing display native HDR specific capabilities of a surface
     /// </summary>
-    public unsafe struct VkDisplayNativeHdrSurfaceCapabilitiesAMD {
+    public unsafe partial struct VkDisplayNativeHdrSurfaceCapabilitiesAMD {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2235,7 +2235,7 @@ namespace Vulkan {
     // Struct: 105
     /// <summary>VkDisplayPlaneCapabilities2KHR - Structure describing the capabilities of a mode and plane combination
     /// </summary>
-    public unsafe struct VkDisplayPlaneCapabilities2KHR {
+    public unsafe partial struct VkDisplayPlaneCapabilities2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2247,7 +2247,7 @@ namespace Vulkan {
     // Struct: 106
     /// <summary>VkDisplayPlaneCapabilitiesKHR - Structure describing capabilities of a mode and plane combination
     /// </summary>
-    public unsafe struct VkDisplayPlaneCapabilitiesKHR {
+    public unsafe partial struct VkDisplayPlaneCapabilitiesKHR {
         /// <summary> supportedAlpha is a bitmask of
         /// VkDisplayPlaneAlphaFlagBitsKHR describing the supported alpha
         /// blending modes.</summary>
@@ -2281,7 +2281,7 @@ namespace Vulkan {
     // Struct: 107
     /// <summary>VkDisplayPlaneInfo2KHR - Structure defining the intended configuration of a display plane
     /// </summary>
-    public unsafe struct VkDisplayPlaneInfo2KHR {
+    public unsafe partial struct VkDisplayPlaneInfo2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2294,7 +2294,7 @@ namespace Vulkan {
     // Struct: 108
     /// <summary>VkDisplayPlaneProperties2KHR - Structure describing an available display plane
     /// </summary>
-    public unsafe struct VkDisplayPlaneProperties2KHR {
+    public unsafe partial struct VkDisplayPlaneProperties2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2306,7 +2306,7 @@ namespace Vulkan {
     // Struct: 109
     /// <summary>VkDisplayPlanePropertiesKHR - Structure describing display plane properties
     /// </summary>
-    public unsafe struct VkDisplayPlanePropertiesKHR {
+    public unsafe partial struct VkDisplayPlanePropertiesKHR {
         /// <summary> currentDisplay is the handle of the display the plane is currently
         /// associated with.
         /// If the plane is not currently attached to any displays, this will be
@@ -2321,7 +2321,7 @@ namespace Vulkan {
     // Struct: 110
     /// <summary>VkDisplayPowerInfoEXT - Describe the power state of a display
     /// </summary>
-    public unsafe struct VkDisplayPowerInfoEXT {
+    public unsafe partial struct VkDisplayPowerInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2333,7 +2333,7 @@ namespace Vulkan {
     // Struct: 111
     /// <summary>VkDisplayPresentInfoKHR - Structure describing parameters of a queue presentation to a swapchain
     /// </summary>
-    public unsafe struct VkDisplayPresentInfoKHR {
+    public unsafe partial struct VkDisplayPresentInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2371,7 +2371,7 @@ namespace Vulkan {
     // Struct: 112
     /// <summary>VkDisplayProperties2KHR - Structure describing an available display device
     /// </summary>
-    public unsafe struct VkDisplayProperties2KHR {
+    public unsafe partial struct VkDisplayProperties2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2383,7 +2383,7 @@ namespace Vulkan {
     // Struct: 113
     /// <summary>VkDisplayPropertiesKHR - Structure describing an available display device
     /// </summary>
-    public unsafe struct VkDisplayPropertiesKHR {
+    public unsafe partial struct VkDisplayPropertiesKHR {
         /// <summary> display is a handle that is used to refer to the display described
         /// here.
         /// This handle will be valid for the lifetime of the Vulkan instance.</summary>
@@ -2408,7 +2408,7 @@ namespace Vulkan {
     // Struct: 114
     /// <summary>VkDisplaySurfaceCreateInfoKHR - Structure specifying parameters of a newly created display plane surface object
     /// </summary>
-    public unsafe struct VkDisplaySurfaceCreateInfoKHR {
+    public unsafe partial struct VkDisplaySurfaceCreateInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2440,7 +2440,7 @@ namespace Vulkan {
     // Struct: 115
     /// <summary>VkDrawIndexedIndirectCommand - Structure specifying a draw indexed indirect command
     /// </summary>
-    public unsafe struct VkDrawIndexedIndirectCommand {
+    public unsafe partial struct VkDrawIndexedIndirectCommand {
         /// <summary> indexCount is the number of vertices to draw.</summary>
         public UInt32 indexCount;
         /// <summary> instanceCount is the number of instances to draw.</summary>
@@ -2456,7 +2456,7 @@ namespace Vulkan {
     // Struct: 116
     /// <summary>VkDrawIndirectCommand - Structure specifying a draw indirect command
     /// </summary>
-    public unsafe struct VkDrawIndirectCommand {
+    public unsafe partial struct VkDrawIndirectCommand {
         /// <summary> vertexCount is the number of vertices to draw.</summary>
         public UInt32 vertexCount;
         /// <summary> instanceCount is the number of instances to draw.</summary>
@@ -2469,7 +2469,7 @@ namespace Vulkan {
     // Struct: 117
     /// <summary>VkDrawMeshTasksIndirectCommandNV - Structure specifying a mesh tasks draw indirect command
     /// </summary>
-    public unsafe struct VkDrawMeshTasksIndirectCommandNV {
+    public unsafe partial struct VkDrawMeshTasksIndirectCommandNV {
         /// <summary> taskCount is the number of local workgroups to dispatch in the X
         /// dimension.
         /// Y and Z dimension are implicitly set to one.</summary>
@@ -2480,7 +2480,7 @@ namespace Vulkan {
     // Struct: 118
     /// <summary>VkDrmFormatModifierPropertiesEXT - Structure specifying properties of a format when combined with a DRM format modifier
     /// </summary>
-    public unsafe struct VkDrmFormatModifierPropertiesEXT {
+    public unsafe partial struct VkDrmFormatModifierPropertiesEXT {
         /// <summary> drmFormatModifier is a Linux DRM format modifier.</summary>
         public UInt64 drmFormatModifier;
         /// <summary> drmFormatModifierPlaneCount is the number of memory planes in
@@ -2496,7 +2496,7 @@ namespace Vulkan {
     // Struct: 119
     /// <summary>VkDrmFormatModifierPropertiesListEXT - Structure specifying the list of DRM format modifiers supported for a format
     /// </summary>
-    public unsafe struct VkDrmFormatModifierPropertiesListEXT {
+    public unsafe partial struct VkDrmFormatModifierPropertiesListEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2511,7 +2511,7 @@ namespace Vulkan {
     // Struct: 120
     /// <summary>VkEventCreateInfo - Structure specifying parameters of a newly created event
     /// </summary>
-    public unsafe struct VkEventCreateInfo {
+    public unsafe partial struct VkEventCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2522,7 +2522,7 @@ namespace Vulkan {
     // Struct: 121
     /// <summary>VkExportFenceCreateInfo - Structure specifying handle types that can be exported from a fence
     /// </summary>
-    public unsafe struct VkExportFenceCreateInfo {
+    public unsafe partial struct VkExportFenceCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2536,7 +2536,7 @@ namespace Vulkan {
     // Struct: 122
     ///// <summary>VkExportFenceWin32HandleInfoKHR - Structure specifying additional attributes of Windows handles exported from a fence
     ///// </summary>
-    //public unsafe struct VkExportFenceWin32HandleInfoKHR {
+    //public unsafe partial struct VkExportFenceWin32HandleInfoKHR {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2554,7 +2554,7 @@ namespace Vulkan {
     // Struct: 123
     /// <summary>VkExportMemoryAllocateInfo - Specify exportable handle types for a device memory object
     /// </summary>
-    public unsafe struct VkExportMemoryAllocateInfo {
+    public unsafe partial struct VkExportMemoryAllocateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2569,7 +2569,7 @@ namespace Vulkan {
     // Struct: 124
     /// <summary>VkExportMemoryAllocateInfoNV - Specify memory handle types that may be exported
     /// </summary>
-    public unsafe struct VkExportMemoryAllocateInfoNV {
+    public unsafe partial struct VkExportMemoryAllocateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2585,7 +2585,7 @@ namespace Vulkan {
     // Struct: 125
     ///// <summary>VkExportMemoryWin32HandleInfoKHR - Structure specifying additional attributes of Windows handles exported from a memory
     ///// </summary>
-    //public unsafe struct VkExportMemoryWin32HandleInfoKHR {
+    //public unsafe partial struct VkExportMemoryWin32HandleInfoKHR {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2603,7 +2603,7 @@ namespace Vulkan {
     // Struct: 126
     ///// <summary>VkExportMemoryWin32HandleInfoNV - specify security attributes and access rights for Win32 memory handles
     ///// </summary>
-    //public unsafe struct VkExportMemoryWin32HandleInfoNV {
+    //public unsafe partial struct VkExportMemoryWin32HandleInfoNV {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2617,7 +2617,7 @@ namespace Vulkan {
     // Struct: 127
     /// <summary>VkExportSemaphoreCreateInfo - Structure specifying handle types that can be exported from a semaphore
     /// </summary>
-    public unsafe struct VkExportSemaphoreCreateInfo {
+    public unsafe partial struct VkExportSemaphoreCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2633,7 +2633,7 @@ namespace Vulkan {
     // Struct: 128
     ///// <summary>VkExportSemaphoreWin32HandleInfoKHR - Structure specifying additional attributes of Windows handles exported from a semaphore
     ///// </summary>
-    //public unsafe struct VkExportSemaphoreWin32HandleInfoKHR {
+    //public unsafe partial struct VkExportSemaphoreWin32HandleInfoKHR {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2651,7 +2651,7 @@ namespace Vulkan {
     // Struct: 129
     /// <summary>VkExtensionProperties - Structure specifying an extension properties
     /// </summary>
-    public unsafe struct VkExtensionProperties {
+    public unsafe partial struct VkExtensionProperties {
         const Int32 VK_MAX_EXTENSION_NAME_SIZE = 256;
         public fixed byte/*char*/ extensionName[VK_MAX_EXTENSION_NAME_SIZE];
         /// <summary> specVersion is the version of this extension.
@@ -2661,7 +2661,7 @@ namespace Vulkan {
     // Struct: 130
     /// <summary>VkExtent2D - Structure specifying a two-dimensional extent
     /// </summary>
-    public unsafe struct VkExtent2D {
+    public unsafe partial struct VkExtent2D {
         /// <summary> width is the width of the extent.</summary>
         public UInt32 width;
         /// <summary> height is the height of the extent.</summary>
@@ -2670,7 +2670,7 @@ namespace Vulkan {
     // Struct: 131
     /// <summary>VkExtent3D - Structure specifying a three-dimensional extent
     /// </summary>
-    public unsafe struct VkExtent3D {
+    public unsafe partial struct VkExtent3D {
         /// <summary> width is the width of the extent.</summary>
         public UInt32 width;
         /// <summary> height is the height of the extent.</summary>
@@ -2681,7 +2681,7 @@ namespace Vulkan {
     // Struct: 132
     /// <summary>VkExternalBufferProperties - Structure specifying supported external handle capabilities
     /// </summary>
-    public unsafe struct VkExternalBufferProperties {
+    public unsafe partial struct VkExternalBufferProperties {
         /// <summary> sType is the type of this structure</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2695,7 +2695,7 @@ namespace Vulkan {
     // Struct: 133
     /// <summary>VkExternalFenceProperties - Structure describing supported external fence handle features
     /// </summary>
-    public unsafe struct VkExternalFenceProperties {
+    public unsafe partial struct VkExternalFenceProperties {
         public VkStructureType sType;
         public void* pNext;
         /// <summary> exportFromImportedHandleTypes is a bitmask of
@@ -2715,7 +2715,7 @@ namespace Vulkan {
     // Struct: 134
     /// <summary>VkExternalFormatANDROID - Structure containing an Android hardware buffer external format
     /// </summary>
-    public unsafe struct VkExternalFormatANDROID {
+    public unsafe partial struct VkExternalFormatANDROID {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2727,7 +2727,7 @@ namespace Vulkan {
     // Struct: 135
     /// <summary>VkExternalImageFormatProperties - Structure specifying supported external handle properties
     /// </summary>
-    public unsafe struct VkExternalImageFormatProperties {
+    public unsafe partial struct VkExternalImageFormatProperties {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2741,7 +2741,7 @@ namespace Vulkan {
     // Struct: 136
     /// <summary>VkExternalImageFormatPropertiesNV - Structure specifying external image format properties
     /// </summary>
-    public unsafe struct VkExternalImageFormatPropertiesNV {
+    public unsafe partial struct VkExternalImageFormatPropertiesNV {
         /// <summary> imageFormatProperties will be filled in as when calling
         /// vkGetPhysicalDeviceImageFormatProperties, but the values returned
         /// may vary depending on the external handle type requested.</summary>
@@ -2772,7 +2772,7 @@ namespace Vulkan {
     // Struct: 137
     /// <summary>VkExternalMemoryBufferCreateInfo - Specify that a buffer may be backed by external memory
     /// </summary>
-    public unsafe struct VkExternalMemoryBufferCreateInfo {
+    public unsafe partial struct VkExternalMemoryBufferCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2785,7 +2785,7 @@ namespace Vulkan {
     // Struct: 138
     /// <summary>VkExternalMemoryImageCreateInfo - Specify that an image may be backed by external memory
     /// </summary>
-    public unsafe struct VkExternalMemoryImageCreateInfo {
+    public unsafe partial struct VkExternalMemoryImageCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2798,7 +2798,7 @@ namespace Vulkan {
     // Struct: 139
     /// <summary>VkExternalMemoryImageCreateInfoNV - Specify that an image may be backed by external memory
     /// </summary>
-    public unsafe struct VkExternalMemoryImageCreateInfoNV {
+    public unsafe partial struct VkExternalMemoryImageCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2811,7 +2811,7 @@ namespace Vulkan {
     // Struct: 140
     /// <summary>VkExternalMemoryProperties - Structure specifying external memory handle type capabilities
     /// </summary>
-    public unsafe struct VkExternalMemoryProperties {
+    public unsafe partial struct VkExternalMemoryProperties {
         /// <summary> externalMemoryFeatures is a bitmask of
         /// VkExternalMemoryFeatureFlagBits specifying the features of
         /// handleType.</summary>
@@ -2829,7 +2829,7 @@ namespace Vulkan {
     // Struct: 141
     /// <summary>VkExternalSemaphoreProperties - Structure describing supported external semaphore handle features
     /// </summary>
-    public unsafe struct VkExternalSemaphoreProperties {
+    public unsafe partial struct VkExternalSemaphoreProperties {
         public VkStructureType sType;
         public void* pNext;
         /// <summary> exportFromImportedHandleTypes is a bitmask of
@@ -2849,7 +2849,7 @@ namespace Vulkan {
     // Struct: 142
     /// <summary>VkFenceCreateInfo - Structure specifying parameters of a newly created fence
     /// </summary>
-    public unsafe struct VkFenceCreateInfo {
+    public unsafe partial struct VkFenceCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2861,7 +2861,7 @@ namespace Vulkan {
     // Struct: 143
     /// <summary>VkFenceGetFdInfoKHR - Structure describing a POSIX FD fence export operation
     /// </summary>
-    public unsafe struct VkFenceGetFdInfoKHR {
+    public unsafe partial struct VkFenceGetFdInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2874,7 +2874,7 @@ namespace Vulkan {
     // Struct: 144
     /// <summary>VkFenceGetWin32HandleInfoKHR - Structure describing a Win32 handle fence export operation
     /// </summary>
-    public unsafe struct VkFenceGetWin32HandleInfoKHR {
+    public unsafe partial struct VkFenceGetWin32HandleInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2887,7 +2887,7 @@ namespace Vulkan {
     // Struct: 145
     /// <summary>VkFilterCubicImageViewImageFormatPropertiesEXT - Structure for querying cubic filtering capabilities of an image view type
     /// </summary>
-    public unsafe struct VkFilterCubicImageViewImageFormatPropertiesEXT {
+    public unsafe partial struct VkFilterCubicImageViewImageFormatPropertiesEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2906,7 +2906,7 @@ namespace Vulkan {
     // Struct: 146
     /// <summary>VkFormatProperties - Structure specifying image format properties
     /// </summary>
-    public unsafe struct VkFormatProperties {
+    public unsafe partial struct VkFormatProperties {
         /// <summary> linearTilingFeatures is a bitmask of VkFormatFeatureFlagBits
         /// specifying features supported by images created with a tiling
         /// parameter of VK_IMAGE_TILING_LINEAR.</summary>
@@ -2922,7 +2922,7 @@ namespace Vulkan {
     // Struct: 147
     /// <summary>VkFormatProperties2 - Structure specifying image format properties
     /// </summary>
-    public unsafe struct VkFormatProperties2 {
+    public unsafe partial struct VkFormatProperties2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2934,7 +2934,7 @@ namespace Vulkan {
     // Struct: 148
     /// <summary>VkFramebufferCreateInfo - Structure specifying parameters of a newly created framebuffer
     /// </summary>
-    public unsafe struct VkFramebufferCreateInfo {
+    public unsafe partial struct VkFramebufferCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2964,7 +2964,7 @@ namespace Vulkan {
     // Struct: 149
     /// <summary>VkGeometryAABBNV - Structure specifying axis-aligned bounding box geometry in a bottom-level acceleration structure
     /// </summary>
-    public unsafe struct VkGeometryAABBNV {
+    public unsafe partial struct VkGeometryAABBNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -2981,7 +2981,7 @@ namespace Vulkan {
     // Struct: 150
     /// <summary>VkGeometryDataNV - Structure specifying geometry in a bottom-level acceleration structure
     /// </summary>
-    public unsafe struct VkGeometryDataNV {
+    public unsafe partial struct VkGeometryDataNV {
         /// <summary> triangles contains triangle data if
         /// VkGeometryNV::geometryType is
         /// VK_GEOMETRY_TYPE_TRIANGLES_NV.</summary>
@@ -2994,7 +2994,7 @@ namespace Vulkan {
     // Struct: 151
     /// <summary>VkGeometryNV - Structure specifying a geometry in a bottom-level acceleration structure
     /// </summary>
-    public unsafe struct VkGeometryNV {
+    public unsafe partial struct VkGeometryNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3011,7 +3011,7 @@ namespace Vulkan {
     // Struct: 152
     /// <summary>VkGeometryTrianglesNV - Structure specifying a triangle geometry in a bottom-level acceleration structure
     /// </summary>
-    public unsafe struct VkGeometryTrianglesNV {
+    public unsafe partial struct VkGeometryTrianglesNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3047,7 +3047,7 @@ namespace Vulkan {
     // Struct: 153
     /// <summary>VkGraphicsPipelineCreateInfo - Structure specifying parameters of a newly created graphics pipeline
     /// </summary>
-    public unsafe struct VkGraphicsPipelineCreateInfo {
+    public unsafe partial struct VkGraphicsPipelineCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3126,7 +3126,7 @@ namespace Vulkan {
     // Struct: 154
     /// <summary>VkHdrMetadataEXT - structure to specify Hdr metadata
     /// </summary>
-    public unsafe struct VkHdrMetadataEXT {
+    public unsafe partial struct VkHdrMetadataEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3158,7 +3158,7 @@ namespace Vulkan {
     // Struct: 155
     ///// <summary>VkIOSSurfaceCreateInfoMVK - Structure specifying parameters of a newly created iOS surface object
     ///// </summary>
-    //public unsafe struct VkIOSSurfaceCreateInfoMVK {
+    //public unsafe partial struct VkIOSSurfaceCreateInfoMVK {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3174,7 +3174,7 @@ namespace Vulkan {
     // Struct: 156
     /// <summary>VkImageBlit - Structure specifying an image blit operation
     /// </summary>
-    public unsafe struct VkImageBlit {
+    public unsafe partial struct VkImageBlit {
         /// <summary> srcSubresource is the subresource to blit from.</summary>
         public VkImageSubresourceLayers srcSubresource;
 
@@ -3194,7 +3194,7 @@ namespace Vulkan {
     // Struct: 157
     /// <summary>VkImageCopy - Structure specifying an image copy operation
     /// </summary>
-    public unsafe struct VkImageCopy {
+    public unsafe partial struct VkImageCopy {
         /// <summary> srcSubresource and dstSubresource are
         /// VkImageSubresourceLayers structures specifying the image
         /// subresources of the images used for the source and destination image
@@ -3213,7 +3213,7 @@ namespace Vulkan {
     // Struct: 158
     /// <summary>VkImageCreateInfo - Structure specifying the parameters of a newly created image object
     /// </summary>
-    public unsafe struct VkImageCreateInfo {
+    public unsafe partial struct VkImageCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3264,7 +3264,7 @@ namespace Vulkan {
     // Struct: 159
     /// <summary>VkImageDrmFormatModifierExplicitCreateInfoEXT - Specify that an image be created with the provided DRM format modifier and explicit memory layout
     /// </summary>
-    public unsafe struct VkImageDrmFormatModifierExplicitCreateInfoEXT {
+    public unsafe partial struct VkImageDrmFormatModifierExplicitCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3283,7 +3283,7 @@ namespace Vulkan {
     // Struct: 160
     /// <summary>VkImageDrmFormatModifierListCreateInfoEXT - Specify that an image must be created with a DRM format modifier from the provided list
     /// </summary>
-    public unsafe struct VkImageDrmFormatModifierListCreateInfoEXT {
+    public unsafe partial struct VkImageDrmFormatModifierListCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3297,7 +3297,7 @@ namespace Vulkan {
     // Struct: 161
     /// <summary>VkImageDrmFormatModifierPropertiesEXT - Properties of an image’s Linux DRM format modifier
     /// </summary>
-    public unsafe struct VkImageDrmFormatModifierPropertiesEXT {
+    public unsafe partial struct VkImageDrmFormatModifierPropertiesEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3309,7 +3309,7 @@ namespace Vulkan {
     // Struct: 162
     /// <summary>VkImageFormatListCreateInfoKHR - Specify that an image <strong class="purple">can</strong> be used with a particular set of formats
     /// </summary>
-    public unsafe struct VkImageFormatListCreateInfoKHR {
+    public unsafe partial struct VkImageFormatListCreateInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3324,7 +3324,7 @@ namespace Vulkan {
     // Struct: 163
     /// <summary>VkImageFormatProperties - Structure specifying an image format properties
     /// </summary>
-    public unsafe struct VkImageFormatProperties {
+    public unsafe partial struct VkImageFormatProperties {
         /// <summary> maxExtent are the maximum image dimensions.
         /// See the Allowed Extent Values section
         /// below for how these values are constrained by type.</summary>
@@ -3356,7 +3356,7 @@ namespace Vulkan {
     // Struct: 164
     /// <summary>VkImageFormatProperties2 - Structure specifying an image format properties
     /// </summary>
-    public unsafe struct VkImageFormatProperties2 {
+    public unsafe partial struct VkImageFormatProperties2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.
@@ -3372,7 +3372,7 @@ namespace Vulkan {
     // Struct: 165
     /// <summary>VkImageMemoryBarrier - Structure specifying the parameters of an image memory barrier
     /// </summary>
-    public unsafe struct VkImageMemoryBarrier {
+    public unsafe partial struct VkImageMemoryBarrier {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3404,7 +3404,7 @@ namespace Vulkan {
     // Struct: 166
     /// <summary>VkImageMemoryRequirementsInfo2 - (None)
     /// </summary>
-    public unsafe struct VkImageMemoryRequirementsInfo2 {
+    public unsafe partial struct VkImageMemoryRequirementsInfo2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3415,7 +3415,7 @@ namespace Vulkan {
     // Struct: 167
     ///// <summary>VkImagePipeSurfaceCreateInfoFUCHSIA - Structure specifying parameters of a newly created ImagePipe surface object
     ///// </summary>
-    //public unsafe struct VkImagePipeSurfaceCreateInfoFUCHSIA {
+    //public unsafe partial struct VkImagePipeSurfaceCreateInfoFUCHSIA {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3429,7 +3429,7 @@ namespace Vulkan {
     // Struct: 168
     /// <summary>VkImagePlaneMemoryRequirementsInfo - Structure specifying image plane for memory requirements
     /// </summary>
-    public unsafe struct VkImagePlaneMemoryRequirementsInfo {
+    public unsafe partial struct VkImagePlaneMemoryRequirementsInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3441,7 +3441,7 @@ namespace Vulkan {
     // Struct: 169
     /// <summary>VkImageResolve - Structure specifying an image resolve operation
     /// </summary>
-    public unsafe struct VkImageResolve {
+    public unsafe partial struct VkImageResolve {
         /// <summary> srcSubresource and dstSubresource are
         /// VkImageSubresourceLayers structures specifying the image
         /// subresources of the images used for the source and destination image
@@ -3461,7 +3461,7 @@ namespace Vulkan {
     // Struct: 170
     /// <summary>VkImageSparseMemoryRequirementsInfo2 - (None)
     /// </summary>
-    public unsafe struct VkImageSparseMemoryRequirementsInfo2 {
+    public unsafe partial struct VkImageSparseMemoryRequirementsInfo2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3472,7 +3472,7 @@ namespace Vulkan {
     // Struct: 171
     /// <summary>VkImageStencilUsageCreateInfoEXT - Specify separate usage flags for the stencil aspect of a depth-stencil image
     /// </summary>
-    public unsafe struct VkImageStencilUsageCreateInfoEXT {
+    public unsafe partial struct VkImageStencilUsageCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3484,7 +3484,7 @@ namespace Vulkan {
     // Struct: 172
     /// <summary>VkImageSubresource - Structure specifying an image subresource
     /// </summary>
-    public unsafe struct VkImageSubresource {
+    public unsafe partial struct VkImageSubresource {
         /// <summary> aspectMask is a VkImageAspectFlags selecting the image
         /// aspect.</summary>
         public VkImageAspectFlags aspectMask;
@@ -3496,7 +3496,7 @@ namespace Vulkan {
     // Struct: 173
     /// <summary>VkImageSubresourceLayers - Structure specifying an image subresource layers
     /// </summary>
-    public unsafe struct VkImageSubresourceLayers {
+    public unsafe partial struct VkImageSubresourceLayers {
         /// <summary> aspectMask is a combination of VkImageAspectFlagBits,
         /// selecting the color, depth and/or stencil aspects to be copied.</summary>
         public VkImageAspectFlags aspectMask;
@@ -3510,7 +3510,7 @@ namespace Vulkan {
     // Struct: 174
     /// <summary>VkImageSubresourceRange - Structure specifying an image subresource range
     /// </summary>
-    public unsafe struct VkImageSubresourceRange {
+    public unsafe partial struct VkImageSubresourceRange {
         /// <summary> aspectMask is a bitmask of VkImageAspectFlagBits specifying
         /// which aspect(s) of the image are included in the view.</summary>
         public VkImageAspectFlags aspectMask;
@@ -3528,7 +3528,7 @@ namespace Vulkan {
     // Struct: 175
     /// <summary>VkImageSwapchainCreateInfoKHR - Specify that an image will be bound to swapchain memory
     /// </summary>
-    public unsafe struct VkImageSwapchainCreateInfoKHR {
+    public unsafe partial struct VkImageSwapchainCreateInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3540,7 +3540,7 @@ namespace Vulkan {
     // Struct: 176
     /// <summary>VkImageViewASTCDecodeModeEXT - Structure describing the ASTC decode mode for an image view
     /// </summary>
-    public unsafe struct VkImageViewASTCDecodeModeEXT {
+    public unsafe partial struct VkImageViewASTCDecodeModeEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3552,7 +3552,7 @@ namespace Vulkan {
     // Struct: 177
     /// <summary>VkImageViewCreateInfo - Structure specifying parameters of a newly created image view
     /// </summary>
-    public unsafe struct VkImageViewCreateInfo {
+    public unsafe partial struct VkImageViewCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3579,7 +3579,7 @@ namespace Vulkan {
     // Struct: 178
     /// <summary>VkImageViewHandleInfoNVX - Structure specifying the image view for handle queries
     /// </summary>
-    public unsafe struct VkImageViewHandleInfoNVX {
+    public unsafe partial struct VkImageViewHandleInfoNVX {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3596,7 +3596,7 @@ namespace Vulkan {
     // Struct: 179
     /// <summary>VkImageViewUsageCreateInfo - Specify the intended usage of an image view
     /// </summary>
-    public unsafe struct VkImageViewUsageCreateInfo {
+    public unsafe partial struct VkImageViewUsageCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3609,7 +3609,7 @@ namespace Vulkan {
     // Struct: 180
     ///// <summary>VkImportAndroidHardwareBufferInfoANDROID - Import memory from an Android hardware buffer
     ///// </summary>
-    //public unsafe struct VkImportAndroidHardwareBufferInfoANDROID {
+    //public unsafe partial struct VkImportAndroidHardwareBufferInfoANDROID {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3620,7 +3620,7 @@ namespace Vulkan {
     // Struct: 181
     /// <summary>VkImportFenceFdInfoKHR - (None)
     /// </summary>
-    public unsafe struct VkImportFenceFdInfoKHR {
+    public unsafe partial struct VkImportFenceFdInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3638,7 +3638,7 @@ namespace Vulkan {
     // Struct: 182
     /// <summary>VkImportFenceWin32HandleInfoKHR - (None)
     /// </summary>
-    public unsafe struct VkImportFenceWin32HandleInfoKHR {
+    public unsafe partial struct VkImportFenceWin32HandleInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3659,7 +3659,7 @@ namespace Vulkan {
     // Struct: 183
     /// <summary>VkImportMemoryFdInfoKHR - import memory created on the same physical device from a file descriptor
     /// </summary>
-    public unsafe struct VkImportMemoryFdInfoKHR {
+    public unsafe partial struct VkImportMemoryFdInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3672,7 +3672,7 @@ namespace Vulkan {
     // Struct: 184
     /// <summary>VkImportMemoryHostPointerInfoEXT - import memory from a host pointer
     /// </summary>
-    public unsafe struct VkImportMemoryHostPointerInfoEXT {
+    public unsafe partial struct VkImportMemoryHostPointerInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3685,7 +3685,7 @@ namespace Vulkan {
     // Struct: 185
     ///// <summary>VkImportMemoryWin32HandleInfoKHR - import Win32 memory created on the same physical device
     ///// </summary>
-    //public unsafe struct VkImportMemoryWin32HandleInfoKHR {
+    //public unsafe partial struct VkImportMemoryWin32HandleInfoKHR {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3701,7 +3701,7 @@ namespace Vulkan {
     // Struct: 186
     ///// <summary>VkImportMemoryWin32HandleInfoNV - import Win32 memory created on the same physical device
     ///// </summary>
-    //public unsafe struct VkImportMemoryWin32HandleInfoNV {
+    //public unsafe partial struct VkImportMemoryWin32HandleInfoNV {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3715,7 +3715,7 @@ namespace Vulkan {
     // Struct: 187
     /// <summary>VkImportSemaphoreFdInfoKHR - Structure specifying POSIX file descriptor to import to a semaphore
     /// </summary>
-    public unsafe struct VkImportSemaphoreFdInfoKHR {
+    public unsafe partial struct VkImportSemaphoreFdInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3734,7 +3734,7 @@ namespace Vulkan {
     // Struct: 188
     /// <summary>VkImportSemaphoreWin32HandleInfoKHR - Structure specifying Windows handle to import to a semaphore
     /// </summary>
-    public unsafe struct VkImportSemaphoreWin32HandleInfoKHR {
+    public unsafe partial struct VkImportSemaphoreWin32HandleInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3756,7 +3756,7 @@ namespace Vulkan {
     // Struct: 189
     /// <summary>VkIndirectCommandsLayoutCreateInfoNVX - Structure specifying the parameters of a newly created indirect commands layout object
     /// </summary>
-    public unsafe struct VkIndirectCommandsLayoutCreateInfoNVX {
+    public unsafe partial struct VkIndirectCommandsLayoutCreateInfoNVX {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3778,7 +3778,7 @@ namespace Vulkan {
     // Struct: 190
     /// <summary>VkIndirectCommandsLayoutTokenNVX - Struct specifying the details of an indirect command layout token
     /// </summary>
-    public unsafe struct VkIndirectCommandsLayoutTokenNVX {
+    public unsafe partial struct VkIndirectCommandsLayoutTokenNVX {
         public VkIndirectCommandsTokenTypeNVX tokenType;
         /// <summary> bindingUnit has a different meaning depending on the type, please
         /// refer pseudo code further down for details.</summary>
@@ -3793,7 +3793,7 @@ namespace Vulkan {
     // Struct: 191
     /// <summary>VkIndirectCommandsTokenNVX - Structure specifying parameters for the reservation of command buffer space
     /// </summary>
-    public unsafe struct VkIndirectCommandsTokenNVX {
+    public unsafe partial struct VkIndirectCommandsTokenNVX {
         /// <summary> tokenType specifies the token command type.</summary>
         public VkIndirectCommandsTokenTypeNVX tokenType;
         /// <summary> buffer specifies the VkBuffer storing the functional
@@ -3807,7 +3807,7 @@ namespace Vulkan {
     // Struct: 192
     /// <summary>VkInputAttachmentAspectReference - Structure specifying a subpass/input attachment pair and an aspect mask that <strong class="purple">can</strong> be read.
     /// </summary>
-    public unsafe struct VkInputAttachmentAspectReference {
+    public unsafe partial struct VkInputAttachmentAspectReference {
         /// <summary> subpass is an index into the pSubpasses array of the parent
         /// VkRenderPassCreateInfo structure.</summary>
         public UInt32 subpass;
@@ -3821,7 +3821,7 @@ namespace Vulkan {
     // Struct: 193
     /// <summary>VkInstanceCreateInfo - Structure specifying parameters of a newly created instance
     /// </summary>
-    public unsafe struct VkInstanceCreateInfo {
+    public unsafe partial struct VkInstanceCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3852,7 +3852,7 @@ namespace Vulkan {
     // Struct: 194
     /// <summary>VkLayerProperties - Structure specifying layer properties
     /// </summary>
-    public unsafe struct VkLayerProperties {
+    public unsafe partial struct VkLayerProperties {
         const Int32 VK_MAX_EXTENSION_NAME_SIZE = 256;
         const Int32 VK_MAX_DESCRIPTION_SIZE = 256;
         public fixed byte layerName[VK_MAX_EXTENSION_NAME_SIZE];
@@ -3867,7 +3867,7 @@ namespace Vulkan {
     // Struct: 195
     ///// <summary>VkMacOSSurfaceCreateInfoMVK - Structure specifying parameters of a newly created macOS surface object
     ///// </summary>
-    //public unsafe struct VkMacOSSurfaceCreateInfoMVK {
+    //public unsafe partial struct VkMacOSSurfaceCreateInfoMVK {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3883,7 +3883,7 @@ namespace Vulkan {
     // Struct: 196
     /// <summary>VkMappedMemoryRange - Structure specifying a mapped memory range
     /// </summary>
-    public unsafe struct VkMappedMemoryRange {
+    public unsafe partial struct VkMappedMemoryRange {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3901,7 +3901,7 @@ namespace Vulkan {
     // Struct: 197
     /// <summary>VkMemoryAllocateFlagsInfo - Structure controlling how many instances of memory will be allocated
     /// </summary>
-    public unsafe struct VkMemoryAllocateFlagsInfo {
+    public unsafe partial struct VkMemoryAllocateFlagsInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3917,7 +3917,7 @@ namespace Vulkan {
     // Struct: 198
     /// <summary>VkMemoryAllocateInfo - Structure containing parameters of a memory allocation
     /// </summary>
-    public unsafe struct VkMemoryAllocateInfo {
+    public unsafe partial struct VkMemoryAllocateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3932,7 +3932,7 @@ namespace Vulkan {
     // Struct: 199
     /// <summary>VkMemoryBarrier - Structure specifying a global memory barrier
     /// </summary>
-    public unsafe struct VkMemoryBarrier {
+    public unsafe partial struct VkMemoryBarrier {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3947,7 +3947,7 @@ namespace Vulkan {
     // Struct: 200
     /// <summary>VkMemoryDedicatedAllocateInfo - Specify a dedicated memory allocation resource
     /// </summary>
-    public unsafe struct VkMemoryDedicatedAllocateInfo {
+    public unsafe partial struct VkMemoryDedicatedAllocateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3962,7 +3962,7 @@ namespace Vulkan {
     // Struct: 201
     /// <summary>VkMemoryDedicatedRequirements - Structure describing dedicated allocation requirements of buffer and image resources
     /// </summary>
-    public unsafe struct VkMemoryDedicatedRequirements {
+    public unsafe partial struct VkMemoryDedicatedRequirements {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3979,7 +3979,7 @@ namespace Vulkan {
     // Struct: 202
     /// <summary>VkMemoryFdPropertiesKHR - Properties of External Memory File Descriptors
     /// </summary>
-    public unsafe struct VkMemoryFdPropertiesKHR {
+    public unsafe partial struct VkMemoryFdPropertiesKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -3991,7 +3991,7 @@ namespace Vulkan {
     // Struct: 203
     /// <summary>VkMemoryGetAndroidHardwareBufferInfoANDROID - Structure describing an Android hardware buffer memory export operation
     /// </summary>
-    public unsafe struct VkMemoryGetAndroidHardwareBufferInfoANDROID {
+    public unsafe partial struct VkMemoryGetAndroidHardwareBufferInfoANDROID {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4003,7 +4003,7 @@ namespace Vulkan {
     // Struct: 204
     /// <summary>VkMemoryGetFdInfoKHR - Structure describing a POSIX FD semaphore export operation
     /// </summary>
-    public unsafe struct VkMemoryGetFdInfoKHR {
+    public unsafe partial struct VkMemoryGetFdInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4017,7 +4017,7 @@ namespace Vulkan {
     // Struct: 205
     /// <summary>VkMemoryGetWin32HandleInfoKHR - Structure describing a Win32 handle semaphore export operation
     /// </summary>
-    public unsafe struct VkMemoryGetWin32HandleInfoKHR {
+    public unsafe partial struct VkMemoryGetWin32HandleInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4031,7 +4031,7 @@ namespace Vulkan {
     // Struct: 206
     /// <summary>VkMemoryHeap - Structure specifying a memory heap
     /// </summary>
-    public unsafe struct VkMemoryHeap {
+    public unsafe partial struct VkMemoryHeap {
         /// <summary> size is the total memory size in bytes in the heap.</summary>
         public VkDeviceSize size;
         /// <summary> flags is a bitmask of VkMemoryHeapFlagBits specifying
@@ -4041,7 +4041,7 @@ namespace Vulkan {
     // Struct: 207
     /// <summary>VkMemoryHostPointerPropertiesEXT - Properties of external memory host pointer
     /// </summary>
-    public unsafe struct VkMemoryHostPointerPropertiesEXT {
+    public unsafe partial struct VkMemoryHostPointerPropertiesEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4053,7 +4053,7 @@ namespace Vulkan {
     // Struct: 208
     /// <summary>VkMemoryPriorityAllocateInfoEXT - Specify a memory allocation priority
     /// </summary>
-    public unsafe struct VkMemoryPriorityAllocateInfoEXT {
+    public unsafe partial struct VkMemoryPriorityAllocateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4067,7 +4067,7 @@ namespace Vulkan {
     // Struct: 209
     /// <summary>VkMemoryRequirements - Structure specifying memory requirements
     /// </summary>
-    public unsafe struct VkMemoryRequirements {
+    public unsafe partial struct VkMemoryRequirements {
         /// <summary> size is the size, in bytes, of the memory allocation required for
         /// the resource.</summary>
         public VkDeviceSize size;
@@ -4084,7 +4084,7 @@ namespace Vulkan {
     // Struct: 210
     /// <summary>VkMemoryRequirements2 - Structure specifying memory requirements
     /// </summary>
-    public unsafe struct VkMemoryRequirements2 {
+    public unsafe partial struct VkMemoryRequirements2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4097,7 +4097,7 @@ namespace Vulkan {
     // Struct: 211
     /// <summary>VkMemoryType - Structure specifying memory type
     /// </summary>
-    public unsafe struct VkMemoryType {
+    public unsafe partial struct VkMemoryType {
         /// <summary> propertyFlags is a bitmask of VkMemoryPropertyFlagBits of
         /// properties for this memory type.</summary>
         public VkMemoryPropertyFlags propertyFlags;
@@ -4109,7 +4109,7 @@ namespace Vulkan {
     // Struct: 212
     /// <summary>VkMemoryWin32HandlePropertiesKHR - Properties of External Memory Windows Handles
     /// </summary>
-    public unsafe struct VkMemoryWin32HandlePropertiesKHR {
+    public unsafe partial struct VkMemoryWin32HandlePropertiesKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4121,7 +4121,7 @@ namespace Vulkan {
     // Struct: 213
     ///// <summary>VkMetalSurfaceCreateInfoEXT - Structure specifying parameters of a newly created Metal surface object
     ///// </summary>
-    //public unsafe struct VkMetalSurfaceCreateInfoEXT {
+    //public unsafe partial struct VkMetalSurfaceCreateInfoEXT {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4135,7 +4135,7 @@ namespace Vulkan {
     // Struct: 214
     /// <summary>VkMultisamplePropertiesEXT - Structure returning information about sample count specific additional multisampling capabilities
     /// </summary>
-    public unsafe struct VkMultisamplePropertiesEXT {
+    public unsafe partial struct VkMultisamplePropertiesEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4147,7 +4147,7 @@ namespace Vulkan {
     // Struct: 215
     /// <summary>VkObjectTableCreateInfoNVX - Structure specifying the parameters of a newly created object table
     /// </summary>
-    public unsafe struct VkObjectTableCreateInfoNVX {
+    public unsafe partial struct VkObjectTableCreateInfoNVX {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4195,7 +4195,7 @@ namespace Vulkan {
     // Struct: 216
     /// <summary>VkObjectTableDescriptorSetEntryNVX - Parameters of an object table descriptor set entry
     /// </summary>
-    public unsafe struct VkObjectTableDescriptorSetEntryNVX {
+    public unsafe partial struct VkObjectTableDescriptorSetEntryNVX {
         public VkObjectEntryTypeNVX type;
         public VkObjectEntryUsageFlagsNVX flags;
         /// <summary> pipelineLayout specifies the VkPipelineLayout that the
@@ -4208,7 +4208,7 @@ namespace Vulkan {
     // Struct: 217
     /// <summary>VkObjectTableEntryNVX - Common parameters of an object table resource entry
     /// </summary>
-    public unsafe struct VkObjectTableEntryNVX {
+    public unsafe partial struct VkObjectTableEntryNVX {
         /// <summary> type defines the entry type</summary>
         public VkObjectEntryTypeNVX type;
         /// <summary> flags defines which VkPipelineBindPoint the resource can be
@@ -4219,7 +4219,7 @@ namespace Vulkan {
     // Struct: 218
     /// <summary>VkObjectTableIndexBufferEntryNVX - Parameters of an object table index buffer entry
     /// </summary>
-    public unsafe struct VkObjectTableIndexBufferEntryNVX {
+    public unsafe partial struct VkObjectTableIndexBufferEntryNVX {
         public VkObjectEntryTypeNVX type;
         public VkObjectEntryUsageFlagsNVX flags;
         /// <summary> buffer specifies the VkBuffer that can be bound as index
@@ -4232,7 +4232,7 @@ namespace Vulkan {
     // Struct: 219
     /// <summary>VkObjectTablePipelineEntryNVX - Parameters of an object table pipeline entry
     /// </summary>
-    public unsafe struct VkObjectTablePipelineEntryNVX {
+    public unsafe partial struct VkObjectTablePipelineEntryNVX {
         public VkObjectEntryTypeNVX type;
         public VkObjectEntryUsageFlagsNVX flags;
         /// <summary> pipeline specifies the VkPipeline that this resource entry
@@ -4242,7 +4242,7 @@ namespace Vulkan {
     // Struct: 220
     /// <summary>VkObjectTablePushConstantEntryNVX - Parameters of an object table push constant entry
     /// </summary>
-    public unsafe struct VkObjectTablePushConstantEntryNVX {
+    public unsafe partial struct VkObjectTablePushConstantEntryNVX {
         public VkObjectEntryTypeNVX type;
         public VkObjectEntryUsageFlagsNVX flags;
         /// <summary> pipelineLayout specifies the VkPipelineLayout that the
@@ -4255,7 +4255,7 @@ namespace Vulkan {
     // Struct: 221
     /// <summary>VkObjectTableVertexBufferEntryNVX - Parameters of an object table vertex buffer entry
     /// </summary>
-    public unsafe struct VkObjectTableVertexBufferEntryNVX {
+    public unsafe partial struct VkObjectTableVertexBufferEntryNVX {
         public VkObjectEntryTypeNVX type;
         public VkObjectEntryUsageFlagsNVX flags;
         /// <summary> buffer specifies the VkBuffer that can be bound as vertex
@@ -4265,7 +4265,7 @@ namespace Vulkan {
     // Struct: 222
     /// <summary>VkOffset2D - Structure specifying a two-dimensional offset
     /// </summary>
-    public unsafe struct VkOffset2D {
+    public unsafe partial struct VkOffset2D {
         /// <summary> x is the x offset.</summary>
         public Int32 x;
         /// <summary> y is the y offset.</summary>
@@ -4274,7 +4274,7 @@ namespace Vulkan {
     // Struct: 223
     /// <summary>VkOffset3D - Structure specifying a three-dimensional offset
     /// </summary>
-    public unsafe struct VkOffset3D {
+    public unsafe partial struct VkOffset3D {
         /// <summary> x is the x offset.</summary>
         public Int32 x;
         /// <summary> y is the y offset.</summary>
@@ -4285,7 +4285,7 @@ namespace Vulkan {
     // Struct: 224
     /// <summary>VkPastPresentationTimingGOOGLE - Structure containing timing information about a previously-presented image
     /// </summary>
-    public unsafe struct VkPastPresentationTimingGOOGLE {
+    public unsafe partial struct VkPastPresentationTimingGOOGLE {
         /// <summary> presentID is an application-provided value that was given to a
         /// previous vkQueuePresentKHR command via
         /// VkPresentTimeGOOGLE::presentID (see below).
@@ -4316,7 +4316,7 @@ namespace Vulkan {
     // Struct: 225
     /// <summary>VkPhysicalDevice16BitStorageFeatures - Structure describing features supported by VK_KHR_16bit_storage
     /// </summary>
-    public unsafe struct VkPhysicalDevice16BitStorageFeatures {
+    public unsafe partial struct VkPhysicalDevice16BitStorageFeatures {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4366,7 +4366,7 @@ namespace Vulkan {
     // Struct: 226
     /// <summary>VkPhysicalDevice8BitStorageFeaturesKHR - Structure describing features supported by VK_KHR_8bit_storage
     /// </summary>
-    public unsafe struct VkPhysicalDevice8BitStorageFeaturesKHR {
+    public unsafe partial struct VkPhysicalDevice8BitStorageFeaturesKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4406,7 +4406,7 @@ namespace Vulkan {
     // Struct: 227
     /// <summary>VkPhysicalDeviceASTCDecodeFeaturesEXT - Structure describing ASTC decode mode features
     /// </summary>
-    public unsafe struct VkPhysicalDeviceASTCDecodeFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceASTCDecodeFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 decodeModeSharedExponent;
@@ -4414,7 +4414,7 @@ namespace Vulkan {
     // Struct: 228
     /// <summary>VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT - Structure describing advanced blending features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 advancedBlendCoherentOperations;
@@ -4422,7 +4422,7 @@ namespace Vulkan {
     // Struct: 229
     /// <summary>VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT - Structure describing advanced blending limits that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 advancedBlendMaxColorAttachments;
@@ -4435,7 +4435,7 @@ namespace Vulkan {
     // Struct: 230
     /// <summary>VkPhysicalDeviceBufferDeviceAddressFeaturesEXT - Structure describing buffer address features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceBufferDeviceAddressFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceBufferDeviceAddressFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 bufferDeviceAddress;
@@ -4445,7 +4445,7 @@ namespace Vulkan {
     // Struct: 231
     /// <summary>VkPhysicalDeviceComputeShaderDerivativesFeaturesNV - Structure describing compute shader derivative features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceComputeShaderDerivativesFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceComputeShaderDerivativesFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 computeDerivativeGroupQuads;
@@ -4454,7 +4454,7 @@ namespace Vulkan {
     // Struct: 232
     /// <summary>VkPhysicalDeviceConditionalRenderingFeaturesEXT - Structure describing if a secondary command buffer can be executed if conditional rendering is active in the primary command buffer
     /// </summary>
-    public unsafe struct VkPhysicalDeviceConditionalRenderingFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceConditionalRenderingFeaturesEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4472,7 +4472,7 @@ namespace Vulkan {
     // Struct: 233
     /// <summary>VkPhysicalDeviceConservativeRasterizationPropertiesEXT - Structure describing conservative raster properties that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceConservativeRasterizationPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceConservativeRasterizationPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public float primitiveOverestimationSize;
@@ -4488,7 +4488,7 @@ namespace Vulkan {
     // Struct: 234
     /// <summary>VkPhysicalDeviceCooperativeMatrixFeaturesNV - Structure describing cooperative matrix features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceCooperativeMatrixFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceCooperativeMatrixFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 cooperativeMatrix;
@@ -4497,7 +4497,7 @@ namespace Vulkan {
     // Struct: 235
     /// <summary>VkPhysicalDeviceCooperativeMatrixPropertiesNV - Structure describing cooperative matrix properties supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceCooperativeMatrixPropertiesNV {
+    public unsafe partial struct VkPhysicalDeviceCooperativeMatrixPropertiesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkShaderStageFlags cooperativeMatrixSupportedStages;
@@ -4505,7 +4505,7 @@ namespace Vulkan {
     // Struct: 236
     /// <summary>VkPhysicalDeviceCornerSampledImageFeaturesNV - Structure describing corner sampled image features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceCornerSampledImageFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceCornerSampledImageFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 cornerSampledImage;
@@ -4513,7 +4513,7 @@ namespace Vulkan {
     // Struct: 237
     /// <summary>VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV - Structure describing dedicated allocation image aliasing features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 dedicatedAllocationImageAliasing;
@@ -4521,7 +4521,7 @@ namespace Vulkan {
     // Struct: 238
     /// <summary>VkPhysicalDeviceDepthClipEnableFeaturesEXT - Structure indicating support for explicit enable of depth clip
     /// </summary>
-    public unsafe struct VkPhysicalDeviceDepthClipEnableFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceDepthClipEnableFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 depthClipEnable;
@@ -4529,7 +4529,7 @@ namespace Vulkan {
     // Struct: 239
     /// <summary>VkPhysicalDeviceDepthStencilResolvePropertiesKHR - Structure describing depth/stencil resolve properties that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceDepthStencilResolvePropertiesKHR {
+    public unsafe partial struct VkPhysicalDeviceDepthStencilResolvePropertiesKHR {
         public VkStructureType sType;
         public void* pNext;
         public VkResolveModeFlagsKHR supportedDepthResolveModes;
@@ -4540,7 +4540,7 @@ namespace Vulkan {
     // Struct: 240
     /// <summary>VkPhysicalDeviceDescriptorIndexingFeaturesEXT - Structure describing descriptor indexing features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceDescriptorIndexingFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceDescriptorIndexingFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 shaderInputAttachmentArrayDynamicIndexing;
@@ -4567,7 +4567,7 @@ namespace Vulkan {
     // Struct: 241
     /// <summary>VkPhysicalDeviceDescriptorIndexingPropertiesEXT - Structure describing descriptor indexing properties that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceDescriptorIndexingPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceDescriptorIndexingPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 maxUpdateAfterBindDescriptorsInAllPools;
@@ -4597,7 +4597,7 @@ namespace Vulkan {
     // Struct: 242
     /// <summary>VkPhysicalDeviceDiscardRectanglePropertiesEXT - Structure describing discard rectangle limits that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceDiscardRectanglePropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceDiscardRectanglePropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 maxDiscardRectangles;
@@ -4605,7 +4605,7 @@ namespace Vulkan {
     // Struct: 243
     /// <summary>VkPhysicalDeviceDriverPropertiesKHR - Structure containing driver identification information
     /// </summary>
-    public unsafe struct VkPhysicalDeviceDriverPropertiesKHR {
+    public unsafe partial struct VkPhysicalDeviceDriverPropertiesKHR {
         const Int32 VK_MAX_DRIVER_NAME_SIZE_KHR = 256;
         const Int32 VK_MAX_DRIVER_INFO_SIZE_KHR = 256;
         /// <summary> sType is the type of this structure.</summary>
@@ -4624,7 +4624,7 @@ namespace Vulkan {
     // Struct: 244
     /// <summary>VkPhysicalDeviceExclusiveScissorFeaturesNV - Structure describing exclusive scissor features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceExclusiveScissorFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceExclusiveScissorFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 exclusiveScissor;
@@ -4632,7 +4632,7 @@ namespace Vulkan {
     // Struct: 245
     /// <summary>VkPhysicalDeviceExternalBufferInfo - Structure specifying buffer creation parameters
     /// </summary>
-    public unsafe struct VkPhysicalDeviceExternalBufferInfo {
+    public unsafe partial struct VkPhysicalDeviceExternalBufferInfo {
         /// <summary> sType is the type of this structure</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4653,7 +4653,7 @@ namespace Vulkan {
     // Struct: 246
     /// <summary>VkPhysicalDeviceExternalFenceInfo - Structure specifying fence creation parameters.
     /// </summary>
-    public unsafe struct VkPhysicalDeviceExternalFenceInfo {
+    public unsafe partial struct VkPhysicalDeviceExternalFenceInfo {
         /// <summary> sType is the type of this structure</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4666,7 +4666,7 @@ namespace Vulkan {
     // Struct: 247
     /// <summary>VkPhysicalDeviceExternalImageFormatInfo - Structure specifying external image creation parameters
     /// </summary>
-    public unsafe struct VkPhysicalDeviceExternalImageFormatInfo {
+    public unsafe partial struct VkPhysicalDeviceExternalImageFormatInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4679,7 +4679,7 @@ namespace Vulkan {
     // Struct: 248
     /// <summary>VkPhysicalDeviceExternalMemoryHostPropertiesEXT - Structure describing external memory host pointer limits that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceExternalMemoryHostPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceExternalMemoryHostPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkDeviceSize minImportedHostPointerAlignment;
@@ -4687,7 +4687,7 @@ namespace Vulkan {
     // Struct: 249
     /// <summary>VkPhysicalDeviceExternalSemaphoreInfo - Structure specifying semaphore creation parameters.
     /// </summary>
-    public unsafe struct VkPhysicalDeviceExternalSemaphoreInfo {
+    public unsafe partial struct VkPhysicalDeviceExternalSemaphoreInfo {
         /// <summary> sType is the type of this structure</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4700,7 +4700,7 @@ namespace Vulkan {
     // Struct: 250
     /// <summary>VkPhysicalDeviceFeatures - Structure describing the fine-grained features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceFeatures {
+    public unsafe partial struct VkPhysicalDeviceFeatures {
         public VkBool32 robustBufferAccess;
         public VkBool32 fullDrawIndexUint32;
         public VkBool32 imageCubeArray;
@@ -4760,7 +4760,7 @@ namespace Vulkan {
     // Struct: 251
     /// <summary>VkPhysicalDeviceFeatures2 - Structure describing the fine-grained features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceFeatures2 {
+    public unsafe partial struct VkPhysicalDeviceFeatures2 {
         public VkStructureType sType;
         public void* pNext;
         public VkPhysicalDeviceFeatures features;
@@ -4768,7 +4768,7 @@ namespace Vulkan {
     // Struct: 252
     /// <summary>VkPhysicalDeviceFloat16Int8FeaturesKHR - Structure describing features supported by VK_KHR_shader_float16_int8
     /// </summary>
-    public unsafe struct VkPhysicalDeviceFloat16Int8FeaturesKHR {
+    public unsafe partial struct VkPhysicalDeviceFloat16Int8FeaturesKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -4789,7 +4789,7 @@ namespace Vulkan {
     // Struct: 253
     /// <summary>VkPhysicalDeviceFloatControlsPropertiesKHR - Structure describing properties supported by VK_KHR_shader_float_controls
     /// </summary>
-    public unsafe struct VkPhysicalDeviceFloatControlsPropertiesKHR {
+    public unsafe partial struct VkPhysicalDeviceFloatControlsPropertiesKHR {
         public VkStructureType sType;
         public void* pNext;
         /// <summary>  
@@ -4911,7 +4911,7 @@ namespace Vulkan {
     // Struct: 254
     /// <summary>VkPhysicalDeviceFragmentDensityMapFeaturesEXT - Structure describing fragment density map features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceFragmentDensityMapFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceFragmentDensityMapFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 fragmentDensityMap;
@@ -4921,7 +4921,7 @@ namespace Vulkan {
     // Struct: 255
     /// <summary>VkPhysicalDeviceFragmentDensityMapPropertiesEXT - Structure describing fragment density map properties that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceFragmentDensityMapPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceFragmentDensityMapPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkExtent2D minFragmentDensityTexelSize;
@@ -4931,7 +4931,7 @@ namespace Vulkan {
     // Struct: 256
     /// <summary>VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV - Structure describing barycentric support in fragment shaders that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 fragmentShaderBarycentric;
@@ -4939,7 +4939,7 @@ namespace Vulkan {
     // Struct: 257
     /// <summary>VkPhysicalDeviceGroupProperties - Structure specifying physical device group properties
     /// </summary>
-    public unsafe struct VkPhysicalDeviceGroupProperties {
+    public unsafe partial struct VkPhysicalDeviceGroupProperties {
         const Int32 VK_MAX_DEVICE_GROUP_SIZE = 32;
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
@@ -4961,7 +4961,7 @@ namespace Vulkan {
     // Struct: 258
     /// <summary>VkPhysicalDeviceHostQueryResetFeaturesEXT - Structure describing whether queries can be reset from the host
     /// </summary>
-    public unsafe struct VkPhysicalDeviceHostQueryResetFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceHostQueryResetFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 hostQueryReset;
@@ -4969,7 +4969,7 @@ namespace Vulkan {
     // Struct: 259
     /// <summary>VkPhysicalDeviceIDProperties - Structure specifying IDs related to the physical device
     /// </summary>
-    public unsafe struct VkPhysicalDeviceIDProperties {
+    public unsafe partial struct VkPhysicalDeviceIDProperties {
         const Int32 VK_UUID_SIZE = 16;
         const Int32 VK_LUID_SIZE = 8;
         /// <summary> sType is the type of this structure.</summary>
@@ -4990,7 +4990,7 @@ namespace Vulkan {
     // Struct: 260
     /// <summary>VkPhysicalDeviceImageDrmFormatModifierInfoEXT - Structure specifying a DRM format modifier as image creation parameter
     /// </summary>
-    public unsafe struct VkPhysicalDeviceImageDrmFormatModifierInfoEXT {
+    public unsafe partial struct VkPhysicalDeviceImageDrmFormatModifierInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -5014,7 +5014,7 @@ namespace Vulkan {
     // Struct: 261
     /// <summary>VkPhysicalDeviceImageFormatInfo2 - Structure specifying image creation parameters
     /// </summary>
-    public unsafe struct VkPhysicalDeviceImageFormatInfo2 {
+    public unsafe partial struct VkPhysicalDeviceImageFormatInfo2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.
@@ -5043,7 +5043,7 @@ namespace Vulkan {
     // Struct: 262
     /// <summary>VkPhysicalDeviceImageViewImageFormatInfoEXT - Structure for providing image view type
     /// </summary>
-    public unsafe struct VkPhysicalDeviceImageViewImageFormatInfoEXT {
+    public unsafe partial struct VkPhysicalDeviceImageViewImageFormatInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -5055,7 +5055,7 @@ namespace Vulkan {
     // Struct: 263
     /// <summary>VkPhysicalDeviceInlineUniformBlockFeaturesEXT - Structure describing inline uniform block features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceInlineUniformBlockFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceInlineUniformBlockFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 inlineUniformBlock;
@@ -5064,7 +5064,7 @@ namespace Vulkan {
     // Struct: 264
     /// <summary>VkPhysicalDeviceInlineUniformBlockPropertiesEXT - Structure describing inline uniform block properties that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceInlineUniformBlockPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceInlineUniformBlockPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 maxInlineUniformBlockSize;
@@ -5076,7 +5076,7 @@ namespace Vulkan {
     // Struct: 265
     /// <summary>VkPhysicalDeviceLimits - Structure reporting implementation-dependent physical device limits
     /// </summary>
-    public unsafe struct VkPhysicalDeviceLimits {
+    public unsafe partial struct VkPhysicalDeviceLimits {
         /// <summary>  
         ///   maxImageDimension1D is the maximum
         /// dimension (width) supported for all images created with an
@@ -5882,7 +5882,7 @@ namespace Vulkan {
     // Struct: 266
     /// <summary>VkPhysicalDeviceMaintenance3Properties - Structure describing descriptor set properties
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMaintenance3Properties {
+    public unsafe partial struct VkPhysicalDeviceMaintenance3Properties {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 maxPerSetDescriptors;
@@ -5891,7 +5891,7 @@ namespace Vulkan {
     // Struct: 267
     /// <summary>VkPhysicalDeviceMemoryBudgetPropertiesEXT - Structure specifying physical device memory budget and usage
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMemoryBudgetPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceMemoryBudgetPropertiesEXT {
         const Int32 VK_MAX_MEMORY_HEAPS = 32;
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
@@ -5907,7 +5907,7 @@ namespace Vulkan {
     // Struct: 268
     /// <summary>VkPhysicalDeviceMemoryPriorityFeaturesEXT - Structure describing memory priority features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMemoryPriorityFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceMemoryPriorityFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 memoryPriority;
@@ -5915,7 +5915,7 @@ namespace Vulkan {
     // Struct: 269
     /// <summary>VkPhysicalDeviceMemoryProperties - Structure specifying physical device memory properties
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMemoryProperties {
+    public unsafe partial struct VkPhysicalDeviceMemoryProperties {
         const Int32 VK_MAX_MEMORY_TYPES = 32;
         const Int32 VK_MAX_MEMORY_HEAPS = 16;
         /// <summary> memoryTypeCount is the number of valid elements in the
@@ -5935,7 +5935,7 @@ namespace Vulkan {
     // Struct: 270
     /// <summary>VkPhysicalDeviceMemoryProperties2 - Structure specifying physical device memory properties
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMemoryProperties2 {
+    public unsafe partial struct VkPhysicalDeviceMemoryProperties2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -5948,7 +5948,7 @@ namespace Vulkan {
     // Struct: 271
     /// <summary>VkPhysicalDeviceMeshShaderFeaturesNV - Structure describing mesh shading features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMeshShaderFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceMeshShaderFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         /// <summary>  
@@ -5963,7 +5963,7 @@ namespace Vulkan {
     // Struct: 272
     /// <summary>VkPhysicalDeviceMeshShaderPropertiesNV - Structure describing mesh shading properties
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMeshShaderPropertiesNV {
+    public unsafe partial struct VkPhysicalDeviceMeshShaderPropertiesNV {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 maxDrawMeshTasksCount;
@@ -5983,7 +5983,7 @@ namespace Vulkan {
     // Struct: 273
     /// <summary>VkPhysicalDeviceMultiviewFeatures - Structure describing multiview features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMultiviewFeatures {
+    public unsafe partial struct VkPhysicalDeviceMultiviewFeatures {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 multiview;
@@ -5993,7 +5993,7 @@ namespace Vulkan {
     // Struct: 274
     /// <summary>VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX - Structure describing multiview limits that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX {
+    public unsafe partial struct VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 perViewPositionAllComponents;
@@ -6001,7 +6001,7 @@ namespace Vulkan {
     // Struct: 275
     /// <summary>VkPhysicalDeviceMultiviewProperties - Structure describing multiview limits that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceMultiviewProperties {
+    public unsafe partial struct VkPhysicalDeviceMultiviewProperties {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 maxMultiviewViewCount;
@@ -6010,7 +6010,7 @@ namespace Vulkan {
     // Struct: 276
     /// <summary>VkPhysicalDevicePCIBusInfoPropertiesEXT - Structure containing PCI bus information of a physical device
     /// </summary>
-    public unsafe struct VkPhysicalDevicePCIBusInfoPropertiesEXT {
+    public unsafe partial struct VkPhysicalDevicePCIBusInfoPropertiesEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6027,7 +6027,7 @@ namespace Vulkan {
     // Struct: 277
     /// <summary>VkPhysicalDevicePointClippingProperties - Structure describing the point clipping behavior supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDevicePointClippingProperties {
+    public unsafe partial struct VkPhysicalDevicePointClippingProperties {
         public VkStructureType sType;
         public void* pNext;
         public VkPointClippingBehavior pointClippingBehavior;
@@ -6035,7 +6035,7 @@ namespace Vulkan {
     // Struct: 278
     /// <summary>VkPhysicalDeviceProperties - Structure specifying physical device properties
     /// </summary>
-    public unsafe struct VkPhysicalDeviceProperties {
+    public unsafe partial struct VkPhysicalDeviceProperties {
         const Int32 VK_MAX_PHYSICAL_DEVICE_NAME_SIZE = 256;
         const Int32 VK_UUID_SIZE = 16;
         /// <summary> apiVersion is the version of Vulkan supported by the device,
@@ -6067,7 +6067,7 @@ namespace Vulkan {
     // Struct: 279
     /// <summary>VkPhysicalDeviceProperties2 - Structure specifying physical device properties
     /// </summary>
-    public unsafe struct VkPhysicalDeviceProperties2 {
+    public unsafe partial struct VkPhysicalDeviceProperties2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6081,7 +6081,7 @@ namespace Vulkan {
     // Struct: 280
     /// <summary>VkPhysicalDeviceProtectedMemoryFeatures - Structure describing protected memory features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceProtectedMemoryFeatures {
+    public unsafe partial struct VkPhysicalDeviceProtectedMemoryFeatures {
         public VkStructureType sType;
         public void* pNext;
         /// <summary>  
@@ -6092,7 +6092,7 @@ namespace Vulkan {
     // Struct: 281
     /// <summary>VkPhysicalDeviceProtectedMemoryProperties - Structure describing protected memory properties that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceProtectedMemoryProperties {
+    public unsafe partial struct VkPhysicalDeviceProtectedMemoryProperties {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6107,7 +6107,7 @@ namespace Vulkan {
     // Struct: 282
     /// <summary>VkPhysicalDevicePushDescriptorPropertiesKHR - Structure describing push descriptor limits that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDevicePushDescriptorPropertiesKHR {
+    public unsafe partial struct VkPhysicalDevicePushDescriptorPropertiesKHR {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 maxPushDescriptors;
@@ -6115,7 +6115,7 @@ namespace Vulkan {
     // Struct: 283
     /// <summary>VkPhysicalDeviceRayTracingPropertiesNV - Properties of the physical device for ray tracing
     /// </summary>
-    public unsafe struct VkPhysicalDeviceRayTracingPropertiesNV {
+    public unsafe partial struct VkPhysicalDeviceRayTracingPropertiesNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6147,7 +6147,7 @@ namespace Vulkan {
     // Struct: 284
     /// <summary>VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV - Structure describing the representative fragment test features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 representativeFragmentTest;
@@ -6155,7 +6155,7 @@ namespace Vulkan {
     // Struct: 285
     /// <summary>VkPhysicalDeviceSampleLocationsPropertiesEXT - Structure describing sample location limits that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceSampleLocationsPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceSampleLocationsPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkSampleCountFlags sampleLocationSampleCounts;
@@ -6167,7 +6167,7 @@ namespace Vulkan {
     // Struct: 286
     /// <summary>VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT - Structure describing sampler filter minmax limits that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 filterMinmaxSingleComponentFormats;
@@ -6176,7 +6176,7 @@ namespace Vulkan {
     // Struct: 287
     /// <summary>VkPhysicalDeviceSamplerYcbcrConversionFeatures - Structure describing Y’CbCr conversion features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceSamplerYcbcrConversionFeatures {
+    public unsafe partial struct VkPhysicalDeviceSamplerYcbcrConversionFeatures {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 samplerYcbcrConversion;
@@ -6184,7 +6184,7 @@ namespace Vulkan {
     // Struct: 288
     /// <summary>VkPhysicalDeviceScalarBlockLayoutFeaturesEXT - Structure indicating support for scalar block layouts
     /// </summary>
-    public unsafe struct VkPhysicalDeviceScalarBlockLayoutFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceScalarBlockLayoutFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 scalarBlockLayout;
@@ -6192,7 +6192,7 @@ namespace Vulkan {
     // Struct: 289
     /// <summary>VkPhysicalDeviceShaderAtomicInt64FeaturesKHR - Structure describing features supported by VK_KHR_shader_atomic_int64
     /// </summary>
-    public unsafe struct VkPhysicalDeviceShaderAtomicInt64FeaturesKHR {
+    public unsafe partial struct VkPhysicalDeviceShaderAtomicInt64FeaturesKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6211,7 +6211,7 @@ namespace Vulkan {
     // Struct: 290
     /// <summary>VkPhysicalDeviceShaderCorePropertiesAMD - Structure describing shader core properties that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceShaderCorePropertiesAMD {
+    public unsafe partial struct VkPhysicalDeviceShaderCorePropertiesAMD {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 shaderEngineCount;
@@ -6232,7 +6232,7 @@ namespace Vulkan {
     // Struct: 291
     /// <summary>VkPhysicalDeviceShaderDrawParametersFeatures - Structure describing shader draw parameter features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceShaderDrawParametersFeatures {
+    public unsafe partial struct VkPhysicalDeviceShaderDrawParametersFeatures {
         public VkStructureType sType;
         public void* pNext;
         /// <summary>  
@@ -6243,7 +6243,7 @@ namespace Vulkan {
     // Struct: 292
     /// <summary>VkPhysicalDeviceShaderImageFootprintFeaturesNV - Structure describing shader image footprint features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceShaderImageFootprintFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceShaderImageFootprintFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         /// <summary>  
@@ -6254,7 +6254,7 @@ namespace Vulkan {
     // Struct: 293
     /// <summary>VkPhysicalDeviceShadingRateImageFeaturesNV - Structure describing shading rate image features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceShadingRateImageFeaturesNV {
+    public unsafe partial struct VkPhysicalDeviceShadingRateImageFeaturesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 shadingRateImage;
@@ -6263,7 +6263,7 @@ namespace Vulkan {
     // Struct: 294
     /// <summary>VkPhysicalDeviceShadingRateImagePropertiesNV - Structure describing shading rate image limits that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceShadingRateImagePropertiesNV {
+    public unsafe partial struct VkPhysicalDeviceShadingRateImagePropertiesNV {
         public VkStructureType sType;
         public void* pNext;
         public VkExtent2D shadingRateTexelSize;
@@ -6273,7 +6273,7 @@ namespace Vulkan {
     // Struct: 295
     /// <summary>VkPhysicalDeviceSparseImageFormatInfo2 - Structure specifying sparse image format inputs
     /// </summary>
-    public unsafe struct VkPhysicalDeviceSparseImageFormatInfo2 {
+    public unsafe partial struct VkPhysicalDeviceSparseImageFormatInfo2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6293,7 +6293,7 @@ namespace Vulkan {
     // Struct: 296
     /// <summary>VkPhysicalDeviceSparseProperties - Structure specifying physical device sparse memory properties
     /// </summary>
-    public unsafe struct VkPhysicalDeviceSparseProperties {
+    public unsafe partial struct VkPhysicalDeviceSparseProperties {
         /// <summary> residencyStandard2DBlockShape is VK_TRUE if the physical
         /// device will access all single-sample 2D sparse resources using the
         /// standard sparse image block shapes (based on image format), as described
@@ -6347,7 +6347,7 @@ namespace Vulkan {
     // Struct: 297
     /// <summary>VkPhysicalDeviceSubgroupProperties - Structure describing subgroup support for an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceSubgroupProperties {
+    public unsafe partial struct VkPhysicalDeviceSubgroupProperties {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 subgroupSize;
@@ -6358,7 +6358,7 @@ namespace Vulkan {
     // Struct: 298
     /// <summary>VkPhysicalDeviceSurfaceInfo2KHR - Structure specifying a surface and related swapchain creation parameters
     /// </summary>
-    public unsafe struct VkPhysicalDeviceSurfaceInfo2KHR {
+    public unsafe partial struct VkPhysicalDeviceSurfaceInfo2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6369,7 +6369,7 @@ namespace Vulkan {
     // Struct: 299
     /// <summary>VkPhysicalDeviceTransformFeedbackFeaturesEXT - Structure describing transform feedback features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceTransformFeedbackFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceTransformFeedbackFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 transformFeedback;
@@ -6378,7 +6378,7 @@ namespace Vulkan {
     // Struct: 300
     /// <summary>VkPhysicalDeviceTransformFeedbackPropertiesEXT - Structure describing transform feedback properties that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceTransformFeedbackPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceTransformFeedbackPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 maxTransformFeedbackStreams;
@@ -6395,7 +6395,7 @@ namespace Vulkan {
     // Struct: 301
     /// <summary>VkPhysicalDeviceVariablePointersFeatures - Structure describing variable pointers features that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceVariablePointersFeatures {
+    public unsafe partial struct VkPhysicalDeviceVariablePointersFeatures {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 variablePointersStorageBuffer;
@@ -6404,7 +6404,7 @@ namespace Vulkan {
     // Struct: 302
     /// <summary>VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT - Structure describing if fetching of vertex attribute may be repeated for instanced rendering
     /// </summary>
-    public unsafe struct VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6422,7 +6422,7 @@ namespace Vulkan {
     // Struct: 303
     /// <summary>VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT - Structure describing max value of vertex attribute divisor that can be supported by an implementation
     /// </summary>
-    public unsafe struct VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT {
+    public unsafe partial struct VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 maxVertexAttribDivisor;
@@ -6430,7 +6430,7 @@ namespace Vulkan {
     // Struct: 304
     /// <summary>VkPhysicalDeviceVulkanMemoryModelFeaturesKHR - Structure describing features supported by VK_KHR_vulkan_memory_model
     /// </summary>
-    public unsafe struct VkPhysicalDeviceVulkanMemoryModelFeaturesKHR {
+    public unsafe partial struct VkPhysicalDeviceVulkanMemoryModelFeaturesKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6456,7 +6456,7 @@ namespace Vulkan {
     // Struct: 305
     /// <summary>VkPhysicalDeviceYcbcrImageArraysFeaturesEXT - Structure describing extended Y
     /// </summary>
-    public unsafe struct VkPhysicalDeviceYcbcrImageArraysFeaturesEXT {
+    public unsafe partial struct VkPhysicalDeviceYcbcrImageArraysFeaturesEXT {
         public VkStructureType sType;
         public void* pNext;
         public VkBool32 ycbcrImageArrays;
@@ -6464,7 +6464,7 @@ namespace Vulkan {
     // Struct: 306
     /// <summary>VkPipelineCacheCreateInfo - Structure specifying parameters of a newly created pipeline cache
     /// </summary>
-    public unsafe struct VkPipelineCacheCreateInfo {
+    public unsafe partial struct VkPipelineCacheCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6485,7 +6485,7 @@ namespace Vulkan {
     // Struct: 307
     /// <summary>VkPipelineColorBlendAdvancedStateCreateInfoEXT - Structure specifying parameters that affect advanced blend operations
     /// </summary>
-    public unsafe struct VkPipelineColorBlendAdvancedStateCreateInfoEXT {
+    public unsafe partial struct VkPipelineColorBlendAdvancedStateCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6503,7 +6503,7 @@ namespace Vulkan {
     // Struct: 308
     /// <summary>VkPipelineColorBlendAttachmentState - Structure specifying a pipeline color blend attachment state
     /// </summary>
-    public unsafe struct VkPipelineColorBlendAttachmentState {
+    public unsafe partial struct VkPipelineColorBlendAttachmentState {
         /// <summary> blendEnable controls whether blending is enabled for the
         /// corresponding color attachment.
         /// If blending is not enabled, the source fragment’s color for that
@@ -6536,7 +6536,7 @@ namespace Vulkan {
     // Struct: 309
     /// <summary>VkPipelineColorBlendStateCreateInfo - Structure specifying parameters of a newly created pipeline color blend state
     /// </summary>
-    public unsafe struct VkPipelineColorBlendStateCreateInfo {
+    public unsafe partial struct VkPipelineColorBlendStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6561,7 +6561,7 @@ namespace Vulkan {
     // Struct: 310
     /// <summary>VkPipelineCoverageModulationStateCreateInfoNV - Structure specifying parameters controlling coverage modulation
     /// </summary>
-    public unsafe struct VkPipelineCoverageModulationStateCreateInfoNV {
+    public unsafe partial struct VkPipelineCoverageModulationStateCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6584,7 +6584,7 @@ namespace Vulkan {
     // Struct: 311
     /// <summary>VkPipelineCoverageToColorStateCreateInfoNV - Structure specifying whether fragment coverage replaces a color
     /// </summary>
-    public unsafe struct VkPipelineCoverageToColorStateCreateInfoNV {
+    public unsafe partial struct VkPipelineCoverageToColorStateCreateInfoNV {
         /// <summary> sType is the type of this structure</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure</summary>
@@ -6601,7 +6601,7 @@ namespace Vulkan {
     // Struct: 312
     /// <summary>VkPipelineCreationFeedbackCreateInfoEXT - Request for feedback about the creation of a pipeline
     /// </summary>
-    public unsafe struct VkPipelineCreationFeedbackCreateInfoEXT {
+    public unsafe partial struct VkPipelineCreationFeedbackCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6620,7 +6620,7 @@ namespace Vulkan {
     // Struct: 313
     /// <summary>VkPipelineCreationFeedbackEXT - Feedback about the creation of a pipeline or pipeline stage
     /// </summary>
-    public unsafe struct VkPipelineCreationFeedbackEXT {
+    public unsafe partial struct VkPipelineCreationFeedbackEXT {
         /// <summary> flags is a bitmask of VkPipelineCreationFeedbackFlagBitsEXT
         /// providing feedback about the creation of a pipeline or of a pipeline
         /// stage.</summary>
@@ -6632,7 +6632,7 @@ namespace Vulkan {
     // Struct: 314
     /// <summary>VkPipelineDepthStencilStateCreateInfo - Structure specifying parameters of a newly created pipeline depth stencil state
     /// </summary>
-    public unsafe struct VkPipelineDepthStencilStateCreateInfo {
+    public unsafe partial struct VkPipelineDepthStencilStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6668,7 +6668,7 @@ namespace Vulkan {
     // Struct: 315
     /// <summary>VkPipelineDiscardRectangleStateCreateInfoEXT - Structure specifying discard rectangle
     /// </summary>
-    public unsafe struct VkPipelineDiscardRectangleStateCreateInfoEXT {
+    public unsafe partial struct VkPipelineDiscardRectangleStateCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6689,7 +6689,7 @@ namespace Vulkan {
     // Struct: 316
     /// <summary>VkPipelineDynamicStateCreateInfo - Structure specifying parameters of a newly created pipeline dynamic state
     /// </summary>
-    public unsafe struct VkPipelineDynamicStateCreateInfo {
+    public unsafe partial struct VkPipelineDynamicStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6707,7 +6707,7 @@ namespace Vulkan {
     // Struct: 317
     /// <summary>VkPipelineInputAssemblyStateCreateInfo - Structure specifying parameters of a newly created pipeline input assembly state
     /// </summary>
-    public unsafe struct VkPipelineInputAssemblyStateCreateInfo {
+    public unsafe partial struct VkPipelineInputAssemblyStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6730,7 +6730,7 @@ namespace Vulkan {
     // Struct: 318
     /// <summary>VkPipelineLayoutCreateInfo - Structure specifying the parameters of a newly created pipeline layout object
     /// </summary>
-    public unsafe struct VkPipelineLayoutCreateInfo {
+    public unsafe partial struct VkPipelineLayoutCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6756,7 +6756,7 @@ namespace Vulkan {
     // Struct: 319
     /// <summary>VkPipelineMultisampleStateCreateInfo - Structure specifying parameters of a newly created pipeline multisample state
     /// </summary>
-    public unsafe struct VkPipelineMultisampleStateCreateInfo {
+    public unsafe partial struct VkPipelineMultisampleStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6790,7 +6790,7 @@ namespace Vulkan {
     // Struct: 320
     /// <summary>VkPipelineRasterizationConservativeStateCreateInfoEXT - Structure specifying conservative raster state
     /// </summary>
-    public unsafe struct VkPipelineRasterizationConservativeStateCreateInfoEXT {
+    public unsafe partial struct VkPipelineRasterizationConservativeStateCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6810,7 +6810,7 @@ namespace Vulkan {
     // Struct: 321
     /// <summary>VkPipelineRasterizationDepthClipStateCreateInfoEXT - Structure specifying depth clipping state
     /// </summary>
-    public unsafe struct VkPipelineRasterizationDepthClipStateCreateInfoEXT {
+    public unsafe partial struct VkPipelineRasterizationDepthClipStateCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6824,7 +6824,7 @@ namespace Vulkan {
     // Struct: 322
     /// <summary>VkPipelineRasterizationStateCreateInfo - Structure specifying parameters of a newly created pipeline rasterization state
     /// </summary>
-    public unsafe struct VkPipelineRasterizationStateCreateInfo {
+    public unsafe partial struct VkPipelineRasterizationStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6870,7 +6870,7 @@ namespace Vulkan {
     // Struct: 323
     /// <summary>VkPipelineRasterizationStateRasterizationOrderAMD - Structure defining rasterization order for a graphics pipeline
     /// </summary>
-    public unsafe struct VkPipelineRasterizationStateRasterizationOrderAMD {
+    public unsafe partial struct VkPipelineRasterizationStateRasterizationOrderAMD {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6882,7 +6882,7 @@ namespace Vulkan {
     // Struct: 324
     /// <summary>VkPipelineRasterizationStateStreamCreateInfoEXT - Structure defining the geometry stream used for rasterization
     /// </summary>
-    public unsafe struct VkPipelineRasterizationStateStreamCreateInfoEXT {
+    public unsafe partial struct VkPipelineRasterizationStateStreamCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6896,7 +6896,7 @@ namespace Vulkan {
     // Struct: 325
     /// <summary>VkPipelineRepresentativeFragmentTestStateCreateInfoNV - Structure specifying representative fragment test
     /// </summary>
-    public unsafe struct VkPipelineRepresentativeFragmentTestStateCreateInfoNV {
+    public unsafe partial struct VkPipelineRepresentativeFragmentTestStateCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6908,7 +6908,7 @@ namespace Vulkan {
     // Struct: 326
     /// <summary>VkPipelineSampleLocationsStateCreateInfoEXT - Structure specifying sample locations for a pipeline
     /// </summary>
-    public unsafe struct VkPipelineSampleLocationsStateCreateInfoEXT {
+    public unsafe partial struct VkPipelineSampleLocationsStateCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6928,7 +6928,7 @@ namespace Vulkan {
     // Struct: 327
     /// <summary>VkPipelineShaderStageCreateInfo - Structure specifying parameters of a newly created pipeline shader stage
     /// </summary>
-    public unsafe struct VkPipelineShaderStageCreateInfo {
+    public unsafe partial struct VkPipelineShaderStageCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6952,7 +6952,7 @@ namespace Vulkan {
     // Struct: 328
     /// <summary>VkPipelineTessellationDomainOriginStateCreateInfo - Structure specifying the orientation of the tessellation domain
     /// </summary>
-    public unsafe struct VkPipelineTessellationDomainOriginStateCreateInfo {
+    public unsafe partial struct VkPipelineTessellationDomainOriginStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6964,7 +6964,7 @@ namespace Vulkan {
     // Struct: 329
     /// <summary>VkPipelineTessellationStateCreateInfo - Structure specifying parameters of a newly created pipeline tessellation state
     /// </summary>
-    public unsafe struct VkPipelineTessellationStateCreateInfo {
+    public unsafe partial struct VkPipelineTessellationStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -6977,7 +6977,7 @@ namespace Vulkan {
     // Struct: 330
     /// <summary>VkPipelineVertexInputDivisorStateCreateInfoEXT - Structure specifying vertex attributes assignment during instanced rendering
     /// </summary>
-    public unsafe struct VkPipelineVertexInputDivisorStateCreateInfoEXT {
+    public unsafe partial struct VkPipelineVertexInputDivisorStateCreateInfoEXT {
         /// <summary> sType is the type of this structure</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure</summary>
@@ -6993,7 +6993,7 @@ namespace Vulkan {
     // Struct: 331
     /// <summary>VkPipelineVertexInputStateCreateInfo - Structure specifying parameters of a newly created pipeline vertex input state
     /// </summary>
-    public unsafe struct VkPipelineVertexInputStateCreateInfo {
+    public unsafe partial struct VkPipelineVertexInputStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7016,7 +7016,7 @@ namespace Vulkan {
     // Struct: 332
     /// <summary>VkPipelineViewportCoarseSampleOrderStateCreateInfoNV - Structure specifying parameters controlling sample order in coarse fragments
     /// </summary>
-    public unsafe struct VkPipelineViewportCoarseSampleOrderStateCreateInfoNV {
+    public unsafe partial struct VkPipelineViewportCoarseSampleOrderStateCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7036,7 +7036,7 @@ namespace Vulkan {
     // Struct: 333
     /// <summary>VkPipelineViewportExclusiveScissorStateCreateInfoNV - Structure specifying parameters controlling exclusive scissor testing
     /// </summary>
-    public unsafe struct VkPipelineViewportExclusiveScissorStateCreateInfoNV {
+    public unsafe partial struct VkPipelineViewportExclusiveScissorStateCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7052,7 +7052,7 @@ namespace Vulkan {
     // Struct: 334
     /// <summary>VkPipelineViewportShadingRateImageStateCreateInfoNV - Structure specifying parameters controlling shading rate image usage
     /// </summary>
-    public unsafe struct VkPipelineViewportShadingRateImageStateCreateInfoNV {
+    public unsafe partial struct VkPipelineViewportShadingRateImageStateCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7072,7 +7072,7 @@ namespace Vulkan {
     // Struct: 335
     /// <summary>VkPipelineViewportStateCreateInfo - Structure specifying parameters of a newly created pipeline viewport state
     /// </summary>
-    public unsafe struct VkPipelineViewportStateCreateInfo {
+    public unsafe partial struct VkPipelineViewportStateCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7097,7 +7097,7 @@ namespace Vulkan {
     // Struct: 336
     /// <summary>VkPipelineViewportSwizzleStateCreateInfoNV - Structure specifying swizzle applied to primitive clip coordinates
     /// </summary>
-    public unsafe struct VkPipelineViewportSwizzleStateCreateInfoNV {
+    public unsafe partial struct VkPipelineViewportSwizzleStateCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7114,7 +7114,7 @@ namespace Vulkan {
     // Struct: 337
     /// <summary>VkPipelineViewportWScalingStateCreateInfoNV - Structure specifying parameters of a newly created pipeline viewport W scaling state
     /// </summary>
-    public unsafe struct VkPipelineViewportWScalingStateCreateInfoNV {
+    public unsafe partial struct VkPipelineViewportWScalingStateCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7135,7 +7135,7 @@ namespace Vulkan {
     // Struct: 338
     ///// <summary>VkPresentFrameTokenGGP - The Google Games Platform frame token
     ///// </summary>
-    //public unsafe struct VkPresentFrameTokenGGP {
+    //public unsafe partial struct VkPresentFrameTokenGGP {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7146,7 +7146,7 @@ namespace Vulkan {
     // Struct: 339
     /// <summary>VkPresentInfoKHR - Structure describing parameters of a queue presentation
     /// </summary>
-    public unsafe struct VkPresentInfoKHR {
+    public unsafe partial struct VkPresentInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7183,7 +7183,7 @@ namespace Vulkan {
     // Struct: 340
     /// <summary>VkPresentRegionKHR - Structure containing rectangular region changed by vkQueuePresentKHR for a given VkImage
     /// </summary>
-    public unsafe struct VkPresentRegionKHR {
+    public unsafe partial struct VkPresentRegionKHR {
         /// <summary> rectangleCount is the number of rectangles in pRectangles,
         /// or zero if the entire image has changed and should be presented.</summary>
         public UInt32 rectangleCount;
@@ -7200,7 +7200,7 @@ namespace Vulkan {
     // Struct: 341
     /// <summary>VkPresentRegionsKHR - Structure hint of rectangular regions changed by vkQueuePresentKHR
     /// </summary>
-    public unsafe struct VkPresentRegionsKHR {
+    public unsafe partial struct VkPresentRegionsKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7218,7 +7218,7 @@ namespace Vulkan {
     // Struct: 342
     /// <summary>VkPresentTimeGOOGLE - The earliest time image should be presented
     /// </summary>
-    public unsafe struct VkPresentTimeGOOGLE {
+    public unsafe partial struct VkPresentTimeGOOGLE {
         /// <summary> presentID is an application-provided identification value, that
         /// can be used with the results of
         /// vkGetPastPresentationTimingGOOGLE, in order to uniquely identify
@@ -7240,7 +7240,7 @@ namespace Vulkan {
     // Struct: 343
     /// <summary>VkPresentTimesInfoGOOGLE - The earliest time each image should be presented
     /// </summary>
-    public unsafe struct VkPresentTimesInfoGOOGLE {
+    public unsafe partial struct VkPresentTimesInfoGOOGLE {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7258,7 +7258,7 @@ namespace Vulkan {
     // Struct: 344
     /// <summary>VkProtectedSubmitInfo - Structure indicating whether the submission is protected
     /// </summary>
-    public unsafe struct VkProtectedSubmitInfo {
+    public unsafe partial struct VkProtectedSubmitInfo {
         public VkStructureType sType;
         public /*-const-*/ void* pNext;
         /// <summary> protectedSubmit specifies whether the batch is protected.
@@ -7271,7 +7271,7 @@ namespace Vulkan {
     // Struct: 345
     /// <summary>VkPushConstantRange - Structure specifying a push constant range
     /// </summary>
-    public unsafe struct VkPushConstantRange {
+    public unsafe partial struct VkPushConstantRange {
         /// <summary> stageFlags is a set of stage flags describing the shader stages
         /// that will access a range of push constants.
         /// If a particular stage is not included in the range, then accessing
@@ -7289,7 +7289,7 @@ namespace Vulkan {
     // Struct: 346
     /// <summary>VkQueryPoolCreateInfo - Structure specifying parameters of a newly created query pool
     /// </summary>
-    public unsafe struct VkQueryPoolCreateInfo {
+    public unsafe partial struct VkQueryPoolCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7310,7 +7310,7 @@ namespace Vulkan {
     // Struct: 347
     /// <summary>VkQueueFamilyCheckpointPropertiesNV - return structure for queue family checkpoint info query
     /// </summary>
-    public unsafe struct VkQueueFamilyCheckpointPropertiesNV {
+    public unsafe partial struct VkQueueFamilyCheckpointPropertiesNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7322,7 +7322,7 @@ namespace Vulkan {
     // Struct: 348
     /// <summary>VkQueueFamilyProperties - Structure providing information about a queue family
     /// </summary>
-    public unsafe struct VkQueueFamilyProperties {
+    public unsafe partial struct VkQueueFamilyProperties {
         /// <summary> queueFlags is a bitmask of VkQueueFlagBits indicating
         /// capabilities of the queues in this queue family.</summary>
         public VkQueueFlags queueFlags;
@@ -7343,7 +7343,7 @@ namespace Vulkan {
     // Struct: 349
     /// <summary>VkQueueFamilyProperties2 - Structure providing information about a queue family
     /// </summary>
-    public unsafe struct VkQueueFamilyProperties2 {
+    public unsafe partial struct VkQueueFamilyProperties2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7356,7 +7356,7 @@ namespace Vulkan {
     // Struct: 350
     /// <summary>VkRayTracingPipelineCreateInfoNV - Structure specifying parameters of a newly created ray tracing pipeline
     /// </summary>
-    public unsafe struct VkRayTracingPipelineCreateInfoNV {
+    public unsafe partial struct VkRayTracingPipelineCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7392,7 +7392,7 @@ namespace Vulkan {
     // Struct: 351
     /// <summary>VkRayTracingShaderGroupCreateInfoNV - Structure specifying shaders in a shader group
     /// </summary>
-    public unsafe struct VkRayTracingShaderGroupCreateInfoNV {
+    public unsafe partial struct VkRayTracingShaderGroupCreateInfoNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7430,7 +7430,7 @@ namespace Vulkan {
     // Struct: 352
     /// <summary>VkRect2D - Structure specifying a two-dimensional subregion
     /// </summary>
-    public unsafe struct VkRect2D {
+    public unsafe partial struct VkRect2D {
         /// <summary> offset is a VkOffset2D specifying the rectangle offset.</summary>
         public VkOffset2D offset;
         /// <summary> extent is a VkExtent2D specifying the rectangle extent.</summary>
@@ -7439,7 +7439,7 @@ namespace Vulkan {
     // Struct: 353
     /// <summary>VkRectLayerKHR - Structure containing a rectangle, including layer, changed by vkQueuePresentKHR for a given VkImage
     /// </summary>
-    public unsafe struct VkRectLayerKHR {
+    public unsafe partial struct VkRectLayerKHR {
         /// <summary> offset is the origin of the rectangle, in pixels.</summary>
         public VkOffset2D offset;
         /// <summary> extent is the size of the rectangle, in pixels.</summary>
@@ -7451,7 +7451,7 @@ namespace Vulkan {
     // Struct: 354
     /// <summary>VkRefreshCycleDurationGOOGLE - Structure containing the RC duration of a display
     /// </summary>
-    public unsafe struct VkRefreshCycleDurationGOOGLE {
+    public unsafe partial struct VkRefreshCycleDurationGOOGLE {
         /// <summary> refreshDuration is the number of nanoseconds from the start of one
         /// refresh cycle to the next.</summary>
         public UInt64 refreshDuration;
@@ -7459,7 +7459,7 @@ namespace Vulkan {
     // Struct: 355
     /// <summary>VkRenderPassBeginInfo - Structure specifying render pass begin info
     /// </summary>
-    public unsafe struct VkRenderPassBeginInfo {
+    public unsafe partial struct VkRenderPassBeginInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7487,7 +7487,7 @@ namespace Vulkan {
     // Struct: 356
     /// <summary>VkRenderPassCreateInfo - Structure specifying parameters of a newly created render pass
     /// </summary>
-    public unsafe struct VkRenderPassCreateInfo {
+    public unsafe partial struct VkRenderPassCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7514,7 +7514,7 @@ namespace Vulkan {
     // Struct: 357
     /// <summary>VkRenderPassCreateInfo2KHR - Structure specifying parameters of a newly created render pass
     /// </summary>
-    public unsafe struct VkRenderPassCreateInfo2KHR {
+    public unsafe partial struct VkRenderPassCreateInfo2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7546,7 +7546,7 @@ namespace Vulkan {
     // Struct: 358
     /// <summary>VkRenderPassFragmentDensityMapCreateInfoEXT - Structure containing fragment density map attachment for render pass
     /// </summary>
-    public unsafe struct VkRenderPassFragmentDensityMapCreateInfoEXT {
+    public unsafe partial struct VkRenderPassFragmentDensityMapCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7558,7 +7558,7 @@ namespace Vulkan {
     // Struct: 359
     /// <summary>VkRenderPassInputAttachmentAspectCreateInfo - Structure specifying, for a given subpass/input attachment pair, which aspect <strong class="purple">can</strong> be read.
     /// </summary>
-    public unsafe struct VkRenderPassInputAttachmentAspectCreateInfo {
+    public unsafe partial struct VkRenderPassInputAttachmentAspectCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7575,7 +7575,7 @@ namespace Vulkan {
     // Struct: 360
     /// <summary>VkRenderPassMultiviewCreateInfo - Structure containing multiview info for all subpasses
     /// </summary>
-    public unsafe struct VkRenderPassMultiviewCreateInfo {
+    public unsafe partial struct VkRenderPassMultiviewCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7608,7 +7608,7 @@ namespace Vulkan {
     // Struct: 361
     /// <summary>VkRenderPassSampleLocationsBeginInfoEXT - Structure specifying sample locations to use for the layout transition of custom sample locations compatible depth/stencil attachments
     /// </summary>
-    public unsafe struct VkRenderPassSampleLocationsBeginInfoEXT {
+    public unsafe partial struct VkRenderPassSampleLocationsBeginInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7651,7 +7651,7 @@ namespace Vulkan {
     // Struct: 362
     /// <summary>VkSampleLocationEXT - Structure specifying the coordinates of a sample location
     /// </summary>
-    public unsafe struct VkSampleLocationEXT {
+    public unsafe partial struct VkSampleLocationEXT {
         /// <summary> x is the horizontal coordinate of the sample’s location.</summary>
         public float x;
         /// <summary> y is the vertical coordinate of the sample’s location.</summary>
@@ -7660,7 +7660,7 @@ namespace Vulkan {
     // Struct: 363
     /// <summary>VkSampleLocationsInfoEXT - Structure specifying a set of sample locations
     /// </summary>
-    public unsafe struct VkSampleLocationsInfoEXT {
+    public unsafe partial struct VkSampleLocationsInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7680,7 +7680,7 @@ namespace Vulkan {
     // Struct: 364
     /// <summary>VkSamplerCreateInfo - Structure specifying parameters of a newly created sampler
     /// </summary>
-    public unsafe struct VkSamplerCreateInfo {
+    public unsafe partial struct VkSamplerCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7752,7 +7752,7 @@ namespace Vulkan {
     // Struct: 365
     /// <summary>VkSamplerReductionModeCreateInfoEXT - Structure specifying sampler reduction mode
     /// </summary>
-    public unsafe struct VkSamplerReductionModeCreateInfoEXT {
+    public unsafe partial struct VkSamplerReductionModeCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7764,7 +7764,7 @@ namespace Vulkan {
     // Struct: 366
     /// <summary>VkSamplerYcbcrConversionCreateInfo - Structure specifying the parameters of the newly created conversion
     /// </summary>
-    public unsafe struct VkSamplerYcbcrConversionCreateInfo {
+    public unsafe partial struct VkSamplerYcbcrConversionCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7803,7 +7803,7 @@ namespace Vulkan {
     // Struct: 367
     /// <summary>VkSamplerYcbcrConversionImageFormatProperties - Structure specifying combined image sampler descriptor count for multi-planar images
     /// </summary>
-    public unsafe struct VkSamplerYcbcrConversionImageFormatProperties {
+    public unsafe partial struct VkSamplerYcbcrConversionImageFormatProperties {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7816,7 +7816,7 @@ namespace Vulkan {
     // Struct: 368
     /// <summary>VkSamplerYcbcrConversionInfo - Structure specifying Y’CbCr conversion to a sampler or image view
     /// </summary>
-    public unsafe struct VkSamplerYcbcrConversionInfo {
+    public unsafe partial struct VkSamplerYcbcrConversionInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7828,7 +7828,7 @@ namespace Vulkan {
     // Struct: 369
     /// <summary>VkSemaphoreCreateInfo - Structure specifying parameters of a newly created semaphore
     /// </summary>
-    public unsafe struct VkSemaphoreCreateInfo {
+    public unsafe partial struct VkSemaphoreCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7839,7 +7839,7 @@ namespace Vulkan {
     // Struct: 370
     /// <summary>VkSemaphoreGetFdInfoKHR - Structure describing a POSIX FD semaphore export operation
     /// </summary>
-    public unsafe struct VkSemaphoreGetFdInfoKHR {
+    public unsafe partial struct VkSemaphoreGetFdInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7852,7 +7852,7 @@ namespace Vulkan {
     // Struct: 371
     /// <summary>VkSemaphoreGetWin32HandleInfoKHR - Structure describing a Win32 handle semaphore export operation
     /// </summary>
-    public unsafe struct VkSemaphoreGetWin32HandleInfoKHR {
+    public unsafe partial struct VkSemaphoreGetWin32HandleInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7865,7 +7865,7 @@ namespace Vulkan {
     // Struct: 372
     /// <summary>VkShaderModuleCreateInfo - Structure specifying parameters of a newly created shader module
     /// </summary>
-    public unsafe struct VkShaderModuleCreateInfo {
+    public unsafe partial struct VkShaderModuleCreateInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7883,7 +7883,7 @@ namespace Vulkan {
     // Struct: 373
     /// <summary>VkShaderModuleValidationCacheCreateInfoEXT - Specify validation cache to use during shader module creation
     /// </summary>
-    public unsafe struct VkShaderModuleValidationCacheCreateInfoEXT {
+    public unsafe partial struct VkShaderModuleValidationCacheCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7897,7 +7897,7 @@ namespace Vulkan {
     // Struct: 374
     /// <summary>VkShaderResourceUsageAMD - Resource usage information about a particular shader within a pipeline
     /// </summary>
-    public unsafe struct VkShaderResourceUsageAMD {
+    public unsafe partial struct VkShaderResourceUsageAMD {
         /// <summary> numUsedVgprs is the number of vector instruction general-purpose
         /// registers used by this shader.</summary>
         public UInt32 numUsedVgprs;
@@ -7917,7 +7917,7 @@ namespace Vulkan {
     // Struct: 375
     /// <summary>VkShaderStatisticsInfoAMD - Statistical information about a particular shader within a pipeline
     /// </summary>
-    public unsafe struct VkShaderStatisticsInfoAMD {
+    public unsafe partial struct VkShaderStatisticsInfoAMD {
         /// <summary> shaderStageMask are the combination of logical shader stages
         /// contained within this shader.</summary>
         public VkShaderStageFlags shaderStageMask;
@@ -7941,7 +7941,7 @@ namespace Vulkan {
     // Struct: 376
     /// <summary>VkShadingRatePaletteNV - Structure specifying a single shading rate palette
     /// </summary>
-    public unsafe struct VkShadingRatePaletteNV {
+    public unsafe partial struct VkShadingRatePaletteNV {
         /// <summary> shadingRatePaletteEntryCount specifies the number of entries in
         /// the shading rate image palette.</summary>
         public UInt32 shadingRatePaletteEntryCount;
@@ -7953,7 +7953,7 @@ namespace Vulkan {
     // Struct: 377
     /// <summary>VkSharedPresentSurfaceCapabilitiesKHR - structure describing capabilities of a surface for shared presentation
     /// </summary>
-    public unsafe struct VkSharedPresentSurfaceCapabilitiesKHR {
+    public unsafe partial struct VkSharedPresentSurfaceCapabilitiesKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -7972,7 +7972,7 @@ namespace Vulkan {
     // Struct: 378
     /// <summary>VkSparseBufferMemoryBindInfo - Structure specifying a sparse buffer memory bind operation
     /// </summary>
-    public unsafe struct VkSparseBufferMemoryBindInfo {
+    public unsafe partial struct VkSparseBufferMemoryBindInfo {
         /// <summary> buffer is the VkBuffer object to be bound.</summary>
         public VkBuffer buffer;
         /// <summary> bindCount is the number of VkSparseMemoryBind structures in
@@ -7985,7 +7985,7 @@ namespace Vulkan {
     // Struct: 379
     /// <summary>VkSparseImageFormatProperties - Structure specifying sparse image format properties
     /// </summary>
-    public unsafe struct VkSparseImageFormatProperties {
+    public unsafe partial struct VkSparseImageFormatProperties {
         /// <summary> aspectMask is a bitmask VkImageAspectFlagBits specifying
         /// which aspects of the image the properties apply to.</summary>
         public VkImageAspectFlags aspectMask;
@@ -7999,7 +7999,7 @@ namespace Vulkan {
     // Struct: 380
     /// <summary>VkSparseImageFormatProperties2 - Structure specifying sparse image format properties
     /// </summary>
-    public unsafe struct VkSparseImageFormatProperties2 {
+    public unsafe partial struct VkSparseImageFormatProperties2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8012,7 +8012,7 @@ namespace Vulkan {
     // Struct: 381
     /// <summary>VkSparseImageMemoryBind - Structure specifying sparse image memory bind
     /// </summary>
-    public unsafe struct VkSparseImageMemoryBind {
+    public unsafe partial struct VkSparseImageMemoryBind {
         /// <summary> subresource is the image aspect and region of interest in the
         /// image.</summary>
         public VkImageSubresource subresource;
@@ -8041,7 +8041,7 @@ namespace Vulkan {
     // Struct: 382
     /// <summary>VkSparseImageMemoryBindInfo - Structure specifying sparse image memory bind info
     /// </summary>
-    public unsafe struct VkSparseImageMemoryBindInfo {
+    public unsafe partial struct VkSparseImageMemoryBindInfo {
         /// <summary> image is the VkImage object to be bound</summary>
         public VkImage image;
         /// <summary> bindCount is the number of VkSparseImageMemoryBind
@@ -8054,7 +8054,7 @@ namespace Vulkan {
     // Struct: 383
     /// <summary>VkSparseImageMemoryRequirements - Structure specifying sparse image memory requirements
     /// </summary>
-    public unsafe struct VkSparseImageMemoryRequirements {
+    public unsafe partial struct VkSparseImageMemoryRequirements {
         public VkSparseImageFormatProperties formatProperties;
         /// <summary> imageMipTailFirstLod is the first mip level at which image
         /// subresources are included in the mip tail region.</summary>
@@ -8080,7 +8080,7 @@ namespace Vulkan {
     // Struct: 384
     /// <summary>VkSparseImageMemoryRequirements2 - (None)
     /// </summary>
-    public unsafe struct VkSparseImageMemoryRequirements2 {
+    public unsafe partial struct VkSparseImageMemoryRequirements2 {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8093,7 +8093,7 @@ namespace Vulkan {
     // Struct: 385
     /// <summary>VkSparseImageOpaqueMemoryBindInfo - Structure specifying sparse image opaque memory bind info
     /// </summary>
-    public unsafe struct VkSparseImageOpaqueMemoryBindInfo {
+    public unsafe partial struct VkSparseImageOpaqueMemoryBindInfo {
         /// <summary> image is the VkImage object to be bound.</summary>
         public VkImage image;
         /// <summary> bindCount is the number of VkSparseMemoryBind structures in
@@ -8106,7 +8106,7 @@ namespace Vulkan {
     // Struct: 386
     /// <summary>VkSparseMemoryBind - Structure specifying a sparse memory bind operation
     /// </summary>
-    public unsafe struct VkSparseMemoryBind {
+    public unsafe partial struct VkSparseMemoryBind {
         /// <summary> resourceOffset is the offset into the resource.</summary>
         public VkDeviceSize resourceOffset;
         /// <summary> size is the size of the memory region to be bound.</summary>
@@ -8126,7 +8126,7 @@ namespace Vulkan {
     // Struct: 387
     /// <summary>VkSpecializationInfo - Structure specifying specialization info
     /// </summary>
-    public unsafe struct VkSpecializationInfo {
+    public unsafe partial struct VkSpecializationInfo {
         /// <summary> mapEntryCount is the number of entries in the pMapEntries
         /// array.</summary>
         public UInt32 mapEntryCount;
@@ -8142,7 +8142,7 @@ namespace Vulkan {
     // Struct: 388
     /// <summary>VkSpecializationMapEntry - Structure specifying a specialization map entry
     /// </summary>
-    public unsafe struct VkSpecializationMapEntry {
+    public unsafe partial struct VkSpecializationMapEntry {
         /// <summary> constantID is the ID of the specialization constant in SPIR-V.</summary>
         public UInt32    /*-const-*/antID;
         /// <summary> offset is the byte offset of the specialization constant value
@@ -8155,7 +8155,7 @@ namespace Vulkan {
     // Struct: 389
     /// <summary>VkStencilOpState - Structure specifying stencil operation state
     /// </summary>
-    public unsafe struct VkStencilOpState {
+    public unsafe partial struct VkStencilOpState {
         /// <summary> failOp is a VkStencilOp value specifying the action
         /// performed on samples that fail the stencil test.</summary>
         public VkStencilOp failOp;
@@ -8181,7 +8181,7 @@ namespace Vulkan {
     // Struct: 390
     ///// <summary>VkStreamDescriptorSurfaceCreateInfoGGP - Structure specifying parameters of a newly created Google Games Platform stream surface object
     ///// </summary>
-    //public unsafe struct VkStreamDescriptorSurfaceCreateInfoGGP {
+    //public unsafe partial struct VkStreamDescriptorSurfaceCreateInfoGGP {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8195,7 +8195,7 @@ namespace Vulkan {
     // Struct: 391
     /// <summary>VkSubmitInfo - Structure specifying a queue submit operation
     /// </summary>
-    public unsafe struct VkSubmitInfo {
+    public unsafe partial struct VkSubmitInfo {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8231,7 +8231,7 @@ namespace Vulkan {
     // Struct: 392
     /// <summary>VkSubpassBeginInfoKHR - Structure specifying subpass begin info
     /// </summary>
-    public unsafe struct VkSubpassBeginInfoKHR {
+    public unsafe partial struct VkSubpassBeginInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8243,7 +8243,7 @@ namespace Vulkan {
     // Struct: 393
     /// <summary>VkSubpassDependency - Structure specifying a subpass dependency
     /// </summary>
-    public unsafe struct VkSubpassDependency {
+    public unsafe partial struct VkSubpassDependency {
         /// <summary> srcSubpass is the subpass index of the first subpass in the
         /// dependency, or VK_SUBPASS_EXTERNAL.</summary>
         public UInt32 srcSubpass;
@@ -8270,7 +8270,7 @@ namespace Vulkan {
     // Struct: 394
     /// <summary>VkSubpassDependency2KHR - Structure specifying a subpass dependency
     /// </summary>
-    public unsafe struct VkSubpassDependency2KHR {
+    public unsafe partial struct VkSubpassDependency2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8304,7 +8304,7 @@ namespace Vulkan {
     // Struct: 395
     /// <summary>VkSubpassDescription - Structure specifying a subpass description
     /// </summary>
-    public unsafe struct VkSubpassDescription {
+    public unsafe partial struct VkSubpassDescription {
         /// <summary> flags is a bitmask of VkSubpassDescriptionFlagBits
         /// specifying usage of the subpass.</summary>
         public VkSubpassDescriptionFlags flags;
@@ -8342,7 +8342,7 @@ namespace Vulkan {
     // Struct: 396
     /// <summary>VkSubpassDescription2KHR - Structure specifying a subpass description
     /// </summary>
-    public unsafe struct VkSubpassDescription2KHR {
+    public unsafe partial struct VkSubpassDescription2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8387,7 +8387,7 @@ namespace Vulkan {
     // Struct: 397
     /// <summary>VkSubpassDescriptionDepthStencilResolveKHR - Structure specifying depth/stencil resolve operations for a subpass
     /// </summary>
-    public unsafe struct VkSubpassDescriptionDepthStencilResolveKHR {
+    public unsafe partial struct VkSubpassDescriptionDepthStencilResolveKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8406,7 +8406,7 @@ namespace Vulkan {
     // Struct: 398
     /// <summary>VkSubpassEndInfoKHR - Structure specifying subpass end info
     /// </summary>
-    public unsafe struct VkSubpassEndInfoKHR {
+    public unsafe partial struct VkSubpassEndInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8415,7 +8415,7 @@ namespace Vulkan {
     // Struct: 399
     /// <summary>VkSubpassSampleLocationsEXT - Structure specifying the sample locations state to use for layout transitions of attachments performed after a given subpass
     /// </summary>
-    public unsafe struct VkSubpassSampleLocationsEXT {
+    public unsafe partial struct VkSubpassSampleLocationsEXT {
         /// <summary> subpassIndex is the index of the subpass for which the sample
         /// locations state is provided.</summary>
         public UInt32 subpassIndex;
@@ -8428,7 +8428,7 @@ namespace Vulkan {
     // Struct: 400
     /// <summary>VkSubresourceLayout - Structure specifying subresource layout
     /// </summary>
-    public unsafe struct VkSubresourceLayout {
+    public unsafe partial struct VkSubresourceLayout {
         /// <summary> offset is the byte offset from the start of the image
         /// or the plane
         /// where the image subresource begins.</summary>
@@ -8450,7 +8450,7 @@ namespace Vulkan {
     // Struct: 401
     /// <summary>VkSurfaceCapabilities2EXT - Structure describing capabilities of a surface
     /// </summary>
-    public unsafe struct VkSurfaceCapabilities2EXT {
+    public unsafe partial struct VkSurfaceCapabilities2EXT {
         public VkStructureType sType;
         public void* pNext;
         public UInt32 minImageCount;
@@ -8468,7 +8468,7 @@ namespace Vulkan {
     // Struct: 402
     /// <summary>VkSurfaceCapabilities2KHR - Structure describing capabilities of a surface
     /// </summary>
-    public unsafe struct VkSurfaceCapabilities2KHR {
+    public unsafe partial struct VkSurfaceCapabilities2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8481,7 +8481,7 @@ namespace Vulkan {
     // Struct: 403
     /// <summary>VkSurfaceCapabilitiesFullScreenExclusiveEXT - Structure describing full screen exclusive capabilities of a surface
     /// </summary>
-    public unsafe struct VkSurfaceCapabilitiesFullScreenExclusiveEXT {
+    public unsafe partial struct VkSurfaceCapabilitiesFullScreenExclusiveEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8491,7 +8491,7 @@ namespace Vulkan {
     // Struct: 404
     /// <summary>VkSurfaceCapabilitiesKHR - Structure describing capabilities of a surface
     /// </summary>
-    public unsafe struct VkSurfaceCapabilitiesKHR {
+    public unsafe partial struct VkSurfaceCapabilitiesKHR {
         /// <summary> minImageCount is the minimum number of images the specified device
         /// supports for a swapchain created for the surface, and will be at least
         /// one.</summary>
@@ -8560,7 +8560,7 @@ namespace Vulkan {
     // Struct: 405
     /// <summary>VkSurfaceFormat2KHR - Structure describing a supported swapchain format tuple
     /// </summary>
-    public unsafe struct VkSurfaceFormat2KHR {
+    public unsafe partial struct VkSurfaceFormat2KHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8573,7 +8573,7 @@ namespace Vulkan {
     // Struct: 406
     /// <summary>VkSurfaceFormatKHR - Structure describing a supported swapchain format-color space pair
     /// </summary>
-    public unsafe struct VkSurfaceFormatKHR {
+    public unsafe partial struct VkSurfaceFormatKHR {
         /// <summary> format is a VkFormat that is compatible with the specified
         /// surface.</summary>
         public VkFormat format;
@@ -8584,7 +8584,7 @@ namespace Vulkan {
     // Struct: 407
     /// <summary>VkSurfaceFullScreenExclusiveInfoEXT - Structure specifying the preferred full-screen transition behavior
     /// </summary>
-    public unsafe struct VkSurfaceFullScreenExclusiveInfoEXT {
+    public unsafe partial struct VkSurfaceFullScreenExclusiveInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8596,7 +8596,7 @@ namespace Vulkan {
     // Struct: 408
     ///// <summary>VkSurfaceFullScreenExclusiveWin32InfoEXT - Structure specifying additional creation parameters specific to Win32 fullscreen exclusive mode
     ///// </summary>
-    //public unsafe struct VkSurfaceFullScreenExclusiveWin32InfoEXT {
+    //public unsafe partial struct VkSurfaceFullScreenExclusiveWin32InfoEXT {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8608,7 +8608,7 @@ namespace Vulkan {
     // Struct: 409
     /// <summary>VkSurfaceProtectedCapabilitiesKHR - Structure describing capability of a surface to be protected
     /// </summary>
-    public unsafe struct VkSurfaceProtectedCapabilitiesKHR {
+    public unsafe partial struct VkSurfaceProtectedCapabilitiesKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8624,7 +8624,7 @@ namespace Vulkan {
     // Struct: 410
     /// <summary>VkSwapchainCounterCreateInfoEXT - Specify the surface counters desired
     /// </summary>
-    public unsafe struct VkSwapchainCounterCreateInfoEXT {
+    public unsafe partial struct VkSwapchainCounterCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8636,7 +8636,7 @@ namespace Vulkan {
     // Struct: 411
     /// <summary>VkSwapchainCreateInfoKHR - Structure specifying parameters of a newly created swapchain object
     /// </summary>
-    public unsafe struct VkSwapchainCreateInfoKHR {
+    public unsafe partial struct VkSwapchainCreateInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8679,7 +8679,7 @@ namespace Vulkan {
     // Struct: 412
     /// <summary>VkSwapchainDisplayNativeHdrCreateInfoAMD - Structure specifying display native HDR parameters of a newly created swapchain object
     /// </summary>
-    public unsafe struct VkSwapchainDisplayNativeHdrCreateInfoAMD {
+    public unsafe partial struct VkSwapchainDisplayNativeHdrCreateInfoAMD {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8691,7 +8691,7 @@ namespace Vulkan {
     // Struct: 413
     /// <summary>VkTextureLODGatherFormatPropertiesAMD - Structure informing whether or not texture gather bias/LOD functionality is supported for a given image format and a given physical device.
     /// </summary>
-    public unsafe struct VkTextureLODGatherFormatPropertiesAMD {
+    public unsafe partial struct VkTextureLODGatherFormatPropertiesAMD {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL.</summary>
@@ -8706,7 +8706,7 @@ namespace Vulkan {
     // Struct: 414
     /// <summary>VkValidationCacheCreateInfoEXT - Structure specifying parameters of a newly created validation cache
     /// </summary>
-    public unsafe struct VkValidationCacheCreateInfoEXT {
+    public unsafe partial struct VkValidationCacheCreateInfoEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8727,7 +8727,7 @@ namespace Vulkan {
     // Struct: 415
     /// <summary>VkValidationFeaturesEXT - Specify validation features to enable or disable for a Vulkan instance
     /// </summary>
-    public unsafe struct VkValidationFeaturesEXT {
+    public unsafe partial struct VkValidationFeaturesEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8749,7 +8749,7 @@ namespace Vulkan {
     // Struct: 416
     /// <summary>VkValidationFlagsEXT - Specify validation checks to disable for a Vulkan instance
     /// </summary>
-    public unsafe struct VkValidationFlagsEXT {
+    public unsafe partial struct VkValidationFlagsEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8764,7 +8764,7 @@ namespace Vulkan {
     // Struct: 417
     /// <summary>VkVertexInputAttributeDescription - Structure specifying vertex input attribute description
     /// </summary>
-    public unsafe struct VkVertexInputAttributeDescription {
+    public unsafe partial struct VkVertexInputAttributeDescription {
         /// <summary> location is the shader binding location number for this attribute.</summary>
         public UInt32 location;
         /// <summary> binding is the binding number which this attribute takes its data
@@ -8779,7 +8779,7 @@ namespace Vulkan {
     // Struct: 418
     /// <summary>VkVertexInputBindingDescription - Structure specifying vertex input binding description
     /// </summary>
-    public unsafe struct VkVertexInputBindingDescription {
+    public unsafe partial struct VkVertexInputBindingDescription {
         /// <summary> binding is the binding number that this structure describes.</summary>
         public UInt32 binding;
         /// <summary> stride is the distance in bytes between two consecutive elements
@@ -8793,7 +8793,7 @@ namespace Vulkan {
     // Struct: 419
     /// <summary>VkVertexInputBindingDivisorDescriptionEXT - Structure specifying a divisor used in instanced rendering
     /// </summary>
-    public unsafe struct VkVertexInputBindingDivisorDescriptionEXT {
+    public unsafe partial struct VkVertexInputBindingDivisorDescriptionEXT {
         /// <summary> binding is the binding number for which the divisor is specified.</summary>
         public UInt32 binding;
         /// <summary> divisor is the number of successive instances that will use the
@@ -8813,7 +8813,7 @@ namespace Vulkan {
     // Struct: 420
     ///// <summary>VkViSurfaceCreateInfoNN - Structure specifying parameters of a newly created VI surface object
     ///// </summary>
-    //public unsafe struct VkViSurfaceCreateInfoNN {
+    //public unsafe partial struct VkViSurfaceCreateInfoNN {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8827,7 +8827,7 @@ namespace Vulkan {
     // Struct: 421
     /// <summary>VkViewport - Structure specifying a viewport
     /// </summary>
-    public unsafe struct VkViewport {
+    public unsafe partial struct VkViewport {
         /// <summary> x and y are the viewport’s upper left corner (x,y).</summary>
         public float x;
         public float y;
@@ -8844,7 +8844,7 @@ namespace Vulkan {
     // Struct: 422
     /// <summary>VkViewportSwizzleNV - Structure specifying a viewport swizzle
     /// </summary>
-    public unsafe struct VkViewportSwizzleNV {
+    public unsafe partial struct VkViewportSwizzleNV {
         /// <summary> x is a VkViewportCoordinateSwizzleNV value specifying the
         /// swizzle operation to apply to the x component of the primitive</summary>
         public VkViewportCoordinateSwizzleNV x;
@@ -8861,7 +8861,7 @@ namespace Vulkan {
     // Struct: 423
     /// <summary>VkViewportWScalingNV - Structure specifying a viewport
     /// </summary>
-    public unsafe struct VkViewportWScalingNV {
+    public unsafe partial struct VkViewportWScalingNV {
         /// <summary> xcoeff and ycoeff are the viewport’s W scaling factor for x
         /// and y respectively.</summary>
         public float xcoeff;
@@ -8870,7 +8870,7 @@ namespace Vulkan {
     // Struct: 424
     ///// <summary>VkWaylandSurfaceCreateInfoKHR - Structure specifying parameters of a newly created Wayland surface object
     ///// </summary>
-    //public unsafe struct VkWaylandSurfaceCreateInfoKHR {
+    //public unsafe partial struct VkWaylandSurfaceCreateInfoKHR {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8885,7 +8885,7 @@ namespace Vulkan {
     // Struct: 425
     /// <summary>VkWin32KeyedMutexAcquireReleaseInfoKHR - Use the Windows keyed mutex mechanism to synchronize work
     /// </summary>
-    public unsafe struct VkWin32KeyedMutexAcquireReleaseInfoKHR {
+    public unsafe partial struct VkWin32KeyedMutexAcquireReleaseInfoKHR {
         public VkStructureType sType;
         public /*-const-*/ void* pNext;
         /// <summary> acquireCount is the number of entries in the pAcquireSyncs,
@@ -8915,7 +8915,7 @@ namespace Vulkan {
     // Struct: 426
     /// <summary>VkWin32KeyedMutexAcquireReleaseInfoNV - use Windows keyex mutex mechanism to synchronize work
     /// </summary>
-    public unsafe struct VkWin32KeyedMutexAcquireReleaseInfoNV {
+    public unsafe partial struct VkWin32KeyedMutexAcquireReleaseInfoNV {
         public VkStructureType sType;
         public /*-const-*/ void* pNext;
         /// <summary> acquireCount is the number of entries in the pAcquireSyncs,
@@ -8947,7 +8947,7 @@ namespace Vulkan {
     // Struct: 427
     /// <summary>VkWin32SurfaceCreateInfoKHR - Structure specifying parameters of a newly created Win32 surface object
     /// </summary>
-    public unsafe struct VkWin32SurfaceCreateInfoKHR {
+    public unsafe partial struct VkWin32SurfaceCreateInfoKHR {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -8962,7 +8962,7 @@ namespace Vulkan {
     // Struct: 428
     /// <summary>VkWriteDescriptorSet - Structure specifying the parameters of a descriptor set write operation
     /// </summary>
-    public unsafe struct VkWriteDescriptorSet {
+    public unsafe partial struct VkWriteDescriptorSet {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -9014,7 +9014,7 @@ namespace Vulkan {
     // Struct: 429
     /// <summary>VkWriteDescriptorSetAccelerationStructureNV - Structure specifying acceleration to query for memory requirements
     /// </summary>
-    public unsafe struct VkWriteDescriptorSetAccelerationStructureNV {
+    public unsafe partial struct VkWriteDescriptorSetAccelerationStructureNV {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -9028,7 +9028,7 @@ namespace Vulkan {
     // Struct: 430
     /// <summary>VkWriteDescriptorSetInlineUniformBlockEXT - Structure specifying inline uniform block data
     /// </summary>
-    public unsafe struct VkWriteDescriptorSetInlineUniformBlockEXT {
+    public unsafe partial struct VkWriteDescriptorSetInlineUniformBlockEXT {
         /// <summary> sType is the type of this structure.</summary>
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -9043,14 +9043,14 @@ namespace Vulkan {
     // Struct: 431
     /// <summary>VkXYColorEXT - structure to specify X,Y chromaticity coordinates
     /// </summary>
-    public unsafe struct VkXYColorEXT {
+    public unsafe partial struct VkXYColorEXT {
         public float x;
         public float y;
     }
     // Struct: 432
     ///// <summary>VkXcbSurfaceCreateInfoKHR - Structure specifying parameters of a newly created Xcb surface object
     ///// </summary>
-    //public unsafe struct VkXcbSurfaceCreateInfoKHR {
+    //public unsafe partial struct VkXcbSurfaceCreateInfoKHR {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
@@ -9067,7 +9067,7 @@ namespace Vulkan {
     // Struct: 433
     ///// <summary>VkXlibSurfaceCreateInfoKHR - Structure specifying parameters of a newly created Xlib surface object
     ///// </summary>
-    //public unsafe struct VkXlibSurfaceCreateInfoKHR {
+    //public unsafe partial struct VkXlibSurfaceCreateInfoKHR {
     //    /// <summary> sType is the type of this structure.</summary>
     //    public VkStructureType sType;
     //    /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
