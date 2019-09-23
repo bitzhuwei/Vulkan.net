@@ -143,12 +143,13 @@ namespace Demo02.Mesh {
             deviceCreateInfo.sType = DeviceCreateInfo;
             //deviceCreateInfo.queueCreateInfoCount = (uint)queueCreateInfos.Count;
             //deviceCreateInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)queueCreateInfos.Data.ToPointer();
-            {
-                VkDeviceQueueCreateInfo[] array = queueCreateInfos.ToArray();
-                IntPtr ptr = IntPtr.Zero;
-                array.Set(ref ptr, ref deviceCreateInfo.queueCreateInfoCount);
-                deviceCreateInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)ptr;
-            }
+            //{
+            //    VkDeviceQueueCreateInfo[] array = queueCreateInfos.ToArray();
+            //    IntPtr ptr = IntPtr.Zero;
+            //    array.Set(ref ptr, ref deviceCreateInfo.queueCreateInfoCount);
+            //    deviceCreateInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)ptr;
+            //}
+            queueCreateInfos.ToArray().Set(ref deviceCreateInfo);
             deviceCreateInfo.pEnabledFeatures = &enabledFeatures;
 
             if (deviceExtensions.Count > 0) {

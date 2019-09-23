@@ -185,16 +185,9 @@ namespace Demo02.Mesh {
             // Command buffer submission info is set by each example
             submitInfo = new VkSubmitInfo();
             submitInfo.sType = SubmitInfo;
-            //submitInfo.pWaitDstStageMask = (VkPipelineStageFlagBits*)submitPipelineStages.Data;
-            {
-                IntPtr ptr = IntPtr.Zero; uint count = 0;
-                submitPipelineStages.Set(ref ptr, ref count);
-                submitInfo.pWaitDstStageMask = (VkPipelineStageFlagBits*)ptr;
-            }
-            submitInfo.waitSemaphoreCount = 1;
-            submitInfo.pWaitSemaphores = &GetSemaphoresPtr()->PresentComplete;
-            submitInfo.signalSemaphoreCount = 1;
-            submitInfo.pSignalSemaphores = &GetSemaphoresPtr()->RenderComplete;
+            submitPipelineStages.Set(ref submitInfo);
+            GetSemaphoresPtr()->PresentComplete.SetWaitSemaphores(ref submitInfo);
+            GetSemaphoresPtr()->RenderComplete.SetSignalSemaphores(ref submitInfo);
         }
 
         protected virtual void getEnabledFeatures() {
@@ -375,19 +368,9 @@ namespace Demo02.Mesh {
 
             VkRenderPassCreateInfo renderPassInfo = new VkRenderPassCreateInfo();
             renderPassInfo.sType = RenderPassCreateInfo;
-            {
-                IntPtr ptr = IntPtr.Zero;
-                attachments.Set(ref ptr, ref renderPassInfo.attachmentCount);
-                renderPassInfo.pAttachments = (VkAttachmentDescription*)ptr;
-            }
-            renderPassInfo.subpassCount = 1;
-            renderPassInfo.pSubpasses = &subpassDescription;
-            {
-                IntPtr ptr = IntPtr.Zero;
-                dependencies.Set(ref ptr, ref renderPassInfo.dependencyCount);
-                renderPassInfo.pDependencies = (VkSubpassDependency*)ptr;
-            }
-
+            attachments.Set(ref renderPassInfo);
+            subpassDescription.Set(ref renderPassInfo);
+            dependencies.Set(ref renderPassInfo);
             VkRenderPass renderpass;
             vkCreateRenderPass(device, &renderPassInfo, null, &renderpass);
             this._renderPass = renderpass;
@@ -414,6 +397,7 @@ namespace Demo02.Mesh {
                 attachments.Set(ref ptr, ref frameBufferCreateInfo.attachmentCount);
                 frameBufferCreateInfo.pAttachments = (VkImageView*)ptr;
             }
+            attachments.Set(ref frameBufferCreateInfo);
             frameBufferCreateInfo.width = width;
             frameBufferCreateInfo.height = height;
             frameBufferCreateInfo.layers = 1;
@@ -422,11 +406,7 @@ namespace Demo02.Mesh {
             frameBuffers = new VkFramebuffer[Swapchain.ImageCount];
             for (uint i = 0; i < frameBuffers.Length; i++) {
                 attachments[0] = Swapchain.Buffers[i].View;
-                {
-                    IntPtr ptr = IntPtr.Zero;
-                    attachments.Set(ref ptr, ref frameBufferCreateInfo.attachmentCount);
-                    frameBufferCreateInfo.pAttachments = (VkImageView*)ptr;
-                }
+                attachments.Set(ref frameBufferCreateInfo);
                 VkFramebuffer framebuffer;
                 vkCreateFramebuffer(device, &frameBufferCreateInfo, null, &framebuffer);
                 frameBuffers[i] = framebuffer;

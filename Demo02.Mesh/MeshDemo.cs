@@ -111,13 +111,7 @@ namespace Demo02.Mesh {
             renderPassBeginInfo.renderArea.offset.y = 0;
             renderPassBeginInfo.renderArea.extent.width = width;
             renderPassBeginInfo.renderArea.extent.height = height;
-            //renderPassBeginInfo.clearValueCount = 2;
-            //renderPassBeginInfo.pClearValues = &clearValues.First;
-            {
-                IntPtr ptr = IntPtr.Zero;
-                clearValues.Set(ref ptr, ref renderPassBeginInfo.clearValueCount);
-                renderPassBeginInfo.pClearValues = (VkClearValue*)ptr;
-            }
+            clearValues.Set(ref renderPassBeginInfo);
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 // Set target frame buffer
