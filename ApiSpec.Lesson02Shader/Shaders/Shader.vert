@@ -13,5 +13,6 @@ layout (set = 0, binding = 0) uniform AreaUB
 void main()
 {
 	vec3 centered = vpos - vec3(0.015, -0.013, 0);
-	gl_Position = vec4(centered.x*50.0, centered.y*50*area.width/area.height, 0.0, 1.0);
+	float width;
+	gl_Position = vec4(centered.x * area.width, centered.y * area.height, 0.0, 1.0);
 }

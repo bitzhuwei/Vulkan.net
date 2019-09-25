@@ -13,5 +13,11 @@ namespace ApiSpec.Lesson02Shader {
         public Form1() {
             InitializeComponent();
         }
+
+        private void ucShader1_KeyUp(object sender, KeyEventArgs e) {
+            if (e.KeyCode == Keys.U) {
+                this.ucShader1.UpdateSize();
+            }
+        }
     }
 }

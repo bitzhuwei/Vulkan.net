@@ -36,6 +36,7 @@
             this.ucShader1.Name = "ucShader1";
             this.ucShader1.Size = new System.Drawing.Size(776, 426);
             this.ucShader1.TabIndex = 0;
+            this.ucShader1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ucShader1_KeyUp);
             // 
             // Form1
             // 

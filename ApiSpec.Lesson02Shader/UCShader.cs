@@ -16,6 +16,12 @@ namespace ApiSpec.Lesson02Shader {
 
         protected readonly bool designMode;
 
+        private Timer timer = new Timer();
+
+        public void UpdateSize() {
+            this.lesson.UpdateSize();
+        }
+
         public UCShader() {
             InitializeComponent();
 
@@ -31,7 +37,14 @@ namespace ApiSpec.Lesson02Shader {
             if (!this.designMode) {
                 this.lesson = new LessonShader();
                 this.lesson.Init(this.Handle, Process.GetCurrentProcess().Handle);
+                this.timer.Interval = 50;
+                this.timer.Tick += Timer_Tick;
+                this.timer.Enabled = true;
             }
+        }
+
+        private void Timer_Tick(object sender, EventArgs e) {
+            this.Invalidate();
         }
 
         protected override void OnPaintBackground(PaintEventArgs e) {
