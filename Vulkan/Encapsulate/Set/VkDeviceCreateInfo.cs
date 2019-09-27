@@ -13,14 +13,14 @@ namespace Vulkan {
             values.Set(ref ptr, ref info.queueCreateInfoCount);
             info.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)ptr;
         }
-        //public static void Set(this VkSemaphore value, ref VkSubmitInfo info) {
-        //    new[] { value }.SetWaitSemaphores(ref info);
-        //}
 
-        //public static void Set(this VkSemaphore[] values, ref VkSubmitInfo info) {
-        //    IntPtr ptr = (IntPtr)info.pWaitSemaphores;
-        //    values.Set(ref ptr, ref info.waitSemaphoreCount);
-        //    info.pWaitSemaphores = (VkSemaphore*)ptr;
-        //}
+        public static void SetExtensions(this string[] values, ref VkDeviceCreateInfo info) {
+            values.Set(ref info.ppEnabledExtensionNames, ref info.enabledExtensionCount);
+        }
+
+        public static void SetLayers(this string[] values, ref VkDeviceCreateInfo info) {
+            values.Set(ref info.ppEnabledLayerNames, ref info.enabledLayerCount);
+        }
+
     }
 }

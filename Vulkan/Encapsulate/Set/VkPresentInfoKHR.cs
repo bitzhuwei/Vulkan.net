@@ -23,5 +23,16 @@ namespace Vulkan {
             values.Set(ref ptr, ref info.waitSemaphoreCount);
             info.pWaitSemaphores = (VkSemaphore*)ptr;
         }
+
+
+        public static void Set(this uint value, ref VkPresentInfoKHR info) {
+            new[] { value }.Set(ref info);
+        }
+
+        public static void Set(this uint[] values, ref VkPresentInfoKHR info) {
+            IntPtr ptr = (IntPtr)info.pImageIndices;
+            values.Set(ref ptr, ref info.swapchainCount);
+            info.pImageIndices = (uint*)ptr;
+        }
     }
 }

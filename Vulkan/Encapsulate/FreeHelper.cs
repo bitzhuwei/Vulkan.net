@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Vulkan {
-    public static unsafe class FreeHelper {
+    public static unsafe partial class Vk {
         public static void Free(ref VkInstanceCreateInfo info) {
             Free(ref info.ppEnabledExtensionNames, ref info.enabledExtensionCount);
             Free(ref info.ppEnabledLayerNames, ref info.enabledLayerCount);

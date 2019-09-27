@@ -153,10 +153,8 @@ namespace Demo.DynamicUniformBuffer {
             deviceCreateInfo.pEnabledFeatures = &enabledFeatures;
 
             if (deviceExtensions.Count > 0) {
-                //deviceCreateInfo.enabledExtensionCount = deviceExtensions.Count;
-                //deviceCreateInfo.ppEnabledExtensionNames = (byte**)deviceExtensions.Data.ToPointer();
                 string[] array = deviceExtensions.ToArray();
-                array.Set(ref deviceCreateInfo.ppEnabledExtensionNames, ref deviceCreateInfo.enabledExtensionCount);
+                array.SetExtensions(ref deviceCreateInfo);
             }
 
             VkDevice device;
