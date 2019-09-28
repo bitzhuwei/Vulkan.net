@@ -6,7 +6,7 @@ namespace Vulkan {
 
         public static string[] Get(IntPtr target, UInt32 count) {
             string[] result = null;
-            var pointer = (IntPtr*)(target.ToPointer());
+            var pointer = (IntPtr*)target;
             if (pointer != null) {
                 result = new string[count];
                 for (int i = 0; i < count; i++) {
@@ -17,7 +17,7 @@ namespace Vulkan {
         }
 
         //public static void DisposeStrings(ref IntPtr target, ref UInt32 count) {
-        //    var pointer = (IntPtr*)(target.ToPointer());
+        //    var pointer = (IntPtr*)target;
         //    if (pointer != null) {
         //        for (int i = 0; i < count; i++) {
         //            Marshal.FreeHGlobal(pointer[i]);
@@ -133,31 +133,38 @@ namespace Vulkan {
 
                     int byteLength = (int)(count * elementSize);
                     IntPtr array = Marshal.AllocHGlobal(byteLength);
-                    if (elementSize == 1) {
-                        var dst = (byte*)array;
-                        for (int i = 0; i < value.Length; i++) {
-                            dst[i] = Convert.ToByte(value[i]);
+                    switch (elementSize) {
+                        case 1: {
+                            var dst = (byte*)array;
+                            for (int i = 0; i < value.Length; i++) {
+                                dst[i] = Convert.ToByte(value[i]);
+                            }
                         }
-                    }
-                    else if (elementSize == 2) {
-                        var dst = (Int16*)array;
-                        for (int i = 0; i < value.Length; i++) {
-                            dst[i] = Convert.ToInt16(value[i]);
+                        break;
+                        case 2: {
+                            var dst = (Int16*)array;
+                            for (int i = 0; i < value.Length; i++) {
+                                dst[i] = Convert.ToInt16(value[i]);
+                            }
                         }
-                    }
-                    else if (elementSize == 4) {
-                        var dst = (Int32*)array;
-                        for (int i = 0; i < value.Length; i++) {
-                            dst[i] = Convert.ToInt32(value[i]);
+                        break;
+                        case 4: {
+                            var dst = (Int32*)array;
+                            for (int i = 0; i < value.Length; i++) {
+                                dst[i] = Convert.ToInt32(value[i]);
+                            }
                         }
-                    }
-                    else if (elementSize == 8) {
-                        var dst = (Int64*)array;
-                        for (int i = 0; i < value.Length; i++) {
-                            dst[i] = Convert.ToInt64(value[i]);
+                        break;
+                        case 8: {
+                            var dst = (Int64*)array;
+                            for (int i = 0; i < value.Length; i++) {
+                                dst[i] = Convert.ToInt64(value[i]);
+                            }
                         }
+                        break;
+                        default:
+                            throw new ArgumentException(string.Format("Unknown type({0}) length", typeof(T)));
                     }
-                    else { throw new ArgumentException(string.Format("Unknown type({0}) length", typeof(T))); }
 
                     target = array;
                 }
@@ -173,6 +180,7 @@ namespace Vulkan {
                     for (int i = 0; i < byteLength; i++) {
                         dst[i] = src[i];
                     }
+                    //System.Buffer.MemoryCopy(src, dst, byteLength, byteLength);
                     pin.Free();
 
                     target = array;
@@ -180,162 +188,162 @@ namespace Vulkan {
             }
         }
 
-        /// <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this Boolean[] value, ref Boolean* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (Boolean*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this Byte[] value, ref Byte* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (Byte*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this Int16[] value, ref Int16* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (Int16*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this Int32[] value, ref Int32* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (Int32*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this Int64[] value, ref Int64* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (Int64*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this Char[] value, ref Char* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (Char*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this SByte[] value, ref SByte* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (SByte*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this UInt16[] value, ref UInt16* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (UInt16*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this UInt32[] value, ref UInt32* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (UInt32*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this UInt64[] value, ref UInt64* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (UInt64*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this Single[] value, ref Single* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (Single*)ptr;
-        }
-        // <summary>
-        /// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// <para>Enumeration types are not allowed to use this method.
-        /// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this Double[] value, ref Double* target, ref UInt32 count) {
-            IntPtr ptr = (IntPtr)target;
-            Set(value, ref ptr, ref count);
-            target = (Double*)ptr;
-        }
+        ///// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this Boolean[] value, ref Boolean* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (Boolean*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this Byte[] value, ref Byte* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (Byte*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this Int16[] value, ref Int16* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (Int16*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this Int32[] value, ref Int32* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (Int32*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this Int64[] value, ref Int64* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (Int64*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this Char[] value, ref Char* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (Char*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this SByte[] value, ref SByte* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (SByte*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this UInt16[] value, ref UInt16* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (UInt16*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this UInt32[] value, ref UInt32* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (UInt32*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this UInt64[] value, ref UInt64* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (UInt64*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this Single[] value, ref Single* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (Single*)ptr;
+        //}
+        //// <summary>
+        ///// Set an array of structs to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// <para>Enumeration types are not allowed to use this method.
+        ///// If you have to, convert them to byte/short/ushort/int/uint according to their underlying types first.</para>
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this Double[] value, ref Double* target, ref UInt32 count) {
+        //    IntPtr ptr = (IntPtr)target;
+        //    Set(value, ref ptr, ref count);
+        //    target = (Double*)ptr;
+        //}
 
         ///// <summary>
         /////

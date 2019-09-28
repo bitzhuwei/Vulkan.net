@@ -21,9 +21,9 @@ namespace Demo02.Mesh {
         bool wireframe = false;
         vksTexture2D textures_colorMap = new vksTexture2D();
 
-        VkPipelineVertexInputStateCreateInfo vertices_inputState;
-        VkVertexInputBindingDescription[] vertices_bindingDescriptions;
-        VkVertexInputAttributeDescription[] vertices_attributeDescriptions;
+        VkPipelineVertexInputStateCreateInfo* vInputStateInfo;
+        VkVertexInputBindingDescription[] vBindingDescriptions;
+        VkVertexInputAttributeDescription[] vAttrDescriptions;
 
         // Contains all Vulkan resources required to represent vertex and index buffers for a model
         // This is for demonstration and learning purposes, the other examples use a model loader class for easy access
@@ -97,32 +97,29 @@ namespace Demo02.Mesh {
         }
 
         protected override void buildCommandBuffers() {
-            VkCommandBufferBeginInfo cmdBufInfo = new VkCommandBufferBeginInfo();
-            cmdBufInfo.sType = CommandBufferBeginInfo;
+            var cmdBufInfo = VkCommandBufferBeginInfo.Alloc();
 
             var clearValues = new VkClearValue[2];
             clearValues[0].color = defaultClearColor;
             clearValues[1].depthStencil = new VkClearDepthStencilValue() { depth = 1.0f, stencil = 0 };
 
-            VkRenderPassBeginInfo renderPassBeginInfo = new VkRenderPassBeginInfo();
-            renderPassBeginInfo.sType = RenderPassBeginInfo;
-            renderPassBeginInfo.renderPass = renderPass;
-            renderPassBeginInfo.renderArea.offset.x = 0;
-            renderPassBeginInfo.renderArea.offset.y = 0;
-            renderPassBeginInfo.renderArea.extent.width = width;
-            renderPassBeginInfo.renderArea.extent.height = height;
-            clearValues.Set(ref renderPassBeginInfo);
+            var renderPassBeginInfo = VkRenderPassBeginInfo.Alloc();
+            renderPassBeginInfo->renderPass = renderPass;
+            renderPassBeginInfo->renderArea.offset.x = 0;
+            renderPassBeginInfo->renderArea.offset.y = 0;
+            renderPassBeginInfo->renderArea.extent.width = width;
+            renderPassBeginInfo->renderArea.extent.height = height;
+            clearValues.Set(renderPassBeginInfo);
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 // Set target frame buffer
-                renderPassBeginInfo.framebuffer = frameBuffers[i];
+                renderPassBeginInfo->framebuffer = frameBuffers[i];
 
-                vkBeginCommandBuffer(drawCmdBuffers[i], &cmdBufInfo);
+                vkBeginCommandBuffer(drawCmdBuffers[i], cmdBufInfo);
 
-                vkCmdBeginRenderPass(drawCmdBuffers[i], &renderPassBeginInfo, VkSubpassContents.Inline);
+                vkCmdBeginRenderPass(drawCmdBuffers[i], renderPassBeginInfo, VkSubpassContents.Inline);
 
-                VkViewport viewport = new VkViewport();
-                viewport.width = width; viewport.height = height; viewport.minDepth = 0.0f; viewport.maxDepth = 1.0f;
+                VkViewport viewport = new VkViewport(0, 0, width, height, 0, 1);
                 vkCmdSetViewport(drawCmdBuffers[i], 0, 1, &viewport);
 
                 VkRect2D scissor = new VkRect2D();
@@ -295,12 +292,12 @@ namespace Demo02.Mesh {
                 // Vertex buffer
                 fixed (Vertex* pointer = vertexBuffer.ToArray()) {
                     vulkanDevice.createBuffer(
-                    VkBufferUsageFlagBits.VertexBuffer,
-                    VkMemoryPropertyFlagBits.HostVisible,
-                    vertexBufferSize,
-                    out model_vertices_buffer,
-                    out model_vertices_memory,
-                    pointer);
+                        VkBufferUsageFlagBits.VertexBuffer,
+                        VkMemoryPropertyFlagBits.HostVisible,
+                        vertexBufferSize,
+                        out model_vertices_buffer,
+                        out model_vertices_memory,
+                        pointer);
                 }
                 // Index buffer
                 fixed (uint* pointer = indexBuffer.ToArray()) {
@@ -333,44 +330,43 @@ namespace Demo02.Mesh {
 
         void setupVertexDescriptions() {
             // Binding description
-            vertices_bindingDescriptions = new VkVertexInputBindingDescription[1];
-            vertices_bindingDescriptions[0] = new VkVertexInputBindingDescription();
-            vertices_bindingDescriptions[0].binding = VERTEX_BUFFER_BIND_ID;
-            vertices_bindingDescriptions[0].stride = (uint)sizeof(Vertex);
-            vertices_bindingDescriptions[0].inputRate = VkVertexInputRate.Vertex;
+            vBindingDescriptions = new VkVertexInputBindingDescription[1];
+            vBindingDescriptions[0] = new VkVertexInputBindingDescription();
+            vBindingDescriptions[0].binding = VERTEX_BUFFER_BIND_ID;
+            vBindingDescriptions[0].stride = (uint)sizeof(Vertex);
+            vBindingDescriptions[0].inputRate = VkVertexInputRate.Vertex;
 
             // Attribute descriptions
             // Describes memory layout and shader positions
-            vertices_attributeDescriptions = new VkVertexInputAttributeDescription[4];
+            vAttrDescriptions = new VkVertexInputAttributeDescription[4];
             // Location 0 : Position
-            vertices_attributeDescriptions[0] = new VkVertexInputAttributeDescription();
-            vertices_attributeDescriptions[0].binding = VERTEX_BUFFER_BIND_ID;
-            vertices_attributeDescriptions[0].location = 0;
-            vertices_attributeDescriptions[0].format = VkFormat.R32g32b32Sfloat;
-            vertices_attributeDescriptions[0].offset = Vertex.PositionOffset;
+            vAttrDescriptions[0] = new VkVertexInputAttributeDescription();
+            vAttrDescriptions[0].binding = VERTEX_BUFFER_BIND_ID;
+            vAttrDescriptions[0].location = 0;
+            vAttrDescriptions[0].format = VkFormat.R32g32b32Sfloat;
+            vAttrDescriptions[0].offset = Vertex.PositionOffset;
             // Location 1 : Normal
-            vertices_attributeDescriptions[1] = new VkVertexInputAttributeDescription();
-            vertices_attributeDescriptions[1].binding = VERTEX_BUFFER_BIND_ID;
-            vertices_attributeDescriptions[1].location = 1;
-            vertices_attributeDescriptions[1].format = VkFormat.R32g32b32Sfloat;
-            vertices_attributeDescriptions[1].offset = Vertex.NormalOffset;
+            vAttrDescriptions[1] = new VkVertexInputAttributeDescription();
+            vAttrDescriptions[1].binding = VERTEX_BUFFER_BIND_ID;
+            vAttrDescriptions[1].location = 1;
+            vAttrDescriptions[1].format = VkFormat.R32g32b32Sfloat;
+            vAttrDescriptions[1].offset = Vertex.NormalOffset;
             // Location 2 : Texture coordinates
-            vertices_attributeDescriptions[2] = new VkVertexInputAttributeDescription();
-            vertices_attributeDescriptions[2].binding = VERTEX_BUFFER_BIND_ID;
-            vertices_attributeDescriptions[2].location = 2;
-            vertices_attributeDescriptions[2].format = VkFormat.R32g32Sfloat;
-            vertices_attributeDescriptions[2].offset = Vertex.UvOffset;
+            vAttrDescriptions[2] = new VkVertexInputAttributeDescription();
+            vAttrDescriptions[2].binding = VERTEX_BUFFER_BIND_ID;
+            vAttrDescriptions[2].location = 2;
+            vAttrDescriptions[2].format = VkFormat.R32g32Sfloat;
+            vAttrDescriptions[2].offset = Vertex.UvOffset;
             // Location 3 : Color
-            vertices_attributeDescriptions[3] = new VkVertexInputAttributeDescription();
-            vertices_attributeDescriptions[3].binding = VERTEX_BUFFER_BIND_ID;
-            vertices_attributeDescriptions[3].location = 3;
-            vertices_attributeDescriptions[3].format = VkFormat.R32g32b32Sfloat;
-            vertices_attributeDescriptions[3].offset = Vertex.ColorOffset;
+            vAttrDescriptions[3] = new VkVertexInputAttributeDescription();
+            vAttrDescriptions[3].binding = VERTEX_BUFFER_BIND_ID;
+            vAttrDescriptions[3].location = 3;
+            vAttrDescriptions[3].format = VkFormat.R32g32b32Sfloat;
+            vAttrDescriptions[3].offset = Vertex.ColorOffset;
 
-            vertices_inputState = new VkPipelineVertexInputStateCreateInfo();
-            vertices_inputState.sType = PipelineVertexInputStateCreateInfo;
-            vertices_bindingDescriptions.Set(ref vertices_inputState);
-            vertices_attributeDescriptions.Set(ref vertices_inputState);
+            vInputStateInfo = VkPipelineVertexInputStateCreateInfo.Alloc();
+            vBindingDescriptions.Set(vInputStateInfo);
+            vAttrDescriptions.Set(vInputStateInfo);
         }
 
         void setupDescriptorPool() {
@@ -383,48 +379,46 @@ namespace Demo02.Mesh {
             poolSizes[1].type = VkDescriptorType.CombinedImageSampler;
             poolSizes[1].descriptorCount = 1;
 
-            VkDescriptorPoolCreateInfo descriptorPoolInfo = new VkDescriptorPoolCreateInfo();
-            descriptorPoolInfo.sType = DescriptorPoolCreateInfo;
-            poolSizes.Set(ref descriptorPoolInfo);
-            descriptorPoolInfo.maxSets = 1;
+            var descriptorPoolInfo = VkDescriptorPoolCreateInfo.Alloc();
+            poolSizes.Set(descriptorPoolInfo);
+            descriptorPoolInfo->maxSets = 1;
             {
                 VkDescriptorPool pool;
-                vkCreateDescriptorPool(device, &descriptorPoolInfo, null, &pool);
+                vkCreateDescriptorPool(device, descriptorPoolInfo, null, &pool);
                 this.descriptorPool = pool;
             }
         }
 
         void setupDescriptorSetLayout() {
-            var setLayoutBindings = new VkDescriptorSetLayoutBinding[2];
+            var bindings = new VkDescriptorSetLayoutBinding[2];
             // Binding 0 : Vertex shader uniform buffer
-            setLayoutBindings[0] = new VkDescriptorSetLayoutBinding();
-            setLayoutBindings[0].descriptorType = VkDescriptorType.UniformBuffer;
-            setLayoutBindings[0].stageFlags = VkShaderStageFlagBits.Vertex;
-            setLayoutBindings[0].binding = 0;
-            setLayoutBindings[0].descriptorCount = 1;
+            bindings[0] = new VkDescriptorSetLayoutBinding();
+            bindings[0].descriptorType = VkDescriptorType.UniformBuffer;
+            bindings[0].stageFlags = VkShaderStageFlagBits.Vertex;
+            bindings[0].binding = 0;
+            bindings[0].descriptorCount = 1;
             // Binding 1 : Fragment shader combined sampler
-            setLayoutBindings[1] = new VkDescriptorSetLayoutBinding();
-            setLayoutBindings[1].descriptorType = VkDescriptorType.CombinedImageSampler;
-            setLayoutBindings[1].stageFlags = VkShaderStageFlagBits.Fragment;
-            setLayoutBindings[1].binding = 1;
-            setLayoutBindings[1].descriptorCount = 1;
+            bindings[1] = new VkDescriptorSetLayoutBinding();
+            bindings[1].descriptorType = VkDescriptorType.CombinedImageSampler;
+            bindings[1].stageFlags = VkShaderStageFlagBits.Fragment;
+            bindings[1].binding = 1;
+            bindings[1].descriptorCount = 1;
 
-            VkDescriptorSetLayoutCreateInfo descriptorLayout = new VkDescriptorSetLayoutCreateInfo();
-            descriptorLayout.sType = DescriptorSetLayoutCreateInfo;
-            setLayoutBindings.Set(ref descriptorLayout);
+            var descriptorLayout = VkDescriptorSetLayoutCreateInfo.Alloc();
+            bindings.Set(descriptorLayout);
 
             VkDescriptorSetLayout dsl;
-            vkCreateDescriptorSetLayout(device, &descriptorLayout, null, &dsl);
+            vkCreateDescriptorSetLayout(device, descriptorLayout, null, &dsl);
             this.descriptorSetLayout = dsl;
 
-            VkPipelineLayoutCreateInfo pPipelineLayoutCreateInfo = new VkPipelineLayoutCreateInfo();
-            pPipelineLayoutCreateInfo.sType = PipelineLayoutCreateInfo;
-            pPipelineLayoutCreateInfo.pSetLayouts = &dsl;
-            pPipelineLayoutCreateInfo.setLayoutCount = 1;
+            var info = new VkPipelineLayoutCreateInfo();
+            info.sType = PipelineLayoutCreateInfo;
+            info.pSetLayouts = &dsl;
+            info.setLayoutCount = 1;
 
             {
                 VkPipelineLayout layout;
-                vkCreatePipelineLayout(device, &pPipelineLayoutCreateInfo, null, &layout);
+                vkCreatePipelineLayout(device, &info, null, &layout);
                 this.pipelineLayout = layout;
             }
         }
@@ -449,26 +443,26 @@ namespace Demo02.Mesh {
             texDescriptor.imageLayout = VkImageLayout.General;
 
             VkDescriptorBufferInfo temp = uniformBuffers_scene.descriptor;
-            var writeDescriptorSets = new VkWriteDescriptorSet[2];
+            var writes = new VkWriteDescriptorSet[2];
             // Binding 0 : Vertex shader uniform buffer
-            writeDescriptorSets[0] = new VkWriteDescriptorSet();
-            writeDescriptorSets[0].sType = WriteDescriptorSet;
-            writeDescriptorSets[0].dstSet = descriptorSet;
-            writeDescriptorSets[0].descriptorType = VkDescriptorType.UniformBuffer;
-            writeDescriptorSets[0].dstBinding = 0;
-            writeDescriptorSets[0].pBufferInfo = &temp;
-            writeDescriptorSets[0].descriptorCount = 1;
+            writes[0] = new VkWriteDescriptorSet();
+            writes[0].sType = WriteDescriptorSet;
+            writes[0].dstSet = descriptorSet;
+            writes[0].descriptorType = VkDescriptorType.UniformBuffer;
+            writes[0].dstBinding = 0;
+            writes[0].pBufferInfo = &temp;
+            writes[0].descriptorCount = 1;
             // Binding 1 : Color map 
-            writeDescriptorSets[1] = new VkWriteDescriptorSet();
-            writeDescriptorSets[1].sType = WriteDescriptorSet;
-            writeDescriptorSets[1].dstSet = descriptorSet;
-            writeDescriptorSets[1].descriptorType = VkDescriptorType.CombinedImageSampler;
-            writeDescriptorSets[1].dstBinding = 1;
-            writeDescriptorSets[1].pImageInfo = &texDescriptor;
-            writeDescriptorSets[1].descriptorCount = 1;
+            writes[1] = new VkWriteDescriptorSet();
+            writes[1].sType = WriteDescriptorSet;
+            writes[1].dstSet = descriptorSet;
+            writes[1].descriptorType = VkDescriptorType.CombinedImageSampler;
+            writes[1].dstBinding = 1;
+            writes[1].pImageInfo = &texDescriptor;
+            writes[1].descriptorCount = 1;
 
-            fixed (VkWriteDescriptorSet* pointer = writeDescriptorSets) {
-                vkUpdateDescriptorSets(device, (UInt32)writeDescriptorSets.Length, pointer, 0, null);
+            fixed (VkWriteDescriptorSet* pointer = writes) {
+                vkUpdateDescriptorSets(device, (UInt32)writes.Length, pointer, 0, null);
             }
         }
 
@@ -517,7 +511,7 @@ namespace Demo02.Mesh {
             dynamicStateEnables[1] = VkDynamicState.Scissor;
             VkPipelineDynamicStateCreateInfo dynamicState = new VkPipelineDynamicStateCreateInfo();
             dynamicState.sType = PipelineDynamicStateCreateInfo;
-            dynamicStateEnables.Set(ref dynamicState);
+            dynamicStateEnables.Set(&dynamicState);
             dynamicState.flags = 0;
 
             // Solid rendering pipeline
@@ -526,25 +520,25 @@ namespace Demo02.Mesh {
             shaderStages[0] = loadShader(getAssetPath() + "shaders/mesh/mesh.vert.spv", VkShaderStageFlagBits.Vertex);
             shaderStages[1] = loadShader(getAssetPath() + "shaders/mesh/mesh.frag.spv", VkShaderStageFlagBits.Fragment);
 
-            VkGraphicsPipelineCreateInfo pipelineCreateInfo = new VkGraphicsPipelineCreateInfo();
-            pipelineCreateInfo.sType = GraphicsPipelineCreateInfo;
-            pipelineCreateInfo.layout = pipelineLayout;
-            pipelineCreateInfo.renderPass = renderPass;
-            pipelineCreateInfo.flags = 0;
+            var info = new VkGraphicsPipelineCreateInfo();
+            info.sType = GraphicsPipelineCreateInfo;
+            info.layout = pipelineLayout;
+            info.renderPass = renderPass;
+            info.flags = 0;
 
-            var via = vertices_inputState;
-            pipelineCreateInfo.pVertexInputState = &via;
-            pipelineCreateInfo.pInputAssemblyState = &inputAssemblyState;
-            pipelineCreateInfo.pRasterizationState = &rasterizationState;
-            pipelineCreateInfo.pColorBlendState = &colorBlendState;
-            pipelineCreateInfo.pMultisampleState = &multisampleState;
-            pipelineCreateInfo.pViewportState = &viewportState;
-            pipelineCreateInfo.pDepthStencilState = &depthStencilState;
-            pipelineCreateInfo.pDynamicState = &dynamicState;
-            shaderStages.Set(ref pipelineCreateInfo);
+            var via = vInputStateInfo;
+            info.pVertexInputState = via;
+            info.pInputAssemblyState = &inputAssemblyState;
+            info.pRasterizationState = &rasterizationState;
+            info.pColorBlendState = &colorBlendState;
+            info.pMultisampleState = &multisampleState;
+            info.pViewportState = &viewportState;
+            info.pDepthStencilState = &depthStencilState;
+            info.pDynamicState = &dynamicState;
+            shaderStages.Set(&info);
             {
                 VkPipeline pipeline;
-                vkCreateGraphicsPipelines(device, pipelineCache, 1, &pipelineCreateInfo, null, &pipeline);
+                vkCreateGraphicsPipelines(device, pipelineCache, 1, &info, null, &pipeline);
                 this.pipelines_solid = pipeline;
             }
 
@@ -553,7 +547,7 @@ namespace Demo02.Mesh {
                 rasterizationState.polygonMode = VkPolygonMode.Line;
                 rasterizationState.lineWidth = 1.0f;
                 VkPipeline pipeline;
-                vkCreateGraphicsPipelines(device, pipelineCache, 1, &pipelineCreateInfo, null, &pipeline);
+                vkCreateGraphicsPipelines(device, pipelineCache, 1, &info, null, &pipeline);
                 this.pipelines_wireframe = pipeline;
             }
         }
@@ -610,11 +604,10 @@ namespace Demo02.Mesh {
             //submitInfo.commandBufferCount = 1;
             //submitInfo.pCommandBuffers = (VkCommandBuffer*)drawCmdBuffers.GetAddress(currentBuffer);
             VkCommandBuffer buffer = drawCmdBuffers[currentBuffer];
-            buffer.Set(ref submitInfo);
+            buffer.Set(submitInfo);
 
-            VkSubmitInfo info = submitInfo;
             // Submit to Queue
-            vkQueueSubmit(queue, 1, &info, new VkFence());
+            vkQueueSubmit(queue, 1, submitInfo, new VkFence());
 
             submitFrame();
         }

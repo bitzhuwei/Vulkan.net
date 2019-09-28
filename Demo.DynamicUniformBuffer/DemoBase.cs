@@ -45,7 +45,7 @@ namespace Demo.DynamicUniformBuffer {
         }
 
         public DepthStencil DepthStencil;
-        public VkSubmitInfo submitInfo;
+        public VkSubmitInfo* submitInfo;
         public VkPipelineStageFlagBits[] submitPipelineStages = CreateSubmitPipelineStages();
         private static VkPipelineStageFlagBits[] CreateSubmitPipelineStages()
             => new VkPipelineStageFlagBits[] { VkPipelineStageFlagBits.ColorAttachmentOutput };
@@ -183,11 +183,10 @@ namespace Demo.DynamicUniformBuffer {
             // Set up submit info structure
             // Semaphores will stay the same during application lifetime
             // Command buffer submission info is set by each example
-            submitInfo = new VkSubmitInfo();
-            submitInfo.sType = SubmitInfo;
-            submitPipelineStages.Set(ref submitInfo);
-            GetSemaphoresPtr()->PresentComplete.SetWaitSemaphores(ref submitInfo);
-            GetSemaphoresPtr()->RenderComplete.SetSignalSemaphores(ref submitInfo);
+            submitInfo = VkSubmitInfo.Alloc();
+            submitPipelineStages.Set(submitInfo);
+            GetSemaphoresPtr()->PresentComplete.SetWaitSemaphores(submitInfo);
+            GetSemaphoresPtr()->RenderComplete.SetSignalSemaphores(submitInfo);
         }
 
         protected virtual void getEnabledFeatures() {
@@ -368,9 +367,9 @@ namespace Demo.DynamicUniformBuffer {
 
             VkRenderPassCreateInfo renderPassInfo = new VkRenderPassCreateInfo();
             renderPassInfo.sType = RenderPassCreateInfo;
-            attachments.Set(ref renderPassInfo);
-            subpassDescription.Set(ref renderPassInfo);
-            dependencies.Set(ref renderPassInfo);
+            attachments.Set(&renderPassInfo);
+            subpassDescription.Set(&renderPassInfo);
+            dependencies.Set(&renderPassInfo);
             VkRenderPass renderpass;
             vkCreateRenderPass(device, &renderPassInfo, null, &renderpass);
             this._renderPass = renderpass;
@@ -392,7 +391,7 @@ namespace Demo.DynamicUniformBuffer {
             VkFramebufferCreateInfo frameBufferCreateInfo = new VkFramebufferCreateInfo();
             frameBufferCreateInfo.sType = FramebufferCreateInfo;
             frameBufferCreateInfo.renderPass = renderPass;
-            attachments.Set(ref frameBufferCreateInfo);
+            attachments.Set(&frameBufferCreateInfo);
             frameBufferCreateInfo.width = width;
             frameBufferCreateInfo.height = height;
             frameBufferCreateInfo.layers = 1;
@@ -401,7 +400,7 @@ namespace Demo.DynamicUniformBuffer {
             frameBuffers = new VkFramebuffer[Swapchain.ImageCount];
             for (uint i = 0; i < frameBuffers.Length; i++) {
                 attachments[0] = Swapchain.Buffers[i].View;
-                attachments.Set(ref frameBufferCreateInfo);
+                attachments.Set(&frameBufferCreateInfo);
                 VkFramebuffer framebuffer;
                 vkCreateFramebuffer(device, &frameBufferCreateInfo, null, &framebuffer);
                 frameBuffers[i] = framebuffer;

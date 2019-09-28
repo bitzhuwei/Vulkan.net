@@ -20,9 +20,9 @@ namespace Demo.DynamicUniformBuffer {
         private const uint VERTEX_BUFFER_BIND_ID = 0;
         private const uint OBJECT_INSTANCES = 125;
 
-        VkPipelineVertexInputStateCreateInfo vertices_inputState;
-        VkVertexInputBindingDescription[] vertices_bindingDescriptions;
-        VkVertexInputAttributeDescription[] vertices_attributeDescriptions;
+        VkPipelineVertexInputStateCreateInfo* vertices_inputState;
+        VkVertexInputBindingDescription[] vbindingDescs;
+        VkVertexInputAttributeDescription[] vAttrDescs;
 
         vksBuffer vertexBuffer = new vksBuffer();
         vksBuffer indexBuffer = new vksBuffer();
@@ -84,23 +84,23 @@ namespace Demo.DynamicUniformBuffer {
 
             var clearValues = new VkClearValue[2];
             clearValues[0].color = defaultClearColor;
-            clearValues[1].depthStencil = new VkClearDepthStencilValue { depth = 1.0f, stencil = 0 };
+            clearValues[1].depthStencil = new VkClearDepthStencilValue(1.0f, 0);
 
-            var renderPassBeginInfo = new VkRenderPassBeginInfo();
-            renderPassBeginInfo.sType = RenderPassBeginInfo;
-            renderPassBeginInfo.renderPass = renderPass;
-            renderPassBeginInfo.renderArea.offset.x = 0;
-            renderPassBeginInfo.renderArea.offset.y = 0;
-            renderPassBeginInfo.renderArea.extent.width = width;
-            renderPassBeginInfo.renderArea.extent.height = height;
-            clearValues.Set(ref renderPassBeginInfo);
+            var info = new VkRenderPassBeginInfo();
+            info.sType = RenderPassBeginInfo;
+            info.renderPass = renderPass;
+            info.renderArea.offset.x = 0;
+            info.renderArea.offset.y = 0;
+            info.renderArea.extent.width = width;
+            info.renderArea.extent.height = height;
+            clearValues.Set(&info);
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
-                renderPassBeginInfo.framebuffer = frameBuffers[i];
+                info.framebuffer = frameBuffers[i];
 
                 vkBeginCommandBuffer(drawCmdBuffers[i], &cmdBufInfo);
 
-                vkCmdBeginRenderPass(drawCmdBuffers[i], &renderPassBeginInfo, VkSubpassContents.Inline);
+                vkCmdBeginRenderPass(drawCmdBuffers[i], &info, VkSubpassContents.Inline);
 
                 var viewport = new VkViewport(0, 0, width, height, 0.0f, 1.0f);
                 vkCmdSetViewport(drawCmdBuffers[i], 0, 1, &viewport);
@@ -121,7 +121,8 @@ namespace Demo.DynamicUniformBuffer {
                     uint dynamicOffset = j * (uint)(dynamicAlignment);
                     // Bind the descriptor set for rendering a mesh using the dynamic offset
                     VkDescriptorSet set = descriptorSet;
-                    vkCmdBindDescriptorSets(drawCmdBuffers[i], VkPipelineBindPoint.Graphics, pipelineLayout, 0, 1, &set, 1, &dynamicOffset);
+                    vkCmdBindDescriptorSets(drawCmdBuffers[i], VkPipelineBindPoint.Graphics,
+                        pipelineLayout, 0, 1, &set, 1, &dynamicOffset);
 
                     vkCmdDrawIndexed(drawCmdBuffers[i], indexCount, 1, 0, 0, 0);
                 }
@@ -154,11 +155,10 @@ namespace Demo.DynamicUniformBuffer {
             prepareFrame();
 
             // Command buffer to be sumitted to the queue
-            drawCmdBuffers[currentBuffer].Set(ref submitInfo);
+            drawCmdBuffers[currentBuffer].Set(submitInfo);
 
             // Submit to queue
-            VkSubmitInfo info = submitInfo;
-            vkQueueSubmit(queue, 1, &info, new VkFence());
+            vkQueueSubmit(queue, 1, submitInfo, new VkFence());
 
             submitFrame();
         }
@@ -190,7 +190,7 @@ namespace Demo.DynamicUniformBuffer {
             fixed (void* pointer = vertices) {
                 vulkanDevice.createBuffer(
                     VkBufferUsageFlagBits.VertexBuffer,
-                   VkMemoryPropertyFlagBits.HostVisible | VkMemoryPropertyFlagBits.HostCoherent,
+                    VkMemoryPropertyFlagBits.HostVisible | VkMemoryPropertyFlagBits.HostCoherent,
                     vertexBuffer,
                     (ulong)(vertices.Length * sizeof(Vertex)),
                     pointer);
@@ -208,7 +208,7 @@ namespace Demo.DynamicUniformBuffer {
 
         void setupVertexDescriptions() {
             // Binding description
-            vertices_bindingDescriptions = new VkVertexInputBindingDescription[]
+            vbindingDescs = new VkVertexInputBindingDescription[]
             {
                 new VkVertexInputBindingDescription(
                     binding: VERTEX_BUFFER_BIND_ID,
@@ -217,25 +217,24 @@ namespace Demo.DynamicUniformBuffer {
             };
 
             // Attribute descriptions
-            vertices_attributeDescriptions = new VkVertexInputAttributeDescription[] {
-                // Location 0 : Position
+            vAttrDescs = new VkVertexInputAttributeDescription[] {
+                // layout (location = 0) in vec3 inPos;
                 new VkVertexInputAttributeDescription(
                     location: 0,
                     binding: VERTEX_BUFFER_BIND_ID,
                     format: VkFormat.R32g32b32Sfloat,
                     offset: 0),
-                // Location 1 : Color
+                // layout (location = 1) in vec3 inColor;
                 new VkVertexInputAttributeDescription(
-                    location:1 ,
+                    location: 1,
                     binding: VERTEX_BUFFER_BIND_ID,
                     format: VkFormat.R32g32b32Sfloat,
                     offset: (uint)sizeof(Vector3)),
             };
 
-            vertices_inputState = new VkPipelineVertexInputStateCreateInfo();
-            vertices_inputState.sType = PipelineVertexInputStateCreateInfo;
-            vertices_bindingDescriptions.Set(ref vertices_inputState);
-            vertices_attributeDescriptions.Set(ref vertices_inputState);
+            vertices_inputState = VkPipelineVertexInputStateCreateInfo.Alloc();
+            vbindingDescs.Set(vertices_inputState);
+            vAttrDescs.Set(vertices_inputState);
         }
 
         void setupDescriptorPool() {
@@ -248,7 +247,7 @@ namespace Demo.DynamicUniformBuffer {
 
             var info = new VkDescriptorPoolCreateInfo();
             info.sType = DescriptorPoolCreateInfo;
-            poolSizes.Set(ref info);
+            poolSizes.Set(&info);
             info.maxSets = 2;
 
             VkDescriptorPool pool;
@@ -258,22 +257,25 @@ namespace Demo.DynamicUniformBuffer {
 
         void setupDescriptorSetLayout() {
             var bindings = new VkDescriptorSetLayoutBinding[] {
+				// layout (binding = 0) uniform UboView 
                 new VkDescriptorSetLayoutBinding(0, VkDescriptorType.UniformBuffer, 1, VkShaderStageFlagBits.Vertex),
-                new VkDescriptorSetLayoutBinding(1, VkDescriptorType.UniformBufferDynamic, 1, VkShaderStageFlagBits.Vertex),
-                new VkDescriptorSetLayoutBinding(2, VkDescriptorType.CombinedImageSampler, 1, VkShaderStageFlagBits.Fragment),
+                // layout (binding = 1) uniform UboInstance 
+				new VkDescriptorSetLayoutBinding(1, VkDescriptorType.UniformBufferDynamic, 1, VkShaderStageFlagBits.Vertex),
+                // no matching uniform sampler2D in shader.
+				new VkDescriptorSetLayoutBinding(2, VkDescriptorType.CombinedImageSampler, 1, VkShaderStageFlagBits.Fragment),
             };
 
-            VkDescriptorSetLayoutCreateInfo descriptorLayout = new VkDescriptorSetLayoutCreateInfo();
-            descriptorLayout.sType = DescriptorSetLayoutCreateInfo;
-            bindings.Set(ref descriptorLayout);
+            VkDescriptorSetLayoutCreateInfo descriptorLayoutInfo = new VkDescriptorSetLayoutCreateInfo();
+            descriptorLayoutInfo.sType = DescriptorSetLayoutCreateInfo;
+            bindings.Set(&descriptorLayoutInfo);
 
             VkDescriptorSetLayout layout;
-            vkCreateDescriptorSetLayout(device, &descriptorLayout, null, &layout);
+            vkCreateDescriptorSetLayout(device, &descriptorLayoutInfo, null, &layout);
             this.descriptorSetLayout = layout;
 
             VkPipelineLayoutCreateInfo info = new VkPipelineLayoutCreateInfo();
             info.sType = PipelineLayoutCreateInfo;
-            layout.Set(ref info);
+            layout.Set(&info);
 
             VkPipelineLayout pipelineLayout;
             vkCreatePipelineLayout(device, &info, null, &pipelineLayout);
@@ -281,11 +283,10 @@ namespace Demo.DynamicUniformBuffer {
         }
 
         void setupDescriptorSet() {
-            var dsl = descriptorSetLayout;
             var allocInfo = new VkDescriptorSetAllocateInfo();
             allocInfo.sType = DescriptorSetAllocateInfo;
             allocInfo.descriptorPool = descriptorPool;
-            dsl.Set(ref allocInfo);
+            descriptorSetLayout.Set(&allocInfo);
 
             VkDescriptorSet set;
             vkAllocateDescriptorSets(device, &allocInfo, &set);
@@ -308,11 +309,11 @@ namespace Demo.DynamicUniformBuffer {
                 new VkWriteDescriptorSet() {
                     sType = WriteDescriptorSet,
                     dstSet = descriptorSet,
-                      descriptorType = VkDescriptorType.UniformBufferDynamic,
+                    descriptorType = VkDescriptorType.UniformBufferDynamic,
                     dstBinding = 1,
                     pBufferInfo = &descriptor1,
                     descriptorCount = 1
-                    // descriptor0.Set(ref write);
+                    // descriptor1.Set(ref write);
                 }
             };
 
@@ -333,13 +334,12 @@ namespace Demo.DynamicUniformBuffer {
             rasterizationState.cullMode = VkCullModeFlagBits.None;
             rasterizationState.frontFace = VkFrontFace.CounterClockwise;
 
-            var blendAttachmentState = new VkPipelineColorBlendAttachmentState();
-            blendAttachmentState.colorWriteMask = (VkColorComponentFlagBits)0xf;
-            blendAttachmentState.blendEnable = false;
+            var blendAttachmentState = new VkPipelineColorBlendAttachmentState(
+                (VkColorComponentFlagBits)0xf, false);
 
             var colorBlendState = new VkPipelineColorBlendStateCreateInfo();
             colorBlendState.sType = PipelineColorBlendStateCreateInfo;
-            blendAttachmentState.Set(ref colorBlendState);
+            blendAttachmentState.Set(&colorBlendState);
 
             var depthStencilState = new VkPipelineDepthStencilStateCreateInfo();
             depthStencilState.sType = PipelineDepthStencilStateCreateInfo;
@@ -363,7 +363,7 @@ namespace Demo.DynamicUniformBuffer {
 
             var dynamicState = new VkPipelineDynamicStateCreateInfo();
             dynamicState.sType = PipelineDynamicStateCreateInfo;
-            dynamicStateEnables.Set(ref dynamicState);
+            dynamicStateEnables.Set(&dynamicState);
 
             // Load shaders
             var shaderStages = new VkPipelineShaderStageCreateInfo[]{
@@ -375,9 +375,7 @@ namespace Demo.DynamicUniformBuffer {
             info.sType = GraphicsPipelineCreateInfo;
             info.layout = pipelineLayout;
             info.renderPass = renderPass;
-            info.flags = 0; // is this 0?
-            VkPipelineVertexInputStateCreateInfo vis = vertices_inputState;
-            info.pVertexInputState = &vis;
+            info.pVertexInputState = vertices_inputState;
             info.pInputAssemblyState = &inputAssemblyState;
             info.pRasterizationState = &rasterizationState;
             info.pColorBlendState = &colorBlendState;
@@ -385,7 +383,7 @@ namespace Demo.DynamicUniformBuffer {
             info.pViewportState = &viewportState;
             info.pDepthStencilState = &depthStencilState;
             info.pDynamicState = &dynamicState;
-            shaderStages.Set(ref info);
+            shaderStages.Set(&info);
 
             VkPipeline pipeline;
             vkCreateGraphicsPipelines(device, pipelineCache, 1, &info, null, &pipeline);

@@ -4,14 +4,14 @@ using System.Text;
 
 namespace Vulkan {
     public unsafe static class VkBufferCreateInfoHelper {
-        public static void Set(this UInt32 value, ref VkBufferCreateInfo info) {
-            new[] { value }.Set(ref info);
+        public static void Set(this UInt32 value, VkBufferCreateInfo* info) {
+            new[] { value }.Set(info);
         }
 
-        public static void Set(this UInt32[] values, ref VkBufferCreateInfo info) {
-            IntPtr ptr = (IntPtr)info.pQueueFamilyIndices;
-            values.Set(ref ptr, ref info.queueFamilyIndexCount);
-            info.pQueueFamilyIndices = (UInt32*)ptr;
+        public static void Set(this UInt32[] values, VkBufferCreateInfo* info) {
+            IntPtr ptr = (IntPtr)info->pQueueFamilyIndices;
+            values.Set(ref ptr, ref info->queueFamilyIndexCount);
+            info->pQueueFamilyIndices = (UInt32*)ptr;
         }
     }
 }

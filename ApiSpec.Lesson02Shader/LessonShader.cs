@@ -6,31 +6,31 @@ using static Vulkan.VkStructureType;
 
 namespace ApiSpec.Lesson02Shader {
     unsafe class LessonShader {
-        VkInstance vkIntance;
-        VkSurfaceKHR vkSurface;
+        CInstance instance;
+        CSurface surface;
         VkPhysicalDevice vkPhysicalDevice;
 
-        VkDevice vkDevice;
+        CDevice device;
         VkQueue vkQueue;
-        VkSwapchainKHR vkSwapchain;
+        CSwapchain swapchain;
         VkImage[] vkImages;
-        VkRenderPass vkRenderPass;
-        VkFramebuffer[] vkFramebuffers;
+        CRenderPass renderPass;
+        CFramebuffer[] framebuffers;
         VkFence vkFence;
         VkSemaphore vkSemaphore;
         //
-        VkBuffer vkUniformBuffer;
+        CBuffer uniformBuffer;
         /// <summary>
         /// container of <see cref="VkDescriptorSetLayoutBinding"/>s.
         /// </summary>
-        VkDescriptorSetLayout vkDescriptorSetLayout;
+        CDescriptorSetLayout descriptorSetLayout;
         /// <summary>
         /// container of <see cref="VkDescriptorSetLayoutBinding"/>s and <see cref="VkPushConstantRange"/>s.
         /// </summary>
         VkPipelineLayout vkPipelineLayout;
-        VkDescriptorSet vkDescriptor;
+        CDescriptorSet descriptorSet;
 
-        VkCommandBuffer[] vkCommandBuffers;
+        CCommandBuffer[] commandBuffers;
 
         VkBuffer vkBuffer;
         VkDeviceMemory vkDeviceMemory;
@@ -53,7 +53,7 @@ namespace ApiSpec.Lesson02Shader {
             var uniformBufferData = new AreaUniformBuffer(width, height);
             var length = 1;
             var size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(AreaUniformBuffer)) * length;
-            VkDevice device = this.vkDevice; VkDeviceMemory deviceMemory = this.vkDeviceMemory;
+            VkDevice device = this.device.handle; VkDeviceMemory deviceMemory = this.vkDeviceMemory;
             {
                 IntPtr memPtr = IntPtr.Zero;
                 vkAPI.vkMapMemory(device, deviceMemory, new VkDeviceSize(), new VkDeviceSize((UInt64)size), 0, &memPtr);
@@ -83,114 +83,118 @@ namespace ApiSpec.Lesson02Shader {
         public void Init(IntPtr hwnd, IntPtr processHandle) {
             if (this.isInitialized) { return; }
 
-            this.vkIntance = InitInstance();
-            this.vkSurface = InitSurface(this.vkIntance, hwnd, processHandle);
-            this.vkPhysicalDevice = InitPhysicalDevice(this.vkIntance);
-            VkSurfaceFormatKHR surfaceFormat = SelectFormat(this.vkPhysicalDevice, this.vkSurface);
+            this.instance = InitInstance();
+            this.surface = InitSurface(this.instance, hwnd, processHandle);
+            this.vkPhysicalDevice = InitPhysicalDevice(this.instance);
+            VkSurfaceFormatKHR surfaceFormat = SelectFormat(this.vkPhysicalDevice, this.surface);
+
+
+            this.device = CreateDevice(this.vkPhysicalDevice, this.surface);
+
+            this.vkQueue = this.device.handle.GetQueue(0, 0);
 
             VkSurfaceCapabilitiesKHR surfaceCapabilities;
             //this.vkPhysicalDevice.GetSurfaceCapabilitiesKhr(this.vkSurface, out surfaceCapabilities);
-            vkAPI.vkGetPhysicalDeviceSurfaceCapabilitiesKHR(this.vkPhysicalDevice, this.vkSurface, &surfaceCapabilities).Check();
+            vkAPI.vkGetPhysicalDeviceSurfaceCapabilitiesKHR(this.vkPhysicalDevice, this.surface.handle, &surfaceCapabilities).Check();
 
-            this.vkDevice = CreateDevice(this.vkPhysicalDevice, this.vkSurface);
+            this.swapchain = CreateSwapchain(this.device, this.surface, surfaceFormat, surfaceCapabilities);
 
-            this.vkQueue = this.vkDevice.GetQueue(0, 0);
+            this.vkImages = this.device.handle.GetSwapchainImages(this.swapchain.handle);
 
-            this.vkSwapchain = CreateSwapchain(this.vkDevice, this.vkSurface, surfaceFormat, surfaceCapabilities);
+            this.renderPass = CreateRenderPass(this.device, surfaceFormat);
 
-            this.vkImages = this.vkDevice.GetSwapchainImages(this.vkSwapchain);
+            this.framebuffers = CreateFramebuffers(this.device, this.vkImages, surfaceFormat, this.renderPass, surfaceCapabilities);
 
-            this.vkRenderPass = CreateRenderPass(this.vkDevice, surfaceFormat);
-
-            this.vkFramebuffers = CreateFramebuffers(this.vkDevice, this.vkImages, surfaceFormat, this.vkRenderPass, surfaceCapabilities);
-
-            this.vkFence = this.vkDevice.CreateFence();
-            this.vkSemaphore = this.vkDevice.CreateSemaphore();
+            this.vkFence = this.device.handle.CreateFence();
+            this.vkSemaphore = this.device.handle.CreateSemaphore();
 
             // buffers for vertex data.
-            VkBuffer vertexBuffer = CreateBuffer(this.vkPhysicalDevice, this.vkDevice, Logo.Vertices, VkBufferUsageFlagBits.VertexBuffer, typeof(float));
+            CBuffer vertexBuffer = CreateBuffer(this.vkPhysicalDevice, this.device, Logo.Vertices, VkBufferUsageFlagBits.VertexBuffer, typeof(float));
 
-            VkBuffer indexBuffer = CreateBuffer(this.vkPhysicalDevice, this.vkDevice, Logo.Indexes, VkBufferUsageFlagBits.IndexBuffer, typeof(short));
+            CBuffer indexBuffer = CreateBuffer(this.vkPhysicalDevice, this.device, Logo.Indexes, VkBufferUsageFlagBits.IndexBuffer, typeof(short));
 
             var uniformBufferData = new AreaUniformBuffer(40, 50);
             this.originalWidth = 40; this.width = this.originalWidth;
             this.originalHeight = 50; this.height = this.originalHeight;
 
-            this.vkUniformBuffer = CreateBuffer(this.vkPhysicalDevice, this.vkDevice, uniformBufferData, VkBufferUsageFlagBits.UniformBuffer, typeof(AreaUniformBuffer));
+            this.uniformBuffer = CreateBuffer(this.vkPhysicalDevice, this.device, uniformBufferData, VkBufferUsageFlagBits.UniformBuffer, typeof(AreaUniformBuffer));
 
-            this.vkDescriptorSetLayout = CreateDescriptorSetLayout(this.vkDevice);
+            this.descriptorSetLayout = CreateDescriptorSetLayout(this.device);
 
-            this.vkPipelineLayout = CreatePipelineLayout(this.vkDevice, this.vkDescriptorSetLayout);
+            this.vkPipelineLayout = CreatePipelineLayout(this.device, this.descriptorSetLayout);
 
-            var pipelines = CreatePipelines(this.vkDevice, surfaceCapabilities, this.vkRenderPass, this.vkPipelineLayout);
+            CPipeline pipeline = CreatePipeline(this.device, surfaceCapabilities, this.renderPass, this.vkPipelineLayout);
 
-            this.vkDescriptor = CreateDescriptorSet(this.vkDevice, this.vkDescriptorSetLayout);
+            this.descriptorSet = CreateDescriptorSet(this.device, this.descriptorSetLayout);
 
-            UpdateDescriptorSets(this.vkDevice, this.vkUniformBuffer, this.vkDescriptor);
+            UpdateDescriptorSets(this.device, this.uniformBuffer, this.descriptorSet);
 
-            this.vkCommandBuffers = CreateCommandBuffers(
-                this.vkDevice, this.vkRenderPass, surfaceCapabilities,
-                this.vkImages, this.vkFramebuffers, pipelines[0],
+            this.commandBuffers = CreateCommandBuffers(
+                this.device, this.renderPass, surfaceCapabilities,
+                this.vkImages, this.framebuffers, pipeline,
                 vertexBuffer, indexBuffer, (uint)Logo.Indexes.Length,
-                this.vkPipelineLayout, this.vkDescriptor);
+                this.vkPipelineLayout, this.descriptorSet);
 
             this.isInitialized = true;
         }
 
-        VkCommandBuffer[] CreateCommandBuffers(
-            VkDevice device, VkRenderPass renderPass, VkSurfaceCapabilitiesKHR surfaceCapabilities,
-            VkImage[] images, VkFramebuffer[] framebuffers, VkPipeline pipeline,
-            VkBuffer vertexBuffer, VkBuffer indexBuffer, uint indexLength,
-            VkPipelineLayout pipelineLayout, VkDescriptorSet descriptor) {
-            VkCommandBuffer[] buffers;
+        CCommandBuffer[] CreateCommandBuffers(
+            CDevice device, CRenderPass renderPass, VkSurfaceCapabilitiesKHR surfaceCapabilities,
+            VkImage[] images, CFramebuffer[] framebuffers, CPipeline pipeline,
+            CBuffer vertexBuffer, CBuffer indexBuffer, uint indexLength,
+            VkPipelineLayout pipelineLayout, CDescriptorSet descriptorSet) {
+            CCommandBuffer[] buffers;
             {
                 VkCommandPool pool;
                 {
-                    var info = new VkCommandPoolCreateInfo {
-                        sType = CommandPoolCreateInfo,
-                        flags = VkCommandPoolCreateFlagBits.ResetCommandBuffer
-                    };
+                    var info = VkCommandPoolCreateInfo.Alloc();
+                    info->flags = VkCommandPoolCreateFlagBits.ResetCommandBuffer;
                     //var commandPool = device.CreateCommandPool(ref poolInfo);
-                    vkAPI.vkCreateCommandPool(device, &info, null, &pool).Check();
+                    vkAPI.vkCreateCommandPool(device.handle, info, null, &pool).Check();
                 }
                 {
-                    var info = new VkCommandBufferAllocateInfo {
-                        sType = CommandBufferAllocateInfo,
-                        level = VkCommandBufferLevel.Primary,
-                        commandPool = pool,
-                        commandBufferCount = (uint)images.Length
-                    };
+                    var info = VkCommandBufferAllocateInfo.Alloc();
+                    info->level = VkCommandBufferLevel.Primary;
+                    info->commandPool = pool;
+                    info->commandBufferCount = (uint)images.Length;
                     //buffers = device.AllocateCommandBuffers(ref info);
-                    buffers = new VkCommandBuffer[info.commandBufferCount];
-                    fixed (VkCommandBuffer* pointer = buffers) {
-                        vkAPI.vkAllocateCommandBuffers(device, &info, pointer).Check();
+                    var handles = new VkCommandBuffer[info->commandBufferCount];
+                    fixed (VkCommandBuffer* pointer = handles) {
+                        vkAPI.vkAllocateCommandBuffers(device.handle, info, pointer).Check();
+                    }
+                    buffers = new CCommandBuffer[handles.Length];
+                    for (int i = 0; i < buffers.Length; i++) {
+                        buffers[i] = new CCommandBuffer(handles[i], info);
                     }
                 }
             }
 
-            var cmdBeginInfo = new VkCommandBufferBeginInfo() { sType = CommandBufferBeginInfo };
+            var cmdBeginInfo = VkCommandBufferBeginInfo.Alloc();
             for (int i = 0; i < images.Length; i++) {
-                VkCommandBuffer cmds = buffers[i];
+                VkCommandBuffer cmds = buffers[i].handle;
                 //cmds.Begin(ref cmdBeginInfo);
-                vkAPI.vkBeginCommandBuffer(cmds, &cmdBeginInfo);
+                vkAPI.vkBeginCommandBuffer(cmds, cmdBeginInfo);
                 {
                     var clearValue = new VkClearValue { color = new VkClearColorValue(0.9f, 0.87f, 0.75f, 1.0f) };
-                    var info = new VkRenderPassBeginInfo();
+                    var info = VkRenderPassBeginInfo.Alloc();
+                    info->framebuffer = framebuffers[i].handle;
+                    info->renderPass = renderPass.handle;
+                    clearValue.Set(info);
+                    info->renderArea = new VkRect2D { extent = surfaceCapabilities.currentExtent };
+                    vkAPI.vkCmdBeginRenderPass(cmds, info, VkSubpassContents.Inline);
                     {
-                        info.sType = RenderPassBeginInfo;
-                        info.framebuffer = framebuffers[i];
-                        info.renderPass = renderPass;
-                        clearValue.Set(ref info);
-                        info.renderArea = new VkRect2D { extent = surfaceCapabilities.currentExtent };
-                    }
-                    vkAPI.vkCmdBeginRenderPass(cmds, &info, VkSubpassContents.Inline);
-                    {
-                        vkAPI.vkCmdBindDescriptorSets(cmds, VkPipelineBindPoint.Graphics,
-                            pipelineLayout, 0, 1, &descriptor, 0, null);
-                        vkAPI.vkCmdBindPipeline(cmds, VkPipelineBindPoint.Graphics, pipeline);
+                        {
+                            var handle = descriptorSet.handle;
+                            vkAPI.vkCmdBindDescriptorSets(cmds, VkPipelineBindPoint.Graphics,
+                                pipelineLayout, 0, 1, &handle, 0, null);
+                        }
+                        vkAPI.vkCmdBindPipeline(cmds, VkPipelineBindPoint.Graphics, pipeline.handle);
                         var offset = new VkDeviceSize();
-                        vkAPI.vkCmdBindVertexBuffers(cmds, 0, 1, &vertexBuffer, &offset);
-                        vkAPI.vkCmdBindIndexBuffer(cmds, indexBuffer, offset, VkIndexType.Uint16);
+                        {
+                            var handle = vertexBuffer.handle;
+                            vkAPI.vkCmdBindVertexBuffers(cmds, 0, 1, &handle, &offset);
+                        }
+                        vkAPI.vkCmdBindIndexBuffer(cmds, indexBuffer.handle, offset, VkIndexType.Uint16);
                         vkAPI.vkCmdDrawIndexed(cmds, indexLength, 1, 0, 0, 0);
                     }
                     vkAPI.vkCmdEndRenderPass(cmds);
@@ -201,200 +205,160 @@ namespace ApiSpec.Lesson02Shader {
             return buffers;
         }
 
-        void UpdateDescriptorSets(VkDevice device, VkBuffer uniformBuffer, VkDescriptorSet descriptor) {
-            var info = new VkDescriptorBufferInfo {
-                buffer = uniformBuffer,
-                offset = 0,
-                range = 2 * sizeof(float)
-            };
-            var write = new VkWriteDescriptorSet();
-            {
-                write.sType = WriteDescriptorSet;
-                write.dstSet = descriptor;
-                write.descriptorType = VkDescriptorType.UniformBuffer;
-                write.pBufferInfo = &info; write.descriptorCount = 1;
-            }
+        void UpdateDescriptorSets(CDevice device, CBuffer uniformBuffer, CDescriptorSet descriptorSet) {
+            var write = VkWriteDescriptorSet.Alloc();
+            write->dstSet = descriptorSet.handle;
+            write->descriptorType = VkDescriptorType.UniformBuffer;
+            var info = new VkDescriptorBufferInfo(uniformBuffer.handle, 0, 2 * sizeof(float));
+            info.Set(write);
 
             //device.UpdateDescriptorSets(new VkWriteDescriptorSet[] { write }, null);
-            vkAPI.vkUpdateDescriptorSets(device, 1, &write, 0, null);
+            vkAPI.vkUpdateDescriptorSets(device.handle, 1, write, 0, null);
         }
 
-        VkDescriptorSet CreateDescriptorSet(VkDevice device, VkDescriptorSetLayout descriptorSetLayout) {
-            VkDescriptorPool descriptorPool;
+        CDescriptorSet CreateDescriptorSet(CDevice device, CDescriptorSetLayout descriptorSetLayout) {
+            CDescriptorPool descriptorPool;
             {
                 // this pool can allocate one uniform descriptor.
-                var size = new VkDescriptorPoolSize {
-                    type = VkDescriptorType.UniformBuffer,
-                    descriptorCount = 1
-                };
-                var info = new VkDescriptorPoolCreateInfo();
-                {
-                    info.sType = DescriptorPoolCreateInfo;
-                    info.pPoolSizes = &size; info.poolSizeCount = 1;
-                    info.maxSets = 1;
-                }
-                //descriptorPool = device.CreateDescriptorPool(ref info);
-                vkAPI.vkCreateDescriptorPool(device, &info, null, &descriptorPool);
+                var info = VkDescriptorPoolCreateInfo.Alloc();
+                var size = new VkDescriptorPoolSize(VkDescriptorType.UniformBuffer, 1);
+                size.Set(info);
+                info->maxSets = 1;
+                VkDescriptorPool handle;
+                vkAPI.vkCreateDescriptorPool(device.handle, info, null, &handle);
+                descriptorPool = new CDescriptorPool(handle, info);
             }
-            VkDescriptorSet descriptor = new VkDescriptorSet();
+            CDescriptorSet descriptorSet;
             {
-                var info = new VkDescriptorSetAllocateInfo();
-                {
-                    info.sType = DescriptorSetAllocateInfo;
-                    info.pSetLayouts = &descriptorSetLayout; info.descriptorSetCount = 1;
-                    info.descriptorPool = descriptorPool;
-                }
-                vkAPI.vkAllocateDescriptorSets(device, &info, &descriptor).Check();
+                var info = VkDescriptorSetAllocateInfo.Alloc();
+                descriptorSetLayout.handle.Set(info);
+                info->descriptorPool = descriptorPool.handle;
+                VkDescriptorSet handle;
+                vkAPI.vkAllocateDescriptorSets(device.handle, info, &handle).Check();
+                descriptorSet = new CDescriptorSet(handle, info);
             }
 
-            return descriptor;
+            return descriptorSet;
         }
 
 
-        VkPipeline[] CreatePipelines(VkDevice device, VkSurfaceCapabilitiesKHR surfaceCapabilities,
-            VkRenderPass renderPass, VkPipelineLayout pipelineLayout) {
+        CPipeline CreatePipeline(CDevice device, VkSurfaceCapabilitiesKHR surfaceCapabilities,
+            CRenderPass renderPass, VkPipelineLayout pipelineLayout) {
             //VkShaderModule vertexShaderModule = device.CreateShaderModule(LoadResource(@"Shaders\shader.vert.spv"));
             VkShaderModule vsModule;
             {
-                var info = new VkShaderModuleCreateInfo();
-                {
-                    info.sType = ShaderModuleCreateInfo;
-                    byte[] bytes = LoadResource(@"Shaders\shader.vert.spv");
-                    bytes.Set(ref info);
-                    info.flags = 0;
-                }
+                var info = VkShaderModuleCreateInfo.Alloc();
+                byte[] bytes = LoadResource(@"Shaders\shader.vert.spv");
+                bytes.Set(info);
                 //vkAPI.vkCreateShaderModule(device, bytes);
-                vkAPI.vkCreateShaderModule(device, &info, null, &vsModule);
-                FreeHelper.Free(ref info);
+                vkAPI.vkCreateShaderModule(device.handle, info, null, &vsModule);
+                Vk.Free(info);
             }
             //VkShaderModule fragmentShaderModule = device.CreateShaderModule(LoadResource(@"Shaders\shader.frag.spv"));
             VkShaderModule fsModule;
             {
-                var info = new VkShaderModuleCreateInfo();
-                {
-                    info.sType = ShaderModuleCreateInfo;
-                    byte[] bytes = LoadResource(@"Shaders\shader.frag.spv");
-                    bytes.Set(ref info);
-                    info.flags = 0;
-                }
+                var info = VkShaderModuleCreateInfo.Alloc();
+                byte[] bytes = LoadResource(@"Shaders\shader.frag.spv");
+                bytes.Set(info);
                 //vkAPI.vkCreateShaderModule(device, bytes);
-                vkAPI.vkCreateShaderModule(device, &info, null, &fsModule);
-                FreeHelper.Free(ref info);
+                vkAPI.vkCreateShaderModule(device.handle, info, null, &fsModule);
+                Vk.Free(info);
             }
-            var vs = new VkPipelineShaderStageCreateInfo();
+            var vs = VkPipelineShaderStageCreateInfo.Alloc();
             {
-                vs.sType = PipelineShaderStageCreateInfo;
-                vs.stage = VkShaderStageFlagBits.Vertex;
-                vs.module = vsModule;
-                "main".Set(ref vs.pName);
+                vs->stage = VkShaderStageFlagBits.Vertex;
+                vs->module = vsModule;
+                "main".Set(ref vs->pName);
             }
-            var fs = new VkPipelineShaderStageCreateInfo();
+            var fs = VkPipelineShaderStageCreateInfo.Alloc();
             {
-                fs.sType = PipelineShaderStageCreateInfo;
-                fs.stage = VkShaderStageFlagBits.Fragment;
-                fs.module = fsModule;
-                "main".Set(ref fs.pName);
+                fs->stage = VkShaderStageFlagBits.Fragment;
+                fs->module = fsModule;
+                "main".Set(ref fs->pName);
             }
-            VkPipelineShaderStageCreateInfo[] stages = { vs, fs };
-            var vp = new VkViewport {
-                minDepth = 0,
-                maxDepth = 1.0f,
-                width = surfaceCapabilities.currentExtent.width,
-                height = surfaceCapabilities.currentExtent.height
-            };
-            var scissor = new VkRect2D { extent = surfaceCapabilities.currentExtent };
-            var viewport = new VkPipelineViewportStateCreateInfo();
+            VkPipelineShaderStageCreateInfo[] stages = { *vs, *fs };
+            var viewport = VkPipelineViewportStateCreateInfo.Alloc();
             {
-                viewport.sType = PipelineViewportStateCreateInfo;
-                viewport.pViewports = &vp; viewport.viewportCount = 1;
-                viewport.pScissors = &scissor; viewport.scissorCount = 1;
+                var vp = new VkViewport(surfaceCapabilities.currentExtent, 0.0f, 1.0f);
+                vp.Set(viewport);
+                var scissor = new VkRect2D(surfaceCapabilities.currentExtent);
+                scissor.Set(viewport);
             }
 
-            var multisample = new VkPipelineMultisampleStateCreateInfo {
-                sType = PipelineMultisampleStateCreateInfo,
-                rasterizationSamples = VkSampleCountFlagBits._1
-            };
-            var blend = new VkPipelineColorBlendAttachmentState {
-                colorWriteMask = VkColorComponentFlagBits.R
-                | VkColorComponentFlagBits.G
-                | VkColorComponentFlagBits.B
-                | VkColorComponentFlagBits.A
-            };
-            var colorBlend = new VkPipelineColorBlendStateCreateInfo();
+            var multisample = VkPipelineMultisampleStateCreateInfo.Alloc();
             {
-                colorBlend.sType = PipelineColorBlendStateCreateInfo;
-                colorBlend.logicOp = VkLogicOp.Copy;
-                colorBlend.pAttachments = &blend; colorBlend.attachmentCount = 1;
+                multisample->rasterizationSamples = VkSampleCountFlagBits._1;
             }
-            var rasterization = new VkPipelineRasterizationStateCreateInfo {
-                sType = PipelineRasterizationStateCreateInfo,
-                polygonMode = VkPolygonMode.Fill,
-                cullMode = VkCullModeFlagBits.None,
-                frontFace = VkFrontFace.Clockwise,
-                lineWidth = 1.0f
-            };
-            var inputAssem = new VkPipelineInputAssemblyStateCreateInfo {
-                sType = PipelineInputAssemblyStateCreateInfo,
-                topology = VkPrimitiveTopology.TriangleList
-            };
-            var binding = new VkVertexInputBindingDescription {
-                stride = 3 * sizeof(float),
-                inputRate = VkVertexInputRate.Vertex
-            };
-            var attribute = new VkVertexInputAttributeDescription {
-                format = VkFormat.R32g32b32Sfloat
-            };
-            var input = new VkPipelineVertexInputStateCreateInfo();
+            var colorBlend = VkPipelineColorBlendStateCreateInfo.Alloc();
             {
-                input.sType = PipelineVertexInputStateCreateInfo;
-                input.pVertexBindingDescriptions = &binding;
-                input.vertexBindingDescriptionCount = 1;
-                input.pVertexAttributeDescriptions = &attribute;
-                input.vertexAttributeDescriptionCount = 1;
+                colorBlend->logicOp = VkLogicOp.Copy;
+                var blend = new VkPipelineColorBlendAttachmentState(
+                    colorWriteMask: VkColorComponentFlagBits.R | VkColorComponentFlagBits.G
+                    | VkColorComponentFlagBits.B | VkColorComponentFlagBits.A,
+                    blendEnable: false);
+                blend.Set(colorBlend);
+            }
+            var rasterization = VkPipelineRasterizationStateCreateInfo.Alloc();
+            {
+                rasterization->polygonMode = VkPolygonMode.Fill;
+                rasterization->cullMode = VkCullModeFlagBits.None;
+                rasterization->frontFace = VkFrontFace.Clockwise;
+                rasterization->lineWidth = 1.0f;
+            }
+            var inputAssem = VkPipelineInputAssemblyStateCreateInfo.Alloc();
+            {
+                inputAssem->topology = VkPrimitiveTopology.TriangleList;
+            }
+            var input = VkPipelineVertexInputStateCreateInfo.Alloc();
+            {
+                var binding = new VkVertexInputBindingDescription(
+                    binding: 0,
+                    stride: 3 * sizeof(float),
+                    inputRate: VkVertexInputRate.Vertex);
+                binding.Set(input);
+                var attribute = new VkVertexInputAttributeDescription(0, 0, VkFormat.R32g32b32Sfloat, 0);
+                attribute.Set(input);
             }
 
             //VkPipelineCache cache = device.CreatePipelineCache(ref cacheInfo);
             VkPipelineCache cache;
             {
-                var info = new VkPipelineCacheCreateInfo { sType = PipelineCacheCreateInfo };
-                vkAPI.vkCreatePipelineCache(device, &info, null, &cache);
+                var info = VkPipelineCacheCreateInfo.Alloc();
+                vkAPI.vkCreatePipelineCache(device.handle, info, null, &cache);
             }
             //var infos = new VkGraphicsPipelineCreateInfo[] { pipelineCreateInfo };
             //return device.CreateGraphicsPipelines(ref cache, infos);
-            VkPipeline pipeline;
+            CPipeline pipeline;
             {
-                var info = new VkGraphicsPipelineCreateInfo();
+                var info = VkGraphicsPipelineCreateInfo.Alloc();
                 {
-                    info.sType = GraphicsPipelineCreateInfo;
-                    info.layout = pipelineLayout;
-                    info.pViewportState = &viewport;
-                    stages.Set(ref info);
-                    info.pMultisampleState = &multisample;
-                    info.pColorBlendState = &colorBlend;
-                    info.pRasterizationState = &rasterization;
-                    info.pInputAssemblyState = &inputAssem;
-                    info.pVertexInputState = &input;
-                    info.renderPass = renderPass;
+                    info->layout = pipelineLayout;
+                    info->pViewportState = viewport;
+                    stages.Set(info);
+                    info->pMultisampleState = multisample;
+                    info->pColorBlendState = colorBlend;
+                    info->pRasterizationState = rasterization;
+                    info->pInputAssemblyState = inputAssem;
+                    info->pVertexInputState = input;
+                    info->renderPass = renderPass.handle;
                 }
 
-                vkAPI.vkCreateGraphicsPipelines(device, cache, 1, &info, null, &pipeline);
+                VkPipeline handle;
+                vkAPI.vkCreateGraphicsPipelines(device.handle, cache, 1, info, null, &handle);
+                pipeline = new CPipeline(handle, info);
             }
 
-            FreeHelper.Free(ref vs);
-            FreeHelper.Free(ref fs);
-
-            return new VkPipeline[] { pipeline };
+            return pipeline;
         }
 
-        VkPipelineLayout CreatePipelineLayout(VkDevice device, VkDescriptorSetLayout descriptorSetLayout) {
-            var info = new VkPipelineLayoutCreateInfo();
+        VkPipelineLayout CreatePipelineLayout(CDevice device, CDescriptorSetLayout descriptorSetLayout) {
+            var info = VkPipelineLayoutCreateInfo.Alloc();
             {
-                info.sType = PipelineLayoutCreateInfo;
-                descriptorSetLayout.Set(ref info);
+                descriptorSetLayout.handle.Set(info);
             }
             //return device.CreatePipelineLayout(ref info);
             VkPipelineLayout layout;
-            vkAPI.vkCreatePipelineLayout(device, &info, null, &layout);
+            vkAPI.vkCreatePipelineLayout(device.handle, info, null, &layout);
             return layout;
         }
 
@@ -408,7 +372,7 @@ namespace ApiSpec.Lesson02Shader {
             return bytes;
         }
 
-        VkDescriptorSetLayout CreateDescriptorSetLayout(VkDevice device) {
+        CDescriptorSetLayout CreateDescriptorSetLayout(CDevice device) {
             /*
     layout (set = 0, binding = 0) uniform AreaUB
     {
@@ -416,60 +380,60 @@ namespace ApiSpec.Lesson02Shader {
     float height;
     } area;
              */
-            var binding = new VkDescriptorSetLayoutBinding();
+            var info = VkDescriptorSetLayoutCreateInfo.Alloc();
             {
-                binding.descriptorType = VkDescriptorType.UniformBuffer; // uniform
-                binding.descriptorCount = 1; // single variable, not array.
-                binding.stageFlags = VkShaderStageFlagBits.Vertex; // in vertex shader.
-            }
-            var info = new VkDescriptorSetLayoutCreateInfo();
-            {
-                info.sType = DescriptorSetLayoutCreateInfo;
-                binding.Set(ref info);
+                var binding = new VkDescriptorSetLayoutBinding(
+                    binding: 0,
+                    descriptorType: VkDescriptorType.UniformBuffer, // uniform 
+                    descriptorCount: 1, // single variable, not array.
+                    stageFlags: VkShaderStageFlagBits.Vertex); // in a vertex shader.
+                binding.Set(info);
             }
 
             //return device.CreateDescriptorSetLayout(ref info);
-            VkDescriptorSetLayout layout;
-            vkAPI.vkCreateDescriptorSetLayout(device, &info, null, &layout);
-            return layout;
+            VkDescriptorSetLayout handle;
+            vkAPI.vkCreateDescriptorSetLayout(device.handle, info, null, &handle);
+            return new CDescriptorSetLayout(handle, info);
         }
 
-        VkBuffer CreateBuffer(VkPhysicalDevice physicalDevice, VkDevice device, object values, VkBufferUsageFlagBits usageFlags, System.Type type) {
+        CBuffer CreateBuffer(VkPhysicalDevice physicalDevice, CDevice device, object values, VkBufferUsageFlagBits usageFlags, System.Type type) {
             var array = values as System.Array;
             var length = (array != null) ? array.Length : 1;
             var size = System.Runtime.InteropServices.Marshal.SizeOf(type) * length;
-            VkBuffer buffer;
+            CBuffer buffer;
             {
                 UInt32 index = 0;
-                var info = new VkBufferCreateInfo();
+                var info = VkBufferCreateInfo.Alloc();
                 {
-                    info.sType = BufferCreateInfo;
-                    info.size = new VkDeviceSize((UInt64)size);
-                    info.usage = usageFlags;
-                    info.sharingMode = VkSharingMode.Exclusive;
-                    index.Set(ref info);
+                    info->size = new VkDeviceSize((UInt64)size);
+                    info->usage = usageFlags;
+                    info->sharingMode = VkSharingMode.Exclusive;
+                    index.Set(info);
                 }
                 //VkBuffer buffer = device.CreateBuffer(ref info);
-                vkAPI.vkCreateBuffer(device, &info, null, &buffer);
+                VkBuffer vkBuffer;
+                vkAPI.vkCreateBuffer(device.handle, info, null, &vkBuffer);
+                buffer = new CBuffer(vkBuffer, info);
             }
-            VkDeviceMemory deviceMemory; // = device.AllocateMemory(ref allocInfo);
+            CDeviceMemory deviceMemory; // = device.AllocateMemory(ref allocInfo);
             VkMemoryRequirements memoryReq;
             //VkMemoryRequirements memoryReq = device.GetBufferMemoryRequirements(buffer);
-            vkAPI.vkGetBufferMemoryRequirements(device, buffer, &memoryReq);
-            var allocInfo = new VkMemoryAllocateInfo();
+            vkAPI.vkGetBufferMemoryRequirements(device.handle, buffer.handle, &memoryReq);
+            var allocInfo = VkMemoryAllocateInfo.Alloc();
             {
-                allocInfo.sType = MemoryAllocateInfo;
-                allocInfo.allocationSize = memoryReq.size;
+                allocInfo->allocationSize = memoryReq.size;
                 VkPhysicalDeviceMemoryProperties memoryProperties;
                 //physicalDevice.GetMemoryProperties(out memoryProperties);
                 vkAPI.vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memoryProperties);
-                allocInfo.memoryTypeIndex = GetMemoryTypeIndex(memoryProperties, memoryReq,
+                allocInfo->memoryTypeIndex = GetMemoryTypeIndex(memoryProperties, memoryReq,
                     VkMemoryPropertyFlagBits.HostVisible | VkMemoryPropertyFlagBits.HostCoherent);
-                vkAPI.vkAllocateMemory(device, &allocInfo, null, &deviceMemory);
+                VkDeviceMemory memory;
+                vkAPI.vkAllocateMemory(device.handle, allocInfo, null, &memory);
+                deviceMemory = new CDeviceMemory(memory, allocInfo);
             }
             {
                 IntPtr memPtr = IntPtr.Zero;
-                vkAPI.vkMapMemory(device, deviceMemory, new VkDeviceSize(), new VkDeviceSize((UInt64)size), 0, &memPtr);
+                vkAPI.vkMapMemory(device.handle, deviceMemory.handle, new VkDeviceSize(), new VkDeviceSize((UInt64)size), 0, &memPtr);
 
                 if (type == typeof(float))
                     System.Runtime.InteropServices.Marshal.Copy(values as float[], 0, memPtr, length);
@@ -477,14 +441,15 @@ namespace ApiSpec.Lesson02Shader {
                     System.Runtime.InteropServices.Marshal.Copy(values as short[], 0, memPtr, length);
                 else if (type == typeof(AreaUniformBuffer)) {
                     System.Runtime.InteropServices.Marshal.StructureToPtr(values, memPtr, false);
-                    this.vkBuffer = buffer;
-                    this.vkDeviceMemory = deviceMemory;
+                    this.vkBuffer = buffer.handle;
+                    this.vkDeviceMemory = deviceMemory.handle;
                     this.uniformSize = memoryReq.size;
                 }
 
-                vkAPI.vkUnmapMemory(device, deviceMemory);
+                vkAPI.vkUnmapMemory(device.handle, deviceMemory.handle);
             }
-            vkAPI.vkBindBufferMemory(device, buffer, deviceMemory, new VkDeviceSize());
+            vkAPI.vkBindBufferMemory(device.handle, buffer.handle, deviceMemory.handle, new VkDeviceSize());
+            buffer.memory = deviceMemory;
 
             return buffer;
         }
@@ -519,119 +484,104 @@ namespace ApiSpec.Lesson02Shader {
             }
         }
 
-        protected VkFramebuffer[] CreateFramebuffers(VkDevice device, VkImage[] images, VkSurfaceFormatKHR surfaceFormat, VkRenderPass renderPass, VkSurfaceCapabilitiesKHR surfaceCapabilities) {
+        protected CFramebuffer[] CreateFramebuffers(CDevice device, VkImage[] images, VkSurfaceFormatKHR surfaceFormat, CRenderPass renderPass, VkSurfaceCapabilitiesKHR surfaceCapabilities) {
             var displayViews = new VkImageView[images.Length];
             for (int i = 0; i < images.Length; i++) {
-                var info = new VkImageViewCreateInfo {
-                    sType = ImageViewCreateInfo,
-                    image = images[i],
-                    viewType = VkImageViewType._2d,
-                    format = surfaceFormat.format,
-                    components = new VkComponentMapping {
-                        r = VkComponentSwizzle.R,
-                        g = VkComponentSwizzle.G,
-                        b = VkComponentSwizzle.B,
-                        a = VkComponentSwizzle.A
-                    },
-                    subresourceRange = new VkImageSubresourceRange {
-                        aspectMask = VkImageAspectFlagBits.Color,
-                        levelCount = 1,
-                        layerCount = 1
-                    }
+                var info = VkImageViewCreateInfo.Alloc();
+                info->image = images[i];
+                info->viewType = VkImageViewType._2d;
+                info->format = surfaceFormat.format;
+                info->components = new VkComponentMapping {
+                    r = VkComponentSwizzle.R,
+                    g = VkComponentSwizzle.G,
+                    b = VkComponentSwizzle.B,
+                    a = VkComponentSwizzle.A
+                };
+                info->subresourceRange = new VkImageSubresourceRange {
+                    aspectMask = VkImageAspectFlagBits.Color,
+                    levelCount = 1,
+                    layerCount = 1
                 };
                 //displayViews[i] = device.CreateImageView(ref info);
                 VkImageView view;
-                vkAPI.vkCreateImageView(device, &info, null, &view).Check();
+                vkAPI.vkCreateImageView(device.handle, info, null, &view).Check();
                 displayViews[i] = view;
             }
 
             var framebuffers = new VkFramebuffer[images.Length];
+            var result = new CFramebuffer[images.Length];
             for (int i = 0; i < images.Length; i++) {
-                var info = new VkFramebufferCreateInfo();
-                {
-                    info.sType = FramebufferCreateInfo;
-                    info.layers = 1;
-                    info.renderPass = renderPass;
-                    displayViews[i].Set(ref info);
-                    info.width = surfaceCapabilities.currentExtent.width;
-                    info.height = surfaceCapabilities.currentExtent.height;
-                }
+                var info = VkFramebufferCreateInfo.Alloc();
+                info->layers = 1;
+                info->renderPass = renderPass.handle;
+                displayViews[i].Set(info);
+                info->width = surfaceCapabilities.currentExtent.width;
+                info->height = surfaceCapabilities.currentExtent.height;
                 //framebuffers[i] = device.CreateFramebuffer(ref info);
                 VkFramebuffer framebuffer;
-                vkAPI.vkCreateFramebuffer(device, &info, null, &framebuffer);
+                vkAPI.vkCreateFramebuffer(device.handle, info, null, &framebuffer);
                 framebuffers[i] = framebuffer;
+                result[i] = new CFramebuffer(framebuffers[i], info);
             }
 
-            return framebuffers;
+            return result;
         }
 
-        protected VkRenderPass CreateRenderPass(VkDevice device, VkSurfaceFormatKHR surfaceFormat) {
-            VkAttachmentDescription attDesc = new VkAttachmentDescription {
-                format = surfaceFormat.format,
-                samples = VkSampleCountFlagBits._1,
-                loadOp = VkAttachmentLoadOp.Clear,
-                storeOp = VkAttachmentStoreOp.Store,
-                stencilLoadOp = VkAttachmentLoadOp.DontCare,
-                stencilStoreOp = VkAttachmentStoreOp.DontCare,
-                initialLayout = VkImageLayout.Undefined,
-                finalLayout = VkImageLayout.PresentSrcKHR
-            };
-            VkAttachmentReference attRef = new VkAttachmentReference { layout = VkImageLayout.ColorAttachmentOptimal };
-            VkSubpassDescription subpassDesc = new VkSubpassDescription();
+        protected CRenderPass CreateRenderPass(CDevice device, VkSurfaceFormatKHR surfaceFormat) {
+            var info = VkRenderPassCreateInfo.Alloc();
             {
-                subpassDesc.pipelineBindPoint = VkPipelineBindPoint.Graphics;
-                attRef.Set(ref subpassDesc);
-            }
-            VkRenderPassCreateInfo info = new VkRenderPassCreateInfo();
-            {
-                info.sType = RenderPassCreateInfo;
-                attDesc.Set(ref info);
-                subpassDesc.Set(ref info);
+                var attDesc = new VkAttachmentDescription(surfaceFormat.format, VkSampleCountFlagBits._1,
+                     VkAttachmentLoadOp.Clear, VkAttachmentStoreOp.Store,
+                     VkAttachmentLoadOp.DontCare, VkAttachmentStoreOp.DontCare,
+                     VkImageLayout.Undefined, VkImageLayout.PresentSrcKHR, 0);
+                attDesc.Set(info);
+                var subpassDesc = new VkSubpassDescription(VkPipelineBindPoint.Graphics);
+                {
+                    var attRef = new VkAttachmentReference(VkImageLayout.ColorAttachmentOptimal, 0);
+                    attRef.SetColorAttachment(&subpassDesc);
+                }
+                subpassDesc.Set(info);
             }
 
             //return device.CreateRenderPass(ref info);
             VkRenderPass renderpass;
-            vkAPI.vkCreateRenderPass(device, &info, null, &renderpass).Check();
-            return renderpass;
+            vkAPI.vkCreateRenderPass(device.handle, info, null, &renderpass).Check();
+            return new CRenderPass(renderpass, info);
         }
 
-        protected VkSwapchainKHR CreateSwapchain(VkDevice device, VkSurfaceKHR surface, VkSurfaceFormatKHR surfaceFormat, VkSurfaceCapabilitiesKHR surfaceCapabilities) {
+        protected CSwapchain CreateSwapchain(CDevice device, CSurface surface, VkSurfaceFormatKHR surfaceFormat, VkSurfaceCapabilitiesKHR surfaceCapabilities) {
             var compositeAlpha = surfaceCapabilities.supportedCompositeAlpha.HasFlag(VkCompositeAlphaFlagBitsKHR.InheritKHR)
                 ? VkCompositeAlphaFlagBitsKHR.InheritKHR
                 : VkCompositeAlphaFlagBitsKHR.OpaqueKHR;
             UInt32 index = 0;
-            var info = new VkSwapchainCreateInfoKHR();
-            {
-                info.sType = SwapchainCreateInfoKHR;
-                info.surface = surface;
-                info.minImageCount = surfaceCapabilities.minImageCount;
-                info.imageFormat = surfaceFormat.format;
-                info.imageColorSpace = surfaceFormat.colorSpace;
-                info.imageExtent = surfaceCapabilities.currentExtent;
-                info.imageUsage = VkImageUsageFlagBits.ColorAttachment;
-                info.preTransform = VkSurfaceTransformFlagBitsKHR.IdentityKHR;
-                info.imageArrayLayers = 1;
-                info.imageSharingMode = VkSharingMode.Exclusive;
-                index.Set(ref info);
-                info.presentMode = VkPresentModeKHR.FifoKHR;
-                info.compositeAlpha = compositeAlpha;
-            }
-
+            var info = VkSwapchainCreateInfoKHR.Alloc();
+            info->surface = surface.handle;
+            info->minImageCount = surfaceCapabilities.minImageCount;
+            info->imageFormat = surfaceFormat.format;
+            info->imageColorSpace = surfaceFormat.colorSpace;
+            info->imageExtent = surfaceCapabilities.currentExtent;
+            info->imageUsage = VkImageUsageFlagBits.ColorAttachment;
+            info->preTransform = VkSurfaceTransformFlagBitsKHR.IdentityKHR;
+            info->imageArrayLayers = 1;
+            info->imageSharingMode = VkSharingMode.Exclusive;
+            index.Set(info);
+            info->presentMode = VkPresentModeKHR.FifoKHR;
+            info->compositeAlpha = compositeAlpha;
             //return device.CreateSwapchainKHR(ref info, null);
-            VkSwapchainKHR swapchain;
-            vkAPI.vkCreateSwapchainKHR(device, &info, null, &swapchain).Check();
-            return swapchain;
+            VkSwapchainKHR handle;
+            vkAPI.vkCreateSwapchainKHR(device.handle, info, null, &handle).Check();
+            return new CSwapchain(handle, info);
         }
 
-        protected VkSurfaceFormatKHR SelectFormat(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface) {
+        protected VkSurfaceFormatKHR SelectFormat(VkPhysicalDevice physicalDevice, CSurface surface) {
             VkSurfaceFormatKHR[] formats;
             //physicalDevice.GetSurfaceFormatsKHR(surface, out formats);
             {
                 UInt32 count;
-                vkAPI.vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface, &count, null).Check();
+                vkAPI.vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface.handle, &count, null).Check();
                 formats = new VkSurfaceFormatKHR[count];
                 fixed (VkSurfaceFormatKHR* pointer = formats) {
-                    vkAPI.vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface, &count, pointer).Check();
+                    vkAPI.vkGetPhysicalDeviceSurfaceFormatsKHR(physicalDevice, surface.handle, &count, pointer).Check();
                 }
             }
             foreach (var f in formats)
@@ -641,146 +591,99 @@ namespace ApiSpec.Lesson02Shader {
             throw new System.Exception("didn't find the R8G8B8A8Unorm or B8G8R8A8Unorm format");
         }
 
-        private VkDevice CreateDevice(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface) {
+        private CDevice CreateDevice(VkPhysicalDevice physicalDevice, CSurface surface) {
             //VkQueueFamilyProperties[] properties = physicalDevice.GetQueueFamilyProperties();
-            VkQueueFamilyProperties[] properties;
-            {
-                UInt32 count;
-                vkAPI.vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &count, null);
-                properties = new VkQueueFamilyProperties[count];
-                fixed (VkQueueFamilyProperties* pointer = properties) {
-                    vkAPI.vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &count, pointer);
-                }
-            }
+            VkQueueFamilyProperties[] properties = Vk.QueueFamilyProperties(physicalDevice);
             uint index;
             for (index = 0; index < properties.Length; ++index) {
                 VkBool32 supported;
                 //physicalDevice.GetSurfaceSupportKHR(index, surface, out supported);
-                vkAPI.vkGetPhysicalDeviceSurfaceSupportKHR(physicalDevice, index, surface, &supported).Check();
+                vkAPI.vkGetPhysicalDeviceSurfaceSupportKHR(physicalDevice, index, surface.handle, &supported).Check();
                 if (!supported) { continue; }
 
                 if (properties[index].queueFlags.HasFlag(VkQueueFlagBits.Graphics)) break;
             }
 
-            //float priority = 1.0f;
-            var queueInfo = new VkDeviceQueueCreateInfo();
+            var queueInfo = VkDeviceQueueCreateInfo.Alloc();
             {
-                queueInfo.sType = DeviceQueueCreateInfo;
                 var priorities = new float[] { 1.0f };
-                priorities.Set(ref queueInfo);
-                queueInfo.queueFamilyIndex = index;
+                priorities.Set(queueInfo);
+                queueInfo->queueFamilyIndex = index;
             }
 
-            var deviceInfo = new VkDeviceCreateInfo();
+            var info = VkDeviceCreateInfo.Alloc();
             {
-                deviceInfo.sType = DeviceCreateInfo;
-                new[] { "VK_KHR_swapchain" }.Set(ref deviceInfo.ppEnabledExtensionNames, ref deviceInfo.enabledExtensionCount);
-                queueInfo.Set(ref deviceInfo);
+                new[] { "VK_KHR_swapchain" }.SetExtensions(info);
+                //queueInfo->Set(info);
+                info->pQueueCreateInfos = queueInfo; info->queueCreateInfoCount = 1;
             }
 
-            VkDevice device;
+            VkDevice vkDevice;
             //physicalDevice.CreateDevice(ref deviceInfo, null, out device);
-            vkAPI.vkCreateDevice(physicalDevice, &deviceInfo, null, &device).Check();
+            vkAPI.vkCreateDevice(physicalDevice, info, null, &vkDevice).Check();
 
-            FreeHelper.Free(ref deviceInfo);
-            FreeHelper.Free(ref queueInfo);
-
-            return device;
+            return new CDevice(vkDevice, info);
         }
 
-        private VkPhysicalDevice InitPhysicalDevice(VkInstance instance) {
-            VkPhysicalDevice[] physicalDevices;
-            {
-                UInt32 count;
-                vkAPI.vkEnumeratePhysicalDevices(instance, &count, null).Check();
-                physicalDevices = new VkPhysicalDevice[count];
-                if (count > 0) {
-                    fixed (VkPhysicalDevice* pointer = physicalDevices) {
-                        vkAPI.vkEnumeratePhysicalDevices(instance, &count, pointer).Check();
-                    }
-                }
-            }
+        private VkPhysicalDevice InitPhysicalDevice(CInstance instance) {
+
+            VkPhysicalDevice[] physicalDevices = Vk.PhysicalDevices(instance.handle);
+
             return physicalDevices[0];
         }
 
-        private VkSurfaceKHR InitSurface(VkInstance instance, IntPtr hwnd, IntPtr processHandle) {
-            var info = new VkWin32SurfaceCreateInfoKHR {
-                sType = Win32SurfaceCreateInfoKHR,
-                hwnd = hwnd,
-                hinstance = processHandle, //Process.GetCurrentProcess().Handle
-            };
-            VkSurfaceKHR surface;
-            vkAPI.vkCreateWin32SurfaceKHR(instance, &info, null, &surface).Check();
-            return surface;
+        private CSurface InitSurface(CInstance instance, IntPtr hwnd, IntPtr processHandle) {
+            var info = VkWin32SurfaceCreateInfoKHR.Alloc();
+            info->hwnd = hwnd;
+            info->hinstance = processHandle; //Process.GetCurrentProcess().Handle
+            VkSurfaceKHR vkSurface;
+            vkAPI.vkCreateWin32SurfaceKHR(instance.handle, info, null, &vkSurface).Check();
+            return new CSurface(vkSurface, info);
         }
 
-        private VkInstance InitInstance() {
-            VkLayerProperties[] layerProperties;
-            {
-                UInt32 count;
-                vkAPI.vkEnumerateInstanceLayerProperties(&count, null).Check();
-                layerProperties = new VkLayerProperties[count];
-                if (count > 0) {
-                    fixed (VkLayerProperties* pointer = layerProperties) {
-                        vkAPI.vkEnumerateInstanceLayerProperties(&count, pointer).Check();
-                    }
-                }
-            }
+        private CInstance InitInstance() {
+            var extensions = new string[] { "VK_KHR_surface", "VK_KHR_win32_surface", "VK_EXT_debug_report" };
 
-            string[] layersToEnable = layerProperties.Any(l => Marshal.PtrToStringAnsi((IntPtr)l.layerName) == "VK_LAYER_LUNARG_standard_validation")
+            VkLayerProperties[] layerProperties = Vk.InstanceLayerProperties();
+            string[] layers = layerProperties.Any(l => Marshal.PtrToStringAnsi((IntPtr)l.layerName) == "VK_LAYER_LUNARG_standard_validation")
                 ? new[] { "VK_LAYER_LUNARG_standard_validation" }
                 : new string[0];
 
-            var appInfo = new VkApplicationInfo();
-            {
-                appInfo.sType = ApplicationInfo;
-                UInt32 version = Vulkan.VkVersion.Make(1, 0, 0);
-                appInfo.apiVersion = version;
-            }
+            var appInfo = VkApplicationInfo.Alloc();
+            UInt32 version = Vulkan.VkVersion.Make(1, 0, 0);
+            appInfo->apiVersion = version;
 
-            var extensions = new string[] { "VK_KHR_surface", "VK_KHR_win32_surface", "VK_EXT_debug_report" };
 
-            var info = new VkInstanceCreateInfo();
-            {
-                info.sType = InstanceCreateInfo;
-                extensions.Set(ref info.ppEnabledExtensionNames, ref info.enabledExtensionCount);
-                layersToEnable.Set(ref info.ppEnabledLayerNames, ref info.enabledLayerCount);
-                info.pApplicationInfo = &appInfo;
-            }
+            var info = VkInstanceCreateInfo.Alloc();
+            extensions.SetExtensions(info);
+            layers.SetLayers(info);
+            info->pApplicationInfo = appInfo;
 
-            VkInstance result;
-            vkAPI.vkCreateInstance(&info, null, &result).Check();
-            FreeHelper.Free(ref info);
+            VkInstance vkInstance;
+            vkAPI.vkCreateInstance(info, null, &vkInstance).Check();
 
-            return result;
+            return new CInstance(vkInstance, info);
         }
 
-        private VkSubmitInfo[] submitInfos;
-        private VkPresentInfoKHR[] presentInfos;
+        private VkSubmitInfo*[] submitInfos;
+        private VkPresentInfoKHR*[] presentInfos;
 
         private void InitRenderParams() {
-            VkSwapchainKHR swapchain = this.vkSwapchain;
+            VkSwapchainKHR swapchain = this.swapchain.handle;
             VkSemaphore semaphore = this.vkSemaphore;
-            VkCommandBuffer[] commandBuffers = this.vkCommandBuffers;
+            CCommandBuffer[] commandBuffers = this.commandBuffers;
 
-            submitInfos = new VkSubmitInfo[2]; presentInfos = new VkPresentInfoKHR[2];
+            submitInfos = new VkSubmitInfo*[2]; presentInfos = new VkPresentInfoKHR*[2];
             for (uint index = 0; index < 2; index++) {
-                var submitInfo = new VkSubmitInfo();
-                {
-                    submitInfo.sType = SubmitInfo;
-                    semaphore.SetWaitSemaphores(ref submitInfo);
-                    VkPipelineStageFlagBits.AllGraphics.Set(ref submitInfo);
-                    commandBuffers[index].Set(ref submitInfo);
-                }
+                var submitInfo = VkSubmitInfo.Alloc();
+                semaphore.SetWaitSemaphores(submitInfo);
+                VkPipelineStageFlagBits.AllGraphics.Set(submitInfo);
+                commandBuffers[index].handle.Set(submitInfo);
                 submitInfos[index] = submitInfo;
-                var presentInfo = new VkPresentInfoKHR();
-                {
-                    presentInfo.sType = PresentInfoKHR;
 
-                    swapchain.Set(ref presentInfo);
-
-                    new[] { index }.Set(ref presentInfo.pImageIndices, ref presentInfo.swapchainCount);
-                }
+                var presentInfo = VkPresentInfoKHR.Alloc();
+                swapchain.Set(presentInfo);
+                index.Set(presentInfo);
                 presentInfos[index] = presentInfo;
             }
         }
@@ -792,7 +695,7 @@ namespace ApiSpec.Lesson02Shader {
                 InitRenderParams();
             }
 
-            VkDevice device = this.vkDevice; VkSwapchainKHR swapchain = this.vkSwapchain;
+            VkDevice device = this.device.handle; VkSwapchainKHR swapchain = this.swapchain.handle;
             VkSemaphore semaphore = this.vkSemaphore; VkFence fence = this.vkFence;
             VkQueue queue = this.vkQueue;
             //uint nextIndex = device.AcquireNextImageKHR(swapchain, ulong.MaxValue, semaphore);
@@ -802,13 +705,13 @@ namespace ApiSpec.Lesson02Shader {
             vkAPI.vkResetFences(device, 1, &fence);
 
             //queue.Submit(ref this.submitInfos[nextIndex], fence);
-            VkSubmitInfo submitInfo = this.submitInfos[nextIndex];
-            vkAPI.vkQueueSubmit(queue, 1, &submitInfo, fence);
+            VkSubmitInfo* submitInfo = this.submitInfos[nextIndex];
+            vkAPI.vkQueueSubmit(queue, 1, submitInfo, fence);
             //device.WaitForFence(fence, true, 100000000);
             vkAPI.vkWaitForFences(device, 1, &fence, new VkBool32(true), 100000000);
             //queue.PresentKHR(ref this.presentInfos[nextIndex]);
-            VkPresentInfoKHR presentInfo = this.presentInfos[nextIndex];
-            vkAPI.vkQueuePresentKHR(queue, &presentInfo);
+            VkPresentInfoKHR* presentInfo = this.presentInfos[nextIndex];
+            vkAPI.vkQueuePresentKHR(queue, presentInfo);
         }
     }
 }
