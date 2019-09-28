@@ -180,6 +180,7 @@ namespace Vulkan {
                     for (int i = 0; i < byteLength; i++) {
                         dst[i] = src[i];
                     }
+                    //System.Buffer.MemoryCopy(src, dst, byteLength, byteLength);
                     pin.Free();
 
                     target = array;

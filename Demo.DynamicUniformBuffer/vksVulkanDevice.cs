@@ -139,8 +139,7 @@ namespace Demo.DynamicUniformBuffer {
                 deviceExtensions.Add(Strings.VK_KHR_SWAPCHAIN_EXTENSION_NAME);
             }
 
-            VkDeviceCreateInfo deviceCreateInfo = new VkDeviceCreateInfo();
-            deviceCreateInfo.sType = DeviceCreateInfo;
+            var deviceCreateInfo = VkDeviceCreateInfo.Alloc();
             //deviceCreateInfo.queueCreateInfoCount = (uint)queueCreateInfos.Count;
             //deviceCreateInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)queueCreateInfos.Data.ToPointer();
             //{
@@ -149,16 +148,16 @@ namespace Demo.DynamicUniformBuffer {
             //    array.Set(ref ptr, ref deviceCreateInfo.queueCreateInfoCount);
             //    deviceCreateInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)ptr;
             //}
-            queueCreateInfos.ToArray().Set(ref deviceCreateInfo);
-            deviceCreateInfo.pEnabledFeatures = &enabledFeatures;
+            queueCreateInfos.ToArray().Set(deviceCreateInfo);
+            deviceCreateInfo->pEnabledFeatures = &enabledFeatures;
 
             if (deviceExtensions.Count > 0) {
                 string[] array = deviceExtensions.ToArray();
-                array.SetExtensions(ref deviceCreateInfo);
+                array.SetExtensions(deviceCreateInfo);
             }
 
             VkDevice device;
-            VkResult result = vkCreateDevice(PhysicalDevice, &deviceCreateInfo, null, &device);
+            VkResult result = vkCreateDevice(PhysicalDevice, deviceCreateInfo, null, &device);
             this._logicalDevice = device;
             if (result == VkResult.Success) {
                 // Create a default command pool for graphics command buffers

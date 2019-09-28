@@ -21,7 +21,7 @@ namespace Demo02.Mesh {
         bool wireframe = false;
         vksTexture2D textures_colorMap = new vksTexture2D();
 
-        VkPipelineVertexInputStateCreateInfo vInputStateInfo;
+        VkPipelineVertexInputStateCreateInfo* vInputStateInfo;
         VkVertexInputBindingDescription[] vBindingDescriptions;
         VkVertexInputAttributeDescription[] vAttrDescriptions;
 
@@ -97,29 +97,27 @@ namespace Demo02.Mesh {
         }
 
         protected override void buildCommandBuffers() {
-            VkCommandBufferBeginInfo cmdBufInfo = new VkCommandBufferBeginInfo();
-            cmdBufInfo.sType = CommandBufferBeginInfo;
+            var cmdBufInfo = VkCommandBufferBeginInfo.Alloc();
 
             var clearValues = new VkClearValue[2];
             clearValues[0].color = defaultClearColor;
             clearValues[1].depthStencil = new VkClearDepthStencilValue() { depth = 1.0f, stencil = 0 };
 
-            VkRenderPassBeginInfo renderPassBeginInfo = new VkRenderPassBeginInfo();
-            renderPassBeginInfo.sType = RenderPassBeginInfo;
-            renderPassBeginInfo.renderPass = renderPass;
-            renderPassBeginInfo.renderArea.offset.x = 0;
-            renderPassBeginInfo.renderArea.offset.y = 0;
-            renderPassBeginInfo.renderArea.extent.width = width;
-            renderPassBeginInfo.renderArea.extent.height = height;
-            clearValues.Set(ref renderPassBeginInfo);
+            var renderPassBeginInfo = VkRenderPassBeginInfo.Alloc();
+            renderPassBeginInfo->renderPass = renderPass;
+            renderPassBeginInfo->renderArea.offset.x = 0;
+            renderPassBeginInfo->renderArea.offset.y = 0;
+            renderPassBeginInfo->renderArea.extent.width = width;
+            renderPassBeginInfo->renderArea.extent.height = height;
+            clearValues.Set(renderPassBeginInfo);
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 // Set target frame buffer
-                renderPassBeginInfo.framebuffer = frameBuffers[i];
+                renderPassBeginInfo->framebuffer = frameBuffers[i];
 
-                vkBeginCommandBuffer(drawCmdBuffers[i], &cmdBufInfo);
+                vkBeginCommandBuffer(drawCmdBuffers[i], cmdBufInfo);
 
-                vkCmdBeginRenderPass(drawCmdBuffers[i], &renderPassBeginInfo, VkSubpassContents.Inline);
+                vkCmdBeginRenderPass(drawCmdBuffers[i], renderPassBeginInfo, VkSubpassContents.Inline);
 
                 VkViewport viewport = new VkViewport(0, 0, width, height, 0, 1);
                 vkCmdSetViewport(drawCmdBuffers[i], 0, 1, &viewport);
@@ -366,10 +364,9 @@ namespace Demo02.Mesh {
             vAttrDescriptions[3].format = VkFormat.R32g32b32Sfloat;
             vAttrDescriptions[3].offset = Vertex.ColorOffset;
 
-            vInputStateInfo = new VkPipelineVertexInputStateCreateInfo();
-            vInputStateInfo.sType = PipelineVertexInputStateCreateInfo;
-            vBindingDescriptions.Set(ref vInputStateInfo);
-            vAttrDescriptions.Set(ref vInputStateInfo);
+            vInputStateInfo = VkPipelineVertexInputStateCreateInfo.Alloc();
+            vBindingDescriptions.Set(vInputStateInfo);
+            vAttrDescriptions.Set(vInputStateInfo);
         }
 
         void setupDescriptorPool() {
@@ -382,13 +379,12 @@ namespace Demo02.Mesh {
             poolSizes[1].type = VkDescriptorType.CombinedImageSampler;
             poolSizes[1].descriptorCount = 1;
 
-            VkDescriptorPoolCreateInfo descriptorPoolInfo = new VkDescriptorPoolCreateInfo();
-            descriptorPoolInfo.sType = DescriptorPoolCreateInfo;
-            poolSizes.Set(ref descriptorPoolInfo);
-            descriptorPoolInfo.maxSets = 1;
+            var descriptorPoolInfo = VkDescriptorPoolCreateInfo.Alloc();
+            poolSizes.Set(descriptorPoolInfo);
+            descriptorPoolInfo->maxSets = 1;
             {
                 VkDescriptorPool pool;
-                vkCreateDescriptorPool(device, &descriptorPoolInfo, null, &pool);
+                vkCreateDescriptorPool(device, descriptorPoolInfo, null, &pool);
                 this.descriptorPool = pool;
             }
         }
@@ -408,12 +404,11 @@ namespace Demo02.Mesh {
             bindings[1].binding = 1;
             bindings[1].descriptorCount = 1;
 
-            VkDescriptorSetLayoutCreateInfo descriptorLayout = new VkDescriptorSetLayoutCreateInfo();
-            descriptorLayout.sType = DescriptorSetLayoutCreateInfo;
-            bindings.Set(ref descriptorLayout);
+            var descriptorLayout = VkDescriptorSetLayoutCreateInfo.Alloc();
+            bindings.Set(descriptorLayout);
 
             VkDescriptorSetLayout dsl;
-            vkCreateDescriptorSetLayout(device, &descriptorLayout, null, &dsl);
+            vkCreateDescriptorSetLayout(device, descriptorLayout, null, &dsl);
             this.descriptorSetLayout = dsl;
 
             var info = new VkPipelineLayoutCreateInfo();
@@ -516,7 +511,7 @@ namespace Demo02.Mesh {
             dynamicStateEnables[1] = VkDynamicState.Scissor;
             VkPipelineDynamicStateCreateInfo dynamicState = new VkPipelineDynamicStateCreateInfo();
             dynamicState.sType = PipelineDynamicStateCreateInfo;
-            dynamicStateEnables.Set(ref dynamicState);
+            dynamicStateEnables.Set(&dynamicState);
             dynamicState.flags = 0;
 
             // Solid rendering pipeline
@@ -532,7 +527,7 @@ namespace Demo02.Mesh {
             info.flags = 0;
 
             var via = vInputStateInfo;
-            info.pVertexInputState = &via;
+            info.pVertexInputState = via;
             info.pInputAssemblyState = &inputAssemblyState;
             info.pRasterizationState = &rasterizationState;
             info.pColorBlendState = &colorBlendState;
@@ -540,7 +535,7 @@ namespace Demo02.Mesh {
             info.pViewportState = &viewportState;
             info.pDepthStencilState = &depthStencilState;
             info.pDynamicState = &dynamicState;
-            shaderStages.Set(ref info);
+            shaderStages.Set(&info);
             {
                 VkPipeline pipeline;
                 vkCreateGraphicsPipelines(device, pipelineCache, 1, &info, null, &pipeline);
@@ -609,11 +604,10 @@ namespace Demo02.Mesh {
             //submitInfo.commandBufferCount = 1;
             //submitInfo.pCommandBuffers = (VkCommandBuffer*)drawCmdBuffers.GetAddress(currentBuffer);
             VkCommandBuffer buffer = drawCmdBuffers[currentBuffer];
-            buffer.Set(ref submitInfo);
+            buffer.Set(submitInfo);
 
-            VkSubmitInfo info = submitInfo;
             // Submit to Queue
-            vkQueueSubmit(queue, 1, &info, new VkFence());
+            vkQueueSubmit(queue, 1, submitInfo, new VkFence());
 
             submitFrame();
         }

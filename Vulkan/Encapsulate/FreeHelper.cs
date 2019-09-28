@@ -5,115 +5,115 @@ using System.Text;
 
 namespace Vulkan {
     public static unsafe partial class Vk {
-        public static void Free(ref VkInstanceCreateInfo info) {
-            Free(ref info.ppEnabledExtensionNames, ref info.enabledExtensionCount);
-            Free(ref info.ppEnabledLayerNames, ref info.enabledLayerCount);
+        public static void Free(VkInstanceCreateInfo* info) {
+            Free(ref info->ppEnabledExtensionNames, ref info->enabledExtensionCount);
+            Free(ref info->ppEnabledLayerNames, ref info->enabledLayerCount);
         }
 
-        public static void Free(ref VkDeviceQueueCreateInfo info) {
-            Free(ref info.pQueuePriorities, ref info.queueCount);
+        public static void Free(VkDeviceQueueCreateInfo* info) {
+            Free(ref info->pQueuePriorities, ref info->queueCount);
         }
 
-        public static void Free(ref VkDeviceCreateInfo info) {
-            Free(ref info.ppEnabledExtensionNames, ref info.enabledExtensionCount);
-            Free(ref info.ppEnabledLayerNames, ref info.enabledLayerCount);
-            var ptr = (IntPtr)info.pQueueCreateInfos;
-            Free(ref ptr, ref info.enabledLayerCount); info.pQueueCreateInfos = null;
+        public static void Free(VkDeviceCreateInfo* info) {
+            Free(ref info->ppEnabledExtensionNames, ref info->enabledExtensionCount);
+            Free(ref info->ppEnabledLayerNames, ref info->enabledLayerCount);
+            var ptr = (IntPtr)info->pQueueCreateInfos;
+            Free(ref ptr, ref info->enabledLayerCount); info->pQueueCreateInfos = null;
         }
 
-        public static void Free(ref VkSwapchainCreateInfoKHR info) {
-            Free(ref info.pQueueFamilyIndices, ref info.queueFamilyIndexCount);
+        public static void Free(VkSwapchainCreateInfoKHR* info) {
+            Free(ref info->pQueueFamilyIndices, ref info->queueFamilyIndexCount);
         }
 
-        public static void Free(ref VkRenderPassCreateInfo info) {
-            var ptr = (IntPtr)info.pAttachments;
-            Free(ref ptr, ref info.attachmentCount); info.pAttachments = null;
-            ptr = (IntPtr)info.pDependencies;
-            Free(ref ptr, ref info.dependencyCount); info.pDependencies = null;
-            ptr = (IntPtr)info.pSubpasses;
-            Free(ref ptr, ref info.subpassCount); info.pSubpasses = null;
+        public static void Free(VkRenderPassCreateInfo* info) {
+            var ptr = (IntPtr)info->pAttachments;
+            Free(ref ptr, ref info->attachmentCount); info->pAttachments = null;
+            ptr = (IntPtr)info->pDependencies;
+            Free(ref ptr, ref info->dependencyCount); info->pDependencies = null;
+            ptr = (IntPtr)info->pSubpasses;
+            Free(ref ptr, ref info->subpassCount); info->pSubpasses = null;
         }
 
-        public static void Free(ref VkSubpassDescription info) {
-            var ptr = (IntPtr)info.pColorAttachments;
-            Free(ref ptr, ref info.colorAttachmentCount); info.pColorAttachments = null;
-            ptr = (IntPtr)info.pInputAttachments;
-            Free(ref ptr, ref info.inputAttachmentCount); info.pInputAttachments = null;
-            Free(ref info.pPreserveAttachments, ref info.preserveAttachmentCount);
+        public static void Free(VkSubpassDescription* info) {
+            var ptr = (IntPtr)info->pColorAttachments;
+            Free(ref ptr, ref info->colorAttachmentCount); info->pColorAttachments = null;
+            ptr = (IntPtr)info->pInputAttachments;
+            Free(ref ptr, ref info->inputAttachmentCount); info->pInputAttachments = null;
+            Free(ref info->pPreserveAttachments, ref info->preserveAttachmentCount);
         }
 
-        public static void Free(ref VkFramebufferCreateInfo info) {
-            var ptr = (IntPtr)info.pAttachments;
-            Free(ref ptr, ref info.attachmentCount); info.pAttachments = null;
+        public static void Free(VkFramebufferCreateInfo* info) {
+            var ptr = (IntPtr)info->pAttachments;
+            Free(ref ptr, ref info->attachmentCount); info->pAttachments = null;
         }
 
-        public static void Free(ref VkBufferCreateInfo info) {
-            Free(ref info.pQueueFamilyIndices, ref info.queueFamilyIndexCount);
+        public static void Free(VkBufferCreateInfo* info) {
+            Free(ref info->pQueueFamilyIndices, ref info->queueFamilyIndexCount);
         }
 
-        public static void Free(ref VkDescriptorSetLayoutCreateInfo info) {
-            var ptr = (IntPtr)info.pBindings;
-            Free(ref ptr, ref info.bindingCount); info.pBindings = null;
+        public static void Free(VkDescriptorSetLayoutCreateInfo* info) {
+            var ptr = (IntPtr)info->pBindings;
+            Free(ref ptr, ref info->bindingCount); info->pBindings = null;
         }
 
-        public static void Free(ref VkPipelineLayoutCreateInfo info) {
-            var ptr = (IntPtr)info.pSetLayouts;
-            Free(ref ptr, ref info.setLayoutCount); info.pSetLayouts = null;
-            ptr = (IntPtr)info.pPushConstantRanges;
-            Free(ref ptr, ref info.pushConstantRangeCount); info.pPushConstantRanges = null;
+        public static void Free(VkPipelineLayoutCreateInfo* info) {
+            var ptr = (IntPtr)info->pSetLayouts;
+            Free(ref ptr, ref info->setLayoutCount); info->pSetLayouts = null;
+            ptr = (IntPtr)info->pPushConstantRanges;
+            Free(ref ptr, ref info->pushConstantRangeCount); info->pPushConstantRanges = null;
         }
 
-        public static void Free(ref VkGraphicsPipelineCreateInfo info) {
-            var ptr = (IntPtr)info.pStages;
-            Free(ref ptr, ref info.stageCount); info.pStages = null;
+        public static void Free(VkGraphicsPipelineCreateInfo* info) {
+            var ptr = (IntPtr)info->pStages;
+            Free(ref ptr, ref info->stageCount); info->pStages = null;
         }
 
-        public static void Free(ref VkPipelineVertexInputStateCreateInfo info) {
-            var ptr = (IntPtr)info.pVertexBindingDescriptions;
-            Free(ref ptr, ref info.vertexBindingDescriptionCount); info.pVertexBindingDescriptions = null;
-            ptr = (IntPtr)info.pVertexAttributeDescriptions;
-            Free(ref ptr, ref info.vertexAttributeDescriptionCount); info.pVertexAttributeDescriptions = null;
+        public static void Free(VkPipelineVertexInputStateCreateInfo* info) {
+            var ptr = (IntPtr)info->pVertexBindingDescriptions;
+            Free(ref ptr, ref info->vertexBindingDescriptionCount); info->pVertexBindingDescriptions = null;
+            ptr = (IntPtr)info->pVertexAttributeDescriptions;
+            Free(ref ptr, ref info->vertexAttributeDescriptionCount); info->pVertexAttributeDescriptions = null;
         }
 
-        public static void Free(ref VkPipelineColorBlendStateCreateInfo info) {
-            var ptr = (IntPtr)info.pAttachments;
-            Free(ref ptr, ref info.attachmentCount); info.pAttachments = null;
+        public static void Free(VkPipelineColorBlendStateCreateInfo* info) {
+            var ptr = (IntPtr)info->pAttachments;
+            Free(ref ptr, ref info->attachmentCount); info->pAttachments = null;
         }
 
-        public static void Free(ref VkPipelineViewportStateCreateInfo info) {
-            var ptr = (IntPtr)info.pViewports;
-            Free(ref ptr, ref info.viewportCount); info.pViewports = null;
-            ptr = (IntPtr)info.pScissors;
-            Free(ref ptr, ref info.scissorCount); info.pScissors = null;
+        public static void Free(VkPipelineViewportStateCreateInfo* info) {
+            var ptr = (IntPtr)info->pViewports;
+            Free(ref ptr, ref info->viewportCount); info->pViewports = null;
+            ptr = (IntPtr)info->pScissors;
+            Free(ref ptr, ref info->scissorCount); info->pScissors = null;
         }
 
-        public static void Free(ref VkShaderModuleCreateInfo info) {
-            UInt32 count = (UInt32)info.codeSize;
-            Free(ref info.pCode, ref count); info.codeSize = 0;
+        public static void Free(VkShaderModuleCreateInfo* info) {
+            UInt32 count = (UInt32)info->codeSize;
+            Free(ref info->pCode, ref count); info->codeSize = 0;
         }
 
-        public static void Free(ref VkDescriptorSetAllocateInfo info) {
-            var ptr = (IntPtr)info.pSetLayouts;
-            Free(ref ptr, ref info.descriptorSetCount); info.pSetLayouts = null;
+        public static void Free(VkDescriptorSetAllocateInfo* info) {
+            var ptr = (IntPtr)info->pSetLayouts;
+            Free(ref ptr, ref info->descriptorSetCount); info->pSetLayouts = null;
         }
 
-        public static void Free(ref VkDescriptorPoolCreateInfo info) {
-            var ptr = (IntPtr)info.pPoolSizes;
-            Free(ref ptr, ref info.poolSizeCount); info.pPoolSizes = null;
+        public static void Free(VkDescriptorPoolCreateInfo* info) {
+            var ptr = (IntPtr)info->pPoolSizes;
+            Free(ref ptr, ref info->poolSizeCount); info->pPoolSizes = null;
         }
 
-        public static void Free(ref VkWriteDescriptorSet info) {
-            var ptr = (IntPtr)info.pBufferInfo;
-            Free(ref ptr, ref info.descriptorCount); info.pBufferInfo = null;
+        public static void Free(VkWriteDescriptorSet* info) {
+            var ptr = (IntPtr)info->pBufferInfo;
+            Free(ref ptr, ref info->descriptorCount); info->pBufferInfo = null;
         }
 
-        public static void Free(ref VkRenderPassBeginInfo info) {
-            var ptr = (IntPtr)info.pClearValues;
-            Free(ref ptr, ref info.clearValueCount); info.pClearValues = null;
+        public static void Free(VkRenderPassBeginInfo* info) {
+            var ptr = (IntPtr)info->pClearValues;
+            Free(ref ptr, ref info->clearValueCount); info->pClearValues = null;
         }
 
-        public static void Free(ref VkPipelineShaderStageCreateInfo info) {
-            Free(ref info.pName);
+        public static void Free(VkPipelineShaderStageCreateInfo* info) {
+            Free(ref info->pName);
         }
 
         public static void Free(ref Boolean* names, ref UInt32 count) {

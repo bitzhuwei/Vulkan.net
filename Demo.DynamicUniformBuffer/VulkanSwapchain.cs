@@ -339,16 +339,14 @@ namespace Demo.DynamicUniformBuffer {
         * @return VkResult of the queue presentation
         */
         public VkResult QueuePresent(VkQueue queue, uint imageIndex, VkSemaphore waitSemaphore = new VkSemaphore()) {
-            VkPresentInfoKHR presentInfo = new VkPresentInfoKHR();
-            presentInfo.sType = PresentInfoKHR;
-            presentInfo.pNext = null;
-            Swapchain.Set(ref presentInfo);
-            presentInfo.pImageIndices = &imageIndex;
+            var presentInfo = VkPresentInfoKHR.Alloc();
+            Swapchain.Set(presentInfo);
+            presentInfo->pImageIndices = &imageIndex;
             // Check if a wait semaphore has been specified to wait for before presenting the image
             if (waitSemaphore.handle != 0) {
-                waitSemaphore.Set(ref presentInfo);
+                waitSemaphore.Set(presentInfo);
             }
-            return vkQueuePresentKHR(queue, &presentInfo);
+            return vkQueuePresentKHR(queue, presentInfo);
         }
     }
 
