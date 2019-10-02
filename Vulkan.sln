@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.Mesh", "Demo02.Mesh\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.DynamicUniformBuffer", "Demo.DynamicUniformBuffer\Demo.DynamicUniformBuffer.csproj", "{35493F77-4B1C-4BD7-B868-F651053AEF67}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.RadialBlur", "Demo.RadialBlur\Demo.RadialBlur.csproj", "{EEFBDC85-1591-4F94-B953-E56ABFE61508}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{35493F77-4B1C-4BD7-B868-F651053AEF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35493F77-4B1C-4BD7-B868-F651053AEF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35493F77-4B1C-4BD7-B868-F651053AEF67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEFBDC85-1591-4F94-B953-E56ABFE61508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEFBDC85-1591-4F94-B953-E56ABFE61508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEFBDC85-1591-4F94-B953-E56ABFE61508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEFBDC85-1591-4F94-B953-E56ABFE61508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
