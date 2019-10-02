@@ -29,9 +29,9 @@ public static void Set<T>(this T[] value,
     {
         count = (UInt32)value.Length;
 
-        if (typeof(T).IsEnum) {
-            Type underlying = typeof(T).GetEnumUnderlyingType();
-            int elementSize = Marshal.SizeOf(underlying);
+        if (typeof(T).IsEnum) { // if T is an enum type.(eg. enum VkResult : int { .. } )
+            Type underlying = typeof(T).GetEnumUnderlyingType(); // underlying : int
+            int elementSize = Marshal.SizeOf(underlying); // elementSize : sizeof(int) = 4
 
             int byteLength = (int)(count * elementSize);
             IntPtr array = Marshal.AllocHGlobal(byteLength);
@@ -89,6 +89,6 @@ public static void Set<T>(this T[] value,
             target = array;
         }
     }
-    }
+}
 ```
 .
