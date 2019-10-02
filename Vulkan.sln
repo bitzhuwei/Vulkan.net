@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.DynamicUniformBuffer",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.RadialBlur", "Demo.RadialBlur\Demo.RadialBlur.csproj", "{EEFBDC85-1591-4F94-B953-E56ABFE61508}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Texture", "Demo.Texture\Demo.Texture.csproj", "{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EEFBDC85-1591-4F94-B953-E56ABFE61508}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEFBDC85-1591-4F94-B953-E56ABFE61508}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEFBDC85-1591-4F94-B953-E56ABFE61508}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

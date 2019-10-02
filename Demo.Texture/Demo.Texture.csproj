@@ -4,16 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EEFBDC85-1591-4F94-B953-E56ABFE61508}</ProjectGuid>
+    <ProjectGuid>{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Demo.RadialBlur</RootNamespace>
-    <AssemblyName>Demo.RadialBlur</AssemblyName>
+    <RootNamespace>Demo.Texture</RootNamespace>
+    <AssemblyName>Demo.Texture</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AssimpNet, Version=4.1.0.0, Culture=neutral, PublicKeyToken=0d51b391f59f42a6, processorArchitecture=MSIL">
-      <HintPath>..\packages\AssimpNet.4.1.0\lib\net40\AssimpNet.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
@@ -55,14 +50,13 @@
   <ItemGroup>
     <Compile Include="Camera.cs" />
     <Compile Include="DemoBase.cs" />
-    <Compile Include="RadialBlurDemo.cs" />
+    <Compile Include="TextureExample.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrameTimeAverager.cs" />
     <Compile Include="IRenderer.cs" />
     <Compile Include="KtxFile.cs" />
     <Compile Include="Program.cs" />
@@ -70,13 +64,10 @@
     <Compile Include="Strings.cs" />
     <Compile Include="Texture.cs" />
     <Compile Include="Tools.cs" />
-    <Compile Include="UboVS.cs" />
     <Compile Include="Unsafe.cs" />
     <Compile Include="Util.cs" />
-    <Compile Include="VertexDescription.cs" />
     <Compile Include="VkPhysicalDeviceMemoryPropertiesEx.cs" />
     <Compile Include="vksBuffer.cs" />
-    <Compile Include="vksTexture.cs" />
     <Compile Include="vksVulkanDevice.cs" />
     <Compile Include="VkWinCanvas.cs">
       <SubType>UserControl</SubType>
@@ -84,7 +75,6 @@
     <Compile Include="VkWinCanvas.Designer.cs">
       <DependentUpon>VkWinCanvas.cs</DependentUpon>
     </Compile>
-    <Compile Include="VulkanModel.cs" />
     <Compile Include="VulkanNative.cs" />
     <Compile Include="VulkanSwapchain.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -99,49 +89,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="data\models\glowsphere.dae">
+    <None Include="data\shaders\texture\generate-spirv.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\shaders\radialblur\colorpass.frag">
+    <None Include="data\shaders\texture\texture.frag">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\shaders\radialblur\colorpass.frag.spv">
+    <None Include="data\shaders\texture\texture.frag.spv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\shaders\radialblur\colorpass.vert">
+    <None Include="data\shaders\texture\texture.vert">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\shaders\radialblur\colorpass.vert.spv">
+    <None Include="data\shaders\texture\texture.vert.spv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\shaders\radialblur\generate-spirv.bat">
+    <None Include="data\textures\metalplate01_astc_8x8_unorm.ktx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\shaders\radialblur\phongpass.frag">
+    <None Include="data\textures\metalplate01_bc2_unorm.ktx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="data\shaders\radialblur\phongpass.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\shaders\radialblur\phongpass.vert">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\shaders\radialblur\phongpass.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\shaders\radialblur\radialblur.frag">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\shaders\radialblur\radialblur.frag.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\shaders\radialblur\radialblur.vert">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\shaders\radialblur\radialblur.vert.spv">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="data\textures\particle_gradient_rgba.ktx">
+    <None Include="data\textures\metalplate01_etc2_unorm.ktx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
@@ -165,11 +134,4 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\AssimpNet.4.1.0\build\AssimpNet.targets" Condition="Exists('..\packages\AssimpNet.4.1.0\build\AssimpNet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\AssimpNet.4.1.0\build\AssimpNet.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\AssimpNet.4.1.0\build\AssimpNet.targets'))" />
-  </Target>
 </Project>

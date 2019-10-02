@@ -103,8 +103,6 @@ namespace Demo.RadialBlur {
         public RadialBlurDemo() {
             zoom = -10.0f;
             rotation = new Vector3(-16.25f, -28.75f, 0.0f);
-            //timerSpeed *= 0.5f; // TODO: undo
-            enableTextOverlay = true;
             title = "Vulkan Example - Radial blur";
         }
 
@@ -385,7 +383,7 @@ namespace Demo.RadialBlur {
 
             var cmdBufInfo = VkCommandBufferBeginInfo.Alloc();
             var clearValues = new VkClearValue[2];
-            clearValues[0].color = new VkClearColorValue(0.0f, 0.0f, 0.0f, 0.0f);
+            clearValues[0].color = defaultClearColor;
             clearValues[1].depthStencil = new VkClearDepthStencilValue { depth = 1.0f, stencil = 0 };
 
             var renderPassBeginInfo = VkRenderPassBeginInfo.Alloc();
@@ -465,8 +463,6 @@ namespace Demo.RadialBlur {
 
                 VkRect2D scissor = new VkRect2D(0, 0, width, height);
                 vkCmdSetScissor(drawCmdBuffers[i], 0, 1, &scissor);
-
-                ulong offsets = 0;
 
                 // 3D scene
                 {
@@ -835,6 +831,7 @@ namespace Demo.RadialBlur {
 
             updateUniformBuffersScene();
         }
+
 
         // Update uniform buffers for rendering the 3D scene
         void updateUniformBuffersScene() {

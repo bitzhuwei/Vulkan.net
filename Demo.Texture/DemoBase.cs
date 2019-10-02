@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using Vulkan;
 using static Vulkan.VkStructureType;
 using static Vulkan.vkAPI;
-using static Demo.RadialBlur.VulkanNative;
+using static Demo.Texture.VulkanNative;
 using System.Numerics;
 using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Demo.RadialBlur {
+namespace Demo.Texture {
     public unsafe class DemoBase : IRenderer {
         public string title { get; set; } = "Vulkan Example";
         public string Name { get; set; } = "VulkanExample";
@@ -58,6 +58,7 @@ namespace Demo.RadialBlur {
         private uint destWidth;
         private uint destHeight;
         private bool viewUpdated;
+        private int frameCounter;
         protected float frameTimer;
         protected bool paused = false;
         protected bool prepared;
@@ -79,8 +80,13 @@ namespace Demo.RadialBlur {
 
         protected VkClearColorValue defaultClearColor = GetDefaultClearColor();
         private static VkClearColorValue GetDefaultClearColor()
-        => new VkClearColorValue(0x87 / 255.0f, 0xCE / 255.0f, 0xEB / 255.0f, 0xFF / 255.0f);
+            => new VkClearColorValue(0x87 / 255.0f, 0xCE / 255.0f, 0xEB / 255.0f, 1.0f);
+        //=> new VkClearColorValue(0.025f, 0.025f, 0.025f, 1.0f);
 
+        // fps timer (one second interval)
+        //float fpsTimer = 0.0f; // TODO: undo
+        protected bool enableTextOverlay = false;
+        //private uint lastFPS; // TODO: undo
         protected uint currentBuffer;
         protected List<VkShaderModule> shaderModules = new List<VkShaderModule>();
 
@@ -153,8 +159,8 @@ namespace Demo.RadialBlur {
 
             // Find a suitable depth format
             VkFormat depthFormat;
-            bool validDepthFormat = Tools.getSupportedDepthFormat(physicalDevice, &depthFormat);
-            Debug.Assert(validDepthFormat == true);
+            uint validDepthFormat = Tools.getSupportedDepthFormat(physicalDevice, &depthFormat);
+            Debug.Assert(validDepthFormat == True);
             DepthFormat = depthFormat;
 
             Swapchain.Connect(Instance, physicalDevice, device);
@@ -636,6 +642,11 @@ namespace Demo.RadialBlur {
 
             vkDeviceWaitIdle(device);
 
+            if (enableTextOverlay) {
+                //textOverlay->reallocateCommandBuffers();
+                //updateTextOverlay();
+            }
+
             // camera.updateAspectRatio((float)width / (float)height);
 
             // Notify derived class
@@ -751,7 +762,6 @@ namespace Demo.RadialBlur {
 
             var tEnd = DateTime.Now;
             var tDiff = tEnd - tStart;
-            tStart = tEnd;
             frameTimer = (float)tDiff.TotalMilliseconds / 1000.0f;
         }
 
