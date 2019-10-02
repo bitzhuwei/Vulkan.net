@@ -97,9 +97,10 @@ namespace Vulkan {
             Free(ref ptr, ref info->descriptorSetCount); info->pSetLayouts = null;
         }
 
-        public static void Free(VkDescriptorPoolCreateInfo* info) {
+        public static void Free(VkDescriptorPoolCreateInfo* info, bool freeSelf = false) {
             var ptr = (IntPtr)info->pPoolSizes;
             Free(ref ptr, ref info->poolSizeCount); info->pPoolSizes = null;
+            if (freeSelf) { Marshal.FreeHGlobal((IntPtr)info); }
         }
 
         public static void Free(VkWriteDescriptorSet* info) {

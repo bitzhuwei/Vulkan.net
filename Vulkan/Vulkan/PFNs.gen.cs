@@ -48,7 +48,7 @@ namespace Vulkan {
     IntPtr pMessage,
     /// <summary>pUserData is the user data given when the
     /// VkDebugReportCallbackEXT was created.</summary>
-    void* pUserData);
+    IntPtr pUserData);
     // PFN: 2
     /// <summary>PFN_vkDebugUtilsMessengerCallbackEXT - Application-defined debug messenger callback function</summary>
     public unsafe delegate VkBool32 PFN_vkDebugUtilsMessengerCallbackEXT(

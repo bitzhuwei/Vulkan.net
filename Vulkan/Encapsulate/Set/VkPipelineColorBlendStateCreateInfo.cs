@@ -13,5 +13,6 @@ namespace Vulkan {
             values.Set(ref ptr, ref info->attachmentCount);
             info->pAttachments = (VkPipelineColorBlendAttachmentState*)ptr;
         }
+
     }
 }

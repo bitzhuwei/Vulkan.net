@@ -1394,7 +1394,7 @@ namespace Vulkan {
         /// <summary> pfnCallback is the application callback function to call.</summary>
         public /*PFN_vkDebugReportCallbackEXT*/IntPtr pfnCallback;
         /// <summary> pUserData is user data to be passed to the callback.</summary>
-        public void* pUserData;
+        public IntPtr pUserData;
     }
     // Struct: 60
     /// <summary>VkDebugUtilsLabelEXT - Specify parameters of a label region

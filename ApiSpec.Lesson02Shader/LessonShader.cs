@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
 using Vulkan;
 using static Vulkan.VkStructureType;
+using static Vulkan.vkAPI;
 
 namespace ApiSpec.Lesson02Shader {
     unsafe class LessonShader {
         CInstance instance;
+        VkDebugReportCallbackEXT callback;
         CSurface surface;
         VkPhysicalDevice vkPhysicalDevice;
 
@@ -84,6 +87,7 @@ namespace ApiSpec.Lesson02Shader {
             if (this.isInitialized) { return; }
 
             this.instance = InitInstance();
+            InitDebugCallback(this.instance);
             this.surface = InitSurface(this.instance, hwnd, processHandle);
             this.vkPhysicalDevice = InitPhysicalDevice(this.instance);
             VkSurfaceFormatKHR surfaceFormat = SelectFormat(this.vkPhysicalDevice, this.surface);
@@ -137,6 +141,65 @@ namespace ApiSpec.Lesson02Shader {
 
             this.isInitialized = true;
         }
+
+        /// <summary>
+        /// Application-defined debug report callback function.
+        /// </summary>
+        /// <param name="flags">flags specifies the VkDebugReportFlagBitsEXT that triggered
+        /// this callback</param>
+        /// <param name="objectType">objectType is a VkDebugReportObjectTypeEXT value specifying
+        /// the type of object being used or created at the time the event was
+        /// triggered</param>
+        /// <param name="objectHandle">object is the object where the issue was detected.
+        /// If objectType is VK_DEBUG_REPORT_OBJECT_TYPE_UNKNOWN_EXT,
+        /// object is undefined</param>
+        /// <param name="location">location is a component (layer, driver, loader) defined value that
+        /// specifies the location of the trigger.
+        /// This is an optional value</param>
+        /// <param name="messageCode">summary>messageCode is a layer-defined value indicating what test
+        /// triggered this callback</param>
+        /// <param name="layerPrefix">pLayerPrefix is a null-terminated string that is an abbreviation
+        /// of the name of the component making the callback.
+        /// pLayerPrefix is only valid for the duration of the callback</param>
+        /// <param name="message">pMessage is a null-terminated string detailing the trigger
+        /// conditions.
+        /// pMessage is only valid for the duration of the callback</param>
+        /// <param name="userData">pUserData is the user data given when the
+        /// VkDebugReportCallbackEXT was created</param>
+        /// <returns></returns>
+        private VkBool32 DebugCallback(VkDebugReportFlagBitsEXT flags, VkDebugReportObjectTypeEXT objectType,
+            UInt64 objectHandle, Int32 location, Int32 messageCode,
+            IntPtr layerPrefix, IntPtr message, IntPtr userData) {
+            string text = $"{flags}: {Marshal.PtrToStringAnsi(message)}";
+            Debug.WriteLine(text);
+            return true;
+        }
+
+        PFN_vkDebugReportCallbackEXT delDebugCallback;
+
+        private void InitDebugCallback(CInstance instance) {
+            if (delDebugCallback == null) {
+                delDebugCallback = new PFN_vkDebugReportCallbackEXT(DebugCallback);
+            }
+            var info = VkDebugReportCallbackCreateInfoEXT.Alloc();
+            info->flags = VkDebugReportFlagBitsEXT.DebugExt | VkDebugReportFlagBitsEXT.ErrorExt
+                | VkDebugReportFlagBitsEXT.PerformanceWarningExt | VkDebugReportFlagBitsEXT.WarningExt
+                | VkDebugReportFlagBitsEXT.InformationExt;
+            info->pfnCallback = Marshal.GetFunctionPointerForDelegate(delDebugCallback);
+
+            VkDebugReportCallbackEXT callback;
+            IntPtr procHandle = vkAPI.vkGetInstanceProcAddr(instance.handle, "vkCreateDebugReportCallbackEXT");
+            var proc = (vkCreateDebugReportCallbackEXT)Marshal.GetDelegateForFunctionPointer(procHandle, typeof(vkCreateDebugReportCallbackEXT));
+            if (proc != null) {
+                proc(instance.handle, info, null, &callback).Check();
+                this.callback = callback;
+            }
+            // TODO: make delegate.
+            //vkAPI.vkCreateDebugReportCallbackEXT(instance.handle, info, null, &callback).Check();
+        }
+        //public unsafe delegate VkResult vkCreateDebugReportCallbackEXT(VkInstance instance,
+        //    VkDebugReportCallbackCreateInfoEXT* pCreateInfo, VkAllocationCallbacks* pAllocator,
+        //    VkDebugReportCallbackEXT* pCallback);
 
         CCommandBuffer[] CreateCommandBuffers(
             CDevice device, CRenderPass renderPass, VkSurfaceCapabilitiesKHR surfaceCapabilities,
@@ -374,11 +437,11 @@ namespace ApiSpec.Lesson02Shader {
 
         CDescriptorSetLayout CreateDescriptorSetLayout(CDevice device) {
             /*
-    layout (set = 0, binding = 0) uniform AreaUB
-    {
-    float width;
-    float height;
-    } area;
+        layout (set = 0, binding = 0) uniform AreaUB
+        {
+        float width;
+        float height;
+        } area;
              */
             var info = VkDescriptorSetLayoutCreateInfo.Alloc();
             {
@@ -642,10 +705,11 @@ namespace ApiSpec.Lesson02Shader {
         }
 
         private CInstance InitInstance() {
-            var extensions = new string[] { "VK_KHR_surface", "VK_KHR_win32_surface", "VK_EXT_debug_report" };
+            var extensions = new string[] { Vk.VK_KHR_surface, Vk.VK_KHR_win32_surface, Vk.VK_EXT_debug_report };
 
             VkLayerProperties[] layerProperties = Vk.InstanceLayerProperties();
-            string[] layers = layerProperties.Any(l => Marshal.PtrToStringAnsi((IntPtr)l.layerName) == "VK_LAYER_LUNARG_standard_validation")
+            string[] layers = layerProperties.Any(
+                l => Marshal.PtrToStringAnsi((IntPtr)l.layerName) == "VK_LAYER_LUNARG_standard_validation")
                 ? new[] { "VK_LAYER_LUNARG_standard_validation" }
                 : new string[0];
 
