@@ -35,44 +35,30 @@ public static void Set<T>(this T[] value,
 
             int byteLength = (int)(count * elementSize);
             IntPtr array = Marshal.AllocHGlobal(byteLength);
-            switch (elementSize) {
-                case 1: {
-                    var dst = (byte*)array;
-                    for (int i = 0; i < value.Length; i++) {
-                        dst[i] = Convert.ToByte(value[i]);
-                    }
-                }
-                break;
-                case 2: {
-                    var dst = (Int16*)array;
-                    for (int i = 0; i < value.Length; i++) {
-                        dst[i] = Convert.ToInt16(value[i]);
-                    }
-                }
-                break;
-                case 4: {
-                    var dst = (Int32*)array;
-                    for (int i = 0; i < value.Length; i++) {
-                        dst[i] = Convert.ToInt32(value[i]);
-                    }
-                }
-                break;
-                case 8: {
-                    var dst = (Int64*)array;
-                    for (int i = 0; i < value.Length; i++) {
-                        dst[i] = Convert.ToInt64(value[i]);
-                    }
-                }
-                break;
-                default:
-                    throw new ArgumentException(
-                        string.Format("Unknown type({0}) length", typeof(T)));
+            if (elementSize == 1) {
+                var dst = (byte*)array;
+                for (int i = 0; i < value.Length; i++) { dst[i] = Convert.ToByte(value[i]); }
+            }
+            else if (elementSize == 2) {
+                var dst = (Int16*)array;
+                for (int i = 0; i < value.Length; i++) { dst[i] = Convert.ToInt16(value[i]); }
+            }
+            else if (elementSize == 4) {
+                var dst = (Int32*)array;
+                for (int i = 0; i < value.Length; i++) { dst[i] = Convert.ToInt32(value[i]); }
+            }
+            else if (elementSize == 8) {
+                var dst = (Int64*)array;
+                for (int i = 0; i < value.Length; i++) { dst[i] = Convert.ToInt64(value[i]); }
+            }
+            else {
+                throw new ArgumentException(string.Format("Unknown type({0}) length", typeof(T)));
             }
 
             target = array;
         }
-        else {
-            int elementSize = Marshal.SizeOf<T>();
+        else { // when T is a regular struct.
+            int elementSize = Marshal.SizeOf(typeof(T));
 
             int byteLength = (int)(count * elementSize);
             IntPtr array = Marshal.AllocHGlobal(byteLength);
