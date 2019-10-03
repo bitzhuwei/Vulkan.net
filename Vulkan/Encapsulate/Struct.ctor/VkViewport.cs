@@ -72,9 +72,5 @@ namespace Vulkan {
             this.x = 0; this.y = 0; this.width = extent.width; this.height = extent.height;
             this.minDepth = minDepth; this.maxDepth = maxDepth;
         }
-
-        public override string ToString() {
-            return $"x:{x}, y:{y}, w:{width}, h:{height}, minDepth:{minDepth}, maxDepth:{maxDepth}";
-        }
     }
 }

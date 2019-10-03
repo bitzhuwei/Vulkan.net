@@ -17,9 +17,5 @@ namespace Vulkan {
             this.location = location; this.binding = binding;
             this.format = format; this.offset = offset;
         }
-
-        public override string ToString() {
-            return $"loc:{location}, binding:{binding}, format:{format}, offset:{offset}";
-        }
     }
 }

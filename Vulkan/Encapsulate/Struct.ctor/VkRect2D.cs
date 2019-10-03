@@ -39,9 +39,5 @@ namespace Vulkan {
         public VkRect2D(VkExtent2D extent) {
             this.offset = new VkOffset2D(); this.extent = extent;
         }
-
-        public override string ToString() {
-            return $"x:{offset.x}, y:{offset.y}, w:{extent.width}, h:{extent.height}";
-        }
     }
 }

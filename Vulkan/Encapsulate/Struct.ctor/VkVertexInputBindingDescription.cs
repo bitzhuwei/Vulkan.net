@@ -16,9 +16,5 @@ namespace Vulkan {
         public VkVertexInputBindingDescription(UInt32 binding, UInt32 stride, VkVertexInputRate inputRate) {
             this.binding = binding; this.stride = stride; this.inputRate = inputRate;
         }
-
-        public override string ToString() {
-            return $"binding:{binding}, stride:{stride}, rate:{inputRate}";
-        }
     }
 }

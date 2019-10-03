@@ -17,9 +17,5 @@ namespace Vulkan {
             this.type = type;
             this.descriptorCount = descriptorCount;
         }
-
-        public override string ToString() {
-            return $"pool: {type}[{descriptorCount}]";
-        }
     }
 }
