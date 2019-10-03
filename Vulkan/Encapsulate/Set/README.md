@@ -9,14 +9,14 @@ from
     info.pClearValues = (VkClearValue*)ptr;
 ```
 to
-```C
+```CS
     var clearValues = new VkClearValue[] { ... }
     var info = new VkRenderPassBeginInfo();
 
     clearValues.Set(&info);
 ```
 where `Set(..)` is:
-```C
+```CSharp
 public static void Set<T>(this T[] value, 
     ref IntPtr target, ref UInt32 count) where T : struct {
     {   // free unmanaged memory.
