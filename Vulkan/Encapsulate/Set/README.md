@@ -4,7 +4,7 @@ from
     var clearValues = new VkClearValue[] { ... }
     var info = new VkRenderPassBeginInfo();
 
-	IntPtr ptr = (IntPtr)info.pClearValues;
+    IntPtr ptr = (IntPtr)info.pClearValues;
     clearValues.Set(ref ptr, ref info.clearValueCount);
     info.pClearValues = (VkClearValue*)ptr;
 ```
@@ -66,7 +66,7 @@ public static void Set<T>(this T[] value,
                 break;
                 default:
                     throw new ArgumentException(
-					    string.Format("Unknown type({0}) length", typeof(T)));
+                        string.Format("Unknown type({0}) length", typeof(T)));
             }
 
             target = array;

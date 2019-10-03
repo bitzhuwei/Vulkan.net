@@ -357,15 +357,15 @@ namespace Demo.Texture {
         }
 
         /**
-		* Finish command buffer recording and submit it to a queue
-		*
-		* @param commandBuffer Command buffer to flush
-		* @param queue Queue to submit the command buffer to 
-		* @param free (Optional) Free the command buffer once it has been submitted (Defaults to true)
-		*
-		* @note The queue that the command buffer is submitted to must be from the same family index as the pool it was allocated from
-		* @note Uses a fence to ensure command buffer has finished executing
-		*/
+        * Finish command buffer recording and submit it to a queue
+        *
+        * @param commandBuffer Command buffer to flush
+        * @param queue Queue to submit the command buffer to 
+        * @param free (Optional) Free the command buffer once it has been submitted (Defaults to true)
+        *
+        * @note The queue that the command buffer is submitted to must be from the same family index as the pool it was allocated from
+        * @note Uses a fence to ensure command buffer has finished executing
+        */
         public void flushCommandBuffer(VkCommandBuffer commandBuffer, VkQueue queue, bool free = true) {
             if (commandBuffer.handle == 0) {
                 return;

@@ -257,12 +257,12 @@ namespace Demo.DynamicUniformBuffer {
 
         void setupDescriptorSetLayout() {
             var bindings = new VkDescriptorSetLayoutBinding[] {
-				// layout (binding = 0) uniform UboView 
+                // layout (binding = 0) uniform UboView 
                 new VkDescriptorSetLayoutBinding(0, VkDescriptorType.UniformBuffer, 1, VkShaderStageFlagBits.Vertex),
                 // layout (binding = 1) uniform UboInstance 
-				new VkDescriptorSetLayoutBinding(1, VkDescriptorType.UniformBufferDynamic, 1, VkShaderStageFlagBits.Vertex),
+                new VkDescriptorSetLayoutBinding(1, VkDescriptorType.UniformBufferDynamic, 1, VkShaderStageFlagBits.Vertex),
                 // no matching uniform sampler2D in shader.
-				new VkDescriptorSetLayoutBinding(2, VkDescriptorType.CombinedImageSampler, 1, VkShaderStageFlagBits.Fragment),
+                new VkDescriptorSetLayoutBinding(2, VkDescriptorType.CombinedImageSampler, 1, VkShaderStageFlagBits.Fragment),
             };
 
             VkDescriptorSetLayoutCreateInfo descriptorLayoutInfo = new VkDescriptorSetLayoutCreateInfo();
@@ -295,7 +295,7 @@ namespace Demo.DynamicUniformBuffer {
             VkDescriptorBufferInfo descriptor0 = uniformBuffers_view.descriptor;
             VkDescriptorBufferInfo descriptor1 = uniformBuffers_dynamic.descriptor;
             var writeDescriptorSets = new VkWriteDescriptorSet[] {
-                // Binding 0 : Projection/View matrix uniform buffer			
+                // Binding 0 : Projection/View matrix uniform buffer            
                 new VkWriteDescriptorSet(){
                     sType = WriteDescriptorSet,
                     dstSet = descriptorSet,
