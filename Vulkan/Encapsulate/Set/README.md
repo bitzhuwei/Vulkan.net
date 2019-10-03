@@ -17,8 +17,7 @@ to
 ```
 where `Set(..)` is:
 ```CS
-public static void Set<T>(this T[] value, 
-    ref IntPtr target, ref UInt32 count) where T : struct {
+public static void Set<T>(this T[] value, ref IntPtr target, ref UInt32 count) where T : struct {
     {   // free unmanaged memory.
         if (target != IntPtr.Zero) {
             Marshal.FreeHGlobal(target);
