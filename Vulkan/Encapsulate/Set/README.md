@@ -1,6 +1,6 @@
 ﻿# Synteax sugar.
 from
-```
+```C
     var clearValues = new VkClearValue[] { ... }
     var info = new VkRenderPassBeginInfo();
 
@@ -9,14 +9,14 @@ from
     info.pClearValues = (VkClearValue*)ptr;
 ```
 to
-```
+```C
     var clearValues = new VkClearValue[] { ... }
     var info = new VkRenderPassBeginInfo();
 
     clearValues.Set(&info);
 ```
 where `Set(..)` is:
-```
+```C
 public static void Set<T>(this T[] value, 
     ref IntPtr target, ref UInt32 count) where T : struct {
     {   // free unmanaged memory.

@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulkan", "Vulkan\Vulkan.csproj", "{FAC3B7A7-96E6-4473-98D8-28C97F938871}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Obselete", "ApiSpec.Lesson02Shader\Obselete.csproj", "{4B78F253-8B4C-4E12-9943-E2157F0EF057}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo02.Mesh", "Demo02.Mesh\Demo02.Mesh.csproj", "{89654889-93CA-45D6-B0BC-A009F4A4DC63}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.HelloVulkan", "Demo.HelloVulkan\Demo.HelloVulkan.csproj", "{4B78F253-8B4C-4E12-9943-E2157F0EF057}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.DynamicUniformBuffer", "Demo.DynamicUniformBuffer\Demo.DynamicUniformBuffer.csproj", "{35493F77-4B1C-4BD7-B868-F651053AEF67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.RadialBlur", "Demo.RadialBlur\Demo.RadialBlur.csproj", "{EEFBDC85-1591-4F94-B953-E56ABFE61508}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Texture", "Demo.Texture\Demo.Texture.csproj", "{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.Mesh", "Demo.Mesh\Demo.Mesh.csproj", "{89654889-93CA-45D6-B0BC-A009F4A4DC63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Vulkan", "Vulkan\Vulkan.csproj", "{FAC3B7A7-96E6-4473-98D8-28C97F938871}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,6 @@ Global
 		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FAC3B7A7-96E6-4473-98D8-28C97F938871}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89654889-93CA-45D6-B0BC-A009F4A4DC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89654889-93CA-45D6-B0BC-A009F4A4DC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89654889-93CA-45D6-B0BC-A009F4A4DC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89654889-93CA-45D6-B0BC-A009F4A4DC63}.Release|Any CPU.Build.0 = Release|Any CPU
 		{35493F77-4B1C-4BD7-B868-F651053AEF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{35493F77-4B1C-4BD7-B868-F651053AEF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35493F77-4B1C-4BD7-B868-F651053AEF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +37,14 @@ Global
 		{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3BAA7A-C4DC-4578-9465-B0BBD868C6F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B78F253-8B4C-4E12-9943-E2157F0EF057}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89654889-93CA-45D6-B0BC-A009F4A4DC63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89654889-93CA-45D6-B0BC-A009F4A4DC63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89654889-93CA-45D6-B0BC-A009F4A4DC63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89654889-93CA-45D6-B0BC-A009F4A4DC63}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

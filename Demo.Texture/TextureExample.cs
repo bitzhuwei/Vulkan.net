@@ -28,7 +28,7 @@ namespace Demo.Texture {
         /// </summary>
         public const uint UvOffset = 12;
         /// <summary>
-        /// 20 : pos uv | normal
+        /// 20 : pos | uv | normal
         /// </summary>
         public const uint NormalOffset = 20;
     };
@@ -214,54 +214,53 @@ namespace Demo.Texture {
                     != VkFormatFeatureFlagBits.SampledImage) ? 1u : 0u;
             }
 
-            var memAllocInfo = VkMemoryAllocateInfo.Alloc();
-            VkMemoryRequirements memReqs = new VkMemoryRequirements();
 
             if (useStaging == 1) {
                 // Create a host-visible staging buffer that contains the raw image data
+
                 VkBuffer stagingBuffer;
-                VkDeviceMemory stagingMemory;
-
-                var bufferCreateInfo = VkBufferCreateInfo.Alloc();
-                bufferCreateInfo[0].size = tex2D.GetTotalSize();
-                // This buffer is used as a transfer source for the buffer copy
-                bufferCreateInfo[0].usage = VkBufferUsageFlagBits.TransferSrc;
-                bufferCreateInfo[0].sharingMode = VkSharingMode.Exclusive;
-
-                vkCreateBuffer(device, bufferCreateInfo, null, &stagingBuffer);
-
-                // Get memory requirements for the staging buffer (alignment, memory type bits)
-                vkGetBufferMemoryRequirements(device, stagingBuffer, &memReqs);
-
-                memAllocInfo[0].allocationSize = memReqs.size;
-                // Get memory type index for a host visible buffer
-                memAllocInfo[0].memoryTypeIndex = vulkanDevice.getMemoryType(memReqs.memoryTypeBits,
-                    VkMemoryPropertyFlagBits.HostVisible | VkMemoryPropertyFlagBits.HostCoherent);
-
-                vkAllocateMemory(device, memAllocInfo, null, &stagingMemory);
-                vkBindBufferMemory(device, stagingBuffer, stagingMemory, 0);
-
-                // Copy texture data into staging buffer
-                IntPtr data;
-                vkMapMemory(device, stagingMemory, 0, memReqs.size, 0, &data);
-                byte[] allData = tex2D.GetAllTextureData();
-                fixed (byte* tex2DDataPtr = &allData[0]) {
-                    Unsafe.CopyBlock(data, tex2DDataPtr, (uint)allData.Length);
+                {
+                    var info = VkBufferCreateInfo.Alloc();
+                    info[0].size = tex2D.GetTotalSize();
+                    // This buffer is used as a transfer source for the buffer copy
+                    info[0].usage = VkBufferUsageFlagBits.TransferSrc;
+                    info[0].sharingMode = VkSharingMode.Exclusive;
+                    vkCreateBuffer(device, info, null, &stagingBuffer);
                 }
-                vkUnmapMemory(device, stagingMemory);
+                VkDeviceMemory stagingMemory;
+                {
+                    // Get memory requirements for the staging buffer (alignment, memory type bits)
+                    var memReqs = new VkMemoryRequirements();
+                    vkGetBufferMemoryRequirements(device, stagingBuffer, &memReqs);
+                    var memAllocInfo = VkMemoryAllocateInfo.Alloc();
+                    memAllocInfo[0].allocationSize = memReqs.size;
+                    // Get memory type index for a host visible buffer
+                    memAllocInfo[0].memoryTypeIndex = vulkanDevice.getMemoryType(memReqs.memoryTypeBits,
+                        VkMemoryPropertyFlagBits.HostVisible | VkMemoryPropertyFlagBits.HostCoherent);
 
+                    vkAllocateMemory(device, memAllocInfo, null, &stagingMemory);
+                    vkBindBufferMemory(device, stagingBuffer, stagingMemory, 0);
+
+                    // Copy texture data into staging buffer
+                    IntPtr data;
+                    vkMapMemory(device, stagingMemory, 0, memReqs.size, 0, &data);
+                    byte[] allData = tex2D.GetAllTextureData();
+                    fixed (byte* tex2DDataPtr = &allData[0]) {
+                        Unsafe.CopyBlock(data, tex2DDataPtr, (uint)allData.Length);
+                    }
+                    vkUnmapMemory(device, stagingMemory);
+                }
                 // Setup buffer copy regions for each mip level
-                var bufferCopyRegions = VkBufferImageCopy.Alloc((int)texture.mipLevels);
-                uint offset = 0;
-                for (uint i = 0; i < texture.mipLevels; i++) {
-                    bufferCopyRegions[i].imageSubresource.aspectMask = VkImageAspectFlagBits.Color;
-                    bufferCopyRegions[i].imageSubresource.mipLevel = i;
-                    bufferCopyRegions[i].imageSubresource.baseArrayLayer = 0;
-                    bufferCopyRegions[i].imageSubresource.layerCount = 1;
-                    bufferCopyRegions[i].imageExtent.width = tex2D.Faces[0].Mipmaps[i].Width;
-                    bufferCopyRegions[i].imageExtent.height = tex2D.Faces[0].Mipmaps[i].Height;
-                    bufferCopyRegions[i].imageExtent.depth = 1;
-                    bufferCopyRegions[i].bufferOffset = offset;
+                var copys = VkBufferImageCopy.Alloc((int)texture.mipLevels);
+                for (uint i = 0, offset = 0; i < texture.mipLevels; i++) {
+                    copys[i].imageSubresource.aspectMask = VkImageAspectFlagBits.Color;
+                    copys[i].imageSubresource.mipLevel = i;
+                    copys[i].imageSubresource.baseArrayLayer = 0;
+                    copys[i].imageSubresource.layerCount = 1;
+                    copys[i].imageExtent.width = tex2D.Faces[0].Mipmaps[i].Width;
+                    copys[i].imageExtent.height = tex2D.Faces[0].Mipmaps[i].Height;
+                    copys[i].imageExtent.depth = 1;
+                    copys[i].bufferOffset = offset;
 
                     offset += tex2D.Faces[0].Mipmaps[i].SizeInBytes;
                 }
@@ -284,8 +283,10 @@ namespace Demo.Texture {
                         vkCreateImage(device, info, null, &image);
                         texture.image = image;
                     }
+                    var memReqs = new VkMemoryRequirements();
                     vkGetImageMemoryRequirements(device, texture.image, &memReqs);
 
+                    var memAllocInfo = VkMemoryAllocateInfo.Alloc();
                     memAllocInfo[0].allocationSize = memReqs.size;
                     memAllocInfo[0].memoryTypeIndex = vulkanDevice.getMemoryType(memReqs.memoryTypeBits, VkMemoryPropertyFlagBits.DeviceLocal);
                     {
@@ -300,7 +301,7 @@ namespace Demo.Texture {
                 // Image barrier for optimal image
 
                 // The sub resource range describes the regions of the image we will be transition
-                VkImageSubresourceRange subresourceRange = new VkImageSubresourceRange();
+                var subresourceRange = new VkImageSubresourceRange();
                 // Image only contains color data
                 subresourceRange.aspectMask = VkImageAspectFlagBits.Color;
                 // Start at first mip level
@@ -327,7 +328,7 @@ namespace Demo.Texture {
                     texture.image,
                      VkImageLayout.TransferDstOptimal,
                     texture.mipLevels,
-                    bufferCopyRegions);
+                    copys);
 
                 // Change texture image layout to shader read after all mip levels have been copied
                 texture.imageLayout = VkImageLayout.ShaderReadOnlyOptimal;
@@ -538,28 +539,28 @@ namespace Demo.Texture {
         }
 
         protected override void buildCommandBuffers() {
-            var cmdBufInfo = VkCommandBufferBeginInfo.Alloc();
+            var cmdInfo = VkCommandBufferBeginInfo.Alloc();
 
             var clearValues = VkClearValue.Alloc(2);
             clearValues[0].color = defaultClearColor;
             clearValues[1].depthStencil = new VkClearDepthStencilValue() { depth = 1.0f, stencil = 0 };
 
-            var renderPassBeginInfo = VkRenderPassBeginInfo.Alloc();
-            renderPassBeginInfo[0].renderPass = renderPass;
-            renderPassBeginInfo[0].renderArea.offset.x = 0;
-            renderPassBeginInfo[0].renderArea.offset.y = 0;
-            renderPassBeginInfo[0].renderArea.extent.width = width;
-            renderPassBeginInfo[0].renderArea.extent.height = height;
-            renderPassBeginInfo[0].clearValueCount = 2;
-            renderPassBeginInfo[0].pClearValues = clearValues;
+            var info = VkRenderPassBeginInfo.Alloc();
+            info[0].renderPass = renderPass;
+            info[0].renderArea.offset.x = 0;
+            info[0].renderArea.offset.y = 0;
+            info[0].renderArea.extent.width = width;
+            info[0].renderArea.extent.height = height;
+            info[0].clearValueCount = 2;
+            info[0].pClearValues = clearValues;
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 // Set target frame buffer
-                renderPassBeginInfo[0].framebuffer = frameBuffers[i];
+                info[0].framebuffer = frameBuffers[i];
 
-                vkBeginCommandBuffer(drawCmdBuffers[i], cmdBufInfo);
+                vkBeginCommandBuffer(drawCmdBuffers[i], cmdInfo);
 
-                vkCmdBeginRenderPass(drawCmdBuffers[i], renderPassBeginInfo, VkSubpassContents.Inline);
+                vkCmdBeginRenderPass(drawCmdBuffers[i], info, VkSubpassContents.Inline);
 
                 VkViewport viewport = new VkViewport((float)width, (float)height, 0.0f, 1.0f);
                 vkCmdSetViewport(drawCmdBuffers[i], 0, 1, &viewport);
@@ -680,13 +681,13 @@ namespace Demo.Texture {
             poolSizes[1].type = VkDescriptorType.CombinedImageSampler;
             poolSizes[1].descriptorCount = 1;
 
-            var descriptorPoolInfo = VkDescriptorPoolCreateInfo.Alloc();
-            descriptorPoolInfo[0].poolSizeCount = 2;
-            descriptorPoolInfo[0].pPoolSizes = poolSizes;
-            descriptorPoolInfo[0].maxSets = 2;
+            var poolInfo = VkDescriptorPoolCreateInfo.Alloc();
+            poolInfo[0].poolSizeCount = 2;
+            poolInfo[0].pPoolSizes = poolSizes;
+            poolInfo[0].maxSets = 2;
             {
                 VkDescriptorPool pool;
-                vkCreateDescriptorPool(device, descriptorPoolInfo, null, &pool);
+                vkCreateDescriptorPool(device, poolInfo, null, &pool);
                 descriptorPool = pool;
             }
         }
@@ -706,10 +707,10 @@ namespace Demo.Texture {
                 bindings[1].stageFlags = VkShaderStageFlagBits.Fragment;
             }
 
-            var info = VkDescriptorSetLayoutCreateInfo.Alloc();
-            info[0].bindingCount = 2;
-            info[0].pBindings = bindings;
             {
+                var info = VkDescriptorSetLayoutCreateInfo.Alloc();
+                info[0].bindingCount = 2;
+                info[0].pBindings = bindings;
                 VkDescriptorSetLayout layout;
                 vkCreateDescriptorSetLayout(device, info, null, &layout);
                 this.layout = layout;
@@ -717,12 +718,11 @@ namespace Demo.Texture {
 
             {
                 VkDescriptorSetLayout layout = this.layout;
-                var pPipelineLayoutCreateInfo = VkPipelineLayoutCreateInfo.Alloc();
-                pPipelineLayoutCreateInfo[0].setLayoutCount = 1;
-                pPipelineLayoutCreateInfo[0].pSetLayouts = &layout;
-
+                var info = VkPipelineLayoutCreateInfo.Alloc();
+                info[0].setLayoutCount = 1;
+                info[0].pSetLayouts = &layout;
                 VkPipelineLayout pipelineLayout;
-                vkCreatePipelineLayout(device, pPipelineLayoutCreateInfo, null, &pipelineLayout);
+                vkCreatePipelineLayout(device, info, null, &pipelineLayout);
                 this.pipelineLayout = pipelineLayout;
             }
         }

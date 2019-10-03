@@ -9,4 +9,10 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="glm\**" />
+    <EmbeddedResource Remove="glm\**" />
+    <None Remove="glm\**" />
+  </ItemGroup>
+
 </Project>
