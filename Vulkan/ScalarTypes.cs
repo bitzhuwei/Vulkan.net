@@ -171,6 +171,49 @@ namespace Vulkan {
         public override string ToString() {
             return $"{nameof(VkFlags)}: {this.value}";
         }
+
+        public VkFlags(UInt32 flags) {
+            this.value = flags;
+        }
+
+        // == !=
+        public static bool operator ==(VkFlags left, VkFlags right) {
+            return left.value == right.value;
+        }
+        public static bool operator !=(VkFlags left, VkFlags right) {
+            return left.value != right.value;
+        }
+
+        public static bool operator ==(VkFlags left, UInt32 right) {
+            return left.value == right;
+        }
+        public static bool operator !=(VkFlags left, UInt32 right) {
+            return left.value != right;
+        }
+
+        public static bool operator ==(UInt32 left, VkFlags right) {
+            return left == right.value;
+        }
+        public static bool operator !=(UInt32 left, VkFlags right) {
+            return left != right.value;
+        }
+
+        // implicit
+        public static implicit operator VkFlags(UInt32 v) {
+            return new VkFlags(v);
+        }
+
+        public static implicit operator UInt32(VkFlags size) {
+            return size.value;
+        }
+
+        public override bool Equals(object obj) {
+            return this.value.Equals(obj);
+        }
+
+        public override int GetHashCode() {
+            return this.value.GetHashCode();
+        }
     }
 
     public unsafe struct VkSampleMask {

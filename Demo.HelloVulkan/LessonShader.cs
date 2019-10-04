@@ -661,12 +661,16 @@ namespace Demo.HelloVulkan {
             {
                 new[] { "VK_KHR_swapchain" }.SetExtensions(info);
                 queueInfo->Set(info);
-                info->pQueueCreateInfos = queueInfo; info->queueCreateInfoCount = 1;
+                //info->pQueueCreateInfos = queueInfo; info->queueCreateInfoCount = 1;
             }
 
             VkDevice vkDevice;
             //physicalDevice.CreateDevice(ref deviceInfo, null, out device);
             vkAPI.vkCreateDevice(physicalDevice, info, null, &vkDevice).Check();
+            Vk.Free(queueInfo);
+            Vk.Free(info);
+            Marshal.FreeHGlobal((IntPtr)queueInfo);
+            Marshal.FreeHGlobal((IntPtr)info);
 
             return vkDevice;
         }
@@ -682,8 +686,11 @@ namespace Demo.HelloVulkan {
             var info = VkWin32SurfaceCreateInfoKHR.Alloc();
             info->hwnd = hwnd;
             info->hinstance = processHandle; //Process.GetCurrentProcess().Handle
+
             VkSurfaceKHR vkSurface;
             vkAPI.vkCreateWin32SurfaceKHR(instance, info, null, &vkSurface).Check();
+            Marshal.FreeHGlobal((IntPtr)info);
+
             return vkSurface;
         }
 
@@ -700,7 +707,6 @@ namespace Demo.HelloVulkan {
             UInt32 version = Vulkan.VkVersion.Make(1, 0, 0);
             appInfo->apiVersion = version;
 
-
             var info = VkInstanceCreateInfo.Alloc();
             extensions.SetExtensions(info);
             layers.SetLayers(info);
@@ -708,6 +714,9 @@ namespace Demo.HelloVulkan {
 
             VkInstance vkInstance;
             vkAPI.vkCreateInstance(info, null, &vkInstance).Check();
+            Vk.Free(info);
+            Marshal.FreeHGlobal((IntPtr)info);
+            Marshal.FreeHGlobal((IntPtr)appInfo);
 
             return vkInstance;
         }
