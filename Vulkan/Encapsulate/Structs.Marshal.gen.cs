@@ -15,7 +15,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAccelerationStructureCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAccelerationStructureCreateInfoNV"/>.</returns>
         public static VkAccelerationStructureCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -35,7 +35,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAccelerationStructureInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAccelerationStructureInfoNV"/>.</returns>
         public static VkAccelerationStructureInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -55,7 +55,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAccelerationStructureMemoryRequirementsInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAccelerationStructureMemoryRequirementsInfoNV"/>.</returns>
         public static VkAccelerationStructureMemoryRequirementsInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -75,7 +75,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAcquireNextImageInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAcquireNextImageInfoKHR"/>.</returns>
         public static VkAcquireNextImageInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -95,7 +95,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAllocationCallbacks"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAllocationCallbacks"/>.</returns>
         public static VkAllocationCallbacks* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -114,7 +114,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAndroidHardwareBufferFormatPropertiesANDROID"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAndroidHardwareBufferFormatPropertiesANDROID"/>.</returns>
         public static VkAndroidHardwareBufferFormatPropertiesANDROID* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -134,7 +134,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAndroidHardwareBufferPropertiesANDROID"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAndroidHardwareBufferPropertiesANDROID"/>.</returns>
         public static VkAndroidHardwareBufferPropertiesANDROID* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -154,7 +154,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAndroidHardwareBufferUsageANDROID"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAndroidHardwareBufferUsageANDROID"/>.</returns>
         public static VkAndroidHardwareBufferUsageANDROID* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -174,7 +174,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAndroidSurfaceCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAndroidSurfaceCreateInfoKHR"/>.</returns>
         public static VkAndroidSurfaceCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -194,7 +194,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkApplicationInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkApplicationInfo"/>.</returns>
         public static VkApplicationInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -214,7 +214,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAttachmentDescription"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAttachmentDescription"/>.</returns>
         public static VkAttachmentDescription* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -233,7 +233,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAttachmentDescription2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAttachmentDescription2KHR"/>.</returns>
         public static VkAttachmentDescription2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -253,7 +253,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAttachmentReference"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAttachmentReference"/>.</returns>
         public static VkAttachmentReference* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -272,7 +272,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAttachmentReference2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAttachmentReference2KHR"/>.</returns>
         public static VkAttachmentReference2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -292,7 +292,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkAttachmentSampleLocationsEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkAttachmentSampleLocationsEXT"/>.</returns>
         public static VkAttachmentSampleLocationsEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -311,7 +311,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBaseInStructure"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBaseInStructure"/>.</returns>
         public static VkBaseInStructure* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -331,7 +331,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBaseOutStructure"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBaseOutStructure"/>.</returns>
         public static VkBaseOutStructure* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -351,7 +351,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBindAccelerationStructureMemoryInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBindAccelerationStructureMemoryInfoNV"/>.</returns>
         public static VkBindAccelerationStructureMemoryInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -371,7 +371,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBindBufferMemoryDeviceGroupInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBindBufferMemoryDeviceGroupInfo"/>.</returns>
         public static VkBindBufferMemoryDeviceGroupInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -391,7 +391,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBindBufferMemoryInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBindBufferMemoryInfo"/>.</returns>
         public static VkBindBufferMemoryInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -411,7 +411,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBindImageMemoryDeviceGroupInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBindImageMemoryDeviceGroupInfo"/>.</returns>
         public static VkBindImageMemoryDeviceGroupInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -431,7 +431,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBindImageMemoryInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBindImageMemoryInfo"/>.</returns>
         public static VkBindImageMemoryInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -451,7 +451,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBindImageMemorySwapchainInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBindImageMemorySwapchainInfoKHR"/>.</returns>
         public static VkBindImageMemorySwapchainInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -471,7 +471,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBindImagePlaneMemoryInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBindImagePlaneMemoryInfo"/>.</returns>
         public static VkBindImagePlaneMemoryInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -491,7 +491,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBindSparseInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBindSparseInfo"/>.</returns>
         public static VkBindSparseInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -511,7 +511,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBufferCopy"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBufferCopy"/>.</returns>
         public static VkBufferCopy* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -530,7 +530,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBufferCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBufferCreateInfo"/>.</returns>
         public static VkBufferCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -550,7 +550,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBufferDeviceAddressCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBufferDeviceAddressCreateInfoEXT"/>.</returns>
         public static VkBufferDeviceAddressCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -570,7 +570,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBufferDeviceAddressInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBufferDeviceAddressInfoEXT"/>.</returns>
         public static VkBufferDeviceAddressInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -590,7 +590,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBufferImageCopy"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBufferImageCopy"/>.</returns>
         public static VkBufferImageCopy* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -609,7 +609,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBufferMemoryBarrier"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBufferMemoryBarrier"/>.</returns>
         public static VkBufferMemoryBarrier* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -629,7 +629,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBufferMemoryRequirementsInfo2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBufferMemoryRequirementsInfo2"/>.</returns>
         public static VkBufferMemoryRequirementsInfo2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -649,7 +649,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkBufferViewCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkBufferViewCreateInfo"/>.</returns>
         public static VkBufferViewCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -669,7 +669,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCalibratedTimestampInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCalibratedTimestampInfoEXT"/>.</returns>
         public static VkCalibratedTimestampInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -689,7 +689,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCheckpointDataNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCheckpointDataNV"/>.</returns>
         public static VkCheckpointDataNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -709,7 +709,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkClearAttachment"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkClearAttachment"/>.</returns>
         public static VkClearAttachment* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -728,7 +728,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkClearColorValue"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkClearColorValue"/>.</returns>
         public static VkClearColorValue* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -747,7 +747,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkClearDepthStencilValue"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkClearDepthStencilValue"/>.</returns>
         public static VkClearDepthStencilValue* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -766,7 +766,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkClearRect"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkClearRect"/>.</returns>
         public static VkClearRect* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -785,7 +785,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkClearValue"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkClearValue"/>.</returns>
         public static VkClearValue* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -804,7 +804,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCmdProcessCommandsInfoNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCmdProcessCommandsInfoNVX"/>.</returns>
         public static VkCmdProcessCommandsInfoNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -824,7 +824,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCmdReserveSpaceForCommandsInfoNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCmdReserveSpaceForCommandsInfoNVX"/>.</returns>
         public static VkCmdReserveSpaceForCommandsInfoNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -844,7 +844,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCoarseSampleLocationNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCoarseSampleLocationNV"/>.</returns>
         public static VkCoarseSampleLocationNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -863,7 +863,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCoarseSampleOrderCustomNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCoarseSampleOrderCustomNV"/>.</returns>
         public static VkCoarseSampleOrderCustomNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -882,7 +882,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCommandBufferAllocateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCommandBufferAllocateInfo"/>.</returns>
         public static VkCommandBufferAllocateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -902,7 +902,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCommandBufferBeginInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCommandBufferBeginInfo"/>.</returns>
         public static VkCommandBufferBeginInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -922,7 +922,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCommandBufferInheritanceConditionalRenderingInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCommandBufferInheritanceConditionalRenderingInfoEXT"/>.</returns>
         public static VkCommandBufferInheritanceConditionalRenderingInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -942,7 +942,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCommandBufferInheritanceInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCommandBufferInheritanceInfo"/>.</returns>
         public static VkCommandBufferInheritanceInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -962,7 +962,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCommandPoolCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCommandPoolCreateInfo"/>.</returns>
         public static VkCommandPoolCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -982,7 +982,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkComponentMapping"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkComponentMapping"/>.</returns>
         public static VkComponentMapping* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1001,7 +1001,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkComputePipelineCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkComputePipelineCreateInfo"/>.</returns>
         public static VkComputePipelineCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1021,7 +1021,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkConditionalRenderingBeginInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkConditionalRenderingBeginInfoEXT"/>.</returns>
         public static VkConditionalRenderingBeginInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1041,7 +1041,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkConformanceVersionKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkConformanceVersionKHR"/>.</returns>
         public static VkConformanceVersionKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1060,7 +1060,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCooperativeMatrixPropertiesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCooperativeMatrixPropertiesNV"/>.</returns>
         public static VkCooperativeMatrixPropertiesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1080,7 +1080,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkCopyDescriptorSet"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkCopyDescriptorSet"/>.</returns>
         public static VkCopyDescriptorSet* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1100,7 +1100,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkD3D12FenceSubmitInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkD3D12FenceSubmitInfoKHR"/>.</returns>
         public static VkD3D12FenceSubmitInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1120,7 +1120,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDebugMarkerMarkerInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDebugMarkerMarkerInfoEXT"/>.</returns>
         public static VkDebugMarkerMarkerInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1140,7 +1140,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDebugMarkerObjectNameInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDebugMarkerObjectNameInfoEXT"/>.</returns>
         public static VkDebugMarkerObjectNameInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1160,7 +1160,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDebugMarkerObjectTagInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDebugMarkerObjectTagInfoEXT"/>.</returns>
         public static VkDebugMarkerObjectTagInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1180,7 +1180,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDebugReportCallbackCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDebugReportCallbackCreateInfoEXT"/>.</returns>
         public static VkDebugReportCallbackCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1200,7 +1200,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDebugUtilsLabelEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDebugUtilsLabelEXT"/>.</returns>
         public static VkDebugUtilsLabelEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1220,7 +1220,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDebugUtilsMessengerCallbackDataEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDebugUtilsMessengerCallbackDataEXT"/>.</returns>
         public static VkDebugUtilsMessengerCallbackDataEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1240,7 +1240,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDebugUtilsMessengerCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDebugUtilsMessengerCreateInfoEXT"/>.</returns>
         public static VkDebugUtilsMessengerCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1260,7 +1260,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDebugUtilsObjectNameInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDebugUtilsObjectNameInfoEXT"/>.</returns>
         public static VkDebugUtilsObjectNameInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1280,7 +1280,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDebugUtilsObjectTagInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDebugUtilsObjectTagInfoEXT"/>.</returns>
         public static VkDebugUtilsObjectTagInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1300,7 +1300,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDedicatedAllocationBufferCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDedicatedAllocationBufferCreateInfoNV"/>.</returns>
         public static VkDedicatedAllocationBufferCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1320,7 +1320,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDedicatedAllocationImageCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDedicatedAllocationImageCreateInfoNV"/>.</returns>
         public static VkDedicatedAllocationImageCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1340,7 +1340,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDedicatedAllocationMemoryAllocateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDedicatedAllocationMemoryAllocateInfoNV"/>.</returns>
         public static VkDedicatedAllocationMemoryAllocateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1360,7 +1360,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorBufferInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorBufferInfo"/>.</returns>
         public static VkDescriptorBufferInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1379,7 +1379,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorImageInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorImageInfo"/>.</returns>
         public static VkDescriptorImageInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1398,7 +1398,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorPoolCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorPoolCreateInfo"/>.</returns>
         public static VkDescriptorPoolCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1418,7 +1418,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorPoolInlineUniformBlockCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorPoolInlineUniformBlockCreateInfoEXT"/>.</returns>
         public static VkDescriptorPoolInlineUniformBlockCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1438,7 +1438,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorPoolSize"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorPoolSize"/>.</returns>
         public static VkDescriptorPoolSize* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1457,7 +1457,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorSetAllocateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorSetAllocateInfo"/>.</returns>
         public static VkDescriptorSetAllocateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1477,7 +1477,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorSetLayoutBinding"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorSetLayoutBinding"/>.</returns>
         public static VkDescriptorSetLayoutBinding* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1496,7 +1496,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorSetLayoutBindingFlagsCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorSetLayoutBindingFlagsCreateInfoEXT"/>.</returns>
         public static VkDescriptorSetLayoutBindingFlagsCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1516,7 +1516,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorSetLayoutCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorSetLayoutCreateInfo"/>.</returns>
         public static VkDescriptorSetLayoutCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1536,7 +1536,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorSetLayoutSupport"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorSetLayoutSupport"/>.</returns>
         public static VkDescriptorSetLayoutSupport* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1556,7 +1556,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorSetVariableDescriptorCountAllocateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorSetVariableDescriptorCountAllocateInfoEXT"/>.</returns>
         public static VkDescriptorSetVariableDescriptorCountAllocateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1576,7 +1576,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorSetVariableDescriptorCountLayoutSupportEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorSetVariableDescriptorCountLayoutSupportEXT"/>.</returns>
         public static VkDescriptorSetVariableDescriptorCountLayoutSupportEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1596,7 +1596,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorUpdateTemplateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorUpdateTemplateCreateInfo"/>.</returns>
         public static VkDescriptorUpdateTemplateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1616,7 +1616,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDescriptorUpdateTemplateEntry"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDescriptorUpdateTemplateEntry"/>.</returns>
         public static VkDescriptorUpdateTemplateEntry* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1635,7 +1635,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceCreateInfo"/>.</returns>
         public static VkDeviceCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1655,7 +1655,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceEventInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceEventInfoEXT"/>.</returns>
         public static VkDeviceEventInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1675,7 +1675,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGeneratedCommandsFeaturesNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGeneratedCommandsFeaturesNVX"/>.</returns>
         public static VkDeviceGeneratedCommandsFeaturesNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1695,7 +1695,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGeneratedCommandsLimitsNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGeneratedCommandsLimitsNVX"/>.</returns>
         public static VkDeviceGeneratedCommandsLimitsNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1715,7 +1715,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGroupBindSparseInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGroupBindSparseInfo"/>.</returns>
         public static VkDeviceGroupBindSparseInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1735,7 +1735,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGroupCommandBufferBeginInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGroupCommandBufferBeginInfo"/>.</returns>
         public static VkDeviceGroupCommandBufferBeginInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1755,7 +1755,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGroupDeviceCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGroupDeviceCreateInfo"/>.</returns>
         public static VkDeviceGroupDeviceCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1775,7 +1775,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGroupPresentCapabilitiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGroupPresentCapabilitiesKHR"/>.</returns>
         public static VkDeviceGroupPresentCapabilitiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1795,7 +1795,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGroupPresentInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGroupPresentInfoKHR"/>.</returns>
         public static VkDeviceGroupPresentInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1815,7 +1815,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGroupRenderPassBeginInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGroupRenderPassBeginInfo"/>.</returns>
         public static VkDeviceGroupRenderPassBeginInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1835,7 +1835,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGroupSubmitInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGroupSubmitInfo"/>.</returns>
         public static VkDeviceGroupSubmitInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1855,7 +1855,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceGroupSwapchainCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceGroupSwapchainCreateInfoKHR"/>.</returns>
         public static VkDeviceGroupSwapchainCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1875,7 +1875,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceMemoryOverallocationCreateInfoAMD"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceMemoryOverallocationCreateInfoAMD"/>.</returns>
         public static VkDeviceMemoryOverallocationCreateInfoAMD* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1895,7 +1895,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceQueueCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceQueueCreateInfo"/>.</returns>
         public static VkDeviceQueueCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1915,7 +1915,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceQueueGlobalPriorityCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceQueueGlobalPriorityCreateInfoEXT"/>.</returns>
         public static VkDeviceQueueGlobalPriorityCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1935,7 +1935,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDeviceQueueInfo2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDeviceQueueInfo2"/>.</returns>
         public static VkDeviceQueueInfo2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1955,7 +1955,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDispatchIndirectCommand"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDispatchIndirectCommand"/>.</returns>
         public static VkDispatchIndirectCommand* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1974,7 +1974,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayEventInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayEventInfoEXT"/>.</returns>
         public static VkDisplayEventInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -1994,7 +1994,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayModeCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayModeCreateInfoKHR"/>.</returns>
         public static VkDisplayModeCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2014,7 +2014,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayModeParametersKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayModeParametersKHR"/>.</returns>
         public static VkDisplayModeParametersKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2033,7 +2033,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayModeProperties2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayModeProperties2KHR"/>.</returns>
         public static VkDisplayModeProperties2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2053,7 +2053,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayModePropertiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayModePropertiesKHR"/>.</returns>
         public static VkDisplayModePropertiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2072,7 +2072,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayNativeHdrSurfaceCapabilitiesAMD"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayNativeHdrSurfaceCapabilitiesAMD"/>.</returns>
         public static VkDisplayNativeHdrSurfaceCapabilitiesAMD* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2092,7 +2092,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayPlaneCapabilities2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayPlaneCapabilities2KHR"/>.</returns>
         public static VkDisplayPlaneCapabilities2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2112,7 +2112,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayPlaneCapabilitiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayPlaneCapabilitiesKHR"/>.</returns>
         public static VkDisplayPlaneCapabilitiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2131,7 +2131,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayPlaneInfo2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayPlaneInfo2KHR"/>.</returns>
         public static VkDisplayPlaneInfo2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2151,7 +2151,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayPlaneProperties2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayPlaneProperties2KHR"/>.</returns>
         public static VkDisplayPlaneProperties2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2171,7 +2171,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayPlanePropertiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayPlanePropertiesKHR"/>.</returns>
         public static VkDisplayPlanePropertiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2190,7 +2190,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayPowerInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayPowerInfoEXT"/>.</returns>
         public static VkDisplayPowerInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2210,7 +2210,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayPresentInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayPresentInfoKHR"/>.</returns>
         public static VkDisplayPresentInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2230,7 +2230,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayProperties2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayProperties2KHR"/>.</returns>
         public static VkDisplayProperties2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2250,7 +2250,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplayPropertiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplayPropertiesKHR"/>.</returns>
         public static VkDisplayPropertiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2269,7 +2269,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDisplaySurfaceCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDisplaySurfaceCreateInfoKHR"/>.</returns>
         public static VkDisplaySurfaceCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2289,7 +2289,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDrawIndexedIndirectCommand"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDrawIndexedIndirectCommand"/>.</returns>
         public static VkDrawIndexedIndirectCommand* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2308,7 +2308,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDrawIndirectCommand"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDrawIndirectCommand"/>.</returns>
         public static VkDrawIndirectCommand* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2327,7 +2327,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDrawMeshTasksIndirectCommandNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDrawMeshTasksIndirectCommandNV"/>.</returns>
         public static VkDrawMeshTasksIndirectCommandNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2346,7 +2346,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDrmFormatModifierPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDrmFormatModifierPropertiesEXT"/>.</returns>
         public static VkDrmFormatModifierPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2365,7 +2365,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkDrmFormatModifierPropertiesListEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkDrmFormatModifierPropertiesListEXT"/>.</returns>
         public static VkDrmFormatModifierPropertiesListEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2385,7 +2385,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkEventCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkEventCreateInfo"/>.</returns>
         public static VkEventCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2405,7 +2405,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExportFenceCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExportFenceCreateInfo"/>.</returns>
         public static VkExportFenceCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2425,7 +2425,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExportFenceWin32HandleInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExportFenceWin32HandleInfoKHR"/>.</returns>
         public static VkExportFenceWin32HandleInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2445,7 +2445,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExportMemoryAllocateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExportMemoryAllocateInfo"/>.</returns>
         public static VkExportMemoryAllocateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2465,7 +2465,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExportMemoryAllocateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExportMemoryAllocateInfoNV"/>.</returns>
         public static VkExportMemoryAllocateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2485,7 +2485,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExportMemoryWin32HandleInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExportMemoryWin32HandleInfoKHR"/>.</returns>
         public static VkExportMemoryWin32HandleInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2505,7 +2505,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExportMemoryWin32HandleInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExportMemoryWin32HandleInfoNV"/>.</returns>
         public static VkExportMemoryWin32HandleInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2525,7 +2525,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExportSemaphoreCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExportSemaphoreCreateInfo"/>.</returns>
         public static VkExportSemaphoreCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2545,7 +2545,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExportSemaphoreWin32HandleInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExportSemaphoreWin32HandleInfoKHR"/>.</returns>
         public static VkExportSemaphoreWin32HandleInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2565,7 +2565,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExtensionProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExtensionProperties"/>.</returns>
         public static VkExtensionProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2584,7 +2584,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExtent2D"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExtent2D"/>.</returns>
         public static VkExtent2D* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2603,7 +2603,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExtent3D"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExtent3D"/>.</returns>
         public static VkExtent3D* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2622,7 +2622,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalBufferProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalBufferProperties"/>.</returns>
         public static VkExternalBufferProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2642,7 +2642,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalFenceProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalFenceProperties"/>.</returns>
         public static VkExternalFenceProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2662,7 +2662,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalFormatANDROID"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalFormatANDROID"/>.</returns>
         public static VkExternalFormatANDROID* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2682,7 +2682,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalImageFormatProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalImageFormatProperties"/>.</returns>
         public static VkExternalImageFormatProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2702,7 +2702,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalImageFormatPropertiesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalImageFormatPropertiesNV"/>.</returns>
         public static VkExternalImageFormatPropertiesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2721,7 +2721,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalMemoryBufferCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalMemoryBufferCreateInfo"/>.</returns>
         public static VkExternalMemoryBufferCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2741,7 +2741,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalMemoryImageCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalMemoryImageCreateInfo"/>.</returns>
         public static VkExternalMemoryImageCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2761,7 +2761,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalMemoryImageCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalMemoryImageCreateInfoNV"/>.</returns>
         public static VkExternalMemoryImageCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2781,7 +2781,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalMemoryProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalMemoryProperties"/>.</returns>
         public static VkExternalMemoryProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2800,7 +2800,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkExternalSemaphoreProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkExternalSemaphoreProperties"/>.</returns>
         public static VkExternalSemaphoreProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2820,7 +2820,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkFenceCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkFenceCreateInfo"/>.</returns>
         public static VkFenceCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2840,7 +2840,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkFenceGetFdInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkFenceGetFdInfoKHR"/>.</returns>
         public static VkFenceGetFdInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2860,7 +2860,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkFenceGetWin32HandleInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkFenceGetWin32HandleInfoKHR"/>.</returns>
         public static VkFenceGetWin32HandleInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2880,7 +2880,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkFilterCubicImageViewImageFormatPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkFilterCubicImageViewImageFormatPropertiesEXT"/>.</returns>
         public static VkFilterCubicImageViewImageFormatPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2900,7 +2900,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkFormatProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkFormatProperties"/>.</returns>
         public static VkFormatProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2919,7 +2919,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkFormatProperties2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkFormatProperties2"/>.</returns>
         public static VkFormatProperties2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2939,7 +2939,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkFramebufferCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkFramebufferCreateInfo"/>.</returns>
         public static VkFramebufferCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2959,7 +2959,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkGeometryAABBNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkGeometryAABBNV"/>.</returns>
         public static VkGeometryAABBNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2979,7 +2979,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkGeometryDataNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkGeometryDataNV"/>.</returns>
         public static VkGeometryDataNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -2998,7 +2998,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkGeometryNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkGeometryNV"/>.</returns>
         public static VkGeometryNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3018,7 +3018,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkGeometryTrianglesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkGeometryTrianglesNV"/>.</returns>
         public static VkGeometryTrianglesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3038,7 +3038,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkGraphicsPipelineCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkGraphicsPipelineCreateInfo"/>.</returns>
         public static VkGraphicsPipelineCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3058,7 +3058,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkHdrMetadataEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkHdrMetadataEXT"/>.</returns>
         public static VkHdrMetadataEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3078,7 +3078,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkIOSSurfaceCreateInfoMVK"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkIOSSurfaceCreateInfoMVK"/>.</returns>
         public static VkIOSSurfaceCreateInfoMVK* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3098,7 +3098,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageBlit"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageBlit"/>.</returns>
         public static VkImageBlit* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3117,7 +3117,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageCopy"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageCopy"/>.</returns>
         public static VkImageCopy* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3136,7 +3136,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageCreateInfo"/>.</returns>
         public static VkImageCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3156,7 +3156,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageDrmFormatModifierExplicitCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageDrmFormatModifierExplicitCreateInfoEXT"/>.</returns>
         public static VkImageDrmFormatModifierExplicitCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3176,7 +3176,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageDrmFormatModifierListCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageDrmFormatModifierListCreateInfoEXT"/>.</returns>
         public static VkImageDrmFormatModifierListCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3196,7 +3196,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageDrmFormatModifierPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageDrmFormatModifierPropertiesEXT"/>.</returns>
         public static VkImageDrmFormatModifierPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3216,7 +3216,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageFormatListCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageFormatListCreateInfoKHR"/>.</returns>
         public static VkImageFormatListCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3236,7 +3236,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageFormatProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageFormatProperties"/>.</returns>
         public static VkImageFormatProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3255,7 +3255,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageFormatProperties2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageFormatProperties2"/>.</returns>
         public static VkImageFormatProperties2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3275,7 +3275,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageMemoryBarrier"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageMemoryBarrier"/>.</returns>
         public static VkImageMemoryBarrier* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3295,7 +3295,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageMemoryRequirementsInfo2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageMemoryRequirementsInfo2"/>.</returns>
         public static VkImageMemoryRequirementsInfo2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3315,7 +3315,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImagePipeSurfaceCreateInfoFUCHSIA"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImagePipeSurfaceCreateInfoFUCHSIA"/>.</returns>
         public static VkImagePipeSurfaceCreateInfoFUCHSIA* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3335,7 +3335,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImagePlaneMemoryRequirementsInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImagePlaneMemoryRequirementsInfo"/>.</returns>
         public static VkImagePlaneMemoryRequirementsInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3355,7 +3355,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageResolve"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageResolve"/>.</returns>
         public static VkImageResolve* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3374,7 +3374,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageSparseMemoryRequirementsInfo2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageSparseMemoryRequirementsInfo2"/>.</returns>
         public static VkImageSparseMemoryRequirementsInfo2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3394,7 +3394,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageStencilUsageCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageStencilUsageCreateInfoEXT"/>.</returns>
         public static VkImageStencilUsageCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3414,7 +3414,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageSubresource"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageSubresource"/>.</returns>
         public static VkImageSubresource* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3433,7 +3433,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageSubresourceLayers"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageSubresourceLayers"/>.</returns>
         public static VkImageSubresourceLayers* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3452,7 +3452,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageSubresourceRange"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageSubresourceRange"/>.</returns>
         public static VkImageSubresourceRange* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3471,7 +3471,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageSwapchainCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageSwapchainCreateInfoKHR"/>.</returns>
         public static VkImageSwapchainCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3491,7 +3491,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageViewASTCDecodeModeEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageViewASTCDecodeModeEXT"/>.</returns>
         public static VkImageViewASTCDecodeModeEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3511,7 +3511,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageViewCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageViewCreateInfo"/>.</returns>
         public static VkImageViewCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3531,7 +3531,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageViewHandleInfoNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageViewHandleInfoNVX"/>.</returns>
         public static VkImageViewHandleInfoNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3551,7 +3551,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImageViewUsageCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImageViewUsageCreateInfo"/>.</returns>
         public static VkImageViewUsageCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3571,7 +3571,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImportAndroidHardwareBufferInfoANDROID"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImportAndroidHardwareBufferInfoANDROID"/>.</returns>
         public static VkImportAndroidHardwareBufferInfoANDROID* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3591,7 +3591,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImportFenceFdInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImportFenceFdInfoKHR"/>.</returns>
         public static VkImportFenceFdInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3611,7 +3611,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImportFenceWin32HandleInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImportFenceWin32HandleInfoKHR"/>.</returns>
         public static VkImportFenceWin32HandleInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3631,7 +3631,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImportMemoryFdInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImportMemoryFdInfoKHR"/>.</returns>
         public static VkImportMemoryFdInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3651,7 +3651,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImportMemoryHostPointerInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImportMemoryHostPointerInfoEXT"/>.</returns>
         public static VkImportMemoryHostPointerInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3671,7 +3671,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImportMemoryWin32HandleInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImportMemoryWin32HandleInfoKHR"/>.</returns>
         public static VkImportMemoryWin32HandleInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3691,7 +3691,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImportMemoryWin32HandleInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImportMemoryWin32HandleInfoNV"/>.</returns>
         public static VkImportMemoryWin32HandleInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3711,7 +3711,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImportSemaphoreFdInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImportSemaphoreFdInfoKHR"/>.</returns>
         public static VkImportSemaphoreFdInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3731,7 +3731,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkImportSemaphoreWin32HandleInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkImportSemaphoreWin32HandleInfoKHR"/>.</returns>
         public static VkImportSemaphoreWin32HandleInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3751,7 +3751,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkIndirectCommandsLayoutCreateInfoNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkIndirectCommandsLayoutCreateInfoNVX"/>.</returns>
         public static VkIndirectCommandsLayoutCreateInfoNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3771,7 +3771,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkIndirectCommandsLayoutTokenNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkIndirectCommandsLayoutTokenNVX"/>.</returns>
         public static VkIndirectCommandsLayoutTokenNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3790,7 +3790,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkIndirectCommandsTokenNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkIndirectCommandsTokenNVX"/>.</returns>
         public static VkIndirectCommandsTokenNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3809,7 +3809,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkInputAttachmentAspectReference"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkInputAttachmentAspectReference"/>.</returns>
         public static VkInputAttachmentAspectReference* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3828,7 +3828,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkInstanceCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkInstanceCreateInfo"/>.</returns>
         public static VkInstanceCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3848,7 +3848,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkLayerProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkLayerProperties"/>.</returns>
         public static VkLayerProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3867,7 +3867,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMacOSSurfaceCreateInfoMVK"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMacOSSurfaceCreateInfoMVK"/>.</returns>
         public static VkMacOSSurfaceCreateInfoMVK* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3887,7 +3887,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMappedMemoryRange"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMappedMemoryRange"/>.</returns>
         public static VkMappedMemoryRange* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3907,7 +3907,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryAllocateFlagsInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryAllocateFlagsInfo"/>.</returns>
         public static VkMemoryAllocateFlagsInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3927,7 +3927,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryAllocateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryAllocateInfo"/>.</returns>
         public static VkMemoryAllocateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3947,7 +3947,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryBarrier"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryBarrier"/>.</returns>
         public static VkMemoryBarrier* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3967,7 +3967,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryDedicatedAllocateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryDedicatedAllocateInfo"/>.</returns>
         public static VkMemoryDedicatedAllocateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -3987,7 +3987,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryDedicatedRequirements"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryDedicatedRequirements"/>.</returns>
         public static VkMemoryDedicatedRequirements* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4007,7 +4007,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryFdPropertiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryFdPropertiesKHR"/>.</returns>
         public static VkMemoryFdPropertiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4027,7 +4027,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryGetAndroidHardwareBufferInfoANDROID"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryGetAndroidHardwareBufferInfoANDROID"/>.</returns>
         public static VkMemoryGetAndroidHardwareBufferInfoANDROID* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4047,7 +4047,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryGetFdInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryGetFdInfoKHR"/>.</returns>
         public static VkMemoryGetFdInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4067,7 +4067,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryGetWin32HandleInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryGetWin32HandleInfoKHR"/>.</returns>
         public static VkMemoryGetWin32HandleInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4087,7 +4087,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryHeap"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryHeap"/>.</returns>
         public static VkMemoryHeap* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4106,7 +4106,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryHostPointerPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryHostPointerPropertiesEXT"/>.</returns>
         public static VkMemoryHostPointerPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4126,7 +4126,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryPriorityAllocateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryPriorityAllocateInfoEXT"/>.</returns>
         public static VkMemoryPriorityAllocateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4146,7 +4146,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryRequirements"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryRequirements"/>.</returns>
         public static VkMemoryRequirements* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4165,7 +4165,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryRequirements2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryRequirements2"/>.</returns>
         public static VkMemoryRequirements2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4185,7 +4185,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryType"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryType"/>.</returns>
         public static VkMemoryType* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4204,7 +4204,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMemoryWin32HandlePropertiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMemoryWin32HandlePropertiesKHR"/>.</returns>
         public static VkMemoryWin32HandlePropertiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4224,7 +4224,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMetalSurfaceCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMetalSurfaceCreateInfoEXT"/>.</returns>
         public static VkMetalSurfaceCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4244,7 +4244,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkMultisamplePropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkMultisamplePropertiesEXT"/>.</returns>
         public static VkMultisamplePropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4264,7 +4264,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkObjectTableCreateInfoNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkObjectTableCreateInfoNVX"/>.</returns>
         public static VkObjectTableCreateInfoNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4284,7 +4284,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkObjectTableDescriptorSetEntryNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkObjectTableDescriptorSetEntryNVX"/>.</returns>
         public static VkObjectTableDescriptorSetEntryNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4303,7 +4303,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkObjectTableEntryNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkObjectTableEntryNVX"/>.</returns>
         public static VkObjectTableEntryNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4322,7 +4322,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkObjectTableIndexBufferEntryNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkObjectTableIndexBufferEntryNVX"/>.</returns>
         public static VkObjectTableIndexBufferEntryNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4341,7 +4341,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkObjectTablePipelineEntryNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkObjectTablePipelineEntryNVX"/>.</returns>
         public static VkObjectTablePipelineEntryNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4360,7 +4360,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkObjectTablePushConstantEntryNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkObjectTablePushConstantEntryNVX"/>.</returns>
         public static VkObjectTablePushConstantEntryNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4379,7 +4379,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkObjectTableVertexBufferEntryNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkObjectTableVertexBufferEntryNVX"/>.</returns>
         public static VkObjectTableVertexBufferEntryNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4398,7 +4398,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkOffset2D"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkOffset2D"/>.</returns>
         public static VkOffset2D* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4417,7 +4417,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkOffset3D"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkOffset3D"/>.</returns>
         public static VkOffset3D* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4436,7 +4436,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPastPresentationTimingGOOGLE"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPastPresentationTimingGOOGLE"/>.</returns>
         public static VkPastPresentationTimingGOOGLE* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4455,7 +4455,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDevice16BitStorageFeatures"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDevice16BitStorageFeatures"/>.</returns>
         public static VkPhysicalDevice16BitStorageFeatures* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4475,7 +4475,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDevice8BitStorageFeaturesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDevice8BitStorageFeaturesKHR"/>.</returns>
         public static VkPhysicalDevice8BitStorageFeaturesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4495,7 +4495,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceASTCDecodeFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceASTCDecodeFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceASTCDecodeFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4515,7 +4515,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4535,7 +4535,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4555,7 +4555,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceBufferDeviceAddressFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceBufferDeviceAddressFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceBufferDeviceAddressFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4575,7 +4575,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceComputeShaderDerivativesFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceComputeShaderDerivativesFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceComputeShaderDerivativesFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4595,7 +4595,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceConditionalRenderingFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceConditionalRenderingFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceConditionalRenderingFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4615,7 +4615,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceConservativeRasterizationPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceConservativeRasterizationPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceConservativeRasterizationPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4635,7 +4635,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceCooperativeMatrixFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceCooperativeMatrixFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceCooperativeMatrixFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4655,7 +4655,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceCooperativeMatrixPropertiesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceCooperativeMatrixPropertiesNV"/>.</returns>
         public static VkPhysicalDeviceCooperativeMatrixPropertiesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4675,7 +4675,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceCornerSampledImageFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceCornerSampledImageFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceCornerSampledImageFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4695,7 +4695,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4715,7 +4715,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceDepthClipEnableFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceDepthClipEnableFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceDepthClipEnableFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4735,7 +4735,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceDepthStencilResolvePropertiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceDepthStencilResolvePropertiesKHR"/>.</returns>
         public static VkPhysicalDeviceDepthStencilResolvePropertiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4755,7 +4755,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceDescriptorIndexingFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceDescriptorIndexingFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceDescriptorIndexingFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4775,7 +4775,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceDescriptorIndexingPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceDescriptorIndexingPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceDescriptorIndexingPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4795,7 +4795,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceDiscardRectanglePropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceDiscardRectanglePropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceDiscardRectanglePropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4815,7 +4815,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceDriverPropertiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceDriverPropertiesKHR"/>.</returns>
         public static VkPhysicalDeviceDriverPropertiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4835,7 +4835,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceExclusiveScissorFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceExclusiveScissorFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceExclusiveScissorFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4855,7 +4855,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceExternalBufferInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceExternalBufferInfo"/>.</returns>
         public static VkPhysicalDeviceExternalBufferInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4875,7 +4875,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceExternalFenceInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceExternalFenceInfo"/>.</returns>
         public static VkPhysicalDeviceExternalFenceInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4895,7 +4895,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceExternalImageFormatInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceExternalImageFormatInfo"/>.</returns>
         public static VkPhysicalDeviceExternalImageFormatInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4915,7 +4915,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceExternalMemoryHostPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceExternalMemoryHostPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceExternalMemoryHostPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4935,7 +4935,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceExternalSemaphoreInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceExternalSemaphoreInfo"/>.</returns>
         public static VkPhysicalDeviceExternalSemaphoreInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4955,7 +4955,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceFeatures"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceFeatures"/>.</returns>
         public static VkPhysicalDeviceFeatures* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4974,7 +4974,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceFeatures2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceFeatures2"/>.</returns>
         public static VkPhysicalDeviceFeatures2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -4994,7 +4994,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceFloat16Int8FeaturesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceFloat16Int8FeaturesKHR"/>.</returns>
         public static VkPhysicalDeviceFloat16Int8FeaturesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5014,7 +5014,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceFloatControlsPropertiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceFloatControlsPropertiesKHR"/>.</returns>
         public static VkPhysicalDeviceFloatControlsPropertiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5034,7 +5034,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceFragmentDensityMapFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceFragmentDensityMapFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceFragmentDensityMapFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5054,7 +5054,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceFragmentDensityMapPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceFragmentDensityMapPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceFragmentDensityMapPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5074,7 +5074,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5094,7 +5094,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceGroupProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceGroupProperties"/>.</returns>
         public static VkPhysicalDeviceGroupProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5114,7 +5114,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceHostQueryResetFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceHostQueryResetFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceHostQueryResetFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5134,7 +5134,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceIDProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceIDProperties"/>.</returns>
         public static VkPhysicalDeviceIDProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5154,7 +5154,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceImageDrmFormatModifierInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceImageDrmFormatModifierInfoEXT"/>.</returns>
         public static VkPhysicalDeviceImageDrmFormatModifierInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5174,7 +5174,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceImageFormatInfo2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceImageFormatInfo2"/>.</returns>
         public static VkPhysicalDeviceImageFormatInfo2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5194,7 +5194,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceImageViewImageFormatInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceImageViewImageFormatInfoEXT"/>.</returns>
         public static VkPhysicalDeviceImageViewImageFormatInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5214,7 +5214,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceInlineUniformBlockFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceInlineUniformBlockFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceInlineUniformBlockFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5234,7 +5234,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceInlineUniformBlockPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceInlineUniformBlockPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceInlineUniformBlockPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5254,7 +5254,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceLimits"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceLimits"/>.</returns>
         public static VkPhysicalDeviceLimits* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5273,7 +5273,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMaintenance3Properties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMaintenance3Properties"/>.</returns>
         public static VkPhysicalDeviceMaintenance3Properties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5293,7 +5293,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMemoryBudgetPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMemoryBudgetPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceMemoryBudgetPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5313,7 +5313,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMemoryPriorityFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMemoryPriorityFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceMemoryPriorityFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5333,7 +5333,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMemoryProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMemoryProperties"/>.</returns>
         public static VkPhysicalDeviceMemoryProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5352,7 +5352,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMemoryProperties2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMemoryProperties2"/>.</returns>
         public static VkPhysicalDeviceMemoryProperties2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5372,7 +5372,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMeshShaderFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMeshShaderFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceMeshShaderFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5392,7 +5392,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMeshShaderPropertiesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMeshShaderPropertiesNV"/>.</returns>
         public static VkPhysicalDeviceMeshShaderPropertiesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5412,7 +5412,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMultiviewFeatures"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMultiviewFeatures"/>.</returns>
         public static VkPhysicalDeviceMultiviewFeatures* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5432,7 +5432,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX"/>.</returns>
         public static VkPhysicalDeviceMultiviewPerViewAttributesPropertiesNVX* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5452,7 +5452,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceMultiviewProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceMultiviewProperties"/>.</returns>
         public static VkPhysicalDeviceMultiviewProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5472,7 +5472,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDevicePCIBusInfoPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDevicePCIBusInfoPropertiesEXT"/>.</returns>
         public static VkPhysicalDevicePCIBusInfoPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5492,7 +5492,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDevicePointClippingProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDevicePointClippingProperties"/>.</returns>
         public static VkPhysicalDevicePointClippingProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5512,7 +5512,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceProperties"/>.</returns>
         public static VkPhysicalDeviceProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5531,7 +5531,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceProperties2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceProperties2"/>.</returns>
         public static VkPhysicalDeviceProperties2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5551,7 +5551,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceProtectedMemoryFeatures"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceProtectedMemoryFeatures"/>.</returns>
         public static VkPhysicalDeviceProtectedMemoryFeatures* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5571,7 +5571,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceProtectedMemoryProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceProtectedMemoryProperties"/>.</returns>
         public static VkPhysicalDeviceProtectedMemoryProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5591,7 +5591,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDevicePushDescriptorPropertiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDevicePushDescriptorPropertiesKHR"/>.</returns>
         public static VkPhysicalDevicePushDescriptorPropertiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5611,7 +5611,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceRayTracingPropertiesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceRayTracingPropertiesNV"/>.</returns>
         public static VkPhysicalDeviceRayTracingPropertiesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5631,7 +5631,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5651,7 +5651,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceSampleLocationsPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceSampleLocationsPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceSampleLocationsPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5671,7 +5671,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5691,7 +5691,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceSamplerYcbcrConversionFeatures"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceSamplerYcbcrConversionFeatures"/>.</returns>
         public static VkPhysicalDeviceSamplerYcbcrConversionFeatures* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5711,7 +5711,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceScalarBlockLayoutFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceScalarBlockLayoutFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceScalarBlockLayoutFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5731,7 +5731,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceShaderAtomicInt64FeaturesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceShaderAtomicInt64FeaturesKHR"/>.</returns>
         public static VkPhysicalDeviceShaderAtomicInt64FeaturesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5751,7 +5751,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceShaderCorePropertiesAMD"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceShaderCorePropertiesAMD"/>.</returns>
         public static VkPhysicalDeviceShaderCorePropertiesAMD* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5771,7 +5771,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceShaderDrawParametersFeatures"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceShaderDrawParametersFeatures"/>.</returns>
         public static VkPhysicalDeviceShaderDrawParametersFeatures* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5791,7 +5791,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceShaderImageFootprintFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceShaderImageFootprintFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceShaderImageFootprintFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5811,7 +5811,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceShadingRateImageFeaturesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceShadingRateImageFeaturesNV"/>.</returns>
         public static VkPhysicalDeviceShadingRateImageFeaturesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5831,7 +5831,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceShadingRateImagePropertiesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceShadingRateImagePropertiesNV"/>.</returns>
         public static VkPhysicalDeviceShadingRateImagePropertiesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5851,7 +5851,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceSparseImageFormatInfo2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceSparseImageFormatInfo2"/>.</returns>
         public static VkPhysicalDeviceSparseImageFormatInfo2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5871,7 +5871,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceSparseProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceSparseProperties"/>.</returns>
         public static VkPhysicalDeviceSparseProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5890,7 +5890,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceSubgroupProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceSubgroupProperties"/>.</returns>
         public static VkPhysicalDeviceSubgroupProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5910,7 +5910,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceSurfaceInfo2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceSurfaceInfo2KHR"/>.</returns>
         public static VkPhysicalDeviceSurfaceInfo2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5930,7 +5930,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceTransformFeedbackFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceTransformFeedbackFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceTransformFeedbackFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5950,7 +5950,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceTransformFeedbackPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceTransformFeedbackPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceTransformFeedbackPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5970,7 +5970,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceVariablePointersFeatures"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceVariablePointersFeatures"/>.</returns>
         public static VkPhysicalDeviceVariablePointersFeatures* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -5990,7 +5990,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6010,7 +6010,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT"/>.</returns>
         public static VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6030,7 +6030,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceVulkanMemoryModelFeaturesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceVulkanMemoryModelFeaturesKHR"/>.</returns>
         public static VkPhysicalDeviceVulkanMemoryModelFeaturesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6050,7 +6050,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPhysicalDeviceYcbcrImageArraysFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPhysicalDeviceYcbcrImageArraysFeaturesEXT"/>.</returns>
         public static VkPhysicalDeviceYcbcrImageArraysFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6070,7 +6070,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineCacheCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineCacheCreateInfo"/>.</returns>
         public static VkPipelineCacheCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6090,7 +6090,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineColorBlendAdvancedStateCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineColorBlendAdvancedStateCreateInfoEXT"/>.</returns>
         public static VkPipelineColorBlendAdvancedStateCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6110,7 +6110,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineColorBlendAttachmentState"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineColorBlendAttachmentState"/>.</returns>
         public static VkPipelineColorBlendAttachmentState* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6129,7 +6129,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineColorBlendStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineColorBlendStateCreateInfo"/>.</returns>
         public static VkPipelineColorBlendStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6149,7 +6149,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineCoverageModulationStateCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineCoverageModulationStateCreateInfoNV"/>.</returns>
         public static VkPipelineCoverageModulationStateCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6169,7 +6169,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineCoverageToColorStateCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineCoverageToColorStateCreateInfoNV"/>.</returns>
         public static VkPipelineCoverageToColorStateCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6189,7 +6189,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineCreationFeedbackCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineCreationFeedbackCreateInfoEXT"/>.</returns>
         public static VkPipelineCreationFeedbackCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6209,7 +6209,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineCreationFeedbackEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineCreationFeedbackEXT"/>.</returns>
         public static VkPipelineCreationFeedbackEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6228,7 +6228,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineDepthStencilStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineDepthStencilStateCreateInfo"/>.</returns>
         public static VkPipelineDepthStencilStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6248,7 +6248,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineDiscardRectangleStateCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineDiscardRectangleStateCreateInfoEXT"/>.</returns>
         public static VkPipelineDiscardRectangleStateCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6268,7 +6268,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineDynamicStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineDynamicStateCreateInfo"/>.</returns>
         public static VkPipelineDynamicStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6288,7 +6288,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineInputAssemblyStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineInputAssemblyStateCreateInfo"/>.</returns>
         public static VkPipelineInputAssemblyStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6308,7 +6308,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineLayoutCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineLayoutCreateInfo"/>.</returns>
         public static VkPipelineLayoutCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6328,7 +6328,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineMultisampleStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineMultisampleStateCreateInfo"/>.</returns>
         public static VkPipelineMultisampleStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6348,7 +6348,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineRasterizationConservativeStateCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineRasterizationConservativeStateCreateInfoEXT"/>.</returns>
         public static VkPipelineRasterizationConservativeStateCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6368,7 +6368,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineRasterizationDepthClipStateCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineRasterizationDepthClipStateCreateInfoEXT"/>.</returns>
         public static VkPipelineRasterizationDepthClipStateCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6388,7 +6388,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineRasterizationStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineRasterizationStateCreateInfo"/>.</returns>
         public static VkPipelineRasterizationStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6408,7 +6408,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineRasterizationStateRasterizationOrderAMD"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineRasterizationStateRasterizationOrderAMD"/>.</returns>
         public static VkPipelineRasterizationStateRasterizationOrderAMD* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6428,7 +6428,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineRasterizationStateStreamCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineRasterizationStateStreamCreateInfoEXT"/>.</returns>
         public static VkPipelineRasterizationStateStreamCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6448,7 +6448,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineRepresentativeFragmentTestStateCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineRepresentativeFragmentTestStateCreateInfoNV"/>.</returns>
         public static VkPipelineRepresentativeFragmentTestStateCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6468,7 +6468,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineSampleLocationsStateCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineSampleLocationsStateCreateInfoEXT"/>.</returns>
         public static VkPipelineSampleLocationsStateCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6488,7 +6488,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineShaderStageCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineShaderStageCreateInfo"/>.</returns>
         public static VkPipelineShaderStageCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6508,7 +6508,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineTessellationDomainOriginStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineTessellationDomainOriginStateCreateInfo"/>.</returns>
         public static VkPipelineTessellationDomainOriginStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6528,7 +6528,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineTessellationStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineTessellationStateCreateInfo"/>.</returns>
         public static VkPipelineTessellationStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6548,7 +6548,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineVertexInputDivisorStateCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineVertexInputDivisorStateCreateInfoEXT"/>.</returns>
         public static VkPipelineVertexInputDivisorStateCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6568,7 +6568,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineVertexInputStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineVertexInputStateCreateInfo"/>.</returns>
         public static VkPipelineVertexInputStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6588,7 +6588,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineViewportCoarseSampleOrderStateCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineViewportCoarseSampleOrderStateCreateInfoNV"/>.</returns>
         public static VkPipelineViewportCoarseSampleOrderStateCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6608,7 +6608,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineViewportExclusiveScissorStateCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineViewportExclusiveScissorStateCreateInfoNV"/>.</returns>
         public static VkPipelineViewportExclusiveScissorStateCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6628,7 +6628,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineViewportShadingRateImageStateCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineViewportShadingRateImageStateCreateInfoNV"/>.</returns>
         public static VkPipelineViewportShadingRateImageStateCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6648,7 +6648,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineViewportStateCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineViewportStateCreateInfo"/>.</returns>
         public static VkPipelineViewportStateCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6668,7 +6668,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineViewportSwizzleStateCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineViewportSwizzleStateCreateInfoNV"/>.</returns>
         public static VkPipelineViewportSwizzleStateCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6688,7 +6688,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPipelineViewportWScalingStateCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPipelineViewportWScalingStateCreateInfoNV"/>.</returns>
         public static VkPipelineViewportWScalingStateCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6708,7 +6708,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPresentFrameTokenGGP"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPresentFrameTokenGGP"/>.</returns>
         public static VkPresentFrameTokenGGP* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6728,7 +6728,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPresentInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPresentInfoKHR"/>.</returns>
         public static VkPresentInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6748,7 +6748,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPresentRegionKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPresentRegionKHR"/>.</returns>
         public static VkPresentRegionKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6767,7 +6767,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPresentRegionsKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPresentRegionsKHR"/>.</returns>
         public static VkPresentRegionsKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6787,7 +6787,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPresentTimeGOOGLE"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPresentTimeGOOGLE"/>.</returns>
         public static VkPresentTimeGOOGLE* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6806,7 +6806,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPresentTimesInfoGOOGLE"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPresentTimesInfoGOOGLE"/>.</returns>
         public static VkPresentTimesInfoGOOGLE* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6826,7 +6826,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkProtectedSubmitInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkProtectedSubmitInfo"/>.</returns>
         public static VkProtectedSubmitInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6846,7 +6846,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkPushConstantRange"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkPushConstantRange"/>.</returns>
         public static VkPushConstantRange* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6865,7 +6865,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkQueryPoolCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkQueryPoolCreateInfo"/>.</returns>
         public static VkQueryPoolCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6885,7 +6885,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkQueueFamilyCheckpointPropertiesNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkQueueFamilyCheckpointPropertiesNV"/>.</returns>
         public static VkQueueFamilyCheckpointPropertiesNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6905,7 +6905,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkQueueFamilyProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkQueueFamilyProperties"/>.</returns>
         public static VkQueueFamilyProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6924,7 +6924,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkQueueFamilyProperties2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkQueueFamilyProperties2"/>.</returns>
         public static VkQueueFamilyProperties2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6944,7 +6944,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRayTracingPipelineCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRayTracingPipelineCreateInfoNV"/>.</returns>
         public static VkRayTracingPipelineCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6964,7 +6964,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRayTracingShaderGroupCreateInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRayTracingShaderGroupCreateInfoNV"/>.</returns>
         public static VkRayTracingShaderGroupCreateInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -6984,7 +6984,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRect2D"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRect2D"/>.</returns>
         public static VkRect2D* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7003,7 +7003,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRectLayerKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRectLayerKHR"/>.</returns>
         public static VkRectLayerKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7022,7 +7022,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRefreshCycleDurationGOOGLE"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRefreshCycleDurationGOOGLE"/>.</returns>
         public static VkRefreshCycleDurationGOOGLE* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7041,7 +7041,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRenderPassBeginInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRenderPassBeginInfo"/>.</returns>
         public static VkRenderPassBeginInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7061,7 +7061,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRenderPassCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRenderPassCreateInfo"/>.</returns>
         public static VkRenderPassCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7081,7 +7081,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRenderPassCreateInfo2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRenderPassCreateInfo2KHR"/>.</returns>
         public static VkRenderPassCreateInfo2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7101,7 +7101,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRenderPassFragmentDensityMapCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRenderPassFragmentDensityMapCreateInfoEXT"/>.</returns>
         public static VkRenderPassFragmentDensityMapCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7121,7 +7121,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRenderPassInputAttachmentAspectCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRenderPassInputAttachmentAspectCreateInfo"/>.</returns>
         public static VkRenderPassInputAttachmentAspectCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7141,7 +7141,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRenderPassMultiviewCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRenderPassMultiviewCreateInfo"/>.</returns>
         public static VkRenderPassMultiviewCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7161,7 +7161,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkRenderPassSampleLocationsBeginInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkRenderPassSampleLocationsBeginInfoEXT"/>.</returns>
         public static VkRenderPassSampleLocationsBeginInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7181,7 +7181,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSampleLocationEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSampleLocationEXT"/>.</returns>
         public static VkSampleLocationEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7200,7 +7200,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSampleLocationsInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSampleLocationsInfoEXT"/>.</returns>
         public static VkSampleLocationsInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7220,7 +7220,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSamplerCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSamplerCreateInfo"/>.</returns>
         public static VkSamplerCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7240,7 +7240,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSamplerReductionModeCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSamplerReductionModeCreateInfoEXT"/>.</returns>
         public static VkSamplerReductionModeCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7260,7 +7260,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSamplerYcbcrConversionCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSamplerYcbcrConversionCreateInfo"/>.</returns>
         public static VkSamplerYcbcrConversionCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7280,7 +7280,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSamplerYcbcrConversionImageFormatProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSamplerYcbcrConversionImageFormatProperties"/>.</returns>
         public static VkSamplerYcbcrConversionImageFormatProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7300,7 +7300,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSamplerYcbcrConversionInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSamplerYcbcrConversionInfo"/>.</returns>
         public static VkSamplerYcbcrConversionInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7320,7 +7320,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSemaphoreCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSemaphoreCreateInfo"/>.</returns>
         public static VkSemaphoreCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7340,7 +7340,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSemaphoreGetFdInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSemaphoreGetFdInfoKHR"/>.</returns>
         public static VkSemaphoreGetFdInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7360,7 +7360,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSemaphoreGetWin32HandleInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSemaphoreGetWin32HandleInfoKHR"/>.</returns>
         public static VkSemaphoreGetWin32HandleInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7380,7 +7380,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkShaderModuleCreateInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkShaderModuleCreateInfo"/>.</returns>
         public static VkShaderModuleCreateInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7400,7 +7400,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkShaderModuleValidationCacheCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkShaderModuleValidationCacheCreateInfoEXT"/>.</returns>
         public static VkShaderModuleValidationCacheCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7420,7 +7420,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkShaderResourceUsageAMD"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkShaderResourceUsageAMD"/>.</returns>
         public static VkShaderResourceUsageAMD* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7439,7 +7439,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkShaderStatisticsInfoAMD"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkShaderStatisticsInfoAMD"/>.</returns>
         public static VkShaderStatisticsInfoAMD* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7458,7 +7458,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkShadingRatePaletteNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkShadingRatePaletteNV"/>.</returns>
         public static VkShadingRatePaletteNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7477,7 +7477,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSharedPresentSurfaceCapabilitiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSharedPresentSurfaceCapabilitiesKHR"/>.</returns>
         public static VkSharedPresentSurfaceCapabilitiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7497,7 +7497,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSparseBufferMemoryBindInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSparseBufferMemoryBindInfo"/>.</returns>
         public static VkSparseBufferMemoryBindInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7516,7 +7516,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSparseImageFormatProperties"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSparseImageFormatProperties"/>.</returns>
         public static VkSparseImageFormatProperties* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7535,7 +7535,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSparseImageFormatProperties2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSparseImageFormatProperties2"/>.</returns>
         public static VkSparseImageFormatProperties2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7555,7 +7555,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSparseImageMemoryBind"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSparseImageMemoryBind"/>.</returns>
         public static VkSparseImageMemoryBind* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7574,7 +7574,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSparseImageMemoryBindInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSparseImageMemoryBindInfo"/>.</returns>
         public static VkSparseImageMemoryBindInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7593,7 +7593,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSparseImageMemoryRequirements"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSparseImageMemoryRequirements"/>.</returns>
         public static VkSparseImageMemoryRequirements* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7612,7 +7612,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSparseImageMemoryRequirements2"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSparseImageMemoryRequirements2"/>.</returns>
         public static VkSparseImageMemoryRequirements2* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7632,7 +7632,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSparseImageOpaqueMemoryBindInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSparseImageOpaqueMemoryBindInfo"/>.</returns>
         public static VkSparseImageOpaqueMemoryBindInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7651,7 +7651,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSparseMemoryBind"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSparseMemoryBind"/>.</returns>
         public static VkSparseMemoryBind* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7670,7 +7670,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSpecializationInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSpecializationInfo"/>.</returns>
         public static VkSpecializationInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7689,7 +7689,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSpecializationMapEntry"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSpecializationMapEntry"/>.</returns>
         public static VkSpecializationMapEntry* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7708,7 +7708,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkStencilOpState"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkStencilOpState"/>.</returns>
         public static VkStencilOpState* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7727,7 +7727,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkStreamDescriptorSurfaceCreateInfoGGP"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkStreamDescriptorSurfaceCreateInfoGGP"/>.</returns>
         public static VkStreamDescriptorSurfaceCreateInfoGGP* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7747,7 +7747,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubmitInfo"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubmitInfo"/>.</returns>
         public static VkSubmitInfo* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7767,7 +7767,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubpassBeginInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubpassBeginInfoKHR"/>.</returns>
         public static VkSubpassBeginInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7787,7 +7787,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubpassDependency"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubpassDependency"/>.</returns>
         public static VkSubpassDependency* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7806,7 +7806,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubpassDependency2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubpassDependency2KHR"/>.</returns>
         public static VkSubpassDependency2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7826,7 +7826,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubpassDescription"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubpassDescription"/>.</returns>
         public static VkSubpassDescription* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7845,7 +7845,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubpassDescription2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubpassDescription2KHR"/>.</returns>
         public static VkSubpassDescription2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7865,7 +7865,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubpassDescriptionDepthStencilResolveKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubpassDescriptionDepthStencilResolveKHR"/>.</returns>
         public static VkSubpassDescriptionDepthStencilResolveKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7885,7 +7885,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubpassEndInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubpassEndInfoKHR"/>.</returns>
         public static VkSubpassEndInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7905,7 +7905,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubpassSampleLocationsEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubpassSampleLocationsEXT"/>.</returns>
         public static VkSubpassSampleLocationsEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7924,7 +7924,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSubresourceLayout"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSubresourceLayout"/>.</returns>
         public static VkSubresourceLayout* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7943,7 +7943,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSurfaceCapabilities2EXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSurfaceCapabilities2EXT"/>.</returns>
         public static VkSurfaceCapabilities2EXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7963,7 +7963,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSurfaceCapabilities2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSurfaceCapabilities2KHR"/>.</returns>
         public static VkSurfaceCapabilities2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -7983,7 +7983,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSurfaceCapabilitiesFullScreenExclusiveEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSurfaceCapabilitiesFullScreenExclusiveEXT"/>.</returns>
         public static VkSurfaceCapabilitiesFullScreenExclusiveEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8003,7 +8003,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSurfaceCapabilitiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSurfaceCapabilitiesKHR"/>.</returns>
         public static VkSurfaceCapabilitiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8022,7 +8022,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSurfaceFormat2KHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSurfaceFormat2KHR"/>.</returns>
         public static VkSurfaceFormat2KHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8042,7 +8042,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSurfaceFormatKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSurfaceFormatKHR"/>.</returns>
         public static VkSurfaceFormatKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8061,7 +8061,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSurfaceFullScreenExclusiveInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSurfaceFullScreenExclusiveInfoEXT"/>.</returns>
         public static VkSurfaceFullScreenExclusiveInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8081,7 +8081,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSurfaceFullScreenExclusiveWin32InfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSurfaceFullScreenExclusiveWin32InfoEXT"/>.</returns>
         public static VkSurfaceFullScreenExclusiveWin32InfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8101,7 +8101,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSurfaceProtectedCapabilitiesKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSurfaceProtectedCapabilitiesKHR"/>.</returns>
         public static VkSurfaceProtectedCapabilitiesKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8121,7 +8121,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSwapchainCounterCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSwapchainCounterCreateInfoEXT"/>.</returns>
         public static VkSwapchainCounterCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8141,7 +8141,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSwapchainCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSwapchainCreateInfoKHR"/>.</returns>
         public static VkSwapchainCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8161,7 +8161,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkSwapchainDisplayNativeHdrCreateInfoAMD"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkSwapchainDisplayNativeHdrCreateInfoAMD"/>.</returns>
         public static VkSwapchainDisplayNativeHdrCreateInfoAMD* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8181,7 +8181,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkTextureLODGatherFormatPropertiesAMD"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkTextureLODGatherFormatPropertiesAMD"/>.</returns>
         public static VkTextureLODGatherFormatPropertiesAMD* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8201,7 +8201,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkValidationCacheCreateInfoEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkValidationCacheCreateInfoEXT"/>.</returns>
         public static VkValidationCacheCreateInfoEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8221,7 +8221,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkValidationFeaturesEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkValidationFeaturesEXT"/>.</returns>
         public static VkValidationFeaturesEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8241,7 +8241,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkValidationFlagsEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkValidationFlagsEXT"/>.</returns>
         public static VkValidationFlagsEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8261,7 +8261,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkVertexInputAttributeDescription"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkVertexInputAttributeDescription"/>.</returns>
         public static VkVertexInputAttributeDescription* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8280,7 +8280,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkVertexInputBindingDescription"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkVertexInputBindingDescription"/>.</returns>
         public static VkVertexInputBindingDescription* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8299,7 +8299,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkVertexInputBindingDivisorDescriptionEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkVertexInputBindingDivisorDescriptionEXT"/>.</returns>
         public static VkVertexInputBindingDivisorDescriptionEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8318,7 +8318,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkViSurfaceCreateInfoNN"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkViSurfaceCreateInfoNN"/>.</returns>
         public static VkViSurfaceCreateInfoNN* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8338,7 +8338,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkViewport"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkViewport"/>.</returns>
         public static VkViewport* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8357,7 +8357,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkViewportSwizzleNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkViewportSwizzleNV"/>.</returns>
         public static VkViewportSwizzleNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8376,7 +8376,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkViewportWScalingNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkViewportWScalingNV"/>.</returns>
         public static VkViewportWScalingNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8395,7 +8395,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkWaylandSurfaceCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkWaylandSurfaceCreateInfoKHR"/>.</returns>
         public static VkWaylandSurfaceCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8415,7 +8415,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkWin32KeyedMutexAcquireReleaseInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkWin32KeyedMutexAcquireReleaseInfoKHR"/>.</returns>
         public static VkWin32KeyedMutexAcquireReleaseInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8435,7 +8435,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkWin32KeyedMutexAcquireReleaseInfoNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkWin32KeyedMutexAcquireReleaseInfoNV"/>.</returns>
         public static VkWin32KeyedMutexAcquireReleaseInfoNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8455,7 +8455,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkWin32SurfaceCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkWin32SurfaceCreateInfoKHR"/>.</returns>
         public static VkWin32SurfaceCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8475,7 +8475,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkWriteDescriptorSet"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkWriteDescriptorSet"/>.</returns>
         public static VkWriteDescriptorSet* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8495,7 +8495,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkWriteDescriptorSetAccelerationStructureNV"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkWriteDescriptorSetAccelerationStructureNV"/>.</returns>
         public static VkWriteDescriptorSetAccelerationStructureNV* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8515,7 +8515,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkWriteDescriptorSetInlineUniformBlockEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkWriteDescriptorSetInlineUniformBlockEXT"/>.</returns>
         public static VkWriteDescriptorSetInlineUniformBlockEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8535,7 +8535,7 @@ namespace Vulkan {
         /// <para>No 'sType' member exists in this struct.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkXYColorEXT"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkXYColorEXT"/>.</returns>
         public static VkXYColorEXT* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8554,7 +8554,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkXcbSurfaceCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkXcbSurfaceCreateInfoKHR"/>.</returns>
         public static VkXcbSurfaceCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
@@ -8574,7 +8574,7 @@ namespace Vulkan {
         /// <para>The 'sType' member is already set up.</para>
         /// </summary>
         /// <param name="count">how many items to allocate?</param>
-        /// <returns>A pointer to the instance of <see cref="VkXlibSurfaceCreateInfoKHR"/>.</returns>
+        /// <returns>A pointer to the instances of <see cref="VkXlibSurfaceCreateInfoKHR"/>.</returns>
         public static VkXlibSurfaceCreateInfoKHR* Alloc(int count = 1) {
             if (count <= 0) { return null; }
 
