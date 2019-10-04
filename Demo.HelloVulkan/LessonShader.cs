@@ -187,18 +187,9 @@ namespace Demo.HelloVulkan {
             info->pfnCallback = Marshal.GetFunctionPointerForDelegate(delDebugCallback);
 
             VkDebugReportCallbackEXT callback;
-            IntPtr procHandle = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateDebugReportCallbackEXT");
-            var proc = (vkCreateDebugReportCallbackEXT)Marshal.GetDelegateForFunctionPointer(procHandle, typeof(vkCreateDebugReportCallbackEXT));
-            if (proc != null) {
-                proc(instance, info, null, &callback).Check();
-                this.callback = callback;
-            }
-            // TODO: make delegate.
-            //vkAPI.vkCreateDebugReportCallbackEXT(instance.handle, info, null, &callback).Check();
+            vkCreateDebugReportCallback(instance, info, null, &callback).Check();
+            this.callback = callback;
         }
-        //public unsafe delegate VkResult vkCreateDebugReportCallbackEXT(VkInstance instance,
-        //    VkDebugReportCallbackCreateInfoEXT* pCreateInfo, VkAllocationCallbacks* pAllocator,
-        //    VkDebugReportCallbackEXT* pCallback);
 
         VkCommandBuffer[] CreateCommandBuffers(
             VkDevice device, VkRenderPass renderPass, VkSurfaceCapabilitiesKHR surfaceCapabilities,
