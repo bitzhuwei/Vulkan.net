@@ -2,52 +2,65 @@ using System;
 using System.Runtime.InteropServices;
 
 // hand-coded.
-using VkFlags = System.UInt32;
 using VkAndroidSurfaceCreateFlagsKHR = System.UInt32;
-using VkBufferViewCreateFlags = System.UInt32;
-using VkDescriptorUpdateTemplateCreateFlags = System.UInt32;
-using VkDeviceCreateFlags = System.UInt32;
-using VkEventCreateFlags = System.UInt32;
-using VkFramebufferCreateFlags = System.UInt32;
-using VkImageViewCreateFlags = System.UInt32;
-using VkInstanceCreateFlags = System.UInt32;
-using VkPipelineCacheCreateFlags = System.UInt32;
-using VkPipelineColorBlendStateCreateFlags = System.UInt32;
-using VkPipelineCoverageModulationStateCreateFlagsNV = System.UInt32;
-using VkPipelineCoverageToColorStateCreateFlagsNV = System.UInt32;
-using VkPipelineDepthStencilStateCreateFlags = System.UInt32;
-using VkPipelineDiscardRectangleStateCreateFlagsEXT = System.UInt32;
-using VkPipelineDynamicStateCreateFlags = System.UInt32;
-using VkPipelineInputAssemblyStateCreateFlags = System.UInt32;
-using VkPipelineLayoutCreateFlags = System.UInt32;
-using VkPipelineMultisampleStateCreateFlags = System.UInt32;
-using VkPipelineRasterizationConservativeStateCreateFlagsEXT = System.UInt32;
-using VkPipelineRasterizationDepthClipStateCreateFlagsEXT = System.UInt32;
-using VkPipelineRasterizationStateCreateFlags = System.UInt32;
-using VkPipelineRasterizationStateStreamCreateFlagsEXT = System.UInt32;
-using VkPipelineShaderStageCreateFlags = System.UInt32;
-using VkPipelineTessellationStateCreateFlags = System.UInt32;
-using VkPipelineVertexInputStateCreateFlags = System.UInt32;
-using VkPipelineViewportStateCreateFlags = System.UInt32;
-using VkPipelineViewportSwizzleStateCreateFlagsNV = System.UInt32;
-using VkQueryPoolCreateFlags = System.UInt32;
-using VkRenderPassCreateFlags = System.UInt32;
-using VkSamplerCreateFlags = System.UInt32;
-using VkSemaphoreCreateFlags = System.UInt32;
-using VkShaderModuleCreateFlags = System.UInt32;
-using VkValidationCacheCreateFlagsEXT = System.UInt32;
+using VkBufferViewCreateFlags = Vulkan.VkFlags;
+using VkDescriptorUpdateTemplateCreateFlags = Vulkan.VkFlags;
+using VkDeviceCreateFlags = Vulkan.VkFlags;
+using VkEventCreateFlags = Vulkan.VkFlags;
+using VkFramebufferCreateFlags = Vulkan.VkFlags;
+using VkImageViewCreateFlags = Vulkan.VkFlags;
+using VkInstanceCreateFlags = Vulkan.VkFlags;
+using VkPipelineCacheCreateFlags = Vulkan.VkFlags;
+using VkPipelineColorBlendStateCreateFlags = Vulkan.VkFlags;
+using VkPipelineCoverageModulationStateCreateFlagsNV = Vulkan.VkFlags;
+using VkPipelineCoverageToColorStateCreateFlagsNV = Vulkan.VkFlags;
+using VkPipelineDepthStencilStateCreateFlags = Vulkan.VkFlags;
+using VkPipelineDiscardRectangleStateCreateFlagsEXT = Vulkan.VkFlags;
+using VkPipelineDynamicStateCreateFlags = Vulkan.VkFlags;
+using VkPipelineInputAssemblyStateCreateFlags = Vulkan.VkFlags;
+using VkPipelineLayoutCreateFlags = Vulkan.VkFlags;
+using VkPipelineMultisampleStateCreateFlags = Vulkan.VkFlags;
+using VkPipelineRasterizationConservativeStateCreateFlagsEXT = Vulkan.VkFlags;
+using VkPipelineRasterizationDepthClipStateCreateFlagsEXT = Vulkan.VkFlags;
+using VkPipelineRasterizationStateCreateFlags = Vulkan.VkFlags;
+using VkPipelineRasterizationStateStreamCreateFlagsEXT = Vulkan.VkFlags;
+using VkPipelineShaderStageCreateFlags = Vulkan.VkFlags;
+using VkPipelineTessellationStateCreateFlags = Vulkan.VkFlags;
+using VkPipelineVertexInputStateCreateFlags = Vulkan.VkFlags;
+using VkPipelineViewportStateCreateFlags = Vulkan.VkFlags;
+using VkPipelineViewportSwizzleStateCreateFlagsNV = Vulkan.VkFlags;
+using VkQueryPoolCreateFlags = Vulkan.VkFlags;
+using VkRenderPassCreateFlags = Vulkan.VkFlags;
+using VkSamplerCreateFlags = Vulkan.VkFlags;
+using VkSemaphoreCreateFlags = Vulkan.VkFlags;
+using VkShaderModuleCreateFlags = Vulkan.VkFlags;
+using VkValidationCacheCreateFlagsEXT = Vulkan.VkFlags;
+using VkQueryResultFlags = Vulkan.VkFlags;
+using VkStencilFaceFlags = Vulkan.VkFlags;
+using VkMemoryRequirements2KHR = Vulkan.VkMemoryRequirements2;
+using VkPeerMemoryFeatureFlags = Vulkan.VkFlags;
+using HANDLE = System.IntPtr;
+using VkMemoryMapFlags = Vulkan.VkFlags;
+using VkCommandBufferResetFlags = Vulkan.VkFlags;
+using VkCommandPoolResetFlags = Vulkan.VkFlags;
+using VkDescriptorPoolResetFlags = Vulkan.VkFlags;
+using VkCommandPoolTrimFlags = Vulkan.VkFlags;
+//
 using HINSTANCE = System.IntPtr;
 using HWND = System.IntPtr;
-using VkQueryResultFlags = System.UInt32;
-using VkStencilFaceFlags = System.UInt32;
-using VkMemoryRequirements2KHR = Vulkan.VkMemoryRequirements2;
-using VkPeerMemoryFeatureFlags = System.UInt32;
-using HANDLE = System.IntPtr;
-using VkMemoryMapFlags = System.UInt32;
-using VkCommandBufferResetFlags = System.UInt32;
-using VkCommandPoolResetFlags = System.UInt32;
-using VkDescriptorPoolResetFlags = System.UInt32;
-using VkCommandPoolTrimFlags = System.UInt32;
+using LPCWSTR = System.IntPtr;
+using DWORD = System.UInt32;
+using VkIOSSurfaceCreateFlagsMVK = System.UInt32;
+using VkImagePipeSurfaceCreateFlagsFUCHSIA = System.UInt32;
+using zx_handle_t = System.IntPtr;
+using VkMacOSSurfaceCreateFlagsMVK = System.UInt32;
+using VkMetalSurfaceCreateFlagsEXT = System.UInt32;
+using GgpFrameToken = System.IntPtr;
+using VkStreamDescriptorSurfaceCreateFlagsGGP = System.UInt32;
+using GgpStreamDescriptor = System.IntPtr;
+using HMONITOR = System.IntPtr;
+using VkViSurfaceCreateFlagsNN = System.UInt32;
+using VkWaylandSurfaceCreateFlagsKHR = System.UInt32;
 //
 // Generated by FlagsParser.
 using VkAccessFlags = Vulkan.VkAccessFlagBits;
@@ -147,16 +160,8 @@ using VkSwapchainCreateFlagsKHR = Vulkan.VkSwapchainCreateFlagBitsKHR;
 namespace Vulkan {
     public unsafe partial class vkAPI {
         const string VulkanLibrary = "vulkan-1";
-        // Command: 0
-        /// <summary>vkAcquireFullScreenExclusiveModeEXT - Acquire full-screen exclusive mode for a swapchain
-        /// </summary>
-        /// <param name="device">device is the device associated with swapchain.</param>
-        /// <param name="swapchain">swapchain is the swapchain to acquire exclusive full-screen access
-        /// for.</param>
-        private delegate VkResult vkAcquireFullScreenExclusiveModeEXT(
-            VkDevice device,
-            VkSwapchainKHR swapchain);
         // Command: 1
+        // Method: 0
         /// <summary>vkAcquireNextImage2KHR - Retrieve the index of the next available presentable image
         /// </summary>
         /// <param name="device">device is the device associated with swapchain.</param>
@@ -170,6 +175,7 @@ namespace Vulkan {
             /*-const-*/ VkAcquireNextImageInfoKHR* pAcquireInfo,
             UInt32* pImageIndex);
         // Command: 2
+        // Method: 1
         /// <summary>vkAcquireNextImageKHR - Retrieve the index of the next available presentable image
         /// </summary>
         /// <param name="device">device is the device associated with swapchain.</param>
@@ -190,18 +196,8 @@ namespace Vulkan {
             VkSemaphore semaphore,
             VkFence fence,
             UInt32* pImageIndex);
-        // Command: 3
-        /// <summary>vkAcquireXlibDisplayEXT - Acquire access to a VkDisplayKHR using Xlib
-        /// </summary>
-        /// <param name="physicalDevice">physicalDevice The physical device the display is on.</param>
-        /// <param name="dpy">dpy A connection to the X11 server that currently owns
-        /// display.</param>
-        /// <param name="display">display The display the caller wishes to control in Vulkan.</param>
-        private delegate VkResult vkAcquireXlibDisplayEXT(
-            VkPhysicalDevice physicalDevice,
-            /*Display*-*/IntPtr dpy,
-            VkDisplayKHR display);
         // Command: 4
+        // Method: 2
         /// <summary>vkAllocateCommandBuffers - Allocate command buffers from an existing command pool
         /// </summary>
         /// <param name="device">device is the logical device that owns the command pool.</param>
@@ -219,6 +215,7 @@ namespace Vulkan {
             /*-const-*/ VkCommandBufferAllocateInfo* pAllocateInfo,
             VkCommandBuffer* pCommandBuffers);
         // Command: 5
+        // Method: 3
         /// <summary>vkAllocateDescriptorSets - Allocate one or more descriptor sets
         /// </summary>
         /// <param name="device">device is the logical device that owns the descriptor pool.</param>
@@ -233,6 +230,7 @@ namespace Vulkan {
             /*-const-*/ VkDescriptorSetAllocateInfo* pAllocateInfo,
             VkDescriptorSet* pDescriptorSets);
         // Command: 6
+        // Method: 4
         /// <summary>vkAllocateMemory - Allocate device memory
         /// </summary>
         /// <param name="device">device is the logical device that owns the memory.</param>
@@ -251,6 +249,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkDeviceMemory* pMemory);
         // Command: 7
+        // Method: 5
         /// <summary>vkBeginCommandBuffer - Start recording a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the handle of the command buffer which is to be
@@ -263,6 +262,7 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkCommandBufferBeginInfo* pBeginInfo);
         // Command: 8
+        // Method: 6
         /// <summary>vkBindAccelerationStructureMemoryNV - Bind acceleration structure memory
         /// </summary>
         /// <param name="device">device is the logical device that owns the acceleration structures
@@ -277,6 +277,7 @@ namespace Vulkan {
             UInt32 bindInfoCount,
             /*-const-*/ VkBindAccelerationStructureMemoryInfoNV* pBindInfos);
         // Command: 9
+        // Method: 7
         /// <summary>vkBindBufferMemory - Bind device memory to a buffer object
         /// </summary>
         /// <param name="device">device is the logical device that owns the buffer and memory.</param>
@@ -295,6 +296,7 @@ namespace Vulkan {
             VkDeviceMemory memory,
             VkDeviceSize memoryOffset);
         // Command: 10
+        // Method: 8
         /// <summary>vkBindBufferMemory2 - Bind device memory to buffer objects
         /// </summary>
         /// <param name="device">device is the logical device that owns the buffers and memory.</param>
@@ -307,6 +309,7 @@ namespace Vulkan {
             UInt32 bindInfoCount,
             /*-const-*/ VkBindBufferMemoryInfo* pBindInfos);
         // Command: 11
+        // Method: 9
         /// <summary>vkBindImageMemory - Bind device memory to an image object
         /// </summary>
         /// <param name="device">device is the logical device that owns the image and memory.</param>
@@ -325,6 +328,7 @@ namespace Vulkan {
             VkDeviceMemory memory,
             VkDeviceSize memoryOffset);
         // Command: 12
+        // Method: 10
         /// <summary>vkBindImageMemory2 - Bind device memory to image objects
         /// </summary>
         /// <param name="device">device is the logical device that owns the images and memory.</param>
@@ -336,29 +340,8 @@ namespace Vulkan {
             VkDevice device,
             UInt32 bindInfoCount,
             /*-const-*/ VkBindImageMemoryInfo* pBindInfos);
-        // Command: 13
-        /// <summary>vkCmdBeginConditionalRenderingEXT - Define the beginning of a conditional rendering block
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
-        /// be recorded.</param>
-        /// <param name="pConditionalRenderingBegin">pConditionalRenderingBegin is a pointer to an instance of the
-        /// VkConditionalRenderingBeginInfoEXT structure specifying the
-        /// parameters of conditional rendering.</param>
-        private delegate void vkCmdBeginConditionalRenderingEXT(
-            VkCommandBuffer commandBuffer,
-            /*-const-*/ VkConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin);
-        // Command: 14
-        /// <summary>vkCmdBeginDebugUtilsLabelEXT - Open a command buffer debug label region
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        /// <param name="pLabelInfo">pLabelInfo is a pointer to an instance of the
-        /// VkDebugUtilsLabelEXT structure specifying the parameters of the
-        /// label region to open.</param>
-        private delegate void vkCmdBeginDebugUtilsLabelEXT(
-            VkCommandBuffer commandBuffer,
-            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
         // Command: 15
+        // Method: 11
         /// <summary>vkCmdBeginQuery - Begin a query
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
@@ -375,27 +358,8 @@ namespace Vulkan {
             VkQueryPool queryPool,
             UInt32 query,
             VkQueryControlFlags flags);
-        // Command: 16
-        /// <summary>vkCmdBeginQueryIndexedEXT - Begin an indexed query
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
-        /// be recorded.</param>
-        /// <param name="queryPool">queryPool is the query pool that will manage the results of the
-        /// query.</param>
-        /// <param name="query">query is the query index within the query pool that will contain
-        /// the results.</param>
-        /// <param name="flags">flags is a bitmask of VkQueryControlFlagBits specifying
-        /// constraints on the types of queries that can be performed.</param>
-        /// <param name="index">index is the query type specific index.
-        /// When the query type is VK_QUERY_TYPE_TRANSFORM_FEEDBACK_STREAM_EXT
-        /// the index represents the vertex stream.</param>
-        private delegate void vkCmdBeginQueryIndexedEXT(
-            VkCommandBuffer commandBuffer,
-            VkQueryPool queryPool,
-            UInt32 query,
-            VkQueryControlFlags flags,
-            UInt32 index);
         // Command: 17
+        // Method: 12
         /// <summary>vkCmdBeginRenderPass - Begin a new render pass
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer in which to record the
@@ -411,6 +375,7 @@ namespace Vulkan {
             /*-const-*/ VkRenderPassBeginInfo* pRenderPassBegin,
             VkSubpassContents contents);
         // Command: 18
+        // Method: 13
         /// <summary>vkCmdBeginRenderPass2KHR - Begin a new render pass
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer in which to record the
@@ -426,45 +391,8 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkRenderPassBeginInfo* pRenderPassBegin,
             /*-const-*/ VkSubpassBeginInfoKHR* pSubpassBeginInfo);
-        // Command: 19
-        /// <summary>vkCmdBeginTransformFeedbackEXT - Make transform feedback active in the command buffer
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        /// <param name="firstCounterBuffer">firstCounterBuffer is the index of the first transform feedback
-        /// buffer corresponding to pCounterBuffers[0] and
-        /// pCounterBufferOffsets[0].</param>
-        /// <param name="counterBufferCount">counterBufferCount is the size of the pCounterBuffers and
-        /// pCounterBufferOffsets arrays.</param>
-        /// <param name="pCounterBuffers">pCounterBuffers is an optional array of buffer handles to the
-        /// counter buffers which contain a 4 byte integer value representing the
-        /// byte offset from the start of the corresponding transform feedback
-        /// buffer from where to start capturing vertex data.
-        /// If the byte offset stored to the counter buffer location was done using
-        /// vkCmdEndTransformFeedbackEXT it can be used to resume transform
-        /// feedback from the previous location.
-        /// If pCounterBuffers is NULL, then transform feedback will start
-        /// capturing vertex data to byte offset zero in all bound transform
-        /// feedback buffers.
-        /// For each element of pCounterBuffers that is VK_NULL_HANDLE,
-        /// transform feedback will start capturing vertex data to byte zero in the
-        /// corresponding bound transform feedback buffer.</param>
-        /// <param name="pCounterBufferOffsets">pCounterBufferOffsets is an optional array of offsets within each
-        /// of the pCounterBuffers where the counter values were previously
-        /// written.
-        /// The location in each counter buffer at these offsets must be large
-        /// enough to contain 4 bytes of data.
-        /// This data is the number of bytes captured by the previous transform
-        /// feedback to this buffer.
-        /// If pCounterBufferOffsets is NULL, then it is assumed the offsets
-        /// are zero.</param>
-        private delegate void vkCmdBeginTransformFeedbackEXT(
-            VkCommandBuffer commandBuffer,
-            UInt32 firstCounterBuffer,
-            UInt32 counterBufferCount,
-            /*-const-*/ VkBuffer* pCounterBuffers,
-            /*-const-*/ VkDeviceSize* pCounterBufferOffsets);
         // Command: 20
+        // Method: 14
         /// <summary>vkCmdBindDescriptorSets - Binds descriptor sets to a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer that the descriptor sets will
@@ -497,6 +425,7 @@ namespace Vulkan {
             UInt32 dynamicOffsetCount,
             /*-const-*/ UInt32* pDynamicOffsets);
         // Command: 21
+        // Method: 15
         /// <summary>vkCmdBindIndexBuffer - Bind an index buffer to a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -513,6 +442,7 @@ namespace Vulkan {
             VkDeviceSize offset,
             VkIndexType indexType);
         // Command: 22
+        // Method: 16
         /// <summary>vkCmdBindPipeline - Bind a pipeline object to a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer that the pipeline will be
@@ -527,6 +457,7 @@ namespace Vulkan {
             VkPipelineBindPoint pipelineBindPoint,
             VkPipeline pipeline);
         // Command: 23
+        // Method: 17
         /// <summary>vkCmdBindShadingRateImageNV - Bind a shading rate image on a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -542,31 +473,8 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             VkImageView imageView,
             VkImageLayout imageLayout);
-        // Command: 24
-        /// <summary>vkCmdBindTransformFeedbackBuffersEXT - Bind transform feedback buffers to a command buffer
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        /// <param name="firstBinding">firstBinding is the index of the first transform feedback binding
-        /// whose state is updated by the command.</param>
-        /// <param name="bindingCount">bindingCount is the number of transform feedback bindings whose
-        /// state is updated by the command.</param>
-        /// <param name="pBuffers">pBuffers is a pointer to an array of buffer handles.</param>
-        /// <param name="pOffsets">pOffsets is a pointer to an array of buffer offsets.</param>
-        /// <param name="pSizes">pSizes is an optional array of buffer sizes, which specifies the
-        /// maximum number of bytes to capture to the corresponding transform
-        /// feedback buffer.
-        /// If pSizes is NULL, or the value of the pSizes array
-        /// element is VK_WHOLE_SIZE, then the maximum bytes captured will be
-        /// the size of the corresponding buffer minus the buffer offset.</param>
-        private delegate void vkCmdBindTransformFeedbackBuffersEXT(
-            VkCommandBuffer commandBuffer,
-            UInt32 firstBinding,
-            UInt32 bindingCount,
-            /*-const-*/ VkBuffer* pBuffers,
-            /*-const-*/ VkDeviceSize* pOffsets,
-            /*-const-*/ VkDeviceSize* pSizes);
         // Command: 25
+        // Method: 18
         /// <summary>vkCmdBindVertexBuffers - Bind vertex buffers to a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -585,6 +493,7 @@ namespace Vulkan {
             /*-const-*/ VkBuffer* pBuffers,
             /*-const-*/ VkDeviceSize* pOffsets);
         // Command: 26
+        // Method: 19
         /// <summary>vkCmdBlitImage - Copy regions of an image, potentially performing format conversion,
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -611,6 +520,7 @@ namespace Vulkan {
             /*-const-*/ VkImageBlit* pRegions,
             VkFilter filter);
         // Command: 27
+        // Method: 20
         /// <summary>vkCmdBuildAccelerationStructureNV - Build an acceleration structure
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -644,6 +554,7 @@ namespace Vulkan {
             VkBuffer scratch,
             VkDeviceSize scratchOffset);
         // Command: 28
+        // Method: 21
         /// <summary>vkCmdClearAttachments - Clear regions within bound framebuffer attachments
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -667,6 +578,7 @@ namespace Vulkan {
             UInt32 rectCount,
             /*-const-*/ VkClearRect* pRects);
         // Command: 29
+        // Method: 22
         /// <summary>vkCmdClearColorImage - Clear regions of a color image
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -695,6 +607,7 @@ namespace Vulkan {
             UInt32 rangeCount,
             /*-const-*/ VkImageSubresourceRange* pRanges);
         // Command: 30
+        // Method: 23
         /// <summary>vkCmdClearDepthStencilImage - Fill regions of a combined depth/stencil image
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -721,6 +634,7 @@ namespace Vulkan {
             UInt32 rangeCount,
             /*-const-*/ VkImageSubresourceRange* pRanges);
         // Command: 31
+        // Method: 24
         /// <summary>vkCmdCopyAccelerationStructureNV - Copy an acceleration structure
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -736,6 +650,7 @@ namespace Vulkan {
             VkAccelerationStructureNV src,
             VkCopyAccelerationStructureModeNV mode);
         // Command: 32
+        // Method: 25
         /// <summary>vkCmdCopyBuffer - Copy data between buffer regions
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -753,6 +668,7 @@ namespace Vulkan {
             UInt32 regionCount,
             /*-const-*/ VkBufferCopy* pRegions);
         // Command: 33
+        // Method: 26
         /// <summary>vkCmdCopyBufferToImage - Copy data from a buffer into an image
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -773,6 +689,7 @@ namespace Vulkan {
             UInt32 regionCount,
             /*-const-*/ VkBufferImageCopy* pRegions);
         // Command: 34
+        // Method: 27
         /// <summary>vkCmdCopyImage - Copy data between images
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -796,6 +713,7 @@ namespace Vulkan {
             UInt32 regionCount,
             /*-const-*/ VkImageCopy* pRegions);
         // Command: 35
+        // Method: 28
         /// <summary>vkCmdCopyImageToBuffer - Copy image data into a buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -816,6 +734,7 @@ namespace Vulkan {
             UInt32 regionCount,
             /*-const-*/ VkBufferImageCopy* pRegions);
         // Command: 36
+        // Method: 29
         /// <summary>vkCmdCopyQueryPoolResults - Copy the results of queries in a query pool to a buffer object
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
@@ -845,36 +764,8 @@ namespace Vulkan {
             VkDeviceSize dstOffset,
             VkDeviceSize stride,
             VkQueryResultFlags flags);
-        // Command: 37
-        /// <summary>vkCmdDebugMarkerBeginEXT - Open a command buffer marker region
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        /// <param name="pMarkerInfo">pMarkerInfo is a pointer to an instance of the
-        /// VkDebugMarkerMarkerInfoEXT structure specifying the parameters of
-        /// the marker region to open.</param>
-        private delegate void vkCmdDebugMarkerBeginEXT(
-            VkCommandBuffer commandBuffer,
-            /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo);
-        // Command: 38
-        /// <summary>vkCmdDebugMarkerEndEXT - Close a command buffer marker region
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        private delegate void vkCmdDebugMarkerEndEXT(
-            VkCommandBuffer commandBuffer);
-        // Command: 39
-        /// <summary>vkCmdDebugMarkerInsertEXT - Insert a marker label into a command buffer
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        /// <param name="pMarkerInfo">pMarkerInfo is a pointer to an instance of the
-        /// VkDebugMarkerMarkerInfoEXT structure specifying the parameters of
-        /// the marker to insert.</param>
-        private delegate void vkCmdDebugMarkerInsertEXT(
-            VkCommandBuffer commandBuffer,
-            /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo);
         // Command: 40
+        // Method: 30
         /// <summary>vkCmdDispatch - Dispatch compute work items
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -892,6 +783,7 @@ namespace Vulkan {
             UInt32 groupCountY,
             UInt32 groupCountZ);
         // Command: 41
+        // Method: 31
         /// <summary>vkCmdDispatchBase - Dispatch compute work items
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -918,6 +810,7 @@ namespace Vulkan {
             UInt32 groupCountY,
             UInt32 groupCountZ);
         // Command: 42
+        // Method: 32
         /// <summary>vkCmdDispatchIndirect - Dispatch compute work items using indirect parameters
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -931,6 +824,7 @@ namespace Vulkan {
             VkBuffer buffer,
             VkDeviceSize offset);
         // Command: 43
+        // Method: 33
         /// <summary>vkCmdDraw - Draw primitives
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -947,6 +841,7 @@ namespace Vulkan {
             UInt32 firstVertex,
             UInt32 firstInstance);
         // Command: 44
+        // Method: 34
         /// <summary>vkCmdDrawIndexed - Issue an indexed draw into a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -966,6 +861,7 @@ namespace Vulkan {
             Int32 vertexOffset,
             UInt32 firstInstance);
         // Command: 45
+        // Method: 35
         /// <summary>vkCmdDrawIndexedIndirect - Perform an indexed indirect draw
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -984,6 +880,7 @@ namespace Vulkan {
             UInt32 drawCount,
             UInt32 stride);
         // Command: 46
+        // Method: 36
         /// <summary>vkCmdDrawIndexedIndirectCountAMD - Perform an indexed indirect draw with the draw count sourced from a buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1010,6 +907,7 @@ namespace Vulkan {
             UInt32 maxDrawCount,
             UInt32 stride);
         // Command: 47
+        // Method: 37
         /// <summary>vkCmdDrawIndexedIndirectCountKHR - Perform an indexed indirect draw with the draw count sourced from a buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1036,6 +934,7 @@ namespace Vulkan {
             UInt32 maxDrawCount,
             UInt32 stride);
         // Command: 48
+        // Method: 38
         /// <summary>vkCmdDrawIndirect - Issue an indirect draw into a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1053,35 +952,8 @@ namespace Vulkan {
             VkDeviceSize offset,
             UInt32 drawCount,
             UInt32 stride);
-        // Command: 49
-        /// <summary>vkCmdDrawIndirectByteCountEXT - Draw primitives where the vertex count is derived from the counter byte value in the counter buffer
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        /// <param name="instanceCount">instanceCount is the number of instances to draw.</param>
-        /// <param name="firstInstance">firstInstance is the instance ID of the first instance to draw.</param>
-        /// <param name="counterBuffer">counterBuffer is the buffer handle from where the byte count is
-        /// read.</param>
-        /// <param name="counterBufferOffset">counterBufferOffset is the offset into the buffer used to read the
-        /// byte count, which is used to calculate the vertex count for this draw
-        /// call.</param>
-        /// <param name="counterOffset">counterOffset is subtracted from the byte count read from the
-        /// counterBuffer at the counterBufferOffset</param>
-        /// <param name="vertexStride">vertexStride is the stride in bytes between each element of the
-        /// vertex data that is used to calculate the vertex count from the counter
-        /// value.
-        /// This value is typically the same value that was used in the graphics
-        /// pipeline state when the transform feedback was captured as the
-        /// XfbStride.</param>
-        private delegate void vkCmdDrawIndirectByteCountEXT(
-            VkCommandBuffer commandBuffer,
-            UInt32 instanceCount,
-            UInt32 firstInstance,
-            VkBuffer counterBuffer,
-            VkDeviceSize counterBufferOffset,
-            UInt32 counterOffset,
-            UInt32 vertexStride);
         // Command: 50
+        // Method: 39
         /// <summary>vkCmdDrawIndirectCountAMD - Perform an indirect draw with the draw count sourced from a buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1108,6 +980,7 @@ namespace Vulkan {
             UInt32 maxDrawCount,
             UInt32 stride);
         // Command: 51
+        // Method: 40
         /// <summary>vkCmdDrawIndirectCountKHR - Perform an indirect draw with the draw count sourced from a buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1134,6 +1007,7 @@ namespace Vulkan {
             UInt32 maxDrawCount,
             UInt32 stride);
         // Command: 52
+        // Method: 41
         /// <summary>vkCmdDrawMeshTasksIndirectCountNV - Perform an indirect mesh tasks draw with the draw count sourced from a buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1160,6 +1034,7 @@ namespace Vulkan {
             UInt32 maxDrawCount,
             UInt32 stride);
         // Command: 53
+        // Method: 42
         /// <summary>vkCmdDrawMeshTasksIndirectNV - Issue an indirect mesh tasks draw into a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1178,6 +1053,7 @@ namespace Vulkan {
             UInt32 drawCount,
             UInt32 stride);
         // Command: 54
+        // Method: 43
         /// <summary>vkCmdDrawMeshTasksNV - Draw mesh task work items
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1191,21 +1067,8 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             UInt32 taskCount,
             UInt32 firstTask);
-        // Command: 55
-        /// <summary>vkCmdEndConditionalRenderingEXT - Define the end of a conditional rendering block
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
-        /// be recorded.</param>
-        private delegate void vkCmdEndConditionalRenderingEXT(
-            VkCommandBuffer commandBuffer);
-        // Command: 56
-        /// <summary>vkCmdEndDebugUtilsLabelEXT - Close a command buffer label region
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        private delegate void vkCmdEndDebugUtilsLabelEXT(
-            VkCommandBuffer commandBuffer);
         // Command: 57
+        // Method: 44
         /// <summary>vkCmdEndQuery - Ends a query
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
@@ -1219,22 +1082,8 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             VkQueryPool queryPool,
             UInt32 query);
-        // Command: 58
-        /// <summary>vkCmdEndQueryIndexedEXT - Ends a query
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
-        /// be recorded.</param>
-        /// <param name="queryPool">queryPool is the query pool that is managing the results of the
-        /// query.</param>
-        /// <param name="query">query is the query index within the query pool where the result is
-        /// stored.</param>
-        /// <param name="index">index is the query type specific index.</param>
-        private delegate void vkCmdEndQueryIndexedEXT(
-            VkCommandBuffer commandBuffer,
-            VkQueryPool queryPool,
-            UInt32 query,
-            UInt32 index);
         // Command: 59
+        // Method: 45
         /// <summary>vkCmdEndRenderPass - End the current render pass
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer in which to end the current
@@ -1243,6 +1092,7 @@ namespace Vulkan {
         public static extern void vkCmdEndRenderPass(
             VkCommandBuffer commandBuffer);
         // Command: 60
+        // Method: 46
         /// <summary>vkCmdEndRenderPass2KHR - End the current render pass
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer in which to end the current
@@ -1254,40 +1104,8 @@ namespace Vulkan {
         public static extern void vkCmdEndRenderPass2KHR(
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkSubpassEndInfoKHR* pSubpassEndInfo);
-        // Command: 61
-        /// <summary>vkCmdEndTransformFeedbackEXT - Make transform feedback inactive in the command buffer
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        /// <param name="firstCounterBuffer">firstCounterBuffer is the index of the first transform feedback
-        /// buffer corresponding to pCounterBuffers[0] and
-        /// pCounterBufferOffsets[0].</param>
-        /// <param name="counterBufferCount">counterBufferCount is the size of the pCounterBuffers and
-        /// pCounterBufferOffsets arrays.</param>
-        /// <param name="pCounterBuffers">pCounterBuffers is an optional array of buffer handles to the
-        /// counter buffers used to record the current byte positions of each
-        /// transform feedback buffer where the next vertex output data would be
-        /// captured.
-        /// This can be used by a subsequent vkCmdBeginTransformFeedbackEXT
-        /// call to resume transform feedback capture from this position.
-        /// It can also be used by vkCmdDrawIndirectByteCountEXT to determine
-        /// the vertex count of the draw call.</param>
-        /// <param name="pCounterBufferOffsets">pCounterBufferOffsets is an optional array of offsets within each
-        /// of the pCounterBuffers where the counter values can be written.
-        /// The location in each counter buffer at these offsets must be large
-        /// enough to contain 4 bytes of data.
-        /// The data stored at this location is the byte offset from the start of
-        /// the transform feedback buffer binding where the next vertex data would
-        /// be written.
-        /// If pCounterBufferOffsets is NULL, then it is assumed the offsets
-        /// are zero.</param>
-        private delegate void vkCmdEndTransformFeedbackEXT(
-            VkCommandBuffer commandBuffer,
-            UInt32 firstCounterBuffer,
-            UInt32 counterBufferCount,
-            /*-const-*/ VkBuffer* pCounterBuffers,
-            /*-const-*/ VkDeviceSize* pCounterBufferOffsets);
         // Command: 62
+        // Method: 47
         /// <summary>vkCmdExecuteCommands - Execute a secondary command buffer from a primary command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is a handle to a primary command buffer that the
@@ -1303,6 +1121,7 @@ namespace Vulkan {
             UInt32 commandBufferCount,
             /*-const-*/ VkCommandBuffer* pCommandBuffers);
         // Command: 63
+        // Method: 48
         /// <summary>vkCmdFillBuffer - Fill a region of a buffer with a fixed value
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1325,15 +1144,8 @@ namespace Vulkan {
             VkDeviceSize dstOffset,
             VkDeviceSize size,
             UInt32 data);
-        // Command: 64
-        /// <summary>vkCmdInsertDebugUtilsLabelEXT - Insert a label into a command buffer
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
-        /// recorded.</param>
-        private delegate void vkCmdInsertDebugUtilsLabelEXT(
-            VkCommandBuffer commandBuffer,
-            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
         // Command: 65
+        // Method: 49
         /// <summary>vkCmdNextSubpass - Transition to the next subpass of a render pass
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer in which to record the
@@ -1346,6 +1158,7 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             VkSubpassContents contents);
         // Command: 66
+        // Method: 50
         /// <summary>vkCmdNextSubpass2KHR - Transition to the next subpass of a render pass
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer in which to record the
@@ -1362,6 +1175,7 @@ namespace Vulkan {
             /*-const-*/ VkSubpassBeginInfoKHR* pSubpassBeginInfo,
             /*-const-*/ VkSubpassEndInfoKHR* pSubpassEndInfo);
         // Command: 67
+        // Method: 51
         /// <summary>vkCmdPipelineBarrier - Insert a memory dependency
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1399,6 +1213,7 @@ namespace Vulkan {
             UInt32 imageMemoryBarrierCount,
             /*-const-*/ VkImageMemoryBarrier* pImageMemoryBarriers);
         // Command: 68
+        // Method: 52
         /// <summary>vkCmdProcessCommandsNVX - Performs the generation of commands on the device
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the primary command buffer in which the
@@ -1411,6 +1226,7 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkCmdProcessCommandsInfoNVX* pProcessCommandsInfo);
         // Command: 69
+        // Method: 53
         /// <summary>vkCmdPushConstants - Update the values of push constants
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer in which the push constant
@@ -1434,6 +1250,7 @@ namespace Vulkan {
             UInt32 size,
             /*-const-*/ void* pValues);
         // Command: 70
+        // Method: 54
         /// <summary>vkCmdPushDescriptorSetKHR - Pushes descriptor updates into a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer that the descriptors will be
@@ -1461,6 +1278,7 @@ namespace Vulkan {
             UInt32 descriptorWriteCount,
             /*-const-*/ VkWriteDescriptorSet* pDescriptorWrites);
         // Command: 71
+        // Method: 55
         /// <summary>vkCmdPushDescriptorSetWithTemplateKHR - Pushes descriptor updates into a command buffer using a descriptor update template
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer that the descriptors will be
@@ -1485,6 +1303,7 @@ namespace Vulkan {
             UInt32 set,
             /*-const-*/ void* pData);
         // Command: 72
+        // Method: 56
         /// <summary>vkCmdReserveSpaceForCommandsNVX - Perform a reservation of command buffer space
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the secondary command buffer in which the space
@@ -1494,6 +1313,7 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkCmdReserveSpaceForCommandsInfoNVX* pReserveSpaceInfo);
         // Command: 73
+        // Method: 57
         /// <summary>vkCmdResetEvent - Reset an event object to non-signaled state
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1508,6 +1328,7 @@ namespace Vulkan {
             VkEvent _event,
             VkPipelineStageFlags stageMask);
         // Command: 74
+        // Method: 58
         /// <summary>vkCmdResetQueryPool - Reset queries in a query pool
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
@@ -1523,6 +1344,7 @@ namespace Vulkan {
             UInt32 firstQuery,
             UInt32 queryCount);
         // Command: 75
+        // Method: 59
         /// <summary>vkCmdResolveImage - Resolve regions of an image
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1546,6 +1368,7 @@ namespace Vulkan {
             UInt32 regionCount,
             /*-const-*/ VkImageResolve* pRegions);
         // Command: 76
+        // Method: 60
         /// <summary>vkCmdSetBlendConstants - Set the values of blend constants
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1553,8 +1376,9 @@ namespace Vulkan {
         [DllImport(VulkanLibrary, CallingConvention = CallingConvention.Winapi)]
         public static extern void vkCmdSetBlendConstants(
             VkCommandBuffer commandBuffer,
-            /*-const-*/ float[] blendConstants);
+            /*-const-*/ float[] blendConstants/*[4]*/);
         // Command: 77
+        // Method: 61
         /// <summary>vkCmdSetCheckpointNV - insert diagnostic checkpoint in command stream
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer that will receive the marker</param>
@@ -1565,6 +1389,7 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             /*-const-*/ void* pCheckpointMarker);
         // Command: 78
+        // Method: 62
         /// <summary>vkCmdSetCoarseSampleOrderNV - Set sample order for coarse fragments on a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1584,6 +1409,7 @@ namespace Vulkan {
             UInt32 customSampleOrderCount,
             /*-const-*/ VkCoarseSampleOrderCustomNV* pCustomSampleOrders);
         // Command: 79
+        // Method: 63
         /// <summary>vkCmdSetDepthBias - Set the depth bias dynamic state
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1601,6 +1427,7 @@ namespace Vulkan {
             float depthBiasClamp,
             float depthBiasSlopeFactor);
         // Command: 80
+        // Method: 64
         /// <summary>vkCmdSetDepthBounds - Set the depth bounds test values for a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1614,6 +1441,7 @@ namespace Vulkan {
             float minDepthBounds,
             float maxDepthBounds);
         // Command: 81
+        // Method: 65
         /// <summary>vkCmdSetDeviceMask - Modify device mask of a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is command buffer whose current device mask is
@@ -1623,23 +1451,8 @@ namespace Vulkan {
         public static extern void vkCmdSetDeviceMask(
             VkCommandBuffer commandBuffer,
             UInt32 deviceMask);
-        // Command: 82
-        /// <summary>vkCmdSetDiscardRectangleEXT - Set discard rectangles dynamically
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
-        /// recorded.</param>
-        /// <param name="firstDiscardRectangle">firstDiscardRectangle is the index of the first discard rectangle
-        /// whose state is updated by the command.</param>
-        /// <param name="discardRectangleCount">discardRectangleCount is the number of discard rectangles whose
-        /// state are updated by the command.</param>
-        /// <param name="pDiscardRectangles">pDiscardRectangles is a pointer to an array of VkRect2D
-        /// structures specifying discard rectangles.</param>
-        private delegate void vkCmdSetDiscardRectangleEXT(
-            VkCommandBuffer commandBuffer,
-            UInt32 firstDiscardRectangle,
-            UInt32 discardRectangleCount,
-            /*-const-*/ VkRect2D* pDiscardRectangles);
         // Command: 83
+        // Method: 66
         /// <summary>vkCmdSetEvent - Set an event object to signaled state
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1653,6 +1466,7 @@ namespace Vulkan {
             VkEvent _event,
             VkPipelineStageFlags stageMask);
         // Command: 84
+        // Method: 67
         /// <summary>vkCmdSetExclusiveScissorNV - Set the dynamic exclusive scissor rectangles on a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1670,6 +1484,7 @@ namespace Vulkan {
             UInt32 exclusiveScissorCount,
             /*-const-*/ VkRect2D* pExclusiveScissors);
         // Command: 85
+        // Method: 68
         /// <summary>vkCmdSetLineWidth - Set the dynamic line width state
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1679,16 +1494,8 @@ namespace Vulkan {
         public static extern void vkCmdSetLineWidth(
             VkCommandBuffer commandBuffer,
             float lineWidth);
-        // Command: 86
-        /// <summary>vkCmdSetSampleLocationsEXT - Set the dynamic sample locations state
-        /// </summary>
-        /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
-        /// recorded.</param>
-        /// <param name="pSampleLocationsInfo">pSampleLocationsInfo is the sample locations state to set.</param>
-        private delegate void vkCmdSetSampleLocationsEXT(
-            VkCommandBuffer commandBuffer,
-            /*-const-*/ VkSampleLocationsInfoEXT* pSampleLocationsInfo);
         // Command: 87
+        // Method: 69
         /// <summary>vkCmdSetScissor - Set the dynamic scissor rectangles on a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1706,6 +1513,7 @@ namespace Vulkan {
             UInt32 scissorCount,
             /*-const-*/ VkRect2D* pScissors);
         // Command: 88
+        // Method: 70
         /// <summary>vkCmdSetStencilCompareMask - Set the stencil compare mask dynamic state
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1719,6 +1527,7 @@ namespace Vulkan {
             VkStencilFaceFlags faceMask,
             UInt32 compareMask);
         // Command: 89
+        // Method: 71
         /// <summary>vkCmdSetStencilReference - Set the stencil reference dynamic state
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1733,6 +1542,7 @@ namespace Vulkan {
             VkStencilFaceFlags faceMask,
             UInt32 reference);
         // Command: 90
+        // Method: 72
         /// <summary>vkCmdSetStencilWriteMask - Set the stencil write mask dynamic state
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1747,6 +1557,7 @@ namespace Vulkan {
             VkStencilFaceFlags faceMask,
             UInt32 writeMask);
         // Command: 91
+        // Method: 73
         /// <summary>vkCmdSetViewport - Set the viewport on a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1764,6 +1575,7 @@ namespace Vulkan {
             UInt32 viewportCount,
             /*-const-*/ VkViewport* pViewports);
         // Command: 92
+        // Method: 74
         /// <summary>vkCmdSetViewportShadingRatePaletteNV - Set shading rate image palettes on a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1782,6 +1594,7 @@ namespace Vulkan {
             UInt32 viewportCount,
             /*-const-*/ VkShadingRatePaletteNV* pShadingRatePalettes);
         // Command: 93
+        // Method: 75
         /// <summary>vkCmdSetViewportWScalingNV - Set the viewport W scaling on a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1799,6 +1612,7 @@ namespace Vulkan {
             UInt32 viewportCount,
             /*-const-*/ VkViewportWScalingNV* pViewportWScalings);
         // Command: 94
+        // Method: 76
         /// <summary>vkCmdTraceRaysNV - Initialize a ray tracing dispatch
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1850,6 +1664,7 @@ namespace Vulkan {
             UInt32 height,
             UInt32 depth);
         // Command: 95
+        // Method: 77
         /// <summary>vkCmdUpdateBuffer - Update a buffer’s contents from host memory
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1869,6 +1684,7 @@ namespace Vulkan {
             VkDeviceSize dataSize,
             /*-const-*/ void* pData);
         // Command: 96
+        // Method: 78
         /// <summary>vkCmdWaitEvents - Wait for one or more events and insert a set of memory
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -1906,6 +1722,7 @@ namespace Vulkan {
             UInt32 imageMemoryBarrierCount,
             /*-const-*/ VkImageMemoryBarrier* pImageMemoryBarriers);
         // Command: 97
+        // Method: 79
         /// <summary>vkCmdWriteAccelerationStructuresPropertiesNV - Write acceleration structure result parameters to query results.
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1929,6 +1746,7 @@ namespace Vulkan {
             VkQueryPool queryPool,
             UInt32 firstQuery);
         // Command: 98
+        // Method: 80
         /// <summary>vkCmdWriteBufferMarkerAMD - Execute a pipelined write of a marker value into a buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1948,6 +1766,7 @@ namespace Vulkan {
             VkDeviceSize dstOffset,
             UInt32 marker);
         // Command: 99
+        // Method: 81
         /// <summary>vkCmdWriteTimestamp - Write a device timestamp into a query object
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -1964,6 +1783,7 @@ namespace Vulkan {
             VkQueryPool queryPool,
             UInt32 query);
         // Command: 100
+        // Method: 82
         /// <summary>vkCompileDeferredNV - Deferred compilation of shaders
         /// </summary>
         /// <param name="device">device is the logical device that contains the ray tracing
@@ -1977,6 +1797,7 @@ namespace Vulkan {
             VkPipeline pipeline,
             UInt32 shader);
         // Command: 101
+        // Method: 83
         /// <summary>vkCreateAccelerationStructureNV - Create a new acceleration structure object
         /// </summary>
         /// <param name="device">device is the logical device that creates the buffer object.</param>
@@ -1994,6 +1815,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkAccelerationStructureNV* pAccelerationStructure);
         // Command: 102
+        // Method: 84
         /// <summary>vkCreateAndroidSurfaceKHR - Create a <a href="#VkSurfaceKHR">VkSurfaceKHR</a> object for an Android native window
         /// </summary>
         /// <param name="instance">instance is the instance to associate the surface with.</param>
@@ -2012,6 +1834,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
         // Command: 103
+        // Method: 85
         /// <summary>vkCreateBuffer - Create a new buffer object
         /// </summary>
         /// <param name="device">device is the logical device that creates the buffer object.</param>
@@ -2029,6 +1852,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkBuffer* pBuffer);
         // Command: 104
+        // Method: 86
         /// <summary>vkCreateBufferView - Create a new buffer view object
         /// </summary>
         /// <param name="device">device is the logical device that creates the buffer view.</param>
@@ -2046,6 +1870,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkBufferView* pView);
         // Command: 105
+        // Method: 87
         /// <summary>vkCreateCommandPool - Create a new command pool object
         /// </summary>
         /// <param name="device">device is the logical device that creates the command pool.</param>
@@ -2063,6 +1888,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkCommandPool* pCommandPool);
         // Command: 106
+        // Method: 88
         /// <summary>vkCreateComputePipelines - Creates a new compute pipeline object
         /// </summary>
         /// <param name="device">device is the logical device that creates the compute pipelines.</param>
@@ -2086,39 +1912,8 @@ namespace Vulkan {
             /*-const-*/ VkComputePipelineCreateInfo* pCreateInfos,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkPipeline* pPipelines);
-        // Command: 107
-        /// <summary>vkCreateDebugReportCallbackEXT - Create a debug report callback object
-        /// </summary>
-        /// <param name="instance">instance the instance the callback will be logged on.</param>
-        /// <param name="pCreateInfo">pCreateInfo points to a VkDebugReportCallbackCreateInfoEXT
-        /// structure which defines the conditions under which this callback will be
-        /// called.</param>
-        /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
-        /// Memory Allocation chapter.</param>
-        /// <param name="pCallback">pCallback is a pointer to record the
-        /// VkDebugReportCallbackEXT object created.</param>
-        private delegate VkResult vkCreateDebugReportCallbackEXT(
-            VkInstance instance,
-            /*-const-*/ VkDebugReportCallbackCreateInfoEXT* pCreateInfo,
-            /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkDebugReportCallbackEXT* pCallback);
-        // Command: 108
-        /// <summary>vkCreateDebugUtilsMessengerEXT - Create a debug messenger object
-        /// </summary>
-        /// <param name="instance">instance the instance the messenger will be used with.</param>
-        /// <param name="pCreateInfo">pCreateInfo points to a VkDebugUtilsMessengerCreateInfoEXT
-        /// structure which contains the callback pointer as well as defines the
-        /// conditions under which this messenger will trigger the callback.</param>
-        /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
-        /// Memory Allocation chapter.</param>
-        /// <param name="pMessenger">pMessenger is a pointer to record the
-        /// VkDebugUtilsMessengerEXT object created.</param>
-        private delegate VkResult vkCreateDebugUtilsMessengerEXT(
-            VkInstance instance,
-            /*-const-*/ VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
-            /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkDebugUtilsMessengerEXT* pMessenger);
         // Command: 109
+        // Method: 89
         /// <summary>vkCreateDescriptorPool - Creates a descriptor pool object
         /// </summary>
         /// <param name="device">device is the logical device that creates the descriptor pool.</param>
@@ -2136,6 +1931,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkDescriptorPool* pDescriptorPool);
         // Command: 110
+        // Method: 90
         /// <summary>vkCreateDescriptorSetLayout - Create a new descriptor set layout
         /// </summary>
         /// <param name="device">device is the logical device that creates the descriptor set
@@ -2154,6 +1950,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkDescriptorSetLayout* pSetLayout);
         // Command: 111
+        // Method: 91
         /// <summary>vkCreateDescriptorUpdateTemplate - Create a new descriptor update template
         /// </summary>
         /// <param name="device">device is the logical device that creates the descriptor update
@@ -2175,6 +1972,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkDescriptorUpdateTemplate* pDescriptorUpdateTemplate);
         // Command: 112
+        // Method: 92
         /// <summary>vkCreateDevice - Create a new device instance
         /// </summary>
         /// <param name="physicalDevice">physicalDevice
@@ -2195,6 +1993,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkDevice* pDevice);
         // Command: 113
+        // Method: 93
         /// <summary>vkCreateDisplayModeKHR - Create a display mode
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device associated with
@@ -2214,6 +2013,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkDisplayModeKHR* pMode);
         // Command: 114
+        // Method: 94
         /// <summary>vkCreateDisplayPlaneSurfaceKHR - Create a <a href="#VkSurfaceKHR">VkSurfaceKHR</a> structure representing a display plane and mode
         /// </summary>
         /// <param name="instance">instance is the instance corresponding to the physical device the
@@ -2233,6 +2033,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
         // Command: 115
+        // Method: 95
         /// <summary>vkCreateEvent - Create a new event object
         /// </summary>
         /// <param name="device">device is the logical device that creates the event.</param>
@@ -2250,6 +2051,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkEvent* pEvent);
         // Command: 116
+        // Method: 96
         /// <summary>vkCreateFence - Create a new fence object
         /// </summary>
         /// <param name="device">device is the logical device that creates the fence.</param>
@@ -2267,6 +2069,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkFence* pFence);
         // Command: 117
+        // Method: 97
         /// <summary>vkCreateFramebuffer - Create a new framebuffer object
         /// </summary>
         /// <param name="device">device is the logical device that creates the framebuffer.</param>
@@ -2283,6 +2086,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkFramebuffer* pFramebuffer);
         // Command: 118
+        // Method: 98
         /// <summary>vkCreateGraphicsPipelines - Create graphics pipelines
         /// </summary>
         /// <param name="device">device is the logical device that creates the graphics pipelines.</param>
@@ -2307,6 +2111,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkPipeline* pPipelines);
         // Command: 119
+        // Method: 99
         /// <summary>vkCreateIOSSurfaceMVK - Create a VkSurfaceKHR object for an iOS UIView
         /// </summary>
         /// <param name="instance">instance is the instance with which to associate the surface.</param>
@@ -2325,6 +2130,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
         // Command: 120
+        // Method: 100
         /// <summary>vkCreateImage - Create a new image object
         /// </summary>
         /// <param name="device">device is the logical device that creates the image.</param>
@@ -2342,6 +2148,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkImage* pImage);
         // Command: 121
+        // Method: 101
         /// <summary>vkCreateImagePipeSurfaceFUCHSIA - Create a <a href="#VkSurfaceKHR">VkSurfaceKHR</a> object for a Fuchsia ImagePipe
         /// </summary>
         /// <param name="instance">instance is the instance to associate with the surface.</param>
@@ -2360,6 +2167,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
         // Command: 122
+        // Method: 102
         /// <summary>vkCreateImageView - Create an image view from an existing image
         /// </summary>
         /// <param name="device">device is the logical device that creates the image view.</param>
@@ -2377,6 +2185,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkImageView* pView);
         // Command: 123
+        // Method: 103
         /// <summary>vkCreateIndirectCommandsLayoutNVX - Create an indirect command layout object
         /// </summary>
         /// <param name="device">device is the logical device that creates the indirect command
@@ -2396,6 +2205,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkIndirectCommandsLayoutNVX* pIndirectCommandsLayout);
         // Command: 124
+        // Method: 104
         /// <summary>vkCreateInstance - Create a new Vulkan instance
         /// </summary>
         /// <param name="pCreateInfo">pCreateInfo points to an instance of VkInstanceCreateInfo
@@ -2410,6 +2220,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkInstance* pInstance);
         // Command: 125
+        // Method: 105
         /// <summary>vkCreateMacOSSurfaceMVK - Create a VkSurfaceKHR object for a macOS NSView
         /// </summary>
         /// <param name="instance">instance is the instance with which to associate the surface.</param>
@@ -2427,24 +2238,8 @@ namespace Vulkan {
             /*-const-*/ VkMacOSSurfaceCreateInfoMVK* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
-        // Command: 126
-        /// <summary>vkCreateMetalSurfaceEXT - Create a VkSurfaceKHR object for CAMetalLayer
-        /// </summary>
-        /// <param name="instance">instance is the instance with which to associate the surface.</param>
-        /// <param name="pCreateInfo">pCreateInfo is a pointer to an instance of the
-        /// VkMetalSurfaceCreateInfoEXT structure containing the parameters
-        /// affecting the creation of the surface object.</param>
-        /// <param name="pAllocator">pAllocator is the allocator used for host memory allocated for the
-        /// surface object when there is no more specific allocator available (see
-        /// Memory Allocation).</param>
-        /// <param name="pSurface">pSurface points to a VkSurfaceKHR handle in which the
-        /// created surface object is returned.</param>
-        private delegate VkResult vkCreateMetalSurfaceEXT(
-            VkInstance instance,
-            /*-const-*/ VkMetalSurfaceCreateInfoEXT* pCreateInfo,
-            /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkSurfaceKHR* pSurface);
         // Command: 127
+        // Method: 106
         /// <summary>vkCreateObjectTableNVX - Create an object table
         /// </summary>
         /// <param name="device">device is the logical device that creates the object table.</param>
@@ -2462,6 +2257,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkObjectTableNVX* pObjectTable);
         // Command: 128
+        // Method: 107
         /// <summary>vkCreatePipelineCache - Creates a new pipeline cache
         /// </summary>
         /// <param name="device">device is the logical device that creates the pipeline cache
@@ -2480,6 +2276,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkPipelineCache* pPipelineCache);
         // Command: 129
+        // Method: 108
         /// <summary>vkCreatePipelineLayout - Creates a new pipeline layout object
         /// </summary>
         /// <param name="device">device is the logical device that creates the pipeline layout.</param>
@@ -2497,6 +2294,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkPipelineLayout* pPipelineLayout);
         // Command: 130
+        // Method: 109
         /// <summary>vkCreateQueryPool - Create a new query pool object
         /// </summary>
         /// <param name="device">device is the logical device that creates the query pool.</param>
@@ -2514,6 +2312,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkQueryPool* pQueryPool);
         // Command: 131
+        // Method: 110
         /// <summary>vkCreateRayTracingPipelinesNV - Creates a new ray tracing pipeline object
         /// </summary>
         /// <param name="device">device is the logical device that creates the ray tracing
@@ -2539,6 +2338,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkPipeline* pPipelines);
         // Command: 132
+        // Method: 111
         /// <summary>vkCreateRenderPass - Create a new render pass object
         /// </summary>
         /// <param name="device">device is the logical device that creates the render pass.</param>
@@ -2556,6 +2356,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkRenderPass* pRenderPass);
         // Command: 133
+        // Method: 112
         /// <summary>vkCreateRenderPass2KHR - Create a new render pass object
         /// </summary>
         /// <param name="device">device is the logical device that creates the render pass.</param>
@@ -2573,6 +2374,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkRenderPass* pRenderPass);
         // Command: 134
+        // Method: 113
         /// <summary>vkCreateSampler - Create a new sampler object
         /// </summary>
         /// <param name="device">device is the logical device that creates the sampler.</param>
@@ -2590,6 +2392,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSampler* pSampler);
         // Command: 135
+        // Method: 114
         /// <summary>vkCreateSamplerYcbcrConversion - Create a new Ycbcr conversion
         /// </summary>
         /// <param name="device">device is the logical device that creates the sampler Y’CBCR
@@ -2608,6 +2411,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSamplerYcbcrConversion* pYcbcrConversion);
         // Command: 136
+        // Method: 115
         /// <summary>vkCreateSemaphore - Create a new queue semaphore object
         /// </summary>
         /// <param name="device">device is the logical device that creates the semaphore.</param>
@@ -2625,6 +2429,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSemaphore* pSemaphore);
         // Command: 137
+        // Method: 116
         /// <summary>vkCreateShaderModule - Creates a new shader module object
         /// </summary>
         /// <param name="device">device is the logical device that creates the shader module.</param>
@@ -2641,6 +2446,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkShaderModule* pShaderModule);
         // Command: 138
+        // Method: 117
         /// <summary>vkCreateSharedSwapchainsKHR - Create multiple swapchains that share presentable images
         /// </summary>
         /// <param name="device">device is the device to create the swapchains for.</param>
@@ -2661,6 +2467,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSwapchainKHR* pSwapchains);
         // Command: 139
+        // Method: 118
         /// <summary>vkCreateStreamDescriptorSurfaceGGP - Create a <a href="#VkSurfaceKHR">VkSurfaceKHR</a> object for a Google Games Platform stream
         /// </summary>
         /// <param name="instance">instance is the instance to associate with the surface.</param>
@@ -2679,6 +2486,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
         // Command: 140
+        // Method: 119
         /// <summary>vkCreateSwapchainKHR - Create a swapchain
         /// </summary>
         /// <param name="device">device is the device to create the swapchain for.</param>
@@ -2696,24 +2504,8 @@ namespace Vulkan {
             /*-const-*/ VkSwapchainCreateInfoKHR* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSwapchainKHR* pSwapchain);
-        // Command: 141
-        /// <summary>vkCreateValidationCacheEXT - Creates a new validation cache
-        /// </summary>
-        /// <param name="device">device is the logical device that creates the validation cache
-        /// object.</param>
-        /// <param name="pCreateInfo">pCreateInfo is a pointer to a VkValidationCacheCreateInfoEXT
-        /// structure that contains the initial parameters for the validation cache
-        /// object.</param>
-        /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
-        /// Memory Allocation chapter.</param>
-        /// <param name="pValidationCache">pValidationCache is a pointer to a VkValidationCacheEXT
-        /// handle in which the resulting validation cache object is returned.</param>
-        private delegate VkResult vkCreateValidationCacheEXT(
-            VkDevice device,
-            /*-const-*/ VkValidationCacheCreateInfoEXT* pCreateInfo,
-            /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkValidationCacheEXT* pValidationCache);
         // Command: 142
+        // Method: 120
         /// <summary>vkCreateViSurfaceNN - Create a <a href="#VkSurfaceKHR">VkSurfaceKHR</a> object for a VI layer
         /// </summary>
         /// <param name="instance">instance is the instance with which to associate the surface.</param>
@@ -2732,6 +2524,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
         // Command: 143
+        // Method: 121
         /// <summary>vkCreateWaylandSurfaceKHR - Create a <a href="#VkSurfaceKHR">VkSurfaceKHR</a> object for a Wayland window
         /// </summary>
         /// <param name="instance">instance is the instance to associate the surface with.</param>
@@ -2750,6 +2543,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
         // Command: 144
+        // Method: 122
         /// <summary>vkCreateWin32SurfaceKHR - Create a <a href="#VkSurfaceKHR">VkSurfaceKHR</a> object for an Win32 native window
         /// </summary>
         /// <param name="instance">instance is the instance to associate the surface with.</param>
@@ -2768,6 +2562,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
         // Command: 145
+        // Method: 123
         /// <summary>vkCreateXcbSurfaceKHR - Create a <a href="#VkSurfaceKHR">VkSurfaceKHR</a> object for a X11 window, using the XCB client-side library
         /// </summary>
         /// <param name="instance">instance is the instance to associate the surface with.</param>
@@ -2786,6 +2581,7 @@ namespace Vulkan {
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
         // Command: 146
+        // Method: 124
         /// <summary>vkCreateXlibSurfaceKHR - Create a <a href="#VkSurfaceKHR">VkSurfaceKHR</a> object for an X11 window, using the Xlib client-side library
         /// </summary>
         /// <param name="instance">instance is the instance to associate the surface with.</param>
@@ -2803,54 +2599,8 @@ namespace Vulkan {
             /*-const-*/ VkXlibSurfaceCreateInfoKHR* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface);
-        // Command: 147
-        /// <summary>vkDebugMarkerSetObjectNameEXT - Give a user-friendly name to an object
-        /// </summary>
-        /// <param name="device">device is the device that created the object.</param>
-        /// <param name="pNameInfo">pNameInfo is a pointer to an instance of the
-        /// VkDebugMarkerObjectNameInfoEXT structure specifying the parameters
-        /// of the name to set on the object.</param>
-        private delegate VkResult vkDebugMarkerSetObjectNameEXT(
-            VkDevice device,
-            /*-const-*/ VkDebugMarkerObjectNameInfoEXT* pNameInfo);
-        // Command: 148
-        /// <summary>vkDebugMarkerSetObjectTagEXT - Attach arbitrary data to an object
-        /// </summary>
-        /// <param name="device">device is the device that created the object.</param>
-        /// <param name="pTagInfo">pTagInfo is a pointer to an instance of the
-        /// VkDebugMarkerObjectTagInfoEXT structure specifying the parameters
-        /// of the tag to attach to the object.</param>
-        private delegate VkResult vkDebugMarkerSetObjectTagEXT(
-            VkDevice device,
-            /*-const-*/ VkDebugMarkerObjectTagInfoEXT* pTagInfo);
-        // Command: 149
-        /// <summary>vkDebugReportMessageEXT - Inject a message into a debug stream
-        /// </summary>
-        /// <param name="instance">instance is the debug stream’s VkInstance.</param>
-        /// <param name="flags">flags specifies the VkDebugReportFlagBitsEXT classification
-        /// of this event/message.</param>
-        /// <param name="objectType">objectType is a VkDebugReportObjectTypeEXT specifying the
-        /// type of object being used or created at the time the event was
-        /// triggered.</param>
-        /// <param name="object">object this is the object where the issue was detected.
-        /// objectcan be VK_NULL_HANDLE if there is no object
-        /// associated with the event.</param>
-        /// <param name="location">location is an application defined value.</param>
-        /// <param name="messageCode">messageCode is an application defined value.</param>
-        /// <param name="pLayerPrefix">pLayerPrefix is the abbreviation of the component making this
-        /// event/message.</param>
-        /// <param name="pMessage">pMessage is a null-terminated string detailing the trigger
-        /// conditions.</param>
-        private delegate void vkDebugReportMessageEXT(
-            VkInstance instance,
-            VkDebugReportFlagsEXT flags,
-            VkDebugReportObjectTypeEXT _objectType,
-            UInt64 _object,
-            Int32 location,
-            Int32 messageCode,
-            IntPtr pLayerPrefix,
-            IntPtr pMessage);
         // Command: 150
+        // Method: 125
         /// <summary>vkDestroyAccelerationStructureNV - Destroy an acceleration structure object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the buffer.</param>
@@ -2863,6 +2613,7 @@ namespace Vulkan {
             VkAccelerationStructureNV accelerationStructure,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 151
+        // Method: 126
         /// <summary>vkDestroyBuffer - Destroy a buffer object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the buffer.</param>
@@ -2875,6 +2626,7 @@ namespace Vulkan {
             VkBuffer buffer,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 152
+        // Method: 127
         /// <summary>vkDestroyBufferView - Destroy a buffer view object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the buffer view.</param>
@@ -2887,6 +2639,7 @@ namespace Vulkan {
             VkBufferView bufferView,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 153
+        // Method: 128
         /// <summary>vkDestroyCommandPool - Destroy a command pool object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the command pool.</param>
@@ -2898,37 +2651,8 @@ namespace Vulkan {
             VkDevice device,
             VkCommandPool commandPool,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
-        // Command: 154
-        /// <summary>vkDestroyDebugReportCallbackEXT - Destroy a debug report callback object
-        /// </summary>
-        /// <param name="instance">instance the instance where the callback was created.</param>
-        /// <param name="callback">callback the VkDebugReportCallbackEXT object to destroy.
-        /// callback is an externally synchronized object and must not be
-        /// used on more than one thread at a time.
-        /// This means that vkDestroyDebugReportCallbackEXTmust not be
-        /// called when a callback is active.</param>
-        /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
-        /// Memory Allocation chapter.</param>
-        private delegate void vkDestroyDebugReportCallbackEXT(
-            VkInstance instance,
-            VkDebugReportCallbackEXT callback,
-            /*-const-*/ VkAllocationCallbacks* pAllocator);
-        // Command: 155
-        /// <summary>vkDestroyDebugUtilsMessengerEXT - Destroy a debug messenger object
-        /// </summary>
-        /// <param name="instance">instance the instance where the callback was created.</param>
-        /// <param name="messenger">messenger the VkDebugUtilsMessengerEXT object to destroy.
-        /// messenger is an externally synchronized object and must not be
-        /// used on more than one thread at a time.
-        /// This means that vkDestroyDebugUtilsMessengerEXTmust not be
-        /// called when a callback is active.</param>
-        /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
-        /// Memory Allocation chapter.</param>
-        private delegate void vkDestroyDebugUtilsMessengerEXT(
-            VkInstance instance,
-            VkDebugUtilsMessengerEXT messenger,
-            /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 156
+        // Method: 129
         /// <summary>vkDestroyDescriptorPool - Destroy a descriptor pool object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the descriptor pool.</param>
@@ -2941,6 +2665,7 @@ namespace Vulkan {
             VkDescriptorPool descriptorPool,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 157
+        // Method: 130
         /// <summary>vkDestroyDescriptorSetLayout - Destroy a descriptor set layout object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the descriptor set
@@ -2954,6 +2679,7 @@ namespace Vulkan {
             VkDescriptorSetLayout descriptorSetLayout,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 158
+        // Method: 131
         /// <summary>vkDestroyDescriptorUpdateTemplate - Destroy a descriptor update template object
         /// </summary>
         /// <param name="device">device is the logical device that has been used to create the
@@ -2968,6 +2694,7 @@ namespace Vulkan {
             VkDescriptorUpdateTemplate descriptorUpdateTemplate,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 159
+        // Method: 132
         /// <summary>vkDestroyDevice - Destroy a logical device
         /// </summary>
         /// <param name="device">device is the logical device to destroy.</param>
@@ -2978,6 +2705,7 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 160
+        // Method: 133
         /// <summary>vkDestroyEvent - Destroy an event object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the event.</param>
@@ -2990,6 +2718,7 @@ namespace Vulkan {
             VkEvent _event,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 161
+        // Method: 134
         /// <summary>vkDestroyFence - Destroy a fence object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the fence.</param>
@@ -3002,6 +2731,7 @@ namespace Vulkan {
             VkFence fence,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 162
+        // Method: 135
         /// <summary>vkDestroyFramebuffer - Destroy a framebuffer object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the framebuffer.</param>
@@ -3014,6 +2744,7 @@ namespace Vulkan {
             VkFramebuffer framebuffer,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 163
+        // Method: 136
         /// <summary>vkDestroyImage - Destroy an image object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the image.</param>
@@ -3026,6 +2757,7 @@ namespace Vulkan {
             VkImage image,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 164
+        // Method: 137
         /// <summary>vkDestroyImageView - Destroy an image view object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the image view.</param>
@@ -3038,6 +2770,7 @@ namespace Vulkan {
             VkImageView imageView,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 165
+        // Method: 138
         /// <summary>vkDestroyIndirectCommandsLayoutNVX - Destroy an object table
         /// </summary>
         /// <param name="device">device is the logical device that destroys the layout.</param>
@@ -3050,6 +2783,7 @@ namespace Vulkan {
             VkIndirectCommandsLayoutNVX indirectCommandsLayout,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 166
+        // Method: 139
         /// <summary>vkDestroyInstance - Destroy an instance of Vulkan
         /// </summary>
         /// <param name="instance">instance is the handle of the instance to destroy.</param>
@@ -3060,6 +2794,7 @@ namespace Vulkan {
             VkInstance instance,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 167
+        // Method: 140
         /// <summary>vkDestroyObjectTableNVX - Destroy an object table
         /// </summary>
         /// <param name="device">device is the logical device that destroys the table.</param>
@@ -3072,6 +2807,7 @@ namespace Vulkan {
             VkObjectTableNVX _objectTable,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 168
+        // Method: 141
         /// <summary>vkDestroyPipeline - Destroy a pipeline object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the pipeline.</param>
@@ -3084,6 +2820,7 @@ namespace Vulkan {
             VkPipeline pipeline,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 169
+        // Method: 142
         /// <summary>vkDestroyPipelineCache - Destroy a pipeline cache object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the pipeline cache
@@ -3097,6 +2834,7 @@ namespace Vulkan {
             VkPipelineCache pipelineCache,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 170
+        // Method: 143
         /// <summary>vkDestroyPipelineLayout - Destroy a pipeline layout object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the pipeline layout.</param>
@@ -3109,6 +2847,7 @@ namespace Vulkan {
             VkPipelineLayout pipelineLayout,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 171
+        // Method: 144
         /// <summary>vkDestroyQueryPool - Destroy a query pool object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the query pool.</param>
@@ -3121,6 +2860,7 @@ namespace Vulkan {
             VkQueryPool queryPool,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 172
+        // Method: 145
         /// <summary>vkDestroyRenderPass - Destroy a render pass object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the render pass.</param>
@@ -3133,6 +2873,7 @@ namespace Vulkan {
             VkRenderPass renderPass,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 173
+        // Method: 146
         /// <summary>vkDestroySampler - Destroy a sampler object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the sampler.</param>
@@ -3145,6 +2886,7 @@ namespace Vulkan {
             VkSampler sampler,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 174
+        // Method: 147
         /// <summary>vkDestroySamplerYcbcrConversion - Destroy a created Y’CbCr conversion
         /// </summary>
         /// <param name="device">device is the logical device that destroys the Y’CBCR
@@ -3158,6 +2900,7 @@ namespace Vulkan {
             VkSamplerYcbcrConversion ycbcrConversion,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 175
+        // Method: 148
         /// <summary>vkDestroySemaphore - Destroy a semaphore object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the semaphore.</param>
@@ -3170,6 +2913,7 @@ namespace Vulkan {
             VkSemaphore semaphore,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 176
+        // Method: 149
         /// <summary>vkDestroyShaderModule - Destroy a shader module
         /// </summary>
         /// <param name="device">device is the logical device that destroys the shader module.</param>
@@ -3182,6 +2926,7 @@ namespace Vulkan {
             VkShaderModule shaderModule,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 177
+        // Method: 150
         /// <summary>vkDestroySurfaceKHR - Destroy a VkSurfaceKHR object
         /// </summary>
         /// <param name="instance">instance is the instance used to create the surface.</param>
@@ -3195,6 +2940,7 @@ namespace Vulkan {
             VkSurfaceKHR surface,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 178
+        // Method: 151
         /// <summary>vkDestroySwapchainKHR - Destroy a swapchain object
         /// </summary>
         /// <param name="device">device is the VkDevice associated with swapchain.</param>
@@ -3207,37 +2953,16 @@ namespace Vulkan {
             VkDevice device,
             VkSwapchainKHR swapchain,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
-        // Command: 179
-        /// <summary>vkDestroyValidationCacheEXT - Destroy a validation cache object
-        /// </summary>
-        /// <param name="device">device is the logical device that destroys the validation cache
-        /// object.</param>
-        /// <param name="validationCache">validationCache is the handle of the validation cache to destroy.</param>
-        /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
-        /// Memory Allocation chapter.</param>
-        private delegate void vkDestroyValidationCacheEXT(
-            VkDevice device,
-            VkValidationCacheEXT validationCache,
-            /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 180
+        // Method: 152
         /// <summary>vkDeviceWaitIdle - Wait for a device to become idle
         /// </summary>
         /// <param name="device">device is the logical device to idle.</param>
         [DllImport(VulkanLibrary, CallingConvention = CallingConvention.Winapi)]
         public static extern VkResult vkDeviceWaitIdle(
             VkDevice device);
-        // Command: 181
-        /// <summary>vkDisplayPowerControlEXT - Set the power state of a display
-        /// </summary>
-        /// <param name="device">device is a logical device associated with display.</param>
-        /// <param name="display">display is the display whose power state is modified.</param>
-        /// <param name="pDisplayPowerInfo">pDisplayPowerInfo is an instance of VkDisplayPowerInfoEXT
-        /// specifying the new power state of display.</param>
-        private delegate VkResult vkDisplayPowerControlEXT(
-            VkDevice device,
-            VkDisplayKHR display,
-            /*-const-*/ VkDisplayPowerInfoEXT* pDisplayPowerInfo);
         // Command: 182
+        // Method: 153
         /// <summary>vkEndCommandBuffer - Finish recording a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer to complete recording.</param>
@@ -3245,6 +2970,7 @@ namespace Vulkan {
         public static extern VkResult vkEndCommandBuffer(
             VkCommandBuffer commandBuffer);
         // Command: 183
+        // Method: 154
         /// <summary>vkEnumerateDeviceExtensionProperties - Returns properties of available physical device extensions
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device that will be queried.</param>
@@ -3264,6 +2990,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkExtensionProperties* pProperties);
         // Command: 184
+        // Method: 155
         /// <summary>vkEnumerateDeviceLayerProperties - Returns properties of available physical device layers
         /// </summary>
         /// <param name="pPropertyCount">pPropertyCount is a pointer to an integer related to the number of
@@ -3276,6 +3003,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkLayerProperties* pProperties);
         // Command: 185
+        // Method: 156
         /// <summary>vkEnumerateInstanceExtensionProperties - Returns up to requested number of global extension properties
         /// </summary>
         /// <param name="pLayerName">pLayerName is either NULL or a pointer to a null-terminated
@@ -3290,6 +3018,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkExtensionProperties* pProperties);
         // Command: 186
+        // Method: 157
         /// <summary>vkEnumerateInstanceLayerProperties - Returns up to requested number of global layer properties
         /// </summary>
         /// <param name="pPropertyCount">pPropertyCount is a pointer to an integer related to the number of
@@ -3301,6 +3030,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkLayerProperties* pProperties);
         // Command: 187
+        // Method: 158
         /// <summary>vkEnumerateInstanceVersion - Query instance-level version before instance creation
         /// </summary>
         /// <param name="pApiVersion">pApiVersion points to a uint32_t, which is the version of
@@ -3310,6 +3040,7 @@ namespace Vulkan {
         public static extern VkResult vkEnumerateInstanceVersion(
             UInt32* pApiVersion);
         // Command: 188
+        // Method: 159
         /// <summary>vkEnumeratePhysicalDeviceGroups - Enumerates groups of physical devices that can be used to create a single logical device
         /// </summary>
         /// <param name="instance">instance is a handle to a Vulkan instance previously created with
@@ -3324,6 +3055,7 @@ namespace Vulkan {
             UInt32* pPhysicalDeviceGroupCount,
             VkPhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties);
         // Command: 189
+        // Method: 160
         /// <summary>vkEnumeratePhysicalDevices - Enumerates the physical devices accessible to a Vulkan instance
         /// </summary>
         /// <param name="instance">instance is a handle to a Vulkan instance previously created with
@@ -3338,6 +3070,7 @@ namespace Vulkan {
             UInt32* pPhysicalDeviceCount,
             VkPhysicalDevice* pPhysicalDevices);
         // Command: 190
+        // Method: 161
         /// <summary>vkFlushMappedMemoryRanges - Flush mapped memory ranges
         /// </summary>
         /// <param name="device">device is the logical device that owns the memory ranges.</param>
@@ -3351,6 +3084,7 @@ namespace Vulkan {
             UInt32 memoryRangeCount,
             /*-const-*/ VkMappedMemoryRange* pMemoryRanges);
         // Command: 191
+        // Method: 162
         /// <summary>vkFreeCommandBuffers - Free command buffers
         /// </summary>
         /// <param name="device">device is the logical device that owns the command pool.</param>
@@ -3366,6 +3100,7 @@ namespace Vulkan {
             UInt32 commandBufferCount,
             /*-const-*/ VkCommandBuffer* pCommandBuffers);
         // Command: 192
+        // Method: 163
         /// <summary>vkFreeDescriptorSets - Free one or more descriptor sets
         /// </summary>
         /// <param name="device">device is the logical device that owns the descriptor pool.</param>
@@ -3382,6 +3117,7 @@ namespace Vulkan {
             UInt32 descriptorSetCount,
             /*-const-*/ VkDescriptorSet* pDescriptorSets);
         // Command: 193
+        // Method: 164
         /// <summary>vkFreeMemory - Free device memory
         /// </summary>
         /// <param name="device">device is the logical device that owns the memory.</param>
@@ -3394,6 +3130,7 @@ namespace Vulkan {
             VkDeviceMemory memory,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
         // Command: 194
+        // Method: 165
         /// <summary>vkGetAccelerationStructureHandleNV - Get opaque acceleration structure handle
         /// </summary>
         /// <param name="device">device is the logical device that owns the acceleration
@@ -3410,6 +3147,7 @@ namespace Vulkan {
             Int32 dataSize,
             void* pData);
         // Command: 195
+        // Method: 166
         /// <summary>vkGetAccelerationStructureMemoryRequirementsNV - Get acceleration structure memory requirements
         /// </summary>
         /// <param name="device">device is the logical device on which the acceleration structure
@@ -3424,6 +3162,7 @@ namespace Vulkan {
             /*-const-*/ VkAccelerationStructureMemoryRequirementsInfoNV* pInfo,
             VkMemoryRequirements2KHR* pMemoryRequirements);
         // Command: 196
+        // Method: 167
         /// <summary>vkGetAndroidHardwareBufferPropertiesANDROID - Get Properties of External Memory Android Hardware Buffers
         /// </summary>
         /// <param name="device">device is the logical device that will be importing buffer.</param>
@@ -3436,17 +3175,8 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ /* struct */ /*AHardwareBuffer*-*/IntPtr buffer,
             VkAndroidHardwareBufferPropertiesANDROID* pProperties);
-        // Command: 197
-        /// <summary>vkGetBufferDeviceAddressEXT - Query an address of a buffer
-        /// </summary>
-        /// <param name="device">device is the logical device that the buffer was created on.</param>
-        /// <param name="pInfo">pInfo is a pointer to an instance of the
-        /// VkBufferDeviceAddressInfoEXT structure specifying the buffer to
-        /// retrieve an address for.</param>
-        private delegate VkDeviceAddress vkGetBufferDeviceAddressEXT(
-            VkDevice device,
-            /*-const-*/ VkBufferDeviceAddressInfoEXT* pInfo);
         // Command: 198
+        // Method: 168
         /// <summary>vkGetBufferMemoryRequirements - Returns the memory requirements for specified Vulkan object
         /// </summary>
         /// <param name="device">device is the logical device that owns the buffer.</param>
@@ -3460,6 +3190,7 @@ namespace Vulkan {
             VkBuffer buffer,
             VkMemoryRequirements* pMemoryRequirements);
         // Command: 199
+        // Method: 169
         /// <summary>vkGetBufferMemoryRequirements2 - Returns the memory requirements for specified Vulkan object
         /// </summary>
         /// <param name="device">device is the logical device that owns the buffer.</param>
@@ -3474,28 +3205,8 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ VkBufferMemoryRequirementsInfo2* pInfo,
             VkMemoryRequirements2* pMemoryRequirements);
-        // Command: 200
-        /// <summary>vkGetCalibratedTimestampsEXT - Query calibrated timestamps
-        /// </summary>
-        /// <param name="device">device is the logical device used to perform the query.</param>
-        /// <param name="timestampCount">timestampCount is the number of timestamps to query.</param>
-        /// <param name="pTimestampInfos">pTimestampInfos is a pointer to an array of timestampCount
-        /// number of structures of type VkCalibratedTimestampInfoEXT,
-        /// describing the time domains the calibrated timestamps should be captured
-        /// from.</param>
-        /// <param name="pTimestamps">pTimestamps is a pointer to an array of timestampCount
-        /// number of 64-bit unsigned integer values in which the requested
-        /// calibrated timestamp values are returned.</param>
-        /// <param name="pMaxDeviation">pMaxDeviation is a pointer to a 64-bit unsigned integer value in
-        /// which the strictly positive maximum deviation, in nanoseconds, of the
-        /// calibrated timestamp values is returned.</param>
-        private delegate VkResult vkGetCalibratedTimestampsEXT(
-            VkDevice device,
-            UInt32 timestampCount,
-            /*-const-*/ VkCalibratedTimestampInfoEXT* pTimestampInfos,
-            UInt64* pTimestamps,
-            UInt64* pMaxDeviation);
         // Command: 201
+        // Method: 170
         /// <summary>vkGetDescriptorSetLayoutSupport - Query whether a descriptor set layout can be created
         /// </summary>
         /// <param name="device">device is the logical device that would create the descriptor set
@@ -3512,6 +3223,7 @@ namespace Vulkan {
             /*-const-*/ VkDescriptorSetLayoutCreateInfo* pCreateInfo,
             VkDescriptorSetLayoutSupport* pSupport);
         // Command: 202
+        // Method: 171
         /// <summary>vkGetDeviceGroupPeerMemoryFeatures - Query supported peer memory features of a device
         /// </summary>
         /// <param name="device">device is the logical device that owns the memory.</param>
@@ -3533,6 +3245,7 @@ namespace Vulkan {
             UInt32 remoteDeviceIndex,
             VkPeerMemoryFeatureFlags* pPeerMemoryFeatures);
         // Command: 203
+        // Method: 172
         /// <summary>vkGetDeviceGroupPresentCapabilitiesKHR - Query present capabilities from other physical devices
         /// </summary>
         /// <param name="device">device is the logical device.</param>
@@ -3543,21 +3256,8 @@ namespace Vulkan {
         public static extern VkResult vkGetDeviceGroupPresentCapabilitiesKHR(
             VkDevice device,
             VkDeviceGroupPresentCapabilitiesKHR* pDeviceGroupPresentCapabilities);
-        // Command: 204
-        /// <summary>vkGetDeviceGroupSurfacePresentModes2EXT - Query device group present capabilities for a surface
-        /// </summary>
-        /// <param name="device">device is the logical device.</param>
-        /// <param name="pSurfaceInfo">pSurfaceInfo points to an instance of the
-        /// VkPhysicalDeviceSurfaceInfo2KHR structure, describing the surface and
-        /// other fixed parameters that would be consumed by vkCreateSwapchainKHR.</param>
-        /// <param name="pModes">pModes is a pointer to a value of type
-        /// VkDeviceGroupPresentModeFlagsKHR that is filled with the supported
-        /// device group present modes for the surface.</param>
-        private delegate VkResult vkGetDeviceGroupSurfacePresentModes2EXT(
-            VkDevice device,
-            /*-const-*/ VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
-            VkDeviceGroupPresentModeFlagsKHR* pModes);
         // Command: 205
+        // Method: 173
         /// <summary>vkGetDeviceGroupSurfacePresentModesKHR - Query present capabilities for a surface
         /// </summary>
         /// <param name="device">device is the logical device.</param>
@@ -3571,6 +3271,7 @@ namespace Vulkan {
             VkSurfaceKHR surface,
             VkDeviceGroupPresentModeFlagsKHR* pModes);
         // Command: 206
+        // Method: 174
         /// <summary>vkGetDeviceMemoryCommitment - Query the current commitment for a VkDeviceMemory
         /// </summary>
         /// <param name="device">device is the logical device that owns the memory.</param>
@@ -3584,6 +3285,7 @@ namespace Vulkan {
             VkDeviceMemory memory,
             VkDeviceSize* pCommittedMemoryInBytes);
         // Command: 207
+        // Method: 175
         /// <summary>vkGetDeviceProcAddr - Return a function pointer for a command
         /// </summary>
         [DllImport(VulkanLibrary, CallingConvention = CallingConvention.Winapi)]
@@ -3591,6 +3293,7 @@ namespace Vulkan {
             VkDevice device,
             IntPtr pName);
         // Command: 208
+        // Method: 176
         /// <summary>vkGetDeviceQueue - Get a queue handle from a device
         /// </summary>
         /// <param name="device">device is the logical device that owns the queue.</param>
@@ -3607,6 +3310,7 @@ namespace Vulkan {
             UInt32 queueIndex,
             VkQueue* pQueue);
         // Command: 209
+        // Method: 177
         /// <summary>vkGetDeviceQueue2 - Get a queue handle from a device
         /// </summary>
         /// <param name="device">device is the logical device that owns the queue.</param>
@@ -3620,6 +3324,7 @@ namespace Vulkan {
             /*-const-*/ VkDeviceQueueInfo2* pQueueInfo,
             VkQueue* pQueue);
         // Command: 210
+        // Method: 178
         /// <summary>vkGetDisplayModeProperties2KHR - Query information about the available display modes.
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device associated with
@@ -3636,6 +3341,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkDisplayModeProperties2KHR* pProperties);
         // Command: 211
+        // Method: 179
         /// <summary>vkGetDisplayModePropertiesKHR - Query the set of mode properties supported by the display
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device associated with
@@ -3652,6 +3358,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkDisplayModePropertiesKHR* pProperties);
         // Command: 212
+        // Method: 180
         /// <summary>vkGetDisplayPlaneCapabilities2KHR - Query capabilities of a mode and plane combination
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device associated with
@@ -3667,6 +3374,7 @@ namespace Vulkan {
             /*-const-*/ VkDisplayPlaneInfo2KHR* pDisplayPlaneInfo,
             VkDisplayPlaneCapabilities2KHR* pCapabilities);
         // Command: 213
+        // Method: 181
         /// <summary>vkGetDisplayPlaneCapabilitiesKHR - Query capabilities of a mode and plane combination
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device associated with
@@ -3687,6 +3395,7 @@ namespace Vulkan {
             UInt32 planeIndex,
             VkDisplayPlaneCapabilitiesKHR* pCapabilities);
         // Command: 214
+        // Method: 182
         /// <summary>vkGetDisplayPlaneSupportedDisplaysKHR - Query the list of displays a plane supports
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is a physical device.</param>
@@ -3703,6 +3412,7 @@ namespace Vulkan {
             UInt32* pDisplayCount,
             VkDisplayKHR* pDisplays);
         // Command: 215
+        // Method: 183
         /// <summary>vkGetEventStatus - Retrieve the status of an event object
         /// </summary>
         /// <param name="device">device is the logical device that owns the event.</param>
@@ -3712,6 +3422,7 @@ namespace Vulkan {
             VkDevice device,
             VkEvent _event);
         // Command: 216
+        // Method: 184
         /// <summary>vkGetFenceFdKHR - Get a POSIX file descriptor handle for a fence
         /// </summary>
         /// <param name="device">device is the logical device that created the fence being
@@ -3727,6 +3438,7 @@ namespace Vulkan {
             /*-const-*/ VkFenceGetFdInfoKHR* pGetFdInfo,
             int* pFd);
         // Command: 217
+        // Method: 185
         /// <summary>vkGetFenceStatus - Return the status of a fence
         /// </summary>
         /// <param name="device">device is the logical device that owns the fence.</param>
@@ -3736,6 +3448,7 @@ namespace Vulkan {
             VkDevice device,
             VkFence fence);
         // Command: 218
+        // Method: 186
         /// <summary>vkGetFenceWin32HandleKHR - Get a Windows HANDLE for a fence
         /// </summary>
         /// <param name="device">device is the logical device that created the fence being
@@ -3750,18 +3463,8 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ VkFenceGetWin32HandleInfoKHR* pGetWin32HandleInfo,
             HANDLE* pHandle);
-        // Command: 219
-        /// <summary>vkGetImageDrmFormatModifierPropertiesEXT - Returns an image’s DRM format modifier
-        /// </summary>
-        /// <param name="device">device is the logical device that owns the image.</param>
-        /// <param name="image">image is the queried image.</param>
-        /// <param name="pProperties">pProperties will return properties of the image’s DRM format
-        /// modifier.</param>
-        private delegate VkResult vkGetImageDrmFormatModifierPropertiesEXT(
-            VkDevice device,
-            VkImage image,
-            VkImageDrmFormatModifierPropertiesEXT* pProperties);
         // Command: 220
+        // Method: 187
         /// <summary>vkGetImageMemoryRequirements - Returns the memory requirements for specified Vulkan object
         /// </summary>
         /// <param name="device">device is the logical device that owns the image.</param>
@@ -3775,6 +3478,7 @@ namespace Vulkan {
             VkImage image,
             VkMemoryRequirements* pMemoryRequirements);
         // Command: 221
+        // Method: 188
         /// <summary>vkGetImageMemoryRequirements2 - Returns the memory requirements for specified Vulkan object
         /// </summary>
         /// <param name="device">device is the logical device that owns the image.</param>
@@ -3790,6 +3494,7 @@ namespace Vulkan {
             /*-const-*/ VkImageMemoryRequirementsInfo2* pInfo,
             VkMemoryRequirements2* pMemoryRequirements);
         // Command: 222
+        // Method: 189
         /// <summary>vkGetImageSparseMemoryRequirements - Query the memory requirements for a sparse image
         /// </summary>
         /// <param name="device">device is the logical device that owns the image.</param>
@@ -3807,6 +3512,7 @@ namespace Vulkan {
             UInt32* pSparseMemoryRequirementCount,
             VkSparseImageMemoryRequirements* pSparseMemoryRequirements);
         // Command: 223
+        // Method: 190
         /// <summary>vkGetImageSparseMemoryRequirements2 - Query the memory requirements for a sparse image
         /// </summary>
         /// <param name="device">device is the logical device that owns the image.</param>
@@ -3825,6 +3531,7 @@ namespace Vulkan {
             UInt32* pSparseMemoryRequirementCount,
             VkSparseImageMemoryRequirements2* pSparseMemoryRequirements);
         // Command: 224
+        // Method: 191
         /// <summary>vkGetImageSubresourceLayout - Retrieve information about an image subresource
         /// </summary>
         /// <param name="device">device is the logical device that owns the image.</param>
@@ -3840,6 +3547,7 @@ namespace Vulkan {
             /*-const-*/ VkImageSubresource* pSubresource,
             VkSubresourceLayout* pLayout);
         // Command: 225
+        // Method: 192
         /// <summary>vkGetImageViewHandleNVX - Get the handle for an image view for a specific descriptor type
         /// </summary>
         /// <param name="device">device is the logical device that owns the image view.</param>
@@ -3849,6 +3557,7 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ VkImageViewHandleInfoNVX* pInfo);
         // Command: 226
+        // Method: 193
         /// <summary>vkGetInstanceProcAddr - Return a function pointer for a command
         /// </summary>
         /// <param name="instance">instance is the instance that the function pointer will be
@@ -3859,6 +3568,7 @@ namespace Vulkan {
             VkInstance instance,
             /*IntPtr*/string pName);
         // Command: 227
+        // Method: 194
         /// <summary>vkGetMemoryAndroidHardwareBufferANDROID - Get an Android hardware buffer for a memory object
         /// </summary>
         /// <param name="device">device is the logical device that created the device memory being
@@ -3874,6 +3584,7 @@ namespace Vulkan {
             /*-const-*/ VkMemoryGetAndroidHardwareBufferInfoANDROID* pInfo,
             /* struct */ /*AHardwareBuffer**-*/IntPtr pBuffer);
         // Command: 228
+        // Method: 195
         /// <summary>vkGetMemoryFdKHR - Get a POSIX file descriptor for a memory object
         /// </summary>
         /// <param name="device">device is the logical device that created the device memory being
@@ -3889,6 +3600,7 @@ namespace Vulkan {
             /*-const-*/ VkMemoryGetFdInfoKHR* pGetFdInfo,
             int* pFd);
         // Command: 229
+        // Method: 196
         /// <summary>vkGetMemoryFdPropertiesKHR - Get Properties of External Memory File Descriptors
         /// </summary>
         /// <param name="device">device is the logical device that will be importing fd.</param>
@@ -3903,22 +3615,8 @@ namespace Vulkan {
             VkExternalMemoryHandleTypeFlagBits handleType,
             int fd,
             VkMemoryFdPropertiesKHR* pMemoryFdProperties);
-        // Command: 230
-        /// <summary>vkGetMemoryHostPointerPropertiesEXT - Get properties of external memory host pointer
-        /// </summary>
-        /// <param name="device">device is the logical device that will be importing
-        /// pHostPointer.</param>
-        /// <param name="handleType">handleType is the type of the handle pHostPointer.</param>
-        /// <param name="pHostPointer">pHostPointer is the host pointer to import from.</param>
-        /// <param name="pMemoryHostPointerProperties">pMemoryHostPointerProperties is a pointer to a
-        /// VkMemoryHostPointerPropertiesEXT structure in which the host
-        /// pointer properties are returned.</param>
-        private delegate VkResult vkGetMemoryHostPointerPropertiesEXT(
-            VkDevice device,
-            VkExternalMemoryHandleTypeFlagBits handleType,
-            /*-const-*/ void* pHostPointer,
-            VkMemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties);
         // Command: 231
+        // Method: 197
         /// <summary>vkGetMemoryWin32HandleKHR - Get a Windows HANDLE for a memory object
         /// </summary>
         /// <param name="device">device is the logical device that created the device memory being
@@ -3934,6 +3632,7 @@ namespace Vulkan {
             /*-const-*/ VkMemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo,
             HANDLE* pHandle);
         // Command: 232
+        // Method: 198
         /// <summary>vkGetMemoryWin32HandleNV - retrieve Win32 handle to a device memory object
         /// </summary>
         /// <param name="device">device is the logical device that owns the memory.</param>
@@ -3948,6 +3647,7 @@ namespace Vulkan {
             VkExternalMemoryHandleTypeFlagsNV handleType,
             HANDLE* pHandle);
         // Command: 233
+        // Method: 199
         /// <summary>vkGetMemoryWin32HandlePropertiesKHR - Get Properties of External Memory Win32 Handles
         /// </summary>
         /// <param name="device">device is the logical device that will be importing handle.</param>
@@ -3962,6 +3662,7 @@ namespace Vulkan {
             HANDLE handle,
             VkMemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties);
         // Command: 234
+        // Method: 200
         /// <summary>vkGetPastPresentationTimingGOOGLE - Obtain timing of a previously-presented image
         /// </summary>
         /// <param name="device">device is the device associated with swapchain.</param>
@@ -3978,21 +3679,8 @@ namespace Vulkan {
             VkSwapchainKHR swapchain,
             UInt32* pPresentationTimingCount,
             VkPastPresentationTimingGOOGLE* pPresentationTimings);
-        // Command: 235
-        /// <summary>vkGetPhysicalDeviceCalibrateableTimeDomainsEXT - Query calibrateable time domains
-        /// </summary>
-        /// <param name="physicalDevice">physicalDevice is the physical device from which to query the set
-        /// of calibrateable time domains.</param>
-        /// <param name="pTimeDomainCount">pTimeDomainCount is a pointer to an integer related to the number
-        /// of calibrateable time domains available or queried, as described below.</param>
-        /// <param name="pTimeDomains">pTimeDomains is either NULL or a pointer to an array of
-        /// VkTimeDomainEXT values, indicating the supported calibrateable
-        /// time domains.</param>
-        private delegate VkResult vkGetPhysicalDeviceCalibrateableTimeDomainsEXT(
-            VkPhysicalDevice physicalDevice,
-            UInt32* pTimeDomainCount,
-            VkTimeDomainEXT* pTimeDomains);
         // Command: 236
+        // Method: 201
         /// <summary>vkGetPhysicalDeviceCooperativeMatrixPropertiesNV - Returns properties describing what cooperative matrix types are supported
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device.</param>
@@ -4006,6 +3694,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkCooperativeMatrixPropertiesNV* pProperties);
         // Command: 237
+        // Method: 202
         /// <summary>vkGetPhysicalDeviceDisplayPlaneProperties2KHR - Query information about the available display planes.
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is a physical device.</param>
@@ -4019,6 +3708,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkDisplayPlaneProperties2KHR* pProperties);
         // Command: 238
+        // Method: 203
         /// <summary>vkGetPhysicalDeviceDisplayPlanePropertiesKHR - Query the plane properties
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is a physical device.</param>
@@ -4032,6 +3722,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkDisplayPlanePropertiesKHR* pProperties);
         // Command: 239
+        // Method: 204
         /// <summary>vkGetPhysicalDeviceDisplayProperties2KHR - Query information about the available displays
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is a physical device.</param>
@@ -4045,6 +3736,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkDisplayProperties2KHR* pProperties);
         // Command: 240
+        // Method: 205
         /// <summary>vkGetPhysicalDeviceDisplayPropertiesKHR - Query information about the available displays
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is a physical device.</param>
@@ -4058,6 +3750,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkDisplayPropertiesKHR* pProperties);
         // Command: 241
+        // Method: 206
         /// <summary>vkGetPhysicalDeviceExternalBufferProperties - Query external handle types supported by buffers
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4074,6 +3767,7 @@ namespace Vulkan {
             /*-const-*/ VkPhysicalDeviceExternalBufferInfo* pExternalBufferInfo,
             VkExternalBufferProperties* pExternalBufferProperties);
         // Command: 242
+        // Method: 207
         /// <summary>vkGetPhysicalDeviceExternalFenceProperties - Function for querying external fence handle capabilities.
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4090,6 +3784,7 @@ namespace Vulkan {
             /*-const-*/ VkPhysicalDeviceExternalFenceInfo* pExternalFenceInfo,
             VkExternalFenceProperties* pExternalFenceProperties);
         // Command: 243
+        // Method: 208
         /// <summary>vkGetPhysicalDeviceExternalImageFormatPropertiesNV - determine image capabilities compatible with external memory handle types
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4120,6 +3815,7 @@ namespace Vulkan {
             VkExternalMemoryHandleTypeFlagsNV externalHandleType,
             VkExternalImageFormatPropertiesNV* pExternalImageFormatProperties);
         // Command: 244
+        // Method: 209
         /// <summary>vkGetPhysicalDeviceExternalSemaphoreProperties - Function for querying external semaphore handle capabilities.
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4136,6 +3832,7 @@ namespace Vulkan {
             /*-const-*/ VkPhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo,
             VkExternalSemaphoreProperties* pExternalSemaphoreProperties);
         // Command: 245
+        // Method: 210
         /// <summary>vkGetPhysicalDeviceFeatures - Reports capabilities of a physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4150,6 +3847,7 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             VkPhysicalDeviceFeatures* pFeatures);
         // Command: 246
+        // Method: 211
         /// <summary>vkGetPhysicalDeviceFeatures2 - Reports capabilities of a physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4161,6 +3859,7 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             VkPhysicalDeviceFeatures2* pFeatures);
         // Command: 247
+        // Method: 212
         /// <summary>vkGetPhysicalDeviceFormatProperties - Lists physical device’s format capabilities
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4175,6 +3874,7 @@ namespace Vulkan {
             VkFormat format,
             VkFormatProperties* pFormatProperties);
         // Command: 248
+        // Method: 213
         /// <summary>vkGetPhysicalDeviceFormatProperties2 - Lists physical device’s format capabilities
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4189,6 +3889,7 @@ namespace Vulkan {
             VkFormat format,
             VkFormatProperties2* pFormatProperties);
         // Command: 249
+        // Method: 214
         /// <summary>vkGetPhysicalDeviceGeneratedCommandsPropertiesNVX - Returns device-generated commands related properties of a physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the handle to the physical device whose
@@ -4205,6 +3906,7 @@ namespace Vulkan {
             VkDeviceGeneratedCommandsFeaturesNVX* pFeatures,
             VkDeviceGeneratedCommandsLimitsNVX* pLimits);
         // Command: 250
+        // Method: 215
         /// <summary>vkGetPhysicalDeviceImageFormatProperties - Lists physical device’s image format capabilities
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4234,6 +3936,7 @@ namespace Vulkan {
             VkImageCreateFlags flags,
             VkImageFormatProperties* pImageFormatProperties);
         // Command: 251
+        // Method: 216
         /// <summary>vkGetPhysicalDeviceImageFormatProperties2 - Lists physical device’s image format capabilities
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4250,6 +3953,7 @@ namespace Vulkan {
             /*-const-*/ VkPhysicalDeviceImageFormatInfo2* pImageFormatInfo,
             VkImageFormatProperties2* pImageFormatProperties);
         // Command: 252
+        // Method: 217
         /// <summary>vkGetPhysicalDeviceMemoryProperties - Reports memory information for the specified physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the handle to the device to query.</param>
@@ -4261,6 +3965,7 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             VkPhysicalDeviceMemoryProperties* pMemoryProperties);
         // Command: 253
+        // Method: 218
         /// <summary>vkGetPhysicalDeviceMemoryProperties2 - Reports memory information for the specified physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the handle to the device to query.</param>
@@ -4271,21 +3976,8 @@ namespace Vulkan {
         public static extern void vkGetPhysicalDeviceMemoryProperties2(
             VkPhysicalDevice physicalDevice,
             VkPhysicalDeviceMemoryProperties2* pMemoryProperties);
-        // Command: 254
-        /// <summary>vkGetPhysicalDeviceMultisamplePropertiesEXT - Report sample count specific multisampling capabilities of a physical device
-        /// </summary>
-        /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
-        /// additional multisampling capabilities.</param>
-        /// <param name="samples">samples is the sample count to query the capabilities for.</param>
-        /// <param name="pMultisampleProperties">pMultisampleProperties is a pointer to a structure of type
-        /// VkMultisamplePropertiesEXT, in which information about the
-        /// additional multisampling capabilities specific to the sample count is
-        /// returned.</param>
-        private delegate void vkGetPhysicalDeviceMultisamplePropertiesEXT(
-            VkPhysicalDevice physicalDevice,
-            VkSampleCountFlagBits samples,
-            VkMultisamplePropertiesEXT* pMultisampleProperties);
         // Command: 255
+        // Method: 219
         /// <summary>vkGetPhysicalDevicePresentRectanglesKHR - Query present rectangles for a surface on a physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device.</param>
@@ -4301,6 +3993,7 @@ namespace Vulkan {
             UInt32* pRectCount,
             VkRect2D* pRects);
         // Command: 256
+        // Method: 220
         /// <summary>vkGetPhysicalDeviceProperties - Returns properties of a physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the handle to the physical device whose
@@ -4313,6 +4006,7 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             VkPhysicalDeviceProperties* pProperties);
         // Command: 257
+        // Method: 221
         /// <summary>vkGetPhysicalDeviceProperties2 - Returns properties of a physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the handle to the physical device whose
@@ -4325,6 +4019,7 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             VkPhysicalDeviceProperties2* pProperties);
         // Command: 258
+        // Method: 222
         /// <summary>vkGetPhysicalDeviceQueueFamilyProperties - Reports properties of the queues of the specified physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the handle to the physical device whose
@@ -4339,6 +4034,7 @@ namespace Vulkan {
             UInt32* pQueueFamilyPropertyCount,
             VkQueueFamilyProperties* pQueueFamilyProperties);
         // Command: 259
+        // Method: 223
         /// <summary>vkGetPhysicalDeviceQueueFamilyProperties2 - Reports properties of the queues of the specified physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the handle to the physical device whose
@@ -4354,6 +4050,7 @@ namespace Vulkan {
             UInt32* pQueueFamilyPropertyCount,
             VkQueueFamilyProperties2* pQueueFamilyProperties);
         // Command: 260
+        // Method: 224
         /// <summary>vkGetPhysicalDeviceSparseImageFormatProperties - Retrieve properties of an image format applied to sparse images
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4379,6 +4076,7 @@ namespace Vulkan {
             UInt32* pPropertyCount,
             VkSparseImageFormatProperties* pProperties);
         // Command: 261
+        // Method: 225
         /// <summary>vkGetPhysicalDeviceSparseImageFormatProperties2 - Retrieve properties of an image format applied to sparse images
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -4396,21 +4094,8 @@ namespace Vulkan {
             /*-const-*/ VkPhysicalDeviceSparseImageFormatInfo2* pFormatInfo,
             UInt32* pPropertyCount,
             VkSparseImageFormatProperties2* pProperties);
-        // Command: 262
-        /// <summary>vkGetPhysicalDeviceSurfaceCapabilities2EXT - Query surface capabilities
-        /// </summary>
-        /// <param name="physicalDevice">physicalDevice is the physical device that will be associated with
-        /// the swapchain to be created, as described for
-        /// vkCreateSwapchainKHR.</param>
-        /// <param name="surface">surface is the surface that will be associated with the swapchain.</param>
-        /// <param name="pSurfaceCapabilities">pSurfaceCapabilities is a pointer to an instance of the
-        /// VkSurfaceCapabilities2EXT structure in which the capabilities are
-        /// returned.</param>
-        private delegate VkResult vkGetPhysicalDeviceSurfaceCapabilities2EXT(
-            VkPhysicalDevice physicalDevice,
-            VkSurfaceKHR surface,
-            VkSurfaceCapabilities2EXT* pSurfaceCapabilities);
         // Command: 263
+        // Method: 226
         /// <summary>vkGetPhysicalDeviceSurfaceCapabilities2KHR - Reports capabilities of a surface on a physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device that will be associated with
@@ -4429,6 +4114,7 @@ namespace Vulkan {
             /*-const-*/ VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
             VkSurfaceCapabilities2KHR* pSurfaceCapabilities);
         // Command: 264
+        // Method: 227
         /// <summary>vkGetPhysicalDeviceSurfaceCapabilitiesKHR - Query surface capabilities
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device that will be associated with
@@ -4444,6 +4130,7 @@ namespace Vulkan {
             VkSurfaceKHR surface,
             VkSurfaceCapabilitiesKHR* pSurfaceCapabilities);
         // Command: 265
+        // Method: 228
         /// <summary>vkGetPhysicalDeviceSurfaceFormats2KHR - Query color formats supported by surface
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device that will be associated with
@@ -4464,6 +4151,7 @@ namespace Vulkan {
             UInt32* pSurfaceFormatCount,
             VkSurfaceFormat2KHR* pSurfaceFormats);
         // Command: 266
+        // Method: 229
         /// <summary>vkGetPhysicalDeviceSurfaceFormatsKHR - Query color formats supported by surface
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device that will be associated with
@@ -4480,27 +4168,8 @@ namespace Vulkan {
             VkSurfaceKHR surface,
             UInt32* pSurfaceFormatCount,
             VkSurfaceFormatKHR* pSurfaceFormats);
-        // Command: 267
-        /// <summary>vkGetPhysicalDeviceSurfacePresentModes2EXT - Query supported presentation modes
-        /// </summary>
-        /// <param name="physicalDevice">physicalDevice is the physical device that will be associated with
-        /// the swapchain to be created, as described for
-        /// vkCreateSwapchainKHR.</param>
-        /// <param name="pSurfaceInfo">pSurfaceInfo points to an instance of the
-        /// VkPhysicalDeviceSurfaceInfo2KHR structure, describing the surface
-        /// and other fixed parameters that would be consumed by
-        /// vkCreateSwapchainKHR.</param>
-        /// <param name="pPresentModeCount">pPresentModeCount is a pointer to an integer related to the number
-        /// of presentation modes available or queried, as described below.</param>
-        /// <param name="pPresentModes">pPresentModes is either NULL or a pointer to an array of
-        /// VkPresentModeKHR values, indicating the supported presentation
-        /// modes.</param>
-        private delegate VkResult vkGetPhysicalDeviceSurfacePresentModes2EXT(
-            VkPhysicalDevice physicalDevice,
-            /*-const-*/ VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
-            UInt32* pPresentModeCount,
-            VkPresentModeKHR* pPresentModes);
         // Command: 268
+        // Method: 230
         /// <summary>vkGetPhysicalDeviceSurfacePresentModesKHR - Query supported presentation modes
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device that will be associated with
@@ -4519,6 +4188,7 @@ namespace Vulkan {
             UInt32* pPresentModeCount,
             VkPresentModeKHR* pPresentModes);
         // Command: 269
+        // Method: 231
         /// <summary>vkGetPhysicalDeviceSurfaceSupportKHR - Query if presentation is supported
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device.</param>
@@ -4533,6 +4203,7 @@ namespace Vulkan {
             VkSurfaceKHR surface,
             VkBool32* pSupported);
         // Command: 270
+        // Method: 232
         /// <summary>vkGetPhysicalDeviceWaylandPresentationSupportKHR - Query physical device for presentation to Wayland
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device.</param>
@@ -4545,6 +4216,7 @@ namespace Vulkan {
             UInt32 queueFamilyIndex,
             /* struct */ /*wl_display*-*/IntPtr display);
         // Command: 271
+        // Method: 233
         /// <summary>vkGetPhysicalDeviceWin32PresentationSupportKHR - query queue family support for presentation on a Win32 display
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device.</param>
@@ -4554,6 +4226,7 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             UInt32 queueFamilyIndex);
         // Command: 272
+        // Method: 234
         /// <summary>vkGetPhysicalDeviceXcbPresentationSupportKHR - Query physical device for presentation to X11 server using XCB
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device.</param>
@@ -4568,6 +4241,7 @@ namespace Vulkan {
             /*xcb_connection_t*-*/IntPtr connection,
             /*xcb_visualid_t*/IntPtr visual_id);
         // Command: 273
+        // Method: 235
         /// <summary>vkGetPhysicalDeviceXlibPresentationSupportKHR - Query physical device for presentation to X11 server using Xlib
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device.</param>
@@ -4580,6 +4254,7 @@ namespace Vulkan {
             /*Display*-*/IntPtr dpy,
             /*VisualID*/IntPtr visualID);
         // Command: 274
+        // Method: 236
         /// <summary>vkGetPipelineCacheData - Get the data store from a pipeline cache
         /// </summary>
         /// <param name="device">device is the logical device that owns the pipeline cache.</param>
@@ -4594,6 +4269,7 @@ namespace Vulkan {
             Int32* pDataSize,
             void* pData);
         // Command: 275
+        // Method: 237
         /// <summary>vkGetQueryPoolResults - Copy results of queries in a query pool to a host memory region
         /// </summary>
         /// <param name="device">device is the logical device that owns the query pool.</param>
@@ -4626,6 +4302,7 @@ namespace Vulkan {
             VkDeviceSize stride,
             VkQueryResultFlags flags);
         // Command: 276
+        // Method: 238
         /// <summary>vkGetQueueCheckpointDataNV - retrieve diagnostic checkpoint data
         /// </summary>
         /// <param name="queue">queue is the VkQueue object the caller would like to
@@ -4639,21 +4316,8 @@ namespace Vulkan {
             VkQueue queue,
             UInt32* pCheckpointDataCount,
             VkCheckpointDataNV* pCheckpointData);
-        // Command: 277
-        /// <summary>vkGetRandROutputDisplayEXT - Query the VkDisplayKHR corresponding to an X11 RandR Output
-        /// </summary>
-        /// <param name="physicalDevice">physicalDevice The physical device to query the display handle on.</param>
-        /// <param name="dpy">dpy A connection to the X11 server from which rrOutput was
-        /// queried.</param>
-        /// <param name="rrOutput">rrOutput An X11 RandR output ID.</param>
-        /// <param name="pDisplay">pDisplay The corresponding VkDisplayKHR handle will be
-        /// returned here.</param>
-        private delegate VkResult vkGetRandROutputDisplayEXT(
-            VkPhysicalDevice physicalDevice,
-            /*Display*-*/IntPtr dpy,
-            /*RROutput*/IntPtr rrOutput,
-            VkDisplayKHR* pDisplay);
         // Command: 278
+        // Method: 239
         /// <summary>vkGetRayTracingShaderGroupHandlesNV - Query ray tracing pipeline shader group handles
         /// </summary>
         /// <param name="device">device is the logical device that contains the ray tracing
@@ -4677,6 +4341,7 @@ namespace Vulkan {
             Int32 dataSize,
             void* pData);
         // Command: 279
+        // Method: 240
         /// <summary>vkGetRefreshCycleDurationGOOGLE - Obtain the RC duration of the PE’s display
         /// </summary>
         /// <param name="device">device is the device associated with swapchain.</param>
@@ -4689,6 +4354,7 @@ namespace Vulkan {
             VkSwapchainKHR swapchain,
             VkRefreshCycleDurationGOOGLE* pDisplayTimingProperties);
         // Command: 280
+        // Method: 241
         /// <summary>vkGetRenderAreaGranularity - Returns the granularity for optimal render area
         /// </summary>
         /// <param name="device">device is the logical device that owns the render pass.</param>
@@ -4701,6 +4367,7 @@ namespace Vulkan {
             VkRenderPass renderPass,
             VkExtent2D* pGranularity);
         // Command: 281
+        // Method: 242
         /// <summary>vkGetSemaphoreFdKHR - Get a POSIX file descriptor handle for a semaphore
         /// </summary>
         /// <param name="device">device is the logical device that created the semaphore being
@@ -4716,6 +4383,7 @@ namespace Vulkan {
             /*-const-*/ VkSemaphoreGetFdInfoKHR* pGetFdInfo,
             int* pFd);
         // Command: 282
+        // Method: 243
         /// <summary>vkGetSemaphoreWin32HandleKHR - Get a Windows HANDLE for a semaphore
         /// </summary>
         /// <param name="device">device is the logical device that created the semaphore being
@@ -4731,6 +4399,7 @@ namespace Vulkan {
             /*-const-*/ VkSemaphoreGetWin32HandleInfoKHR* pGetWin32HandleInfo,
             HANDLE* pHandle);
         // Command: 283
+        // Method: 244
         /// <summary>vkGetShaderInfoAMD - Get information about a shader in a pipeline
         /// </summary>
         /// <param name="device">device is the device that created pipeline.</param>
@@ -4749,19 +4418,8 @@ namespace Vulkan {
             VkShaderInfoTypeAMD infoType,
             Int32* pInfoSize,
             void* pInfo);
-        // Command: 284
-        /// <summary>vkGetSwapchainCounterEXT - Query the current value of a surface counter
-        /// </summary>
-        /// <param name="device">device is the VkDevice associated with swapchain.</param>
-        /// <param name="swapchain">swapchain is the swapchain from which to query the counter value.</param>
-        /// <param name="counter">counter is the counter to query.</param>
-        /// <param name="pCounterValue">pCounterValue will return the current value of the counter.</param>
-        private delegate VkResult vkGetSwapchainCounterEXT(
-            VkDevice device,
-            VkSwapchainKHR swapchain,
-            VkSurfaceCounterFlagBitsEXT counter,
-            UInt64* pCounterValue);
         // Command: 285
+        // Method: 245
         /// <summary>vkGetSwapchainImagesKHR - Obtain the array of presentable images associated with a swapchain
         /// </summary>
         /// <param name="device">device is the device associated with swapchain.</param>
@@ -4777,6 +4435,7 @@ namespace Vulkan {
             UInt32* pSwapchainImageCount,
             VkImage* pSwapchainImages);
         // Command: 286
+        // Method: 246
         /// <summary>vkGetSwapchainStatusKHR - Get a swapchain’s status
         /// </summary>
         /// <param name="device">device is the device associated with swapchain.</param>
@@ -4785,20 +4444,8 @@ namespace Vulkan {
         public static extern VkResult vkGetSwapchainStatusKHR(
             VkDevice device,
             VkSwapchainKHR swapchain);
-        // Command: 287
-        /// <summary>vkGetValidationCacheDataEXT - Get the data store from a validation cache
-        /// </summary>
-        /// <param name="device">device is the logical device that owns the validation cache.</param>
-        /// <param name="validationCache">validationCache is the validation cache to retrieve data from.</param>
-        /// <param name="pDataSize">pDataSize is a pointer to a value related to the amount of data in
-        /// the validation cache, as described below.</param>
-        /// <param name="pData">pData is either NULL or a pointer to a buffer.</param>
-        private delegate VkResult vkGetValidationCacheDataEXT(
-            VkDevice device,
-            VkValidationCacheEXT validationCache,
-            Int32* pDataSize,
-            void* pData);
         // Command: 288
+        // Method: 247
         /// <summary>vkImportFenceFdKHR - Import a fence from a POSIX file descriptor
         /// </summary>
         /// <param name="device">device is the logical device that created the fence.</param>
@@ -4809,6 +4456,7 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ VkImportFenceFdInfoKHR* pImportFenceFdInfo);
         // Command: 289
+        // Method: 248
         /// <summary>vkImportFenceWin32HandleKHR - Import a fence from a Windows HANDLE
         /// </summary>
         /// <param name="device">device is the logical device that created the fence.</param>
@@ -4820,6 +4468,7 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ VkImportFenceWin32HandleInfoKHR* pImportFenceWin32HandleInfo);
         // Command: 290
+        // Method: 249
         /// <summary>vkImportSemaphoreFdKHR - Import a semaphore from a POSIX file descriptor
         /// </summary>
         /// <param name="device">device is the logical device that created the semaphore.</param>
@@ -4831,6 +4480,7 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ VkImportSemaphoreFdInfoKHR* pImportSemaphoreFdInfo);
         // Command: 291
+        // Method: 250
         /// <summary>vkImportSemaphoreWin32HandleKHR - Import a semaphore from a Windows HANDLE
         /// </summary>
         /// <param name="device">device is the logical device that created the semaphore.</param>
@@ -4842,6 +4492,7 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ VkImportSemaphoreWin32HandleInfoKHR* pImportSemaphoreWin32HandleInfo);
         // Command: 292
+        // Method: 251
         /// <summary>vkInvalidateMappedMemoryRanges - Invalidate ranges of mapped memory objects
         /// </summary>
         /// <param name="device">device is the logical device that owns the memory ranges.</param>
@@ -4855,6 +4506,7 @@ namespace Vulkan {
             UInt32 memoryRangeCount,
             /*-const-*/ VkMappedMemoryRange* pMemoryRanges);
         // Command: 293
+        // Method: 252
         /// <summary>vkMapMemory - Map a memory object into application address space
         /// </summary>
         /// <param name="device">device is the logical device that owns the memory.</param>
@@ -4878,6 +4530,7 @@ namespace Vulkan {
             VkMemoryMapFlags flags,
             /*void**-*/IntPtr* ppData);
         // Command: 294
+        // Method: 253
         /// <summary>vkMergePipelineCaches - Combine the data stores of pipeline caches
         /// </summary>
         /// <param name="device">device is the logical device that owns the pipeline cache objects.</param>
@@ -4893,33 +4546,8 @@ namespace Vulkan {
             VkPipelineCache dstCache,
             UInt32 srcCacheCount,
             /*-const-*/ VkPipelineCache* pSrcCaches);
-        // Command: 295
-        /// <summary>vkMergeValidationCachesEXT - Combine the data stores of validation caches
-        /// </summary>
-        /// <param name="device">device is the logical device that owns the validation cache
-        /// objects.</param>
-        /// <param name="dstCache">dstCache is the handle of the validation cache to merge results
-        /// into.</param>
-        /// <param name="srcCacheCount">srcCacheCount is the length of the pSrcCaches array.</param>
-        /// <param name="pSrcCaches">pSrcCaches is an array of validation cache handles, which will be
-        /// merged into dstCache.
-        /// The previous contents of dstCache are included after the merge.</param>
-        private delegate VkResult vkMergeValidationCachesEXT(
-            VkDevice device,
-            VkValidationCacheEXT dstCache,
-            UInt32 srcCacheCount,
-            /*-const-*/ VkValidationCacheEXT* pSrcCaches);
-        // Command: 296
-        /// <summary>vkQueueBeginDebugUtilsLabelEXT - Open a queue debug label region
-        /// </summary>
-        /// <param name="queue">queue is the queue in which to start a debug label region.</param>
-        /// <param name="pLabelInfo">pLabelInfo is a pointer to an instance of the
-        /// VkDebugUtilsLabelEXT structure specifying the parameters of the
-        /// label region to open.</param>
-        private delegate void vkQueueBeginDebugUtilsLabelEXT(
-            VkQueue queue,
-            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
         // Command: 297
+        // Method: 254
         /// <summary>vkQueueBindSparse - Bind device memory to a sparse resource object
         /// </summary>
         /// <param name="queue">queue is the queue that the sparse binding operations will be
@@ -4937,23 +4565,8 @@ namespace Vulkan {
             UInt32 bindInfoCount,
             /*-const-*/ VkBindSparseInfo* pBindInfo,
             VkFence fence);
-        // Command: 298
-        /// <summary>vkQueueEndDebugUtilsLabelEXT - Close a queue debug label region
-        /// </summary>
-        /// <param name="queue">queue is the queue in which a debug label region should be closed.</param>
-        private delegate void vkQueueEndDebugUtilsLabelEXT(
-            VkQueue queue);
-        // Command: 299
-        /// <summary>vkQueueInsertDebugUtilsLabelEXT - Insert a label into a queue
-        /// </summary>
-        /// <param name="queue">queue is the queue into which a debug label will be inserted.</param>
-        /// <param name="pLabelInfo">pLabelInfo is a pointer to an instance of the
-        /// VkDebugUtilsLabelEXT structure specifying the parameters of the
-        /// label to insert.</param>
-        private delegate void vkQueueInsertDebugUtilsLabelEXT(
-            VkQueue queue,
-            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
         // Command: 300
+        // Method: 255
         /// <summary>vkQueuePresentKHR - Queue an image for presentation
         /// </summary>
         /// <param name="queue">queue is a queue that is capable of presentation to the target
@@ -4966,6 +4579,7 @@ namespace Vulkan {
             VkQueue queue,
             /*-const-*/ VkPresentInfoKHR* pPresentInfo);
         // Command: 301
+        // Method: 256
         /// <summary>vkQueueSubmit - Submits a sequence of semaphores or command buffers to a queue
         /// </summary>
         /// <param name="queue">queue is the queue that the command buffers will be submitted to.</param>
@@ -4983,47 +4597,15 @@ namespace Vulkan {
             /*-const-*/ VkSubmitInfo* pSubmits,
             VkFence fence);
         // Command: 302
+        // Method: 257
         /// <summary>vkQueueWaitIdle - Wait for a queue to become idle
         /// </summary>
         /// <param name="queue">queue is the queue on which to wait.</param>
         [DllImport(VulkanLibrary, CallingConvention = CallingConvention.Winapi)]
         public static extern VkResult vkQueueWaitIdle(
             VkQueue queue);
-        // Command: 303
-        /// <summary>vkRegisterDeviceEventEXT - Signal a fence when a device event occurs
-        /// </summary>
-        /// <param name="device">device is a logical device on which the event may occur.</param>
-        /// <param name="pDeviceEventInfo">pDeviceEventInfo is a pointer to an instance of the
-        /// VkDeviceEventInfoEXT structure describing the event of interest to
-        /// the application.</param>
-        /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
-        /// Memory Allocation chapter.</param>
-        /// <param name="pFence">pFence points to a handle in which the resulting fence object is
-        /// returned.</param>
-        private delegate VkResult vkRegisterDeviceEventEXT(
-            VkDevice device,
-            /*-const-*/ VkDeviceEventInfoEXT* pDeviceEventInfo,
-            /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkFence* pFence);
-        // Command: 304
-        /// <summary>vkRegisterDisplayEventEXT - Signal a fence when a display event occurs
-        /// </summary>
-        /// <param name="device">device is a logical device associated with display</param>
-        /// <param name="display">display is the display on which the event may occur.</param>
-        /// <param name="pDisplayEventInfo">pDisplayEventInfo is a pointer to an instance of the
-        /// VkDisplayEventInfoEXT structure describing the event of interest
-        /// to the application.</param>
-        /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
-        /// Memory Allocation chapter.</param>
-        /// <param name="pFence">pFence points to a handle in which the resulting fence object is
-        /// returned.</param>
-        private delegate VkResult vkRegisterDisplayEventEXT(
-            VkDevice device,
-            VkDisplayKHR display,
-            /*-const-*/ VkDisplayEventInfoEXT* pDisplayEventInfo,
-            /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkFence* pFence);
         // Command: 305
+        // Method: 258
         /// <summary>vkRegisterObjectsNVX - Register resource bindings in an object table
         /// </summary>
         /// <param name="device">device is the logical device that creates the object table.</param>
@@ -5045,24 +4627,8 @@ namespace Vulkan {
             UInt32 _objectCount,
             /*-const-*/ VkObjectTableEntryNVX* /*-const-*/ * ppObjectTableEntries,
             /*-const-*/ UInt32* pObjectIndices);
-        // Command: 306
-        /// <summary>vkReleaseDisplayEXT - Release access to an acquired VkDisplayKHR
-        /// </summary>
-        /// <param name="physicalDevice">physicalDevice The physical device the display is on.</param>
-        /// <param name="display">display The display to release control of.</param>
-        private delegate VkResult vkReleaseDisplayEXT(
-            VkPhysicalDevice physicalDevice,
-            VkDisplayKHR display);
-        // Command: 307
-        /// <summary>vkReleaseFullScreenExclusiveModeEXT - Release full-screen exclusive mode from a swapchain
-        /// </summary>
-        /// <param name="device">device is the device associated with swapchain.</param>
-        /// <param name="swapchain">swapchain is the swapchain to release exclusive full-screen access
-        /// from.</param>
-        private delegate VkResult vkReleaseFullScreenExclusiveModeEXT(
-            VkDevice device,
-            VkSwapchainKHR swapchain);
         // Command: 308
+        // Method: 259
         /// <summary>vkResetCommandBuffer - Reset a command buffer to the initial state
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer to reset.
@@ -5076,6 +4642,7 @@ namespace Vulkan {
             VkCommandBuffer commandBuffer,
             VkCommandBufferResetFlags flags);
         // Command: 309
+        // Method: 260
         /// <summary>vkResetCommandPool - Reset a command pool
         /// </summary>
         /// <param name="device">device is the logical device that owns the command pool.</param>
@@ -5088,6 +4655,7 @@ namespace Vulkan {
             VkCommandPool commandPool,
             VkCommandPoolResetFlags flags);
         // Command: 310
+        // Method: 261
         /// <summary>vkResetDescriptorPool - Resets a descriptor pool object
         /// </summary>
         /// <param name="device">device is the logical device that owns the descriptor pool.</param>
@@ -5099,6 +4667,7 @@ namespace Vulkan {
             VkDescriptorPool descriptorPool,
             VkDescriptorPoolResetFlags flags);
         // Command: 311
+        // Method: 262
         /// <summary>vkResetEvent - Reset an event to non-signaled state
         /// </summary>
         /// <param name="device">device is the logical device that owns the event.</param>
@@ -5108,6 +4677,7 @@ namespace Vulkan {
             VkDevice device,
             VkEvent _event);
         // Command: 312
+        // Method: 263
         /// <summary>vkResetFences - Resets one or more fence objects
         /// </summary>
         /// <param name="device">device is the logical device that owns the fences.</param>
@@ -5118,39 +4688,8 @@ namespace Vulkan {
             VkDevice device,
             UInt32 fenceCount,
             /*-const-*/ VkFence* pFences);
-        // Command: 313
-        /// <summary>vkResetQueryPoolEXT - Reset queries in a query pool
-        /// </summary>
-        /// <param name="queryPool">queryPool is the handle of the query pool managing the queries
-        /// being reset.</param>
-        /// <param name="firstQuery">firstQuery is the initial query index to reset.</param>
-        /// <param name="queryCount">queryCount is the number of queries to reset.</param>
-        private delegate void vkResetQueryPoolEXT(
-            VkDevice device,
-            VkQueryPool queryPool,
-            UInt32 firstQuery,
-            UInt32 queryCount);
-        // Command: 314
-        /// <summary>vkSetDebugUtilsObjectNameEXT - Give a user-friendly name to an object
-        /// </summary>
-        /// <param name="device">device is the device that created the object.</param>
-        /// <param name="pNameInfo">pNameInfo is a pointer to an instance of the
-        /// VkDebugUtilsObjectNameInfoEXT structure specifying the parameters
-        /// of the name to set on the object.</param>
-        private delegate VkResult vkSetDebugUtilsObjectNameEXT(
-            VkDevice device,
-            /*-const-*/ VkDebugUtilsObjectNameInfoEXT* pNameInfo);
-        // Command: 315
-        /// <summary>vkSetDebugUtilsObjectTagEXT - Attach arbitrary data to an object
-        /// </summary>
-        /// <param name="device">device is the device that created the object.</param>
-        /// <param name="pTagInfo">pTagInfo is a pointer to an instance of the
-        /// VkDebugUtilsObjectTagInfoEXT structure specifying the parameters
-        /// of the tag to attach to the object.</param>
-        private delegate VkResult vkSetDebugUtilsObjectTagEXT(
-            VkDevice device,
-            /*-const-*/ VkDebugUtilsObjectTagInfoEXT* pTagInfo);
         // Command: 316
+        // Method: 264
         /// <summary>vkSetEvent - Set an event to signaled state
         /// </summary>
         /// <param name="device">device is the logical device that owns the event.</param>
@@ -5159,20 +4698,8 @@ namespace Vulkan {
         public static extern VkResult vkSetEvent(
             VkDevice device,
             VkEvent _event);
-        // Command: 317
-        /// <summary>vkSetHdrMetadataEXT - function to set Hdr metadata
-        /// </summary>
-        /// <param name="device">device is the logical device where the swapchain(s) were created.</param>
-        /// <param name="swapchainCount">swapchainCount is the number of swapchains included in
-        /// pSwapchains.</param>
-        /// <param name="pSwapchains">pSwapchains is a pointer to the array of swapchainCountVkSwapchainKHR handles.</param>
-        /// <param name="pMetadata">pMetadata is a pointer to the array of swapchainCountVkHdrMetadataEXT structures.</param>
-        private delegate void vkSetHdrMetadataEXT(
-            VkDevice device,
-            UInt32 swapchainCount,
-            /*-const-*/ VkSwapchainKHR* pSwapchains,
-            /*-const-*/ VkHdrMetadataEXT* pMetadata);
         // Command: 318
+        // Method: 265
         /// <summary>vkSetLocalDimmingAMD - Set Local Dimming
         /// </summary>
         /// <param name="device">device is the device associated with swapChain.</param>
@@ -5184,24 +4711,8 @@ namespace Vulkan {
             VkDevice device,
             VkSwapchainKHR swapChain,
             VkBool32 localDimmingEnable);
-        // Command: 319
-        /// <summary>vkSubmitDebugUtilsMessageEXT - Inject a message into a debug stream
-        /// </summary>
-        /// <param name="instance">instance is the debug stream’s VkInstance.</param>
-        /// <param name="messageSeverity">messageSeverity is the
-        /// VkDebugUtilsMessageSeverityFlagBitsEXT severity of this
-        /// event/message.</param>
-        /// <param name="messageTypes">messageTypes is a bitmask of
-        /// VkDebugUtilsMessageTypeFlagBitsEXT specifying which type of
-        /// event(s) to identify with this message.</param>
-        /// <param name="pCallbackData">pCallbackData contains all the callback related data in the
-        /// VkDebugUtilsMessengerCallbackDataEXT structure.</param>
-        private delegate void vkSubmitDebugUtilsMessageEXT(
-            VkInstance instance,
-            VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
-            VkDebugUtilsMessageTypeFlagsEXT messageTypes,
-            /*-const-*/ VkDebugUtilsMessengerCallbackDataEXT* pCallbackData);
         // Command: 320
+        // Method: 266
         /// <summary>vkTrimCommandPool - Trim a command pool
         /// </summary>
         /// <param name="device">device is the logical device that owns the command pool.</param>
@@ -5213,6 +4724,7 @@ namespace Vulkan {
             VkCommandPool commandPool,
             VkCommandPoolTrimFlags flags);
         // Command: 321
+        // Method: 267
         /// <summary>vkUnmapMemory - Unmap a previously mapped memory object
         /// </summary>
         /// <param name="device">device is the logical device that owns the memory.</param>
@@ -5222,6 +4734,7 @@ namespace Vulkan {
             VkDevice device,
             VkDeviceMemory memory);
         // Command: 322
+        // Method: 268
         /// <summary>vkUnregisterObjectsNVX - Unregister resource bindings in an object table
         /// </summary>
         /// <param name="device">device is the logical device that creates the object table.</param>
@@ -5238,6 +4751,7 @@ namespace Vulkan {
             /*-const-*/ VkObjectEntryTypeNVX* pObjectEntryTypes,
             /*-const-*/ UInt32* pObjectIndices);
         // Command: 323
+        // Method: 269
         /// <summary>vkUpdateDescriptorSetWithTemplate - Update the contents of a descriptor set object using an update template
         /// </summary>
         /// <param name="device">device is the logical device that updates the descriptor sets.</param>
@@ -5255,6 +4769,7 @@ namespace Vulkan {
             VkDescriptorUpdateTemplate descriptorUpdateTemplate,
             /*-const-*/ void* pData);
         // Command: 324
+        // Method: 270
         /// <summary>vkUpdateDescriptorSets - Update the contents of a descriptor set object
         /// </summary>
         /// <param name="device">device is the logical device that updates the descriptor sets.</param>
@@ -5276,6 +4791,7 @@ namespace Vulkan {
             UInt32 descriptorCopyCount,
             /*-const-*/ VkCopyDescriptorSet* pDescriptorCopies);
         // Command: 325
+        // Method: 271
         /// <summary>vkWaitForFences - Wait for one or more fences to become signaled
         /// </summary>
         /// <param name="device">device is the logical device that owns the fences.</param>

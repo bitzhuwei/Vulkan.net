@@ -37,7 +37,7 @@ namespace Demo.HelloVulkan {
 
         VkBuffer vkBuffer;
         VkDeviceMemory vkDeviceMemory;
-        VkDeviceSize uniformSize;
+        UInt64 uniformSize;
 
         bool isInitialized = false;
 
@@ -59,7 +59,7 @@ namespace Demo.HelloVulkan {
             VkDevice device = this.device; VkDeviceMemory deviceMemory = this.vkDeviceMemory;
             {
                 IntPtr memPtr = IntPtr.Zero;
-                vkAPI.vkMapMemory(device, deviceMemory, new VkDeviceSize(), new VkDeviceSize((UInt64)size), 0, &memPtr);
+                vkAPI.vkMapMemory(device, deviceMemory, 0, (UInt64)size, 0, &memPtr);
 
                 System.Runtime.InteropServices.Marshal.StructureToPtr(uniformBufferData, memPtr, false);
                 //GCHandle pin = GCHandle.Alloc(uniformBufferData, GCHandleType.Pinned);
@@ -238,7 +238,7 @@ namespace Demo.HelloVulkan {
                                 pipelineLayout, 0, 1, &set, 0, null);
                         }
                         vkAPI.vkCmdBindPipeline(cmds, VkPipelineBindPoint.Graphics, pipeline);
-                        var offset = new VkDeviceSize();
+                        VkDeviceSize offset = 0;
                         {
                             VkBuffer buffer = vertexBuffer;
                             vkAPI.vkCmdBindVertexBuffers(cmds, 0, 1, &buffer, &offset);
@@ -445,7 +445,7 @@ namespace Demo.HelloVulkan {
                 UInt32 index = 0;
                 var info = VkBufferCreateInfo.Alloc();
                 {
-                    info->size = new VkDeviceSize((UInt64)size);
+                    info->size = (UInt64)size;
                     info->usage = usageFlags;
                     info->sharingMode = VkSharingMode.Exclusive;
                     index.Set(info);
@@ -469,7 +469,7 @@ namespace Demo.HelloVulkan {
             }
             {
                 IntPtr memPtr = IntPtr.Zero;
-                vkAPI.vkMapMemory(device, deviceMemory, new VkDeviceSize(), new VkDeviceSize((UInt64)size), 0, &memPtr);
+                vkAPI.vkMapMemory(device, deviceMemory, 0, (UInt64)size, 0, &memPtr);
 
                 if (type == typeof(float))
                     System.Runtime.InteropServices.Marshal.Copy(values as float[], 0, memPtr, length);
@@ -484,7 +484,7 @@ namespace Demo.HelloVulkan {
 
                 vkAPI.vkUnmapMemory(device, deviceMemory);
             }
-            vkAPI.vkBindBufferMemory(device, buffer, deviceMemory, new VkDeviceSize());
+            vkAPI.vkBindBufferMemory(device, buffer, deviceMemory, 0);
 
             return buffer;
         }

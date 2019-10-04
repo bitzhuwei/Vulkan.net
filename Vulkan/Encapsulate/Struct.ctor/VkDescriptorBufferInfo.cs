@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using VkDeviceSize = System.UInt64;
 
 namespace Vulkan {
     public unsafe partial struct VkDescriptorBufferInfo {
