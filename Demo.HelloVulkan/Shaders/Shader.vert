@@ -3,16 +3,18 @@
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_420pack : enable
 
-layout (location = 0) in vec3 vpos;
+layout (location = 0) in vec2 inPos;
 layout (set = 0, binding = 0) uniform AreaUB
 {
     float width;
     float height;
 } area;
 
+layout (location = 0) out vec3 outColor;
+
 void main()
 {
-    vec3 centered = vpos - vec3(0.015, -0.013, 0);
-    float width;
-    gl_Position = vec4(centered.x * area.width, centered.y * area.height, 0.0, 1.0);
+    gl_Position = vec4(inPos.x * area.width, inPos.y * area.height, 0.0, 1.0);
+
+	outColor = vec3(inPos, 0);
 }

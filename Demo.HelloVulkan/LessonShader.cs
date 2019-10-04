@@ -49,9 +49,11 @@ namespace Demo.HelloVulkan {
         public void UpdateSize() {
             if (width == originalWidth) {
                 width = originalWidth / 2;
+                height = originalHeight / 2;
             }
             else {
                 width = originalWidth;
+                height = originalHeight;
             }
             var uniformBufferData = new AreaUniformBuffer(width, height);
             var length = 1;
@@ -116,9 +118,9 @@ namespace Demo.HelloVulkan {
 
             VkBuffer indexBuffer = CreateBuffer(this.vkPhysicalDevice, this.device, Logo.Indexes, VkBufferUsageFlagBits.IndexBuffer, typeof(short));
 
-            var uniformBufferData = new AreaUniformBuffer(40, 50);
-            this.originalWidth = 40; this.width = this.originalWidth;
-            this.originalHeight = 50; this.height = this.originalHeight;
+            var uniformBufferData = new AreaUniformBuffer(1, 1);
+            this.originalWidth = 1; this.width = this.originalWidth;
+            this.originalHeight = 1; this.height = this.originalHeight;
 
             this.uniformBuffer = CreateBuffer(this.vkPhysicalDevice, this.device, uniformBufferData, VkBufferUsageFlagBits.UniformBuffer, typeof(AreaUniformBuffer));
 
@@ -358,10 +360,10 @@ namespace Demo.HelloVulkan {
             {
                 var binding = new VkVertexInputBindingDescription(
                     binding: 0,
-                    stride: 3 * sizeof(float),
+                    stride: 2 * sizeof(float),
                     inputRate: VkVertexInputRate.Vertex);
                 binding.Set(input);
-                var attribute = new VkVertexInputAttributeDescription(0, 0, VkFormat.R32g32b32Sfloat, 0);
+                var attribute = new VkVertexInputAttributeDescription(0, 0, VkFormat.R32g32Sfloat, 0);
                 attribute.Set(input);
             }
 
