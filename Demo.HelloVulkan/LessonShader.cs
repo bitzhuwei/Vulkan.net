@@ -8,6 +8,20 @@ using static Vulkan.vkAPI;
 
 namespace Demo.HelloVulkan {
     unsafe class LessonShader {
+        const float value = 1f;
+        static readonly float[] Vertices = {
+            // left up, right up.
+            -value, -value, -value, value,
+            // left down, right down.
+             value, -value,  value, value
+        };
+        static readonly short[] Indexes = {
+            // ieft up triangle.
+            0, 1, 2,
+            // right down triangle.
+            1, 2, 3
+        };
+
         VkInstance instance;
         VkDebugReportCallbackEXT callback;
         VkSurfaceKHR surface;
@@ -114,9 +128,9 @@ namespace Demo.HelloVulkan {
             this.vkSemaphore = this.device.CreateSemaphore();
 
             // buffers for vertex data.
-            VkBuffer vertexBuffer = CreateBuffer(this.vkPhysicalDevice, this.device, Logo.Vertices, VkBufferUsageFlagBits.VertexBuffer, typeof(float));
+            VkBuffer vertexBuffer = CreateBuffer(this.vkPhysicalDevice, this.device, Vertices, VkBufferUsageFlagBits.VertexBuffer, typeof(float));
 
-            VkBuffer indexBuffer = CreateBuffer(this.vkPhysicalDevice, this.device, Logo.Indexes, VkBufferUsageFlagBits.IndexBuffer, typeof(short));
+            VkBuffer indexBuffer = CreateBuffer(this.vkPhysicalDevice, this.device, Indexes, VkBufferUsageFlagBits.IndexBuffer, typeof(short));
 
             var uniformBufferData = new AreaUniformBuffer(1, 1);
             this.originalWidth = 1; this.width = this.originalWidth;
@@ -137,7 +151,7 @@ namespace Demo.HelloVulkan {
             this.commandBuffers = CreateCommandBuffers(
                 this.device, this.renderPass, surfaceCapabilities,
                 this.vkImages, this.framebuffers, pipeline,
-                vertexBuffer, indexBuffer, (uint)Logo.Indexes.Length,
+                vertexBuffer, indexBuffer, (uint)Indexes.Length,
                 this.vkPipelineLayout, this.descriptorSet);
 
             this.isInitialized = true;

@@ -54,8 +54,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="LessonShader.cs" />
-    <Compile Include="ModelData.cs" />
-    <Compile Include="StructsSize.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UCShader.cs">
