@@ -7,6 +7,14 @@ namespace Vulkan {
     public unsafe static partial class Vk {
         private const int maxStructSize = 1024;
         internal static readonly byte[] zeros = new byte[maxStructSize];
+        //internal static readonly List<IntPtr> allocList = new List<IntPtr>();
+        //public static void Free() {
+        //    foreach (var item in allocList) {
+        //        Marshal.FreeHGlobal(item);
+        //    }
+
+        //    allocList.Clear();
+        //}
     }
     // Struct: 0
     public unsafe partial struct VkAccelerationStructureCreateInfoNV {

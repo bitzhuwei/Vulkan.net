@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using Vulkan;
 using static Vulkan.VkStructureType;
 using static Vulkan.vkAPI;
+using System.IO;
 
 namespace Demo.HelloVulkan {
     unsafe class LessonShader {
@@ -23,7 +24,7 @@ namespace Demo.HelloVulkan {
         };
 
         VkInstance instance;
-        VkDebugReportCallbackEXT callback;
+        VkDebugReportCallbackEXT debugReportcallback;
         VkSurfaceKHR surface;
         VkPhysicalDevice vkPhysicalDevice;
 
@@ -75,7 +76,7 @@ namespace Demo.HelloVulkan {
             VkDevice device = this.device; VkDeviceMemory deviceMemory = this.vkDeviceMemory;
             {
                 IntPtr memPtr = IntPtr.Zero;
-                vkAPI.vkMapMemory(device, deviceMemory, 0, (UInt64)size, 0, &memPtr);
+                vkAPI.vkMapMemory(device, deviceMemory, 0, (UInt64)size, 0, &memPtr).Check();
 
                 System.Runtime.InteropServices.Marshal.StructureToPtr(uniformBufferData, memPtr, false);
                 //GCHandle pin = GCHandle.Alloc(uniformBufferData, GCHandleType.Pinned);
@@ -187,8 +188,13 @@ namespace Demo.HelloVulkan {
             IntPtr layerPrefix, IntPtr message, IntPtr userData) {
             string text = $"{flags}: {Marshal.PtrToStringAnsi(message)}";
             Debug.WriteLine(text);
+            using (var sw = new StreamWriter(debugFilename, true)) {
+                sw.WriteLine(text);
+            }
             return true;
         }
+
+        string debugFilename = "HelloVulkanDump.txt";
 
         PFN_vkDebugReportCallbackEXT delDebugCallback;
 
@@ -204,7 +210,7 @@ namespace Demo.HelloVulkan {
 
             VkDebugReportCallbackEXT callback;
             vkCreateDebugReportCallback(instance, info, null, &callback).Check();
-            this.callback = callback;
+            this.debugReportcallback = callback;
         }
 
         VkCommandBuffer[] CreateCommandBuffers(
@@ -219,7 +225,7 @@ namespace Demo.HelloVulkan {
                     var info = VkCommandPoolCreateInfo.Alloc();
                     info->flags = VkCommandPoolCreateFlagBits.ResetCommandBuffer;
                     //var commandPool = device.CreateCommandPool(ref poolInfo);
-                    vkAPI.vkCreateCommandPool(device, info, null, &pool).Check();
+                    vkCreateCommandPool(device, info, null, &pool).Check();
                 }
                 {
                     var info = VkCommandBufferAllocateInfo.Alloc();
@@ -235,36 +241,28 @@ namespace Demo.HelloVulkan {
             }
 
             var cmdBeginInfo = VkCommandBufferBeginInfo.Alloc();
+            var clearValue = new VkClearValue { color = new VkClearColorValue(0.9f, 0.87f, 0.75f, 1.0f) };
+            var begin = VkRenderPassBeginInfo.Alloc();
+            begin->renderPass = renderPass;
+            clearValue.Set(begin);
+            begin->renderArea = new VkRect2D { extent = surfaceCapabilities.currentExtent };
             for (int i = 0; i < images.Length; i++) {
                 VkCommandBuffer cmds = buffers[i];
                 //cmds.Begin(ref cmdBeginInfo);
-                vkAPI.vkBeginCommandBuffer(cmds, cmdBeginInfo);
+                vkAPI.vkBeginCommandBuffer(cmds, cmdBeginInfo).Check();
+                begin->framebuffer = framebuffers[i];
+                vkAPI.vkCmdBeginRenderPass(cmds, begin, VkSubpassContents.Inline);
                 {
-                    var clearValue = new VkClearValue { color = new VkClearColorValue(0.9f, 0.87f, 0.75f, 1.0f) };
-                    var info = VkRenderPassBeginInfo.Alloc();
-                    info->framebuffer = framebuffers[i];
-                    info->renderPass = renderPass;
-                    clearValue.Set(info);
-                    info->renderArea = new VkRect2D { extent = surfaceCapabilities.currentExtent };
-                    vkAPI.vkCmdBeginRenderPass(cmds, info, VkSubpassContents.Inline);
-                    {
-                        {
-                            VkDescriptorSet set = descriptorSet;
-                            vkAPI.vkCmdBindDescriptorSets(cmds, VkPipelineBindPoint.Graphics,
-                                pipelineLayout, 0, 1, &set, 0, null);
-                        }
-                        vkAPI.vkCmdBindPipeline(cmds, VkPipelineBindPoint.Graphics, pipeline);
-                        VkDeviceSize offset = 0;
-                        {
-                            VkBuffer buffer = vertexBuffer;
-                            vkAPI.vkCmdBindVertexBuffers(cmds, 0, 1, &buffer, &offset);
-                        }
-                        vkAPI.vkCmdBindIndexBuffer(cmds, indexBuffer, offset, VkIndexType.Uint16);
-                        vkAPI.vkCmdDrawIndexed(cmds, indexLength, 1, 0, 0, 0);
-                    }
-                    vkAPI.vkCmdEndRenderPass(cmds);
+                    vkAPI.vkCmdBindDescriptorSets(cmds, VkPipelineBindPoint.Graphics,
+                        pipelineLayout, 0, 1, &descriptorSet, 0, null);
+                    vkAPI.vkCmdBindPipeline(cmds, VkPipelineBindPoint.Graphics, pipeline);
+                    VkDeviceSize offset = 0;
+                    vkAPI.vkCmdBindVertexBuffers(cmds, 0, 1, &vertexBuffer, &offset);
+                    vkAPI.vkCmdBindIndexBuffer(cmds, indexBuffer, offset, VkIndexType.Uint16);
+                    vkAPI.vkCmdDrawIndexed(cmds, indexLength, 1, 0, 0, 0);
                 }
-                vkAPI.vkEndCommandBuffer(cmds);
+                vkAPI.vkCmdEndRenderPass(cmds);
+                vkAPI.vkEndCommandBuffer(cmds).Check();
             }
 
             return buffers;
@@ -289,14 +287,14 @@ namespace Demo.HelloVulkan {
                 var size = new VkDescriptorPoolSize(VkDescriptorType.UniformBuffer, 1);
                 size.Set(info);
                 info->maxSets = 1;
-                vkAPI.vkCreateDescriptorPool(device, info, null, &descriptorPool);
+                vkAPI.vkCreateDescriptorPool(device, info, null, &descriptorPool).Check();
             }
             VkDescriptorSet descriptorSet;
             {
                 var info = VkDescriptorSetAllocateInfo.Alloc();
                 descriptorSetLayout.Set(info);
                 info->descriptorPool = descriptorPool;
-                vkAPI.vkAllocateDescriptorSets(device, info, &descriptorSet).Check();
+                vkAPI.vkAllocateDescriptorSets(device, info, &descriptorSet).Check().Check();
             }
 
             return descriptorSet;
@@ -312,8 +310,7 @@ namespace Demo.HelloVulkan {
                 byte[] bytes = LoadResource(@"Shaders\shader.vert.spv");
                 bytes.Set(info);
                 //vkAPI.vkCreateShaderModule(device, bytes);
-                vkAPI.vkCreateShaderModule(device, info, null, &vsModule);
-                Vk.Free(info);
+                vkAPI.vkCreateShaderModule(device, info, null, &vsModule).Check();
             }
             //VkShaderModule fragmentShaderModule = device.CreateShaderModule(LoadResource(@"Shaders\shader.frag.spv"));
             VkShaderModule fsModule;
@@ -322,22 +319,17 @@ namespace Demo.HelloVulkan {
                 byte[] bytes = LoadResource(@"Shaders\shader.frag.spv");
                 bytes.Set(info);
                 //vkAPI.vkCreateShaderModule(device, bytes);
-                vkAPI.vkCreateShaderModule(device, info, null, &fsModule);
-                Vk.Free(info);
+                vkAPI.vkCreateShaderModule(device, info, null, &fsModule).Check();
             }
-            var vs = VkPipelineShaderStageCreateInfo.Alloc();
+            var shaderStages = VkPipelineShaderStageCreateInfo.Alloc(2);
             {
-                vs->stage = VkShaderStageFlagBits.Vertex;
-                vs->module = vsModule;
-                "main".Set(ref vs->pName);
+                shaderStages[0].stage = VkShaderStageFlagBits.Vertex;
+                shaderStages[0].module = vsModule;
+                "main".Set(ref shaderStages[0].pName);
+                shaderStages[1].stage = VkShaderStageFlagBits.Fragment;
+                shaderStages[1].module = fsModule;
+                "main".Set(ref shaderStages[1].pName);
             }
-            var fs = VkPipelineShaderStageCreateInfo.Alloc();
-            {
-                fs->stage = VkShaderStageFlagBits.Fragment;
-                fs->module = fsModule;
-                "main".Set(ref fs->pName);
-            }
-            VkPipelineShaderStageCreateInfo[] stages = { *vs, *fs };
             var viewport = VkPipelineViewportStateCreateInfo.Alloc();
             {
                 var vp = new VkViewport(surfaceCapabilities.currentExtent, 0.0f, 1.0f);
@@ -347,37 +339,39 @@ namespace Demo.HelloVulkan {
             }
 
             var multisample = VkPipelineMultisampleStateCreateInfo.Alloc();
-            {
-                multisample->rasterizationSamples = VkSampleCountFlagBits._1;
-            }
+            multisample->rasterizationSamples = VkSampleCountFlagBits._1;
+
             var colorBlend = VkPipelineColorBlendStateCreateInfo.Alloc();
-            {
-                colorBlend->logicOp = VkLogicOp.Copy;
-                var blend = new VkPipelineColorBlendAttachmentState(
-                    colorWriteMask: VkColorComponentFlagBits.R | VkColorComponentFlagBits.G
-                    | VkColorComponentFlagBits.B | VkColorComponentFlagBits.A,
-                    blendEnable: false);
-                blend.Set(colorBlend);
-            }
+            colorBlend->logicOp = VkLogicOp.Copy;
+            var blend = new VkPipelineColorBlendAttachmentState(
+                colorWriteMask: VkColorComponentFlagBits.R | VkColorComponentFlagBits.G
+                | VkColorComponentFlagBits.B | VkColorComponentFlagBits.A,
+                blendEnable: false);
+            blend.Set(colorBlend);
+
             var rasterization = VkPipelineRasterizationStateCreateInfo.Alloc();
-            {
-                rasterization->polygonMode = VkPolygonMode.Fill;
-                rasterization->cullMode = VkCullModeFlagBits.None;
-                rasterization->frontFace = VkFrontFace.Clockwise;
-                rasterization->lineWidth = 1.0f;
-            }
+            rasterization->polygonMode = VkPolygonMode.Fill;
+            rasterization->cullMode = VkCullModeFlagBits.None;
+            rasterization->frontFace = VkFrontFace.Clockwise;
+            rasterization->lineWidth = 1.0f;
+
             var inputAssem = VkPipelineInputAssemblyStateCreateInfo.Alloc();
-            {
-                inputAssem->topology = VkPrimitiveTopology.TriangleList;
-            }
+            inputAssem->topology = VkPrimitiveTopology.TriangleList;
+
             var input = VkPipelineVertexInputStateCreateInfo.Alloc();
             {
+                // static readonly float[] Vertices = { .. }
                 var binding = new VkVertexInputBindingDescription(
                     binding: 0,
                     stride: 2 * sizeof(float),
                     inputRate: VkVertexInputRate.Vertex);
                 binding.Set(input);
-                var attribute = new VkVertexInputAttributeDescription(0, 0, VkFormat.R32g32Sfloat, 0);
+                // layout(location = 0) in vec2 inPos;
+                var attribute = new VkVertexInputAttributeDescription(
+                    location: 0,
+                    binding: 0,
+                    format: VkFormat.R32g32Sfloat,
+                    offset: 0);
                 attribute.Set(input);
             }
 
@@ -385,7 +379,7 @@ namespace Demo.HelloVulkan {
             VkPipelineCache cache;
             {
                 var info = VkPipelineCacheCreateInfo.Alloc();
-                vkAPI.vkCreatePipelineCache(device, info, null, &cache);
+                vkAPI.vkCreatePipelineCache(device, info, null, &cache).Check();
             }
             //var infos = new VkGraphicsPipelineCreateInfo[] { pipelineCreateInfo };
             //return device.CreateGraphicsPipelines(ref cache, infos);
@@ -394,14 +388,14 @@ namespace Demo.HelloVulkan {
                 var info = VkGraphicsPipelineCreateInfo.Alloc();
                 info->layout = pipelineLayout;
                 info->pViewportState = viewport;
-                stages.Set(info);
+                info->pStages = shaderStages; info->stageCount = 2;
                 info->pMultisampleState = multisample;
                 info->pColorBlendState = colorBlend;
                 info->pRasterizationState = rasterization;
                 info->pInputAssemblyState = inputAssem;
                 info->pVertexInputState = input;
                 info->renderPass = renderPass;
-                vkAPI.vkCreateGraphicsPipelines(device, cache, 1, info, null, &pipeline);
+                vkAPI.vkCreateGraphicsPipelines(device, cache, 1, info, null, &pipeline).Check();
             }
 
             return pipeline;
@@ -414,7 +408,7 @@ namespace Demo.HelloVulkan {
             }
             //return device.CreatePipelineLayout(ref info);
             VkPipelineLayout layout;
-            vkAPI.vkCreatePipelineLayout(device, info, null, &layout);
+            vkAPI.vkCreatePipelineLayout(device, info, null, &layout).Check();
             return layout;
         }
 
@@ -448,7 +442,7 @@ namespace Demo.HelloVulkan {
 
             //return device.CreateDescriptorSetLayout(ref info);
             VkDescriptorSetLayout layout;
-            vkAPI.vkCreateDescriptorSetLayout(device, info, null, &layout);
+            vkAPI.vkCreateDescriptorSetLayout(device, info, null, &layout).Check();
             return layout;
         }
 
@@ -467,7 +461,7 @@ namespace Demo.HelloVulkan {
                     index.Set(info);
                 }
                 //VkBuffer buffer = device.CreateBuffer(ref info);
-                vkAPI.vkCreateBuffer(device, info, null, &buffer);
+                vkAPI.vkCreateBuffer(device, info, null, &buffer).Check();
             }
             VkDeviceMemory deviceMemory; // = device.AllocateMemory(ref allocInfo);
             VkMemoryRequirements memoryReq;
@@ -477,15 +471,14 @@ namespace Demo.HelloVulkan {
             {
                 allocInfo->allocationSize = memoryReq.size;
                 VkPhysicalDeviceMemoryProperties memoryProperties;
-                //physicalDevice.GetMemoryProperties(out memoryProperties);
                 vkAPI.vkGetPhysicalDeviceMemoryProperties(physicalDevice, &memoryProperties);
                 allocInfo->memoryTypeIndex = GetMemoryTypeIndex(memoryProperties, memoryReq,
                     VkMemoryPropertyFlagBits.HostVisible | VkMemoryPropertyFlagBits.HostCoherent);
-                vkAPI.vkAllocateMemory(device, allocInfo, null, &deviceMemory);
+                vkAPI.vkAllocateMemory(device, allocInfo, null, &deviceMemory).Check();
             }
             {
                 IntPtr memPtr = IntPtr.Zero;
-                vkAPI.vkMapMemory(device, deviceMemory, 0, (UInt64)size, 0, &memPtr);
+                vkAPI.vkMapMemory(device, deviceMemory, 0, (UInt64)size, 0, &memPtr).Check();
 
                 if (type == typeof(float))
                     System.Runtime.InteropServices.Marshal.Copy(values as float[], 0, memPtr, length);
@@ -500,7 +493,7 @@ namespace Demo.HelloVulkan {
 
                 vkAPI.vkUnmapMemory(device, deviceMemory);
             }
-            vkAPI.vkBindBufferMemory(device, buffer, deviceMemory, 0);
+            vkAPI.vkBindBufferMemory(device, buffer, deviceMemory, 0).Check();
 
             return buffer;
         }
@@ -571,7 +564,7 @@ namespace Demo.HelloVulkan {
                 info->height = surfaceCapabilities.currentExtent.height;
                 //framebuffers[i] = device.CreateFramebuffer(ref info);
                 VkFramebuffer framebuffer;
-                vkAPI.vkCreateFramebuffer(device, info, null, &framebuffer);
+                vkAPI.vkCreateFramebuffer(device, info, null, &framebuffer).Check();
                 framebuffers[i] = framebuffer;
             }
 
@@ -666,18 +659,14 @@ namespace Demo.HelloVulkan {
 
             var info = VkDeviceCreateInfo.Alloc();
             {
-                new[] { "VK_KHR_swapchain" }.SetExtensions(info);
-                queueInfo->Set(info);
-                //info->pQueueCreateInfos = queueInfo; info->queueCreateInfoCount = 1;
+                new[] { Vk.VK_KHR_swapchain }.SetExtensions(info);
+                //queueInfo->Set(info);
+                info->pQueueCreateInfos = queueInfo; info->queueCreateInfoCount = 1;
             }
 
             VkDevice vkDevice;
             //physicalDevice.CreateDevice(ref deviceInfo, null, out device);
             vkAPI.vkCreateDevice(physicalDevice, info, null, &vkDevice).Check();
-            Vk.Free(queueInfo);
-            Vk.Free(info);
-            Marshal.FreeHGlobal((IntPtr)queueInfo);
-            Marshal.FreeHGlobal((IntPtr)info);
 
             return vkDevice;
         }
@@ -696,7 +685,6 @@ namespace Demo.HelloVulkan {
 
             VkSurfaceKHR vkSurface;
             vkAPI.vkCreateWin32SurfaceKHR(instance, info, null, &vkSurface).Check();
-            Marshal.FreeHGlobal((IntPtr)info);
 
             return vkSurface;
         }
@@ -721,9 +709,6 @@ namespace Demo.HelloVulkan {
 
             VkInstance vkInstance;
             vkAPI.vkCreateInstance(info, null, &vkInstance).Check();
-            Vk.Free(info);
-            Marshal.FreeHGlobal((IntPtr)info);
-            Marshal.FreeHGlobal((IntPtr)appInfo);
 
             return vkInstance;
         }
@@ -763,18 +748,19 @@ namespace Demo.HelloVulkan {
             VkQueue queue = this.vkQueue;
             //uint nextIndex = device.AcquireNextImageKHR(swapchain, ulong.MaxValue, semaphore);
             UInt32 nextIndex;
-            vkAPI.vkAcquireNextImageKHR(device, swapchain, ulong.MaxValue, semaphore, new VkFence(), &nextIndex);
+            vkAPI.vkAcquireNextImageKHR(device, swapchain, ulong.MaxValue,
+                semaphore, new VkFence(), &nextIndex).Check();
             //device.ResetFence(fence);
-            vkAPI.vkResetFences(device, 1, &fence);
+            vkAPI.vkResetFences(device, 1, &fence).Check();
 
             //queue.Submit(ref this.submitInfos[nextIndex], fence);
             VkSubmitInfo* submitInfo = this.submitInfos[nextIndex];
-            vkAPI.vkQueueSubmit(queue, 1, submitInfo, fence);
+            vkAPI.vkQueueSubmit(queue, 1, submitInfo, fence).Check();
             //device.WaitForFence(fence, true, 100000000);
-            vkAPI.vkWaitForFences(device, 1, &fence, new VkBool32(true), 100000000);
+            vkAPI.vkWaitForFences(device, 1, &fence, new VkBool32(true), 100000000).Check();
             //queue.PresentKHR(ref this.presentInfos[nextIndex]);
             VkPresentInfoKHR* presentInfo = this.presentInfos[nextIndex];
-            vkAPI.vkQueuePresentKHR(queue, presentInfo);
+            vkAPI.vkQueuePresentKHR(queue, presentInfo).Check();
         }
     }
 }
