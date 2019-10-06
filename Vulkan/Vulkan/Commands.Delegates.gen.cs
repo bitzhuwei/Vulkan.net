@@ -166,7 +166,7 @@ namespace Vulkan {
         /// <param name="device">device is the device associated with swapchain.</param>
         /// <param name="swapchain">swapchain is the swapchain to acquire exclusive full-screen access
         /// for.</param>
-        private delegate VkResult vkAcquireFullScreenExclusiveModeEXT(
+        public delegate VkResult vkAcquireFullScreenExclusiveModeEXT(
             VkDevice device,
             VkSwapchainKHR swapchain);
         // Command: 3
@@ -177,7 +177,7 @@ namespace Vulkan {
         /// <param name="dpy">dpy A connection to the X11 server that currently owns
         /// display.</param>
         /// <param name="display">display The display the caller wishes to control in Vulkan.</param>
-        private delegate VkResult vkAcquireXlibDisplayEXT(
+        public delegate VkResult vkAcquireXlibDisplayEXT(
             VkPhysicalDevice physicalDevice,
             /*Display*-*/IntPtr dpy,
             VkDisplayKHR display);
@@ -190,7 +190,7 @@ namespace Vulkan {
         /// <param name="pConditionalRenderingBegin">pConditionalRenderingBegin is a pointer to an instance of the
         /// VkConditionalRenderingBeginInfoEXT structure specifying the
         /// parameters of conditional rendering.</param>
-        private delegate void vkCmdBeginConditionalRenderingEXT(
+        public delegate void vkCmdBeginConditionalRenderingEXT(
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin);
         // Command: 14
@@ -202,7 +202,7 @@ namespace Vulkan {
         /// <param name="pLabelInfo">pLabelInfo is a pointer to an instance of the
         /// VkDebugUtilsLabelEXT structure specifying the parameters of the
         /// label region to open.</param>
-        private delegate void vkCmdBeginDebugUtilsLabelEXT(
+        public delegate void vkCmdBeginDebugUtilsLabelEXT(
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
         // Command: 16
@@ -220,7 +220,7 @@ namespace Vulkan {
         /// <param name="index">index is the query type specific index.
         /// When the query type is VK_QUERY_TYPE_TRANSFORM_FEEDBACK_STREAM_EXT
         /// the index represents the vertex stream.</param>
-        private delegate void vkCmdBeginQueryIndexedEXT(
+        public delegate void vkCmdBeginQueryIndexedEXT(
             VkCommandBuffer commandBuffer,
             VkQueryPool queryPool,
             UInt32 query,
@@ -259,7 +259,7 @@ namespace Vulkan {
         /// feedback to this buffer.
         /// If pCounterBufferOffsets is NULL, then it is assumed the offsets
         /// are zero.</param>
-        private delegate void vkCmdBeginTransformFeedbackEXT(
+        public delegate void vkCmdBeginTransformFeedbackEXT(
             VkCommandBuffer commandBuffer,
             UInt32 firstCounterBuffer,
             UInt32 counterBufferCount,
@@ -283,7 +283,7 @@ namespace Vulkan {
         /// If pSizes is NULL, or the value of the pSizes array
         /// element is VK_WHOLE_SIZE, then the maximum bytes captured will be
         /// the size of the corresponding buffer minus the buffer offset.</param>
-        private delegate void vkCmdBindTransformFeedbackBuffersEXT(
+        public delegate void vkCmdBindTransformFeedbackBuffersEXT(
             VkCommandBuffer commandBuffer,
             UInt32 firstBinding,
             UInt32 bindingCount,
@@ -299,7 +299,7 @@ namespace Vulkan {
         /// <param name="pMarkerInfo">pMarkerInfo is a pointer to an instance of the
         /// VkDebugMarkerMarkerInfoEXT structure specifying the parameters of
         /// the marker region to open.</param>
-        private delegate void vkCmdDebugMarkerBeginEXT(
+        public delegate void vkCmdDebugMarkerBeginEXT(
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo);
         // Command: 38
@@ -308,7 +308,7 @@ namespace Vulkan {
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
         /// recorded.</param>
-        private delegate void vkCmdDebugMarkerEndEXT(
+        public delegate void vkCmdDebugMarkerEndEXT(
             VkCommandBuffer commandBuffer);
         // Command: 39
         // Delegate: 9
@@ -319,7 +319,7 @@ namespace Vulkan {
         /// <param name="pMarkerInfo">pMarkerInfo is a pointer to an instance of the
         /// VkDebugMarkerMarkerInfoEXT structure specifying the parameters of
         /// the marker to insert.</param>
-        private delegate void vkCmdDebugMarkerInsertEXT(
+        public delegate void vkCmdDebugMarkerInsertEXT(
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo);
         // Command: 49
@@ -343,7 +343,7 @@ namespace Vulkan {
         /// This value is typically the same value that was used in the graphics
         /// pipeline state when the transform feedback was captured as the
         /// XfbStride.</param>
-        private delegate void vkCmdDrawIndirectByteCountEXT(
+        public delegate void vkCmdDrawIndirectByteCountEXT(
             VkCommandBuffer commandBuffer,
             UInt32 instanceCount,
             UInt32 firstInstance,
@@ -357,7 +357,7 @@ namespace Vulkan {
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
         /// be recorded.</param>
-        private delegate void vkCmdEndConditionalRenderingEXT(
+        public delegate void vkCmdEndConditionalRenderingEXT(
             VkCommandBuffer commandBuffer);
         // Command: 56
         // Delegate: 12
@@ -365,7 +365,7 @@ namespace Vulkan {
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
         /// recorded.</param>
-        private delegate void vkCmdEndDebugUtilsLabelEXT(
+        public delegate void vkCmdEndDebugUtilsLabelEXT(
             VkCommandBuffer commandBuffer);
         // Command: 58
         // Delegate: 13
@@ -378,7 +378,7 @@ namespace Vulkan {
         /// <param name="query">query is the query index within the query pool where the result is
         /// stored.</param>
         /// <param name="index">index is the query type specific index.</param>
-        private delegate void vkCmdEndQueryIndexedEXT(
+        public delegate void vkCmdEndQueryIndexedEXT(
             VkCommandBuffer commandBuffer,
             VkQueryPool queryPool,
             UInt32 query,
@@ -411,7 +411,7 @@ namespace Vulkan {
         /// be written.
         /// If pCounterBufferOffsets is NULL, then it is assumed the offsets
         /// are zero.</param>
-        private delegate void vkCmdEndTransformFeedbackEXT(
+        public delegate void vkCmdEndTransformFeedbackEXT(
             VkCommandBuffer commandBuffer,
             UInt32 firstCounterBuffer,
             UInt32 counterBufferCount,
@@ -423,7 +423,7 @@ namespace Vulkan {
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
         /// recorded.</param>
-        private delegate void vkCmdInsertDebugUtilsLabelEXT(
+        public delegate void vkCmdInsertDebugUtilsLabelEXT(
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
         // Command: 82
@@ -438,7 +438,7 @@ namespace Vulkan {
         /// state are updated by the command.</param>
         /// <param name="pDiscardRectangles">pDiscardRectangles is a pointer to an array of VkRect2D
         /// structures specifying discard rectangles.</param>
-        private delegate void vkCmdSetDiscardRectangleEXT(
+        public delegate void vkCmdSetDiscardRectangleEXT(
             VkCommandBuffer commandBuffer,
             UInt32 firstDiscardRectangle,
             UInt32 discardRectangleCount,
@@ -450,7 +450,7 @@ namespace Vulkan {
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
         /// recorded.</param>
         /// <param name="pSampleLocationsInfo">pSampleLocationsInfo is the sample locations state to set.</param>
-        private delegate void vkCmdSetSampleLocationsEXT(
+        public delegate void vkCmdSetSampleLocationsEXT(
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkSampleLocationsInfoEXT* pSampleLocationsInfo);
         // Command: 107
@@ -465,7 +465,7 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pCallback">pCallback is a pointer to record the
         /// VkDebugReportCallbackEXT object created.</param>
-        private delegate VkResult vkCreateDebugReportCallbackEXT(
+        public delegate VkResult vkCreateDebugReportCallbackEXT(
             VkInstance instance,
             /*-const-*/ VkDebugReportCallbackCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
@@ -482,7 +482,7 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pMessenger">pMessenger is a pointer to record the
         /// VkDebugUtilsMessengerEXT object created.</param>
-        private delegate VkResult vkCreateDebugUtilsMessengerEXT(
+        public delegate VkResult vkCreateDebugUtilsMessengerEXT(
             VkInstance instance,
             /*-const-*/ VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
@@ -500,7 +500,7 @@ namespace Vulkan {
         /// Memory Allocation).</param>
         /// <param name="pSurface">pSurface points to a VkSurfaceKHR handle in which the
         /// created surface object is returned.</param>
-        private delegate VkResult vkCreateMetalSurfaceEXT(
+        public delegate VkResult vkCreateMetalSurfaceEXT(
             VkInstance instance,
             /*-const-*/ VkMetalSurfaceCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
@@ -518,7 +518,7 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pValidationCache">pValidationCache is a pointer to a VkValidationCacheEXT
         /// handle in which the resulting validation cache object is returned.</param>
-        private delegate VkResult vkCreateValidationCacheEXT(
+        public delegate VkResult vkCreateValidationCacheEXT(
             VkDevice device,
             /*-const-*/ VkValidationCacheCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
@@ -531,7 +531,7 @@ namespace Vulkan {
         /// <param name="pNameInfo">pNameInfo is a pointer to an instance of the
         /// VkDebugMarkerObjectNameInfoEXT structure specifying the parameters
         /// of the name to set on the object.</param>
-        private delegate VkResult vkDebugMarkerSetObjectNameEXT(
+        public delegate VkResult vkDebugMarkerSetObjectNameEXT(
             VkDevice device,
             /*-const-*/ VkDebugMarkerObjectNameInfoEXT* pNameInfo);
         // Command: 148
@@ -542,7 +542,7 @@ namespace Vulkan {
         /// <param name="pTagInfo">pTagInfo is a pointer to an instance of the
         /// VkDebugMarkerObjectTagInfoEXT structure specifying the parameters
         /// of the tag to attach to the object.</param>
-        private delegate VkResult vkDebugMarkerSetObjectTagEXT(
+        public delegate VkResult vkDebugMarkerSetObjectTagEXT(
             VkDevice device,
             /*-const-*/ VkDebugMarkerObjectTagInfoEXT* pTagInfo);
         // Command: 149
@@ -564,7 +564,7 @@ namespace Vulkan {
         /// event/message.</param>
         /// <param name="pMessage">pMessage is a null-terminated string detailing the trigger
         /// conditions.</param>
-        private delegate void vkDebugReportMessageEXT(
+        public delegate void vkDebugReportMessageEXT(
             VkInstance instance,
             VkDebugReportFlagsEXT flags,
             VkDebugReportObjectTypeEXT _objectType,
@@ -585,7 +585,7 @@ namespace Vulkan {
         /// called when a callback is active.</param>
         /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
         /// Memory Allocation chapter.</param>
-        private delegate void vkDestroyDebugReportCallbackEXT(
+        public delegate void vkDestroyDebugReportCallbackEXT(
             VkInstance instance,
             VkDebugReportCallbackEXT callback,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
@@ -601,7 +601,7 @@ namespace Vulkan {
         /// called when a callback is active.</param>
         /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
         /// Memory Allocation chapter.</param>
-        private delegate void vkDestroyDebugUtilsMessengerEXT(
+        public delegate void vkDestroyDebugUtilsMessengerEXT(
             VkInstance instance,
             VkDebugUtilsMessengerEXT messenger,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
@@ -614,7 +614,7 @@ namespace Vulkan {
         /// <param name="validationCache">validationCache is the handle of the validation cache to destroy.</param>
         /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
         /// Memory Allocation chapter.</param>
-        private delegate void vkDestroyValidationCacheEXT(
+        public delegate void vkDestroyValidationCacheEXT(
             VkDevice device,
             VkValidationCacheEXT validationCache,
             /*-const-*/ VkAllocationCallbacks* pAllocator);
@@ -626,7 +626,7 @@ namespace Vulkan {
         /// <param name="display">display is the display whose power state is modified.</param>
         /// <param name="pDisplayPowerInfo">pDisplayPowerInfo is an instance of VkDisplayPowerInfoEXT
         /// specifying the new power state of display.</param>
-        private delegate VkResult vkDisplayPowerControlEXT(
+        public delegate VkResult vkDisplayPowerControlEXT(
             VkDevice device,
             VkDisplayKHR display,
             /*-const-*/ VkDisplayPowerInfoEXT* pDisplayPowerInfo);
@@ -638,7 +638,7 @@ namespace Vulkan {
         /// <param name="pInfo">pInfo is a pointer to an instance of the
         /// VkBufferDeviceAddressInfoEXT structure specifying the buffer to
         /// retrieve an address for.</param>
-        private delegate VkDeviceAddress vkGetBufferDeviceAddressEXT(
+        public delegate VkDeviceAddress vkGetBufferDeviceAddressEXT(
             VkDevice device,
             /*-const-*/ VkBufferDeviceAddressInfoEXT* pInfo);
         // Command: 200
@@ -657,7 +657,7 @@ namespace Vulkan {
         /// <param name="pMaxDeviation">pMaxDeviation is a pointer to a 64-bit unsigned integer value in
         /// which the strictly positive maximum deviation, in nanoseconds, of the
         /// calibrated timestamp values is returned.</param>
-        private delegate VkResult vkGetCalibratedTimestampsEXT(
+        public delegate VkResult vkGetCalibratedTimestampsEXT(
             VkDevice device,
             UInt32 timestampCount,
             /*-const-*/ VkCalibratedTimestampInfoEXT* pTimestampInfos,
@@ -674,7 +674,7 @@ namespace Vulkan {
         /// <param name="pModes">pModes is a pointer to a value of type
         /// VkDeviceGroupPresentModeFlagsKHR that is filled with the supported
         /// device group present modes for the surface.</param>
-        private delegate VkResult vkGetDeviceGroupSurfacePresentModes2EXT(
+        public delegate VkResult vkGetDeviceGroupSurfacePresentModes2EXT(
             VkDevice device,
             /*-const-*/ VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
             VkDeviceGroupPresentModeFlagsKHR* pModes);
@@ -686,7 +686,7 @@ namespace Vulkan {
         /// <param name="image">image is the queried image.</param>
         /// <param name="pProperties">pProperties will return properties of the image¡¯s DRM format
         /// modifier.</param>
-        private delegate VkResult vkGetImageDrmFormatModifierPropertiesEXT(
+        public delegate VkResult vkGetImageDrmFormatModifierPropertiesEXT(
             VkDevice device,
             VkImage image,
             VkImageDrmFormatModifierPropertiesEXT* pProperties);
@@ -701,7 +701,7 @@ namespace Vulkan {
         /// <param name="pMemoryHostPointerProperties">pMemoryHostPointerProperties is a pointer to a
         /// VkMemoryHostPointerPropertiesEXT structure in which the host
         /// pointer properties are returned.</param>
-        private delegate VkResult vkGetMemoryHostPointerPropertiesEXT(
+        public delegate VkResult vkGetMemoryHostPointerPropertiesEXT(
             VkDevice device,
             VkExternalMemoryHandleTypeFlagBits handleType,
             /*-const-*/ void* pHostPointer,
@@ -717,7 +717,7 @@ namespace Vulkan {
         /// <param name="pTimeDomains">pTimeDomains is either NULL or a pointer to an array of
         /// VkTimeDomainEXT values, indicating the supported calibrateable
         /// time domains.</param>
-        private delegate VkResult vkGetPhysicalDeviceCalibrateableTimeDomainsEXT(
+        public delegate VkResult vkGetPhysicalDeviceCalibrateableTimeDomainsEXT(
             VkPhysicalDevice physicalDevice,
             UInt32* pTimeDomainCount,
             VkTimeDomainEXT* pTimeDomains);
@@ -732,7 +732,7 @@ namespace Vulkan {
         /// VkMultisamplePropertiesEXT, in which information about the
         /// additional multisampling capabilities specific to the sample count is
         /// returned.</param>
-        private delegate void vkGetPhysicalDeviceMultisamplePropertiesEXT(
+        public delegate void vkGetPhysicalDeviceMultisamplePropertiesEXT(
             VkPhysicalDevice physicalDevice,
             VkSampleCountFlagBits samples,
             VkMultisamplePropertiesEXT* pMultisampleProperties);
@@ -747,7 +747,7 @@ namespace Vulkan {
         /// <param name="pSurfaceCapabilities">pSurfaceCapabilities is a pointer to an instance of the
         /// VkSurfaceCapabilities2EXT structure in which the capabilities are
         /// returned.</param>
-        private delegate VkResult vkGetPhysicalDeviceSurfaceCapabilities2EXT(
+        public delegate VkResult vkGetPhysicalDeviceSurfaceCapabilities2EXT(
             VkPhysicalDevice physicalDevice,
             VkSurfaceKHR surface,
             VkSurfaceCapabilities2EXT* pSurfaceCapabilities);
@@ -767,7 +767,7 @@ namespace Vulkan {
         /// <param name="pPresentModes">pPresentModes is either NULL or a pointer to an array of
         /// VkPresentModeKHR values, indicating the supported presentation
         /// modes.</param>
-        private delegate VkResult vkGetPhysicalDeviceSurfacePresentModes2EXT(
+        public delegate VkResult vkGetPhysicalDeviceSurfacePresentModes2EXT(
             VkPhysicalDevice physicalDevice,
             /*-const-*/ VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
             UInt32* pPresentModeCount,
@@ -782,7 +782,7 @@ namespace Vulkan {
         /// <param name="rrOutput">rrOutput An X11 RandR output ID.</param>
         /// <param name="pDisplay">pDisplay The corresponding VkDisplayKHR handle will be
         /// returned here.</param>
-        private delegate VkResult vkGetRandROutputDisplayEXT(
+        public delegate VkResult vkGetRandROutputDisplayEXT(
             VkPhysicalDevice physicalDevice,
             /*Display*-*/IntPtr dpy,
             /*RROutput*/IntPtr rrOutput,
@@ -795,7 +795,7 @@ namespace Vulkan {
         /// <param name="swapchain">swapchain is the swapchain from which to query the counter value.</param>
         /// <param name="counter">counter is the counter to query.</param>
         /// <param name="pCounterValue">pCounterValue will return the current value of the counter.</param>
-        private delegate VkResult vkGetSwapchainCounterEXT(
+        public delegate VkResult vkGetSwapchainCounterEXT(
             VkDevice device,
             VkSwapchainKHR swapchain,
             VkSurfaceCounterFlagBitsEXT counter,
@@ -809,7 +809,7 @@ namespace Vulkan {
         /// <param name="pDataSize">pDataSize is a pointer to a value related to the amount of data in
         /// the validation cache, as described below.</param>
         /// <param name="pData">pData is either NULL or a pointer to a buffer.</param>
-        private delegate VkResult vkGetValidationCacheDataEXT(
+        public delegate VkResult vkGetValidationCacheDataEXT(
             VkDevice device,
             VkValidationCacheEXT validationCache,
             Int32* pDataSize,
@@ -826,7 +826,7 @@ namespace Vulkan {
         /// <param name="pSrcCaches">pSrcCaches is an array of validation cache handles, which will be
         /// merged into dstCache.
         /// The previous contents of dstCache are included after the merge.</param>
-        private delegate VkResult vkMergeValidationCachesEXT(
+        public delegate VkResult vkMergeValidationCachesEXT(
             VkDevice device,
             VkValidationCacheEXT dstCache,
             UInt32 srcCacheCount,
@@ -839,7 +839,7 @@ namespace Vulkan {
         /// <param name="pLabelInfo">pLabelInfo is a pointer to an instance of the
         /// VkDebugUtilsLabelEXT structure specifying the parameters of the
         /// label region to open.</param>
-        private delegate void vkQueueBeginDebugUtilsLabelEXT(
+        public delegate void vkQueueBeginDebugUtilsLabelEXT(
             VkQueue queue,
             /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
         // Command: 298
@@ -847,7 +847,7 @@ namespace Vulkan {
         /// <summary>vkQueueEndDebugUtilsLabelEXT - Close a queue debug label region
         /// </summary>
         /// <param name="queue">queue is the queue in which a debug label region should be closed.</param>
-        private delegate void vkQueueEndDebugUtilsLabelEXT(
+        public delegate void vkQueueEndDebugUtilsLabelEXT(
             VkQueue queue);
         // Command: 299
         // Delegate: 44
@@ -857,7 +857,7 @@ namespace Vulkan {
         /// <param name="pLabelInfo">pLabelInfo is a pointer to an instance of the
         /// VkDebugUtilsLabelEXT structure specifying the parameters of the
         /// label to insert.</param>
-        private delegate void vkQueueInsertDebugUtilsLabelEXT(
+        public delegate void vkQueueInsertDebugUtilsLabelEXT(
             VkQueue queue,
             /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
         // Command: 303
@@ -872,7 +872,7 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pFence">pFence points to a handle in which the resulting fence object is
         /// returned.</param>
-        private delegate VkResult vkRegisterDeviceEventEXT(
+        public delegate VkResult vkRegisterDeviceEventEXT(
             VkDevice device,
             /*-const-*/ VkDeviceEventInfoEXT* pDeviceEventInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
@@ -890,7 +890,7 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pFence">pFence points to a handle in which the resulting fence object is
         /// returned.</param>
-        private delegate VkResult vkRegisterDisplayEventEXT(
+        public delegate VkResult vkRegisterDisplayEventEXT(
             VkDevice device,
             VkDisplayKHR display,
             /*-const-*/ VkDisplayEventInfoEXT* pDisplayEventInfo,
@@ -902,7 +902,7 @@ namespace Vulkan {
         /// </summary>
         /// <param name="physicalDevice">physicalDevice The physical device the display is on.</param>
         /// <param name="display">display The display to release control of.</param>
-        private delegate VkResult vkReleaseDisplayEXT(
+        public delegate VkResult vkReleaseDisplayEXT(
             VkPhysicalDevice physicalDevice,
             VkDisplayKHR display);
         // Command: 307
@@ -912,7 +912,7 @@ namespace Vulkan {
         /// <param name="device">device is the device associated with swapchain.</param>
         /// <param name="swapchain">swapchain is the swapchain to release exclusive full-screen access
         /// from.</param>
-        private delegate VkResult vkReleaseFullScreenExclusiveModeEXT(
+        public delegate VkResult vkReleaseFullScreenExclusiveModeEXT(
             VkDevice device,
             VkSwapchainKHR swapchain);
         // Command: 313
@@ -923,7 +923,7 @@ namespace Vulkan {
         /// being reset.</param>
         /// <param name="firstQuery">firstQuery is the initial query index to reset.</param>
         /// <param name="queryCount">queryCount is the number of queries to reset.</param>
-        private delegate void vkResetQueryPoolEXT(
+        public delegate void vkResetQueryPoolEXT(
             VkDevice device,
             VkQueryPool queryPool,
             UInt32 firstQuery,
@@ -936,7 +936,7 @@ namespace Vulkan {
         /// <param name="pNameInfo">pNameInfo is a pointer to an instance of the
         /// VkDebugUtilsObjectNameInfoEXT structure specifying the parameters
         /// of the name to set on the object.</param>
-        private delegate VkResult vkSetDebugUtilsObjectNameEXT(
+        public delegate VkResult vkSetDebugUtilsObjectNameEXT(
             VkDevice device,
             /*-const-*/ VkDebugUtilsObjectNameInfoEXT* pNameInfo);
         // Command: 315
@@ -947,7 +947,7 @@ namespace Vulkan {
         /// <param name="pTagInfo">pTagInfo is a pointer to an instance of the
         /// VkDebugUtilsObjectTagInfoEXT structure specifying the parameters
         /// of the tag to attach to the object.</param>
-        private delegate VkResult vkSetDebugUtilsObjectTagEXT(
+        public delegate VkResult vkSetDebugUtilsObjectTagEXT(
             VkDevice device,
             /*-const-*/ VkDebugUtilsObjectTagInfoEXT* pTagInfo);
         // Command: 317
@@ -959,7 +959,7 @@ namespace Vulkan {
         /// pSwapchains.</param>
         /// <param name="pSwapchains">pSwapchains is a pointer to the array of swapchainCountVkSwapchainKHR handles.</param>
         /// <param name="pMetadata">pMetadata is a pointer to the array of swapchainCountVkHdrMetadataEXT structures.</param>
-        private delegate void vkSetHdrMetadataEXT(
+        public delegate void vkSetHdrMetadataEXT(
             VkDevice device,
             UInt32 swapchainCount,
             /*-const-*/ VkSwapchainKHR* pSwapchains,
@@ -977,7 +977,7 @@ namespace Vulkan {
         /// event(s) to identify with this message.</param>
         /// <param name="pCallbackData">pCallbackData contains all the callback related data in the
         /// VkDebugUtilsMessengerCallbackDataEXT structure.</param>
-        private delegate void vkSubmitDebugUtilsMessageEXT(
+        public delegate void vkSubmitDebugUtilsMessageEXT(
             VkInstance instance,
             VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
             VkDebugUtilsMessageTypeFlagsEXT messageTypes,

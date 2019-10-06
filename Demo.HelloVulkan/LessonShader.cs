@@ -183,7 +183,8 @@ namespace Demo.HelloVulkan {
         /// <param name="userData">pUserData is the user data given when the
         /// VkDebugReportCallbackEXT was created</param>
         /// <returns></returns>
-        private VkBool32 DebugCallback(VkDebugReportFlagBitsEXT flags, VkDebugReportObjectTypeEXT objectType,
+        private VkBool32 DebugCallback(VkDebugReportFlagBitsEXT flags,
+            VkDebugReportObjectTypeEXT objectType,
             UInt64 objectHandle, Int32 location, Int32 messageCode,
             IntPtr layerPrefix, IntPtr message, IntPtr userData) {
             string text = $"{flags}: {Marshal.PtrToStringAnsi(message)}";

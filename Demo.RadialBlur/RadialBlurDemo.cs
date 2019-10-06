@@ -559,7 +559,6 @@ namespace Demo.RadialBlur {
             VkDescriptorPool pool;
             vkCreateDescriptorPool(device, descriptorPoolInfo, null, &pool);
             this.descriptorPool = pool;
-            Vk.Free(descriptorPoolInfo);
             Marshal.FreeHGlobal((IntPtr)descriptorPoolInfo);
         }
 
