@@ -11,7 +11,7 @@ namespace Vulkan_Tutorial {
 
         public void Cleanup() {
             if (enableValidationLayers) {
-                DestroyDebugUtilsMessengerEXT(instance, debugMessenger, null);
+                vkAPI.DestroyDebugUtilsMessengerEXT(instance, debugMessenger, null);
             }
 
             vkDestroyInstance(instance, null);

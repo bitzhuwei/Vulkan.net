@@ -9,10 +9,61 @@ using static Vulkan.vkAPI;
 
 namespace Vulkan_Tutorial {
     unsafe partial class Renderer {
+        struct QueueFamilyIndices {
+            public UInt32? graphicsFamily;
+
+            public bool isComplete() {
+                return graphicsFamily.HasValue;
+            }
+        }
 
         private void PickPhysicalDevice() {
+            VkPhysicalDevice[] devices = Vk.PhysicalDevices(instance);
+            foreach (var device in devices) {
+                if (isDeviceSuitable(device)) {
+                    physicalDevice = device;
+                    break;
+                }
+            }
 
-            throw new NotImplementedException();
+            if (physicalDevice == 0u) {
+                throw new Exception("failed to find a suitable GPU!");
+            }
         }
+
+
+        bool isDeviceSuitable(VkPhysicalDevice device) {
+            QueueFamilyIndices indices = findQueueFamilies(device);
+
+            return indices.isComplete();
+        }
+
+        QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device) {
+            var indices = new QueueFamilyIndices();
+
+            UInt32 queueFamilyCount = 0;
+            vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, null);
+
+            var queueFamilies = new VkQueueFamilyProperties[queueFamilyCount];
+            fixed (VkQueueFamilyProperties* pointer = queueFamilies) {
+                vkGetPhysicalDeviceQueueFamilyProperties(device, &queueFamilyCount, pointer);
+            }
+
+            uint i = 0;
+            foreach (var queueFamily in queueFamilies) {
+                if (queueFamily.queueCount > 0 && queueFamily.queueFlags.HasFlag(VkQueueFlagBits.Graphics)) {
+                    indices.graphicsFamily = i;
+                }
+
+                if (indices.isComplete()) {
+                    break;
+                }
+
+                i++;
+            }
+
+            return indices;
+        }
+
     }
 }
