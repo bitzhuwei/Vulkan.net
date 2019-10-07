@@ -15,4 +15,8 @@
     <None Remove="glm\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Encapsulate\vkGetInstanceProcAddr.cs" />
+  </ItemGroup>
+
 </Project>

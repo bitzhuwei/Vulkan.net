@@ -158,31 +158,61 @@ using VkSwapchainCreateFlagsKHR = Vulkan.VkSwapchainCreateFlagBitsKHR;
 // VkValidationCacheCreateFlagsEXT - Reserved for future use
 
 namespace Vulkan {
-    public unsafe static partial class vkAPI {
+    public unsafe partial class vkAPI {
         // Command: 0
-        // Delegate: 0
+        // GetInstanceProcAddr: 0
         /// <summary>vkAcquireFullScreenExclusiveModeEXT - Acquire full-screen exclusive mode for a swapchain
         /// </summary>
         /// <param name="device">device is the device associated with swapchain.</param>
         /// <param name="swapchain">swapchain is the swapchain to acquire exclusive full-screen access
         /// for.</param>
-        public delegate VkResult vkAcquireFullScreenExclusiveModeEXT(
+        public static VkResult AcquireFullScreenExclusiveModeEXT(
+            this VkInstance instance,
             VkDevice device,
-            VkSwapchainKHR swapchain);
+            VkSwapchainKHR swapchain) {
+            if (delvkAcquireFullScreenExclusiveModeEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkAcquireFullScreenExclusiveModeEXT");
+                delvkAcquireFullScreenExclusiveModeEXT = (vkAcquireFullScreenExclusiveModeEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkAcquireFullScreenExclusiveModeEXT));
+            }
+
+            if (delvkAcquireFullScreenExclusiveModeEXT != null) {
+                return delvkAcquireFullScreenExclusiveModeEXT(device, swapchain);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkAcquireFullScreenExclusiveModeEXT delvkAcquireFullScreenExclusiveModeEXT;
+
         // Command: 3
-        // Delegate: 1
+        // GetInstanceProcAddr: 1
         /// <summary>vkAcquireXlibDisplayEXT - Acquire access to a VkDisplayKHR using Xlib
         /// </summary>
         /// <param name="physicalDevice">physicalDevice The physical device the display is on.</param>
         /// <param name="dpy">dpy A connection to the X11 server that currently owns
         /// display.</param>
         /// <param name="display">display The display the caller wishes to control in Vulkan.</param>
-        public delegate VkResult vkAcquireXlibDisplayEXT(
+        public static VkResult AcquireXlibDisplayEXT(
+            this VkInstance instance,
             VkPhysicalDevice physicalDevice,
             /*Display*-*/IntPtr dpy,
-            VkDisplayKHR display);
+            VkDisplayKHR display) {
+            if (delvkAcquireXlibDisplayEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkAcquireXlibDisplayEXT");
+                delvkAcquireXlibDisplayEXT = (vkAcquireXlibDisplayEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkAcquireXlibDisplayEXT));
+            }
+
+            if (delvkAcquireXlibDisplayEXT != null) {
+                return delvkAcquireXlibDisplayEXT(physicalDevice, dpy, display);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkAcquireXlibDisplayEXT delvkAcquireXlibDisplayEXT;
+
         // Command: 13
-        // Delegate: 2
+        // GetInstanceProcAddr: 2
         /// <summary>vkCmdBeginConditionalRenderingEXT - Define the beginning of a conditional rendering block
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
@@ -190,11 +220,23 @@ namespace Vulkan {
         /// <param name="pConditionalRenderingBegin">pConditionalRenderingBegin is a pointer to an instance of the
         /// VkConditionalRenderingBeginInfoEXT structure specifying the
         /// parameters of conditional rendering.</param>
-        public delegate void vkCmdBeginConditionalRenderingEXT(
+        public static void CmdBeginConditionalRenderingEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
-            /*-const-*/ VkConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin);
+            /*-const-*/ VkConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin) {
+            if (delvkCmdBeginConditionalRenderingEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginConditionalRenderingEXT");
+                delvkCmdBeginConditionalRenderingEXT = (vkCmdBeginConditionalRenderingEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginConditionalRenderingEXT));
+            }
+
+            if (delvkCmdBeginConditionalRenderingEXT != null) {
+                delvkCmdBeginConditionalRenderingEXT(commandBuffer, pConditionalRenderingBegin);
+            }
+        }
+        private static vkCmdBeginConditionalRenderingEXT delvkCmdBeginConditionalRenderingEXT;
+
         // Command: 14
-        // Delegate: 3
+        // GetInstanceProcAddr: 3
         /// <summary>vkCmdBeginDebugUtilsLabelEXT - Open a command buffer debug label region
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -202,11 +244,23 @@ namespace Vulkan {
         /// <param name="pLabelInfo">pLabelInfo is a pointer to an instance of the
         /// VkDebugUtilsLabelEXT structure specifying the parameters of the
         /// label region to open.</param>
-        public delegate void vkCmdBeginDebugUtilsLabelEXT(
+        public static void CmdBeginDebugUtilsLabelEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
-            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
+            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo) {
+            if (delvkCmdBeginDebugUtilsLabelEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginDebugUtilsLabelEXT");
+                delvkCmdBeginDebugUtilsLabelEXT = (vkCmdBeginDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginDebugUtilsLabelEXT));
+            }
+
+            if (delvkCmdBeginDebugUtilsLabelEXT != null) {
+                delvkCmdBeginDebugUtilsLabelEXT(commandBuffer, pLabelInfo);
+            }
+        }
+        private static vkCmdBeginDebugUtilsLabelEXT delvkCmdBeginDebugUtilsLabelEXT;
+
         // Command: 16
-        // Delegate: 4
+        // GetInstanceProcAddr: 4
         /// <summary>vkCmdBeginQueryIndexedEXT - Begin an indexed query
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
@@ -220,14 +274,26 @@ namespace Vulkan {
         /// <param name="index">index is the query type specific index.
         /// When the query type is VK_QUERY_TYPE_TRANSFORM_FEEDBACK_STREAM_EXT
         /// the index represents the vertex stream.</param>
-        public delegate void vkCmdBeginQueryIndexedEXT(
+        public static void CmdBeginQueryIndexedEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
             VkQueryPool queryPool,
             UInt32 query,
             VkQueryControlFlags flags,
-            UInt32 index);
+            UInt32 index) {
+            if (delvkCmdBeginQueryIndexedEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginQueryIndexedEXT");
+                delvkCmdBeginQueryIndexedEXT = (vkCmdBeginQueryIndexedEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginQueryIndexedEXT));
+            }
+
+            if (delvkCmdBeginQueryIndexedEXT != null) {
+                delvkCmdBeginQueryIndexedEXT(commandBuffer, queryPool, query, flags, index);
+            }
+        }
+        private static vkCmdBeginQueryIndexedEXT delvkCmdBeginQueryIndexedEXT;
+
         // Command: 19
-        // Delegate: 5
+        // GetInstanceProcAddr: 5
         /// <summary>vkCmdBeginTransformFeedbackEXT - Make transform feedback active in the command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -259,14 +325,26 @@ namespace Vulkan {
         /// feedback to this buffer.
         /// If pCounterBufferOffsets is NULL, then it is assumed the offsets
         /// are zero.</param>
-        public delegate void vkCmdBeginTransformFeedbackEXT(
+        public static void CmdBeginTransformFeedbackEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
             UInt32 firstCounterBuffer,
             UInt32 counterBufferCount,
             /*-const-*/ VkBuffer* pCounterBuffers,
-            /*-const-*/ VkDeviceSize* pCounterBufferOffsets);
+            /*-const-*/ VkDeviceSize* pCounterBufferOffsets) {
+            if (delvkCmdBeginTransformFeedbackEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginTransformFeedbackEXT");
+                delvkCmdBeginTransformFeedbackEXT = (vkCmdBeginTransformFeedbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginTransformFeedbackEXT));
+            }
+
+            if (delvkCmdBeginTransformFeedbackEXT != null) {
+                delvkCmdBeginTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+            }
+        }
+        private static vkCmdBeginTransformFeedbackEXT delvkCmdBeginTransformFeedbackEXT;
+
         // Command: 24
-        // Delegate: 6
+        // GetInstanceProcAddr: 6
         /// <summary>vkCmdBindTransformFeedbackBuffersEXT - Bind transform feedback buffers to a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -283,15 +361,27 @@ namespace Vulkan {
         /// If pSizes is NULL, or the value of the pSizes array
         /// element is VK_WHOLE_SIZE, then the maximum bytes captured will be
         /// the size of the corresponding buffer minus the buffer offset.</param>
-        public delegate void vkCmdBindTransformFeedbackBuffersEXT(
+        public static void CmdBindTransformFeedbackBuffersEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
             UInt32 firstBinding,
             UInt32 bindingCount,
             /*-const-*/ VkBuffer* pBuffers,
             /*-const-*/ VkDeviceSize* pOffsets,
-            /*-const-*/ VkDeviceSize* pSizes);
+            /*-const-*/ VkDeviceSize* pSizes) {
+            if (delvkCmdBindTransformFeedbackBuffersEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBindTransformFeedbackBuffersEXT");
+                delvkCmdBindTransformFeedbackBuffersEXT = (vkCmdBindTransformFeedbackBuffersEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBindTransformFeedbackBuffersEXT));
+            }
+
+            if (delvkCmdBindTransformFeedbackBuffersEXT != null) {
+                delvkCmdBindTransformFeedbackBuffersEXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
+            }
+        }
+        private static vkCmdBindTransformFeedbackBuffersEXT delvkCmdBindTransformFeedbackBuffersEXT;
+
         // Command: 37
-        // Delegate: 7
+        // GetInstanceProcAddr: 7
         /// <summary>vkCmdDebugMarkerBeginEXT - Open a command buffer marker region
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -299,19 +389,43 @@ namespace Vulkan {
         /// <param name="pMarkerInfo">pMarkerInfo is a pointer to an instance of the
         /// VkDebugMarkerMarkerInfoEXT structure specifying the parameters of
         /// the marker region to open.</param>
-        public delegate void vkCmdDebugMarkerBeginEXT(
+        public static void CmdDebugMarkerBeginEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
-            /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo);
+            /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo) {
+            if (delvkCmdDebugMarkerBeginEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDebugMarkerBeginEXT");
+                delvkCmdDebugMarkerBeginEXT = (vkCmdDebugMarkerBeginEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDebugMarkerBeginEXT));
+            }
+
+            if (delvkCmdDebugMarkerBeginEXT != null) {
+                delvkCmdDebugMarkerBeginEXT(commandBuffer, pMarkerInfo);
+            }
+        }
+        private static vkCmdDebugMarkerBeginEXT delvkCmdDebugMarkerBeginEXT;
+
         // Command: 38
-        // Delegate: 8
+        // GetInstanceProcAddr: 8
         /// <summary>vkCmdDebugMarkerEndEXT - Close a command buffer marker region
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
         /// recorded.</param>
-        public delegate void vkCmdDebugMarkerEndEXT(
-            VkCommandBuffer commandBuffer);
+        public static void CmdDebugMarkerEndEXT(
+            this VkInstance instance,
+            VkCommandBuffer commandBuffer) {
+            if (delvkCmdDebugMarkerEndEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDebugMarkerEndEXT");
+                delvkCmdDebugMarkerEndEXT = (vkCmdDebugMarkerEndEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDebugMarkerEndEXT));
+            }
+
+            if (delvkCmdDebugMarkerEndEXT != null) {
+                delvkCmdDebugMarkerEndEXT(commandBuffer);
+            }
+        }
+        private static vkCmdDebugMarkerEndEXT delvkCmdDebugMarkerEndEXT;
+
         // Command: 39
-        // Delegate: 9
+        // GetInstanceProcAddr: 9
         /// <summary>vkCmdDebugMarkerInsertEXT - Insert a marker label into a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -319,11 +433,23 @@ namespace Vulkan {
         /// <param name="pMarkerInfo">pMarkerInfo is a pointer to an instance of the
         /// VkDebugMarkerMarkerInfoEXT structure specifying the parameters of
         /// the marker to insert.</param>
-        public delegate void vkCmdDebugMarkerInsertEXT(
+        public static void CmdDebugMarkerInsertEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
-            /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo);
+            /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo) {
+            if (delvkCmdDebugMarkerInsertEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDebugMarkerInsertEXT");
+                delvkCmdDebugMarkerInsertEXT = (vkCmdDebugMarkerInsertEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDebugMarkerInsertEXT));
+            }
+
+            if (delvkCmdDebugMarkerInsertEXT != null) {
+                delvkCmdDebugMarkerInsertEXT(commandBuffer, pMarkerInfo);
+            }
+        }
+        private static vkCmdDebugMarkerInsertEXT delvkCmdDebugMarkerInsertEXT;
+
         // Command: 49
-        // Delegate: 10
+        // GetInstanceProcAddr: 10
         /// <summary>vkCmdDrawIndirectByteCountEXT - Draw primitives where the vertex count is derived from the counter byte value in the counter buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -343,32 +469,68 @@ namespace Vulkan {
         /// This value is typically the same value that was used in the graphics
         /// pipeline state when the transform feedback was captured as the
         /// XfbStride.</param>
-        public delegate void vkCmdDrawIndirectByteCountEXT(
+        public static void CmdDrawIndirectByteCountEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
             UInt32 instanceCount,
             UInt32 firstInstance,
             VkBuffer counterBuffer,
             VkDeviceSize counterBufferOffset,
             UInt32 counterOffset,
-            UInt32 vertexStride);
+            UInt32 vertexStride) {
+            if (delvkCmdDrawIndirectByteCountEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDrawIndirectByteCountEXT");
+                delvkCmdDrawIndirectByteCountEXT = (vkCmdDrawIndirectByteCountEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDrawIndirectByteCountEXT));
+            }
+
+            if (delvkCmdDrawIndirectByteCountEXT != null) {
+                delvkCmdDrawIndirectByteCountEXT(commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
+            }
+        }
+        private static vkCmdDrawIndirectByteCountEXT delvkCmdDrawIndirectByteCountEXT;
+
         // Command: 55
-        // Delegate: 11
+        // GetInstanceProcAddr: 11
         /// <summary>vkCmdEndConditionalRenderingEXT - Define the end of a conditional rendering block
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
         /// be recorded.</param>
-        public delegate void vkCmdEndConditionalRenderingEXT(
-            VkCommandBuffer commandBuffer);
+        public static void CmdEndConditionalRenderingEXT(
+            this VkInstance instance,
+            VkCommandBuffer commandBuffer) {
+            if (delvkCmdEndConditionalRenderingEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndConditionalRenderingEXT");
+                delvkCmdEndConditionalRenderingEXT = (vkCmdEndConditionalRenderingEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndConditionalRenderingEXT));
+            }
+
+            if (delvkCmdEndConditionalRenderingEXT != null) {
+                delvkCmdEndConditionalRenderingEXT(commandBuffer);
+            }
+        }
+        private static vkCmdEndConditionalRenderingEXT delvkCmdEndConditionalRenderingEXT;
+
         // Command: 56
-        // Delegate: 12
+        // GetInstanceProcAddr: 12
         /// <summary>vkCmdEndDebugUtilsLabelEXT - Close a command buffer label region
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
         /// recorded.</param>
-        public delegate void vkCmdEndDebugUtilsLabelEXT(
-            VkCommandBuffer commandBuffer);
+        public static void CmdEndDebugUtilsLabelEXT(
+            this VkInstance instance,
+            VkCommandBuffer commandBuffer) {
+            if (delvkCmdEndDebugUtilsLabelEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndDebugUtilsLabelEXT");
+                delvkCmdEndDebugUtilsLabelEXT = (vkCmdEndDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndDebugUtilsLabelEXT));
+            }
+
+            if (delvkCmdEndDebugUtilsLabelEXT != null) {
+                delvkCmdEndDebugUtilsLabelEXT(commandBuffer);
+            }
+        }
+        private static vkCmdEndDebugUtilsLabelEXT delvkCmdEndDebugUtilsLabelEXT;
+
         // Command: 58
-        // Delegate: 13
+        // GetInstanceProcAddr: 13
         /// <summary>vkCmdEndQueryIndexedEXT - Ends a query
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which this command will
@@ -378,13 +540,25 @@ namespace Vulkan {
         /// <param name="query">query is the query index within the query pool where the result is
         /// stored.</param>
         /// <param name="index">index is the query type specific index.</param>
-        public delegate void vkCmdEndQueryIndexedEXT(
+        public static void CmdEndQueryIndexedEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
             VkQueryPool queryPool,
             UInt32 query,
-            UInt32 index);
+            UInt32 index) {
+            if (delvkCmdEndQueryIndexedEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndQueryIndexedEXT");
+                delvkCmdEndQueryIndexedEXT = (vkCmdEndQueryIndexedEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndQueryIndexedEXT));
+            }
+
+            if (delvkCmdEndQueryIndexedEXT != null) {
+                delvkCmdEndQueryIndexedEXT(commandBuffer, queryPool, query, index);
+            }
+        }
+        private static vkCmdEndQueryIndexedEXT delvkCmdEndQueryIndexedEXT;
+
         // Command: 61
-        // Delegate: 14
+        // GetInstanceProcAddr: 14
         /// <summary>vkCmdEndTransformFeedbackEXT - Make transform feedback inactive in the command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
@@ -411,23 +585,47 @@ namespace Vulkan {
         /// be written.
         /// If pCounterBufferOffsets is NULL, then it is assumed the offsets
         /// are zero.</param>
-        public delegate void vkCmdEndTransformFeedbackEXT(
+        public static void CmdEndTransformFeedbackEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
             UInt32 firstCounterBuffer,
             UInt32 counterBufferCount,
             /*-const-*/ VkBuffer* pCounterBuffers,
-            /*-const-*/ VkDeviceSize* pCounterBufferOffsets);
+            /*-const-*/ VkDeviceSize* pCounterBufferOffsets) {
+            if (delvkCmdEndTransformFeedbackEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndTransformFeedbackEXT");
+                delvkCmdEndTransformFeedbackEXT = (vkCmdEndTransformFeedbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndTransformFeedbackEXT));
+            }
+
+            if (delvkCmdEndTransformFeedbackEXT != null) {
+                delvkCmdEndTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+            }
+        }
+        private static vkCmdEndTransformFeedbackEXT delvkCmdEndTransformFeedbackEXT;
+
         // Command: 64
-        // Delegate: 15
+        // GetInstanceProcAddr: 15
         /// <summary>vkCmdInsertDebugUtilsLabelEXT - Insert a label into a command buffer
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command is
         /// recorded.</param>
-        public delegate void vkCmdInsertDebugUtilsLabelEXT(
+        public static void CmdInsertDebugUtilsLabelEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
-            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
+            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo) {
+            if (delvkCmdInsertDebugUtilsLabelEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdInsertDebugUtilsLabelEXT");
+                delvkCmdInsertDebugUtilsLabelEXT = (vkCmdInsertDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdInsertDebugUtilsLabelEXT));
+            }
+
+            if (delvkCmdInsertDebugUtilsLabelEXT != null) {
+                delvkCmdInsertDebugUtilsLabelEXT(commandBuffer, pLabelInfo);
+            }
+        }
+        private static vkCmdInsertDebugUtilsLabelEXT delvkCmdInsertDebugUtilsLabelEXT;
+
         // Command: 82
-        // Delegate: 16
+        // GetInstanceProcAddr: 16
         /// <summary>vkCmdSetDiscardRectangleEXT - Set discard rectangles dynamically
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
@@ -438,23 +636,47 @@ namespace Vulkan {
         /// state are updated by the command.</param>
         /// <param name="pDiscardRectangles">pDiscardRectangles is a pointer to an array of VkRect2D
         /// structures specifying discard rectangles.</param>
-        public delegate void vkCmdSetDiscardRectangleEXT(
+        public static void CmdSetDiscardRectangleEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
             UInt32 firstDiscardRectangle,
             UInt32 discardRectangleCount,
-            /*-const-*/ VkRect2D* pDiscardRectangles);
+            /*-const-*/ VkRect2D* pDiscardRectangles) {
+            if (delvkCmdSetDiscardRectangleEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdSetDiscardRectangleEXT");
+                delvkCmdSetDiscardRectangleEXT = (vkCmdSetDiscardRectangleEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdSetDiscardRectangleEXT));
+            }
+
+            if (delvkCmdSetDiscardRectangleEXT != null) {
+                delvkCmdSetDiscardRectangleEXT(commandBuffer, firstDiscardRectangle, discardRectangleCount, pDiscardRectangles);
+            }
+        }
+        private static vkCmdSetDiscardRectangleEXT delvkCmdSetDiscardRectangleEXT;
+
         // Command: 86
-        // Delegate: 17
+        // GetInstanceProcAddr: 17
         /// <summary>vkCmdSetSampleLocationsEXT - Set the dynamic sample locations state
         /// </summary>
         /// <param name="commandBuffer">commandBuffer is the command buffer into which the command will be
         /// recorded.</param>
         /// <param name="pSampleLocationsInfo">pSampleLocationsInfo is the sample locations state to set.</param>
-        public delegate void vkCmdSetSampleLocationsEXT(
+        public static void CmdSetSampleLocationsEXT(
+            this VkInstance instance,
             VkCommandBuffer commandBuffer,
-            /*-const-*/ VkSampleLocationsInfoEXT* pSampleLocationsInfo);
+            /*-const-*/ VkSampleLocationsInfoEXT* pSampleLocationsInfo) {
+            if (delvkCmdSetSampleLocationsEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdSetSampleLocationsEXT");
+                delvkCmdSetSampleLocationsEXT = (vkCmdSetSampleLocationsEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdSetSampleLocationsEXT));
+            }
+
+            if (delvkCmdSetSampleLocationsEXT != null) {
+                delvkCmdSetSampleLocationsEXT(commandBuffer, pSampleLocationsInfo);
+            }
+        }
+        private static vkCmdSetSampleLocationsEXT delvkCmdSetSampleLocationsEXT;
+
         // Command: 107
-        // Delegate: 18
+        // GetInstanceProcAddr: 18
         /// <summary>vkCreateDebugReportCallbackEXT - Create a debug report callback object
         /// </summary>
         /// <param name="instance">instance the instance the callback will be logged on.</param>
@@ -465,13 +687,27 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pCallback">pCallback is a pointer to record the
         /// VkDebugReportCallbackEXT object created.</param>
-        public delegate VkResult vkCreateDebugReportCallbackEXT(
-            VkInstance instance,
+        public static VkResult CreateDebugReportCallbackEXT(
+            this VkInstance instance,
             /*-const-*/ VkDebugReportCallbackCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkDebugReportCallbackEXT* pCallback);
+            VkDebugReportCallbackEXT* pCallback) {
+            if (delvkCreateDebugReportCallbackEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateDebugReportCallbackEXT");
+                delvkCreateDebugReportCallbackEXT = (vkCreateDebugReportCallbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateDebugReportCallbackEXT));
+            }
+
+            if (delvkCreateDebugReportCallbackEXT != null) {
+                return delvkCreateDebugReportCallbackEXT(instance, pCreateInfo, pAllocator, pCallback);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkCreateDebugReportCallbackEXT delvkCreateDebugReportCallbackEXT;
+
         // Command: 108
-        // Delegate: 19
+        // GetInstanceProcAddr: 19
         /// <summary>vkCreateDebugUtilsMessengerEXT - Create a debug messenger object
         /// </summary>
         /// <param name="instance">instance the instance the messenger will be used with.</param>
@@ -482,13 +718,27 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pMessenger">pMessenger is a pointer to record the
         /// VkDebugUtilsMessengerEXT object created.</param>
-        public delegate VkResult vkCreateDebugUtilsMessengerEXT(
-            VkInstance instance,
+        public static VkResult CreateDebugUtilsMessengerEXT(
+            this VkInstance instance,
             /*-const-*/ VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkDebugUtilsMessengerEXT* pMessenger);
+            VkDebugUtilsMessengerEXT* pMessenger) {
+            if (delvkCreateDebugUtilsMessengerEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT");
+                delvkCreateDebugUtilsMessengerEXT = (vkCreateDebugUtilsMessengerEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateDebugUtilsMessengerEXT));
+            }
+
+            if (delvkCreateDebugUtilsMessengerEXT != null) {
+                return delvkCreateDebugUtilsMessengerEXT(instance, pCreateInfo, pAllocator, pMessenger);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkCreateDebugUtilsMessengerEXT delvkCreateDebugUtilsMessengerEXT;
+
         // Command: 126
-        // Delegate: 20
+        // GetInstanceProcAddr: 20
         /// <summary>vkCreateMetalSurfaceEXT - Create a VkSurfaceKHR object for CAMetalLayer
         /// </summary>
         /// <param name="instance">instance is the instance with which to associate the surface.</param>
@@ -500,13 +750,27 @@ namespace Vulkan {
         /// Memory Allocation).</param>
         /// <param name="pSurface">pSurface points to a VkSurfaceKHR handle in which the
         /// created surface object is returned.</param>
-        public delegate VkResult vkCreateMetalSurfaceEXT(
-            VkInstance instance,
+        public static VkResult CreateMetalSurfaceEXT(
+            this VkInstance instance,
             /*-const-*/ VkMetalSurfaceCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkSurfaceKHR* pSurface);
+            VkSurfaceKHR* pSurface) {
+            if (delvkCreateMetalSurfaceEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateMetalSurfaceEXT");
+                delvkCreateMetalSurfaceEXT = (vkCreateMetalSurfaceEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateMetalSurfaceEXT));
+            }
+
+            if (delvkCreateMetalSurfaceEXT != null) {
+                return delvkCreateMetalSurfaceEXT(instance, pCreateInfo, pAllocator, pSurface);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkCreateMetalSurfaceEXT delvkCreateMetalSurfaceEXT;
+
         // Command: 141
-        // Delegate: 21
+        // GetInstanceProcAddr: 21
         /// <summary>vkCreateValidationCacheEXT - Creates a new validation cache
         /// </summary>
         /// <param name="device">device is the logical device that creates the validation cache
@@ -518,38 +782,83 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pValidationCache">pValidationCache is a pointer to a VkValidationCacheEXT
         /// handle in which the resulting validation cache object is returned.</param>
-        public delegate VkResult vkCreateValidationCacheEXT(
+        public static VkResult CreateValidationCacheEXT(
+            this VkInstance instance,
             VkDevice device,
             /*-const-*/ VkValidationCacheCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkValidationCacheEXT* pValidationCache);
+            VkValidationCacheEXT* pValidationCache) {
+            if (delvkCreateValidationCacheEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateValidationCacheEXT");
+                delvkCreateValidationCacheEXT = (vkCreateValidationCacheEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateValidationCacheEXT));
+            }
+
+            if (delvkCreateValidationCacheEXT != null) {
+                return delvkCreateValidationCacheEXT(device, pCreateInfo, pAllocator, pValidationCache);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkCreateValidationCacheEXT delvkCreateValidationCacheEXT;
+
         // Command: 147
-        // Delegate: 22
+        // GetInstanceProcAddr: 22
         /// <summary>vkDebugMarkerSetObjectNameEXT - Give a user-friendly name to an object
         /// </summary>
         /// <param name="device">device is the device that created the object.</param>
         /// <param name="pNameInfo">pNameInfo is a pointer to an instance of the
         /// VkDebugMarkerObjectNameInfoEXT structure specifying the parameters
         /// of the name to set on the object.</param>
-        public delegate VkResult vkDebugMarkerSetObjectNameEXT(
+        public static VkResult DebugMarkerSetObjectNameEXT(
+            this VkInstance instance,
             VkDevice device,
-            /*-const-*/ VkDebugMarkerObjectNameInfoEXT* pNameInfo);
+            /*-const-*/ VkDebugMarkerObjectNameInfoEXT* pNameInfo) {
+            if (delvkDebugMarkerSetObjectNameEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDebugMarkerSetObjectNameEXT");
+                delvkDebugMarkerSetObjectNameEXT = (vkDebugMarkerSetObjectNameEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDebugMarkerSetObjectNameEXT));
+            }
+
+            if (delvkDebugMarkerSetObjectNameEXT != null) {
+                return delvkDebugMarkerSetObjectNameEXT(device, pNameInfo);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkDebugMarkerSetObjectNameEXT delvkDebugMarkerSetObjectNameEXT;
+
         // Command: 148
-        // Delegate: 23
+        // GetInstanceProcAddr: 23
         /// <summary>vkDebugMarkerSetObjectTagEXT - Attach arbitrary data to an object
         /// </summary>
         /// <param name="device">device is the device that created the object.</param>
         /// <param name="pTagInfo">pTagInfo is a pointer to an instance of the
         /// VkDebugMarkerObjectTagInfoEXT structure specifying the parameters
         /// of the tag to attach to the object.</param>
-        public delegate VkResult vkDebugMarkerSetObjectTagEXT(
+        public static VkResult DebugMarkerSetObjectTagEXT(
+            this VkInstance instance,
             VkDevice device,
-            /*-const-*/ VkDebugMarkerObjectTagInfoEXT* pTagInfo);
+            /*-const-*/ VkDebugMarkerObjectTagInfoEXT* pTagInfo) {
+            if (delvkDebugMarkerSetObjectTagEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDebugMarkerSetObjectTagEXT");
+                delvkDebugMarkerSetObjectTagEXT = (vkDebugMarkerSetObjectTagEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDebugMarkerSetObjectTagEXT));
+            }
+
+            if (delvkDebugMarkerSetObjectTagEXT != null) {
+                return delvkDebugMarkerSetObjectTagEXT(device, pTagInfo);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkDebugMarkerSetObjectTagEXT delvkDebugMarkerSetObjectTagEXT;
+
         // Command: 149
-        // Delegate: 24
+        // GetInstanceProcAddr: 24
         /// <summary>vkDebugReportMessageEXT - Inject a message into a debug stream
         /// </summary>
-        /// <param name="instance">instance is the debug stream¡¯s VkInstance.</param>
+        /// <param name="instance">instance is the debug streamâ€™s VkInstance.</param>
         /// <param name="flags">flags specifies the VkDebugReportFlagBitsEXT classification
         /// of this event/message.</param>
         /// <param name="objectType">objectType is a VkDebugReportObjectTypeEXT specifying the
@@ -564,17 +873,28 @@ namespace Vulkan {
         /// event/message.</param>
         /// <param name="pMessage">pMessage is a null-terminated string detailing the trigger
         /// conditions.</param>
-        public delegate void vkDebugReportMessageEXT(
-            VkInstance instance,
+        public static void DebugReportMessageEXT(
+            this VkInstance instance,
             VkDebugReportFlagsEXT flags,
             VkDebugReportObjectTypeEXT _objectType,
             UInt64 _object,
             Int32 location,
             Int32 messageCode,
             IntPtr pLayerPrefix,
-            IntPtr pMessage);
+            IntPtr pMessage) {
+            if (delvkDebugReportMessageEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDebugReportMessageEXT");
+                delvkDebugReportMessageEXT = (vkDebugReportMessageEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDebugReportMessageEXT));
+            }
+
+            if (delvkDebugReportMessageEXT != null) {
+                delvkDebugReportMessageEXT(instance, flags, _objectType, _object, location, messageCode, pLayerPrefix, pMessage);
+            }
+        }
+        private static vkDebugReportMessageEXT delvkDebugReportMessageEXT;
+
         // Command: 154
-        // Delegate: 25
+        // GetInstanceProcAddr: 25
         /// <summary>vkDestroyDebugReportCallbackEXT - Destroy a debug report callback object
         /// </summary>
         /// <param name="instance">instance the instance where the callback was created.</param>
@@ -585,12 +905,23 @@ namespace Vulkan {
         /// called when a callback is active.</param>
         /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
         /// Memory Allocation chapter.</param>
-        public delegate void vkDestroyDebugReportCallbackEXT(
-            VkInstance instance,
+        public static void DestroyDebugReportCallbackEXT(
+            this VkInstance instance,
             VkDebugReportCallbackEXT callback,
-            /*-const-*/ VkAllocationCallbacks* pAllocator);
+            /*-const-*/ VkAllocationCallbacks* pAllocator) {
+            if (delvkDestroyDebugReportCallbackEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDestroyDebugReportCallbackEXT");
+                delvkDestroyDebugReportCallbackEXT = (vkDestroyDebugReportCallbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDestroyDebugReportCallbackEXT));
+            }
+
+            if (delvkDestroyDebugReportCallbackEXT != null) {
+                delvkDestroyDebugReportCallbackEXT(instance, callback, pAllocator);
+            }
+        }
+        private static vkDestroyDebugReportCallbackEXT delvkDestroyDebugReportCallbackEXT;
+
         // Command: 155
-        // Delegate: 26
+        // GetInstanceProcAddr: 26
         /// <summary>vkDestroyDebugUtilsMessengerEXT - Destroy a debug messenger object
         /// </summary>
         /// <param name="instance">instance the instance where the callback was created.</param>
@@ -601,12 +932,23 @@ namespace Vulkan {
         /// called when a callback is active.</param>
         /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
         /// Memory Allocation chapter.</param>
-        public delegate void vkDestroyDebugUtilsMessengerEXT(
-            VkInstance instance,
+        public static void DestroyDebugUtilsMessengerEXT(
+            this VkInstance instance,
             VkDebugUtilsMessengerEXT messenger,
-            /*-const-*/ VkAllocationCallbacks* pAllocator);
+            /*-const-*/ VkAllocationCallbacks* pAllocator) {
+            if (delvkDestroyDebugUtilsMessengerEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDestroyDebugUtilsMessengerEXT");
+                delvkDestroyDebugUtilsMessengerEXT = (vkDestroyDebugUtilsMessengerEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDestroyDebugUtilsMessengerEXT));
+            }
+
+            if (delvkDestroyDebugUtilsMessengerEXT != null) {
+                delvkDestroyDebugUtilsMessengerEXT(instance, messenger, pAllocator);
+            }
+        }
+        private static vkDestroyDebugUtilsMessengerEXT delvkDestroyDebugUtilsMessengerEXT;
+
         // Command: 179
-        // Delegate: 27
+        // GetInstanceProcAddr: 27
         /// <summary>vkDestroyValidationCacheEXT - Destroy a validation cache object
         /// </summary>
         /// <param name="device">device is the logical device that destroys the validation cache
@@ -614,35 +956,77 @@ namespace Vulkan {
         /// <param name="validationCache">validationCache is the handle of the validation cache to destroy.</param>
         /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
         /// Memory Allocation chapter.</param>
-        public delegate void vkDestroyValidationCacheEXT(
+        public static void DestroyValidationCacheEXT(
+            this VkInstance instance,
             VkDevice device,
             VkValidationCacheEXT validationCache,
-            /*-const-*/ VkAllocationCallbacks* pAllocator);
+            /*-const-*/ VkAllocationCallbacks* pAllocator) {
+            if (delvkDestroyValidationCacheEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDestroyValidationCacheEXT");
+                delvkDestroyValidationCacheEXT = (vkDestroyValidationCacheEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDestroyValidationCacheEXT));
+            }
+
+            if (delvkDestroyValidationCacheEXT != null) {
+                delvkDestroyValidationCacheEXT(device, validationCache, pAllocator);
+            }
+        }
+        private static vkDestroyValidationCacheEXT delvkDestroyValidationCacheEXT;
+
         // Command: 181
-        // Delegate: 28
+        // GetInstanceProcAddr: 28
         /// <summary>vkDisplayPowerControlEXT - Set the power state of a display
         /// </summary>
         /// <param name="device">device is a logical device associated with display.</param>
         /// <param name="display">display is the display whose power state is modified.</param>
         /// <param name="pDisplayPowerInfo">pDisplayPowerInfo is an instance of VkDisplayPowerInfoEXT
         /// specifying the new power state of display.</param>
-        public delegate VkResult vkDisplayPowerControlEXT(
+        public static VkResult DisplayPowerControlEXT(
+            this VkInstance instance,
             VkDevice device,
             VkDisplayKHR display,
-            /*-const-*/ VkDisplayPowerInfoEXT* pDisplayPowerInfo);
+            /*-const-*/ VkDisplayPowerInfoEXT* pDisplayPowerInfo) {
+            if (delvkDisplayPowerControlEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDisplayPowerControlEXT");
+                delvkDisplayPowerControlEXT = (vkDisplayPowerControlEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDisplayPowerControlEXT));
+            }
+
+            if (delvkDisplayPowerControlEXT != null) {
+                return delvkDisplayPowerControlEXT(device, display, pDisplayPowerInfo);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkDisplayPowerControlEXT delvkDisplayPowerControlEXT;
+
         // Command: 197
-        // Delegate: 29
+        // GetInstanceProcAddr: 29
         /// <summary>vkGetBufferDeviceAddressEXT - Query an address of a buffer
         /// </summary>
         /// <param name="device">device is the logical device that the buffer was created on.</param>
         /// <param name="pInfo">pInfo is a pointer to an instance of the
         /// VkBufferDeviceAddressInfoEXT structure specifying the buffer to
         /// retrieve an address for.</param>
-        public delegate VkDeviceAddress vkGetBufferDeviceAddressEXT(
+        public static VkDeviceAddress GetBufferDeviceAddressEXT(
+            this VkInstance instance,
             VkDevice device,
-            /*-const-*/ VkBufferDeviceAddressInfoEXT* pInfo);
+            /*-const-*/ VkBufferDeviceAddressInfoEXT* pInfo) {
+            if (delvkGetBufferDeviceAddressEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetBufferDeviceAddressEXT");
+                delvkGetBufferDeviceAddressEXT = (vkGetBufferDeviceAddressEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetBufferDeviceAddressEXT));
+            }
+
+            if (delvkGetBufferDeviceAddressEXT != null) {
+                return delvkGetBufferDeviceAddressEXT(device, pInfo);
+            }
+            else {
+                return 0;
+            }
+        }
+        private static vkGetBufferDeviceAddressEXT delvkGetBufferDeviceAddressEXT;
+
         // Command: 200
-        // Delegate: 30
+        // GetInstanceProcAddr: 30
         /// <summary>vkGetCalibratedTimestampsEXT - Query calibrated timestamps
         /// </summary>
         /// <param name="device">device is the logical device used to perform the query.</param>
@@ -657,14 +1041,29 @@ namespace Vulkan {
         /// <param name="pMaxDeviation">pMaxDeviation is a pointer to a 64-bit unsigned integer value in
         /// which the strictly positive maximum deviation, in nanoseconds, of the
         /// calibrated timestamp values is returned.</param>
-        public delegate VkResult vkGetCalibratedTimestampsEXT(
+        public static VkResult GetCalibratedTimestampsEXT(
+            this VkInstance instance,
             VkDevice device,
             UInt32 timestampCount,
             /*-const-*/ VkCalibratedTimestampInfoEXT* pTimestampInfos,
             UInt64* pTimestamps,
-            UInt64* pMaxDeviation);
+            UInt64* pMaxDeviation) {
+            if (delvkGetCalibratedTimestampsEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetCalibratedTimestampsEXT");
+                delvkGetCalibratedTimestampsEXT = (vkGetCalibratedTimestampsEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetCalibratedTimestampsEXT));
+            }
+
+            if (delvkGetCalibratedTimestampsEXT != null) {
+                return delvkGetCalibratedTimestampsEXT(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetCalibratedTimestampsEXT delvkGetCalibratedTimestampsEXT;
+
         // Command: 204
-        // Delegate: 31
+        // GetInstanceProcAddr: 31
         /// <summary>vkGetDeviceGroupSurfacePresentModes2EXT - Query device group present capabilities for a surface
         /// </summary>
         /// <param name="device">device is the logical device.</param>
@@ -674,24 +1073,54 @@ namespace Vulkan {
         /// <param name="pModes">pModes is a pointer to a value of type
         /// VkDeviceGroupPresentModeFlagsKHR that is filled with the supported
         /// device group present modes for the surface.</param>
-        public delegate VkResult vkGetDeviceGroupSurfacePresentModes2EXT(
+        public static VkResult GetDeviceGroupSurfacePresentModes2EXT(
+            this VkInstance instance,
             VkDevice device,
             /*-const-*/ VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
-            VkDeviceGroupPresentModeFlagsKHR* pModes);
+            VkDeviceGroupPresentModeFlagsKHR* pModes) {
+            if (delvkGetDeviceGroupSurfacePresentModes2EXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetDeviceGroupSurfacePresentModes2EXT");
+                delvkGetDeviceGroupSurfacePresentModes2EXT = (vkGetDeviceGroupSurfacePresentModes2EXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetDeviceGroupSurfacePresentModes2EXT));
+            }
+
+            if (delvkGetDeviceGroupSurfacePresentModes2EXT != null) {
+                return delvkGetDeviceGroupSurfacePresentModes2EXT(device, pSurfaceInfo, pModes);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetDeviceGroupSurfacePresentModes2EXT delvkGetDeviceGroupSurfacePresentModes2EXT;
+
         // Command: 219
-        // Delegate: 32
-        /// <summary>vkGetImageDrmFormatModifierPropertiesEXT - Returns an image¡¯s DRM format modifier
+        // GetInstanceProcAddr: 32
+        /// <summary>vkGetImageDrmFormatModifierPropertiesEXT - Returns an imageâ€™s DRM format modifier
         /// </summary>
         /// <param name="device">device is the logical device that owns the image.</param>
         /// <param name="image">image is the queried image.</param>
-        /// <param name="pProperties">pProperties will return properties of the image¡¯s DRM format
+        /// <param name="pProperties">pProperties will return properties of the imageâ€™s DRM format
         /// modifier.</param>
-        public delegate VkResult vkGetImageDrmFormatModifierPropertiesEXT(
+        public static VkResult GetImageDrmFormatModifierPropertiesEXT(
+            this VkInstance instance,
             VkDevice device,
             VkImage image,
-            VkImageDrmFormatModifierPropertiesEXT* pProperties);
+            VkImageDrmFormatModifierPropertiesEXT* pProperties) {
+            if (delvkGetImageDrmFormatModifierPropertiesEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetImageDrmFormatModifierPropertiesEXT");
+                delvkGetImageDrmFormatModifierPropertiesEXT = (vkGetImageDrmFormatModifierPropertiesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetImageDrmFormatModifierPropertiesEXT));
+            }
+
+            if (delvkGetImageDrmFormatModifierPropertiesEXT != null) {
+                return delvkGetImageDrmFormatModifierPropertiesEXT(device, image, pProperties);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetImageDrmFormatModifierPropertiesEXT delvkGetImageDrmFormatModifierPropertiesEXT;
+
         // Command: 230
-        // Delegate: 33
+        // GetInstanceProcAddr: 33
         /// <summary>vkGetMemoryHostPointerPropertiesEXT - Get properties of external memory host pointer
         /// </summary>
         /// <param name="device">device is the logical device that will be importing
@@ -701,13 +1130,28 @@ namespace Vulkan {
         /// <param name="pMemoryHostPointerProperties">pMemoryHostPointerProperties is a pointer to a
         /// VkMemoryHostPointerPropertiesEXT structure in which the host
         /// pointer properties are returned.</param>
-        public delegate VkResult vkGetMemoryHostPointerPropertiesEXT(
+        public static VkResult GetMemoryHostPointerPropertiesEXT(
+            this VkInstance instance,
             VkDevice device,
             VkExternalMemoryHandleTypeFlagBits handleType,
             /*-const-*/ void* pHostPointer,
-            VkMemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties);
+            VkMemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties) {
+            if (delvkGetMemoryHostPointerPropertiesEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetMemoryHostPointerPropertiesEXT");
+                delvkGetMemoryHostPointerPropertiesEXT = (vkGetMemoryHostPointerPropertiesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetMemoryHostPointerPropertiesEXT));
+            }
+
+            if (delvkGetMemoryHostPointerPropertiesEXT != null) {
+                return delvkGetMemoryHostPointerPropertiesEXT(device, handleType, pHostPointer, pMemoryHostPointerProperties);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetMemoryHostPointerPropertiesEXT delvkGetMemoryHostPointerPropertiesEXT;
+
         // Command: 235
-        // Delegate: 34
+        // GetInstanceProcAddr: 34
         /// <summary>vkGetPhysicalDeviceCalibrateableTimeDomainsEXT - Query calibrateable time domains
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the set
@@ -717,12 +1161,27 @@ namespace Vulkan {
         /// <param name="pTimeDomains">pTimeDomains is either NULL or a pointer to an array of
         /// VkTimeDomainEXT values, indicating the supported calibrateable
         /// time domains.</param>
-        public delegate VkResult vkGetPhysicalDeviceCalibrateableTimeDomainsEXT(
+        public static VkResult GetPhysicalDeviceCalibrateableTimeDomainsEXT(
+            this VkInstance instance,
             VkPhysicalDevice physicalDevice,
             UInt32* pTimeDomainCount,
-            VkTimeDomainEXT* pTimeDomains);
+            VkTimeDomainEXT* pTimeDomains) {
+            if (delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT");
+                delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT = (vkGetPhysicalDeviceCalibrateableTimeDomainsEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceCalibrateableTimeDomainsEXT));
+            }
+
+            if (delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT != null) {
+                return delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT(physicalDevice, pTimeDomainCount, pTimeDomains);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetPhysicalDeviceCalibrateableTimeDomainsEXT delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT;
+
         // Command: 254
-        // Delegate: 35
+        // GetInstanceProcAddr: 35
         /// <summary>vkGetPhysicalDeviceMultisamplePropertiesEXT - Report sample count specific multisampling capabilities of a physical device
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device from which to query the
@@ -732,12 +1191,24 @@ namespace Vulkan {
         /// VkMultisamplePropertiesEXT, in which information about the
         /// additional multisampling capabilities specific to the sample count is
         /// returned.</param>
-        public delegate void vkGetPhysicalDeviceMultisamplePropertiesEXT(
+        public static void GetPhysicalDeviceMultisamplePropertiesEXT(
+            this VkInstance instance,
             VkPhysicalDevice physicalDevice,
             VkSampleCountFlagBits samples,
-            VkMultisamplePropertiesEXT* pMultisampleProperties);
+            VkMultisamplePropertiesEXT* pMultisampleProperties) {
+            if (delvkGetPhysicalDeviceMultisamplePropertiesEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceMultisamplePropertiesEXT");
+                delvkGetPhysicalDeviceMultisamplePropertiesEXT = (vkGetPhysicalDeviceMultisamplePropertiesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceMultisamplePropertiesEXT));
+            }
+
+            if (delvkGetPhysicalDeviceMultisamplePropertiesEXT != null) {
+                delvkGetPhysicalDeviceMultisamplePropertiesEXT(physicalDevice, samples, pMultisampleProperties);
+            }
+        }
+        private static vkGetPhysicalDeviceMultisamplePropertiesEXT delvkGetPhysicalDeviceMultisamplePropertiesEXT;
+
         // Command: 262
-        // Delegate: 36
+        // GetInstanceProcAddr: 36
         /// <summary>vkGetPhysicalDeviceSurfaceCapabilities2EXT - Query surface capabilities
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device that will be associated with
@@ -747,12 +1218,27 @@ namespace Vulkan {
         /// <param name="pSurfaceCapabilities">pSurfaceCapabilities is a pointer to an instance of the
         /// VkSurfaceCapabilities2EXT structure in which the capabilities are
         /// returned.</param>
-        public delegate VkResult vkGetPhysicalDeviceSurfaceCapabilities2EXT(
+        public static VkResult GetPhysicalDeviceSurfaceCapabilities2EXT(
+            this VkInstance instance,
             VkPhysicalDevice physicalDevice,
             VkSurfaceKHR surface,
-            VkSurfaceCapabilities2EXT* pSurfaceCapabilities);
+            VkSurfaceCapabilities2EXT* pSurfaceCapabilities) {
+            if (delvkGetPhysicalDeviceSurfaceCapabilities2EXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceSurfaceCapabilities2EXT");
+                delvkGetPhysicalDeviceSurfaceCapabilities2EXT = (vkGetPhysicalDeviceSurfaceCapabilities2EXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceSurfaceCapabilities2EXT));
+            }
+
+            if (delvkGetPhysicalDeviceSurfaceCapabilities2EXT != null) {
+                return delvkGetPhysicalDeviceSurfaceCapabilities2EXT(physicalDevice, surface, pSurfaceCapabilities);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetPhysicalDeviceSurfaceCapabilities2EXT delvkGetPhysicalDeviceSurfaceCapabilities2EXT;
+
         // Command: 267
-        // Delegate: 37
+        // GetInstanceProcAddr: 37
         /// <summary>vkGetPhysicalDeviceSurfacePresentModes2EXT - Query supported presentation modes
         /// </summary>
         /// <param name="physicalDevice">physicalDevice is the physical device that will be associated with
@@ -767,13 +1253,28 @@ namespace Vulkan {
         /// <param name="pPresentModes">pPresentModes is either NULL or a pointer to an array of
         /// VkPresentModeKHR values, indicating the supported presentation
         /// modes.</param>
-        public delegate VkResult vkGetPhysicalDeviceSurfacePresentModes2EXT(
+        public static VkResult GetPhysicalDeviceSurfacePresentModes2EXT(
+            this VkInstance instance,
             VkPhysicalDevice physicalDevice,
             /*-const-*/ VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
             UInt32* pPresentModeCount,
-            VkPresentModeKHR* pPresentModes);
+            VkPresentModeKHR* pPresentModes) {
+            if (delvkGetPhysicalDeviceSurfacePresentModes2EXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceSurfacePresentModes2EXT");
+                delvkGetPhysicalDeviceSurfacePresentModes2EXT = (vkGetPhysicalDeviceSurfacePresentModes2EXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceSurfacePresentModes2EXT));
+            }
+
+            if (delvkGetPhysicalDeviceSurfacePresentModes2EXT != null) {
+                return delvkGetPhysicalDeviceSurfacePresentModes2EXT(physicalDevice, pSurfaceInfo, pPresentModeCount, pPresentModes);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetPhysicalDeviceSurfacePresentModes2EXT delvkGetPhysicalDeviceSurfacePresentModes2EXT;
+
         // Command: 277
-        // Delegate: 38
+        // GetInstanceProcAddr: 38
         /// <summary>vkGetRandROutputDisplayEXT - Query the VkDisplayKHR corresponding to an X11 RandR Output
         /// </summary>
         /// <param name="physicalDevice">physicalDevice The physical device to query the display handle on.</param>
@@ -782,26 +1283,56 @@ namespace Vulkan {
         /// <param name="rrOutput">rrOutput An X11 RandR output ID.</param>
         /// <param name="pDisplay">pDisplay The corresponding VkDisplayKHR handle will be
         /// returned here.</param>
-        public delegate VkResult vkGetRandROutputDisplayEXT(
+        public static VkResult GetRandROutputDisplayEXT(
+            this VkInstance instance,
             VkPhysicalDevice physicalDevice,
             /*Display*-*/IntPtr dpy,
             /*RROutput*/IntPtr rrOutput,
-            VkDisplayKHR* pDisplay);
+            VkDisplayKHR* pDisplay) {
+            if (delvkGetRandROutputDisplayEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetRandROutputDisplayEXT");
+                delvkGetRandROutputDisplayEXT = (vkGetRandROutputDisplayEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetRandROutputDisplayEXT));
+            }
+
+            if (delvkGetRandROutputDisplayEXT != null) {
+                return delvkGetRandROutputDisplayEXT(physicalDevice, dpy, rrOutput, pDisplay);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetRandROutputDisplayEXT delvkGetRandROutputDisplayEXT;
+
         // Command: 284
-        // Delegate: 39
+        // GetInstanceProcAddr: 39
         /// <summary>vkGetSwapchainCounterEXT - Query the current value of a surface counter
         /// </summary>
         /// <param name="device">device is the VkDevice associated with swapchain.</param>
         /// <param name="swapchain">swapchain is the swapchain from which to query the counter value.</param>
         /// <param name="counter">counter is the counter to query.</param>
         /// <param name="pCounterValue">pCounterValue will return the current value of the counter.</param>
-        public delegate VkResult vkGetSwapchainCounterEXT(
+        public static VkResult GetSwapchainCounterEXT(
+            this VkInstance instance,
             VkDevice device,
             VkSwapchainKHR swapchain,
             VkSurfaceCounterFlagBitsEXT counter,
-            UInt64* pCounterValue);
+            UInt64* pCounterValue) {
+            if (delvkGetSwapchainCounterEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetSwapchainCounterEXT");
+                delvkGetSwapchainCounterEXT = (vkGetSwapchainCounterEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetSwapchainCounterEXT));
+            }
+
+            if (delvkGetSwapchainCounterEXT != null) {
+                return delvkGetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetSwapchainCounterEXT delvkGetSwapchainCounterEXT;
+
         // Command: 287
-        // Delegate: 40
+        // GetInstanceProcAddr: 40
         /// <summary>vkGetValidationCacheDataEXT - Get the data store from a validation cache
         /// </summary>
         /// <param name="device">device is the logical device that owns the validation cache.</param>
@@ -809,13 +1340,28 @@ namespace Vulkan {
         /// <param name="pDataSize">pDataSize is a pointer to a value related to the amount of data in
         /// the validation cache, as described below.</param>
         /// <param name="pData">pData is either NULL or a pointer to a buffer.</param>
-        public delegate VkResult vkGetValidationCacheDataEXT(
+        public static VkResult GetValidationCacheDataEXT(
+            this VkInstance instance,
             VkDevice device,
             VkValidationCacheEXT validationCache,
             Int32* pDataSize,
-            void* pData);
+            void* pData) {
+            if (delvkGetValidationCacheDataEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetValidationCacheDataEXT");
+                delvkGetValidationCacheDataEXT = (vkGetValidationCacheDataEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetValidationCacheDataEXT));
+            }
+
+            if (delvkGetValidationCacheDataEXT != null) {
+                return delvkGetValidationCacheDataEXT(device, validationCache, pDataSize, pData);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkGetValidationCacheDataEXT delvkGetValidationCacheDataEXT;
+
         // Command: 295
-        // Delegate: 41
+        // GetInstanceProcAddr: 41
         /// <summary>vkMergeValidationCachesEXT - Combine the data stores of validation caches
         /// </summary>
         /// <param name="device">device is the logical device that owns the validation cache
@@ -826,42 +1372,93 @@ namespace Vulkan {
         /// <param name="pSrcCaches">pSrcCaches is an array of validation cache handles, which will be
         /// merged into dstCache.
         /// The previous contents of dstCache are included after the merge.</param>
-        public delegate VkResult vkMergeValidationCachesEXT(
+        public static VkResult MergeValidationCachesEXT(
+            this VkInstance instance,
             VkDevice device,
             VkValidationCacheEXT dstCache,
             UInt32 srcCacheCount,
-            /*-const-*/ VkValidationCacheEXT* pSrcCaches);
+            /*-const-*/ VkValidationCacheEXT* pSrcCaches) {
+            if (delvkMergeValidationCachesEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkMergeValidationCachesEXT");
+                delvkMergeValidationCachesEXT = (vkMergeValidationCachesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkMergeValidationCachesEXT));
+            }
+
+            if (delvkMergeValidationCachesEXT != null) {
+                return delvkMergeValidationCachesEXT(device, dstCache, srcCacheCount, pSrcCaches);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkMergeValidationCachesEXT delvkMergeValidationCachesEXT;
+
         // Command: 296
-        // Delegate: 42
+        // GetInstanceProcAddr: 42
         /// <summary>vkQueueBeginDebugUtilsLabelEXT - Open a queue debug label region
         /// </summary>
         /// <param name="queue">queue is the queue in which to start a debug label region.</param>
         /// <param name="pLabelInfo">pLabelInfo is a pointer to an instance of the
         /// VkDebugUtilsLabelEXT structure specifying the parameters of the
         /// label region to open.</param>
-        public delegate void vkQueueBeginDebugUtilsLabelEXT(
+        public static void QueueBeginDebugUtilsLabelEXT(
+            this VkInstance instance,
             VkQueue queue,
-            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
+            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo) {
+            if (delvkQueueBeginDebugUtilsLabelEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkQueueBeginDebugUtilsLabelEXT");
+                delvkQueueBeginDebugUtilsLabelEXT = (vkQueueBeginDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkQueueBeginDebugUtilsLabelEXT));
+            }
+
+            if (delvkQueueBeginDebugUtilsLabelEXT != null) {
+                delvkQueueBeginDebugUtilsLabelEXT(queue, pLabelInfo);
+            }
+        }
+        private static vkQueueBeginDebugUtilsLabelEXT delvkQueueBeginDebugUtilsLabelEXT;
+
         // Command: 298
-        // Delegate: 43
+        // GetInstanceProcAddr: 43
         /// <summary>vkQueueEndDebugUtilsLabelEXT - Close a queue debug label region
         /// </summary>
         /// <param name="queue">queue is the queue in which a debug label region should be closed.</param>
-        public delegate void vkQueueEndDebugUtilsLabelEXT(
-            VkQueue queue);
+        public static void QueueEndDebugUtilsLabelEXT(
+            this VkInstance instance,
+            VkQueue queue) {
+            if (delvkQueueEndDebugUtilsLabelEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkQueueEndDebugUtilsLabelEXT");
+                delvkQueueEndDebugUtilsLabelEXT = (vkQueueEndDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkQueueEndDebugUtilsLabelEXT));
+            }
+
+            if (delvkQueueEndDebugUtilsLabelEXT != null) {
+                delvkQueueEndDebugUtilsLabelEXT(queue);
+            }
+        }
+        private static vkQueueEndDebugUtilsLabelEXT delvkQueueEndDebugUtilsLabelEXT;
+
         // Command: 299
-        // Delegate: 44
+        // GetInstanceProcAddr: 44
         /// <summary>vkQueueInsertDebugUtilsLabelEXT - Insert a label into a queue
         /// </summary>
         /// <param name="queue">queue is the queue into which a debug label will be inserted.</param>
         /// <param name="pLabelInfo">pLabelInfo is a pointer to an instance of the
         /// VkDebugUtilsLabelEXT structure specifying the parameters of the
         /// label to insert.</param>
-        public delegate void vkQueueInsertDebugUtilsLabelEXT(
+        public static void QueueInsertDebugUtilsLabelEXT(
+            this VkInstance instance,
             VkQueue queue,
-            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo);
+            /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo) {
+            if (delvkQueueInsertDebugUtilsLabelEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkQueueInsertDebugUtilsLabelEXT");
+                delvkQueueInsertDebugUtilsLabelEXT = (vkQueueInsertDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkQueueInsertDebugUtilsLabelEXT));
+            }
+
+            if (delvkQueueInsertDebugUtilsLabelEXT != null) {
+                delvkQueueInsertDebugUtilsLabelEXT(queue, pLabelInfo);
+            }
+        }
+        private static vkQueueInsertDebugUtilsLabelEXT delvkQueueInsertDebugUtilsLabelEXT;
+
         // Command: 303
-        // Delegate: 45
+        // GetInstanceProcAddr: 45
         /// <summary>vkRegisterDeviceEventEXT - Signal a fence when a device event occurs
         /// </summary>
         /// <param name="device">device is a logical device on which the event may occur.</param>
@@ -872,13 +1469,28 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pFence">pFence points to a handle in which the resulting fence object is
         /// returned.</param>
-        public delegate VkResult vkRegisterDeviceEventEXT(
+        public static VkResult RegisterDeviceEventEXT(
+            this VkInstance instance,
             VkDevice device,
             /*-const-*/ VkDeviceEventInfoEXT* pDeviceEventInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkFence* pFence);
+            VkFence* pFence) {
+            if (delvkRegisterDeviceEventEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkRegisterDeviceEventEXT");
+                delvkRegisterDeviceEventEXT = (vkRegisterDeviceEventEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkRegisterDeviceEventEXT));
+            }
+
+            if (delvkRegisterDeviceEventEXT != null) {
+                return delvkRegisterDeviceEventEXT(device, pDeviceEventInfo, pAllocator, pFence);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkRegisterDeviceEventEXT delvkRegisterDeviceEventEXT;
+
         // Command: 304
-        // Delegate: 46
+        // GetInstanceProcAddr: 46
         /// <summary>vkRegisterDisplayEventEXT - Signal a fence when a display event occurs
         /// </summary>
         /// <param name="device">device is a logical device associated with display</param>
@@ -890,68 +1502,155 @@ namespace Vulkan {
         /// Memory Allocation chapter.</param>
         /// <param name="pFence">pFence points to a handle in which the resulting fence object is
         /// returned.</param>
-        public delegate VkResult vkRegisterDisplayEventEXT(
+        public static VkResult RegisterDisplayEventEXT(
+            this VkInstance instance,
             VkDevice device,
             VkDisplayKHR display,
             /*-const-*/ VkDisplayEventInfoEXT* pDisplayEventInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkFence* pFence);
+            VkFence* pFence) {
+            if (delvkRegisterDisplayEventEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkRegisterDisplayEventEXT");
+                delvkRegisterDisplayEventEXT = (vkRegisterDisplayEventEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkRegisterDisplayEventEXT));
+            }
+
+            if (delvkRegisterDisplayEventEXT != null) {
+                return delvkRegisterDisplayEventEXT(device, display, pDisplayEventInfo, pAllocator, pFence);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkRegisterDisplayEventEXT delvkRegisterDisplayEventEXT;
+
         // Command: 306
-        // Delegate: 47
+        // GetInstanceProcAddr: 47
         /// <summary>vkReleaseDisplayEXT - Release access to an acquired VkDisplayKHR
         /// </summary>
         /// <param name="physicalDevice">physicalDevice The physical device the display is on.</param>
         /// <param name="display">display The display to release control of.</param>
-        public delegate VkResult vkReleaseDisplayEXT(
+        public static VkResult ReleaseDisplayEXT(
+            this VkInstance instance,
             VkPhysicalDevice physicalDevice,
-            VkDisplayKHR display);
+            VkDisplayKHR display) {
+            if (delvkReleaseDisplayEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkReleaseDisplayEXT");
+                delvkReleaseDisplayEXT = (vkReleaseDisplayEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkReleaseDisplayEXT));
+            }
+
+            if (delvkReleaseDisplayEXT != null) {
+                return delvkReleaseDisplayEXT(physicalDevice, display);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkReleaseDisplayEXT delvkReleaseDisplayEXT;
+
         // Command: 307
-        // Delegate: 48
+        // GetInstanceProcAddr: 48
         /// <summary>vkReleaseFullScreenExclusiveModeEXT - Release full-screen exclusive mode from a swapchain
         /// </summary>
         /// <param name="device">device is the device associated with swapchain.</param>
         /// <param name="swapchain">swapchain is the swapchain to release exclusive full-screen access
         /// from.</param>
-        public delegate VkResult vkReleaseFullScreenExclusiveModeEXT(
+        public static VkResult ReleaseFullScreenExclusiveModeEXT(
+            this VkInstance instance,
             VkDevice device,
-            VkSwapchainKHR swapchain);
+            VkSwapchainKHR swapchain) {
+            if (delvkReleaseFullScreenExclusiveModeEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkReleaseFullScreenExclusiveModeEXT");
+                delvkReleaseFullScreenExclusiveModeEXT = (vkReleaseFullScreenExclusiveModeEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkReleaseFullScreenExclusiveModeEXT));
+            }
+
+            if (delvkReleaseFullScreenExclusiveModeEXT != null) {
+                return delvkReleaseFullScreenExclusiveModeEXT(device, swapchain);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkReleaseFullScreenExclusiveModeEXT delvkReleaseFullScreenExclusiveModeEXT;
+
         // Command: 313
-        // Delegate: 49
+        // GetInstanceProcAddr: 49
         /// <summary>vkResetQueryPoolEXT - Reset queries in a query pool
         /// </summary>
         /// <param name="queryPool">queryPool is the handle of the query pool managing the queries
         /// being reset.</param>
         /// <param name="firstQuery">firstQuery is the initial query index to reset.</param>
         /// <param name="queryCount">queryCount is the number of queries to reset.</param>
-        public delegate void vkResetQueryPoolEXT(
+        public static void ResetQueryPoolEXT(
+            this VkInstance instance,
             VkDevice device,
             VkQueryPool queryPool,
             UInt32 firstQuery,
-            UInt32 queryCount);
+            UInt32 queryCount) {
+            if (delvkResetQueryPoolEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkResetQueryPoolEXT");
+                delvkResetQueryPoolEXT = (vkResetQueryPoolEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkResetQueryPoolEXT));
+            }
+
+            if (delvkResetQueryPoolEXT != null) {
+                delvkResetQueryPoolEXT(device, queryPool, firstQuery, queryCount);
+            }
+        }
+        private static vkResetQueryPoolEXT delvkResetQueryPoolEXT;
+
         // Command: 314
-        // Delegate: 50
+        // GetInstanceProcAddr: 50
         /// <summary>vkSetDebugUtilsObjectNameEXT - Give a user-friendly name to an object
         /// </summary>
         /// <param name="device">device is the device that created the object.</param>
         /// <param name="pNameInfo">pNameInfo is a pointer to an instance of the
         /// VkDebugUtilsObjectNameInfoEXT structure specifying the parameters
         /// of the name to set on the object.</param>
-        public delegate VkResult vkSetDebugUtilsObjectNameEXT(
+        public static VkResult SetDebugUtilsObjectNameEXT(
+            this VkInstance instance,
             VkDevice device,
-            /*-const-*/ VkDebugUtilsObjectNameInfoEXT* pNameInfo);
+            /*-const-*/ VkDebugUtilsObjectNameInfoEXT* pNameInfo) {
+            if (delvkSetDebugUtilsObjectNameEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSetDebugUtilsObjectNameEXT");
+                delvkSetDebugUtilsObjectNameEXT = (vkSetDebugUtilsObjectNameEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSetDebugUtilsObjectNameEXT));
+            }
+
+            if (delvkSetDebugUtilsObjectNameEXT != null) {
+                return delvkSetDebugUtilsObjectNameEXT(device, pNameInfo);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkSetDebugUtilsObjectNameEXT delvkSetDebugUtilsObjectNameEXT;
+
         // Command: 315
-        // Delegate: 51
+        // GetInstanceProcAddr: 51
         /// <summary>vkSetDebugUtilsObjectTagEXT - Attach arbitrary data to an object
         /// </summary>
         /// <param name="device">device is the device that created the object.</param>
         /// <param name="pTagInfo">pTagInfo is a pointer to an instance of the
         /// VkDebugUtilsObjectTagInfoEXT structure specifying the parameters
         /// of the tag to attach to the object.</param>
-        public delegate VkResult vkSetDebugUtilsObjectTagEXT(
+        public static VkResult SetDebugUtilsObjectTagEXT(
+            this VkInstance instance,
             VkDevice device,
-            /*-const-*/ VkDebugUtilsObjectTagInfoEXT* pTagInfo);
+            /*-const-*/ VkDebugUtilsObjectTagInfoEXT* pTagInfo) {
+            if (delvkSetDebugUtilsObjectTagEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSetDebugUtilsObjectTagEXT");
+                delvkSetDebugUtilsObjectTagEXT = (vkSetDebugUtilsObjectTagEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSetDebugUtilsObjectTagEXT));
+            }
+
+            if (delvkSetDebugUtilsObjectTagEXT != null) {
+                return delvkSetDebugUtilsObjectTagEXT(device, pTagInfo);
+            }
+            else {
+                return VkResult.ErrorExtensionNotPresent;
+            }
+        }
+        private static vkSetDebugUtilsObjectTagEXT delvkSetDebugUtilsObjectTagEXT;
+
         // Command: 317
-        // Delegate: 52
+        // GetInstanceProcAddr: 52
         /// <summary>vkSetHdrMetadataEXT - function to set Hdr metadata
         /// </summary>
         /// <param name="device">device is the logical device where the swapchain(s) were created.</param>
@@ -959,16 +1658,28 @@ namespace Vulkan {
         /// pSwapchains.</param>
         /// <param name="pSwapchains">pSwapchains is a pointer to the array of swapchainCountVkSwapchainKHR handles.</param>
         /// <param name="pMetadata">pMetadata is a pointer to the array of swapchainCountVkHdrMetadataEXT structures.</param>
-        public delegate void vkSetHdrMetadataEXT(
+        public static void SetHdrMetadataEXT(
+            this VkInstance instance,
             VkDevice device,
             UInt32 swapchainCount,
             /*-const-*/ VkSwapchainKHR* pSwapchains,
-            /*-const-*/ VkHdrMetadataEXT* pMetadata);
+            /*-const-*/ VkHdrMetadataEXT* pMetadata) {
+            if (delvkSetHdrMetadataEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSetHdrMetadataEXT");
+                delvkSetHdrMetadataEXT = (vkSetHdrMetadataEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSetHdrMetadataEXT));
+            }
+
+            if (delvkSetHdrMetadataEXT != null) {
+                delvkSetHdrMetadataEXT(device, swapchainCount, pSwapchains, pMetadata);
+            }
+        }
+        private static vkSetHdrMetadataEXT delvkSetHdrMetadataEXT;
+
         // Command: 319
-        // Delegate: 53
+        // GetInstanceProcAddr: 53
         /// <summary>vkSubmitDebugUtilsMessageEXT - Inject a message into a debug stream
         /// </summary>
-        /// <param name="instance">instance is the debug stream¡¯s VkInstance.</param>
+        /// <param name="instance">instance is the debug streamâ€™s VkInstance.</param>
         /// <param name="messageSeverity">messageSeverity is the
         /// VkDebugUtilsMessageSeverityFlagBitsEXT severity of this
         /// event/message.</param>
@@ -977,10 +1688,21 @@ namespace Vulkan {
         /// event(s) to identify with this message.</param>
         /// <param name="pCallbackData">pCallbackData contains all the callback related data in the
         /// VkDebugUtilsMessengerCallbackDataEXT structure.</param>
-        public delegate void vkSubmitDebugUtilsMessageEXT(
-            VkInstance instance,
+        public static void SubmitDebugUtilsMessageEXT(
+            this VkInstance instance,
             VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
             VkDebugUtilsMessageTypeFlagsEXT messageTypes,
-            /*-const-*/ VkDebugUtilsMessengerCallbackDataEXT* pCallbackData);
+            /*-const-*/ VkDebugUtilsMessengerCallbackDataEXT* pCallbackData) {
+            if (delvkSubmitDebugUtilsMessageEXT == null) {
+                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSubmitDebugUtilsMessageEXT");
+                delvkSubmitDebugUtilsMessageEXT = (vkSubmitDebugUtilsMessageEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSubmitDebugUtilsMessageEXT));
+            }
+
+            if (delvkSubmitDebugUtilsMessageEXT != null) {
+                delvkSubmitDebugUtilsMessageEXT(instance, messageSeverity, messageTypes, pCallbackData);
+            }
+        }
+        private static vkSubmitDebugUtilsMessageEXT delvkSubmitDebugUtilsMessageEXT;
+
     }
 }

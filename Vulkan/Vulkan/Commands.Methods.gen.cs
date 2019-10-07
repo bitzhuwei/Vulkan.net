@@ -158,7 +158,7 @@ using VkSwapchainCreateFlagsKHR = Vulkan.VkSwapchainCreateFlagBitsKHR;
 // VkValidationCacheCreateFlagsEXT - Reserved for future use
 
 namespace Vulkan {
-    public unsafe partial class vkAPI {
+    public unsafe static partial class vkAPI {
         const string VulkanLibrary = "vulkan-1";
         // Command: 1
         // Method: 0

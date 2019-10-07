@@ -210,7 +210,8 @@ namespace Demo.HelloVulkan {
             info->pfnCallback = Marshal.GetFunctionPointerForDelegate(delDebugCallback);
 
             VkDebugReportCallbackEXT callback;
-            vkCreateDebugReportCallback(instance, info, null, &callback).Check();
+            vkAPI.CreateDebugReportCallbackEXT(instance, info, null, &callback).Check();
+            //or: instance.CreateDebugReportCallbackEXT(info, null, &callback).Check();
             this.debugReportcallback = callback;
         }
 

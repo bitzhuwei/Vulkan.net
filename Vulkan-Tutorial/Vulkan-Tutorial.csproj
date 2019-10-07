@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Renderer.Cleanup.cs" />
     <Compile Include="Renderer.CreateInstance.cs" />
+    <Compile Include="Renderer.PickPhysicalDevice.cs" />
     <Compile Include="Renderer.SetupDebugMessenger.cs" />
     <Compile Include="Renderer.Init.cs" />
     <Compile Include="Renderer.cs" />

@@ -59,9 +59,50 @@ namespace Vulkan {
     public unsafe struct VkDeviceAddress {
         public UInt64 value;
 
+        public VkDeviceAddress(UInt64 v) { this.value = v; }
+
         public override string ToString() {
-            return $"{nameof(VkDeviceAddress)}: {this.value != 0}";
+            return $"{nameof(VkDeviceAddress)}: {this.value}";
         }
+
+        // == !=
+        public static bool operator ==(VkDeviceAddress left, VkDeviceAddress right) {
+            return left.value == right.value;
+        }
+        public static bool operator !=(VkDeviceAddress left, VkDeviceAddress right) {
+            return left.value != right.value;
+        }
+
+        public static bool operator ==(VkDeviceAddress left, UInt64 right) {
+            return left.value == right;
+        }
+        public static bool operator !=(VkDeviceAddress left, UInt64 right) {
+            return left.value != right;
+        }
+
+        public static bool operator ==(UInt64 left, VkDeviceAddress right) {
+            return left == right.value;
+        }
+        public static bool operator !=(UInt64 left, VkDeviceAddress right) {
+            return left != right.value;
+        }
+
+        public static implicit operator VkDeviceAddress(UInt64 v) {
+            return new VkDeviceAddress(v);
+        }
+
+        public static implicit operator UInt64(VkDeviceAddress v) {
+            return v.value;
+        }
+
+        public override bool Equals(object obj) {
+            return this.value.Equals(obj);
+        }
+
+        public override int GetHashCode() {
+            return this.value.GetHashCode();
+        }
+
     }
 
     public unsafe struct VkDeviceSize {
