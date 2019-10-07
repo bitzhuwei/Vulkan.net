@@ -10,6 +10,8 @@ namespace Vulkan_Tutorial {
     unsafe partial class Renderer {
 
         public void Cleanup() {
+            vkDestroyDevice(device, null);
+
             if (enableValidationLayers) {
                 vkAPI.DestroyDebugUtilsMessengerEXT(instance, debugMessenger, null);
             }

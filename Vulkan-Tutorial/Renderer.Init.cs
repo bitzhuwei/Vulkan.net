@@ -18,6 +18,7 @@ namespace Vulkan_Tutorial {
             CreateInstance();
             SetupDebugMessenger();
             PickPhysicalDevice();
+            CreateLogicalDevice();
         }
 
     }
