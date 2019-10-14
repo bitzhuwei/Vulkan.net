@@ -193,8 +193,10 @@ namespace Demo.RadialBlur {
             {
                 appInfo.sType = ApplicationInfo;
                 appInfo.apiVersion = VkVersion.Make(1, 0, 0);
-                Name.Set(ref appInfo.pApplicationName);
-                Name.Set(ref appInfo.pEngineName);
+                //Name.Set(ref appInfo.pApplicationName);
+                appInfo.pApplicationName = Name;
+                //Name.Set(ref appInfo.pEngineName);
+                appInfo.pEngineName = Name;
             };
 
             var instanceExtensions = new List<string>();
@@ -209,14 +211,16 @@ namespace Demo.RadialBlur {
                 if (enableValidation) {
                     instanceExtensions.Add(Strings.VK_EXT_DEBUG_REPORT_EXTENSION_NAME);
                 }
-                instanceExtensions.ToArray().Set(ref instanceCreateInfo.ppEnabledExtensionNames, ref instanceCreateInfo.enabledExtensionCount);
+                //instanceExtensions.ToArray().Set(ref instanceCreateInfo.ppEnabledExtensionNames, ref instanceCreateInfo.enabledExtensionCount);
+                instanceCreateInfo.EnabledExtensions = instanceExtensions.ToArray();
             }
 
 
             if (enableValidation) {
                 var enabledLayerNames = new List<string>();
                 enabledLayerNames.Add(Strings.StandardValidationLayeName);
-                enabledLayerNames.ToArray().Set(ref instanceCreateInfo.ppEnabledLayerNames, ref instanceCreateInfo.enabledLayerCount);
+                //enabledLayerNames.ToArray().Set(ref instanceCreateInfo.ppEnabledLayerNames, ref instanceCreateInfo.enabledLayerCount);
+                instanceCreateInfo.EnabledLayers = enabledLayerNames.ToArray();
             }
 
             VkInstance instance;
@@ -384,7 +388,7 @@ namespace Demo.RadialBlur {
             VkFramebufferCreateInfo frameBufferCreateInfo = new VkFramebufferCreateInfo();
             frameBufferCreateInfo.sType = FramebufferCreateInfo;
             frameBufferCreateInfo.renderPass = renderPass;
-            attachments.Set(&frameBufferCreateInfo);
+            frameBufferCreateInfo.attachments = attachments;
             frameBufferCreateInfo.width = width;
             frameBufferCreateInfo.height = height;
             frameBufferCreateInfo.layers = 1;
@@ -393,7 +397,7 @@ namespace Demo.RadialBlur {
             frameBuffers = new VkFramebuffer[Swapchain.ImageCount];
             for (uint i = 0; i < frameBuffers.Length; i++) {
                 attachments[0] = Swapchain.Buffers[i].View;
-                attachments.Set(&frameBufferCreateInfo);
+                frameBufferCreateInfo.attachments = attachments;
                 VkFramebuffer framebuffer;
                 vkCreateFramebuffer(device, &frameBufferCreateInfo, null, &framebuffer);
                 frameBuffers[i] = framebuffer;
@@ -650,7 +654,8 @@ namespace Demo.RadialBlur {
             shaderStage.sType = PipelineShaderStageCreateInfo;
             shaderStage.stage = stage;
             shaderStage.module = Tools.loadShader(fileName, device, stage);
-            Strings.main.Set(ref shaderStage.pName);// todo : make param
+            //Strings.main.Set(ref shaderStage.pName);// todo : make param
+            shaderStage.pName = Strings.main;
             Debug.Assert(shaderStage.module.handle != 0);
             shaderModules.Add(shaderStage.module);
             return shaderStage;

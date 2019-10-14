@@ -16,6 +16,7 @@ namespace Vulkan_Tutorial {
                 vkAPI.DestroyDebugUtilsMessengerEXT(instance, debugMessenger, null);
             }
 
+            vkDestroySurfaceKHR(instance, surface, null);
             vkDestroyInstance(instance, null);
 
         }

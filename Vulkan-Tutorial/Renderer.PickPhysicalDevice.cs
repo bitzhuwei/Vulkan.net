@@ -11,9 +11,10 @@ namespace Vulkan_Tutorial {
     unsafe partial class Renderer {
         struct QueueFamilyIndices {
             public UInt32? graphicsFamily;
+            public UInt32? presentFamily;
 
             public bool isComplete() {
-                return graphicsFamily.HasValue;
+                return graphicsFamily.HasValue && presentFamily.HasValue;
             }
         }
 

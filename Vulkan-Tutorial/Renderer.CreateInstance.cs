@@ -67,9 +67,11 @@ namespace Vulkan_Tutorial {
             }
 
             var appInfo = VkApplicationInfo.Alloc();
-            "Hello Triangle".Set(ref appInfo[0].pApplicationName);
+            //"Hello Triangle".Set(ref appInfo[0].pApplicationName);
+            appInfo[0].pApplicationName = "Hello Triangle";
             appInfo[0].applicationVersion = VkVersion.Make(1, 0, 0);
-            "No Engine".Set(ref appInfo[0].pEngineName);
+            //"No Engine".Set(ref appInfo[0].pEngineName);
+            appInfo[0].pEngineName = "No Engine";
             appInfo[0].engineVersion = VkVersion.Make(1, 0, 0);
             appInfo[0].apiVersion = VkVersion.Make(1, 0, 0);
 
@@ -89,17 +91,19 @@ namespace Vulkan_Tutorial {
                     Vk.VK_EXT_debug_report
                 };
             }
-            extensions.Set(ref createInfo[0].ppEnabledExtensionNames, ref createInfo[0].enabledExtensionCount);
+            //extensions.Set(ref createInfo[0].ppEnabledExtensionNames, ref createInfo[0].enabledExtensionCount);
+            createInfo[0].EnabledExtensions = extensions;
 
             //    ? new[] { "VK_LAYER_LUNARG_standard_validation" }
             if (enableValidationLayers) {
-                validationLayers.Set(ref createInfo[0].ppEnabledLayerNames, ref createInfo[0].enabledLayerCount);
+                //validationLayers.Set(ref createInfo[0].ppEnabledLayerNames, ref createInfo[0].enabledLayerCount);
+                createInfo[0].EnabledLayers = validationLayers;
             }
 
             var debugCreateInfo = VkDebugUtilsMessengerCreateInfoEXT.Alloc();
             if (enableValidationLayers) {
                 populateDebugMessengerCreateInfo(debugCreateInfo);
-                createInfo[0].pNext = (VkDebugUtilsMessengerCreateInfoEXT*)debugCreateInfo;
+                createInfo[0].pNext = debugCreateInfo;
             }
 
             VkInstance instance;

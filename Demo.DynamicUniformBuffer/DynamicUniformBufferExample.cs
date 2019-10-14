@@ -247,7 +247,7 @@ namespace Demo.DynamicUniformBuffer {
 
             var info = new VkDescriptorPoolCreateInfo();
             info.sType = DescriptorPoolCreateInfo;
-            poolSizes.Set(&info);
+            info.poolSizes = poolSizes;
             info.maxSets = 2;
 
             VkDescriptorPool pool;
@@ -265,9 +265,9 @@ namespace Demo.DynamicUniformBuffer {
                 new VkDescriptorSetLayoutBinding(2, VkDescriptorType.CombinedImageSampler, 1, VkShaderStageFlagBits.Fragment),
             };
 
-            VkDescriptorSetLayoutCreateInfo descriptorLayoutInfo = new VkDescriptorSetLayoutCreateInfo();
+            var descriptorLayoutInfo = new VkDescriptorSetLayoutCreateInfo();
             descriptorLayoutInfo.sType = DescriptorSetLayoutCreateInfo;
-            bindings.Set(&descriptorLayoutInfo);
+            descriptorLayoutInfo.bindings = bindings;
 
             VkDescriptorSetLayout layout;
             vkCreateDescriptorSetLayout(device, &descriptorLayoutInfo, null, &layout);
@@ -286,7 +286,7 @@ namespace Demo.DynamicUniformBuffer {
             var allocInfo = new VkDescriptorSetAllocateInfo();
             allocInfo.sType = DescriptorSetAllocateInfo;
             allocInfo.descriptorPool = descriptorPool;
-            descriptorSetLayout.Set(&allocInfo);
+            allocInfo.setLayouts = descriptorSetLayout;
 
             VkDescriptorSet set;
             vkAllocateDescriptorSets(device, &allocInfo, &set);

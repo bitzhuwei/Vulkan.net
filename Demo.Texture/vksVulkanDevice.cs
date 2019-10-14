@@ -87,8 +87,7 @@ namespace Demo.Texture {
                 VkDeviceQueueCreateInfo queueInfo = new VkDeviceQueueCreateInfo();
                 queueInfo.sType = DeviceQueueCreateInfo;
                 queueInfo.queueFamilyIndex = QFIndices.Graphics;
-                queueInfo.queueCount = 1;
-                queueInfo.pQueuePriorities = &defaultQueuePriority;
+                queueInfo.queuePriorities = defaultQueuePriority;
                 queueCreateInfos.Add(queueInfo);
             }
             else {
@@ -103,8 +102,7 @@ namespace Demo.Texture {
                     VkDeviceQueueCreateInfo queueInfo = new VkDeviceQueueCreateInfo();
                     queueInfo.sType = DeviceQueueCreateInfo;
                     queueInfo.queueFamilyIndex = QFIndices.Compute;
-                    queueInfo.queueCount = 1;
-                    queueInfo.pQueuePriorities = &defaultQueuePriority;
+                    queueInfo.queuePriorities = defaultQueuePriority;
                     queueCreateInfos.Add(queueInfo);
                 }
             }
@@ -121,8 +119,7 @@ namespace Demo.Texture {
                     VkDeviceQueueCreateInfo queueInfo = new VkDeviceQueueCreateInfo();
                     queueInfo.sType = DeviceQueueCreateInfo;
                     queueInfo.queueFamilyIndex = QFIndices.Transfer;
-                    queueInfo.queueCount = 1;
-                    queueInfo.pQueuePriorities = &defaultQueuePriority;
+                    queueInfo.queuePriorities = defaultQueuePriority;
                     queueCreateInfos.Add(queueInfo);
                 }
             }
@@ -148,12 +145,12 @@ namespace Demo.Texture {
             //    array.Set(ref ptr, ref deviceCreateInfo.queueCreateInfoCount);
             //    deviceCreateInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)ptr;
             //}
-            queueCreateInfos.ToArray().Set(deviceCreateInfo);
+            deviceCreateInfo->queueCreateInfos = queueCreateInfos.ToArray();
             deviceCreateInfo->pEnabledFeatures = &enabledFeatures;
 
             if (deviceExtensions.Count > 0) {
                 string[] array = deviceExtensions.ToArray();
-                array.SetExtensions(deviceCreateInfo);
+                deviceCreateInfo[0].EnabledExtensions = array;
             }
 
             VkDevice device;

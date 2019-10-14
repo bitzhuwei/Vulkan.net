@@ -10,7 +10,13 @@ namespace Vulkan_Tutorial {
 
         private VkInstance instance;
         private VkDebugUtilsMessengerEXT debugMessenger;
+        VkSurfaceKHR surface;
+
         VkPhysicalDevice physicalDevice;
+        VkDevice device;
+
+        VkQueue graphicsQueue;
+        VkQueue presentQueue;
 
         public void Render() {
 

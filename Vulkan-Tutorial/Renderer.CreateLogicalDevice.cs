@@ -10,7 +10,6 @@ using static Vulkan.vkAPI;
 namespace Vulkan_Tutorial {
     unsafe partial class Renderer {
 
-
         private void CreateLogicalDevice() {
             QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
 
@@ -29,10 +28,11 @@ namespace Vulkan_Tutorial {
 
             createInfo[0].pEnabledFeatures = deviceFeatures;
 
-            createInfo[0].enabledExtensionCount = 0;
+            //createInfo[0].enabledExtensionCount = 0;
 
             if (enableValidationLayers) {
-                validationLayers.Set(ref createInfo[0].ppEnabledLayerNames, ref createInfo[0].enabledLayerCount);
+                //validationLayers.Set(ref createInfo[0].ppEnabledLayerNames, ref createInfo[0].enabledLayerCount);
+                createInfo[0].EnabledLayers = validationLayers;
             }
 
             VkDevice device;

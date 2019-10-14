@@ -287,14 +287,14 @@ namespace Demo.HelloVulkan {
                 // this pool can allocate one uniform descriptor.
                 var info = VkDescriptorPoolCreateInfo.Alloc();
                 var size = new VkDescriptorPoolSize(VkDescriptorType.UniformBuffer, 1);
-                size.Set(info);
+                info->poolSizes = size;
                 info->maxSets = 1;
                 vkAPI.vkCreateDescriptorPool(device, info, null, &descriptorPool).Check();
             }
             VkDescriptorSet descriptorSet;
             {
                 var info = VkDescriptorSetAllocateInfo.Alloc();
-                descriptorSetLayout.Set(info);
+                info->setLayouts = descriptorSetLayout;
                 info->descriptorPool = descriptorPool;
                 vkAPI.vkAllocateDescriptorSets(device, info, &descriptorSet).Check().Check();
             }
@@ -327,10 +327,12 @@ namespace Demo.HelloVulkan {
             {
                 shaderStages[0].stage = VkShaderStageFlagBits.Vertex;
                 shaderStages[0].module = vsModule;
-                "main".Set(ref shaderStages[0].pName);
+                //"main".Set(ref shaderStages[0].pName);
+                shaderStages[0].pName = "main";
                 shaderStages[1].stage = VkShaderStageFlagBits.Fragment;
                 shaderStages[1].module = fsModule;
-                "main".Set(ref shaderStages[1].pName);
+                //"main".Set(ref shaderStages[1].pName);
+                shaderStages[1].pName = "main";
             }
             var viewport = VkPipelineViewportStateCreateInfo.Alloc();
             {
@@ -439,7 +441,7 @@ namespace Demo.HelloVulkan {
                     descriptorType: VkDescriptorType.UniformBuffer, // uniform 
                     descriptorCount: 1, // single variable, not array.
                     stageFlags: VkShaderStageFlagBits.Vertex); // in a vertex shader.
-                binding.Set(info);
+                info->bindings = binding;
             }
 
             //return device.CreateDescriptorSetLayout(ref info);
@@ -460,7 +462,7 @@ namespace Demo.HelloVulkan {
                     info->size = (UInt64)size;
                     info->usage = usageFlags;
                     info->sharingMode = VkSharingMode.Exclusive;
-                    index.Set(info);
+                    info->queueFamilyIndices = index;
                 }
                 //VkBuffer buffer = device.CreateBuffer(ref info);
                 vkAPI.vkCreateBuffer(device, info, null, &buffer).Check();
@@ -561,7 +563,7 @@ namespace Demo.HelloVulkan {
                 var info = VkFramebufferCreateInfo.Alloc();
                 info->layers = 1;
                 info->renderPass = renderPass;
-                displayViews[i].Set(info);
+                info->attachments = displayViews[i];
                 info->width = surfaceCapabilities.currentExtent.width;
                 info->height = surfaceCapabilities.currentExtent.height;
                 //framebuffers[i] = device.CreateFramebuffer(ref info);
@@ -654,16 +656,15 @@ namespace Demo.HelloVulkan {
 
             var queueInfo = VkDeviceQueueCreateInfo.Alloc();
             {
-                var priorities = new float[] { 1.0f };
-                priorities.Set(queueInfo);
+                queueInfo->queuePriorities = 1.0f;
                 queueInfo->queueFamilyIndex = index;
             }
 
             var info = VkDeviceCreateInfo.Alloc();
             {
-                new[] { Vk.VK_KHR_swapchain }.SetExtensions(info);
-                //queueInfo->Set(info);
-                info->pQueueCreateInfos = queueInfo; info->queueCreateInfoCount = 1;
+                info[0].EnabledExtensions = Vk.VK_KHR_swapchain;
+                info->queueCreateInfos.count = 1;
+                info->queueCreateInfos.array = queueInfo;
             }
 
             VkDevice vkDevice;
@@ -703,10 +704,14 @@ namespace Demo.HelloVulkan {
             var appInfo = VkApplicationInfo.Alloc();
             UInt32 version = Vulkan.VkVersion.Make(1, 0, 0);
             appInfo->apiVersion = version;
+            appInfo->pApplicationName = "Hello Vulkan";
+            appInfo->pEngineName = "Hello Engine";
 
             var info = VkInstanceCreateInfo.Alloc();
-            extensions.SetExtensions(info);
-            layers.SetLayers(info);
+            info->EnabledExtensions = extensions;
+            //extensions.SetExtensions(info);
+            info->EnabledLayers = layers;
+            //layers.SetLayers(info);
             info->pApplicationInfo = appInfo;
 
             VkInstance vkInstance;

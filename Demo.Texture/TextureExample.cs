@@ -675,15 +675,14 @@ namespace Demo.Texture {
 
         void setupDescriptorPool() {
             // Example uses one ubo and one image sampler
-            var poolSizes = VkDescriptorPoolSize.Alloc(2);
+            var poolSizes = new VkDescriptorPoolSize[2];
             poolSizes[0].type = VkDescriptorType.UniformBuffer;
             poolSizes[0].descriptorCount = 1;
             poolSizes[1].type = VkDescriptorType.CombinedImageSampler;
             poolSizes[1].descriptorCount = 1;
 
             var poolInfo = VkDescriptorPoolCreateInfo.Alloc();
-            poolInfo[0].poolSizeCount = 2;
-            poolInfo[0].pPoolSizes = poolSizes;
+            poolInfo[0].poolSizes = poolSizes;
             poolInfo[0].maxSets = 2;
             {
                 VkDescriptorPool pool;
@@ -709,8 +708,8 @@ namespace Demo.Texture {
 
             {
                 var info = VkDescriptorSetLayoutCreateInfo.Alloc();
-                info[0].bindingCount = 2;
-                info[0].pBindings = bindings;
+                info[0].bindings.count = 2;
+                info[0].bindings.array = bindings;
                 VkDescriptorSetLayout layout;
                 vkCreateDescriptorSetLayout(device, info, null, &layout);
                 this.layout = layout;
@@ -731,8 +730,7 @@ namespace Demo.Texture {
             VkDescriptorSetLayout layout = this.layout;
             var allocInfo = VkDescriptorSetAllocateInfo.Alloc();
             allocInfo[0].descriptorPool = descriptorPool;
-            allocInfo[0].descriptorSetCount = 1;
-            allocInfo[0].pSetLayouts = &layout;
+            allocInfo[0].setLayouts = layout;
             {
                 VkDescriptorSet set;
                 vkAllocateDescriptorSets(device, allocInfo, &set);

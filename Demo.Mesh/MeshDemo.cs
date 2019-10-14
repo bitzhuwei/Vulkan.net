@@ -380,7 +380,7 @@ namespace Demo.Mesh {
             poolSizes[1].descriptorCount = 1;
 
             var descriptorPoolInfo = VkDescriptorPoolCreateInfo.Alloc();
-            poolSizes.Set(descriptorPoolInfo);
+            descriptorPoolInfo->poolSizes = poolSizes;
             descriptorPoolInfo->maxSets = 1;
             {
                 VkDescriptorPool pool;
@@ -405,7 +405,7 @@ namespace Demo.Mesh {
             bindings[1].descriptorCount = 1;
 
             var descriptorLayout = VkDescriptorSetLayoutCreateInfo.Alloc();
-            bindings.Set(descriptorLayout);
+            descriptorLayout->bindings = bindings;
 
             VkDescriptorSetLayout dsl;
             vkCreateDescriptorSetLayout(device, descriptorLayout, null, &dsl);
@@ -428,8 +428,7 @@ namespace Demo.Mesh {
             VkDescriptorSetAllocateInfo allocInfo = new VkDescriptorSetAllocateInfo();
             allocInfo.sType = DescriptorSetAllocateInfo;
             allocInfo.descriptorPool = descriptorPool;
-            allocInfo.pSetLayouts = &dsl;
-            allocInfo.descriptorSetCount = 1;
+            allocInfo.setLayouts = dsl;
 
             {
                 VkDescriptorSet set;

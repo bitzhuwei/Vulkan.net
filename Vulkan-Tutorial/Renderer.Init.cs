@@ -19,6 +19,7 @@ namespace Vulkan_Tutorial {
             SetupDebugMessenger();
             PickPhysicalDevice();
             CreateLogicalDevice();
+            CreateSurface(canvas);
         }
 
     }

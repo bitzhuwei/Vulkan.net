@@ -4,17 +4,17 @@ using System.Runtime.InteropServices;
 namespace Vulkan {
     public unsafe static partial class Helper {
 
-        public static string[] Get(IntPtr target, UInt32 count) {
-            string[] result = null;
-            var pointer = (IntPtr*)target;
-            if (pointer != null) {
-                result = new string[count];
-                for (int i = 0; i < count; i++) {
-                    result[i] = Marshal.PtrToStringAnsi(pointer[i]);
-                }
-            }
-            return result;
-        }
+        //public static string[] Get(IntPtr target, UInt32 count) {
+        //    string[] result = null;
+        //    var pointer = (IntPtr*)target;
+        //    if (pointer != null) {
+        //        result = new string[count];
+        //        for (int i = 0; i < count; i++) {
+        //            result[i] = Marshal.PtrToStringAnsi(pointer[i]);
+        //        }
+        //    }
+        //    return result;
+        //}
 
         //public static void DisposeStrings(ref IntPtr target, ref UInt32 count) {
         //    var pointer = (IntPtr*)target;
@@ -27,79 +27,79 @@ namespace Vulkan {
         //    }
         //}
 
-        /// <summary>
-        /// Set a string to specified <paramref name="target"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of string.</param>
-        public static void Set(this string value, ref IntPtr target) {
-            {   // free unmanaged memory.
-                if (target != IntPtr.Zero) {
-                    Marshal.FreeHGlobal(target);
-                    target = IntPtr.Zero;
-                }
-            }
-            {
-                if (value != null && value.Length > 0) {
-                    target = Marshal.StringToHGlobalAnsi(value);
-                }
-                else {
-                    target = IntPtr.Zero;
-                }
-            }
-        }
+        ///// <summary>
+        ///// Set a string to specified <paramref name="target"/>.
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of string.</param>
+        //public static void Set(this string value, ref IntPtr target) {
+        //    {   // free unmanaged memory.
+        //        if (target != IntPtr.Zero) {
+        //            Marshal.FreeHGlobal(target);
+        //            target = IntPtr.Zero;
+        //        }
+        //    }
+        //    {
+        //        if (value != null && value.Length > 0) {
+        //            target = Marshal.StringToHGlobalAnsi(value);
+        //        }
+        //        else {
+        //            target = IntPtr.Zero;
+        //        }
+        //    }
+        //}
 
-        /// <summary>
-        /// Set an array of strings to specified <paramref name="target"/> and <paramref name="count"/>.
-        /// </summary>
-        /// <param name="value"></param>
-        /// <param name="target">address of first element/array.</param>
-        /// <param name="count">How many elements?</param>
-        public static void Set(this string[] value, ref IntPtr* target, ref UInt32 count) {
-            {   // free unmanaged memory.
-                if (target != null) {
-                    for (int i = 0; i < count; i++) {
-                        Marshal.FreeHGlobal(target[i]);
-                    }
-                }
-            }
-            {
-                int length = value.Length;
-                if (length > 0) {
-                    int elementSize = Marshal.SizeOf(typeof(IntPtr));
-                    int byteLength = (int)(length * elementSize);
-                    IntPtr array = Marshal.AllocHGlobal(byteLength);
-                    IntPtr* pointer = (IntPtr*)array.ToPointer();
-                    for (int i = 0; i < length; i++) {
-                        IntPtr str = Marshal.StringToHGlobalAnsi(value[i]);
-                        pointer[i] = str;
-                    }
-                    target = pointer;
-                }
-                count = (UInt32)length;
-            }
-        }
+        ///// <summary>
+        ///// Set an array of strings to specified <paramref name="target"/> and <paramref name="count"/>.
+        ///// </summary>
+        ///// <param name="value"></param>
+        ///// <param name="target">address of first element/array.</param>
+        ///// <param name="count">How many elements?</param>
+        //public static void Set(this string[] value, ref IntPtr* target, ref UInt32 count) {
+        //    {   // free unmanaged memory.
+        //        if (target != null) {
+        //            for (int i = 0; i < count; i++) {
+        //                Marshal.FreeHGlobal(target[i]);
+        //            }
+        //        }
+        //    }
+        //    {
+        //        int length = value.Length;
+        //        if (length > 0) {
+        //            int elementSize = Marshal.SizeOf(typeof(IntPtr));
+        //            int byteLength = (int)(length * elementSize);
+        //            IntPtr array = Marshal.AllocHGlobal(byteLength);
+        //            IntPtr* pointer = (IntPtr*)array.ToPointer();
+        //            for (int i = 0; i < length; i++) {
+        //                IntPtr str = Marshal.StringToHGlobalAnsi(value[i]);
+        //                pointer[i] = str;
+        //            }
+        //            target = pointer;
+        //        }
+        //        count = (UInt32)length;
+        //    }
+        //}
 
-        public static T[] Get<T>(IntPtr target, UInt32 count) where T : struct {
-            T[] result = null;
-            if (target != IntPtr.Zero) {
-                result = new T[count];
-                if (count > 0) {
-                    GCHandle pin = GCHandle.Alloc(result, GCHandleType.Pinned);
-                    IntPtr address = Marshal.UnsafeAddrOfPinnedArrayElement(result, 0);
-                    var dst = (byte*)address;
-                    var src = (byte*)target;
-                    int elementSize = Marshal.SizeOf(typeof(T));
-                    int byteLength = (int)(count * elementSize);
-                    for (int i = 0; i < byteLength; i++) {
-                        dst[i] = src[i];
-                    }
-                    pin.Free();
-                }
-            }
+        //public static T[] Get<T>(IntPtr target, UInt32 count) where T : struct {
+        //    T[] result = null;
+        //    if (target != IntPtr.Zero) {
+        //        result = new T[count];
+        //        if (count > 0) {
+        //            GCHandle pin = GCHandle.Alloc(result, GCHandleType.Pinned);
+        //            IntPtr address = Marshal.UnsafeAddrOfPinnedArrayElement(result, 0);
+        //            var dst = (byte*)address;
+        //            var src = (byte*)target;
+        //            int elementSize = Marshal.SizeOf(typeof(T));
+        //            int byteLength = (int)(count * elementSize);
+        //            for (int i = 0; i < byteLength; i++) {
+        //                dst[i] = src[i];
+        //            }
+        //            pin.Free();
+        //        }
+        //    }
 
-            return result;
-        }
+        //    return result;
+        //}
 
         //public static void DisposeStructs(ref IntPtr target, ref UInt32 count) {
         //    if (target != IntPtr.Zero) {

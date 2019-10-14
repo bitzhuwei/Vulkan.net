@@ -349,9 +349,7 @@ namespace Demo.RadialBlur {
 
             var framebufferInfo = VkFramebufferCreateInfo.Alloc();
             framebufferInfo->renderPass = offscreenPass.renderPass;
-            //framebufferInfo->attachmentCount = 2;
-            //framebufferInfo->pAttachments = &attachments.First;
-            attachments.Set(framebufferInfo);
+            framebufferInfo->attachments = attachments;
             framebufferInfo->width = (uint)offscreenPass.width;
             framebufferInfo->height = (uint)offscreenPass.height;
             framebufferInfo->layers = 1;
@@ -553,7 +551,7 @@ namespace Demo.RadialBlur {
             poolSizes[1].descriptorCount = 6;
 
             var descriptorPoolInfo = VkDescriptorPoolCreateInfo.Alloc();
-            poolSizes.Set(descriptorPoolInfo);
+            descriptorPoolInfo->poolSizes = poolSizes;
             descriptorPoolInfo->maxSets = 2;
 
             VkDescriptorPool pool;
@@ -567,28 +565,28 @@ namespace Demo.RadialBlur {
             {
                 var bindings = new VkDescriptorSetLayoutBinding[]
                 {
-                // Binding 0: Vertex shader uniform buffer
-                new VkDescriptorSetLayoutBinding {
-                    binding = 0,
-                    descriptorType = VkDescriptorType.UniformBuffer, descriptorCount = 1,
-                    stageFlags = VkShaderStageFlagBits.Vertex
-                },
-                // Binding 1: Fragment shader image sampler
-                new VkDescriptorSetLayoutBinding {
-                    binding = 1,
-                    descriptorType = VkDescriptorType.CombinedImageSampler, descriptorCount = 1,
-                    stageFlags = VkShaderStageFlagBits.Fragment
-                },
-                // Binding 2: Fragment shader uniform buffer
-                new VkDescriptorSetLayoutBinding {
-                    binding = 2,
-                    descriptorType = VkDescriptorType.UniformBuffer, descriptorCount = 1,
-                    stageFlags = VkShaderStageFlagBits.Fragment
-                },
+                    // Binding 0: Vertex shader uniform buffer
+                    new VkDescriptorSetLayoutBinding {
+                        binding = 0,
+                        descriptorType = VkDescriptorType.UniformBuffer, descriptorCount = 1,
+                        stageFlags = VkShaderStageFlagBits.Vertex
+                    },
+                    // Binding 1: Fragment shader image sampler
+                    new VkDescriptorSetLayoutBinding {
+                        binding = 1,
+                        descriptorType = VkDescriptorType.CombinedImageSampler, descriptorCount = 1,
+                        stageFlags = VkShaderStageFlagBits.Fragment
+                    },
+                    // Binding 2: Fragment shader uniform buffer
+                    new VkDescriptorSetLayoutBinding {
+                        binding = 2,
+                        descriptorType = VkDescriptorType.UniformBuffer, descriptorCount = 1,
+                        stageFlags = VkShaderStageFlagBits.Fragment
+                    },
                 };
 
                 var layoutInfo = VkDescriptorSetLayoutCreateInfo.Alloc();
-                bindings.Set(layoutInfo);
+                layoutInfo->bindings = bindings;
                 {
                     VkDescriptorSetLayout layout;
                     vkCreateDescriptorSetLayout(device, layoutInfo, null, &layout);
@@ -621,7 +619,7 @@ namespace Demo.RadialBlur {
                     },
                 };
                 var layoutInfo = VkDescriptorSetLayoutCreateInfo.Alloc();
-                bindings.Set(layoutInfo);
+                layoutInfo->bindings = bindings;
                 {
                     VkDescriptorSetLayout layout;
                     vkCreateDescriptorSetLayout(device, layoutInfo, null, &layout);
@@ -642,11 +640,11 @@ namespace Demo.RadialBlur {
             // Scene rendering
             {
                 VkDescriptorSetLayout dsl = setLayoutScene;
-                var descriptorSetAllocInfo = VkDescriptorSetAllocateInfo.Alloc();
-                dsl.Set(descriptorSetAllocInfo);
-                descriptorSetAllocInfo->descriptorPool = descriptorPool;
+                var info = VkDescriptorSetAllocateInfo.Alloc();
+                info->setLayouts = dsl;
+                info->descriptorPool = descriptorPool;
                 VkDescriptorSet set;
-                vkAllocateDescriptorSets(device, descriptorSetAllocInfo, &set);
+                vkAllocateDescriptorSets(device, info, &set);
                 this.setScene = set;
             }
             {
@@ -671,11 +669,11 @@ namespace Demo.RadialBlur {
             // Fullscreen radial blur
             {
                 VkDescriptorSetLayout dsl = setLayoutRadialBlur;
-                var descriptorSetAllocInfo = VkDescriptorSetAllocateInfo.Alloc();
-                dsl.Set(descriptorSetAllocInfo);
-                descriptorSetAllocInfo->descriptorPool = descriptorPool;
+                var info = VkDescriptorSetAllocateInfo.Alloc();
+                info->setLayouts = dsl;
+                info->descriptorPool = descriptorPool;
                 VkDescriptorSet set;
-                vkAllocateDescriptorSets(device, descriptorSetAllocInfo, &set);
+                vkAllocateDescriptorSets(device, info, &set);
                 this.setRadialBlur = set;
             }
             {

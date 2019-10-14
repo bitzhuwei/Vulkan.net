@@ -359,14 +359,14 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> pApplicationName is NULL or is a pointer to a null-terminated
         /// UTF-8 string containing the name of the application.</summary>
-        public IntPtr pApplicationName;
+        public /*IntPtr*/StringHandle pApplicationName;
         /// <summary> applicationVersion is an unsigned integer variable containing the
         /// developer-supplied version number of the application.</summary>
         public UInt32 applicationVersion;
         /// <summary> pEngineName is NULL or is a pointer to a null-terminated UTF-8
         /// string containing the name of the engine (if any) used to create the
         /// application.</summary>
-        public IntPtr pEngineName;
+        public /*IntPtr*/StringHandle pEngineName;
         /// <summary> engineVersion is an unsigned integer variable containing the
         /// developer-supplied version number of the engine used to create the
         /// application.</summary>
@@ -723,13 +723,18 @@ namespace Vulkan {
         /// <summary> sharingMode is a VkSharingMode value specifying the sharing
         /// mode of the buffer when it will be accessed by multiple queue families.</summary>
         public VkSharingMode sharingMode;
-        /// <summary> queueFamilyIndexCount is the number of entries in the
-        /// pQueueFamilyIndices array.</summary>
-        public UInt32 queueFamilyIndexCount;
-        /// <summary> pQueueFamilyIndices is a list of queue families that will access
-        /// this buffer (ignored if sharingMode is not
-        /// VK_SHARING_MODE_CONCURRENT).</summary>
-        public /*-const-*/ UInt32* pQueueFamilyIndices;
+        ///// <summary> queueFamilyIndexCount is the number of entries in the
+        ///// pQueueFamilyIndices array.</summary>
+        //public UInt32 queueFamilyIndexCount;
+        ///// <summary> pQueueFamilyIndices is a list of queue families that will access
+        ///// this buffer (ignored if sharingMode is not
+        ///// VK_SHARING_MODE_CONCURRENT).</summary>
+        //public /*-const-*/ UInt32* pQueueFamilyIndices;
+        /// <summary>
+        /// a list of queue families that will access this buffer 
+        /// (ignored if sharingMode is not VK_SHARING_MODE_CONCURRENT).
+        /// /// </summary>
+        public UInt32sHandle queueFamilyIndices;
     }
     // Struct: 27
     /// <summary>VkBufferDeviceAddressCreateInfoEXT - Request a specific address for a buffer
@@ -1621,12 +1626,18 @@ namespace Vulkan {
         /// <summary> maxSets is the maximum number of descriptor sets that can be
         /// allocated from the pool.</summary>
         public UInt32 maxSets;
-        /// <summary> poolSizeCount is the number of elements in pPoolSizes.</summary>
-        public UInt32 poolSizeCount;
-        /// <summary> pPoolSizes is a pointer to an array of VkDescriptorPoolSize
+        ///// <summary> poolSizeCount is the number of elements in pPoolSizes.</summary>
+        //public UInt32 poolSizeCount;
+        ///// <summary> pPoolSizes is a pointer to an array of VkDescriptorPoolSize
+        ///// structures, each containing a descriptor type and number of descriptors
+        ///// of that type to be allocated in the pool.</summary>
+        //public /*-const-*/ VkDescriptorPoolSize* pPoolSizes;
+        /// <summary>
+        /// an array of VkDescriptorPoolSize
         /// structures, each containing a descriptor type and number of descriptors
-        /// of that type to be allocated in the pool.</summary>
-        public /*-const-*/ VkDescriptorPoolSize* pPoolSizes;
+        /// of that type to be allocated in the pool.
+        /// </summary>
+        public DescriptorPoolSizesHandle poolSizes;
     }
     // Struct: 71
     /// <summary>VkDescriptorPoolInlineUniformBlockCreateInfoEXT - Structure specifying the maximum number of inline uniform block bindings of a newly created descriptor pool
@@ -1663,12 +1674,17 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> descriptorPool is the pool which the sets will be allocated from.</summary>
         public VkDescriptorPool descriptorPool;
-        /// <summary> descriptorSetCount determines the number of descriptor sets to be
-        /// allocated from the pool.</summary>
-        public UInt32 descriptorSetCount;
-        /// <summary> pSetLayouts is an array of descriptor set layouts, with each
-        /// member specifying how the corresponding descriptor set is allocated.</summary>
-        public /*-const-*/ VkDescriptorSetLayout* pSetLayouts;
+        ///// <summary> descriptorSetCount determines the number of descriptor sets to be
+        ///// allocated from the pool.</summary>
+        //public UInt32 descriptorSetCount;
+        ///// <summary> pSetLayouts is an array of descriptor set layouts, with each
+        ///// member specifying how the corresponding descriptor set is allocated.</summary>
+        //public /*-const-*/ VkDescriptorSetLayout* pSetLayouts;
+        /// <summary>
+        /// an array of descriptor set layouts, with each
+        /// member specifying how the corresponding descriptor set is allocated.
+        /// </summary>
+        public DescriptorSetLayoutsHandle setLayouts;
     }
     // Struct: 74
     /// <summary>VkDescriptorSetLayoutBinding - Structure specifying a descriptor set layout binding
@@ -1727,11 +1743,16 @@ namespace Vulkan {
         /// of VkDescriptorSetLayoutCreateFlagBits
         /// specifying options for descriptor set layout creation.</summary>
         public VkDescriptorSetLayoutCreateFlags flags;
-        /// <summary> bindingCount is the number of elements in pBindings.</summary>
-        public UInt32 bindingCount;
-        /// <summary> pBindings is a pointer to an array of
-        /// VkDescriptorSetLayoutBinding structures.</summary>
-        public /*-const-*/ VkDescriptorSetLayoutBinding* pBindings;
+        ///// <summary> bindingCount is the number of elements in pBindings.</summary>
+        //public UInt32 bindingCount;
+        ///// <summary> pBindings is a pointer to an array of
+        ///// VkDescriptorSetLayoutBinding structures.</summary>
+        //public /*-const-*/ VkDescriptorSetLayoutBinding* pBindings;
+        /// <summary>
+        ///  an array of
+        /// VkDescriptorSetLayoutBinding structures.
+        /// </summary>
+        public DescriptorSetLayoutBindingsHandle bindings;
     }
     // Struct: 77
     /// <summary>VkDescriptorSetLayoutSupport - Structure returning information about whether a descriptor set layout can be supported
@@ -1878,30 +1899,40 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> flags is reserved for future use.</summary>
         public VkDeviceCreateFlags flags;
-        /// <summary> queueCreateInfoCount is the unsigned integer size of the
-        /// pQueueCreateInfos array.
-        /// Refer to the Queue Creation section
-        /// below for further details.</summary>
-        public UInt32 queueCreateInfoCount;
-        /// <summary> pQueueCreateInfos is a pointer to an array of
+        ///// <summary> queueCreateInfoCount is the unsigned integer size of the
+        ///// pQueueCreateInfos array.
+        ///// Refer to the Queue Creation section
+        ///// below for further details.</summary>
+        //public UInt32 queueCreateInfoCount;
+        ///// <summary> pQueueCreateInfos is a pointer to an array of
+        ///// VkDeviceQueueCreateInfo structures describing the queues that are
+        ///// requested to be created along with the logical device.
+        ///// Refer to the Queue Creation section
+        ///// below for further details.</summary>
+        //public /*-const-*/ VkDeviceQueueCreateInfo* pQueueCreateInfos;
+        /// <summary>
+        /// an array of
         /// VkDeviceQueueCreateInfo structures describing the queues that are
         /// requested to be created along with the logical device.
         /// Refer to the Queue Creation section
-        /// below for further details.</summary>
-        public /*-const-*/ VkDeviceQueueCreateInfo* pQueueCreateInfos;
-        /// <summary> enabledLayerCount is deprecated and ignored.</summary>
-        public UInt32 enabledLayerCount;
-        /// <summary> ppEnabledLayerNames is deprecated and ignored.
-        /// See html/vkspec.html#extendingvulkan-layers-devicelayerdeprecation.</summary>
-        public IntPtr /*-const-*/ * ppEnabledLayerNames;
-        /// <summary> enabledExtensionCount is the number of device extensions to
-        /// enable.</summary>
-        public UInt32 enabledExtensionCount;
-        /// <summary> ppEnabledExtensionNames is a pointer to an array of
-        /// enabledExtensionCount null-terminated UTF-8 strings containing the
-        /// names of extensions to enable for the created device.
-        /// See the html/vkspec.html#extendingvulkan-extensions section for further details.</summary>
-        public IntPtr /*-const-*/ * ppEnabledExtensionNames;
+        /// below for further details.
+        /// </summary>
+        public DeviceQueueCreateInfosHandle queueCreateInfos;
+        ///// <summary> enabledLayerCount is deprecated and ignored.</summary>
+        //public UInt32 enabledLayerCount;
+        ///// <summary> ppEnabledLayerNames is deprecated and ignored.
+        ///// See html/vkspec.html#extendingvulkan-layers-devicelayerdeprecation.</summary>
+        //public IntPtr /*-const-*/ * ppEnabledLayerNames;
+        public StringsHandle EnabledLayers;
+        ///// <summary> enabledExtensionCount is the number of device extensions to
+        ///// enable.</summary>
+        //public UInt32 enabledExtensionCount;
+        ///// <summary> ppEnabledExtensionNames is a pointer to an array of
+        ///// enabledExtensionCount null-terminated UTF-8 strings containing the
+        ///// names of extensions to enable for the created device.
+        ///// See the html/vkspec.html#extendingvulkan-extensions section for further details.</summary>
+        //public IntPtr /*-const-*/ * ppEnabledExtensionNames;
+        public StringsHandle EnabledExtensions;
         /// <summary> pEnabledFeatures is NULL or a pointer to a
         /// VkPhysicalDeviceFeatures structure that contains boolean
         /// indicators of all the features to be enabled.
@@ -2120,14 +2151,21 @@ namespace Vulkan {
         /// pQueueFamilyProperties array that was returned by
         /// vkGetPhysicalDeviceQueueFamilyProperties.</summary>
         public UInt32 queueFamilyIndex;
-        /// <summary> queueCount is an unsigned integer specifying the number of queues
-        /// to create in the queue family indicated by queueFamilyIndex.</summary>
-        public UInt32 queueCount;
-        /// <summary> pQueuePriorities is an array of queueCount normalized
+        ///// <summary> queueCount is an unsigned integer specifying the number of queues
+        ///// to create in the queue family indicated by queueFamilyIndex.</summary>
+        //public UInt32 queueCount;
+        ///// <summary> pQueuePriorities is an array of queueCount normalized
+        ///// floating point values, specifying priorities of work that will be
+        ///// submitted to each created queue.
+        ///// See Queue Priority for more information.</summary>
+        //public /*-const-*/ float* pQueuePriorities;
+        /// <summary>
+        /// an array of normalized
         /// floating point values, specifying priorities of work that will be
         /// submitted to each created queue.
-        /// See Queue Priority for more information.</summary>
-        public /*-const-*/ float* pQueuePriorities;
+        /// See Queue Priority for more information.
+        /// </summary>
+        public SinglesHandle queuePriorities;
     }
     // Struct: 96
     /// <summary>VkDeviceQueueGlobalPriorityCreateInfoEXT - Specify a system wide priority
@@ -2966,12 +3004,18 @@ namespace Vulkan {
         /// framebuffer will be compatible with.
         /// See Render Pass Compatibility for details.</summary>
         public VkRenderPass renderPass;
-        /// <summary> attachmentCount is the number of attachments.</summary>
-        public UInt32 attachmentCount;
-        /// <summary> pAttachments is an array of VkImageView handles, each of
+        ///// <summary> attachmentCount is the number of attachments.</summary>
+        //public UInt32 attachmentCount;
+        ///// <summary> pAttachments is an array of VkImageView handles, each of
+        ///// which will be used as the corresponding attachment in a render pass
+        ///// instance.</summary>
+        //public /*-const-*/ VkImageView* pAttachments;
+        /// <summary>
+        /// an array of VkImageView handles, each of
         /// which will be used as the corresponding attachment in a render pass
-        /// instance.</summary>
-        public /*-const-*/ VkImageView* pAttachments;
+        /// instance.
+        /// </summary>
+        public VkImageViewsHandle attachments;
         /// <summary> width, height and layers define the dimensions of the
         /// framebuffer.
         /// If the render pass uses multiview, then layers must be one and
@@ -3855,20 +3899,31 @@ namespace Vulkan {
         /// inherent to classes of applications.
         /// VkApplicationInfo is defined in detail below.</summary>
         public /*-const-*/ VkApplicationInfo* pApplicationInfo;
-        /// <summary> enabledLayerCount is the number of global layers to enable.</summary>
-        public UInt32 enabledLayerCount;
-        /// <summary> ppEnabledLayerNames is a pointer to an array of
+        ///// <summary> enabledLayerCount is the number of global layers to enable.</summary>
+        //public UInt32 enabledLayerCount;
+        ///// <summary> ppEnabledLayerNames is a pointer to an array of
+        ///// enabledLayerCount null-terminated UTF-8 strings containing the
+        ///// names of layers to enable for the created instance.
+        ///// See the html/vkspec.html#extendingvulkan-layers section for further details.</summary>
+        //public IntPtr /*-const-*/ * ppEnabledLayerNames;
+        /// <summary>
+        /// an array of
         /// enabledLayerCount null-terminated UTF-8 strings containing the
         /// names of layers to enable for the created instance.
-        /// See the html/vkspec.html#extendingvulkan-layers section for further details.</summary>
-        public IntPtr /*-const-*/ * ppEnabledLayerNames;
-        /// <summary> enabledExtensionCount is the number of global extensions to
-        /// enable.</summary>
-        public UInt32 enabledExtensionCount;
-        /// <summary> ppEnabledExtensionNames is a pointer to an array of
-        /// enabledExtensionCount null-terminated UTF-8 strings containing the
-        /// names of extensions to enable.</summary>
-        public IntPtr /*-const-*/ * ppEnabledExtensionNames;
+        /// See the html/vkspec.html#extendingvulkan-layers section for further details.
+        /// </summary>
+        public StringsHandle EnabledLayers;
+        ///// <summary> enabledExtensionCount is the number of global extensions to
+        ///// enable.</summary>
+        //public UInt32 enabledExtensionCount;
+        ///// <summary> ppEnabledExtensionNames is a pointer to an array of
+        ///// enabledExtensionCount null-terminated UTF-8 strings containing the
+        ///// names of extensions to enable.</summary>
+        //public IntPtr /*-const-*/ * ppEnabledExtensionNames;
+        /// <summary>
+        /// an array of strings containing the names of extensions to enable.
+        /// </summary>
+        public StringsHandle EnabledExtensions;
     }
     // Struct: 194
     /// <summary>VkLayerProperties - Structure specifying layer properties
@@ -6964,7 +7019,7 @@ namespace Vulkan {
         public VkShaderModule module;
         /// <summary> pName is a pointer to a null-terminated UTF-8 string specifying
         /// the entry point name of the shader for this stage.</summary>
-        public IntPtr pName;
+        public /*IntPtr*/StringHandle pName;
         /// <summary> pSpecializationInfo is a pointer to VkSpecializationInfo, as
         /// described in Specialization
         /// Constants, and can be NULL.</summary>
