@@ -824,8 +824,8 @@ namespace Demo.Texture {
             pipelineCreateInfo[0].pViewportState = viewportState;
             pipelineCreateInfo[0].pDepthStencilState = depthStencilState;
             pipelineCreateInfo[0].pDynamicState = dynamicState;
-            pipelineCreateInfo[0].stageCount = 2;
-            pipelineCreateInfo[0].pStages = shaderStages;
+            pipelineCreateInfo[0].stages.count = 2;
+            pipelineCreateInfo[0].stages.array = shaderStages;
             {
                 VkPipeline pipeline;
                 vkCreateGraphicsPipelines(device, pipelineCache, 1, pipelineCreateInfo, null, &pipeline);

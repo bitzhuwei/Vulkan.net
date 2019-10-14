@@ -15,16 +15,14 @@ namespace Vulkan_Tutorial {
 
             var queueCreateInfo = VkDeviceQueueCreateInfo.Alloc();
             queueCreateInfo[0].queueFamilyIndex = indices.graphicsFamily.Value;
-            queueCreateInfo[0].queueCount = 1;
-
             float queuePriority = 1.0f;
-            queueCreateInfo[0].pQueuePriorities = &queuePriority;
+            queueCreateInfo[0].queuePriorities = queuePriority;
 
             var deviceFeatures = VkPhysicalDeviceFeatures.Alloc();
 
             var createInfo = VkDeviceCreateInfo.Alloc();
-            createInfo[0].pQueueCreateInfos = queueCreateInfo;
-            createInfo[0].queueCreateInfoCount = 1;
+            createInfo[0].queueCreateInfos.count = 1;
+            createInfo[0].queueCreateInfos.array = queueCreateInfo;
 
             createInfo[0].pEnabledFeatures = deviceFeatures;
 

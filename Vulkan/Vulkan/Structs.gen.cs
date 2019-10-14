@@ -3120,12 +3120,18 @@ namespace Vulkan {
         /// <summary> flags is a bitmask of VkPipelineCreateFlagBits specifying
         /// how the pipeline will be generated.</summary>
         public VkPipelineCreateFlags flags;
-        /// <summary> stageCount is the number of entries in the pStages array.</summary>
-        public UInt32 stageCount;
-        /// <summary> pStages is an array of size stageCount structures of type
+        ///// <summary> stageCount is the number of entries in the pStages array.</summary>
+        //public UInt32 stageCount;
+        ///// <summary> pStages is an array of size stageCount structures of type
+        ///// VkPipelineShaderStageCreateInfo describing the set of the shader
+        ///// stages to be included in the graphics pipeline.</summary>
+        //public /*-const-*/ VkPipelineShaderStageCreateInfo* pStages;
+        /// <summary>
+        /// pStages is an array of structures of type
         /// VkPipelineShaderStageCreateInfo describing the set of the shader
-        /// stages to be included in the graphics pipeline.</summary>
-        public /*-const-*/ VkPipelineShaderStageCreateInfo* pStages;
+        /// stages to be included in the graphics pipeline.
+        /// </summary>
+        public PipelineShaderStageCreateInfosHandle stages;
         /// <summary> pVertexInputState is a pointer to an instance of the
         /// VkPipelineVertexInputStateCreateInfo structure.
         /// It is ignored if the pipeline includes a mesh shader stage.</summary>

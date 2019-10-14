@@ -383,7 +383,7 @@ namespace Demo.DynamicUniformBuffer {
             info.pViewportState = &viewportState;
             info.pDepthStencilState = &depthStencilState;
             info.pDynamicState = &dynamicState;
-            shaderStages.Set(&info);
+            info.stages = shaderStages;
 
             VkPipeline pipeline;
             vkCreateGraphicsPipelines(device, pipelineCache, 1, &info, null, &pipeline);

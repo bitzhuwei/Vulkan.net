@@ -323,7 +323,7 @@ namespace Demo.HelloVulkan {
                 //vkAPI.vkCreateShaderModule(device, bytes);
                 vkAPI.vkCreateShaderModule(device, info, null, &fsModule).Check();
             }
-            var shaderStages = VkPipelineShaderStageCreateInfo.Alloc(2);
+            var shaderStages = new VkPipelineShaderStageCreateInfo[2];
             {
                 shaderStages[0].stage = VkShaderStageFlagBits.Vertex;
                 shaderStages[0].module = vsModule;
@@ -392,7 +392,7 @@ namespace Demo.HelloVulkan {
                 var info = VkGraphicsPipelineCreateInfo.Alloc();
                 info->layout = pipelineLayout;
                 info->pViewportState = viewport;
-                info->pStages = shaderStages; info->stageCount = 2;
+                info->stages = shaderStages;
                 info->pMultisampleState = multisample;
                 info->pColorBlendState = colorBlend;
                 info->pRasterizationState = rasterization;
