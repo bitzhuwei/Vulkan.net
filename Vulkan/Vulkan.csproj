@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Encapsulate\Set\VkPipelineViewportStateCreateInfo.cs" />
     <Compile Remove="Encapsulate\vkGetInstanceProcAddr.cs" />
     <Compile Remove="Vulkan\Handles\DescriptorPoolSizesHandle.cs" />
     <Compile Remove="Vulkan\Handles\DescriptorSetLayoutBindingsHandle.cs" />

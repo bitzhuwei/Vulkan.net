@@ -109,7 +109,7 @@ namespace Demo.Mesh {
             renderPassBeginInfo->renderArea.offset.y = 0;
             renderPassBeginInfo->renderArea.extent.width = width;
             renderPassBeginInfo->renderArea.extent.height = height;
-            clearValues.Set(renderPassBeginInfo);
+            renderPassBeginInfo->clearValues = clearValues;
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 // Set target frame buffer
@@ -446,18 +446,16 @@ namespace Demo.Mesh {
             writes[0] = new VkWriteDescriptorSet();
             writes[0].sType = WriteDescriptorSet;
             writes[0].dstSet = descriptorSet;
-            writes[0].descriptorType = VkDescriptorType.UniformBuffer;
+            writes[0].data.descriptorType = VkDescriptorType.UniformBuffer;
             writes[0].dstBinding = 0;
-            writes[0].pBufferInfo = &temp;
-            writes[0].descriptorCount = 1;
+            writes[0].data.Set(temp);
             // Binding 1 : Color map 
             writes[1] = new VkWriteDescriptorSet();
             writes[1].sType = WriteDescriptorSet;
             writes[1].dstSet = descriptorSet;
-            writes[1].descriptorType = VkDescriptorType.CombinedImageSampler;
+            writes[1].data.descriptorType = VkDescriptorType.CombinedImageSampler;
             writes[1].dstBinding = 1;
-            writes[1].pImageInfo = &texDescriptor;
-            writes[1].descriptorCount = 1;
+            writes[1].data.Set(texDescriptor);
 
             fixed (VkWriteDescriptorSet* pointer = writes) {
                 vkUpdateDescriptorSets(device, (UInt32)writes.Length, pointer, 0, null);
@@ -601,7 +599,7 @@ namespace Demo.Mesh {
             //submitInfo.commandBufferCount = 1;
             //submitInfo.pCommandBuffers = (VkCommandBuffer*)drawCmdBuffers.GetAddress(currentBuffer);
             VkCommandBuffer buffer = drawCmdBuffers[currentBuffer];
-            buffer.Set(submitInfo);
+            submitInfo->commandBuffers = buffer;
 
             // Submit to Queue
             vkQueueSubmit(queue, 1, submitInfo, new VkFence());

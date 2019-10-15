@@ -93,7 +93,7 @@ namespace Demo.DynamicUniformBuffer {
             info.renderArea.offset.y = 0;
             info.renderArea.extent.width = width;
             info.renderArea.extent.height = height;
-            clearValues.Set(&info);
+            info.clearValues = clearValues;
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 info.framebuffer = frameBuffers[i];
@@ -155,7 +155,7 @@ namespace Demo.DynamicUniformBuffer {
             prepareFrame();
 
             // Command buffer to be sumitted to the queue
-            drawCmdBuffers[currentBuffer].Set(submitInfo);
+            submitInfo->commandBuffers = drawCmdBuffers[currentBuffer];
 
             // Submit to queue
             vkQueueSubmit(queue, 1, submitInfo, new VkFence());
@@ -294,27 +294,26 @@ namespace Demo.DynamicUniformBuffer {
 
             VkDescriptorBufferInfo descriptor0 = uniformBuffers_view.descriptor;
             VkDescriptorBufferInfo descriptor1 = uniformBuffers_dynamic.descriptor;
-            var writeDescriptorSets = new VkWriteDescriptorSet[] {
+            var writeDescriptorSets = new VkWriteDescriptorSet[2];
+            {
                 // Binding 0 : Projection/View matrix uniform buffer            
-                new VkWriteDescriptorSet(){
+                var a = new VkWriteDescriptorSet() {
                     sType = WriteDescriptorSet,
                     dstSet = descriptorSet,
-                    descriptorType = VkDescriptorType.UniformBuffer,
                     dstBinding = 0,
-                    pBufferInfo = &descriptor0,
-                    descriptorCount = 1
-                    // descriptor0.Set(ref write);
-                },
+                };
+                a.data.descriptorType = VkDescriptorType.UniformBuffer;
+                a.data.Set(descriptor0);
+                writeDescriptorSets[0] = a;
                 // Binding 1 : Instance matrix as dynamic uniform buffer
-                new VkWriteDescriptorSet() {
+                var b = new VkWriteDescriptorSet() {
                     sType = WriteDescriptorSet,
                     dstSet = descriptorSet,
-                    descriptorType = VkDescriptorType.UniformBufferDynamic,
                     dstBinding = 1,
-                    pBufferInfo = &descriptor1,
-                    descriptorCount = 1
-                    // descriptor1.Set(ref write);
-                }
+                };
+                b.data.descriptorType = VkDescriptorType.UniformBufferDynamic;
+                b.data.Set(descriptor1);
+                writeDescriptorSets[1] = b;
             };
 
             fixed (VkWriteDescriptorSet* pointer = writeDescriptorSets) {

@@ -551,8 +551,8 @@ namespace Demo.Texture {
             info[0].renderArea.offset.y = 0;
             info[0].renderArea.extent.width = width;
             info[0].renderArea.extent.height = height;
-            info[0].clearValueCount = 2;
-            info[0].pClearValues = clearValues;
+            info[0].clearValues.count = 2;
+            info[0].clearValues.array = clearValues;
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 // Set target frame buffer
@@ -594,9 +594,8 @@ namespace Demo.Texture {
             base.prepareFrame();
 
             // Command buffer to be sumitted to the queue
-            submitInfo[0].commandBufferCount = 1;
             var cmdBuffer = drawCmdBuffers[currentBuffer];
-            submitInfo[0].pCommandBuffers = &cmdBuffer;
+            submitInfo[0].commandBuffers = cmdBuffer;
 
             // Submit to queue
             vkQueueSubmit(queue, 1, submitInfo, new VkFence());
@@ -748,16 +747,14 @@ namespace Demo.Texture {
                 // Binding 0 : Vertex shader uniform buffer
                 writes[0].dstSet = descriptorSet;
                 writes[0].dstBinding = 0;
-                writes[0].descriptorType = VkDescriptorType.UniformBuffer;
-                writes[0].descriptorCount = 1;
-                writes[0].pBufferInfo = &bufferInfo;
+                writes[0].data.descriptorType = VkDescriptorType.UniformBuffer;
+                writes[0].data.Set(bufferInfo);
                 // Binding 1 : Fragment shader texture sampler
                 //  Fragment shader: layout (binding = 1) uniform sampler2D samplerColor;
                 writes[1].dstSet = descriptorSet;
                 writes[1].dstBinding = 1;
-                writes[1].descriptorType = VkDescriptorType.CombinedImageSampler;
-                writes[1].descriptorCount = 1;
-                writes[1].pImageInfo = &imageInfo;
+                writes[1].data.descriptorType = VkDescriptorType.CombinedImageSampler;
+                writes[1].data.Set(imageInfo);
             }
             vkUpdateDescriptorSets(device, 2, writes, 0, null);
         }

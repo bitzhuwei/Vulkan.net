@@ -365,8 +365,7 @@ namespace Demo.DynamicUniformBuffer {
 
             VkSubmitInfo submitInfo = new VkSubmitInfo();
             submitInfo.sType = SubmitInfo;
-            submitInfo.commandBufferCount = 1;
-            submitInfo.pCommandBuffers = &commandBuffer;
+            submitInfo.commandBuffers = commandBuffer;
 
             // Create fence to ensure that the command buffer has finished executing
             VkFenceCreateInfo fenceInfo = new VkFenceCreateInfo();
