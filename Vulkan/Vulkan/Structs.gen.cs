@@ -1637,7 +1637,7 @@ namespace Vulkan {
         /// structures, each containing a descriptor type and number of descriptors
         /// of that type to be allocated in the pool.
         /// </summary>
-        public DescriptorPoolSizesHandle poolSizes;
+        public VkDescriptorPoolSizesHandle poolSizes;
     }
     // Struct: 71
     /// <summary>VkDescriptorPoolInlineUniformBlockCreateInfoEXT - Structure specifying the maximum number of inline uniform block bindings of a newly created descriptor pool
@@ -1684,7 +1684,7 @@ namespace Vulkan {
         /// an array of descriptor set layouts, with each
         /// member specifying how the corresponding descriptor set is allocated.
         /// </summary>
-        public DescriptorSetLayoutsHandle setLayouts;
+        public VkDescriptorSetLayoutsHandle setLayouts;
     }
     // Struct: 74
     /// <summary>VkDescriptorSetLayoutBinding - Structure specifying a descriptor set layout binding
@@ -1752,7 +1752,7 @@ namespace Vulkan {
         ///  an array of
         /// VkDescriptorSetLayoutBinding structures.
         /// </summary>
-        public DescriptorSetLayoutBindingsHandle bindings;
+        public VkDescriptorSetLayoutBindingsHandle bindings;
     }
     // Struct: 77
     /// <summary>VkDescriptorSetLayoutSupport - Structure returning information about whether a descriptor set layout can be supported
@@ -1917,7 +1917,7 @@ namespace Vulkan {
         /// Refer to the Queue Creation section
         /// below for further details.
         /// </summary>
-        public DeviceQueueCreateInfosHandle queueCreateInfos;
+        public VkDeviceQueueCreateInfosHandle queueCreateInfos;
         ///// <summary> enabledLayerCount is deprecated and ignored.</summary>
         //public UInt32 enabledLayerCount;
         ///// <summary> ppEnabledLayerNames is deprecated and ignored.

@@ -19,4 +19,23 @@
     <Compile Remove="Encapsulate\vkGetInstanceProcAddr.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Vulkan\Handles\XsHandle.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>XsHandle.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Vulkan\Handles\XsHandle.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>XsHandle.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>
