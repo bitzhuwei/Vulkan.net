@@ -534,7 +534,7 @@ namespace Demo.Mesh {
             info.pViewportState = &viewportState;
             info.pDepthStencilState = &depthStencilState;
             info.pDynamicState = &dynamicState;
-            info.stages = shaderStages;
+            shaderStages.Set(&info);
             {
                 VkPipeline pipeline;
                 vkCreateGraphicsPipelines(device, pipelineCache, 1, &info, null, &pipeline);

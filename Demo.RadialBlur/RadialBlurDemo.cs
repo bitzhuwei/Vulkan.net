@@ -747,8 +747,8 @@ namespace Demo.RadialBlur {
             pipelineCreateInfo->pViewportState = viewportState;
             pipelineCreateInfo->pDepthStencilState = depthStencilState;
             pipelineCreateInfo->pDynamicState = dynamicState;
-            pipelineCreateInfo->stages.count = 2;
-            pipelineCreateInfo->stages.array = shaderStages;
+            pipelineCreateInfo->stageCount = 2;
+            pipelineCreateInfo->pStages = shaderStages;
 
             // Radial blur pipeline
             shaderStages[0] = loadShader(getAssetPath() + "shaders/radialblur/radialblur.vert.spv", VkShaderStageFlagBits.Vertex);
