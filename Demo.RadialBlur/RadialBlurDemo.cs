@@ -303,8 +303,7 @@ namespace Demo.RadialBlur {
 
             VkSubpassDescription subpassDescription = new VkSubpassDescription();
             subpassDescription.pipelineBindPoint = VkPipelineBindPoint.Graphics;// VK_PIPELINE_BIND_POINT_GRAPHICS;
-            subpassDescription.colorAttachmentCount = 1;
-            subpassDescription.pColorAttachments = &colorReference;
+            subpassDescription.colorResolveAttachments.SetColorAttachments(colorReference);
             subpassDescription.pDepthStencilAttachment = &depthReference;
 
             // Use subpass dependencies for layout transitions
@@ -328,14 +327,9 @@ namespace Demo.RadialBlur {
 
             // Create the actual renderpass
             var renderPassInfo = VkRenderPassCreateInfo.Alloc();
-            //renderPassInfo->attachmentCount = attchmentDescriptions.Length;
-            //renderPassInfo->pAttachments = &attchmentDescriptions.First;
-            attchmentDescriptions.Set(renderPassInfo);
-            renderPassInfo->subpassCount = 1;
-            renderPassInfo->pSubpasses = &subpassDescription;
-            //renderPassInfo->dependencyCount = dependencies.Count;
-            //renderPassInfo->pDependencies = &dependencies.First;
-            dependencies.Set(renderPassInfo);
+            renderPassInfo->attachments = attchmentDescriptions;
+            renderPassInfo->subpasses = subpassDescription;
+            renderPassInfo->dependencies = dependencies;
             {
                 VkRenderPass renderPass;
                 vkCreateRenderPass(device, renderPassInfo, null, &renderPass);
@@ -389,9 +383,7 @@ namespace Demo.RadialBlur {
             renderPassBeginInfo->framebuffer = offscreenPass.framebuffer;
             renderPassBeginInfo->renderArea.extent.width = offscreenPass.width;
             renderPassBeginInfo->renderArea.extent.height = offscreenPass.height;
-            //renderPassBeginInfo->clearValueCount = 2;
-            //renderPassBeginInfo->pClearValues = &clearValues.First;
-            clearValues.Set(renderPassBeginInfo);
+            renderPassBeginInfo->clearValues = clearValues;
 
             vkBeginCommandBuffer(offscreenPass.commandBuffer, cmdBufInfo);
 
@@ -446,7 +438,7 @@ namespace Demo.RadialBlur {
             renderPassBeginInfo->renderArea.extent.height = height;
             //renderPassBeginInfo->clearValueCount = 2;
             //renderPassBeginInfo->pClearValues = &clearValues.First;
-            clearValues.Set(renderPassBeginInfo);
+            renderPassBeginInfo->clearValues = clearValues;
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 // Set target frame buffer
@@ -651,14 +643,14 @@ namespace Demo.RadialBlur {
                 {
                     // Binding 0: Vertex shader uniform buffer
                     writes[0].dstSet = setScene;
-                    writes[0].descriptorType = VkDescriptorType.UniformBuffer;
+                    writes[0].data.descriptorType = VkDescriptorType.UniformBuffer;
                     writes[0].dstBinding = 0;
-                    descriptor0.Set(writes);
+                    writes[0].data.Set(descriptor0);
                     // Binding 1: Color gradient sampler
                     writes[1].dstSet = setScene;
-                    writes[1].descriptorType = VkDescriptorType.CombinedImageSampler;
+                    writes[1].data.descriptorType = VkDescriptorType.CombinedImageSampler;
                     writes[1].dstBinding = 1;
-                    descriptor1.Set(&(writes[1]));
+                    writes[1].data.Set(descriptor1);
                 }
                 vkUpdateDescriptorSets(device, 2, writes, 0, null);
             }
@@ -680,14 +672,14 @@ namespace Demo.RadialBlur {
                 {
                     // Binding 0: Vertex shader uniform buffer
                     writes[0].dstSet = setRadialBlur;
-                    writes[0].descriptorType = VkDescriptorType.UniformBuffer;
+                    writes[0].data.descriptorType = VkDescriptorType.UniformBuffer;
                     writes[0].dstBinding = 0;
-                    descriptor0.Set(writes);
+                    writes[0].data.Set(descriptor0);
                     // Binding 0: Fragment shader texture sampler
                     writes[1].dstSet = setRadialBlur;
-                    writes[1].descriptorType = VkDescriptorType.CombinedImageSampler;
+                    writes[1].data.descriptorType = VkDescriptorType.CombinedImageSampler;
                     writes[1].dstBinding = 1;
-                    descriptor1.Set(&(writes[1]));
+                    writes[1].data.Set(descriptor1);
                 }
                 vkUpdateDescriptorSets(device, 2, writes, 0, null);
             }
@@ -852,28 +844,27 @@ namespace Demo.RadialBlur {
             // Offscreen rendering
 
             // Wait for swap chain presentation to finish
-            submitInfo->pWaitSemaphores = &((Semaphores*)semaphores.header)->PresentComplete;
+            submitInfo[0].waitSemaphoresDstStageMasks.Set(((Semaphores*)semaphores.header)->PresentComplete);
             // Signal ready with offscreen semaphore
             var signalSemaphore = offscreenPass.semaphore;
-            submitInfo->pSignalSemaphores = &signalSemaphore;
+            submitInfo[0].signalSemaphores = signalSemaphore;
 
             // Submit work
-            submitInfo->commandBufferCount = 1;
             var commandBuffer = offscreenPass.commandBuffer;
-            submitInfo->pCommandBuffers = &commandBuffer;
+            submitInfo[0].commandBuffers = commandBuffer;
             vkQueueSubmit(queue, 1, submitInfo, new VkFence());
 
             // Scene rendering
 
             // Wait for offscreen semaphore
             VkSemaphore semaphore = offscreenPass.semaphore;
-            submitInfo->pWaitSemaphores = &semaphore;
+            submitInfo->waitSemaphoresDstStageMasks.Set(semaphore);
             // Signal ready with render complete semaphpre
-            submitInfo->pSignalSemaphores = &((Semaphores*)semaphores.header)->RenderComplete;
+            submitInfo->signalSemaphores = ((Semaphores*)semaphores.header)->RenderComplete;
 
             // Submit work
             VkCommandBuffer cmdBuffer = drawCmdBuffers[currentBuffer];
-            submitInfo->pCommandBuffers = &cmdBuffer;
+            submitInfo->commandBuffers = cmdBuffer;
             vkQueueSubmit(queue, 1, submitInfo, new VkFence());
 
             submitFrame();

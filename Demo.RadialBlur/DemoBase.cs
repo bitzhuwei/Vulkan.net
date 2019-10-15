@@ -177,9 +177,9 @@ namespace Demo.RadialBlur {
             // Semaphores will stay the same during application lifetime
             // Command buffer submission info is set by each example
             submitInfo = VkSubmitInfo.Alloc();
-            submitPipelineStages.Set(submitInfo);
-            GetSemaphoresPtr()->PresentComplete.SetWaitSemaphores(submitInfo);
-            GetSemaphoresPtr()->RenderComplete.SetSignalSemaphores(submitInfo);
+            submitInfo->waitSemaphoresDstStageMasks.Set(submitPipelineStages);
+            submitInfo->waitSemaphoresDstStageMasks.Set(GetSemaphoresPtr()->PresentComplete);
+            submitInfo->signalSemaphores = GetSemaphoresPtr()->RenderComplete;
         }
 
         protected virtual void getEnabledFeatures() {
@@ -335,14 +335,8 @@ namespace Demo.RadialBlur {
 
             VkSubpassDescription subpassDescription = new VkSubpassDescription();
             subpassDescription.pipelineBindPoint = VkPipelineBindPoint.Graphics;
-            subpassDescription.colorAttachmentCount = 1;
-            subpassDescription.pColorAttachments = &colorReference;
+            subpassDescription.colorResolveAttachments.SetColorAttachments(colorReference);
             subpassDescription.pDepthStencilAttachment = &depthReference;
-            subpassDescription.inputAttachmentCount = 0;
-            subpassDescription.pInputAttachments = null;
-            subpassDescription.preserveAttachmentCount = 0;
-            subpassDescription.pPreserveAttachments = null;
-            subpassDescription.pResolveAttachments = null;
 
             // Subpass dependencies for layout transitions
             var dependencies = new VkSubpassDependency[2];
@@ -364,9 +358,9 @@ namespace Demo.RadialBlur {
 
             VkRenderPassCreateInfo renderPassInfo = new VkRenderPassCreateInfo();
             renderPassInfo.sType = RenderPassCreateInfo;
-            attachments.Set(&renderPassInfo);
-            subpassDescription.Set(&renderPassInfo);
-            dependencies.Set(&renderPassInfo);
+            renderPassInfo.attachments = attachments;
+            renderPassInfo.subpasses = subpassDescription;
+            renderPassInfo.dependencies = dependencies;
             VkRenderPass renderpass;
             vkCreateRenderPass(device, &renderPassInfo, null, &renderpass);
             this._renderPass = renderpass;
@@ -691,8 +685,7 @@ namespace Demo.RadialBlur {
 
             VkSubmitInfo submitInfo = new VkSubmitInfo();
             submitInfo.sType = SubmitInfo;
-            submitInfo.commandBufferCount = 1;
-            submitInfo.pCommandBuffers = &commandBuffer;
+            submitInfo.commandBuffers = commandBuffer;
 
             vkQueueSubmit(queue, 1, &submitInfo, new VkFence());
             vkQueueWaitIdle(queue);
