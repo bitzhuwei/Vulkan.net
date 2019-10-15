@@ -87,8 +87,7 @@ namespace Demo.RadialBlur {
                 VkDeviceQueueCreateInfo queueInfo = new VkDeviceQueueCreateInfo();
                 queueInfo.sType = DeviceQueueCreateInfo;
                 queueInfo.queueFamilyIndex = QFIndices.Graphics;
-                queueInfo.queueCount = 1;
-                queueInfo.pQueuePriorities = &defaultQueuePriority;
+                queueInfo.queuePriorities = defaultQueuePriority;
                 queueCreateInfos.Add(queueInfo);
             }
             else {
@@ -103,8 +102,7 @@ namespace Demo.RadialBlur {
                     VkDeviceQueueCreateInfo queueInfo = new VkDeviceQueueCreateInfo();
                     queueInfo.sType = DeviceQueueCreateInfo;
                     queueInfo.queueFamilyIndex = QFIndices.Compute;
-                    queueInfo.queueCount = 1;
-                    queueInfo.pQueuePriorities = &defaultQueuePriority;
+                    queueInfo.queuePriorities = defaultQueuePriority;
                     queueCreateInfos.Add(queueInfo);
                 }
             }
@@ -121,8 +119,7 @@ namespace Demo.RadialBlur {
                     VkDeviceQueueCreateInfo queueInfo = new VkDeviceQueueCreateInfo();
                     queueInfo.sType = DeviceQueueCreateInfo;
                     queueInfo.queueFamilyIndex = QFIndices.Transfer;
-                    queueInfo.queueCount = 1;
-                    queueInfo.pQueuePriorities = &defaultQueuePriority;
+                    queueInfo.queuePriorities = defaultQueuePriority;
                     queueCreateInfos.Add(queueInfo);
                 }
             }
@@ -148,12 +145,13 @@ namespace Demo.RadialBlur {
             //    array.Set(ref ptr, ref deviceCreateInfo.queueCreateInfoCount);
             //    deviceCreateInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)ptr;
             //}
-            queueCreateInfos.ToArray().Set(deviceCreateInfo);
+            deviceCreateInfo->queueCreateInfos = queueCreateInfos.ToArray();
             deviceCreateInfo->pEnabledFeatures = &enabledFeatures;
 
             if (deviceExtensions.Count > 0) {
                 string[] array = deviceExtensions.ToArray();
-                array.SetExtensions(deviceCreateInfo);
+                //array.SetExtensions(deviceCreateInfo);
+                deviceCreateInfo[0].EnabledExtensions = array;
             }
 
             VkDevice device;
@@ -357,15 +355,15 @@ namespace Demo.RadialBlur {
         }
 
         /**
-		* Finish command buffer recording and submit it to a queue
-		*
-		* @param commandBuffer Command buffer to flush
-		* @param queue Queue to submit the command buffer to 
-		* @param free (Optional) Free the command buffer once it has been submitted (Defaults to true)
-		*
-		* @note The queue that the command buffer is submitted to must be from the same family index as the pool it was allocated from
-		* @note Uses a fence to ensure command buffer has finished executing
-		*/
+        * Finish command buffer recording and submit it to a queue
+        *
+        * @param commandBuffer Command buffer to flush
+        * @param queue Queue to submit the command buffer to 
+        * @param free (Optional) Free the command buffer once it has been submitted (Defaults to true)
+        *
+        * @note The queue that the command buffer is submitted to must be from the same family index as the pool it was allocated from
+        * @note Uses a fence to ensure command buffer has finished executing
+        */
         public void flushCommandBuffer(VkCommandBuffer commandBuffer, VkQueue queue, bool free = true) {
             if (commandBuffer.handle == 0) {
                 return;
@@ -375,8 +373,7 @@ namespace Demo.RadialBlur {
 
             VkSubmitInfo submitInfo = new VkSubmitInfo();
             submitInfo.sType = SubmitInfo;
-            submitInfo.commandBufferCount = 1;
-            submitInfo.pCommandBuffers = &commandBuffer;
+            submitInfo.commandBuffers = commandBuffer;
 
             // Create fence to ensure that the command buffer has finished executing
             VkFenceCreateInfo fenceInfo = new VkFenceCreateInfo();

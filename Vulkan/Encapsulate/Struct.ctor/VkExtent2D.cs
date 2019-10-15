@@ -15,10 +15,5 @@ namespace Vulkan {
         public VkExtent2D(UInt32 width, UInt32 height) {
             this.width = width; this.height = height;
         }
-
-        public override string ToString() {
-            return $"w: {width}, h: {height}";
-        }
-
     }
 }

@@ -7,16 +7,16 @@ using System.Text;
 namespace Vulkan {
     public unsafe partial struct VkLayerProperties {
         public override string ToString() {
-            string layerName;
+            string name;
             fixed (byte* pointer = this.layerName) {
-                layerName = Marshal.PtrToStringAnsi((IntPtr)pointer);
+                name = Marshal.PtrToStringAnsi((IntPtr)pointer);
             }
             string desc;
             fixed (byte* pointer = this.description) {
                 desc = Marshal.PtrToStringAnsi((IntPtr)pointer);
             }
 
-            return $"{layerName}, {desc}, {specVersion}";
+            return $"{name}, {desc}, {specVersion}";
         }
 
     }

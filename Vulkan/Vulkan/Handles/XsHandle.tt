@@ -1,0 +1,70 @@
+﻿<#@ template debug="false" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ output extension=".cs" #>
+using System;
+using System.Runtime.InteropServices;
+
+<#
+string[] arrayTypes = new string[] {
+    "VkDescriptorPoolSize", "VkDescriptorSetLayoutBinding", "VkDescriptorSetLayout",
+    "VkDeviceQueueCreateInfo", "VkDynamicState", "VkPipelineColorBlendAttachmentState",
+    "VkPipelineShaderStageCreateInfo", "VkRect2D", "VkVertexInputAttributeDescription", 
+	"VkVertexInputBindingDescription", "VkViewport", "VkImageView",
+	"VkSwapchainKHR", "VkSemaphore", "VkClearValue", "VkAttachmentDescription",
+	"VkSubpassDescription", "VkSubpassDependency", "VkCommandBuffer",
+	"VkAttachmentReference",
+	"Single", "UInt32",
+	};
+#>
+namespace Vulkan {
+<#
+for (int i = 0; i < arrayTypes.Length; i++) {
+    string arrayType = arrayTypes[i];
+    string structType = arrayType + "s" + "Handle";
+#>
+<# /* body starts */ #>
+    public unsafe struct <#=structType#> {
+        public UInt32 count;
+        public <#=arrayType#>* array;
+
+        public <#=structType#>(params <#=arrayType#>[] value) {
+            count = 0;
+            array = null;
+            IntPtr ptr = IntPtr.Zero;
+            value.Set(ref ptr, ref this.count);
+            this.array = (<#=arrayType#>*)ptr;
+        }
+
+        public void Set(params <#=arrayType#>[] value) {
+            IntPtr ptr = (IntPtr)this.array;
+            value.Set(ref ptr, ref this.count);
+            this.array = (<#=arrayType#>*)ptr;
+        }
+
+        public static implicit operator <#=structType#>(<#=arrayType#> v) {
+            return new <#=structType#>(new <#=arrayType#>[] { v });
+        }
+
+        public static implicit operator <#=structType#>(<#=arrayType#>[] v) {
+            return new <#=structType#>(v);
+        }
+
+        public override string ToString() {
+            if (count == 1) {
+                return $"{array[0]}";
+            }
+            else {
+                return $"{nameof(<#=arrayType#>)}[{count}]";
+            }
+        }
+    }
+
+<# /* body ends */ #>
+<#
+} // for (int i = 0; i < structTypes.Length; i++) {
+#>
+}
+

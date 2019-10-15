@@ -235,8 +235,6 @@ namespace Demo.Texture {
             swapchainCI.preTransform = preTransform;
             swapchainCI.imageArrayLayers = 1;
             swapchainCI.imageSharingMode = VkSharingMode.Exclusive;
-            swapchainCI.queueFamilyIndexCount = 0;
-            swapchainCI.pQueueFamilyIndices = null;
             swapchainCI.presentMode = swapchainPresentMode;
             swapchainCI.oldSwapchain = oldSwapchain;
             // Setting clipped to VK_TRUE allows the implementation to discard rendering outside of the Surface area
@@ -340,11 +338,11 @@ namespace Demo.Texture {
         */
         public VkResult QueuePresent(VkQueue queue, uint imageIndex, VkSemaphore waitSemaphore = new VkSemaphore()) {
             var presentInfo = VkPresentInfoKHR.Alloc();
-            Swapchain.Set(presentInfo);
-            presentInfo->pImageIndices = &imageIndex;
+            presentInfo->swapchainsImages.Set(Swapchain);
+            presentInfo->swapchainsImages.Set(imageIndex);
             // Check if a wait semaphore has been specified to wait for before presenting the image
-            if (waitSemaphore.handle != 0) {
-                waitSemaphore.Set(presentInfo);
+            if (waitSemaphore != 0ul) {
+                presentInfo->waitSemaphores = waitSemaphore;
             }
             return vkQueuePresentKHR(queue, presentInfo);
         }

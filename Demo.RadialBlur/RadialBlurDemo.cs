@@ -303,8 +303,7 @@ namespace Demo.RadialBlur {
 
             VkSubpassDescription subpassDescription = new VkSubpassDescription();
             subpassDescription.pipelineBindPoint = VkPipelineBindPoint.Graphics;// VK_PIPELINE_BIND_POINT_GRAPHICS;
-            subpassDescription.colorAttachmentCount = 1;
-            subpassDescription.pColorAttachments = &colorReference;
+            subpassDescription.colorResolveAttachments.SetColorAttachments(colorReference);
             subpassDescription.pDepthStencilAttachment = &depthReference;
 
             // Use subpass dependencies for layout transitions
@@ -328,14 +327,9 @@ namespace Demo.RadialBlur {
 
             // Create the actual renderpass
             var renderPassInfo = VkRenderPassCreateInfo.Alloc();
-            //renderPassInfo->attachmentCount = attchmentDescriptions.Length;
-            //renderPassInfo->pAttachments = &attchmentDescriptions.First;
-            attchmentDescriptions.Set(renderPassInfo);
-            renderPassInfo->subpassCount = 1;
-            renderPassInfo->pSubpasses = &subpassDescription;
-            //renderPassInfo->dependencyCount = dependencies.Count;
-            //renderPassInfo->pDependencies = &dependencies.First;
-            dependencies.Set(renderPassInfo);
+            renderPassInfo->attachments = attchmentDescriptions;
+            renderPassInfo->subpasses = subpassDescription;
+            renderPassInfo->dependencies = dependencies;
             {
                 VkRenderPass renderPass;
                 vkCreateRenderPass(device, renderPassInfo, null, &renderPass);
@@ -349,9 +343,7 @@ namespace Demo.RadialBlur {
 
             var framebufferInfo = VkFramebufferCreateInfo.Alloc();
             framebufferInfo->renderPass = offscreenPass.renderPass;
-            //framebufferInfo->attachmentCount = 2;
-            //framebufferInfo->pAttachments = &attachments.First;
-            attachments.Set(framebufferInfo);
+            framebufferInfo->attachments = attachments;
             framebufferInfo->width = (uint)offscreenPass.width;
             framebufferInfo->height = (uint)offscreenPass.height;
             framebufferInfo->layers = 1;
@@ -391,9 +383,7 @@ namespace Demo.RadialBlur {
             renderPassBeginInfo->framebuffer = offscreenPass.framebuffer;
             renderPassBeginInfo->renderArea.extent.width = offscreenPass.width;
             renderPassBeginInfo->renderArea.extent.height = offscreenPass.height;
-            //renderPassBeginInfo->clearValueCount = 2;
-            //renderPassBeginInfo->pClearValues = &clearValues.First;
-            clearValues.Set(renderPassBeginInfo);
+            renderPassBeginInfo->clearValues = clearValues;
 
             vkBeginCommandBuffer(offscreenPass.commandBuffer, cmdBufInfo);
 
@@ -448,7 +438,7 @@ namespace Demo.RadialBlur {
             renderPassBeginInfo->renderArea.extent.height = height;
             //renderPassBeginInfo->clearValueCount = 2;
             //renderPassBeginInfo->pClearValues = &clearValues.First;
-            clearValues.Set(renderPassBeginInfo);
+            renderPassBeginInfo->clearValues = clearValues;
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 // Set target frame buffer
@@ -536,12 +526,9 @@ namespace Demo.RadialBlur {
             attributeDescs[3].offset = sizeof(float) * 8;
 
             inputInfo = VkPipelineVertexInputStateCreateInfo.Alloc();
-            //inputInfo->vertexBindingDescriptionCount = (uint)bindingDescs.Length;
-            //inputInfo->pVertexBindingDescriptions = bindingDescs;
-            bindingDescs.Set(inputInfo);
-            inputInfo->vertexAttributeDescriptionCount = 4;//(uint)attributeDescs.Length;
-            inputInfo->pVertexAttributeDescriptions = attributeDescs;
-            //attributeDescs.Set(inputInfo);
+            inputInfo[0].vertexBindingDescriptions = bindingDescs;
+            inputInfo[0].vertexAttributeDescriptions.count = 4;
+            inputInfo[0].vertexAttributeDescriptions.array = attributeDescs;
         }
 
         void setupDescriptorPool() {
@@ -553,13 +540,12 @@ namespace Demo.RadialBlur {
             poolSizes[1].descriptorCount = 6;
 
             var descriptorPoolInfo = VkDescriptorPoolCreateInfo.Alloc();
-            poolSizes.Set(descriptorPoolInfo);
+            descriptorPoolInfo->poolSizes = poolSizes;
             descriptorPoolInfo->maxSets = 2;
 
             VkDescriptorPool pool;
             vkCreateDescriptorPool(device, descriptorPoolInfo, null, &pool);
             this.descriptorPool = pool;
-            Vk.Free(descriptorPoolInfo);
             Marshal.FreeHGlobal((IntPtr)descriptorPoolInfo);
         }
 
@@ -568,28 +554,28 @@ namespace Demo.RadialBlur {
             {
                 var bindings = new VkDescriptorSetLayoutBinding[]
                 {
-                // Binding 0: Vertex shader uniform buffer
-                new VkDescriptorSetLayoutBinding {
-                    binding = 0,
-                    descriptorType = VkDescriptorType.UniformBuffer, descriptorCount = 1,
-                    stageFlags = VkShaderStageFlagBits.Vertex
-                },
-                // Binding 1: Fragment shader image sampler
-                new VkDescriptorSetLayoutBinding {
-                    binding = 1,
-                    descriptorType = VkDescriptorType.CombinedImageSampler, descriptorCount = 1,
-                    stageFlags = VkShaderStageFlagBits.Fragment
-                },
-                // Binding 2: Fragment shader uniform buffer
-                new VkDescriptorSetLayoutBinding {
-                    binding = 2,
-                    descriptorType = VkDescriptorType.UniformBuffer, descriptorCount = 1,
-                    stageFlags = VkShaderStageFlagBits.Fragment
-                },
+                    // Binding 0: Vertex shader uniform buffer
+                    new VkDescriptorSetLayoutBinding {
+                        binding = 0,
+                        descriptorType = VkDescriptorType.UniformBuffer, descriptorCount = 1,
+                        stageFlags = VkShaderStageFlagBits.Vertex
+                    },
+                    // Binding 1: Fragment shader image sampler
+                    new VkDescriptorSetLayoutBinding {
+                        binding = 1,
+                        descriptorType = VkDescriptorType.CombinedImageSampler, descriptorCount = 1,
+                        stageFlags = VkShaderStageFlagBits.Fragment
+                    },
+                    // Binding 2: Fragment shader uniform buffer
+                    new VkDescriptorSetLayoutBinding {
+                        binding = 2,
+                        descriptorType = VkDescriptorType.UniformBuffer, descriptorCount = 1,
+                        stageFlags = VkShaderStageFlagBits.Fragment
+                    },
                 };
 
                 var layoutInfo = VkDescriptorSetLayoutCreateInfo.Alloc();
-                bindings.Set(layoutInfo);
+                layoutInfo->bindings = bindings;
                 {
                     VkDescriptorSetLayout layout;
                     vkCreateDescriptorSetLayout(device, layoutInfo, null, &layout);
@@ -598,7 +584,7 @@ namespace Demo.RadialBlur {
                 {
                     var dsl = setLayoutScene;
                     var pPipelineLayoutCreateInfo = VkPipelineLayoutCreateInfo.Alloc();
-                    dsl.Set(pPipelineLayoutCreateInfo);
+                    pPipelineLayoutCreateInfo[0].setLayouts = dsl;
                     VkPipelineLayout pipelineLayout;
                     vkCreatePipelineLayout(device, pPipelineLayoutCreateInfo, null, &pipelineLayout);
                     this.pipelineLayoutScene = pipelineLayout;
@@ -622,7 +608,7 @@ namespace Demo.RadialBlur {
                     },
                 };
                 var layoutInfo = VkDescriptorSetLayoutCreateInfo.Alloc();
-                bindings.Set(layoutInfo);
+                layoutInfo->bindings = bindings;
                 {
                     VkDescriptorSetLayout layout;
                     vkCreateDescriptorSetLayout(device, layoutInfo, null, &layout);
@@ -631,7 +617,7 @@ namespace Demo.RadialBlur {
                 {
                     var dsl = setLayoutRadialBlur;
                     var pPipelineLayoutCreateInfo = VkPipelineLayoutCreateInfo.Alloc();
-                    dsl.Set(pPipelineLayoutCreateInfo);
+                    pPipelineLayoutCreateInfo[0].setLayouts = dsl;
                     VkPipelineLayout pipelineLayout;
                     vkCreatePipelineLayout(device, pPipelineLayoutCreateInfo, null, &pipelineLayout);
                     this.pipelineLayoutRadialBlur = pipelineLayout;
@@ -643,11 +629,11 @@ namespace Demo.RadialBlur {
             // Scene rendering
             {
                 VkDescriptorSetLayout dsl = setLayoutScene;
-                var descriptorSetAllocInfo = VkDescriptorSetAllocateInfo.Alloc();
-                dsl.Set(descriptorSetAllocInfo);
-                descriptorSetAllocInfo->descriptorPool = descriptorPool;
+                var info = VkDescriptorSetAllocateInfo.Alloc();
+                info->setLayouts = dsl;
+                info->descriptorPool = descriptorPool;
                 VkDescriptorSet set;
-                vkAllocateDescriptorSets(device, descriptorSetAllocInfo, &set);
+                vkAllocateDescriptorSets(device, info, &set);
                 this.setScene = set;
             }
             {
@@ -657,14 +643,14 @@ namespace Demo.RadialBlur {
                 {
                     // Binding 0: Vertex shader uniform buffer
                     writes[0].dstSet = setScene;
-                    writes[0].descriptorType = VkDescriptorType.UniformBuffer;
+                    writes[0].data.descriptorType = VkDescriptorType.UniformBuffer;
                     writes[0].dstBinding = 0;
-                    descriptor0.Set(writes);
+                    writes[0].data.Set(descriptor0);
                     // Binding 1: Color gradient sampler
                     writes[1].dstSet = setScene;
-                    writes[1].descriptorType = VkDescriptorType.CombinedImageSampler;
+                    writes[1].data.descriptorType = VkDescriptorType.CombinedImageSampler;
                     writes[1].dstBinding = 1;
-                    descriptor1.Set(&(writes[1]));
+                    writes[1].data.Set(descriptor1);
                 }
                 vkUpdateDescriptorSets(device, 2, writes, 0, null);
             }
@@ -672,11 +658,11 @@ namespace Demo.RadialBlur {
             // Fullscreen radial blur
             {
                 VkDescriptorSetLayout dsl = setLayoutRadialBlur;
-                var descriptorSetAllocInfo = VkDescriptorSetAllocateInfo.Alloc();
-                dsl.Set(descriptorSetAllocInfo);
-                descriptorSetAllocInfo->descriptorPool = descriptorPool;
+                var info = VkDescriptorSetAllocateInfo.Alloc();
+                info->setLayouts = dsl;
+                info->descriptorPool = descriptorPool;
                 VkDescriptorSet set;
-                vkAllocateDescriptorSets(device, descriptorSetAllocInfo, &set);
+                vkAllocateDescriptorSets(device, info, &set);
                 this.setRadialBlur = set;
             }
             {
@@ -686,14 +672,14 @@ namespace Demo.RadialBlur {
                 {
                     // Binding 0: Vertex shader uniform buffer
                     writes[0].dstSet = setRadialBlur;
-                    writes[0].descriptorType = VkDescriptorType.UniformBuffer;
+                    writes[0].data.descriptorType = VkDescriptorType.UniformBuffer;
                     writes[0].dstBinding = 0;
-                    descriptor0.Set(writes);
+                    writes[0].data.Set(descriptor0);
                     // Binding 0: Fragment shader texture sampler
                     writes[1].dstSet = setRadialBlur;
-                    writes[1].descriptorType = VkDescriptorType.CombinedImageSampler;
+                    writes[1].data.descriptorType = VkDescriptorType.CombinedImageSampler;
                     writes[1].dstBinding = 1;
-                    descriptor1.Set(&(writes[1]));
+                    writes[1].data.Set(descriptor1);
                 }
                 vkUpdateDescriptorSets(device, 2, writes, 0, null);
             }
@@ -715,9 +701,8 @@ namespace Demo.RadialBlur {
             blendAttachmentState->blendEnable = false;
 
             var colorBlendState = VkPipelineColorBlendStateCreateInfo.Alloc();
-            colorBlendState->pAttachments = blendAttachmentState;
-            colorBlendState->attachmentCount = 1;
-            //(*blendAttachmentState).Set(colorBlendState);
+            colorBlendState->attachments.count = 1;
+            colorBlendState->attachments.array = blendAttachmentState;
 
             var depthStencilState = VkPipelineDepthStencilStateCreateInfo.Alloc();
             depthStencilState->depthTestEnable = true;
@@ -727,15 +712,15 @@ namespace Demo.RadialBlur {
             depthStencilState->back.compareOp = VkCompareOp.Always;
 
             var viewportState = VkPipelineViewportStateCreateInfo.Alloc();
-            viewportState->viewportCount = 1;
-            viewportState->scissorCount = 1;
+            viewportState[0].viewports.count = 1;
+            viewportState[0].scissors.count = 1;
 
             var multisampleState = VkPipelineMultisampleStateCreateInfo.Alloc();
             multisampleState->rasterizationSamples = VkSampleCountFlagBits._1;
 
             var dynamicStateEnables = new VkDynamicState[] { VkDynamicState.Viewport, VkDynamicState.Scissor };
             var dynamicState = VkPipelineDynamicStateCreateInfo.Alloc();
-            dynamicStateEnables.Set(dynamicState);
+            dynamicState[0].dynamicStates = dynamicStateEnables;
 
             var shaderStages = VkPipelineShaderStageCreateInfo.Alloc(2);
 
@@ -750,8 +735,8 @@ namespace Demo.RadialBlur {
             pipelineCreateInfo->pViewportState = viewportState;
             pipelineCreateInfo->pDepthStencilState = depthStencilState;
             pipelineCreateInfo->pDynamicState = dynamicState;
-            pipelineCreateInfo->stageCount = 2;
-            pipelineCreateInfo->pStages = shaderStages;
+            pipelineCreateInfo->stages.count = 2;
+            pipelineCreateInfo->stages.array = shaderStages;
 
             // Radial blur pipeline
             shaderStages[0] = loadShader(getAssetPath() + "shaders/radialblur/radialblur.vert.spv", VkShaderStageFlagBits.Vertex);
@@ -859,28 +844,27 @@ namespace Demo.RadialBlur {
             // Offscreen rendering
 
             // Wait for swap chain presentation to finish
-            submitInfo->pWaitSemaphores = &((Semaphores*)semaphores.header)->PresentComplete;
+            submitInfo[0].waitSemaphoresDstStageMasks.Set(((Semaphores*)semaphores.header)->PresentComplete);
             // Signal ready with offscreen semaphore
             var signalSemaphore = offscreenPass.semaphore;
-            submitInfo->pSignalSemaphores = &signalSemaphore;
+            submitInfo[0].signalSemaphores = signalSemaphore;
 
             // Submit work
-            submitInfo->commandBufferCount = 1;
             var commandBuffer = offscreenPass.commandBuffer;
-            submitInfo->pCommandBuffers = &commandBuffer;
+            submitInfo[0].commandBuffers = commandBuffer;
             vkQueueSubmit(queue, 1, submitInfo, new VkFence());
 
             // Scene rendering
 
             // Wait for offscreen semaphore
             VkSemaphore semaphore = offscreenPass.semaphore;
-            submitInfo->pWaitSemaphores = &semaphore;
+            submitInfo->waitSemaphoresDstStageMasks.Set(semaphore);
             // Signal ready with render complete semaphpre
-            submitInfo->pSignalSemaphores = &((Semaphores*)semaphores.header)->RenderComplete;
+            submitInfo->signalSemaphores = ((Semaphores*)semaphores.header)->RenderComplete;
 
             // Submit work
             VkCommandBuffer cmdBuffer = drawCmdBuffers[currentBuffer];
-            submitInfo->pCommandBuffers = &cmdBuffer;
+            submitInfo->commandBuffers = cmdBuffer;
             vkQueueSubmit(queue, 1, submitInfo, new VkFence());
 
             submitFrame();

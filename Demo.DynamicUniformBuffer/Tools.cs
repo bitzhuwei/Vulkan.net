@@ -51,18 +51,14 @@ namespace Demo.DynamicUniformBuffer {
                 var length = fs.Length;
             }
             byte[] shaderCode = File.ReadAllBytes(fileName);
-            int shaderSize = shaderCode.Length;
-            fixed (byte* scPtr = shaderCode) {
-                // Create a new shader module that will be used for Pipeline creation
-                VkShaderModuleCreateInfo moduleCreateInfo = new VkShaderModuleCreateInfo();
-                moduleCreateInfo.sType = ShaderModuleCreateInfo;
-                moduleCreateInfo.codeSize = shaderSize;
-                moduleCreateInfo.pCode = (uint*)scPtr;
-                VkShaderModule module;
-                vkCreateShaderModule(device, &moduleCreateInfo, null, &module);
+            // Create a new shader module that will be used for Pipeline creation
+            VkShaderModuleCreateInfo moduleCreateInfo = new VkShaderModuleCreateInfo();
+            moduleCreateInfo.sType = ShaderModuleCreateInfo;
+            moduleCreateInfo.code = shaderCode;
+            VkShaderModule module;
+            vkCreateShaderModule(device, &moduleCreateInfo, null, &module);
 
-                return module;
-            }
+            return module;
         }
 
         // Fixed sub resource on first mip level and layer

@@ -25,9 +25,5 @@ namespace Vulkan {
             this.srcAlphaBlendFactor = 0;
             this.srcColorBlendFactor = 0;
         }
-
-        public override string ToString() {
-            return $"mask:{this.colorWriteMask}, blend:{this.blendEnable}";
-        }
     }
 }

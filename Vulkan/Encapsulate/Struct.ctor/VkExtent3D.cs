@@ -15,10 +15,5 @@ namespace Vulkan {
         public VkExtent3D(UInt32 width, UInt32 height, UInt32 depth) {
             this.width = width; this.height = height; this.depth = depth;
         }
-
-        public override string ToString() {
-            return $"w: {width}, h: {height}, d: {depth}";
-        }
-
     }
 }

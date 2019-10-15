@@ -1,2 +1,2 @@
 # Vulkan.net
-Vulkan in C#.
+Vulkan library and some demos in C#.

@@ -131,7 +131,7 @@ namespace Demo.Texture {
             bool retVal = false;
 
             if (type == CameraType.firstperson) {
-                // Use the common console thumbstick layout		
+                // Use the common console thumbstick layout        
                 // Left = view, right = move
 
                 const float deadZone = 0.0015f;

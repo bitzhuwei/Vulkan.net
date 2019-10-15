@@ -87,8 +87,7 @@ namespace Demo.DynamicUniformBuffer {
                 VkDeviceQueueCreateInfo queueInfo = new VkDeviceQueueCreateInfo();
                 queueInfo.sType = DeviceQueueCreateInfo;
                 queueInfo.queueFamilyIndex = QFIndices.Graphics;
-                queueInfo.queueCount = 1;
-                queueInfo.pQueuePriorities = &defaultQueuePriority;
+                queueInfo.queuePriorities = defaultQueuePriority;
                 queueCreateInfos.Add(queueInfo);
             }
             else {
@@ -103,8 +102,7 @@ namespace Demo.DynamicUniformBuffer {
                     VkDeviceQueueCreateInfo queueInfo = new VkDeviceQueueCreateInfo();
                     queueInfo.sType = DeviceQueueCreateInfo;
                     queueInfo.queueFamilyIndex = QFIndices.Compute;
-                    queueInfo.queueCount = 1;
-                    queueInfo.pQueuePriorities = &defaultQueuePriority;
+                    queueInfo.queuePriorities = defaultQueuePriority;
                     queueCreateInfos.Add(queueInfo);
                 }
             }
@@ -121,8 +119,7 @@ namespace Demo.DynamicUniformBuffer {
                     VkDeviceQueueCreateInfo queueInfo = new VkDeviceQueueCreateInfo();
                     queueInfo.sType = DeviceQueueCreateInfo;
                     queueInfo.queueFamilyIndex = QFIndices.Transfer;
-                    queueInfo.queueCount = 1;
-                    queueInfo.pQueuePriorities = &defaultQueuePriority;
+                    queueInfo.queuePriorities = defaultQueuePriority;
                     queueCreateInfos.Add(queueInfo);
                 }
             }
@@ -136,24 +133,17 @@ namespace Demo.DynamicUniformBuffer {
             var deviceExtensions = new List<string>();
             if (useSwapChain) {
                 // If the device will be used for presenting to a display via a swapchain we need to request the swapchain extension
-                deviceExtensions.Add(Strings.VK_KHR_SWAPCHAIN_EXTENSION_NAME);
+                deviceExtensions.Add(Vk.VK_KHR_swapchain);
             }
 
             var deviceCreateInfo = VkDeviceCreateInfo.Alloc();
-            //deviceCreateInfo.queueCreateInfoCount = (uint)queueCreateInfos.Count;
-            //deviceCreateInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)queueCreateInfos.Data.ToPointer();
-            //{
-            //    VkDeviceQueueCreateInfo[] array = queueCreateInfos.ToArray();
-            //    IntPtr ptr = IntPtr.Zero;
-            //    array.Set(ref ptr, ref deviceCreateInfo.queueCreateInfoCount);
-            //    deviceCreateInfo.pQueueCreateInfos = (VkDeviceQueueCreateInfo*)ptr;
-            //}
-            queueCreateInfos.ToArray().Set(deviceCreateInfo);
+            deviceCreateInfo->queueCreateInfos = queueCreateInfos.ToArray();
             deviceCreateInfo->pEnabledFeatures = &enabledFeatures;
 
             if (deviceExtensions.Count > 0) {
                 string[] array = deviceExtensions.ToArray();
-                array.SetExtensions(deviceCreateInfo);
+                //array.SetExtensions(deviceCreateInfo);
+                deviceCreateInfo[0].EnabledExtensions = array;
             }
 
             VkDevice device;
@@ -357,15 +347,15 @@ namespace Demo.DynamicUniformBuffer {
         }
 
         /**
-		* Finish command buffer recording and submit it to a queue
-		*
-		* @param commandBuffer Command buffer to flush
-		* @param queue Queue to submit the command buffer to 
-		* @param free (Optional) Free the command buffer once it has been submitted (Defaults to true)
-		*
-		* @note The queue that the command buffer is submitted to must be from the same family index as the pool it was allocated from
-		* @note Uses a fence to ensure command buffer has finished executing
-		*/
+        * Finish command buffer recording and submit it to a queue
+        *
+        * @param commandBuffer Command buffer to flush
+        * @param queue Queue to submit the command buffer to 
+        * @param free (Optional) Free the command buffer once it has been submitted (Defaults to true)
+        *
+        * @note The queue that the command buffer is submitted to must be from the same family index as the pool it was allocated from
+        * @note Uses a fence to ensure command buffer has finished executing
+        */
         public void flushCommandBuffer(VkCommandBuffer commandBuffer, VkQueue queue, bool free = true) {
             if (commandBuffer.handle == 0) {
                 return;
@@ -375,8 +365,7 @@ namespace Demo.DynamicUniformBuffer {
 
             VkSubmitInfo submitInfo = new VkSubmitInfo();
             submitInfo.sType = SubmitInfo;
-            submitInfo.commandBufferCount = 1;
-            submitInfo.pCommandBuffers = &commandBuffer;
+            submitInfo.commandBuffers = commandBuffer;
 
             // Create fence to ensure that the command buffer has finished executing
             VkFenceCreateInfo fenceInfo = new VkFenceCreateInfo();

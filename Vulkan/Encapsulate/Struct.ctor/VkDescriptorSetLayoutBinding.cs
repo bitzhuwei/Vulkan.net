@@ -31,9 +31,5 @@ namespace Vulkan {
             this.descriptorCount = descriptorCount; this.stageFlags = stageFlags;
             this.pImmutableSamplers = null;
         }
-
-        public override string ToString() {
-            return $"binding:{binding}, type:{descriptorType}, count:{descriptorCount}, offset:{stageFlags}";
-        }
     }
 }
