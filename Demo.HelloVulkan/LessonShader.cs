@@ -273,9 +273,9 @@ namespace Demo.HelloVulkan {
         void UpdateDescriptorSets(VkDevice device, VkBuffer uniformBuffer, VkDescriptorSet descriptorSet) {
             var write = VkWriteDescriptorSet.Alloc();
             write->dstSet = descriptorSet;
-            write->descriptorType = VkDescriptorType.UniformBuffer;
+            write->data.descriptorType = VkDescriptorType.UniformBuffer;
             var info = new VkDescriptorBufferInfo(uniformBuffer, 0, 2 * sizeof(float));
-            info.Set(write);
+            write->data.Set(info);
 
             //device.UpdateDescriptorSets(new VkWriteDescriptorSet[] { write }, null);
             vkAPI.vkUpdateDescriptorSets(device, 1, write, 0, null);

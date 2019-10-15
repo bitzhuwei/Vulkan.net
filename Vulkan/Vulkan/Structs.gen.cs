@@ -9193,38 +9193,39 @@ namespace Vulkan {
         /// dstArrayElement specifies the starting byte offset within the
         /// binding.</summary>
         public UInt32 dstArrayElement;
-        /// <summary> descriptorCount is the number of descriptors to update (the number
-        /// of elements in pImageInfo, pBufferInfo, or
-        /// pTexelBufferView
-        /// , or a value matching the dataSize member of an instance of
-        /// VkWriteDescriptorSetInlineUniformBlockEXT in the pNext chain
-        /// , or a value matching the accelerationStructureCount of an
-        /// instance of VkWriteDescriptorSetAccelerationStructureNV in the
-        /// pNext chain
-        /// ).
-        /// If the descriptor binding identified by dstSet and
-        /// dstBinding has a descriptor type of
-        /// VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT then
-        /// descriptorCount specifies the number of bytes to update.</summary>
-        public UInt32 descriptorCount;
-        /// <summary> descriptorType is a VkDescriptorType specifying the type of
-        /// each descriptor in pImageInfo, pBufferInfo, or
-        /// pTexelBufferView, as described below.
-        /// It must be the same type as that specified in
-        /// VkDescriptorSetLayoutBinding for dstSet at dstBinding.
-        /// The type of the descriptor also controls which array the descriptors are
-        /// taken from.</summary>
-        public VkDescriptorType descriptorType;
-        /// <summary> pImageInfo points to an array of VkDescriptorImageInfo
-        /// structures or is ignored, as described below.</summary>
-        public /*-const-*/ VkDescriptorImageInfo* pImageInfo;
-        /// <summary> pBufferInfo points to an array of VkDescriptorBufferInfo
-        /// structures or is ignored, as described below.</summary>
-        public /*-const-*/ VkDescriptorBufferInfo* pBufferInfo;
-        /// <summary> pTexelBufferView points to an array of VkBufferView handles
-        /// as described in the Buffer Views section or
-        /// is ignored, as described below.</summary>
-        public /*-const-*/ VkBufferView* pTexelBufferView;
+        ///// <summary> descriptorCount is the number of descriptors to update (the number
+        ///// of elements in pImageInfo, pBufferInfo, or
+        ///// pTexelBufferView
+        ///// , or a value matching the dataSize member of an instance of
+        ///// VkWriteDescriptorSetInlineUniformBlockEXT in the pNext chain
+        ///// , or a value matching the accelerationStructureCount of an
+        ///// instance of VkWriteDescriptorSetAccelerationStructureNV in the
+        ///// pNext chain
+        ///// ).
+        ///// If the descriptor binding identified by dstSet and
+        ///// dstBinding has a descriptor type of
+        ///// VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT then
+        ///// descriptorCount specifies the number of bytes to update.</summary>
+        //public UInt32 descriptorCount;
+        ///// <summary> descriptorType is a VkDescriptorType specifying the type of
+        ///// each descriptor in pImageInfo, pBufferInfo, or
+        ///// pTexelBufferView, as described below.
+        ///// It must be the same type as that specified in
+        ///// VkDescriptorSetLayoutBinding for dstSet at dstBinding.
+        ///// The type of the descriptor also controls which array the descriptors are
+        ///// taken from.</summary>
+        //public VkDescriptorType descriptorType;
+        ///// <summary> pImageInfo points to an array of VkDescriptorImageInfo
+        ///// structures or is ignored, as described below.</summary>
+        //public /*-const-*/ VkDescriptorImageInfo* pImageInfo;
+        ///// <summary> pBufferInfo points to an array of VkDescriptorBufferInfo
+        ///// structures or is ignored, as described below.</summary>
+        //public /*-const-*/ VkDescriptorBufferInfo* pBufferInfo;
+        ///// <summary> pTexelBufferView points to an array of VkBufferView handles
+        ///// as described in the Buffer Views section or
+        ///// is ignored, as described below.</summary>
+        //public /*-const-*/ VkBufferView* pTexelBufferView;
+        public VkImageBufferViewsHandle data;
     }
     // Struct: 429
     /// <summary>VkWriteDescriptorSetAccelerationStructureNV - Structure specifying acceleration to query for memory requirements
