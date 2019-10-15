@@ -2,10 +2,10 @@
 using System.Runtime.InteropServices;
 
 namespace Vulkan {
-    public struct StringHandle {
+    public struct StringGroup {
         public IntPtr pString;
 
-        public StringHandle(String v) {
+        public StringGroup(String v) {
             this.pString = Marshal.StringToHGlobalAnsi(v);
         }
 
@@ -17,11 +17,11 @@ namespace Vulkan {
             this.pString = Marshal.StringToHGlobalAnsi(v);
         }
 
-        public static implicit operator StringHandle(String v) {
-            return new StringHandle() { pString = Marshal.StringToHGlobalAnsi(v) };
+        public static implicit operator StringGroup(String v) {
+            return new StringGroup() { pString = Marshal.StringToHGlobalAnsi(v) };
         }
 
-        public static implicit operator String(StringHandle v) {
+        public static implicit operator String(StringGroup v) {
             String result = null;
 
             IntPtr p = v.pString;

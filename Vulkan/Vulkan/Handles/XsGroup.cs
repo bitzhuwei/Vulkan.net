@@ -2,11 +2,11 @@
 using System.Runtime.InteropServices;
 
 namespace Vulkan {
-    public unsafe struct VkDescriptorPoolSizesHandle {
+    public unsafe struct VkDescriptorPoolSizesGroup {
         public UInt32 count;
         public VkDescriptorPoolSize* array;
 
-        public VkDescriptorPoolSizesHandle(params VkDescriptorPoolSize[] value) {
+        public VkDescriptorPoolSizesGroup(params VkDescriptorPoolSize[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -20,12 +20,12 @@ namespace Vulkan {
             this.array = (VkDescriptorPoolSize*)ptr;
         }
 
-        public static implicit operator VkDescriptorPoolSizesHandle(VkDescriptorPoolSize v) {
-            return new VkDescriptorPoolSizesHandle(new VkDescriptorPoolSize[] { v });
+        public static implicit operator VkDescriptorPoolSizesGroup(VkDescriptorPoolSize v) {
+            return new VkDescriptorPoolSizesGroup(new VkDescriptorPoolSize[] { v });
         }
 
-        public static implicit operator VkDescriptorPoolSizesHandle(VkDescriptorPoolSize[] v) {
-            return new VkDescriptorPoolSizesHandle(v);
+        public static implicit operator VkDescriptorPoolSizesGroup(VkDescriptorPoolSize[] v) {
+            return new VkDescriptorPoolSizesGroup(v);
         }
 
         public override string ToString() {
@@ -38,11 +38,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkDescriptorSetLayoutBindingsHandle {
+    public unsafe struct VkDescriptorSetLayoutBindingsGroup {
         public UInt32 count;
         public VkDescriptorSetLayoutBinding* array;
 
-        public VkDescriptorSetLayoutBindingsHandle(params VkDescriptorSetLayoutBinding[] value) {
+        public VkDescriptorSetLayoutBindingsGroup(params VkDescriptorSetLayoutBinding[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -56,12 +56,12 @@ namespace Vulkan {
             this.array = (VkDescriptorSetLayoutBinding*)ptr;
         }
 
-        public static implicit operator VkDescriptorSetLayoutBindingsHandle(VkDescriptorSetLayoutBinding v) {
-            return new VkDescriptorSetLayoutBindingsHandle(new VkDescriptorSetLayoutBinding[] { v });
+        public static implicit operator VkDescriptorSetLayoutBindingsGroup(VkDescriptorSetLayoutBinding v) {
+            return new VkDescriptorSetLayoutBindingsGroup(new VkDescriptorSetLayoutBinding[] { v });
         }
 
-        public static implicit operator VkDescriptorSetLayoutBindingsHandle(VkDescriptorSetLayoutBinding[] v) {
-            return new VkDescriptorSetLayoutBindingsHandle(v);
+        public static implicit operator VkDescriptorSetLayoutBindingsGroup(VkDescriptorSetLayoutBinding[] v) {
+            return new VkDescriptorSetLayoutBindingsGroup(v);
         }
 
         public override string ToString() {
@@ -74,11 +74,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkDescriptorSetLayoutsHandle {
+    public unsafe struct VkDescriptorSetLayoutsGroup {
         public UInt32 count;
         public VkDescriptorSetLayout* array;
 
-        public VkDescriptorSetLayoutsHandle(params VkDescriptorSetLayout[] value) {
+        public VkDescriptorSetLayoutsGroup(params VkDescriptorSetLayout[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -92,12 +92,12 @@ namespace Vulkan {
             this.array = (VkDescriptorSetLayout*)ptr;
         }
 
-        public static implicit operator VkDescriptorSetLayoutsHandle(VkDescriptorSetLayout v) {
-            return new VkDescriptorSetLayoutsHandle(new VkDescriptorSetLayout[] { v });
+        public static implicit operator VkDescriptorSetLayoutsGroup(VkDescriptorSetLayout v) {
+            return new VkDescriptorSetLayoutsGroup(new VkDescriptorSetLayout[] { v });
         }
 
-        public static implicit operator VkDescriptorSetLayoutsHandle(VkDescriptorSetLayout[] v) {
-            return new VkDescriptorSetLayoutsHandle(v);
+        public static implicit operator VkDescriptorSetLayoutsGroup(VkDescriptorSetLayout[] v) {
+            return new VkDescriptorSetLayoutsGroup(v);
         }
 
         public override string ToString() {
@@ -110,11 +110,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkDeviceQueueCreateInfosHandle {
+    public unsafe struct VkDeviceQueueCreateInfosGroup {
         public UInt32 count;
         public VkDeviceQueueCreateInfo* array;
 
-        public VkDeviceQueueCreateInfosHandle(params VkDeviceQueueCreateInfo[] value) {
+        public VkDeviceQueueCreateInfosGroup(params VkDeviceQueueCreateInfo[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -128,12 +128,12 @@ namespace Vulkan {
             this.array = (VkDeviceQueueCreateInfo*)ptr;
         }
 
-        public static implicit operator VkDeviceQueueCreateInfosHandle(VkDeviceQueueCreateInfo v) {
-            return new VkDeviceQueueCreateInfosHandle(new VkDeviceQueueCreateInfo[] { v });
+        public static implicit operator VkDeviceQueueCreateInfosGroup(VkDeviceQueueCreateInfo v) {
+            return new VkDeviceQueueCreateInfosGroup(new VkDeviceQueueCreateInfo[] { v });
         }
 
-        public static implicit operator VkDeviceQueueCreateInfosHandle(VkDeviceQueueCreateInfo[] v) {
-            return new VkDeviceQueueCreateInfosHandle(v);
+        public static implicit operator VkDeviceQueueCreateInfosGroup(VkDeviceQueueCreateInfo[] v) {
+            return new VkDeviceQueueCreateInfosGroup(v);
         }
 
         public override string ToString() {
@@ -146,11 +146,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkDynamicStatesHandle {
+    public unsafe struct VkDynamicStatesGroup {
         public UInt32 count;
         public VkDynamicState* array;
 
-        public VkDynamicStatesHandle(params VkDynamicState[] value) {
+        public VkDynamicStatesGroup(params VkDynamicState[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -164,12 +164,12 @@ namespace Vulkan {
             this.array = (VkDynamicState*)ptr;
         }
 
-        public static implicit operator VkDynamicStatesHandle(VkDynamicState v) {
-            return new VkDynamicStatesHandle(new VkDynamicState[] { v });
+        public static implicit operator VkDynamicStatesGroup(VkDynamicState v) {
+            return new VkDynamicStatesGroup(new VkDynamicState[] { v });
         }
 
-        public static implicit operator VkDynamicStatesHandle(VkDynamicState[] v) {
-            return new VkDynamicStatesHandle(v);
+        public static implicit operator VkDynamicStatesGroup(VkDynamicState[] v) {
+            return new VkDynamicStatesGroup(v);
         }
 
         public override string ToString() {
@@ -182,11 +182,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkPipelineColorBlendAttachmentStatesHandle {
+    public unsafe struct VkPipelineColorBlendAttachmentStatesGroup {
         public UInt32 count;
         public VkPipelineColorBlendAttachmentState* array;
 
-        public VkPipelineColorBlendAttachmentStatesHandle(params VkPipelineColorBlendAttachmentState[] value) {
+        public VkPipelineColorBlendAttachmentStatesGroup(params VkPipelineColorBlendAttachmentState[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -200,12 +200,12 @@ namespace Vulkan {
             this.array = (VkPipelineColorBlendAttachmentState*)ptr;
         }
 
-        public static implicit operator VkPipelineColorBlendAttachmentStatesHandle(VkPipelineColorBlendAttachmentState v) {
-            return new VkPipelineColorBlendAttachmentStatesHandle(new VkPipelineColorBlendAttachmentState[] { v });
+        public static implicit operator VkPipelineColorBlendAttachmentStatesGroup(VkPipelineColorBlendAttachmentState v) {
+            return new VkPipelineColorBlendAttachmentStatesGroup(new VkPipelineColorBlendAttachmentState[] { v });
         }
 
-        public static implicit operator VkPipelineColorBlendAttachmentStatesHandle(VkPipelineColorBlendAttachmentState[] v) {
-            return new VkPipelineColorBlendAttachmentStatesHandle(v);
+        public static implicit operator VkPipelineColorBlendAttachmentStatesGroup(VkPipelineColorBlendAttachmentState[] v) {
+            return new VkPipelineColorBlendAttachmentStatesGroup(v);
         }
 
         public override string ToString() {
@@ -218,11 +218,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkPipelineShaderStageCreateInfosHandle {
+    public unsafe struct VkPipelineShaderStageCreateInfosGroup {
         public UInt32 count;
         public VkPipelineShaderStageCreateInfo* array;
 
-        public VkPipelineShaderStageCreateInfosHandle(params VkPipelineShaderStageCreateInfo[] value) {
+        public VkPipelineShaderStageCreateInfosGroup(params VkPipelineShaderStageCreateInfo[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -236,12 +236,12 @@ namespace Vulkan {
             this.array = (VkPipelineShaderStageCreateInfo*)ptr;
         }
 
-        public static implicit operator VkPipelineShaderStageCreateInfosHandle(VkPipelineShaderStageCreateInfo v) {
-            return new VkPipelineShaderStageCreateInfosHandle(new VkPipelineShaderStageCreateInfo[] { v });
+        public static implicit operator VkPipelineShaderStageCreateInfosGroup(VkPipelineShaderStageCreateInfo v) {
+            return new VkPipelineShaderStageCreateInfosGroup(new VkPipelineShaderStageCreateInfo[] { v });
         }
 
-        public static implicit operator VkPipelineShaderStageCreateInfosHandle(VkPipelineShaderStageCreateInfo[] v) {
-            return new VkPipelineShaderStageCreateInfosHandle(v);
+        public static implicit operator VkPipelineShaderStageCreateInfosGroup(VkPipelineShaderStageCreateInfo[] v) {
+            return new VkPipelineShaderStageCreateInfosGroup(v);
         }
 
         public override string ToString() {
@@ -254,11 +254,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkRect2DsHandle {
+    public unsafe struct VkRect2DsGroup {
         public UInt32 count;
         public VkRect2D* array;
 
-        public VkRect2DsHandle(params VkRect2D[] value) {
+        public VkRect2DsGroup(params VkRect2D[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -272,12 +272,12 @@ namespace Vulkan {
             this.array = (VkRect2D*)ptr;
         }
 
-        public static implicit operator VkRect2DsHandle(VkRect2D v) {
-            return new VkRect2DsHandle(new VkRect2D[] { v });
+        public static implicit operator VkRect2DsGroup(VkRect2D v) {
+            return new VkRect2DsGroup(new VkRect2D[] { v });
         }
 
-        public static implicit operator VkRect2DsHandle(VkRect2D[] v) {
-            return new VkRect2DsHandle(v);
+        public static implicit operator VkRect2DsGroup(VkRect2D[] v) {
+            return new VkRect2DsGroup(v);
         }
 
         public override string ToString() {
@@ -290,11 +290,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkVertexInputAttributeDescriptionsHandle {
+    public unsafe struct VkVertexInputAttributeDescriptionsGroup {
         public UInt32 count;
         public VkVertexInputAttributeDescription* array;
 
-        public VkVertexInputAttributeDescriptionsHandle(params VkVertexInputAttributeDescription[] value) {
+        public VkVertexInputAttributeDescriptionsGroup(params VkVertexInputAttributeDescription[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -308,12 +308,12 @@ namespace Vulkan {
             this.array = (VkVertexInputAttributeDescription*)ptr;
         }
 
-        public static implicit operator VkVertexInputAttributeDescriptionsHandle(VkVertexInputAttributeDescription v) {
-            return new VkVertexInputAttributeDescriptionsHandle(new VkVertexInputAttributeDescription[] { v });
+        public static implicit operator VkVertexInputAttributeDescriptionsGroup(VkVertexInputAttributeDescription v) {
+            return new VkVertexInputAttributeDescriptionsGroup(new VkVertexInputAttributeDescription[] { v });
         }
 
-        public static implicit operator VkVertexInputAttributeDescriptionsHandle(VkVertexInputAttributeDescription[] v) {
-            return new VkVertexInputAttributeDescriptionsHandle(v);
+        public static implicit operator VkVertexInputAttributeDescriptionsGroup(VkVertexInputAttributeDescription[] v) {
+            return new VkVertexInputAttributeDescriptionsGroup(v);
         }
 
         public override string ToString() {
@@ -326,11 +326,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkVertexInputBindingDescriptionsHandle {
+    public unsafe struct VkVertexInputBindingDescriptionsGroup {
         public UInt32 count;
         public VkVertexInputBindingDescription* array;
 
-        public VkVertexInputBindingDescriptionsHandle(params VkVertexInputBindingDescription[] value) {
+        public VkVertexInputBindingDescriptionsGroup(params VkVertexInputBindingDescription[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -344,12 +344,12 @@ namespace Vulkan {
             this.array = (VkVertexInputBindingDescription*)ptr;
         }
 
-        public static implicit operator VkVertexInputBindingDescriptionsHandle(VkVertexInputBindingDescription v) {
-            return new VkVertexInputBindingDescriptionsHandle(new VkVertexInputBindingDescription[] { v });
+        public static implicit operator VkVertexInputBindingDescriptionsGroup(VkVertexInputBindingDescription v) {
+            return new VkVertexInputBindingDescriptionsGroup(new VkVertexInputBindingDescription[] { v });
         }
 
-        public static implicit operator VkVertexInputBindingDescriptionsHandle(VkVertexInputBindingDescription[] v) {
-            return new VkVertexInputBindingDescriptionsHandle(v);
+        public static implicit operator VkVertexInputBindingDescriptionsGroup(VkVertexInputBindingDescription[] v) {
+            return new VkVertexInputBindingDescriptionsGroup(v);
         }
 
         public override string ToString() {
@@ -362,11 +362,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkViewportsHandle {
+    public unsafe struct VkViewportsGroup {
         public UInt32 count;
         public VkViewport* array;
 
-        public VkViewportsHandle(params VkViewport[] value) {
+        public VkViewportsGroup(params VkViewport[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -380,12 +380,12 @@ namespace Vulkan {
             this.array = (VkViewport*)ptr;
         }
 
-        public static implicit operator VkViewportsHandle(VkViewport v) {
-            return new VkViewportsHandle(new VkViewport[] { v });
+        public static implicit operator VkViewportsGroup(VkViewport v) {
+            return new VkViewportsGroup(new VkViewport[] { v });
         }
 
-        public static implicit operator VkViewportsHandle(VkViewport[] v) {
-            return new VkViewportsHandle(v);
+        public static implicit operator VkViewportsGroup(VkViewport[] v) {
+            return new VkViewportsGroup(v);
         }
 
         public override string ToString() {
@@ -398,11 +398,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkImageViewsHandle {
+    public unsafe struct VkImageViewsGroup {
         public UInt32 count;
         public VkImageView* array;
 
-        public VkImageViewsHandle(params VkImageView[] value) {
+        public VkImageViewsGroup(params VkImageView[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -416,12 +416,12 @@ namespace Vulkan {
             this.array = (VkImageView*)ptr;
         }
 
-        public static implicit operator VkImageViewsHandle(VkImageView v) {
-            return new VkImageViewsHandle(new VkImageView[] { v });
+        public static implicit operator VkImageViewsGroup(VkImageView v) {
+            return new VkImageViewsGroup(new VkImageView[] { v });
         }
 
-        public static implicit operator VkImageViewsHandle(VkImageView[] v) {
-            return new VkImageViewsHandle(v);
+        public static implicit operator VkImageViewsGroup(VkImageView[] v) {
+            return new VkImageViewsGroup(v);
         }
 
         public override string ToString() {
@@ -434,11 +434,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkSwapchainKHRsHandle {
+    public unsafe struct VkSwapchainKHRsGroup {
         public UInt32 count;
         public VkSwapchainKHR* array;
 
-        public VkSwapchainKHRsHandle(params VkSwapchainKHR[] value) {
+        public VkSwapchainKHRsGroup(params VkSwapchainKHR[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -452,12 +452,12 @@ namespace Vulkan {
             this.array = (VkSwapchainKHR*)ptr;
         }
 
-        public static implicit operator VkSwapchainKHRsHandle(VkSwapchainKHR v) {
-            return new VkSwapchainKHRsHandle(new VkSwapchainKHR[] { v });
+        public static implicit operator VkSwapchainKHRsGroup(VkSwapchainKHR v) {
+            return new VkSwapchainKHRsGroup(new VkSwapchainKHR[] { v });
         }
 
-        public static implicit operator VkSwapchainKHRsHandle(VkSwapchainKHR[] v) {
-            return new VkSwapchainKHRsHandle(v);
+        public static implicit operator VkSwapchainKHRsGroup(VkSwapchainKHR[] v) {
+            return new VkSwapchainKHRsGroup(v);
         }
 
         public override string ToString() {
@@ -470,11 +470,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkSemaphoresHandle {
+    public unsafe struct VkSemaphoresGroup {
         public UInt32 count;
         public VkSemaphore* array;
 
-        public VkSemaphoresHandle(params VkSemaphore[] value) {
+        public VkSemaphoresGroup(params VkSemaphore[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -488,12 +488,12 @@ namespace Vulkan {
             this.array = (VkSemaphore*)ptr;
         }
 
-        public static implicit operator VkSemaphoresHandle(VkSemaphore v) {
-            return new VkSemaphoresHandle(new VkSemaphore[] { v });
+        public static implicit operator VkSemaphoresGroup(VkSemaphore v) {
+            return new VkSemaphoresGroup(new VkSemaphore[] { v });
         }
 
-        public static implicit operator VkSemaphoresHandle(VkSemaphore[] v) {
-            return new VkSemaphoresHandle(v);
+        public static implicit operator VkSemaphoresGroup(VkSemaphore[] v) {
+            return new VkSemaphoresGroup(v);
         }
 
         public override string ToString() {
@@ -506,11 +506,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkClearValuesHandle {
+    public unsafe struct VkClearValuesGroup {
         public UInt32 count;
         public VkClearValue* array;
 
-        public VkClearValuesHandle(params VkClearValue[] value) {
+        public VkClearValuesGroup(params VkClearValue[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -524,12 +524,12 @@ namespace Vulkan {
             this.array = (VkClearValue*)ptr;
         }
 
-        public static implicit operator VkClearValuesHandle(VkClearValue v) {
-            return new VkClearValuesHandle(new VkClearValue[] { v });
+        public static implicit operator VkClearValuesGroup(VkClearValue v) {
+            return new VkClearValuesGroup(new VkClearValue[] { v });
         }
 
-        public static implicit operator VkClearValuesHandle(VkClearValue[] v) {
-            return new VkClearValuesHandle(v);
+        public static implicit operator VkClearValuesGroup(VkClearValue[] v) {
+            return new VkClearValuesGroup(v);
         }
 
         public override string ToString() {
@@ -542,11 +542,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkAttachmentDescriptionsHandle {
+    public unsafe struct VkAttachmentDescriptionsGroup {
         public UInt32 count;
         public VkAttachmentDescription* array;
 
-        public VkAttachmentDescriptionsHandle(params VkAttachmentDescription[] value) {
+        public VkAttachmentDescriptionsGroup(params VkAttachmentDescription[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -560,12 +560,12 @@ namespace Vulkan {
             this.array = (VkAttachmentDescription*)ptr;
         }
 
-        public static implicit operator VkAttachmentDescriptionsHandle(VkAttachmentDescription v) {
-            return new VkAttachmentDescriptionsHandle(new VkAttachmentDescription[] { v });
+        public static implicit operator VkAttachmentDescriptionsGroup(VkAttachmentDescription v) {
+            return new VkAttachmentDescriptionsGroup(new VkAttachmentDescription[] { v });
         }
 
-        public static implicit operator VkAttachmentDescriptionsHandle(VkAttachmentDescription[] v) {
-            return new VkAttachmentDescriptionsHandle(v);
+        public static implicit operator VkAttachmentDescriptionsGroup(VkAttachmentDescription[] v) {
+            return new VkAttachmentDescriptionsGroup(v);
         }
 
         public override string ToString() {
@@ -578,11 +578,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkSubpassDescriptionsHandle {
+    public unsafe struct VkSubpassDescriptionsGroup {
         public UInt32 count;
         public VkSubpassDescription* array;
 
-        public VkSubpassDescriptionsHandle(params VkSubpassDescription[] value) {
+        public VkSubpassDescriptionsGroup(params VkSubpassDescription[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -596,12 +596,12 @@ namespace Vulkan {
             this.array = (VkSubpassDescription*)ptr;
         }
 
-        public static implicit operator VkSubpassDescriptionsHandle(VkSubpassDescription v) {
-            return new VkSubpassDescriptionsHandle(new VkSubpassDescription[] { v });
+        public static implicit operator VkSubpassDescriptionsGroup(VkSubpassDescription v) {
+            return new VkSubpassDescriptionsGroup(new VkSubpassDescription[] { v });
         }
 
-        public static implicit operator VkSubpassDescriptionsHandle(VkSubpassDescription[] v) {
-            return new VkSubpassDescriptionsHandle(v);
+        public static implicit operator VkSubpassDescriptionsGroup(VkSubpassDescription[] v) {
+            return new VkSubpassDescriptionsGroup(v);
         }
 
         public override string ToString() {
@@ -614,11 +614,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkSubpassDependencysHandle {
+    public unsafe struct VkSubpassDependencysGroup {
         public UInt32 count;
         public VkSubpassDependency* array;
 
-        public VkSubpassDependencysHandle(params VkSubpassDependency[] value) {
+        public VkSubpassDependencysGroup(params VkSubpassDependency[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -632,12 +632,12 @@ namespace Vulkan {
             this.array = (VkSubpassDependency*)ptr;
         }
 
-        public static implicit operator VkSubpassDependencysHandle(VkSubpassDependency v) {
-            return new VkSubpassDependencysHandle(new VkSubpassDependency[] { v });
+        public static implicit operator VkSubpassDependencysGroup(VkSubpassDependency v) {
+            return new VkSubpassDependencysGroup(new VkSubpassDependency[] { v });
         }
 
-        public static implicit operator VkSubpassDependencysHandle(VkSubpassDependency[] v) {
-            return new VkSubpassDependencysHandle(v);
+        public static implicit operator VkSubpassDependencysGroup(VkSubpassDependency[] v) {
+            return new VkSubpassDependencysGroup(v);
         }
 
         public override string ToString() {
@@ -650,11 +650,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkCommandBuffersHandle {
+    public unsafe struct VkCommandBuffersGroup {
         public UInt32 count;
         public VkCommandBuffer* array;
 
-        public VkCommandBuffersHandle(params VkCommandBuffer[] value) {
+        public VkCommandBuffersGroup(params VkCommandBuffer[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -668,12 +668,12 @@ namespace Vulkan {
             this.array = (VkCommandBuffer*)ptr;
         }
 
-        public static implicit operator VkCommandBuffersHandle(VkCommandBuffer v) {
-            return new VkCommandBuffersHandle(new VkCommandBuffer[] { v });
+        public static implicit operator VkCommandBuffersGroup(VkCommandBuffer v) {
+            return new VkCommandBuffersGroup(new VkCommandBuffer[] { v });
         }
 
-        public static implicit operator VkCommandBuffersHandle(VkCommandBuffer[] v) {
-            return new VkCommandBuffersHandle(v);
+        public static implicit operator VkCommandBuffersGroup(VkCommandBuffer[] v) {
+            return new VkCommandBuffersGroup(v);
         }
 
         public override string ToString() {
@@ -686,11 +686,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct VkAttachmentReferencesHandle {
+    public unsafe struct VkAttachmentReferencesGroup {
         public UInt32 count;
         public VkAttachmentReference* array;
 
-        public VkAttachmentReferencesHandle(params VkAttachmentReference[] value) {
+        public VkAttachmentReferencesGroup(params VkAttachmentReference[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -704,12 +704,12 @@ namespace Vulkan {
             this.array = (VkAttachmentReference*)ptr;
         }
 
-        public static implicit operator VkAttachmentReferencesHandle(VkAttachmentReference v) {
-            return new VkAttachmentReferencesHandle(new VkAttachmentReference[] { v });
+        public static implicit operator VkAttachmentReferencesGroup(VkAttachmentReference v) {
+            return new VkAttachmentReferencesGroup(new VkAttachmentReference[] { v });
         }
 
-        public static implicit operator VkAttachmentReferencesHandle(VkAttachmentReference[] v) {
-            return new VkAttachmentReferencesHandle(v);
+        public static implicit operator VkAttachmentReferencesGroup(VkAttachmentReference[] v) {
+            return new VkAttachmentReferencesGroup(v);
         }
 
         public override string ToString() {
@@ -722,11 +722,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct SinglesHandle {
+    public unsafe struct SinglesGroup {
         public UInt32 count;
         public Single* array;
 
-        public SinglesHandle(params Single[] value) {
+        public SinglesGroup(params Single[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -740,12 +740,12 @@ namespace Vulkan {
             this.array = (Single*)ptr;
         }
 
-        public static implicit operator SinglesHandle(Single v) {
-            return new SinglesHandle(new Single[] { v });
+        public static implicit operator SinglesGroup(Single v) {
+            return new SinglesGroup(new Single[] { v });
         }
 
-        public static implicit operator SinglesHandle(Single[] v) {
-            return new SinglesHandle(v);
+        public static implicit operator SinglesGroup(Single[] v) {
+            return new SinglesGroup(v);
         }
 
         public override string ToString() {
@@ -758,11 +758,11 @@ namespace Vulkan {
         }
     }
 
-    public unsafe struct UInt32sHandle {
+    public unsafe struct UInt32sGroup {
         public UInt32 count;
         public UInt32* array;
 
-        public UInt32sHandle(params UInt32[] value) {
+        public UInt32sGroup(params UInt32[] value) {
             count = 0;
             array = null;
             IntPtr ptr = IntPtr.Zero;
@@ -776,12 +776,12 @@ namespace Vulkan {
             this.array = (UInt32*)ptr;
         }
 
-        public static implicit operator UInt32sHandle(UInt32 v) {
-            return new UInt32sHandle(new UInt32[] { v });
+        public static implicit operator UInt32sGroup(UInt32 v) {
+            return new UInt32sGroup(new UInt32[] { v });
         }
 
-        public static implicit operator UInt32sHandle(UInt32[] v) {
-            return new UInt32sHandle(v);
+        public static implicit operator UInt32sGroup(UInt32[] v) {
+            return new UInt32sGroup(v);
         }
 
         public override string ToString() {

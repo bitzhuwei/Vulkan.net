@@ -2,11 +2,11 @@
 using System.Runtime.InteropServices;
 
 namespace Vulkan {
-    public unsafe struct StringsHandle {
+    public unsafe struct StringsGroup {
         public UInt32 count;
         public IntPtr pStrings;
 
-        public StringsHandle(params String[] value) {
+        public StringsGroup(params String[] value) {
             count = 0;
             pStrings = IntPtr.Zero;
             if (value != null) {
@@ -54,12 +54,12 @@ namespace Vulkan {
                 count = (UInt32)length;
             }
         }
-        public static implicit operator StringsHandle(String v) {
-            return new StringsHandle(new String[] { v });
+        public static implicit operator StringsGroup(String v) {
+            return new StringsGroup(new String[] { v });
         }
 
-        public static implicit operator StringsHandle(String[] v) {
-            return new StringsHandle(v);
+        public static implicit operator StringsGroup(String[] v) {
+            return new StringsGroup(v);
         }
 
         public override string ToString() {

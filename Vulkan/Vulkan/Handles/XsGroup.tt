@@ -23,7 +23,7 @@ namespace Vulkan {
 <#
 for (int i = 0; i < arrayTypes.Length; i++) {
     string arrayType = arrayTypes[i];
-    string structType = arrayType + "s" + "Handle";
+    string structType = arrayType + "s" + "Group";
 #>
 <# /* body starts */ #>
     public unsafe struct <#=structType#> {

@@ -737,7 +737,8 @@ namespace Demo.HelloVulkan {
                 submitInfos[index] = submitInfo;
 
                 var presentInfo = VkPresentInfoKHR.Alloc();
-                presentInfo->swapchainsImages.Set(swapchain);
+                presentInfo->swapchains = swapchain;
+                //presentInfo->swapchainsImages.Set(swapchain);
                 presentInfo->swapchainsImages.Set(index);
                 presentInfos[index] = presentInfo;
             }

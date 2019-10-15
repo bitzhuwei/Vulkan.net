@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Vulkan {
 
-    public unsafe struct VkColorResolveAttachmentsHandle {
+    public unsafe struct VkColorResolveAttachmentsGroup {
         public UInt32 count;
         public VkAttachmentReference* colorAttachments;
         public VkAttachmentReference* resolveAttachments;
