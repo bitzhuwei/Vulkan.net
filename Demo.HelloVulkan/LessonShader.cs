@@ -614,7 +614,7 @@ namespace Demo.HelloVulkan {
             info->preTransform = VkSurfaceTransformFlagBitsKHR.IdentityKHR;
             info->imageArrayLayers = 1;
             info->imageSharingMode = VkSharingMode.Exclusive;
-            index.Set(info);
+            info->queueFamilyIndices = index;
             info->presentMode = VkPresentModeKHR.FifoKHR;
             info->compositeAlpha = compositeAlpha;
             //return device.CreateSwapchainKHR(ref info, null);

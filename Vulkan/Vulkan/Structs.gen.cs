@@ -8882,8 +8882,9 @@ namespace Vulkan {
         public UInt32 imageArrayLayers;
         public VkImageUsageFlags imageUsage;
         public VkSharingMode imageSharingMode;
-        public UInt32 queueFamilyIndexCount;
-        public /*-const-*/ UInt32* pQueueFamilyIndices;
+        //public UInt32 queueFamilyIndexCount;
+        //public /*-const-*/ UInt32* pQueueFamilyIndices;
+        public /*-const-*/ UInt32sHandle queueFamilyIndices;
         public VkSurfaceTransformFlagBitsKHR preTransform;
         public VkCompositeAlphaFlagBitsKHR compositeAlpha;
         public VkPresentModeKHR presentMode;
