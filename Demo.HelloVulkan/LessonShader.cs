@@ -310,7 +310,7 @@ namespace Demo.HelloVulkan {
             {
                 var info = VkShaderModuleCreateInfo.Alloc();
                 byte[] bytes = LoadResource(@"Shaders\shader.vert.spv");
-                bytes.Set(info);
+                info->code = bytes;
                 //vkAPI.vkCreateShaderModule(device, bytes);
                 vkAPI.vkCreateShaderModule(device, info, null, &vsModule).Check();
             }
@@ -319,7 +319,7 @@ namespace Demo.HelloVulkan {
             {
                 var info = VkShaderModuleCreateInfo.Alloc();
                 byte[] bytes = LoadResource(@"Shaders\shader.frag.spv");
-                bytes.Set(info);
+                info->code = bytes;
                 //vkAPI.vkCreateShaderModule(device, bytes);
                 vkAPI.vkCreateShaderModule(device, info, null, &fsModule).Check();
             }

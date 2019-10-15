@@ -8037,13 +8037,19 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> flags is reserved for future use.</summary>
         public VkShaderModuleCreateFlags flags;
-        /// <summary> codeSize is the size, in bytes, of the code pointed to by
-        /// pCode.</summary>
-        public Int32 codeSize;
-        /// <summary> pCode points to code that is used to create the shader module.
-        /// The type and format of the code is determined from the content of the
-        /// memory addressed by pCode.</summary>
-        public /*-const-*/ UInt32* pCode;
+        ///// <summary> codeSize is the size, in bytes, of the code pointed to by
+        ///// pCode.</summary>
+        //public Int32 codeSize;
+        ///// <summary> pCode points to code that is used to create the shader module.
+        ///// The type and format of the code is determined from the content of the
+        ///// memory addressed by pCode.</summary>
+        //public /*-const-*/ UInt32* pCode;
+        /// <summary>
+        /// code that is used to create the shader module.
+        ///// The type and format of the code is determined from the content of the
+        ///// memory addressed by pCode.
+        /// </summary>
+        public CodeHandle code;
     }
     // Struct: 373
     /// <summary>VkShaderModuleValidationCacheCreateInfoEXT - Specify validation cache to use during shader module creation
