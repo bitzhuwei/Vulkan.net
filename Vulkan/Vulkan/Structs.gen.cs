@@ -8371,33 +8371,53 @@ namespace Vulkan {
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
         public /*-const-*/ void* pNext;
-        /// <summary> waitSemaphoreCount is the number of semaphores upon which to wait
-        /// before executing the command buffers for the batch.</summary>
-        public UInt32 waitSemaphoreCount;
-        /// <summary> pWaitSemaphores is a pointer to an array of semaphores upon which
+        ///// <summary> waitSemaphoreCount is the number of semaphores upon which to wait
+        ///// before executing the command buffers for the batch.</summary>
+        //public UInt32 waitSemaphoreCount;
+        ///// <summary> pWaitSemaphores is a pointer to an array of semaphores upon which
+        ///// to wait before the command buffers for this batch begin execution.
+        ///// If semaphores to wait on are provided, they define a
+        ///// semaphore wait operation.</summary>
+        //public /*-const-*/ VkSemaphore* pWaitSemaphores;
+        ///// <summary> pWaitDstStageMask is a pointer to an array of pipeline stages at
+        ///// which each corresponding semaphore wait will occur.</summary>
+        //public /*-const-*/ VkPipelineStageFlags* pWaitDstStageMask;
+        /// <summary>
+        /// count: waitSemaphoreCount is the number of semaphores upon which to wait
+        /// before executing the command buffers for the batch.
+        /// waitSemaphores: is a pointer to an array of semaphores upon which
         /// to wait before the command buffers for this batch begin execution.
         /// If semaphores to wait on are provided, they define a
-        /// semaphore wait operation.</summary>
-        public /*-const-*/ VkSemaphore* pWaitSemaphores;
-        /// <summary> pWaitDstStageMask is a pointer to an array of pipeline stages at
-        /// which each corresponding semaphore wait will occur.</summary>
-        public /*-const-*/ VkPipelineStageFlags* pWaitDstStageMask;
-        /// <summary> commandBufferCount is the number of command buffers to execute in
-        /// the batch.</summary>
-        public UInt32 commandBufferCount;
-        /// <summary> pCommandBuffers is a pointer to an array of command buffers to
-        /// execute in the batch.</summary>
-        public /*-const-*/ VkCommandBuffer* pCommandBuffers;
-        /// <summary> signalSemaphoreCount is the number of semaphores to be signaled
-        /// once the commands specified in pCommandBuffers have completed
-        /// execution.</summary>
-        public UInt32 signalSemaphoreCount;
-        /// <summary> pSignalSemaphores is a pointer to an array of semaphores which
+        /// semaphore wait operation.
+        /// waitDstStageMask: is a pointer to an array of pipeline stages at
+        /// which each corresponding semaphore wait will occur.
+        /// </summary>
+        public VkSemaphoresPipelineStagesHandle waitSemaphoresDstStageMasks;
+        ///// <summary> commandBufferCount is the number of command buffers to execute in
+        ///// the batch.</summary>
+        //public UInt32 commandBufferCount;
+        ///// <summary> pCommandBuffers is a pointer to an array of command buffers to
+        ///// execute in the batch.</summary>
+        //public /*-const-*/ VkCommandBuffer* pCommandBuffers;
+        public VkCommandBuffersHandle commandBuffers;
+        ///// <summary> signalSemaphoreCount is the number of semaphores to be signaled
+        ///// once the commands specified in pCommandBuffers have completed
+        ///// execution.</summary>
+        //public UInt32 signalSemaphoreCount;
+        ///// <summary> pSignalSemaphores is a pointer to an array of semaphores which
+        ///// will be signaled when the command buffers for this batch have completed
+        ///// execution.
+        ///// If semaphores to be signaled are provided, they define a
+        ///// semaphore signal operation.</summary>
+        //public /*-const-*/ VkSemaphore* pSignalSemaphores;
+        /// <summary>
+        ///  an array of semaphores which
         /// will be signaled when the command buffers for this batch have completed
         /// execution.
         /// If semaphores to be signaled are provided, they define a
-        /// semaphore signal operation.</summary>
-        public /*-const-*/ VkSemaphore* pSignalSemaphores;
+        /// semaphore signal operation.
+        /// </summary>
+        public VkSemaphoresHandle signalSemaphores;
     }
     // Struct: 392
     /// <summary>VkSubpassBeginInfoKHR - Structure specifying subpass begin info
@@ -8482,33 +8502,56 @@ namespace Vulkan {
         /// <summary> pipelineBindPoint is a VkPipelineBindPoint value specifying
         /// the pipeline type supported for this subpass.</summary>
         public VkPipelineBindPoint pipelineBindPoint;
-        /// <summary> inputAttachmentCount is the number of input attachments.</summary>
-        public UInt32 inputAttachmentCount;
-        /// <summary> pInputAttachments is an array of VkAttachmentReference
+        ///// <summary> inputAttachmentCount is the number of input attachments.</summary>
+        //public UInt32 inputAttachmentCount;
+        ///// <summary> pInputAttachments is an array of VkAttachmentReference
+        ///// structures defining the input attachments for this subpass and their
+        ///// layouts.</summary>
+        //public /*-const-*/ VkAttachmentReference* pInputAttachments;
+        /// <summary>
+        /// an array of VkAttachmentReference
         /// structures defining the input attachments for this subpass and their
-        /// layouts.</summary>
-        public /*-const-*/ VkAttachmentReference* pInputAttachments;
-        /// <summary> colorAttachmentCount is the number of color attachments.</summary>
-        public UInt32 colorAttachmentCount;
-        /// <summary> pColorAttachments is an array of VkAttachmentReference
+        /// layouts.
+        /// </summary>
+        public VkAttachmentReferencesHandle inputAttachments;
+        ///// <summary> colorAttachmentCount is the number of color attachments.</summary>
+        //public UInt32 colorAttachmentCount;
+        ///// <summary> pColorAttachments is an array of VkAttachmentReference
+        ///// structures defining the color attachments for this subpass and their
+        ///// layouts.</summary>
+        //public /*-const-*/ VkAttachmentReference* pColorAttachments;
+        ///// <summary> pResolveAttachments is an optional array of
+        ///// colorAttachmentCount VkAttachmentReference structures
+        ///// defining the resolve attachments for this subpass and their layouts.</summary>
+        //public /*-const-*/ VkAttachmentReference* pResolveAttachments;
+        /// <summary>
+        /// count: is the number of color attachments.
+        /// colorAttachments: is an array of VkAttachmentReference
         /// structures defining the color attachments for this subpass and their
-        /// layouts.</summary>
-        public /*-const-*/ VkAttachmentReference* pColorAttachments;
-        /// <summary> pResolveAttachments is an optional array of
+        /// layouts.
+        /// resolveAttachments: is an optional array of
         /// colorAttachmentCount VkAttachmentReference structures
-        /// defining the resolve attachments for this subpass and their layouts.</summary>
-        public /*-const-*/ VkAttachmentReference* pResolveAttachments;
+        /// defining the resolve attachments for this subpass and their layouts.
+        /// </summary>
+        public /*-const-*/ VkColorResolveAttachmentsHandle colorResolveAttachments;
         /// <summary> pDepthStencilAttachment is a pointer to a
         /// VkAttachmentReference specifying the depth/stencil attachment for
         /// this subpass and its layout.</summary>
         public /*-const-*/ VkAttachmentReference* pDepthStencilAttachment;
-        /// <summary> preserveAttachmentCount is the number of preserved attachments.</summary>
-        public UInt32 preserveAttachmentCount;
-        /// <summary> pPreserveAttachments is an array of preserveAttachmentCount
+        ///// <summary> preserveAttachmentCount is the number of preserved attachments.</summary>
+        //public UInt32 preserveAttachmentCount;
+        ///// <summary> pPreserveAttachments is an array of preserveAttachmentCount
+        ///// render pass attachment indices identifying attachments that are not used
+        ///// by this subpass, but whose contents must be preserved throughout the
+        ///// subpass.</summary>
+        //public /*-const-*/ UInt32* pPreserveAttachments;
+        /// <summary>
+        /// an array of preserveAttachmentCount
         /// render pass attachment indices identifying attachments that are not used
         /// by this subpass, but whose contents must be preserved throughout the
-        /// subpass.</summary>
-        public /*-const-*/ UInt32* pPreserveAttachments;
+        /// subpass.
+        /// </summary>
+        public /*-const-*/ UInt32sHandle preserveAttachments;
     }
     // Struct: 396
     /// <summary>VkSubpassDescription2KHR - Structure specifying a subpass description

@@ -650,6 +650,78 @@ namespace Vulkan {
         }
     }
 
+    public unsafe struct VkCommandBuffersHandle {
+        public UInt32 count;
+        public VkCommandBuffer* array;
+
+        public VkCommandBuffersHandle(params VkCommandBuffer[] value) {
+            count = 0;
+            array = null;
+            IntPtr ptr = IntPtr.Zero;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkCommandBuffer*)ptr;
+        }
+
+        public void Set(params VkCommandBuffer[] value) {
+            IntPtr ptr = (IntPtr)this.array;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkCommandBuffer*)ptr;
+        }
+
+        public static implicit operator VkCommandBuffersHandle(VkCommandBuffer v) {
+            return new VkCommandBuffersHandle(new VkCommandBuffer[] { v });
+        }
+
+        public static implicit operator VkCommandBuffersHandle(VkCommandBuffer[] v) {
+            return new VkCommandBuffersHandle(v);
+        }
+
+        public override string ToString() {
+            if (count == 1) {
+                return $"{array[0]}";
+            }
+            else {
+                return $"{nameof(VkCommandBuffer)}[{count}]";
+            }
+        }
+    }
+
+    public unsafe struct VkAttachmentReferencesHandle {
+        public UInt32 count;
+        public VkAttachmentReference* array;
+
+        public VkAttachmentReferencesHandle(params VkAttachmentReference[] value) {
+            count = 0;
+            array = null;
+            IntPtr ptr = IntPtr.Zero;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkAttachmentReference*)ptr;
+        }
+
+        public void Set(params VkAttachmentReference[] value) {
+            IntPtr ptr = (IntPtr)this.array;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkAttachmentReference*)ptr;
+        }
+
+        public static implicit operator VkAttachmentReferencesHandle(VkAttachmentReference v) {
+            return new VkAttachmentReferencesHandle(new VkAttachmentReference[] { v });
+        }
+
+        public static implicit operator VkAttachmentReferencesHandle(VkAttachmentReference[] v) {
+            return new VkAttachmentReferencesHandle(v);
+        }
+
+        public override string ToString() {
+            if (count == 1) {
+                return $"{array[0]}";
+            }
+            else {
+                return $"{nameof(VkAttachmentReference)}[{count}]";
+            }
+        }
+    }
+
     public unsafe struct SinglesHandle {
         public UInt32 count;
         public Single* array;

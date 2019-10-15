@@ -14,7 +14,8 @@ string[] arrayTypes = new string[] {
     "VkPipelineShaderStageCreateInfo", "VkRect2D", "VkVertexInputAttributeDescription", 
 	"VkVertexInputBindingDescription", "VkViewport", "VkImageView",
 	"VkSwapchainKHR", "VkSemaphore", "VkClearValue", "VkAttachmentDescription",
-	"VkSubpassDescription", "VkSubpassDependency",
+	"VkSubpassDescription", "VkSubpassDependency", "VkCommandBuffer",
+	"VkAttachmentReference",
 	"Single", "UInt32",
 	};
 #>

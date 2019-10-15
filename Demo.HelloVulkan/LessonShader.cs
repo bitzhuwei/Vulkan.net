@@ -586,7 +586,7 @@ namespace Demo.HelloVulkan {
                 var subpassDesc = new VkSubpassDescription(VkPipelineBindPoint.Graphics);
                 {
                     var attRef = new VkAttachmentReference(VkImageLayout.ColorAttachmentOptimal, 0);
-                    attRef.SetColorAttachment(&subpassDesc);
+                    subpassDesc.colorResolveAttachments.SetColorAttachments(attRef);
                 }
                 info->subpasses = subpassDesc;
             }
@@ -731,9 +731,9 @@ namespace Demo.HelloVulkan {
             submitInfos = new VkSubmitInfo*[2]; presentInfos = new VkPresentInfoKHR*[2];
             for (uint index = 0; index < 2; index++) {
                 var submitInfo = VkSubmitInfo.Alloc();
-                semaphore.SetWaitSemaphores(submitInfo);
-                VkPipelineStageFlagBits.AllGraphics.Set(submitInfo);
-                commandBuffers[index].Set(submitInfo);
+                submitInfo->waitSemaphoresDstStageMasks.Set(semaphore);
+                submitInfo->waitSemaphoresDstStageMasks.Set(VkPipelineStageFlagBits.AllGraphics);
+                submitInfo->commandBuffers = commandBuffers[index];
                 submitInfos[index] = submitInfo;
 
                 var presentInfo = VkPresentInfoKHR.Alloc();
