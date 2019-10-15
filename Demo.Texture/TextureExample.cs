@@ -667,10 +667,10 @@ namespace Demo.Texture {
             vDescription.attributeDescriptions[2].offset = Vertex.NormalOffset;
 
             vDescription.inputState = VkPipelineVertexInputStateCreateInfo.Alloc();
-            vDescription.inputState[0].vertexBindingDescriptionCount = 1;
-            vDescription.inputState[0].pVertexBindingDescriptions = vDescription.bindingDescriptions;
-            vDescription.inputState[0].vertexAttributeDescriptionCount = 3;
-            vDescription.inputState[0].pVertexAttributeDescriptions = vDescription.attributeDescriptions;
+            vDescription.inputState[0].vertexBindingDescriptions.count = 1;
+            vDescription.inputState[0].vertexBindingDescriptions.array = vDescription.bindingDescriptions;
+            vDescription.inputState[0].vertexAttributeDescriptions.count = 3;
+            vDescription.inputState[0].vertexAttributeDescriptions.array = vDescription.attributeDescriptions;
         }
 
         void setupDescriptorPool() {
@@ -718,8 +718,7 @@ namespace Demo.Texture {
             {
                 VkDescriptorSetLayout layout = this.layout;
                 var info = VkPipelineLayoutCreateInfo.Alloc();
-                info[0].setLayoutCount = 1;
-                info[0].pSetLayouts = &layout;
+                info[0].setLayouts = layout;
                 VkPipelineLayout pipelineLayout;
                 vkCreatePipelineLayout(device, info, null, &pipelineLayout);
                 this.pipelineLayout = pipelineLayout;
@@ -780,8 +779,8 @@ namespace Demo.Texture {
             blendAttachmentState[0].blendEnable = false;
 
             var colorBlendState = VkPipelineColorBlendStateCreateInfo.Alloc();
-            colorBlendState[0].pAttachments = blendAttachmentState;
-            colorBlendState[0].attachmentCount = 1;
+            colorBlendState[0].attachments.count = 1;
+            colorBlendState[0].attachments.array = blendAttachmentState;
 
             var depthStencilState = VkPipelineDepthStencilStateCreateInfo.Alloc();
             depthStencilState[0].depthTestEnable = true;
@@ -791,8 +790,8 @@ namespace Demo.Texture {
             depthStencilState[0].back.compareOp = VkCompareOp.Always;
 
             var viewportState = VkPipelineViewportStateCreateInfo.Alloc();
-            viewportState[0].viewportCount = 1;
-            viewportState[0].scissorCount = 1;
+            viewportState[0].viewports.count = 1;
+            viewportState[0].scissors.count = 1;
 
             var multisampleState = VkPipelineMultisampleStateCreateInfo.Alloc();
             multisampleState[0].rasterizationSamples = VkSampleCountFlagBits._1;
@@ -802,7 +801,7 @@ namespace Demo.Texture {
                 VkDynamicState.Scissor
             };
             var dynamicState = VkPipelineDynamicStateCreateInfo.Alloc();
-            dynamicStateEnables.Set(dynamicState);
+            dynamicState[0].dynamicStates = dynamicStateEnables;
 
             // Load shaders
             var shaderStages = VkPipelineShaderStageCreateInfo.Alloc(2);
@@ -824,8 +823,8 @@ namespace Demo.Texture {
             pipelineCreateInfo[0].pViewportState = viewportState;
             pipelineCreateInfo[0].pDepthStencilState = depthStencilState;
             pipelineCreateInfo[0].pDynamicState = dynamicState;
-            pipelineCreateInfo[0].stageCount = 2;
-            pipelineCreateInfo[0].pStages = shaderStages;
+            pipelineCreateInfo[0].stages.count = 2;
+            pipelineCreateInfo[0].stages.array = shaderStages;
             {
                 VkPipeline pipeline;
                 vkCreateGraphicsPipelines(device, pipelineCache, 1, pipelineCreateInfo, null, &pipeline);

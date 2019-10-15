@@ -534,12 +534,9 @@ namespace Demo.RadialBlur {
             attributeDescs[3].offset = sizeof(float) * 8;
 
             inputInfo = VkPipelineVertexInputStateCreateInfo.Alloc();
-            //inputInfo->vertexBindingDescriptionCount = (uint)bindingDescs.Length;
-            //inputInfo->pVertexBindingDescriptions = bindingDescs;
-            bindingDescs.Set(inputInfo);
-            inputInfo->vertexAttributeDescriptionCount = 4;//(uint)attributeDescs.Length;
-            inputInfo->pVertexAttributeDescriptions = attributeDescs;
-            //attributeDescs.Set(inputInfo);
+            inputInfo[0].vertexBindingDescriptions = bindingDescs;
+            inputInfo[0].vertexAttributeDescriptions.count = 4;
+            inputInfo[0].vertexAttributeDescriptions.array = attributeDescs;
         }
 
         void setupDescriptorPool() {
@@ -595,7 +592,7 @@ namespace Demo.RadialBlur {
                 {
                     var dsl = setLayoutScene;
                     var pPipelineLayoutCreateInfo = VkPipelineLayoutCreateInfo.Alloc();
-                    dsl.Set(pPipelineLayoutCreateInfo);
+                    pPipelineLayoutCreateInfo[0].setLayouts = dsl;
                     VkPipelineLayout pipelineLayout;
                     vkCreatePipelineLayout(device, pPipelineLayoutCreateInfo, null, &pipelineLayout);
                     this.pipelineLayoutScene = pipelineLayout;
@@ -628,7 +625,7 @@ namespace Demo.RadialBlur {
                 {
                     var dsl = setLayoutRadialBlur;
                     var pPipelineLayoutCreateInfo = VkPipelineLayoutCreateInfo.Alloc();
-                    dsl.Set(pPipelineLayoutCreateInfo);
+                    pPipelineLayoutCreateInfo[0].setLayouts = dsl;
                     VkPipelineLayout pipelineLayout;
                     vkCreatePipelineLayout(device, pPipelineLayoutCreateInfo, null, &pipelineLayout);
                     this.pipelineLayoutRadialBlur = pipelineLayout;
@@ -712,9 +709,8 @@ namespace Demo.RadialBlur {
             blendAttachmentState->blendEnable = false;
 
             var colorBlendState = VkPipelineColorBlendStateCreateInfo.Alloc();
-            colorBlendState->pAttachments = blendAttachmentState;
-            colorBlendState->attachmentCount = 1;
-            //(*blendAttachmentState).Set(colorBlendState);
+            colorBlendState->attachments.count = 1;
+            colorBlendState->attachments.array = blendAttachmentState;
 
             var depthStencilState = VkPipelineDepthStencilStateCreateInfo.Alloc();
             depthStencilState->depthTestEnable = true;
@@ -724,15 +720,15 @@ namespace Demo.RadialBlur {
             depthStencilState->back.compareOp = VkCompareOp.Always;
 
             var viewportState = VkPipelineViewportStateCreateInfo.Alloc();
-            viewportState->viewportCount = 1;
-            viewportState->scissorCount = 1;
+            viewportState[0].viewports.count = 1;
+            viewportState[0].scissors.count = 1;
 
             var multisampleState = VkPipelineMultisampleStateCreateInfo.Alloc();
             multisampleState->rasterizationSamples = VkSampleCountFlagBits._1;
 
             var dynamicStateEnables = new VkDynamicState[] { VkDynamicState.Viewport, VkDynamicState.Scissor };
             var dynamicState = VkPipelineDynamicStateCreateInfo.Alloc();
-            dynamicStateEnables.Set(dynamicState);
+            dynamicState[0].dynamicStates = dynamicStateEnables;
 
             var shaderStages = VkPipelineShaderStageCreateInfo.Alloc(2);
 
@@ -747,8 +743,8 @@ namespace Demo.RadialBlur {
             pipelineCreateInfo->pViewportState = viewportState;
             pipelineCreateInfo->pDepthStencilState = depthStencilState;
             pipelineCreateInfo->pDynamicState = dynamicState;
-            pipelineCreateInfo->stageCount = 2;
-            pipelineCreateInfo->pStages = shaderStages;
+            pipelineCreateInfo->stages.count = 2;
+            pipelineCreateInfo->stages.array = shaderStages;
 
             // Radial blur pipeline
             shaderStages[0] = loadShader(getAssetPath() + "shaders/radialblur/radialblur.vert.spv", VkShaderStageFlagBits.Vertex);

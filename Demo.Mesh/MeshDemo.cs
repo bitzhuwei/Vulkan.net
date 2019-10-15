@@ -365,8 +365,8 @@ namespace Demo.Mesh {
             vAttrDescriptions[3].offset = Vertex.ColorOffset;
 
             vInputStateInfo = VkPipelineVertexInputStateCreateInfo.Alloc();
-            vBindingDescriptions.Set(vInputStateInfo);
-            vAttrDescriptions.Set(vInputStateInfo);
+            vInputStateInfo->vertexBindingDescriptions = vBindingDescriptions;
+            vInputStateInfo->vertexAttributeDescriptions = vAttrDescriptions;
         }
 
         void setupDescriptorPool() {
@@ -413,8 +413,7 @@ namespace Demo.Mesh {
 
             var info = new VkPipelineLayoutCreateInfo();
             info.sType = PipelineLayoutCreateInfo;
-            info.pSetLayouts = &dsl;
-            info.setLayoutCount = 1;
+            info.setLayouts = dsl;
 
             {
                 VkPipelineLayout layout;
@@ -485,8 +484,7 @@ namespace Demo.Mesh {
 
             var colorBlendState = new VkPipelineColorBlendStateCreateInfo();
             colorBlendState.sType = PipelineColorBlendStateCreateInfo;
-            colorBlendState.attachmentCount = 1;
-            colorBlendState.pAttachments = &blendAttachmentState;
+            colorBlendState.attachments = blendAttachmentState;
 
             var depthStencilState = new VkPipelineDepthStencilStateCreateInfo();
             depthStencilState.sType = PipelineDepthStencilStateCreateInfo;
@@ -496,8 +494,8 @@ namespace Demo.Mesh {
 
             var viewportState = new VkPipelineViewportStateCreateInfo();
             viewportState.sType = PipelineViewportStateCreateInfo;
-            viewportState.viewportCount = 1;
-            viewportState.scissorCount = 1;
+            viewportState.viewports.count = 1;
+            viewportState.scissors.count = 1;
             viewportState.flags = 0;
 
             var multisampleState = new VkPipelineMultisampleStateCreateInfo();
@@ -510,7 +508,7 @@ namespace Demo.Mesh {
             dynamicStateEnables[1] = VkDynamicState.Scissor;
             VkPipelineDynamicStateCreateInfo dynamicState = new VkPipelineDynamicStateCreateInfo();
             dynamicState.sType = PipelineDynamicStateCreateInfo;
-            dynamicStateEnables.Set(&dynamicState);
+            dynamicState.dynamicStates = dynamicStateEnables;
             dynamicState.flags = 0;
 
             // Solid rendering pipeline
@@ -534,7 +532,7 @@ namespace Demo.Mesh {
             info.pViewportState = &viewportState;
             info.pDepthStencilState = &depthStencilState;
             info.pDynamicState = &dynamicState;
-            shaderStages.Set(&info);
+            info.stages = shaderStages;
             {
                 VkPipeline pipeline;
                 vkCreateGraphicsPipelines(device, pipelineCache, 1, &info, null, &pipeline);

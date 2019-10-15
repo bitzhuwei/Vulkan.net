@@ -3120,12 +3120,18 @@ namespace Vulkan {
         /// <summary> flags is a bitmask of VkPipelineCreateFlagBits specifying
         /// how the pipeline will be generated.</summary>
         public VkPipelineCreateFlags flags;
-        /// <summary> stageCount is the number of entries in the pStages array.</summary>
-        public UInt32 stageCount;
-        /// <summary> pStages is an array of size stageCount structures of type
+        ///// <summary> stageCount is the number of entries in the pStages array.</summary>
+        //public UInt32 stageCount;
+        ///// <summary> pStages is an array of size stageCount structures of type
+        ///// VkPipelineShaderStageCreateInfo describing the set of the shader
+        ///// stages to be included in the graphics pipeline.</summary>
+        //public /*-const-*/ VkPipelineShaderStageCreateInfo* pStages;
+        /// <summary>
+        /// pStages is an array of structures of type
         /// VkPipelineShaderStageCreateInfo describing the set of the shader
-        /// stages to be included in the graphics pipeline.</summary>
-        public /*-const-*/ VkPipelineShaderStageCreateInfo* pStages;
+        /// stages to be included in the graphics pipeline.
+        /// </summary>
+        public VkPipelineShaderStageCreateInfosHandle stages;
         /// <summary> pVertexInputState is a pointer to an instance of the
         /// VkPipelineVertexInputStateCreateInfo structure.
         /// It is ignored if the pipeline includes a mesh shader stage.</summary>
@@ -6623,15 +6629,22 @@ namespace Vulkan {
         public VkBool32 logicOpEnable;
         /// <summary> logicOp selects which logical operation to apply.</summary>
         public VkLogicOp logicOp;
-        /// <summary> attachmentCount is the number of
-        /// VkPipelineColorBlendAttachmentState elements in
-        /// pAttachments.
-        /// This value must equal the colorAttachmentCount for the subpass in
-        /// which this pipeline is used.</summary>
-        public UInt32 attachmentCount;
-        /// <summary> pAttachments: is a pointer to array of per target attachment
-        /// states.</summary>
-        public /*-const-*/ VkPipelineColorBlendAttachmentState* pAttachments;
+        ///// <summary> attachmentCount is the number of
+        ///// VkPipelineColorBlendAttachmentState elements in
+        ///// pAttachments.
+        ///// This value must equal the colorAttachmentCount for the subpass in
+        ///// which this pipeline is used.</summary>
+        //public UInt32 attachmentCount;
+        ///// <summary> pAttachments: is a pointer to array of per target attachment
+        ///// states.</summary>
+        //public /*-const-*/ VkPipelineColorBlendAttachmentState* pAttachments;
+        /// <summary>
+        /// count: must equal the colorAttachmentCount for the subpass in
+        /// which this pipeline is used.<para />
+        /// array: per target attachment
+        /// states.
+        /// </summary>
+        public VkPipelineColorBlendAttachmentStatesHandle attachments;
         public fixed float blendConstants[4];
     }
     // Struct: 310
@@ -6772,13 +6785,19 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> flags is reserved for future use.</summary>
         public VkPipelineDynamicStateCreateFlags flags;
-        /// <summary> dynamicStateCount is the number of elements in the
-        /// pDynamicStates array.</summary>
-        public UInt32 dynamicStateCount;
-        /// <summary> pDynamicStates is an array of VkDynamicState values
+        ///// <summary> dynamicStateCount is the number of elements in the
+        ///// pDynamicStates array.</summary>
+        //public UInt32 dynamicStateCount;
+        ///// <summary> pDynamicStates is an array of VkDynamicState values
+        ///// specifying which pieces of pipeline state will use the values from
+        ///// dynamic state commands rather than from pipeline state creation info.</summary>
+        //public /*-const-*/ VkDynamicState* pDynamicStates;
+        /// <summary>
+        ///  array of VkDynamicState values
         /// specifying which pieces of pipeline state will use the values from
-        /// dynamic state commands rather than from pipeline state creation info.</summary>
-        public /*-const-*/ VkDynamicState* pDynamicStates;
+        /// dynamic state commands rather than from pipeline state creation info.
+        /// </summary>
+        public VkDynamicStatesHandle dynamicStates;
     }
     // Struct: 317
     /// <summary>VkPipelineInputAssemblyStateCreateInfo - Structure specifying parameters of a newly created pipeline input assembly state
@@ -6813,12 +6832,16 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> flags is reserved for future use.</summary>
         public VkPipelineLayoutCreateFlags flags;
-        /// <summary> setLayoutCount is the number of descriptor sets included in the
-        /// pipeline layout.</summary>
-        public UInt32 setLayoutCount;
-        /// <summary> pSetLayouts is a pointer to an array of
-        /// VkDescriptorSetLayout objects.</summary>
-        public /*-const-*/ VkDescriptorSetLayout* pSetLayouts;
+        ///// <summary> setLayoutCount is the number of descriptor sets included in the
+        ///// pipeline layout.</summary>
+        //public UInt32 setLayoutCount;
+        ///// <summary> pSetLayouts is a pointer to an array of
+        ///// VkDescriptorSetLayout objects.</summary>
+        //public /*-const-*/ VkDescriptorSetLayout* pSetLayouts;
+        /// <summary>
+        /// an array of VkDescriptorSetLayout objects.
+        /// </summary>
+        public VkDescriptorSetLayoutsHandle setLayouts;
         /// <summary> pushConstantRangeCount is the number of push constant ranges
         /// included in the pipeline layout.</summary>
         public UInt32 pushConstantRangeCount;
@@ -7076,18 +7099,24 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> flags is reserved for future use.</summary>
         public VkPipelineVertexInputStateCreateFlags flags;
-        /// <summary> vertexBindingDescriptionCount is the number of vertex binding
-        /// descriptions provided in pVertexBindingDescriptions.</summary>
-        public UInt32 vertexBindingDescriptionCount;
-        /// <summary> pVertexBindingDescriptions is a pointer to an array of
-        /// VkVertexInputBindingDescription structures.</summary>
-        public /*-const-*/ VkVertexInputBindingDescription* pVertexBindingDescriptions;
-        /// <summary> vertexAttributeDescriptionCount is the number of vertex attribute
-        /// descriptions provided in pVertexAttributeDescriptions.</summary>
-        public UInt32 vertexAttributeDescriptionCount;
-        /// <summary> pVertexAttributeDescriptions is a pointer to an array of
-        /// VkVertexInputAttributeDescription structures.</summary>
-        public /*-const-*/ VkVertexInputAttributeDescription* pVertexAttributeDescriptions;
+        ///// <summary> vertexBindingDescriptionCount is the number of vertex binding
+        ///// descriptions provided in pVertexBindingDescriptions.</summary>
+        //public UInt32 vertexBindingDescriptionCount;
+        ///// <summary> pVertexBindingDescriptions is a pointer to an array of
+        ///// VkVertexInputBindingDescription structures.</summary>
+        //public /*-const-*/ VkVertexInputBindingDescription* pVertexBindingDescriptions;
+        /// <summary>
+        /// an array of
+        /// VkVertexInputBindingDescription structures.
+        /// </summary>
+        public VkVertexInputBindingDescriptionsHandle vertexBindingDescriptions;
+        ///// <summary> vertexAttributeDescriptionCount is the number of vertex attribute
+        ///// descriptions provided in pVertexAttributeDescriptions.</summary>
+        //public UInt32 vertexAttributeDescriptionCount;
+        ///// <summary> pVertexAttributeDescriptions is a pointer to an array of
+        ///// VkVertexInputAttributeDescription structures.</summary>
+        //public /*-const-*/ VkVertexInputAttributeDescription* pVertexAttributeDescriptions;
+        public VkVertexInputAttributeDescriptionsHandle vertexAttributeDescriptions;
     }
     // Struct: 332
     /// <summary>VkPipelineViewportCoarseSampleOrderStateCreateInfoNV - Structure specifying parameters controlling sample order in coarse fragments
@@ -7155,20 +7184,33 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> flags is reserved for future use.</summary>
         public VkPipelineViewportStateCreateFlags flags;
-        /// <summary> viewportCount is the number of viewports used by the pipeline.</summary>
-        public UInt32 viewportCount;
-        /// <summary> pViewports is a pointer to an array of VkViewport
+        ///// <summary> viewportCount is the number of viewports used by the pipeline.</summary>
+        //public UInt32 viewportCount;
+        ///// <summary> pViewports is a pointer to an array of VkViewport
+        ///// structures, defining the viewport transforms.
+        ///// If the viewport state is dynamic, this member is ignored.</summary>
+        //public /*-const-*/ VkViewport* pViewports;
+        /// <summary>
+        /// an array of VkViewport
         /// structures, defining the viewport transforms.
-        /// If the viewport state is dynamic, this member is ignored.</summary>
-        public /*-const-*/ VkViewport* pViewports;
-        /// <summary> scissorCount is the number of scissors and
-        /// must match the number of viewports.</summary>
-        public UInt32 scissorCount;
-        /// <summary> pScissors is a pointer to an array of VkRect2D structures
+        /// If the viewport state is dynamic, this member is ignored.
+        /// </summary>
+        public VkViewportsHandle viewports;
+        ///// <summary> scissorCount is the number of scissors and
+        ///// must match the number of viewports.</summary>
+        //public UInt32 scissorCount;
+        ///// <summary> pScissors is a pointer to an array of VkRect2D structures
+        ///// which define the rectangular bounds of the scissor for the corresponding
+        ///// viewport.
+        ///// If the scissor state is dynamic, this member is ignored.</summary>
+        //public /*-const-*/ VkRect2D* pScissors;
+        /// <summary>
+        ///  an array of VkRect2D structures
         /// which define the rectangular bounds of the scissor for the corresponding
         /// viewport.
-        /// If the scissor state is dynamic, this member is ignored.</summary>
-        public /*-const-*/ VkRect2D* pScissors;
+        /// If the scissor state is dynamic, this member is ignored.
+        /// </summary>
+        public VkRect2DsHandle scissors;
     }
     // Struct: 336
     /// <summary>VkPipelineViewportSwizzleStateCreateInfoNV - Structure specifying swizzle applied to primitive clip coordinates
@@ -7227,26 +7269,48 @@ namespace Vulkan {
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
         public /*-const-*/ void* pNext;
-        /// <summary> waitSemaphoreCount is the number of semaphores to wait for before
-        /// issuing the present request.
-        /// The number may be zero.</summary>
-        public UInt32 waitSemaphoreCount;
-        /// <summary> pWaitSemaphores, if not NULL, is an array of VkSemaphore
+        ///// <summary> waitSemaphoreCount is the number of semaphores to wait for before
+        ///// issuing the present request.
+        ///// The number may be zero.</summary>
+        //public UInt32 waitSemaphoreCount;
+        ///// <summary> pWaitSemaphores, if not NULL, is an array of VkSemaphore
+        ///// objects with waitSemaphoreCount entries, and specifies the
+        ///// semaphores to wait for before issuing the present request.</summary>
+        //public /*-const-*/ VkSemaphore* pWaitSemaphores;
+        /// <summary>
+        /// an array of VkSemaphore
         /// objects with waitSemaphoreCount entries, and specifies the
-        /// semaphores to wait for before issuing the present request.</summary>
-        public /*-const-*/ VkSemaphore* pWaitSemaphores;
-        /// <summary> swapchainCount is the number of swapchains being presented to by
-        /// this command.</summary>
-        public UInt32 swapchainCount;
-        /// <summary> pSwapchains is an array of VkSwapchainKHR objects with
+        /// semaphores to wait for before issuing the present request.
+        /// </summary>
+        public VkSemaphoresHandle waitSemaphores;
+        ///// <summary> swapchainCount is the number of swapchains being presented to by
+        ///// this command.</summary>
+        //public UInt32 swapchainCount;
+        ///// <summary> pSwapchains is an array of VkSwapchainKHR objects with
+        ///// swapchainCount entries.
+        ///// A given swapchain must not appear in this list more than once.</summary>
+        //public /*-const-*/ VkSwapchainKHR* pSwapchains;
+        ///// <summary>
+        ///// an array of VkSwapchainKHR objects with
+        ///// count entries.
+        ///// A given swapchain must not appear in this list more than once.
+        ///// </summary>
+        ///// <summary> pImageIndices is an array of indices into the array of each
+        ///// swapchain’s presentable images, with swapchainCount entries.
+        ///// Each entry in this array identifies the image to present on the
+        ///// corresponding entry in the pSwapchains array.</summary>
+        //public /*-const-*/ UInt32* pImageIndices;
+        /// <summary>
+        /// count: the number of swapchains being presented to by this command.
+        /// swapchains:  an array of VkSwapchainKHR objects with
         /// swapchainCount entries.
-        /// A given swapchain must not appear in this list more than once.</summary>
-        public /*-const-*/ VkSwapchainKHR* pSwapchains;
-        /// <summary> pImageIndices is an array of indices into the array of each
+        /// A given swapchain must not appear in this list more than once.
+        /// imageIndices:  an array of indices into the array of each
         /// swapchain’s presentable images, with swapchainCount entries.
         /// Each entry in this array identifies the image to present on the
-        /// corresponding entry in the pSwapchains array.</summary>
-        public /*-const-*/ UInt32* pImageIndices;
+        /// corresponding entry in the pSwapchains array.
+        /// </summary>
+        public VkSwapchainKHRsUInt32sHandle swapchainsImages;
         /// <summary> pResults is an array of VkResult typed elements with
         /// swapchainCount entries.
         /// Applications that do not need per-swapchain results can use NULL for
@@ -7548,17 +7612,28 @@ namespace Vulkan {
         /// <summary> renderArea is the render area that is affected by the render pass
         /// instance, and is described in more detail below.</summary>
         public VkRect2D renderArea;
-        /// <summary> clearValueCount is the number of elements in pClearValues.</summary>
-        public UInt32 clearValueCount;
-        /// <summary> pClearValues is an array of VkClearValue structures that
+        ///// <summary> clearValueCount is the number of elements in pClearValues.</summary>
+        //public UInt32 clearValueCount;
+        ///// <summary> pClearValues is an array of VkClearValue structures that
+        ///// contains clear values for each attachment, if the attachment uses a
+        ///// loadOp value of VK_ATTACHMENT_LOAD_OP_CLEAR or if the
+        ///// attachment has a depth/stencil format and uses a stencilLoadOp
+        ///// value of VK_ATTACHMENT_LOAD_OP_CLEAR.
+        ///// The array is indexed by attachment number.
+        ///// Only elements corresponding to cleared attachments are used.
+        ///// Other elements of pClearValues are ignored.</summary>
+        //public /*-const-*/ VkClearValue* pClearValues;
+        /// <summary>
+        /// pClearValues is an array of VkClearValue structures that
         /// contains clear values for each attachment, if the attachment uses a
         /// loadOp value of VK_ATTACHMENT_LOAD_OP_CLEAR or if the
         /// attachment has a depth/stencil format and uses a stencilLoadOp
         /// value of VK_ATTACHMENT_LOAD_OP_CLEAR.
         /// The array is indexed by attachment number.
         /// Only elements corresponding to cleared attachments are used.
-        /// Other elements of pClearValues are ignored.</summary>
-        public /*-const-*/ VkClearValue* pClearValues;
+        /// Other elements of pClearValues are ignored.
+        /// </summary>
+        public VkClearValuesHandle clearValues;
     }
     // Struct: 356
     /// <summary>VkRenderPassCreateInfo - Structure specifying parameters of a newly created render pass
@@ -7570,22 +7645,36 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> flags is reserved for future use.</summary>
         public VkRenderPassCreateFlags flags;
-        /// <summary> attachmentCount is the number of attachments used by this render
-        /// pass.</summary>
-        public UInt32 attachmentCount;
-        /// <summary> pAttachments points to an array of attachmentCount VkAttachmentDescription structures describing the attachments used
-        /// by the render pass.</summary>
-        public /*-const-*/ VkAttachmentDescription* pAttachments;
-        /// <summary> subpassCount is the number of subpasses to create.</summary>
-        public UInt32 subpassCount;
-        /// <summary> pSubpasses points to an array of subpassCount VkSubpassDescription structures describing each subpass.</summary>
-        public /*-const-*/ VkSubpassDescription* pSubpasses;
-        /// <summary> dependencyCount is the number of memory dependencies between pairs
-        /// of subpasses.</summary>
-        public UInt32 dependencyCount;
-        /// <summary> pDependencies points to an array of dependencyCount VkSubpassDependency structures describing dependencies between
-        /// pairs of subpasses.</summary>
-        public /*-const-*/ VkSubpassDependency* pDependencies;
+        ///// <summary> attachmentCount is the number of attachments used by this render
+        ///// pass.</summary>
+        //public UInt32 attachmentCount;
+        ///// <summary> pAttachments points to an array of attachmentCount VkAttachmentDescription structures describing the attachments used
+        ///// by the render pass.</summary>
+        //public /*-const-*/ VkAttachmentDescription* pAttachments;
+        /// <summary>
+        /// an array of attachmentCount VkAttachmentDescription structures describing the attachments used
+        /// by the render pass.
+        /// </summary>
+        public VkAttachmentDescriptionsHandle attachments;
+        ///// <summary> subpassCount is the number of subpasses to create.</summary>
+        //public UInt32 subpassCount;
+        ///// <summary> pSubpasses points to an array of subpassCount VkSubpassDescription structures describing each subpass.</summary>
+        //public /*-const-*/ VkSubpassDescription* pSubpasses;
+        /// <summary>
+        /// an array of subpassCount VkSubpassDescription structures describing each subpass.
+        /// </summary>
+        public VkSubpassDescriptionsHandle subpasses;
+        ///// <summary> dependencyCount is the number of memory dependencies between pairs
+        ///// of subpasses.</summary>
+        //public UInt32 dependencyCount;
+        ///// <summary> pDependencies points to an array of dependencyCount VkSubpassDependency structures describing dependencies between
+        ///// pairs of subpasses.</summary>
+        //public /*-const-*/ VkSubpassDependency* pDependencies;
+        /// <summary>
+        /// an array of dependencyCount VkSubpassDependency structures describing dependencies between
+        /// pairs of subpasses.
+        /// </summary>
+        public VkSubpassDependencysHandle dependencies;
     }
     // Struct: 357
     /// <summary>VkRenderPassCreateInfo2KHR - Structure specifying parameters of a newly created render pass

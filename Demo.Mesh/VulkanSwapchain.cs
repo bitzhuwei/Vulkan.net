@@ -340,11 +340,11 @@ namespace Demo.Mesh {
         */
         public VkResult QueuePresent(VkQueue queue, uint imageIndex, VkSemaphore waitSemaphore = new VkSemaphore()) {
             var presentInfo = VkPresentInfoKHR.Alloc();
-            Swapchain.Set(presentInfo);
-            presentInfo->pImageIndices = &imageIndex;
+            presentInfo->swapchainsImages = Swapchain;
+            presentInfo->swapchainsImages = imageIndex;
             // Check if a wait semaphore has been specified to wait for before presenting the image
-            if (waitSemaphore.handle != 0) {
-                waitSemaphore.Set(presentInfo);
+            if (waitSemaphore != 0ul) {
+                presentInfo->waitSemaphores = waitSemaphore;
             }
             return vkQueuePresentKHR(queue, presentInfo);
         }

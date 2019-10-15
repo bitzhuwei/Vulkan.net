@@ -233,8 +233,8 @@ namespace Demo.DynamicUniformBuffer {
             };
 
             vertices_inputState = VkPipelineVertexInputStateCreateInfo.Alloc();
-            vbindingDescs.Set(vertices_inputState);
-            vAttrDescs.Set(vertices_inputState);
+            vertices_inputState->vertexBindingDescriptions = vbindingDescs;
+            vertices_inputState->vertexAttributeDescriptions = vAttrDescs;
         }
 
         void setupDescriptorPool() {
@@ -275,7 +275,7 @@ namespace Demo.DynamicUniformBuffer {
 
             VkPipelineLayoutCreateInfo info = new VkPipelineLayoutCreateInfo();
             info.sType = PipelineLayoutCreateInfo;
-            layout.Set(&info);
+            info.setLayouts = layout;
 
             VkPipelineLayout pipelineLayout;
             vkCreatePipelineLayout(device, &info, null, &pipelineLayout);
@@ -339,7 +339,7 @@ namespace Demo.DynamicUniformBuffer {
 
             var colorBlendState = new VkPipelineColorBlendStateCreateInfo();
             colorBlendState.sType = PipelineColorBlendStateCreateInfo;
-            blendAttachmentState.Set(&colorBlendState);
+            colorBlendState.attachments = blendAttachmentState;
 
             var depthStencilState = new VkPipelineDepthStencilStateCreateInfo();
             depthStencilState.sType = PipelineDepthStencilStateCreateInfo;
@@ -349,8 +349,8 @@ namespace Demo.DynamicUniformBuffer {
 
             var viewportState = new VkPipelineViewportStateCreateInfo();
             viewportState.sType = PipelineViewportStateCreateInfo;
-            viewportState.viewportCount = 1;
-            viewportState.scissorCount = 1;
+            viewportState.viewports.count = 1;
+            viewportState.scissors.count = 1;
 
             var multisampleState = new VkPipelineMultisampleStateCreateInfo();
             multisampleState.sType = PipelineMultisampleStateCreateInfo;
@@ -363,7 +363,7 @@ namespace Demo.DynamicUniformBuffer {
 
             var dynamicState = new VkPipelineDynamicStateCreateInfo();
             dynamicState.sType = PipelineDynamicStateCreateInfo;
-            dynamicStateEnables.Set(&dynamicState);
+            dynamicState.dynamicStates = dynamicStateEnables;
 
             // Load shaders
             var shaderStages = new VkPipelineShaderStageCreateInfo[]{
@@ -383,7 +383,7 @@ namespace Demo.DynamicUniformBuffer {
             info.pViewportState = &viewportState;
             info.pDepthStencilState = &depthStencilState;
             info.pDynamicState = &dynamicState;
-            shaderStages.Set(&info);
+            info.stages = shaderStages;
 
             VkPipeline pipeline;
             vkCreateGraphicsPipelines(device, pipelineCache, 1, &info, null, &pipeline);

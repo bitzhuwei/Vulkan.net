@@ -246,7 +246,7 @@ namespace Demo.HelloVulkan {
             var clearValue = new VkClearValue { color = new VkClearColorValue(0.9f, 0.87f, 0.75f, 1.0f) };
             var begin = VkRenderPassBeginInfo.Alloc();
             begin->renderPass = renderPass;
-            clearValue.Set(begin);
+            begin->clearValues = clearValue;
             begin->renderArea = new VkRect2D { extent = surfaceCapabilities.currentExtent };
             for (int i = 0; i < images.Length; i++) {
                 VkCommandBuffer cmds = buffers[i];
@@ -323,12 +323,14 @@ namespace Demo.HelloVulkan {
                 //vkAPI.vkCreateShaderModule(device, bytes);
                 vkAPI.vkCreateShaderModule(device, info, null, &fsModule).Check();
             }
-            var shaderStages = VkPipelineShaderStageCreateInfo.Alloc(2);
+            var shaderStages = new VkPipelineShaderStageCreateInfo[2];
             {
+                shaderStages[0].sType = VkStructureType.PipelineShaderStageCreateInfo;
                 shaderStages[0].stage = VkShaderStageFlagBits.Vertex;
                 shaderStages[0].module = vsModule;
                 //"main".Set(ref shaderStages[0].pName);
                 shaderStages[0].pName = "main";
+                shaderStages[1].sType = VkStructureType.PipelineShaderStageCreateInfo;
                 shaderStages[1].stage = VkShaderStageFlagBits.Fragment;
                 shaderStages[1].module = fsModule;
                 //"main".Set(ref shaderStages[1].pName);
@@ -337,9 +339,9 @@ namespace Demo.HelloVulkan {
             var viewport = VkPipelineViewportStateCreateInfo.Alloc();
             {
                 var vp = new VkViewport(surfaceCapabilities.currentExtent, 0.0f, 1.0f);
-                vp.Set(viewport);
+                viewport[0].viewports = vp;
                 var scissor = new VkRect2D(surfaceCapabilities.currentExtent);
-                scissor.Set(viewport);
+                viewport[0].scissors = scissor;
             }
 
             var multisample = VkPipelineMultisampleStateCreateInfo.Alloc();
@@ -351,7 +353,7 @@ namespace Demo.HelloVulkan {
                 colorWriteMask: VkColorComponentFlagBits.R | VkColorComponentFlagBits.G
                 | VkColorComponentFlagBits.B | VkColorComponentFlagBits.A,
                 blendEnable: false);
-            blend.Set(colorBlend);
+            colorBlend->attachments = blend;
 
             var rasterization = VkPipelineRasterizationStateCreateInfo.Alloc();
             rasterization->polygonMode = VkPolygonMode.Fill;
@@ -369,14 +371,14 @@ namespace Demo.HelloVulkan {
                     binding: 0,
                     stride: 2 * sizeof(float),
                     inputRate: VkVertexInputRate.Vertex);
-                binding.Set(input);
+                input[0].vertexBindingDescriptions = binding;
                 // layout(location = 0) in vec2 inPos;
                 var attribute = new VkVertexInputAttributeDescription(
                     location: 0,
                     binding: 0,
                     format: VkFormat.R32g32Sfloat,
                     offset: 0);
-                attribute.Set(input);
+                input[0].vertexAttributeDescriptions = attribute;
             }
 
             //VkPipelineCache cache = device.CreatePipelineCache(ref cacheInfo);
@@ -392,7 +394,7 @@ namespace Demo.HelloVulkan {
                 var info = VkGraphicsPipelineCreateInfo.Alloc();
                 info->layout = pipelineLayout;
                 info->pViewportState = viewport;
-                info->pStages = shaderStages; info->stageCount = 2;
+                info->stages = shaderStages;
                 info->pMultisampleState = multisample;
                 info->pColorBlendState = colorBlend;
                 info->pRasterizationState = rasterization;
@@ -407,9 +409,7 @@ namespace Demo.HelloVulkan {
 
         VkPipelineLayout CreatePipelineLayout(VkDevice device, VkDescriptorSetLayout descriptorSetLayout) {
             var info = VkPipelineLayoutCreateInfo.Alloc();
-            {
-                descriptorSetLayout.Set(info);
-            }
+            info[0].setLayouts = descriptorSetLayout;
             //return device.CreatePipelineLayout(ref info);
             VkPipelineLayout layout;
             vkAPI.vkCreatePipelineLayout(device, info, null, &layout).Check();
@@ -582,13 +582,13 @@ namespace Demo.HelloVulkan {
                      VkAttachmentLoadOp.Clear, VkAttachmentStoreOp.Store,
                      VkAttachmentLoadOp.DontCare, VkAttachmentStoreOp.DontCare,
                      VkImageLayout.Undefined, VkImageLayout.PresentSrcKHR, 0);
-                attDesc.Set(info);
+                info->attachments = attDesc;
                 var subpassDesc = new VkSubpassDescription(VkPipelineBindPoint.Graphics);
                 {
                     var attRef = new VkAttachmentReference(VkImageLayout.ColorAttachmentOptimal, 0);
                     attRef.SetColorAttachment(&subpassDesc);
                 }
-                subpassDesc.Set(info);
+                info->subpasses = subpassDesc;
             }
 
             //return device.CreateRenderPass(ref info);
@@ -737,8 +737,8 @@ namespace Demo.HelloVulkan {
                 submitInfos[index] = submitInfo;
 
                 var presentInfo = VkPresentInfoKHR.Alloc();
-                swapchain.Set(presentInfo);
-                index.Set(presentInfo);
+                presentInfo->swapchainsImages.Set(swapchain);
+                presentInfo->swapchainsImages.Set(index);
                 presentInfos[index] = presentInfo;
             }
         }

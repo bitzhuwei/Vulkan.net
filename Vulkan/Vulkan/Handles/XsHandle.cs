@@ -506,6 +506,150 @@ namespace Vulkan {
         }
     }
 
+    public unsafe struct VkClearValuesHandle {
+        public UInt32 count;
+        public VkClearValue* array;
+
+        public VkClearValuesHandle(params VkClearValue[] value) {
+            count = 0;
+            array = null;
+            IntPtr ptr = IntPtr.Zero;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkClearValue*)ptr;
+        }
+
+        public void Set(params VkClearValue[] value) {
+            IntPtr ptr = (IntPtr)this.array;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkClearValue*)ptr;
+        }
+
+        public static implicit operator VkClearValuesHandle(VkClearValue v) {
+            return new VkClearValuesHandle(new VkClearValue[] { v });
+        }
+
+        public static implicit operator VkClearValuesHandle(VkClearValue[] v) {
+            return new VkClearValuesHandle(v);
+        }
+
+        public override string ToString() {
+            if (count == 1) {
+                return $"{array[0]}";
+            }
+            else {
+                return $"{nameof(VkClearValue)}[{count}]";
+            }
+        }
+    }
+
+    public unsafe struct VkAttachmentDescriptionsHandle {
+        public UInt32 count;
+        public VkAttachmentDescription* array;
+
+        public VkAttachmentDescriptionsHandle(params VkAttachmentDescription[] value) {
+            count = 0;
+            array = null;
+            IntPtr ptr = IntPtr.Zero;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkAttachmentDescription*)ptr;
+        }
+
+        public void Set(params VkAttachmentDescription[] value) {
+            IntPtr ptr = (IntPtr)this.array;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkAttachmentDescription*)ptr;
+        }
+
+        public static implicit operator VkAttachmentDescriptionsHandle(VkAttachmentDescription v) {
+            return new VkAttachmentDescriptionsHandle(new VkAttachmentDescription[] { v });
+        }
+
+        public static implicit operator VkAttachmentDescriptionsHandle(VkAttachmentDescription[] v) {
+            return new VkAttachmentDescriptionsHandle(v);
+        }
+
+        public override string ToString() {
+            if (count == 1) {
+                return $"{array[0]}";
+            }
+            else {
+                return $"{nameof(VkAttachmentDescription)}[{count}]";
+            }
+        }
+    }
+
+    public unsafe struct VkSubpassDescriptionsHandle {
+        public UInt32 count;
+        public VkSubpassDescription* array;
+
+        public VkSubpassDescriptionsHandle(params VkSubpassDescription[] value) {
+            count = 0;
+            array = null;
+            IntPtr ptr = IntPtr.Zero;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkSubpassDescription*)ptr;
+        }
+
+        public void Set(params VkSubpassDescription[] value) {
+            IntPtr ptr = (IntPtr)this.array;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkSubpassDescription*)ptr;
+        }
+
+        public static implicit operator VkSubpassDescriptionsHandle(VkSubpassDescription v) {
+            return new VkSubpassDescriptionsHandle(new VkSubpassDescription[] { v });
+        }
+
+        public static implicit operator VkSubpassDescriptionsHandle(VkSubpassDescription[] v) {
+            return new VkSubpassDescriptionsHandle(v);
+        }
+
+        public override string ToString() {
+            if (count == 1) {
+                return $"{array[0]}";
+            }
+            else {
+                return $"{nameof(VkSubpassDescription)}[{count}]";
+            }
+        }
+    }
+
+    public unsafe struct VkSubpassDependencysHandle {
+        public UInt32 count;
+        public VkSubpassDependency* array;
+
+        public VkSubpassDependencysHandle(params VkSubpassDependency[] value) {
+            count = 0;
+            array = null;
+            IntPtr ptr = IntPtr.Zero;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkSubpassDependency*)ptr;
+        }
+
+        public void Set(params VkSubpassDependency[] value) {
+            IntPtr ptr = (IntPtr)this.array;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkSubpassDependency*)ptr;
+        }
+
+        public static implicit operator VkSubpassDependencysHandle(VkSubpassDependency v) {
+            return new VkSubpassDependencysHandle(new VkSubpassDependency[] { v });
+        }
+
+        public static implicit operator VkSubpassDependencysHandle(VkSubpassDependency[] v) {
+            return new VkSubpassDependencysHandle(v);
+        }
+
+        public override string ToString() {
+            if (count == 1) {
+                return $"{array[0]}";
+            }
+            else {
+                return $"{nameof(VkSubpassDependency)}[{count}]";
+            }
+        }
+    }
+
     public unsafe struct SinglesHandle {
         public UInt32 count;
         public Single* array;

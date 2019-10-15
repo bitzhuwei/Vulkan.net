@@ -13,7 +13,8 @@ string[] arrayTypes = new string[] {
     "VkDeviceQueueCreateInfo", "VkDynamicState", "VkPipelineColorBlendAttachmentState",
     "VkPipelineShaderStageCreateInfo", "VkRect2D", "VkVertexInputAttributeDescription", 
 	"VkVertexInputBindingDescription", "VkViewport", "VkImageView",
-	"VkSwapchainKHR", "VkSemaphore",
+	"VkSwapchainKHR", "VkSemaphore", "VkClearValue", "VkAttachmentDescription",
+	"VkSubpassDescription", "VkSubpassDependency",
 	"Single", "UInt32",
 	};
 #>
