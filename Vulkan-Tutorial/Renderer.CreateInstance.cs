@@ -51,12 +51,12 @@ namespace Vulkan_Tutorial {
         }
 
         void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT* createInfo) {
-            createInfo[0].messageSeverity = VkDebugUtilsMessageSeverityFlagBitsEXT.VerboseExt
-                | VkDebugUtilsMessageSeverityFlagBitsEXT.WarningExt
-                | VkDebugUtilsMessageSeverityFlagBitsEXT.ErrorExt;
-            createInfo[0].messageType = VkDebugUtilsMessageTypeFlagBitsEXT.GeneralExt
-                | VkDebugUtilsMessageTypeFlagBitsEXT.ValidationExt
-                | VkDebugUtilsMessageTypeFlagBitsEXT.PerformanceExt;
+            createInfo[0].messageSeverity = VkDebugUtilsMessageSeverityFlagBitsEXT.VerboseEXT
+                | VkDebugUtilsMessageSeverityFlagBitsEXT.WarningEXT
+                | VkDebugUtilsMessageSeverityFlagBitsEXT.ErrorEXT;
+            createInfo[0].messageType = VkDebugUtilsMessageTypeFlagBitsEXT.GeneralEXT
+                | VkDebugUtilsMessageTypeFlagBitsEXT.ValidationEXT
+                | VkDebugUtilsMessageTypeFlagBitsEXT.PerformanceEXT;
             createInfo[0].pfnUserCallback = Marshal.GetFunctionPointerForDelegate(
                 new PFN_vkDebugUtilsMessengerCallbackEXT(debugCallback));
         }

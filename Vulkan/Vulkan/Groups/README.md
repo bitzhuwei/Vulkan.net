@@ -26,30 +26,31 @@ public static void Set<T>(this T[] value, ref IntPtr target, ref UInt32 count) w
             count = 0;
         }
     }
-    {
-        count = (UInt32)value.Length;
+
+    if (value != null) {
+        int length = value.Length;
 
         if (typeof(T).IsEnum) { // if T is an enum type.(eg. enum VkResult : int { .. } )
             Type underlying = typeof(T).GetEnumUnderlyingType(); // underlying : int
             int elementSize = Marshal.SizeOf(underlying); // elementSize : sizeof(int) = 4
 
-            int byteLength = (int)(count * elementSize);
+            int byteLength = length * elementSize;
             IntPtr array = Marshal.AllocHGlobal(byteLength);
             if (elementSize == 1) {
                 var dst = (byte*)array;
-                for (int i = 0; i < value.Length; i++) { dst[i] = Convert.ToByte(value[i]); }
+                for (int i = 0; i < length; i++) { dst[i] = Convert.ToByte(value[i]); }
             }
             else if (elementSize == 2) {
                 var dst = (Int16*)array;
-                for (int i = 0; i < value.Length; i++) { dst[i] = Convert.ToInt16(value[i]); }
+                for (int i = 0; i < length; i++) { dst[i] = Convert.ToInt16(value[i]); }
             }
             else if (elementSize == 4) {
                 var dst = (Int32*)array;
-                for (int i = 0; i < value.Length; i++) { dst[i] = Convert.ToInt32(value[i]); }
+                for (int i = 0; i < length; i++) { dst[i] = Convert.ToInt32(value[i]); }
             }
             else if (elementSize == 8) {
                 var dst = (Int64*)array;
-                for (int i = 0; i < value.Length; i++) { dst[i] = Convert.ToInt64(value[i]); }
+                for (int i = 0; i < length; i++) { dst[i] = Convert.ToInt64(value[i]); }
             }
             else {
                 throw new ArgumentException(string.Format("Unknown type({0}) length", typeof(T)));
@@ -60,7 +61,7 @@ public static void Set<T>(this T[] value, ref IntPtr target, ref UInt32 count) w
         else { // when T is a regular struct.
             int elementSize = Marshal.SizeOf(typeof(T));
 
-            int byteLength = (int)(count * elementSize);
+            int byteLength = length * elementSize;
             IntPtr array = Marshal.AllocHGlobal(byteLength);
             var dst = (byte*)array;
             GCHandle pin = GCHandle.Alloc(value, GCHandleType.Pinned);
@@ -74,6 +75,8 @@ public static void Set<T>(this T[] value, ref IntPtr target, ref UInt32 count) w
 
             target = array;
         }
+
+        count = (UInt32)length;
     }
 }
 ```
