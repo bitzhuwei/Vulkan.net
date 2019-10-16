@@ -9,15 +9,17 @@ namespace Vulkan {
         public CodeGroup(params byte[] value) {
             this.codeSize = 0;
             this.pCode = null;
-            IntPtr ptr = IntPtr.Zero; UInt32 size = 0;
-            value.Set(ref ptr, ref size);
-            this.codeSize = (int)size; this.pCode = (UInt32*)ptr;
+            if (value != null) {
+                IntPtr ptr = IntPtr.Zero; UInt32 size = 0;
+                value.Set(ref ptr, ref size);
+                this.codeSize = (int)size; this.pCode = (UInt32*)ptr;
+            }
         }
 
-        public void Set(params byte[] value) {
-            IntPtr ptr = IntPtr.Zero; UInt32 size = 0;
+        public void Set(byte[] value) {
+            IntPtr ptr = (IntPtr)this.pCode; UInt32 size = 0;
             value.Set(ref ptr, ref size);
-            this.codeSize = (int)size; this.pCode = (UInt32*)ptr;
+            this.pCode = (UInt32*)ptr; this.codeSize = (int)size;
         }
 
         public static implicit operator CodeGroup(byte[] v) {

@@ -44,6 +44,27 @@ namespace Vulkan {
         //    return result;
         //}
 
+        /// <summary>
+        /// Free unmanaged memory and reset all members to 0.
+        /// </summary>
+        public void Reset() {
+            {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.swapchains;
+                Helper.Set<VkSwapchainKHR>(null, ref ptr, ref count);
+                this.swapchains = (VkSwapchainKHR*)ptr;
+            }
+            {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.imageIndices;
+                Helper.Set<UInt32>(null, ref ptr, ref count);
+                this.imageIndices = (UInt32*)ptr;
+            }
+            {
+                this.count = 0;
+            }
+        }
+
         public override string ToString() {
             if (count == 1) {
                 return $"{swapchains[0]}, {imageIndices[0]}";

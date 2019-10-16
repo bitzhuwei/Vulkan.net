@@ -44,6 +44,27 @@ namespace Vulkan {
         //    return result;
         //}
 
+        /// <summary>
+        /// Free unmanaged memory and reset all members to 0.
+        /// </summary>
+        public void Reset() {
+            {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.waitSemaphores;
+                Helper.Set<VkSemaphore>(null, ref ptr, ref count);
+                this.waitSemaphores = (VkSemaphore*)ptr;
+            }
+            {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.waitDstStageMask;
+                Helper.Set<VkPipelineStageFlagBits>(null, ref ptr, ref count);
+                this.waitDstStageMask = (VkPipelineStageFlagBits*)ptr;
+            }
+            {
+                this.count = 0;
+            }
+        }
+
         public override string ToString() {
             if (count == 1) {
                 return $"{waitSemaphores[0]}, {waitDstStageMask[0]}";

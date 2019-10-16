@@ -31,8 +31,8 @@ for (int i = 0; i < arrayTypes.Length; i++) {
         public <#=arrayType#>* pointer;
 
         public <#=structType#>(params <#=arrayType#>[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);

@@ -38,6 +38,13 @@ namespace Vulkan {
             return result;
         }
 
+        ///// <summary>
+        ///// Free unmanaged memory and reset all members to 0.
+        ///// </summary>
+        //public void Reset() {
+        //    this.Set(null);
+        //}
+
         public override string ToString() {
             String result = this;
             return result != null ? "\"" + result + "\"" : "<null>";

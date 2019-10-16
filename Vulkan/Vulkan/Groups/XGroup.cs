@@ -7,8 +7,8 @@ namespace Vulkan {
         public VkDescriptorPoolSize* pointer;
 
         public VkDescriptorPoolSizeGroup(params VkDescriptorPoolSize[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -45,8 +45,8 @@ namespace Vulkan {
         public VkDescriptorSetLayoutBinding* pointer;
 
         public VkDescriptorSetLayoutBindingGroup(params VkDescriptorSetLayoutBinding[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -83,8 +83,8 @@ namespace Vulkan {
         public VkDescriptorSetLayout* pointer;
 
         public VkDescriptorSetLayoutGroup(params VkDescriptorSetLayout[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -121,8 +121,8 @@ namespace Vulkan {
         public VkDeviceQueueCreateInfo* pointer;
 
         public VkDeviceQueueCreateInfoGroup(params VkDeviceQueueCreateInfo[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -159,8 +159,8 @@ namespace Vulkan {
         public VkDynamicState* pointer;
 
         public VkDynamicStateGroup(params VkDynamicState[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -197,8 +197,8 @@ namespace Vulkan {
         public VkPipelineColorBlendAttachmentState* pointer;
 
         public VkPipelineColorBlendAttachmentStateGroup(params VkPipelineColorBlendAttachmentState[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -235,8 +235,8 @@ namespace Vulkan {
         public VkPipelineShaderStageCreateInfo* pointer;
 
         public VkPipelineShaderStageCreateInfoGroup(params VkPipelineShaderStageCreateInfo[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -273,8 +273,8 @@ namespace Vulkan {
         public VkRect2D* pointer;
 
         public VkRect2DGroup(params VkRect2D[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -311,8 +311,8 @@ namespace Vulkan {
         public VkVertexInputAttributeDescription* pointer;
 
         public VkVertexInputAttributeDescriptionGroup(params VkVertexInputAttributeDescription[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -349,8 +349,8 @@ namespace Vulkan {
         public VkVertexInputBindingDescription* pointer;
 
         public VkVertexInputBindingDescriptionGroup(params VkVertexInputBindingDescription[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -387,8 +387,8 @@ namespace Vulkan {
         public VkViewport* pointer;
 
         public VkViewportGroup(params VkViewport[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -425,8 +425,8 @@ namespace Vulkan {
         public VkImageView* pointer;
 
         public VkImageViewGroup(params VkImageView[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -463,8 +463,8 @@ namespace Vulkan {
         public VkSwapchainKHR* pointer;
 
         public VkSwapchainKHRGroup(params VkSwapchainKHR[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -501,8 +501,8 @@ namespace Vulkan {
         public VkSemaphore* pointer;
 
         public VkSemaphoreGroup(params VkSemaphore[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -539,8 +539,8 @@ namespace Vulkan {
         public VkClearValue* pointer;
 
         public VkClearValueGroup(params VkClearValue[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -577,8 +577,8 @@ namespace Vulkan {
         public VkAttachmentDescription* pointer;
 
         public VkAttachmentDescriptionGroup(params VkAttachmentDescription[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -615,8 +615,8 @@ namespace Vulkan {
         public VkSubpassDescription* pointer;
 
         public VkSubpassDescriptionGroup(params VkSubpassDescription[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -653,8 +653,8 @@ namespace Vulkan {
         public VkSubpassDependency* pointer;
 
         public VkSubpassDependencyGroup(params VkSubpassDependency[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -691,8 +691,8 @@ namespace Vulkan {
         public VkCommandBuffer* pointer;
 
         public VkCommandBufferGroup(params VkCommandBuffer[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -729,8 +729,8 @@ namespace Vulkan {
         public VkAttachmentReference* pointer;
 
         public VkAttachmentReferenceGroup(params VkAttachmentReference[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -767,8 +767,8 @@ namespace Vulkan {
         public VkPushConstantRange* pointer;
 
         public VkPushConstantRangeGroup(params VkPushConstantRange[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -805,8 +805,8 @@ namespace Vulkan {
         public Single* pointer;
 
         public SingleGroup(params Single[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
@@ -843,8 +843,8 @@ namespace Vulkan {
         public UInt32* pointer;
 
         public UInt32Group(params UInt32[] value) {
-            count = 0;
-            pointer = null;
+            this.count = 0;
+            this.pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);

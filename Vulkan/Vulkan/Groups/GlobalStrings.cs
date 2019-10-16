@@ -69,6 +69,13 @@ namespace Vulkan {
             return new GlobalStrings(v);
         }
 
+        ///// <summary>
+        ///// Free unmanaged memory and reset all members to 0.
+        ///// </summary>
+        //public void Reset() {
+        //    this.Set(null);
+        //}
+
         public override string ToString() {
             string[] result = null;
             var pointer = (IntPtr*)this.pStrings;
