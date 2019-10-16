@@ -14,10 +14,11 @@ namespace Vulkan {
         public VkSubpassDescription(VkPipelineBindPoint pipelineBindPoint,
             VkSubpassDescriptionFlagBits flags = 0) {
             this.pipelineBindPoint = pipelineBindPoint;
-            this.inputAttachments = new VkAttachmentReferencesHandle();
-            this.colorResolveAttachments = new VkColorResolveAttachmentsHandle();
+            this.inputAttachments = new VkAttachmentReferenceGroup();
+            this.colorAttachments = null;// new VkAttachmentReferencesGroup();
+            this.colorResolveAttachments = new VkColorResolveAttachmentGroup();
             this.pDepthStencilAttachment = null;
-            this.preserveAttachments = new UInt32sHandle();
+            this.preserveAttachments = new UInt32Group();
             this.flags = flags;
         }
     }

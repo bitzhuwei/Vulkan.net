@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Vulkan {
 
-    public unsafe struct VkColorResolveAttachmentsHandle {
+    public unsafe struct VkColorResolveAttachmentGroup {
         public UInt32 count;
         public VkAttachmentReference* colorAttachments;
         public VkAttachmentReference* resolveAttachments;
@@ -43,6 +43,29 @@ namespace Vulkan {
         //    result.Set(v);
         //    return result;
         //}
+
+        /// <summary>
+        /// Free unmanaged memory and reset all members to 0.
+        /// </summary>
+        public void Reset() {
+            if (this.colorAttachments != null) {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.colorAttachments;
+                Helper.Set<VkAttachmentReference>(null, ref ptr, ref count);
+                this.colorAttachments = null;
+            }
+
+            if (this.resolveAttachments != null) {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.resolveAttachments;
+                Helper.Set<VkAttachmentReference>(null, ref ptr, ref count);
+                this.resolveAttachments = null;
+            }
+
+            {
+                this.count = 0;
+            }
+        }
 
         public override string ToString() {
             if (count == 1) {

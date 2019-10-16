@@ -528,7 +528,7 @@ namespace Demo.RadialBlur {
             inputInfo = VkPipelineVertexInputStateCreateInfo.Alloc();
             inputInfo[0].vertexBindingDescriptions = bindingDescs;
             inputInfo[0].vertexAttributeDescriptions.count = 4;
-            inputInfo[0].vertexAttributeDescriptions.array = attributeDescs;
+            inputInfo[0].vertexAttributeDescriptions.pointer = attributeDescs;
         }
 
         void setupDescriptorPool() {
@@ -702,7 +702,7 @@ namespace Demo.RadialBlur {
 
             var colorBlendState = VkPipelineColorBlendStateCreateInfo.Alloc();
             colorBlendState->attachments.count = 1;
-            colorBlendState->attachments.array = blendAttachmentState;
+            colorBlendState->attachments.pointer = blendAttachmentState;
 
             var depthStencilState = VkPipelineDepthStencilStateCreateInfo.Alloc();
             depthStencilState->depthTestEnable = true;
@@ -736,7 +736,7 @@ namespace Demo.RadialBlur {
             pipelineCreateInfo->pDepthStencilState = depthStencilState;
             pipelineCreateInfo->pDynamicState = dynamicState;
             pipelineCreateInfo->stages.count = 2;
-            pipelineCreateInfo->stages.array = shaderStages;
+            pipelineCreateInfo->stages.pointer = shaderStages;
 
             // Radial blur pipeline
             shaderStages[0] = loadShader(getAssetPath() + "shaders/radialblur/radialblur.vert.spv", VkShaderStageFlagBits.Vertex);

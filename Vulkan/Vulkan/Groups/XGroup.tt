@@ -15,7 +15,7 @@ string[] arrayTypes = new string[] {
 	"VkVertexInputBindingDescription", "VkViewport", "VkImageView",
 	"VkSwapchainKHR", "VkSemaphore", "VkClearValue", "VkAttachmentDescription",
 	"VkSubpassDescription", "VkSubpassDependency", "VkCommandBuffer",
-	"VkAttachmentReference",
+	"VkAttachmentReference", "VkPushConstantRange",
 	"Single", "UInt32",
 	};
 #>
@@ -23,25 +23,27 @@ namespace Vulkan {
 <#
 for (int i = 0; i < arrayTypes.Length; i++) {
     string arrayType = arrayTypes[i];
-    string structType = arrayType + "s" + "Handle";
+    string structType = arrayType + "Group";
 #>
 <# /* body starts */ #>
     public unsafe struct <#=structType#> {
         public UInt32 count;
-        public <#=arrayType#>* array;
+        public <#=arrayType#>* pointer;
 
         public <#=structType#>(params <#=arrayType#>[] value) {
-            count = 0;
-            array = null;
-            IntPtr ptr = IntPtr.Zero;
-            value.Set(ref ptr, ref this.count);
-            this.array = (<#=arrayType#>*)ptr;
+            this.count = 0;
+            this.pointer = null;
+			if (value != null) {
+				IntPtr ptr = IntPtr.Zero;
+				value.Set(ref ptr, ref this.count);
+				this.pointer = (<#=arrayType#>*)ptr;
+			}
         }
 
         public void Set(params <#=arrayType#>[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (<#=arrayType#>*)ptr;
+            this.pointer = (<#=arrayType#>*)ptr;
         }
 
         public static implicit operator <#=structType#>(<#=arrayType#> v) {
@@ -54,7 +56,7 @@ for (int i = 0; i < arrayTypes.Length; i++) {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(<#=arrayType#>)}[{count}]";

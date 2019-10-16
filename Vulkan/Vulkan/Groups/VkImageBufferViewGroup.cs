@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Vulkan {
 
-    public unsafe struct VkImageBufferViewsHandle {
+    public unsafe struct VkImageBufferViewGroup {
         /// <summary> count is the number of descriptors to update (the number
         /// of elements in pImageInfo, pBufferInfo, or
         /// pTexelBufferView
@@ -55,6 +55,35 @@ namespace Vulkan {
             this.texelBufferView = (VkBufferView*)ptr;
         }
 
+        /// <summary>
+        /// Free unmanaged memory and reset all members to 0.
+        /// </summary>
+        public void Reset() {
+            if (this.imageInfo != null) {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.imageInfo;
+                Helper.Set<VkDescriptorImageInfo>(null, ref ptr, ref count);
+                this.imageInfo = null;
+            }
+
+            if (this.bufferInfo != null) {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.bufferInfo;
+                Helper.Set<VkDescriptorBufferInfo>(null, ref ptr, ref count);
+                this.bufferInfo = null;
+            }
+
+            if (this.texelBufferView != null) {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.texelBufferView;
+                Helper.Set<VkBufferView>(null, ref ptr, ref count);
+                this.texelBufferView = null;
+            }
+
+            {
+                this.count = 0;
+            }
+        }
 
         public override string ToString() {
             if (count == 1) {

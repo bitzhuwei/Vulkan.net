@@ -30,7 +30,7 @@ namespace Vulkan {
             int size = sizeof(VkAccelerationStructureCreateInfoNV);
             var info = (VkAccelerationStructureCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.AccelerationStructureCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.AccelerationStructureCreateInfoNV; }
 
             return info;
         }
@@ -50,7 +50,7 @@ namespace Vulkan {
             int size = sizeof(VkAccelerationStructureInfoNV);
             var info = (VkAccelerationStructureInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.AccelerationStructureInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.AccelerationStructureInfoNV; }
 
             return info;
         }
@@ -70,7 +70,7 @@ namespace Vulkan {
             int size = sizeof(VkAccelerationStructureMemoryRequirementsInfoNV);
             var info = (VkAccelerationStructureMemoryRequirementsInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.AccelerationStructureMemoryRequirementsInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.AccelerationStructureMemoryRequirementsInfoNV; }
 
             return info;
         }
@@ -366,7 +366,7 @@ namespace Vulkan {
             int size = sizeof(VkBindAccelerationStructureMemoryInfoNV);
             var info = (VkBindAccelerationStructureMemoryInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.BindAccelerationStructureMemoryInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.BindAccelerationStructureMemoryInfoNV; }
 
             return info;
         }
@@ -565,7 +565,7 @@ namespace Vulkan {
             int size = sizeof(VkBufferDeviceAddressCreateInfoEXT);
             var info = (VkBufferDeviceAddressCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.BufferDeviceAddressCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.BufferDeviceAddressCreateInfoEXT; }
 
             return info;
         }
@@ -585,7 +585,7 @@ namespace Vulkan {
             int size = sizeof(VkBufferDeviceAddressInfoEXT);
             var info = (VkBufferDeviceAddressInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.BufferDeviceAddressInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.BufferDeviceAddressInfoEXT; }
 
             return info;
         }
@@ -684,7 +684,7 @@ namespace Vulkan {
             int size = sizeof(VkCalibratedTimestampInfoEXT);
             var info = (VkCalibratedTimestampInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.CalibratedTimestampInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.CalibratedTimestampInfoEXT; }
 
             return info;
         }
@@ -704,7 +704,7 @@ namespace Vulkan {
             int size = sizeof(VkCheckpointDataNV);
             var info = (VkCheckpointDataNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.CheckpointDataNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.CheckpointDataNV; }
 
             return info;
         }
@@ -937,7 +937,7 @@ namespace Vulkan {
             int size = sizeof(VkCommandBufferInheritanceConditionalRenderingInfoEXT);
             var info = (VkCommandBufferInheritanceConditionalRenderingInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.CommandBufferInheritanceConditionalRenderingInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.CommandBufferInheritanceConditionalRenderingInfoEXT; }
 
             return info;
         }
@@ -1036,7 +1036,7 @@ namespace Vulkan {
             int size = sizeof(VkConditionalRenderingBeginInfoEXT);
             var info = (VkConditionalRenderingBeginInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ConditionalRenderingBeginInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ConditionalRenderingBeginInfoEXT; }
 
             return info;
         }
@@ -1075,7 +1075,7 @@ namespace Vulkan {
             int size = sizeof(VkCooperativeMatrixPropertiesNV);
             var info = (VkCooperativeMatrixPropertiesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.CooperativeMatrixPropertiesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.CooperativeMatrixPropertiesNV; }
 
             return info;
         }
@@ -1135,7 +1135,7 @@ namespace Vulkan {
             int size = sizeof(VkDebugMarkerMarkerInfoEXT);
             var info = (VkDebugMarkerMarkerInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugMarkerMarkerInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugMarkerMarkerInfoEXT; }
 
             return info;
         }
@@ -1155,7 +1155,7 @@ namespace Vulkan {
             int size = sizeof(VkDebugMarkerObjectNameInfoEXT);
             var info = (VkDebugMarkerObjectNameInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugMarkerObjectNameInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugMarkerObjectNameInfoEXT; }
 
             return info;
         }
@@ -1175,7 +1175,7 @@ namespace Vulkan {
             int size = sizeof(VkDebugMarkerObjectTagInfoEXT);
             var info = (VkDebugMarkerObjectTagInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugMarkerObjectTagInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugMarkerObjectTagInfoEXT; }
 
             return info;
         }
@@ -1195,7 +1195,7 @@ namespace Vulkan {
             int size = sizeof(VkDebugReportCallbackCreateInfoEXT);
             var info = (VkDebugReportCallbackCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugReportCallbackCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugReportCallbackCreateInfoEXT; }
 
             return info;
         }
@@ -1215,7 +1215,7 @@ namespace Vulkan {
             int size = sizeof(VkDebugUtilsLabelEXT);
             var info = (VkDebugUtilsLabelEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsLabelExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsLabelEXT; }
 
             return info;
         }
@@ -1235,7 +1235,7 @@ namespace Vulkan {
             int size = sizeof(VkDebugUtilsMessengerCallbackDataEXT);
             var info = (VkDebugUtilsMessengerCallbackDataEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsMessengerCallbackDataExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsMessengerCallbackDataEXT; }
 
             return info;
         }
@@ -1255,7 +1255,7 @@ namespace Vulkan {
             int size = sizeof(VkDebugUtilsMessengerCreateInfoEXT);
             var info = (VkDebugUtilsMessengerCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsMessengerCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsMessengerCreateInfoEXT; }
 
             return info;
         }
@@ -1275,7 +1275,7 @@ namespace Vulkan {
             int size = sizeof(VkDebugUtilsObjectNameInfoEXT);
             var info = (VkDebugUtilsObjectNameInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsObjectNameInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsObjectNameInfoEXT; }
 
             return info;
         }
@@ -1295,7 +1295,7 @@ namespace Vulkan {
             int size = sizeof(VkDebugUtilsObjectTagInfoEXT);
             var info = (VkDebugUtilsObjectTagInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsObjectTagInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DebugUtilsObjectTagInfoEXT; }
 
             return info;
         }
@@ -1315,7 +1315,7 @@ namespace Vulkan {
             int size = sizeof(VkDedicatedAllocationBufferCreateInfoNV);
             var info = (VkDedicatedAllocationBufferCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DedicatedAllocationBufferCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DedicatedAllocationBufferCreateInfoNV; }
 
             return info;
         }
@@ -1335,7 +1335,7 @@ namespace Vulkan {
             int size = sizeof(VkDedicatedAllocationImageCreateInfoNV);
             var info = (VkDedicatedAllocationImageCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DedicatedAllocationImageCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DedicatedAllocationImageCreateInfoNV; }
 
             return info;
         }
@@ -1355,7 +1355,7 @@ namespace Vulkan {
             int size = sizeof(VkDedicatedAllocationMemoryAllocateInfoNV);
             var info = (VkDedicatedAllocationMemoryAllocateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DedicatedAllocationMemoryAllocateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DedicatedAllocationMemoryAllocateInfoNV; }
 
             return info;
         }
@@ -1433,7 +1433,7 @@ namespace Vulkan {
             int size = sizeof(VkDescriptorPoolInlineUniformBlockCreateInfoEXT);
             var info = (VkDescriptorPoolInlineUniformBlockCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DescriptorPoolInlineUniformBlockCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DescriptorPoolInlineUniformBlockCreateInfoEXT; }
 
             return info;
         }
@@ -1511,7 +1511,7 @@ namespace Vulkan {
             int size = sizeof(VkDescriptorSetLayoutBindingFlagsCreateInfoEXT);
             var info = (VkDescriptorSetLayoutBindingFlagsCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DescriptorSetLayoutBindingFlagsCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DescriptorSetLayoutBindingFlagsCreateInfoEXT; }
 
             return info;
         }
@@ -1571,7 +1571,7 @@ namespace Vulkan {
             int size = sizeof(VkDescriptorSetVariableDescriptorCountAllocateInfoEXT);
             var info = (VkDescriptorSetVariableDescriptorCountAllocateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DescriptorSetVariableDescriptorCountAllocateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DescriptorSetVariableDescriptorCountAllocateInfoEXT; }
 
             return info;
         }
@@ -1591,7 +1591,7 @@ namespace Vulkan {
             int size = sizeof(VkDescriptorSetVariableDescriptorCountLayoutSupportEXT);
             var info = (VkDescriptorSetVariableDescriptorCountLayoutSupportEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DescriptorSetVariableDescriptorCountLayoutSupportExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DescriptorSetVariableDescriptorCountLayoutSupportEXT; }
 
             return info;
         }
@@ -1670,7 +1670,7 @@ namespace Vulkan {
             int size = sizeof(VkDeviceEventInfoEXT);
             var info = (VkDeviceEventInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DeviceEventInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DeviceEventInfoEXT; }
 
             return info;
         }
@@ -1930,7 +1930,7 @@ namespace Vulkan {
             int size = sizeof(VkDeviceQueueGlobalPriorityCreateInfoEXT);
             var info = (VkDeviceQueueGlobalPriorityCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DeviceQueueGlobalPriorityCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DeviceQueueGlobalPriorityCreateInfoEXT; }
 
             return info;
         }
@@ -1989,7 +1989,7 @@ namespace Vulkan {
             int size = sizeof(VkDisplayEventInfoEXT);
             var info = (VkDisplayEventInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DisplayEventInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DisplayEventInfoEXT; }
 
             return info;
         }
@@ -2205,7 +2205,7 @@ namespace Vulkan {
             int size = sizeof(VkDisplayPowerInfoEXT);
             var info = (VkDisplayPowerInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DisplayPowerInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DisplayPowerInfoEXT; }
 
             return info;
         }
@@ -2380,7 +2380,7 @@ namespace Vulkan {
             int size = sizeof(VkDrmFormatModifierPropertiesListEXT);
             var info = (VkDrmFormatModifierPropertiesListEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DrmFormatModifierPropertiesListExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.DrmFormatModifierPropertiesListEXT; }
 
             return info;
         }
@@ -2480,7 +2480,7 @@ namespace Vulkan {
             int size = sizeof(VkExportMemoryAllocateInfoNV);
             var info = (VkExportMemoryAllocateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ExportMemoryAllocateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ExportMemoryAllocateInfoNV; }
 
             return info;
         }
@@ -2520,7 +2520,7 @@ namespace Vulkan {
             int size = sizeof(VkExportMemoryWin32HandleInfoNV);
             var info = (VkExportMemoryWin32HandleInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ExportMemoryWin32HandleInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ExportMemoryWin32HandleInfoNV; }
 
             return info;
         }
@@ -2776,7 +2776,7 @@ namespace Vulkan {
             int size = sizeof(VkExternalMemoryImageCreateInfoNV);
             var info = (VkExternalMemoryImageCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ExternalMemoryImageCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ExternalMemoryImageCreateInfoNV; }
 
             return info;
         }
@@ -2895,7 +2895,7 @@ namespace Vulkan {
             int size = sizeof(VkFilterCubicImageViewImageFormatPropertiesEXT);
             var info = (VkFilterCubicImageViewImageFormatPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.FilterCubicImageViewImageFormatPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.FilterCubicImageViewImageFormatPropertiesEXT; }
 
             return info;
         }
@@ -2974,7 +2974,7 @@ namespace Vulkan {
             int size = sizeof(VkGeometryAABBNV);
             var info = (VkGeometryAABBNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.GeometryAabbNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.GeometryAabbNV; }
 
             return info;
         }
@@ -3013,7 +3013,7 @@ namespace Vulkan {
             int size = sizeof(VkGeometryNV);
             var info = (VkGeometryNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.GeometryNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.GeometryNV; }
 
             return info;
         }
@@ -3033,7 +3033,7 @@ namespace Vulkan {
             int size = sizeof(VkGeometryTrianglesNV);
             var info = (VkGeometryTrianglesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.GeometryTrianglesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.GeometryTrianglesNV; }
 
             return info;
         }
@@ -3073,7 +3073,7 @@ namespace Vulkan {
             int size = sizeof(VkHdrMetadataEXT);
             var info = (VkHdrMetadataEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.HdrMetadataExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.HdrMetadataEXT; }
 
             return info;
         }
@@ -3171,7 +3171,7 @@ namespace Vulkan {
             int size = sizeof(VkImageDrmFormatModifierExplicitCreateInfoEXT);
             var info = (VkImageDrmFormatModifierExplicitCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageDrmFormatModifierExplicitCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageDrmFormatModifierExplicitCreateInfoEXT; }
 
             return info;
         }
@@ -3191,7 +3191,7 @@ namespace Vulkan {
             int size = sizeof(VkImageDrmFormatModifierListCreateInfoEXT);
             var info = (VkImageDrmFormatModifierListCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageDrmFormatModifierListCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageDrmFormatModifierListCreateInfoEXT; }
 
             return info;
         }
@@ -3211,7 +3211,7 @@ namespace Vulkan {
             int size = sizeof(VkImageDrmFormatModifierPropertiesEXT);
             var info = (VkImageDrmFormatModifierPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageDrmFormatModifierPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageDrmFormatModifierPropertiesEXT; }
 
             return info;
         }
@@ -3409,7 +3409,7 @@ namespace Vulkan {
             int size = sizeof(VkImageStencilUsageCreateInfoEXT);
             var info = (VkImageStencilUsageCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageStencilUsageCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageStencilUsageCreateInfoEXT; }
 
             return info;
         }
@@ -3506,7 +3506,7 @@ namespace Vulkan {
             int size = sizeof(VkImageViewASTCDecodeModeEXT);
             var info = (VkImageViewASTCDecodeModeEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageViewAstcDecodeModeExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImageViewAstcDecodeModeEXT; }
 
             return info;
         }
@@ -3666,7 +3666,7 @@ namespace Vulkan {
             int size = sizeof(VkImportMemoryHostPointerInfoEXT);
             var info = (VkImportMemoryHostPointerInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImportMemoryHostPointerInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImportMemoryHostPointerInfoEXT; }
 
             return info;
         }
@@ -3706,7 +3706,7 @@ namespace Vulkan {
             int size = sizeof(VkImportMemoryWin32HandleInfoNV);
             var info = (VkImportMemoryWin32HandleInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImportMemoryWin32HandleInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ImportMemoryWin32HandleInfoNV; }
 
             return info;
         }
@@ -4121,7 +4121,7 @@ namespace Vulkan {
             int size = sizeof(VkMemoryHostPointerPropertiesEXT);
             var info = (VkMemoryHostPointerPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.MemoryHostPointerPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.MemoryHostPointerPropertiesEXT; }
 
             return info;
         }
@@ -4141,7 +4141,7 @@ namespace Vulkan {
             int size = sizeof(VkMemoryPriorityAllocateInfoEXT);
             var info = (VkMemoryPriorityAllocateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.MemoryPriorityAllocateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.MemoryPriorityAllocateInfoEXT; }
 
             return info;
         }
@@ -4239,7 +4239,7 @@ namespace Vulkan {
             int size = sizeof(VkMetalSurfaceCreateInfoEXT);
             var info = (VkMetalSurfaceCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.MetalSurfaceCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.MetalSurfaceCreateInfoEXT; }
 
             return info;
         }
@@ -4259,7 +4259,7 @@ namespace Vulkan {
             int size = sizeof(VkMultisamplePropertiesEXT);
             var info = (VkMultisamplePropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.MultisamplePropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.MultisamplePropertiesEXT; }
 
             return info;
         }
@@ -4510,7 +4510,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceASTCDecodeFeaturesEXT);
             var info = (VkPhysicalDeviceASTCDecodeFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceAstcDecodeFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceAstcDecodeFeaturesEXT; }
 
             return info;
         }
@@ -4530,7 +4530,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT);
             var info = (VkPhysicalDeviceBlendOperationAdvancedFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceBlendOperationAdvancedFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceBlendOperationAdvancedFeaturesEXT; }
 
             return info;
         }
@@ -4550,7 +4550,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT);
             var info = (VkPhysicalDeviceBlendOperationAdvancedPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceBlendOperationAdvancedPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceBlendOperationAdvancedPropertiesEXT; }
 
             return info;
         }
@@ -4570,7 +4570,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceBufferDeviceAddressFeaturesEXT);
             var info = (VkPhysicalDeviceBufferDeviceAddressFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceBufferDeviceAddressFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceBufferDeviceAddressFeaturesEXT; }
 
             return info;
         }
@@ -4590,7 +4590,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceComputeShaderDerivativesFeaturesNV);
             var info = (VkPhysicalDeviceComputeShaderDerivativesFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceComputeShaderDerivativesFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceComputeShaderDerivativesFeaturesNV; }
 
             return info;
         }
@@ -4610,7 +4610,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceConditionalRenderingFeaturesEXT);
             var info = (VkPhysicalDeviceConditionalRenderingFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceConditionalRenderingFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceConditionalRenderingFeaturesEXT; }
 
             return info;
         }
@@ -4630,7 +4630,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceConservativeRasterizationPropertiesEXT);
             var info = (VkPhysicalDeviceConservativeRasterizationPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceConservativeRasterizationPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceConservativeRasterizationPropertiesEXT; }
 
             return info;
         }
@@ -4650,7 +4650,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceCooperativeMatrixFeaturesNV);
             var info = (VkPhysicalDeviceCooperativeMatrixFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceCooperativeMatrixFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceCooperativeMatrixFeaturesNV; }
 
             return info;
         }
@@ -4670,7 +4670,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceCooperativeMatrixPropertiesNV);
             var info = (VkPhysicalDeviceCooperativeMatrixPropertiesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceCooperativeMatrixPropertiesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceCooperativeMatrixPropertiesNV; }
 
             return info;
         }
@@ -4690,7 +4690,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceCornerSampledImageFeaturesNV);
             var info = (VkPhysicalDeviceCornerSampledImageFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceCornerSampledImageFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceCornerSampledImageFeaturesNV; }
 
             return info;
         }
@@ -4710,7 +4710,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV);
             var info = (VkPhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV; }
 
             return info;
         }
@@ -4730,7 +4730,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceDepthClipEnableFeaturesEXT);
             var info = (VkPhysicalDeviceDepthClipEnableFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDepthClipEnableFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDepthClipEnableFeaturesEXT; }
 
             return info;
         }
@@ -4770,7 +4770,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceDescriptorIndexingFeaturesEXT);
             var info = (VkPhysicalDeviceDescriptorIndexingFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDescriptorIndexingFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDescriptorIndexingFeaturesEXT; }
 
             return info;
         }
@@ -4790,7 +4790,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceDescriptorIndexingPropertiesEXT);
             var info = (VkPhysicalDeviceDescriptorIndexingPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDescriptorIndexingPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDescriptorIndexingPropertiesEXT; }
 
             return info;
         }
@@ -4810,7 +4810,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceDiscardRectanglePropertiesEXT);
             var info = (VkPhysicalDeviceDiscardRectanglePropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDiscardRectanglePropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceDiscardRectanglePropertiesEXT; }
 
             return info;
         }
@@ -4850,7 +4850,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceExclusiveScissorFeaturesNV);
             var info = (VkPhysicalDeviceExclusiveScissorFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceExclusiveScissorFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceExclusiveScissorFeaturesNV; }
 
             return info;
         }
@@ -4930,7 +4930,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceExternalMemoryHostPropertiesEXT);
             var info = (VkPhysicalDeviceExternalMemoryHostPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceExternalMemoryHostPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceExternalMemoryHostPropertiesEXT; }
 
             return info;
         }
@@ -5049,7 +5049,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceFragmentDensityMapFeaturesEXT);
             var info = (VkPhysicalDeviceFragmentDensityMapFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceFragmentDensityMapFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceFragmentDensityMapFeaturesEXT; }
 
             return info;
         }
@@ -5069,7 +5069,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceFragmentDensityMapPropertiesEXT);
             var info = (VkPhysicalDeviceFragmentDensityMapPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceFragmentDensityMapPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceFragmentDensityMapPropertiesEXT; }
 
             return info;
         }
@@ -5089,7 +5089,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV);
             var info = (VkPhysicalDeviceFragmentShaderBarycentricFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceFragmentShaderBarycentricFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceFragmentShaderBarycentricFeaturesNV; }
 
             return info;
         }
@@ -5129,7 +5129,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceHostQueryResetFeaturesEXT);
             var info = (VkPhysicalDeviceHostQueryResetFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceHostQueryResetFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceHostQueryResetFeaturesEXT; }
 
             return info;
         }
@@ -5169,7 +5169,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceImageDrmFormatModifierInfoEXT);
             var info = (VkPhysicalDeviceImageDrmFormatModifierInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceImageDrmFormatModifierInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceImageDrmFormatModifierInfoEXT; }
 
             return info;
         }
@@ -5209,7 +5209,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceImageViewImageFormatInfoEXT);
             var info = (VkPhysicalDeviceImageViewImageFormatInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceImageViewImageFormatInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceImageViewImageFormatInfoEXT; }
 
             return info;
         }
@@ -5229,7 +5229,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceInlineUniformBlockFeaturesEXT);
             var info = (VkPhysicalDeviceInlineUniformBlockFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceInlineUniformBlockFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceInlineUniformBlockFeaturesEXT; }
 
             return info;
         }
@@ -5249,7 +5249,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceInlineUniformBlockPropertiesEXT);
             var info = (VkPhysicalDeviceInlineUniformBlockPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceInlineUniformBlockPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceInlineUniformBlockPropertiesEXT; }
 
             return info;
         }
@@ -5308,7 +5308,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceMemoryBudgetPropertiesEXT);
             var info = (VkPhysicalDeviceMemoryBudgetPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceMemoryBudgetPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceMemoryBudgetPropertiesEXT; }
 
             return info;
         }
@@ -5328,7 +5328,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceMemoryPriorityFeaturesEXT);
             var info = (VkPhysicalDeviceMemoryPriorityFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceMemoryPriorityFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceMemoryPriorityFeaturesEXT; }
 
             return info;
         }
@@ -5387,7 +5387,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceMeshShaderFeaturesNV);
             var info = (VkPhysicalDeviceMeshShaderFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceMeshShaderFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceMeshShaderFeaturesNV; }
 
             return info;
         }
@@ -5407,7 +5407,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceMeshShaderPropertiesNV);
             var info = (VkPhysicalDeviceMeshShaderPropertiesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceMeshShaderPropertiesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceMeshShaderPropertiesNV; }
 
             return info;
         }
@@ -5487,7 +5487,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDevicePCIBusInfoPropertiesEXT);
             var info = (VkPhysicalDevicePCIBusInfoPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDevicePciBusInfoPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDevicePciBusInfoPropertiesEXT; }
 
             return info;
         }
@@ -5626,7 +5626,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceRayTracingPropertiesNV);
             var info = (VkPhysicalDeviceRayTracingPropertiesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceRayTracingPropertiesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceRayTracingPropertiesNV; }
 
             return info;
         }
@@ -5646,7 +5646,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV);
             var info = (VkPhysicalDeviceRepresentativeFragmentTestFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceRepresentativeFragmentTestFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceRepresentativeFragmentTestFeaturesNV; }
 
             return info;
         }
@@ -5666,7 +5666,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceSampleLocationsPropertiesEXT);
             var info = (VkPhysicalDeviceSampleLocationsPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceSampleLocationsPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceSampleLocationsPropertiesEXT; }
 
             return info;
         }
@@ -5686,7 +5686,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT);
             var info = (VkPhysicalDeviceSamplerFilterMinmaxPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceSamplerFilterMinmaxPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceSamplerFilterMinmaxPropertiesEXT; }
 
             return info;
         }
@@ -5726,7 +5726,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceScalarBlockLayoutFeaturesEXT);
             var info = (VkPhysicalDeviceScalarBlockLayoutFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceScalarBlockLayoutFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceScalarBlockLayoutFeaturesEXT; }
 
             return info;
         }
@@ -5806,7 +5806,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceShaderImageFootprintFeaturesNV);
             var info = (VkPhysicalDeviceShaderImageFootprintFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceShaderImageFootprintFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceShaderImageFootprintFeaturesNV; }
 
             return info;
         }
@@ -5826,7 +5826,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceShadingRateImageFeaturesNV);
             var info = (VkPhysicalDeviceShadingRateImageFeaturesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceShadingRateImageFeaturesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceShadingRateImageFeaturesNV; }
 
             return info;
         }
@@ -5846,7 +5846,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceShadingRateImagePropertiesNV);
             var info = (VkPhysicalDeviceShadingRateImagePropertiesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceShadingRateImagePropertiesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceShadingRateImagePropertiesNV; }
 
             return info;
         }
@@ -5945,7 +5945,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceTransformFeedbackFeaturesEXT);
             var info = (VkPhysicalDeviceTransformFeedbackFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceTransformFeedbackFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceTransformFeedbackFeaturesEXT; }
 
             return info;
         }
@@ -5965,7 +5965,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceTransformFeedbackPropertiesEXT);
             var info = (VkPhysicalDeviceTransformFeedbackPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceTransformFeedbackPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceTransformFeedbackPropertiesEXT; }
 
             return info;
         }
@@ -6005,7 +6005,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT);
             var info = (VkPhysicalDeviceVertexAttributeDivisorFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceVertexAttributeDivisorFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceVertexAttributeDivisorFeaturesEXT; }
 
             return info;
         }
@@ -6025,7 +6025,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT);
             var info = (VkPhysicalDeviceVertexAttributeDivisorPropertiesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceVertexAttributeDivisorPropertiesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceVertexAttributeDivisorPropertiesEXT; }
 
             return info;
         }
@@ -6065,7 +6065,7 @@ namespace Vulkan {
             int size = sizeof(VkPhysicalDeviceYcbcrImageArraysFeaturesEXT);
             var info = (VkPhysicalDeviceYcbcrImageArraysFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceYcbcrImageArraysFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PhysicalDeviceYcbcrImageArraysFeaturesEXT; }
 
             return info;
         }
@@ -6105,7 +6105,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineColorBlendAdvancedStateCreateInfoEXT);
             var info = (VkPipelineColorBlendAdvancedStateCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineColorBlendAdvancedStateCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineColorBlendAdvancedStateCreateInfoEXT; }
 
             return info;
         }
@@ -6164,7 +6164,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineCoverageModulationStateCreateInfoNV);
             var info = (VkPipelineCoverageModulationStateCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineCoverageModulationStateCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineCoverageModulationStateCreateInfoNV; }
 
             return info;
         }
@@ -6184,7 +6184,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineCoverageToColorStateCreateInfoNV);
             var info = (VkPipelineCoverageToColorStateCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineCoverageToColorStateCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineCoverageToColorStateCreateInfoNV; }
 
             return info;
         }
@@ -6204,7 +6204,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineCreationFeedbackCreateInfoEXT);
             var info = (VkPipelineCreationFeedbackCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineCreationFeedbackCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineCreationFeedbackCreateInfoEXT; }
 
             return info;
         }
@@ -6263,7 +6263,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineDiscardRectangleStateCreateInfoEXT);
             var info = (VkPipelineDiscardRectangleStateCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineDiscardRectangleStateCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineDiscardRectangleStateCreateInfoEXT; }
 
             return info;
         }
@@ -6363,7 +6363,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineRasterizationConservativeStateCreateInfoEXT);
             var info = (VkPipelineRasterizationConservativeStateCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineRasterizationConservativeStateCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineRasterizationConservativeStateCreateInfoEXT; }
 
             return info;
         }
@@ -6383,7 +6383,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineRasterizationDepthClipStateCreateInfoEXT);
             var info = (VkPipelineRasterizationDepthClipStateCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineRasterizationDepthClipStateCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineRasterizationDepthClipStateCreateInfoEXT; }
 
             return info;
         }
@@ -6443,7 +6443,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineRasterizationStateStreamCreateInfoEXT);
             var info = (VkPipelineRasterizationStateStreamCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineRasterizationStateStreamCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineRasterizationStateStreamCreateInfoEXT; }
 
             return info;
         }
@@ -6463,7 +6463,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineRepresentativeFragmentTestStateCreateInfoNV);
             var info = (VkPipelineRepresentativeFragmentTestStateCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineRepresentativeFragmentTestStateCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineRepresentativeFragmentTestStateCreateInfoNV; }
 
             return info;
         }
@@ -6483,7 +6483,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineSampleLocationsStateCreateInfoEXT);
             var info = (VkPipelineSampleLocationsStateCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineSampleLocationsStateCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineSampleLocationsStateCreateInfoEXT; }
 
             return info;
         }
@@ -6563,7 +6563,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineVertexInputDivisorStateCreateInfoEXT);
             var info = (VkPipelineVertexInputDivisorStateCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineVertexInputDivisorStateCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineVertexInputDivisorStateCreateInfoEXT; }
 
             return info;
         }
@@ -6603,7 +6603,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineViewportCoarseSampleOrderStateCreateInfoNV);
             var info = (VkPipelineViewportCoarseSampleOrderStateCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportCoarseSampleOrderStateCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportCoarseSampleOrderStateCreateInfoNV; }
 
             return info;
         }
@@ -6623,7 +6623,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineViewportExclusiveScissorStateCreateInfoNV);
             var info = (VkPipelineViewportExclusiveScissorStateCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportExclusiveScissorStateCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportExclusiveScissorStateCreateInfoNV; }
 
             return info;
         }
@@ -6643,7 +6643,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineViewportShadingRateImageStateCreateInfoNV);
             var info = (VkPipelineViewportShadingRateImageStateCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportShadingRateImageStateCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportShadingRateImageStateCreateInfoNV; }
 
             return info;
         }
@@ -6683,7 +6683,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineViewportSwizzleStateCreateInfoNV);
             var info = (VkPipelineViewportSwizzleStateCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportSwizzleStateCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportSwizzleStateCreateInfoNV; }
 
             return info;
         }
@@ -6703,7 +6703,7 @@ namespace Vulkan {
             int size = sizeof(VkPipelineViewportWScalingStateCreateInfoNV);
             var info = (VkPipelineViewportWScalingStateCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportWScalingStateCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.PipelineViewportWScalingStateCreateInfoNV; }
 
             return info;
         }
@@ -6900,7 +6900,7 @@ namespace Vulkan {
             int size = sizeof(VkQueueFamilyCheckpointPropertiesNV);
             var info = (VkQueueFamilyCheckpointPropertiesNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.QueueFamilyCheckpointPropertiesNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.QueueFamilyCheckpointPropertiesNV; }
 
             return info;
         }
@@ -6959,7 +6959,7 @@ namespace Vulkan {
             int size = sizeof(VkRayTracingPipelineCreateInfoNV);
             var info = (VkRayTracingPipelineCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.RayTracingPipelineCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.RayTracingPipelineCreateInfoNV; }
 
             return info;
         }
@@ -6979,7 +6979,7 @@ namespace Vulkan {
             int size = sizeof(VkRayTracingShaderGroupCreateInfoNV);
             var info = (VkRayTracingShaderGroupCreateInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.RayTracingShaderGroupCreateInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.RayTracingShaderGroupCreateInfoNV; }
 
             return info;
         }
@@ -7116,7 +7116,7 @@ namespace Vulkan {
             int size = sizeof(VkRenderPassFragmentDensityMapCreateInfoEXT);
             var info = (VkRenderPassFragmentDensityMapCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.RenderPassFragmentDensityMapCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.RenderPassFragmentDensityMapCreateInfoEXT; }
 
             return info;
         }
@@ -7176,7 +7176,7 @@ namespace Vulkan {
             int size = sizeof(VkRenderPassSampleLocationsBeginInfoEXT);
             var info = (VkRenderPassSampleLocationsBeginInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.RenderPassSampleLocationsBeginInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.RenderPassSampleLocationsBeginInfoEXT; }
 
             return info;
         }
@@ -7215,7 +7215,7 @@ namespace Vulkan {
             int size = sizeof(VkSampleLocationsInfoEXT);
             var info = (VkSampleLocationsInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SampleLocationsInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SampleLocationsInfoEXT; }
 
             return info;
         }
@@ -7255,7 +7255,7 @@ namespace Vulkan {
             int size = sizeof(VkSamplerReductionModeCreateInfoEXT);
             var info = (VkSamplerReductionModeCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SamplerReductionModeCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SamplerReductionModeCreateInfoEXT; }
 
             return info;
         }
@@ -7415,7 +7415,7 @@ namespace Vulkan {
             int size = sizeof(VkShaderModuleValidationCacheCreateInfoEXT);
             var info = (VkShaderModuleValidationCacheCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ShaderModuleValidationCacheCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ShaderModuleValidationCacheCreateInfoEXT; }
 
             return info;
         }
@@ -7958,7 +7958,7 @@ namespace Vulkan {
             int size = sizeof(VkSurfaceCapabilities2EXT);
             var info = (VkSurfaceCapabilities2EXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SurfaceCapabilities2Ext; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SurfaceCapabilities2EXT; }
 
             return info;
         }
@@ -7998,7 +7998,7 @@ namespace Vulkan {
             int size = sizeof(VkSurfaceCapabilitiesFullScreenExclusiveEXT);
             var info = (VkSurfaceCapabilitiesFullScreenExclusiveEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SurfaceCapabilitiesFullScreenExclusiveExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SurfaceCapabilitiesFullScreenExclusiveEXT; }
 
             return info;
         }
@@ -8076,7 +8076,7 @@ namespace Vulkan {
             int size = sizeof(VkSurfaceFullScreenExclusiveInfoEXT);
             var info = (VkSurfaceFullScreenExclusiveInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SurfaceFullScreenExclusiveInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SurfaceFullScreenExclusiveInfoEXT; }
 
             return info;
         }
@@ -8096,7 +8096,7 @@ namespace Vulkan {
             int size = sizeof(VkSurfaceFullScreenExclusiveWin32InfoEXT);
             var info = (VkSurfaceFullScreenExclusiveWin32InfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SurfaceFullScreenExclusiveWin32InfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SurfaceFullScreenExclusiveWin32InfoEXT; }
 
             return info;
         }
@@ -8136,7 +8136,7 @@ namespace Vulkan {
             int size = sizeof(VkSwapchainCounterCreateInfoEXT);
             var info = (VkSwapchainCounterCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SwapchainCounterCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.SwapchainCounterCreateInfoEXT; }
 
             return info;
         }
@@ -8216,7 +8216,7 @@ namespace Vulkan {
             int size = sizeof(VkValidationCacheCreateInfoEXT);
             var info = (VkValidationCacheCreateInfoEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ValidationCacheCreateInfoExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ValidationCacheCreateInfoEXT; }
 
             return info;
         }
@@ -8236,7 +8236,7 @@ namespace Vulkan {
             int size = sizeof(VkValidationFeaturesEXT);
             var info = (VkValidationFeaturesEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ValidationFeaturesExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ValidationFeaturesEXT; }
 
             return info;
         }
@@ -8256,7 +8256,7 @@ namespace Vulkan {
             int size = sizeof(VkValidationFlagsEXT);
             var info = (VkValidationFlagsEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ValidationFlagsExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.ValidationFlagsEXT; }
 
             return info;
         }
@@ -8450,7 +8450,7 @@ namespace Vulkan {
             int size = sizeof(VkWin32KeyedMutexAcquireReleaseInfoNV);
             var info = (VkWin32KeyedMutexAcquireReleaseInfoNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.Win32KeyedMutexAcquireReleaseInfoNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.Win32KeyedMutexAcquireReleaseInfoNV; }
 
             return info;
         }
@@ -8510,7 +8510,7 @@ namespace Vulkan {
             int size = sizeof(VkWriteDescriptorSetAccelerationStructureNV);
             var info = (VkWriteDescriptorSetAccelerationStructureNV*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.WriteDescriptorSetAccelerationStructureNv; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.WriteDescriptorSetAccelerationStructureNV; }
 
             return info;
         }
@@ -8530,7 +8530,7 @@ namespace Vulkan {
             int size = sizeof(VkWriteDescriptorSetInlineUniformBlockEXT);
             var info = (VkWriteDescriptorSetInlineUniformBlockEXT*)Marshal.AllocHGlobal(size * count);
             for (int i = 0; i < count; i++) { Marshal.Copy(Vk.zeros, 0, (IntPtr)(&(info[i])), size); }
-            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.WriteDescriptorSetInlineUniformBlockExt; }
+            for (int i = 0; i < count; i++) { info[i].sType = VkStructureType.WriteDescriptorSetInlineUniformBlockEXT; }
 
             return info;
         }

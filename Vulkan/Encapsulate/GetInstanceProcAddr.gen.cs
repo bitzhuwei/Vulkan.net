@@ -155,6 +155,7 @@ using VkSubpassDescriptionFlags = Vulkan.VkSubpassDescriptionFlagBits;
 using VkSurfaceCounterFlagsEXT = Vulkan.VkSurfaceCounterFlagBitsEXT;
 using VkSurfaceTransformFlagsKHR = Vulkan.VkSurfaceTransformFlagBitsKHR;
 using VkSwapchainCreateFlagsKHR = Vulkan.VkSwapchainCreateFlagBitsKHR;
+using System.Collections.Generic;
 // VkValidationCacheCreateFlagsEXT - Reserved for future use
 
 namespace Vulkan {
@@ -170,19 +171,16 @@ namespace Vulkan {
             this VkInstance instance,
             VkDevice device,
             VkSwapchainKHR swapchain) {
-            if (delvkAcquireFullScreenExclusiveModeEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkAcquireFullScreenExclusiveModeEXT");
-                delvkAcquireFullScreenExclusiveModeEXT = (vkAcquireFullScreenExclusiveModeEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkAcquireFullScreenExclusiveModeEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkAcquireFullScreenExclusiveModeEXT");
+            var func = (vkAcquireFullScreenExclusiveModeEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkAcquireFullScreenExclusiveModeEXT));
 
-            if (delvkAcquireFullScreenExclusiveModeEXT != null) {
-                return delvkAcquireFullScreenExclusiveModeEXT(device, swapchain);
+            if (func != null) {
+                return func(device, swapchain);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkAcquireFullScreenExclusiveModeEXT delvkAcquireFullScreenExclusiveModeEXT;
 
         // Command: 3
         // GetInstanceProcAddr: 1
@@ -197,19 +195,16 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             /*Display*-*/IntPtr dpy,
             VkDisplayKHR display) {
-            if (delvkAcquireXlibDisplayEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkAcquireXlibDisplayEXT");
-                delvkAcquireXlibDisplayEXT = (vkAcquireXlibDisplayEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkAcquireXlibDisplayEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkAcquireXlibDisplayEXT");
+            var func = (vkAcquireXlibDisplayEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkAcquireXlibDisplayEXT));
 
-            if (delvkAcquireXlibDisplayEXT != null) {
-                return delvkAcquireXlibDisplayEXT(physicalDevice, dpy, display);
+            if (func != null) {
+                return func(physicalDevice, dpy, display);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkAcquireXlibDisplayEXT delvkAcquireXlibDisplayEXT;
 
         // Command: 13
         // GetInstanceProcAddr: 2
@@ -224,16 +219,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkConditionalRenderingBeginInfoEXT* pConditionalRenderingBegin) {
-            if (delvkCmdBeginConditionalRenderingEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginConditionalRenderingEXT");
-                delvkCmdBeginConditionalRenderingEXT = (vkCmdBeginConditionalRenderingEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginConditionalRenderingEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginConditionalRenderingEXT");
+            var func = (vkCmdBeginConditionalRenderingEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginConditionalRenderingEXT));
 
-            if (delvkCmdBeginConditionalRenderingEXT != null) {
-                delvkCmdBeginConditionalRenderingEXT(commandBuffer, pConditionalRenderingBegin);
+            if (func != null) {
+                func(commandBuffer, pConditionalRenderingBegin);
             }
         }
-        private static vkCmdBeginConditionalRenderingEXT delvkCmdBeginConditionalRenderingEXT;
 
         // Command: 14
         // GetInstanceProcAddr: 3
@@ -248,16 +240,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo) {
-            if (delvkCmdBeginDebugUtilsLabelEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginDebugUtilsLabelEXT");
-                delvkCmdBeginDebugUtilsLabelEXT = (vkCmdBeginDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginDebugUtilsLabelEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginDebugUtilsLabelEXT");
+            var func = (vkCmdBeginDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginDebugUtilsLabelEXT));
 
-            if (delvkCmdBeginDebugUtilsLabelEXT != null) {
-                delvkCmdBeginDebugUtilsLabelEXT(commandBuffer, pLabelInfo);
+            if (func != null) {
+                func(commandBuffer, pLabelInfo);
             }
         }
-        private static vkCmdBeginDebugUtilsLabelEXT delvkCmdBeginDebugUtilsLabelEXT;
 
         // Command: 16
         // GetInstanceProcAddr: 4
@@ -281,16 +270,13 @@ namespace Vulkan {
             UInt32 query,
             VkQueryControlFlags flags,
             UInt32 index) {
-            if (delvkCmdBeginQueryIndexedEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginQueryIndexedEXT");
-                delvkCmdBeginQueryIndexedEXT = (vkCmdBeginQueryIndexedEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginQueryIndexedEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginQueryIndexedEXT");
+            var func = (vkCmdBeginQueryIndexedEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginQueryIndexedEXT));
 
-            if (delvkCmdBeginQueryIndexedEXT != null) {
-                delvkCmdBeginQueryIndexedEXT(commandBuffer, queryPool, query, flags, index);
+            if (func != null) {
+                func(commandBuffer, queryPool, query, flags, index);
             }
         }
-        private static vkCmdBeginQueryIndexedEXT delvkCmdBeginQueryIndexedEXT;
 
         // Command: 19
         // GetInstanceProcAddr: 5
@@ -332,16 +318,13 @@ namespace Vulkan {
             UInt32 counterBufferCount,
             /*-const-*/ VkBuffer* pCounterBuffers,
             /*-const-*/ VkDeviceSize* pCounterBufferOffsets) {
-            if (delvkCmdBeginTransformFeedbackEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginTransformFeedbackEXT");
-                delvkCmdBeginTransformFeedbackEXT = (vkCmdBeginTransformFeedbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginTransformFeedbackEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBeginTransformFeedbackEXT");
+            var func = (vkCmdBeginTransformFeedbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBeginTransformFeedbackEXT));
 
-            if (delvkCmdBeginTransformFeedbackEXT != null) {
-                delvkCmdBeginTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+            if (func != null) {
+                func(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
             }
         }
-        private static vkCmdBeginTransformFeedbackEXT delvkCmdBeginTransformFeedbackEXT;
 
         // Command: 24
         // GetInstanceProcAddr: 6
@@ -369,16 +352,13 @@ namespace Vulkan {
             /*-const-*/ VkBuffer* pBuffers,
             /*-const-*/ VkDeviceSize* pOffsets,
             /*-const-*/ VkDeviceSize* pSizes) {
-            if (delvkCmdBindTransformFeedbackBuffersEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBindTransformFeedbackBuffersEXT");
-                delvkCmdBindTransformFeedbackBuffersEXT = (vkCmdBindTransformFeedbackBuffersEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBindTransformFeedbackBuffersEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdBindTransformFeedbackBuffersEXT");
+            var func = (vkCmdBindTransformFeedbackBuffersEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdBindTransformFeedbackBuffersEXT));
 
-            if (delvkCmdBindTransformFeedbackBuffersEXT != null) {
-                delvkCmdBindTransformFeedbackBuffersEXT(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
+            if (func != null) {
+                func(commandBuffer, firstBinding, bindingCount, pBuffers, pOffsets, pSizes);
             }
         }
-        private static vkCmdBindTransformFeedbackBuffersEXT delvkCmdBindTransformFeedbackBuffersEXT;
 
         // Command: 37
         // GetInstanceProcAddr: 7
@@ -393,16 +373,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo) {
-            if (delvkCmdDebugMarkerBeginEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDebugMarkerBeginEXT");
-                delvkCmdDebugMarkerBeginEXT = (vkCmdDebugMarkerBeginEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDebugMarkerBeginEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDebugMarkerBeginEXT");
+            var func = (vkCmdDebugMarkerBeginEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDebugMarkerBeginEXT));
 
-            if (delvkCmdDebugMarkerBeginEXT != null) {
-                delvkCmdDebugMarkerBeginEXT(commandBuffer, pMarkerInfo);
+            if (func != null) {
+                func(commandBuffer, pMarkerInfo);
             }
         }
-        private static vkCmdDebugMarkerBeginEXT delvkCmdDebugMarkerBeginEXT;
 
         // Command: 38
         // GetInstanceProcAddr: 8
@@ -413,16 +390,13 @@ namespace Vulkan {
         public static void CmdDebugMarkerEndEXT(
             this VkInstance instance,
             VkCommandBuffer commandBuffer) {
-            if (delvkCmdDebugMarkerEndEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDebugMarkerEndEXT");
-                delvkCmdDebugMarkerEndEXT = (vkCmdDebugMarkerEndEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDebugMarkerEndEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDebugMarkerEndEXT");
+            var func = (vkCmdDebugMarkerEndEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDebugMarkerEndEXT));
 
-            if (delvkCmdDebugMarkerEndEXT != null) {
-                delvkCmdDebugMarkerEndEXT(commandBuffer);
+            if (func != null) {
+                func(commandBuffer);
             }
         }
-        private static vkCmdDebugMarkerEndEXT delvkCmdDebugMarkerEndEXT;
 
         // Command: 39
         // GetInstanceProcAddr: 9
@@ -437,16 +411,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkDebugMarkerMarkerInfoEXT* pMarkerInfo) {
-            if (delvkCmdDebugMarkerInsertEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDebugMarkerInsertEXT");
-                delvkCmdDebugMarkerInsertEXT = (vkCmdDebugMarkerInsertEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDebugMarkerInsertEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDebugMarkerInsertEXT");
+            var func = (vkCmdDebugMarkerInsertEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDebugMarkerInsertEXT));
 
-            if (delvkCmdDebugMarkerInsertEXT != null) {
-                delvkCmdDebugMarkerInsertEXT(commandBuffer, pMarkerInfo);
+            if (func != null) {
+                func(commandBuffer, pMarkerInfo);
             }
         }
-        private static vkCmdDebugMarkerInsertEXT delvkCmdDebugMarkerInsertEXT;
 
         // Command: 49
         // GetInstanceProcAddr: 10
@@ -478,16 +449,13 @@ namespace Vulkan {
             VkDeviceSize counterBufferOffset,
             UInt32 counterOffset,
             UInt32 vertexStride) {
-            if (delvkCmdDrawIndirectByteCountEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDrawIndirectByteCountEXT");
-                delvkCmdDrawIndirectByteCountEXT = (vkCmdDrawIndirectByteCountEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDrawIndirectByteCountEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdDrawIndirectByteCountEXT");
+            var func = (vkCmdDrawIndirectByteCountEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdDrawIndirectByteCountEXT));
 
-            if (delvkCmdDrawIndirectByteCountEXT != null) {
-                delvkCmdDrawIndirectByteCountEXT(commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
+            if (func != null) {
+                func(commandBuffer, instanceCount, firstInstance, counterBuffer, counterBufferOffset, counterOffset, vertexStride);
             }
         }
-        private static vkCmdDrawIndirectByteCountEXT delvkCmdDrawIndirectByteCountEXT;
 
         // Command: 55
         // GetInstanceProcAddr: 11
@@ -498,16 +466,13 @@ namespace Vulkan {
         public static void CmdEndConditionalRenderingEXT(
             this VkInstance instance,
             VkCommandBuffer commandBuffer) {
-            if (delvkCmdEndConditionalRenderingEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndConditionalRenderingEXT");
-                delvkCmdEndConditionalRenderingEXT = (vkCmdEndConditionalRenderingEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndConditionalRenderingEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndConditionalRenderingEXT");
+            var func = (vkCmdEndConditionalRenderingEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndConditionalRenderingEXT));
 
-            if (delvkCmdEndConditionalRenderingEXT != null) {
-                delvkCmdEndConditionalRenderingEXT(commandBuffer);
+            if (func != null) {
+                func(commandBuffer);
             }
         }
-        private static vkCmdEndConditionalRenderingEXT delvkCmdEndConditionalRenderingEXT;
 
         // Command: 56
         // GetInstanceProcAddr: 12
@@ -518,16 +483,13 @@ namespace Vulkan {
         public static void CmdEndDebugUtilsLabelEXT(
             this VkInstance instance,
             VkCommandBuffer commandBuffer) {
-            if (delvkCmdEndDebugUtilsLabelEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndDebugUtilsLabelEXT");
-                delvkCmdEndDebugUtilsLabelEXT = (vkCmdEndDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndDebugUtilsLabelEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndDebugUtilsLabelEXT");
+            var func = (vkCmdEndDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndDebugUtilsLabelEXT));
 
-            if (delvkCmdEndDebugUtilsLabelEXT != null) {
-                delvkCmdEndDebugUtilsLabelEXT(commandBuffer);
+            if (func != null) {
+                func(commandBuffer);
             }
         }
-        private static vkCmdEndDebugUtilsLabelEXT delvkCmdEndDebugUtilsLabelEXT;
 
         // Command: 58
         // GetInstanceProcAddr: 13
@@ -546,16 +508,13 @@ namespace Vulkan {
             VkQueryPool queryPool,
             UInt32 query,
             UInt32 index) {
-            if (delvkCmdEndQueryIndexedEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndQueryIndexedEXT");
-                delvkCmdEndQueryIndexedEXT = (vkCmdEndQueryIndexedEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndQueryIndexedEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndQueryIndexedEXT");
+            var func = (vkCmdEndQueryIndexedEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndQueryIndexedEXT));
 
-            if (delvkCmdEndQueryIndexedEXT != null) {
-                delvkCmdEndQueryIndexedEXT(commandBuffer, queryPool, query, index);
+            if (func != null) {
+                func(commandBuffer, queryPool, query, index);
             }
         }
-        private static vkCmdEndQueryIndexedEXT delvkCmdEndQueryIndexedEXT;
 
         // Command: 61
         // GetInstanceProcAddr: 14
@@ -592,16 +551,13 @@ namespace Vulkan {
             UInt32 counterBufferCount,
             /*-const-*/ VkBuffer* pCounterBuffers,
             /*-const-*/ VkDeviceSize* pCounterBufferOffsets) {
-            if (delvkCmdEndTransformFeedbackEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndTransformFeedbackEXT");
-                delvkCmdEndTransformFeedbackEXT = (vkCmdEndTransformFeedbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndTransformFeedbackEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdEndTransformFeedbackEXT");
+            var func = (vkCmdEndTransformFeedbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdEndTransformFeedbackEXT));
 
-            if (delvkCmdEndTransformFeedbackEXT != null) {
-                delvkCmdEndTransformFeedbackEXT(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
+            if (func != null) {
+                func(commandBuffer, firstCounterBuffer, counterBufferCount, pCounterBuffers, pCounterBufferOffsets);
             }
         }
-        private static vkCmdEndTransformFeedbackEXT delvkCmdEndTransformFeedbackEXT;
 
         // Command: 64
         // GetInstanceProcAddr: 15
@@ -613,16 +569,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo) {
-            if (delvkCmdInsertDebugUtilsLabelEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdInsertDebugUtilsLabelEXT");
-                delvkCmdInsertDebugUtilsLabelEXT = (vkCmdInsertDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdInsertDebugUtilsLabelEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdInsertDebugUtilsLabelEXT");
+            var func = (vkCmdInsertDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdInsertDebugUtilsLabelEXT));
 
-            if (delvkCmdInsertDebugUtilsLabelEXT != null) {
-                delvkCmdInsertDebugUtilsLabelEXT(commandBuffer, pLabelInfo);
+            if (func != null) {
+                func(commandBuffer, pLabelInfo);
             }
         }
-        private static vkCmdInsertDebugUtilsLabelEXT delvkCmdInsertDebugUtilsLabelEXT;
 
         // Command: 82
         // GetInstanceProcAddr: 16
@@ -642,16 +595,13 @@ namespace Vulkan {
             UInt32 firstDiscardRectangle,
             UInt32 discardRectangleCount,
             /*-const-*/ VkRect2D* pDiscardRectangles) {
-            if (delvkCmdSetDiscardRectangleEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdSetDiscardRectangleEXT");
-                delvkCmdSetDiscardRectangleEXT = (vkCmdSetDiscardRectangleEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdSetDiscardRectangleEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdSetDiscardRectangleEXT");
+            var func = (vkCmdSetDiscardRectangleEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdSetDiscardRectangleEXT));
 
-            if (delvkCmdSetDiscardRectangleEXT != null) {
-                delvkCmdSetDiscardRectangleEXT(commandBuffer, firstDiscardRectangle, discardRectangleCount, pDiscardRectangles);
+            if (func != null) {
+                func(commandBuffer, firstDiscardRectangle, discardRectangleCount, pDiscardRectangles);
             }
         }
-        private static vkCmdSetDiscardRectangleEXT delvkCmdSetDiscardRectangleEXT;
 
         // Command: 86
         // GetInstanceProcAddr: 17
@@ -664,16 +614,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkCommandBuffer commandBuffer,
             /*-const-*/ VkSampleLocationsInfoEXT* pSampleLocationsInfo) {
-            if (delvkCmdSetSampleLocationsEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdSetSampleLocationsEXT");
-                delvkCmdSetSampleLocationsEXT = (vkCmdSetSampleLocationsEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdSetSampleLocationsEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCmdSetSampleLocationsEXT");
+            var func = (vkCmdSetSampleLocationsEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCmdSetSampleLocationsEXT));
 
-            if (delvkCmdSetSampleLocationsEXT != null) {
-                delvkCmdSetSampleLocationsEXT(commandBuffer, pSampleLocationsInfo);
+            if (func != null) {
+                func(commandBuffer, pSampleLocationsInfo);
             }
         }
-        private static vkCmdSetSampleLocationsEXT delvkCmdSetSampleLocationsEXT;
 
         // Command: 107
         // GetInstanceProcAddr: 18
@@ -692,19 +639,16 @@ namespace Vulkan {
             /*-const-*/ VkDebugReportCallbackCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkDebugReportCallbackEXT* pCallback) {
-            if (delvkCreateDebugReportCallbackEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateDebugReportCallbackEXT");
-                delvkCreateDebugReportCallbackEXT = (vkCreateDebugReportCallbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateDebugReportCallbackEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateDebugReportCallbackEXT");
+            var func = (vkCreateDebugReportCallbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateDebugReportCallbackEXT));
 
-            if (delvkCreateDebugReportCallbackEXT != null) {
-                return delvkCreateDebugReportCallbackEXT(instance, pCreateInfo, pAllocator, pCallback);
+            if (func != null) {
+                return func(instance, pCreateInfo, pAllocator, pCallback);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkCreateDebugReportCallbackEXT delvkCreateDebugReportCallbackEXT;
 
         // Command: 108
         // GetInstanceProcAddr: 19
@@ -723,19 +667,16 @@ namespace Vulkan {
             /*-const-*/ VkDebugUtilsMessengerCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkDebugUtilsMessengerEXT* pMessenger) {
-            if (delvkCreateDebugUtilsMessengerEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT");
-                delvkCreateDebugUtilsMessengerEXT = (vkCreateDebugUtilsMessengerEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateDebugUtilsMessengerEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateDebugUtilsMessengerEXT");
+            var func = (vkCreateDebugUtilsMessengerEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateDebugUtilsMessengerEXT));
 
-            if (delvkCreateDebugUtilsMessengerEXT != null) {
-                return delvkCreateDebugUtilsMessengerEXT(instance, pCreateInfo, pAllocator, pMessenger);
+            if (func != null) {
+                return func(instance, pCreateInfo, pAllocator, pMessenger);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkCreateDebugUtilsMessengerEXT delvkCreateDebugUtilsMessengerEXT;
 
         // Command: 126
         // GetInstanceProcAddr: 20
@@ -755,19 +696,16 @@ namespace Vulkan {
             /*-const-*/ VkMetalSurfaceCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkSurfaceKHR* pSurface) {
-            if (delvkCreateMetalSurfaceEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateMetalSurfaceEXT");
-                delvkCreateMetalSurfaceEXT = (vkCreateMetalSurfaceEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateMetalSurfaceEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateMetalSurfaceEXT");
+            var func = (vkCreateMetalSurfaceEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateMetalSurfaceEXT));
 
-            if (delvkCreateMetalSurfaceEXT != null) {
-                return delvkCreateMetalSurfaceEXT(instance, pCreateInfo, pAllocator, pSurface);
+            if (func != null) {
+                return func(instance, pCreateInfo, pAllocator, pSurface);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkCreateMetalSurfaceEXT delvkCreateMetalSurfaceEXT;
 
         // Command: 141
         // GetInstanceProcAddr: 21
@@ -788,19 +726,16 @@ namespace Vulkan {
             /*-const-*/ VkValidationCacheCreateInfoEXT* pCreateInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkValidationCacheEXT* pValidationCache) {
-            if (delvkCreateValidationCacheEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateValidationCacheEXT");
-                delvkCreateValidationCacheEXT = (vkCreateValidationCacheEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateValidationCacheEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateValidationCacheEXT");
+            var func = (vkCreateValidationCacheEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateValidationCacheEXT));
 
-            if (delvkCreateValidationCacheEXT != null) {
-                return delvkCreateValidationCacheEXT(device, pCreateInfo, pAllocator, pValidationCache);
+            if (func != null) {
+                return func(device, pCreateInfo, pAllocator, pValidationCache);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkCreateValidationCacheEXT delvkCreateValidationCacheEXT;
 
         // Command: 147
         // GetInstanceProcAddr: 22
@@ -814,19 +749,16 @@ namespace Vulkan {
             this VkInstance instance,
             VkDevice device,
             /*-const-*/ VkDebugMarkerObjectNameInfoEXT* pNameInfo) {
-            if (delvkDebugMarkerSetObjectNameEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDebugMarkerSetObjectNameEXT");
-                delvkDebugMarkerSetObjectNameEXT = (vkDebugMarkerSetObjectNameEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDebugMarkerSetObjectNameEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDebugMarkerSetObjectNameEXT");
+            var func = (vkDebugMarkerSetObjectNameEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDebugMarkerSetObjectNameEXT));
 
-            if (delvkDebugMarkerSetObjectNameEXT != null) {
-                return delvkDebugMarkerSetObjectNameEXT(device, pNameInfo);
+            if (func != null) {
+                return func(device, pNameInfo);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkDebugMarkerSetObjectNameEXT delvkDebugMarkerSetObjectNameEXT;
 
         // Command: 148
         // GetInstanceProcAddr: 23
@@ -840,19 +772,16 @@ namespace Vulkan {
             this VkInstance instance,
             VkDevice device,
             /*-const-*/ VkDebugMarkerObjectTagInfoEXT* pTagInfo) {
-            if (delvkDebugMarkerSetObjectTagEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDebugMarkerSetObjectTagEXT");
-                delvkDebugMarkerSetObjectTagEXT = (vkDebugMarkerSetObjectTagEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDebugMarkerSetObjectTagEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDebugMarkerSetObjectTagEXT");
+            var func = (vkDebugMarkerSetObjectTagEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDebugMarkerSetObjectTagEXT));
 
-            if (delvkDebugMarkerSetObjectTagEXT != null) {
-                return delvkDebugMarkerSetObjectTagEXT(device, pTagInfo);
+            if (func != null) {
+                return func(device, pTagInfo);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkDebugMarkerSetObjectTagEXT delvkDebugMarkerSetObjectTagEXT;
 
         // Command: 149
         // GetInstanceProcAddr: 24
@@ -882,16 +811,13 @@ namespace Vulkan {
             Int32 messageCode,
             IntPtr pLayerPrefix,
             IntPtr pMessage) {
-            if (delvkDebugReportMessageEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDebugReportMessageEXT");
-                delvkDebugReportMessageEXT = (vkDebugReportMessageEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDebugReportMessageEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDebugReportMessageEXT");
+            var func = (vkDebugReportMessageEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDebugReportMessageEXT));
 
-            if (delvkDebugReportMessageEXT != null) {
-                delvkDebugReportMessageEXT(instance, flags, _objectType, _object, location, messageCode, pLayerPrefix, pMessage);
+            if (func != null) {
+                func(instance, flags, _objectType, _object, location, messageCode, pLayerPrefix, pMessage);
             }
         }
-        private static vkDebugReportMessageEXT delvkDebugReportMessageEXT;
 
         // Command: 154
         // GetInstanceProcAddr: 25
@@ -909,16 +835,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkDebugReportCallbackEXT callback,
             /*-const-*/ VkAllocationCallbacks* pAllocator) {
-            if (delvkDestroyDebugReportCallbackEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDestroyDebugReportCallbackEXT");
-                delvkDestroyDebugReportCallbackEXT = (vkDestroyDebugReportCallbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDestroyDebugReportCallbackEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDestroyDebugReportCallbackEXT");
+            var func = (vkDestroyDebugReportCallbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDestroyDebugReportCallbackEXT));
 
-            if (delvkDestroyDebugReportCallbackEXT != null) {
-                delvkDestroyDebugReportCallbackEXT(instance, callback, pAllocator);
+            if (func != null) {
+                func(instance, callback, pAllocator);
             }
         }
-        private static vkDestroyDebugReportCallbackEXT delvkDestroyDebugReportCallbackEXT;
 
         // Command: 155
         // GetInstanceProcAddr: 26
@@ -936,16 +859,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkDebugUtilsMessengerEXT messenger,
             /*-const-*/ VkAllocationCallbacks* pAllocator) {
-            if (delvkDestroyDebugUtilsMessengerEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDestroyDebugUtilsMessengerEXT");
-                delvkDestroyDebugUtilsMessengerEXT = (vkDestroyDebugUtilsMessengerEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDestroyDebugUtilsMessengerEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDestroyDebugUtilsMessengerEXT");
+            var func = (vkDestroyDebugUtilsMessengerEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDestroyDebugUtilsMessengerEXT));
 
-            if (delvkDestroyDebugUtilsMessengerEXT != null) {
-                delvkDestroyDebugUtilsMessengerEXT(instance, messenger, pAllocator);
+            if (func != null) {
+                func(instance, messenger, pAllocator);
             }
         }
-        private static vkDestroyDebugUtilsMessengerEXT delvkDestroyDebugUtilsMessengerEXT;
 
         // Command: 179
         // GetInstanceProcAddr: 27
@@ -961,16 +881,13 @@ namespace Vulkan {
             VkDevice device,
             VkValidationCacheEXT validationCache,
             /*-const-*/ VkAllocationCallbacks* pAllocator) {
-            if (delvkDestroyValidationCacheEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDestroyValidationCacheEXT");
-                delvkDestroyValidationCacheEXT = (vkDestroyValidationCacheEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDestroyValidationCacheEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDestroyValidationCacheEXT");
+            var func = (vkDestroyValidationCacheEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDestroyValidationCacheEXT));
 
-            if (delvkDestroyValidationCacheEXT != null) {
-                delvkDestroyValidationCacheEXT(device, validationCache, pAllocator);
+            if (func != null) {
+                func(device, validationCache, pAllocator);
             }
         }
-        private static vkDestroyValidationCacheEXT delvkDestroyValidationCacheEXT;
 
         // Command: 181
         // GetInstanceProcAddr: 28
@@ -985,19 +902,16 @@ namespace Vulkan {
             VkDevice device,
             VkDisplayKHR display,
             /*-const-*/ VkDisplayPowerInfoEXT* pDisplayPowerInfo) {
-            if (delvkDisplayPowerControlEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDisplayPowerControlEXT");
-                delvkDisplayPowerControlEXT = (vkDisplayPowerControlEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDisplayPowerControlEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkDisplayPowerControlEXT");
+            var func = (vkDisplayPowerControlEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkDisplayPowerControlEXT));
 
-            if (delvkDisplayPowerControlEXT != null) {
-                return delvkDisplayPowerControlEXT(device, display, pDisplayPowerInfo);
+            if (func != null) {
+                return func(device, display, pDisplayPowerInfo);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkDisplayPowerControlEXT delvkDisplayPowerControlEXT;
 
         // Command: 197
         // GetInstanceProcAddr: 29
@@ -1011,19 +925,16 @@ namespace Vulkan {
             this VkInstance instance,
             VkDevice device,
             /*-const-*/ VkBufferDeviceAddressInfoEXT* pInfo) {
-            if (delvkGetBufferDeviceAddressEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetBufferDeviceAddressEXT");
-                delvkGetBufferDeviceAddressEXT = (vkGetBufferDeviceAddressEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetBufferDeviceAddressEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetBufferDeviceAddressEXT");
+            var func = (vkGetBufferDeviceAddressEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetBufferDeviceAddressEXT));
 
-            if (delvkGetBufferDeviceAddressEXT != null) {
-                return delvkGetBufferDeviceAddressEXT(device, pInfo);
+            if (func != null) {
+                return func(device, pInfo);
             }
             else {
                 return 0;
             }
         }
-        private static vkGetBufferDeviceAddressEXT delvkGetBufferDeviceAddressEXT;
 
         // Command: 200
         // GetInstanceProcAddr: 30
@@ -1048,19 +959,16 @@ namespace Vulkan {
             /*-const-*/ VkCalibratedTimestampInfoEXT* pTimestampInfos,
             UInt64* pTimestamps,
             UInt64* pMaxDeviation) {
-            if (delvkGetCalibratedTimestampsEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetCalibratedTimestampsEXT");
-                delvkGetCalibratedTimestampsEXT = (vkGetCalibratedTimestampsEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetCalibratedTimestampsEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetCalibratedTimestampsEXT");
+            var func = (vkGetCalibratedTimestampsEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetCalibratedTimestampsEXT));
 
-            if (delvkGetCalibratedTimestampsEXT != null) {
-                return delvkGetCalibratedTimestampsEXT(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
+            if (func != null) {
+                return func(device, timestampCount, pTimestampInfos, pTimestamps, pMaxDeviation);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetCalibratedTimestampsEXT delvkGetCalibratedTimestampsEXT;
 
         // Command: 204
         // GetInstanceProcAddr: 31
@@ -1078,19 +986,16 @@ namespace Vulkan {
             VkDevice device,
             /*-const-*/ VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
             VkDeviceGroupPresentModeFlagsKHR* pModes) {
-            if (delvkGetDeviceGroupSurfacePresentModes2EXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetDeviceGroupSurfacePresentModes2EXT");
-                delvkGetDeviceGroupSurfacePresentModes2EXT = (vkGetDeviceGroupSurfacePresentModes2EXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetDeviceGroupSurfacePresentModes2EXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetDeviceGroupSurfacePresentModes2EXT");
+            var func = (vkGetDeviceGroupSurfacePresentModes2EXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetDeviceGroupSurfacePresentModes2EXT));
 
-            if (delvkGetDeviceGroupSurfacePresentModes2EXT != null) {
-                return delvkGetDeviceGroupSurfacePresentModes2EXT(device, pSurfaceInfo, pModes);
+            if (func != null) {
+                return func(device, pSurfaceInfo, pModes);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetDeviceGroupSurfacePresentModes2EXT delvkGetDeviceGroupSurfacePresentModes2EXT;
 
         // Command: 219
         // GetInstanceProcAddr: 32
@@ -1105,19 +1010,16 @@ namespace Vulkan {
             VkDevice device,
             VkImage image,
             VkImageDrmFormatModifierPropertiesEXT* pProperties) {
-            if (delvkGetImageDrmFormatModifierPropertiesEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetImageDrmFormatModifierPropertiesEXT");
-                delvkGetImageDrmFormatModifierPropertiesEXT = (vkGetImageDrmFormatModifierPropertiesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetImageDrmFormatModifierPropertiesEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetImageDrmFormatModifierPropertiesEXT");
+            var func = (vkGetImageDrmFormatModifierPropertiesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetImageDrmFormatModifierPropertiesEXT));
 
-            if (delvkGetImageDrmFormatModifierPropertiesEXT != null) {
-                return delvkGetImageDrmFormatModifierPropertiesEXT(device, image, pProperties);
+            if (func != null) {
+                return func(device, image, pProperties);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetImageDrmFormatModifierPropertiesEXT delvkGetImageDrmFormatModifierPropertiesEXT;
 
         // Command: 230
         // GetInstanceProcAddr: 33
@@ -1136,19 +1038,16 @@ namespace Vulkan {
             VkExternalMemoryHandleTypeFlagBits handleType,
             /*-const-*/ void* pHostPointer,
             VkMemoryHostPointerPropertiesEXT* pMemoryHostPointerProperties) {
-            if (delvkGetMemoryHostPointerPropertiesEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetMemoryHostPointerPropertiesEXT");
-                delvkGetMemoryHostPointerPropertiesEXT = (vkGetMemoryHostPointerPropertiesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetMemoryHostPointerPropertiesEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetMemoryHostPointerPropertiesEXT");
+            var func = (vkGetMemoryHostPointerPropertiesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetMemoryHostPointerPropertiesEXT));
 
-            if (delvkGetMemoryHostPointerPropertiesEXT != null) {
-                return delvkGetMemoryHostPointerPropertiesEXT(device, handleType, pHostPointer, pMemoryHostPointerProperties);
+            if (func != null) {
+                return func(device, handleType, pHostPointer, pMemoryHostPointerProperties);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetMemoryHostPointerPropertiesEXT delvkGetMemoryHostPointerPropertiesEXT;
 
         // Command: 235
         // GetInstanceProcAddr: 34
@@ -1166,19 +1065,16 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             UInt32* pTimeDomainCount,
             VkTimeDomainEXT* pTimeDomains) {
-            if (delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT");
-                delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT = (vkGetPhysicalDeviceCalibrateableTimeDomainsEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceCalibrateableTimeDomainsEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT");
+            var func = (vkGetPhysicalDeviceCalibrateableTimeDomainsEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceCalibrateableTimeDomainsEXT));
 
-            if (delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT != null) {
-                return delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT(physicalDevice, pTimeDomainCount, pTimeDomains);
+            if (func != null) {
+                return func(physicalDevice, pTimeDomainCount, pTimeDomains);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetPhysicalDeviceCalibrateableTimeDomainsEXT delvkGetPhysicalDeviceCalibrateableTimeDomainsEXT;
 
         // Command: 254
         // GetInstanceProcAddr: 35
@@ -1196,16 +1092,13 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             VkSampleCountFlagBits samples,
             VkMultisamplePropertiesEXT* pMultisampleProperties) {
-            if (delvkGetPhysicalDeviceMultisamplePropertiesEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceMultisamplePropertiesEXT");
-                delvkGetPhysicalDeviceMultisamplePropertiesEXT = (vkGetPhysicalDeviceMultisamplePropertiesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceMultisamplePropertiesEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceMultisamplePropertiesEXT");
+            var func = (vkGetPhysicalDeviceMultisamplePropertiesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceMultisamplePropertiesEXT));
 
-            if (delvkGetPhysicalDeviceMultisamplePropertiesEXT != null) {
-                delvkGetPhysicalDeviceMultisamplePropertiesEXT(physicalDevice, samples, pMultisampleProperties);
+            if (func != null) {
+                func(physicalDevice, samples, pMultisampleProperties);
             }
         }
-        private static vkGetPhysicalDeviceMultisamplePropertiesEXT delvkGetPhysicalDeviceMultisamplePropertiesEXT;
 
         // Command: 262
         // GetInstanceProcAddr: 36
@@ -1223,19 +1116,16 @@ namespace Vulkan {
             VkPhysicalDevice physicalDevice,
             VkSurfaceKHR surface,
             VkSurfaceCapabilities2EXT* pSurfaceCapabilities) {
-            if (delvkGetPhysicalDeviceSurfaceCapabilities2EXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceSurfaceCapabilities2EXT");
-                delvkGetPhysicalDeviceSurfaceCapabilities2EXT = (vkGetPhysicalDeviceSurfaceCapabilities2EXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceSurfaceCapabilities2EXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceSurfaceCapabilities2EXT");
+            var func = (vkGetPhysicalDeviceSurfaceCapabilities2EXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceSurfaceCapabilities2EXT));
 
-            if (delvkGetPhysicalDeviceSurfaceCapabilities2EXT != null) {
-                return delvkGetPhysicalDeviceSurfaceCapabilities2EXT(physicalDevice, surface, pSurfaceCapabilities);
+            if (func != null) {
+                return func(physicalDevice, surface, pSurfaceCapabilities);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetPhysicalDeviceSurfaceCapabilities2EXT delvkGetPhysicalDeviceSurfaceCapabilities2EXT;
 
         // Command: 267
         // GetInstanceProcAddr: 37
@@ -1259,19 +1149,16 @@ namespace Vulkan {
             /*-const-*/ VkPhysicalDeviceSurfaceInfo2KHR* pSurfaceInfo,
             UInt32* pPresentModeCount,
             VkPresentModeKHR* pPresentModes) {
-            if (delvkGetPhysicalDeviceSurfacePresentModes2EXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceSurfacePresentModes2EXT");
-                delvkGetPhysicalDeviceSurfacePresentModes2EXT = (vkGetPhysicalDeviceSurfacePresentModes2EXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceSurfacePresentModes2EXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetPhysicalDeviceSurfacePresentModes2EXT");
+            var func = (vkGetPhysicalDeviceSurfacePresentModes2EXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetPhysicalDeviceSurfacePresentModes2EXT));
 
-            if (delvkGetPhysicalDeviceSurfacePresentModes2EXT != null) {
-                return delvkGetPhysicalDeviceSurfacePresentModes2EXT(physicalDevice, pSurfaceInfo, pPresentModeCount, pPresentModes);
+            if (func != null) {
+                return func(physicalDevice, pSurfaceInfo, pPresentModeCount, pPresentModes);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetPhysicalDeviceSurfacePresentModes2EXT delvkGetPhysicalDeviceSurfacePresentModes2EXT;
 
         // Command: 277
         // GetInstanceProcAddr: 38
@@ -1289,19 +1176,16 @@ namespace Vulkan {
             /*Display*-*/IntPtr dpy,
             /*RROutput*/IntPtr rrOutput,
             VkDisplayKHR* pDisplay) {
-            if (delvkGetRandROutputDisplayEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetRandROutputDisplayEXT");
-                delvkGetRandROutputDisplayEXT = (vkGetRandROutputDisplayEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetRandROutputDisplayEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetRandROutputDisplayEXT");
+            var func = (vkGetRandROutputDisplayEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetRandROutputDisplayEXT));
 
-            if (delvkGetRandROutputDisplayEXT != null) {
-                return delvkGetRandROutputDisplayEXT(physicalDevice, dpy, rrOutput, pDisplay);
+            if (func != null) {
+                return func(physicalDevice, dpy, rrOutput, pDisplay);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetRandROutputDisplayEXT delvkGetRandROutputDisplayEXT;
 
         // Command: 284
         // GetInstanceProcAddr: 39
@@ -1317,19 +1201,16 @@ namespace Vulkan {
             VkSwapchainKHR swapchain,
             VkSurfaceCounterFlagBitsEXT counter,
             UInt64* pCounterValue) {
-            if (delvkGetSwapchainCounterEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetSwapchainCounterEXT");
-                delvkGetSwapchainCounterEXT = (vkGetSwapchainCounterEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetSwapchainCounterEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetSwapchainCounterEXT");
+            var func = (vkGetSwapchainCounterEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetSwapchainCounterEXT));
 
-            if (delvkGetSwapchainCounterEXT != null) {
-                return delvkGetSwapchainCounterEXT(device, swapchain, counter, pCounterValue);
+            if (func != null) {
+                return func(device, swapchain, counter, pCounterValue);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetSwapchainCounterEXT delvkGetSwapchainCounterEXT;
 
         // Command: 287
         // GetInstanceProcAddr: 40
@@ -1346,19 +1227,16 @@ namespace Vulkan {
             VkValidationCacheEXT validationCache,
             Int32* pDataSize,
             void* pData) {
-            if (delvkGetValidationCacheDataEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetValidationCacheDataEXT");
-                delvkGetValidationCacheDataEXT = (vkGetValidationCacheDataEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetValidationCacheDataEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkGetValidationCacheDataEXT");
+            var func = (vkGetValidationCacheDataEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkGetValidationCacheDataEXT));
 
-            if (delvkGetValidationCacheDataEXT != null) {
-                return delvkGetValidationCacheDataEXT(device, validationCache, pDataSize, pData);
+            if (func != null) {
+                return func(device, validationCache, pDataSize, pData);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkGetValidationCacheDataEXT delvkGetValidationCacheDataEXT;
 
         // Command: 295
         // GetInstanceProcAddr: 41
@@ -1378,19 +1256,16 @@ namespace Vulkan {
             VkValidationCacheEXT dstCache,
             UInt32 srcCacheCount,
             /*-const-*/ VkValidationCacheEXT* pSrcCaches) {
-            if (delvkMergeValidationCachesEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkMergeValidationCachesEXT");
-                delvkMergeValidationCachesEXT = (vkMergeValidationCachesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkMergeValidationCachesEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkMergeValidationCachesEXT");
+            var func = (vkMergeValidationCachesEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkMergeValidationCachesEXT));
 
-            if (delvkMergeValidationCachesEXT != null) {
-                return delvkMergeValidationCachesEXT(device, dstCache, srcCacheCount, pSrcCaches);
+            if (func != null) {
+                return func(device, dstCache, srcCacheCount, pSrcCaches);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkMergeValidationCachesEXT delvkMergeValidationCachesEXT;
 
         // Command: 296
         // GetInstanceProcAddr: 42
@@ -1404,16 +1279,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkQueue queue,
             /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo) {
-            if (delvkQueueBeginDebugUtilsLabelEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkQueueBeginDebugUtilsLabelEXT");
-                delvkQueueBeginDebugUtilsLabelEXT = (vkQueueBeginDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkQueueBeginDebugUtilsLabelEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkQueueBeginDebugUtilsLabelEXT");
+            var func = (vkQueueBeginDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkQueueBeginDebugUtilsLabelEXT));
 
-            if (delvkQueueBeginDebugUtilsLabelEXT != null) {
-                delvkQueueBeginDebugUtilsLabelEXT(queue, pLabelInfo);
+            if (func != null) {
+                func(queue, pLabelInfo);
             }
         }
-        private static vkQueueBeginDebugUtilsLabelEXT delvkQueueBeginDebugUtilsLabelEXT;
 
         // Command: 298
         // GetInstanceProcAddr: 43
@@ -1423,16 +1295,13 @@ namespace Vulkan {
         public static void QueueEndDebugUtilsLabelEXT(
             this VkInstance instance,
             VkQueue queue) {
-            if (delvkQueueEndDebugUtilsLabelEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkQueueEndDebugUtilsLabelEXT");
-                delvkQueueEndDebugUtilsLabelEXT = (vkQueueEndDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkQueueEndDebugUtilsLabelEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkQueueEndDebugUtilsLabelEXT");
+            var func = (vkQueueEndDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkQueueEndDebugUtilsLabelEXT));
 
-            if (delvkQueueEndDebugUtilsLabelEXT != null) {
-                delvkQueueEndDebugUtilsLabelEXT(queue);
+            if (func != null) {
+                func(queue);
             }
         }
-        private static vkQueueEndDebugUtilsLabelEXT delvkQueueEndDebugUtilsLabelEXT;
 
         // Command: 299
         // GetInstanceProcAddr: 44
@@ -1446,16 +1315,13 @@ namespace Vulkan {
             this VkInstance instance,
             VkQueue queue,
             /*-const-*/ VkDebugUtilsLabelEXT* pLabelInfo) {
-            if (delvkQueueInsertDebugUtilsLabelEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkQueueInsertDebugUtilsLabelEXT");
-                delvkQueueInsertDebugUtilsLabelEXT = (vkQueueInsertDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkQueueInsertDebugUtilsLabelEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkQueueInsertDebugUtilsLabelEXT");
+            var func = (vkQueueInsertDebugUtilsLabelEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkQueueInsertDebugUtilsLabelEXT));
 
-            if (delvkQueueInsertDebugUtilsLabelEXT != null) {
-                delvkQueueInsertDebugUtilsLabelEXT(queue, pLabelInfo);
+            if (func != null) {
+                func(queue, pLabelInfo);
             }
         }
-        private static vkQueueInsertDebugUtilsLabelEXT delvkQueueInsertDebugUtilsLabelEXT;
 
         // Command: 303
         // GetInstanceProcAddr: 45
@@ -1475,19 +1341,16 @@ namespace Vulkan {
             /*-const-*/ VkDeviceEventInfoEXT* pDeviceEventInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkFence* pFence) {
-            if (delvkRegisterDeviceEventEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkRegisterDeviceEventEXT");
-                delvkRegisterDeviceEventEXT = (vkRegisterDeviceEventEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkRegisterDeviceEventEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkRegisterDeviceEventEXT");
+            var func = (vkRegisterDeviceEventEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkRegisterDeviceEventEXT));
 
-            if (delvkRegisterDeviceEventEXT != null) {
-                return delvkRegisterDeviceEventEXT(device, pDeviceEventInfo, pAllocator, pFence);
+            if (func != null) {
+                return func(device, pDeviceEventInfo, pAllocator, pFence);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkRegisterDeviceEventEXT delvkRegisterDeviceEventEXT;
 
         // Command: 304
         // GetInstanceProcAddr: 46
@@ -1509,19 +1372,16 @@ namespace Vulkan {
             /*-const-*/ VkDisplayEventInfoEXT* pDisplayEventInfo,
             /*-const-*/ VkAllocationCallbacks* pAllocator,
             VkFence* pFence) {
-            if (delvkRegisterDisplayEventEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkRegisterDisplayEventEXT");
-                delvkRegisterDisplayEventEXT = (vkRegisterDisplayEventEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkRegisterDisplayEventEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkRegisterDisplayEventEXT");
+            var func = (vkRegisterDisplayEventEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkRegisterDisplayEventEXT));
 
-            if (delvkRegisterDisplayEventEXT != null) {
-                return delvkRegisterDisplayEventEXT(device, display, pDisplayEventInfo, pAllocator, pFence);
+            if (func != null) {
+                return func(device, display, pDisplayEventInfo, pAllocator, pFence);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkRegisterDisplayEventEXT delvkRegisterDisplayEventEXT;
 
         // Command: 306
         // GetInstanceProcAddr: 47
@@ -1533,19 +1393,16 @@ namespace Vulkan {
             this VkInstance instance,
             VkPhysicalDevice physicalDevice,
             VkDisplayKHR display) {
-            if (delvkReleaseDisplayEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkReleaseDisplayEXT");
-                delvkReleaseDisplayEXT = (vkReleaseDisplayEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkReleaseDisplayEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkReleaseDisplayEXT");
+            var func = (vkReleaseDisplayEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkReleaseDisplayEXT));
 
-            if (delvkReleaseDisplayEXT != null) {
-                return delvkReleaseDisplayEXT(physicalDevice, display);
+            if (func != null) {
+                return func(physicalDevice, display);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkReleaseDisplayEXT delvkReleaseDisplayEXT;
 
         // Command: 307
         // GetInstanceProcAddr: 48
@@ -1558,19 +1415,16 @@ namespace Vulkan {
             this VkInstance instance,
             VkDevice device,
             VkSwapchainKHR swapchain) {
-            if (delvkReleaseFullScreenExclusiveModeEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkReleaseFullScreenExclusiveModeEXT");
-                delvkReleaseFullScreenExclusiveModeEXT = (vkReleaseFullScreenExclusiveModeEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkReleaseFullScreenExclusiveModeEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkReleaseFullScreenExclusiveModeEXT");
+            var func = (vkReleaseFullScreenExclusiveModeEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkReleaseFullScreenExclusiveModeEXT));
 
-            if (delvkReleaseFullScreenExclusiveModeEXT != null) {
-                return delvkReleaseFullScreenExclusiveModeEXT(device, swapchain);
+            if (func != null) {
+                return func(device, swapchain);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkReleaseFullScreenExclusiveModeEXT delvkReleaseFullScreenExclusiveModeEXT;
 
         // Command: 313
         // GetInstanceProcAddr: 49
@@ -1586,16 +1440,13 @@ namespace Vulkan {
             VkQueryPool queryPool,
             UInt32 firstQuery,
             UInt32 queryCount) {
-            if (delvkResetQueryPoolEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkResetQueryPoolEXT");
-                delvkResetQueryPoolEXT = (vkResetQueryPoolEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkResetQueryPoolEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkResetQueryPoolEXT");
+            var func = (vkResetQueryPoolEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkResetQueryPoolEXT));
 
-            if (delvkResetQueryPoolEXT != null) {
-                delvkResetQueryPoolEXT(device, queryPool, firstQuery, queryCount);
+            if (func != null) {
+                func(device, queryPool, firstQuery, queryCount);
             }
         }
-        private static vkResetQueryPoolEXT delvkResetQueryPoolEXT;
 
         // Command: 314
         // GetInstanceProcAddr: 50
@@ -1609,19 +1460,16 @@ namespace Vulkan {
             this VkInstance instance,
             VkDevice device,
             /*-const-*/ VkDebugUtilsObjectNameInfoEXT* pNameInfo) {
-            if (delvkSetDebugUtilsObjectNameEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSetDebugUtilsObjectNameEXT");
-                delvkSetDebugUtilsObjectNameEXT = (vkSetDebugUtilsObjectNameEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSetDebugUtilsObjectNameEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSetDebugUtilsObjectNameEXT");
+            var func = (vkSetDebugUtilsObjectNameEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSetDebugUtilsObjectNameEXT));
 
-            if (delvkSetDebugUtilsObjectNameEXT != null) {
-                return delvkSetDebugUtilsObjectNameEXT(device, pNameInfo);
+            if (func != null) {
+                return func(device, pNameInfo);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkSetDebugUtilsObjectNameEXT delvkSetDebugUtilsObjectNameEXT;
 
         // Command: 315
         // GetInstanceProcAddr: 51
@@ -1635,19 +1483,16 @@ namespace Vulkan {
             this VkInstance instance,
             VkDevice device,
             /*-const-*/ VkDebugUtilsObjectTagInfoEXT* pTagInfo) {
-            if (delvkSetDebugUtilsObjectTagEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSetDebugUtilsObjectTagEXT");
-                delvkSetDebugUtilsObjectTagEXT = (vkSetDebugUtilsObjectTagEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSetDebugUtilsObjectTagEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSetDebugUtilsObjectTagEXT");
+            var func = (vkSetDebugUtilsObjectTagEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSetDebugUtilsObjectTagEXT));
 
-            if (delvkSetDebugUtilsObjectTagEXT != null) {
-                return delvkSetDebugUtilsObjectTagEXT(device, pTagInfo);
+            if (func != null) {
+                return func(device, pTagInfo);
             }
             else {
                 return VkResult.ErrorExtensionNotPresent;
             }
         }
-        private static vkSetDebugUtilsObjectTagEXT delvkSetDebugUtilsObjectTagEXT;
 
         // Command: 317
         // GetInstanceProcAddr: 52
@@ -1664,16 +1509,13 @@ namespace Vulkan {
             UInt32 swapchainCount,
             /*-const-*/ VkSwapchainKHR* pSwapchains,
             /*-const-*/ VkHdrMetadataEXT* pMetadata) {
-            if (delvkSetHdrMetadataEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSetHdrMetadataEXT");
-                delvkSetHdrMetadataEXT = (vkSetHdrMetadataEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSetHdrMetadataEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSetHdrMetadataEXT");
+            var func = (vkSetHdrMetadataEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSetHdrMetadataEXT));
 
-            if (delvkSetHdrMetadataEXT != null) {
-                delvkSetHdrMetadataEXT(device, swapchainCount, pSwapchains, pMetadata);
+            if (func != null) {
+                func(device, swapchainCount, pSwapchains, pMetadata);
             }
         }
-        private static vkSetHdrMetadataEXT delvkSetHdrMetadataEXT;
 
         // Command: 319
         // GetInstanceProcAddr: 53
@@ -1693,16 +1535,13 @@ namespace Vulkan {
             VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity,
             VkDebugUtilsMessageTypeFlagsEXT messageTypes,
             /*-const-*/ VkDebugUtilsMessengerCallbackDataEXT* pCallbackData) {
-            if (delvkSubmitDebugUtilsMessageEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSubmitDebugUtilsMessageEXT");
-                delvkSubmitDebugUtilsMessageEXT = (vkSubmitDebugUtilsMessageEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSubmitDebugUtilsMessageEXT));
-            }
+            IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkSubmitDebugUtilsMessageEXT");
+            var func = (vkSubmitDebugUtilsMessageEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkSubmitDebugUtilsMessageEXT));
 
-            if (delvkSubmitDebugUtilsMessageEXT != null) {
-                delvkSubmitDebugUtilsMessageEXT(instance, messageSeverity, messageTypes, pCallbackData);
+            if (func != null) {
+                func(instance, messageSeverity, messageTypes, pCallbackData);
             }
         }
-        private static vkSubmitDebugUtilsMessageEXT delvkSubmitDebugUtilsMessageEXT;
 
     }
 }
