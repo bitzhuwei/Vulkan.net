@@ -739,27 +739,25 @@ namespace Demo.HelloVulkan {
             return vkInstance;
         }
 
-        private VkSubmitInfo*[] submitInfos;
-        private VkPresentInfoKHR*[] presentInfos;
+        private VkSubmitInfo* submitInfos;
+        private VkPresentInfoKHR* presentInfos;
 
         private void InitRenderParams() {
             VkSwapchainKHR swapchain = this.swapchain;
             VkSemaphore semaphore = this.vkSemaphore;
             VkCommandBuffer[] commandBuffers = this.commandBuffers;
 
-            submitInfos = new VkSubmitInfo*[2]; presentInfos = new VkPresentInfoKHR*[2];
+            submitInfos = VkSubmitInfo.Alloc(2);
+            presentInfos = VkPresentInfoKHR.Alloc(2);
             for (uint index = 0; index < 2; index++) {
-                var submitInfo = VkSubmitInfo.Alloc();
-                submitInfo->waitSemaphoresDstStageMasks.Set(semaphore);
-                submitInfo->waitSemaphoresDstStageMasks.Set(VkPipelineStageFlagBits.AllGraphics);
-                submitInfo->commandBuffers = commandBuffers[index];
-                submitInfos[index] = submitInfo;
+                //submitInfos[index].waitSemaphoresDstStageMasks.Set(semaphore);
+                submitInfos[index].waitSemaphores = semaphore;
+                submitInfos[index].waitSemaphoresDstStageMasks.Set(VkPipelineStageFlagBits.AllGraphics);
+                submitInfos[index].commandBuffers = commandBuffers[index];
 
-                var presentInfo = VkPresentInfoKHR.Alloc();
-                presentInfo->swapchains = swapchain;
+                presentInfos[index].swapchains = swapchain;
                 //presentInfo->swapchainsImages.Set(swapchain);
-                presentInfo->swapchainsImages.Set(index);
-                presentInfos[index] = presentInfo;
+                presentInfos[index].swapchainsImages.Set(index);
             }
         }
 
@@ -781,13 +779,15 @@ namespace Demo.HelloVulkan {
             vkAPI.vkResetFences(device, 1, &fence).Check();
 
             //queue.Submit(ref this.submitInfos[nextIndex], fence);
-            VkSubmitInfo* submitInfo = this.submitInfos[nextIndex];
-            vkAPI.vkQueueSubmit(queue, 1, submitInfo, fence).Check();
+            //VkSubmitInfo submitInfo = this.submitInfos[nextIndex];
+            //vkAPI.vkQueueSubmit(queue, 1, &submitInfo, fence).Check();
+            vkAPI.vkQueueSubmit(queue, 1, &this.submitInfos[nextIndex], fence).Check();
             //device.WaitForFence(fence, true, 100000000);
-            vkAPI.vkWaitForFences(device, 1, &fence, new VkBool32(true), 100000000).Check();
+            vkAPI.vkWaitForFences(device, 1, &fence, true, 100000000).Check();
             //queue.PresentKHR(ref this.presentInfos[nextIndex]);
-            VkPresentInfoKHR* presentInfo = this.presentInfos[nextIndex];
-            vkAPI.vkQueuePresentKHR(queue, presentInfo).Check();
+            //VkPresentInfoKHR presentInfo = this.presentInfos[nextIndex];
+            //vkAPI.vkQueuePresentKHR(queue, &presentInfo).Check();
+            vkAPI.vkQueuePresentKHR(queue, &this.presentInfos[nextIndex]).Check();
         }
     }
 }

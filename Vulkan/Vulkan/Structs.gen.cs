@@ -8388,10 +8388,13 @@ namespace Vulkan {
     // Struct: 391
     /// <summary>VkSubmitInfo - Structure specifying a queue submit operation
     /// </summary>
+    [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct VkSubmitInfo {
         /// <summary> sType is the type of this structure.</summary>
+        [FieldOffset(0)] // 4
         public VkStructureType sType;
         /// <summary> pNext is NULL or a pointer to an extension-specific structure.</summary>
+        [FieldOffset(4)] // 4
         public /*-const-*/ void* pNext;
         ///// <summary> waitSemaphoreCount is the number of semaphores upon which to wait
         ///// before executing the command buffers for the batch.</summary>
@@ -8401,6 +8404,14 @@ namespace Vulkan {
         ///// If semaphores to wait on are provided, they define a
         ///// semaphore wait operation.</summary>
         //public /*-const-*/ VkSemaphore* pWaitSemaphores;
+        /// <summary>
+        ///  an array of semaphores upon which
+        /// to wait before the command buffers for this batch begin execution.
+        /// If semaphores to wait on are provided, they define a
+        /// semaphore wait operation.
+        /// </summary>
+        [FieldOffset(4 + 4)] // 4 + 4
+        public VkSemaphoreGroup waitSemaphores;
         ///// <summary> pWaitDstStageMask is a pointer to an array of pipeline stages at
         ///// which each corresponding semaphore wait will occur.</summary>
         //public /*-const-*/ VkPipelineStageFlags* pWaitDstStageMask;
@@ -8414,6 +8425,7 @@ namespace Vulkan {
         /// waitDstStageMask: is a pointer to an array of pipeline stages at
         /// which each corresponding semaphore wait will occur.
         /// </summary>
+        [FieldOffset(4 + 4)] // 4 + 4 + 4
         public VkSemaphorePipelineStageGroup waitSemaphoresDstStageMasks;
         ///// <summary> commandBufferCount is the number of command buffers to execute in
         ///// the batch.</summary>
@@ -8421,6 +8433,11 @@ namespace Vulkan {
         ///// <summary> pCommandBuffers is a pointer to an array of command buffers to
         ///// execute in the batch.</summary>
         //public /*-const-*/ VkCommandBuffer* pCommandBuffers;
+        /// <summary>
+        ///  an array of command buffers to
+        /// execute in the batch.
+        /// </summary>
+        [FieldOffset(4 + 4 + (4 + 4 + 4))] // 4 + 4
         public VkCommandBufferGroup commandBuffers;
         ///// <summary> signalSemaphoreCount is the number of semaphores to be signaled
         ///// once the commands specified in pCommandBuffers have completed
@@ -8439,6 +8456,7 @@ namespace Vulkan {
         /// If semaphores to be signaled are provided, they define a
         /// semaphore signal operation.
         /// </summary>
+        [FieldOffset(4 + 4 + (4 + 4 + 4) + (4 + 4))] // 4 + 4
         public VkSemaphoreGroup signalSemaphores;
     }
     // Struct: 392
