@@ -198,36 +198,6 @@ namespace Demo.HelloVulkan {
         string debugFilename = "HelloVulkanDump.txt";
 
         PFN_vkDebugReportCallbackEXT delDebugCallback;
-        // Command: 107
-        // GetInstanceProcAddr: 18
-        /// <summary>vkCreateDebugReportCallbackEXT - Create a debug report callback object
-        /// </summary>
-        /// <param name="instance">instance the instance the callback will be logged on.</param>
-        /// <param name="pCreateInfo">pCreateInfo points to a VkDebugReportCallbackCreateInfoEXT
-        /// structure which defines the conditions under which this callback will be
-        /// called.</param>
-        /// <param name="pAllocator">pAllocator controls host memory allocation as described in the
-        /// Memory Allocation chapter.</param>
-        /// <param name="pCallback">pCallback is a pointer to record the
-        /// VkDebugReportCallbackEXT object created.</param>
-        public static VkResult CreateDebugReportCallbackEXT(
-            VkInstance instance,
-            /*-const-*/ VkDebugReportCallbackCreateInfoEXT* pCreateInfo,
-            /*-const-*/ VkAllocationCallbacks* pAllocator,
-            VkDebugReportCallbackEXT* pCallback) {
-            if (delvkCreateDebugReportCallbackEXT == null) {
-                IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkCreateDebugReportCallbackEXT");
-                delvkCreateDebugReportCallbackEXT = (vkCreateDebugReportCallbackEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkCreateDebugReportCallbackEXT));
-            }
-
-            if (delvkCreateDebugReportCallbackEXT != null) {
-                return delvkCreateDebugReportCallbackEXT(instance, pCreateInfo, pAllocator, pCallback);
-            }
-            else {
-                return VkResult.ErrorExtensionNotPresent;
-            }
-        }
-        private static vkCreateDebugReportCallbackEXT delvkCreateDebugReportCallbackEXT;
 
         private void InitDebugCallback(VkInstance instance) {
             if (delDebugCallback == null) {
@@ -240,7 +210,8 @@ namespace Demo.HelloVulkan {
             info->pfnCallback = Marshal.GetFunctionPointerForDelegate(delDebugCallback);
 
             VkDebugReportCallbackEXT callback;
-            CreateDebugReportCallbackEXT(instance, info, null, &callback).Check();
+            vkAPI.CreateDebugReportCallbackEXT(instance, info, null, &callback).Check();
+            // or: instance.CreateDebugReportCallbackEXT(info, null, &callback).Check();
             this.debugReportcallback = callback;
         }
 
