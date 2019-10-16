@@ -6,7 +6,12 @@ namespace Vulkan {
         public IntPtr pString;
 
         public GlobalString(String v) {
-            this.pString = Marshal.StringToHGlobalAnsi(v);
+            if (v != null) {
+                this.pString = Marshal.StringToHGlobalAnsi(v);
+            }
+            else {
+                this.pString = IntPtr.Zero;
+            }
         }
 
         public void Set(String v) {
@@ -14,11 +19,13 @@ namespace Vulkan {
                 Marshal.FreeHGlobal(this.pString);
             }
 
-            this.pString = Marshal.StringToHGlobalAnsi(v);
+            if (v != null) {
+                this.pString = Marshal.StringToHGlobalAnsi(v);
+            }
         }
 
         public static implicit operator GlobalString(String v) {
-            return new GlobalString() { pString = Marshal.StringToHGlobalAnsi(v) };
+            return new GlobalString(v);
         }
 
         public static implicit operator String(GlobalString v) {

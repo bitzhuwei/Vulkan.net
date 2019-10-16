@@ -6843,15 +6843,23 @@ namespace Vulkan {
         /// an array of VkDescriptorSetLayout objects.
         /// </summary>
         public VkDescriptorSetLayoutGroup setLayouts;
-        /// <summary> pushConstantRangeCount is the number of push constant ranges
-        /// included in the pipeline layout.</summary>
-        public UInt32 pushConstantRangeCount;
-        /// <summary> pPushConstantRanges is a pointer to an array of
+        ///// <summary> pushConstantRangeCount is the number of push constant ranges
+        ///// included in the pipeline layout.</summary>
+        //public UInt32 pushConstantRangeCount;
+        ///// <summary> pPushConstantRanges is a pointer to an array of
+        ///// VkPushConstantRange structures defining a set of push constant
+        ///// ranges for use in a single pipeline layout.
+        ///// In addition to descriptor set layouts, a pipeline layout also describes
+        ///// how many push constants can be accessed by each stage of the pipeline.</summary>
+        //public /*-const-*/ VkPushConstantRange* pPushConstantRanges;
+        /// <summary>
+        /// an array of
         /// VkPushConstantRange structures defining a set of push constant
         /// ranges for use in a single pipeline layout.
         /// In addition to descriptor set layouts, a pipeline layout also describes
-        /// how many push constants can be accessed by each stage of the pipeline.</summary>
-        public /*-const-*/ VkPushConstantRange* pPushConstantRanges;
+        /// how many push constants can be accessed by each stage of the pipeline.
+        /// </summary>
+        public VkPushConstantRangeGroup pushConstantRanges;
     }
     // Struct: 319
     /// <summary>VkPipelineMultisampleStateCreateInfo - Structure specifying parameters of a newly created pipeline multisample state

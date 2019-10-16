@@ -55,6 +55,32 @@ namespace Vulkan {
             this.texelBufferView = (VkBufferView*)ptr;
         }
 
+        /// <summary>
+        /// Free unmanaged memory and reset all members to 0.
+        /// </summary>
+        public void Reset() {
+            {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.imageInfo;
+                Helper.Set<VkDescriptorImageInfo>(null, ref ptr, ref count);
+                this.imageInfo = (VkDescriptorImageInfo*)ptr;
+            }
+            {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.bufferInfo;
+                Helper.Set<VkDescriptorBufferInfo>(null, ref ptr, ref count);
+                this.bufferInfo = (VkDescriptorBufferInfo*)ptr;
+            }
+            {
+                UInt32 count = this.count;
+                IntPtr ptr = (IntPtr)this.texelBufferView;
+                Helper.Set<VkBufferView>(null, ref ptr, ref count);
+                this.texelBufferView = (VkBufferView*)ptr;
+            }
+            {
+                this.count = 0;
+            }
+        }
 
         public override string ToString() {
             if (count == 1) {

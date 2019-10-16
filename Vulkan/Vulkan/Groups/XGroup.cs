@@ -762,6 +762,44 @@ namespace Vulkan {
         }
     }
 
+    public unsafe struct VkPushConstantRangeGroup {
+        public UInt32 count;
+        public VkPushConstantRange* array;
+
+        public VkPushConstantRangeGroup(params VkPushConstantRange[] value) {
+            count = 0;
+            array = null;
+			if (value != null) {
+				IntPtr ptr = IntPtr.Zero;
+				value.Set(ref ptr, ref this.count);
+				this.array = (VkPushConstantRange*)ptr;
+			}
+        }
+
+        public void Set(params VkPushConstantRange[] value) {
+            IntPtr ptr = (IntPtr)this.array;
+            value.Set(ref ptr, ref this.count);
+            this.array = (VkPushConstantRange*)ptr;
+        }
+
+        public static implicit operator VkPushConstantRangeGroup(VkPushConstantRange v) {
+            return new VkPushConstantRangeGroup(new VkPushConstantRange[] { v });
+        }
+
+        public static implicit operator VkPushConstantRangeGroup(VkPushConstantRange[] v) {
+            return new VkPushConstantRangeGroup(v);
+        }
+
+        public override string ToString() {
+            if (count == 1) {
+                return $"{array[0]}";
+            }
+            else {
+                return $"{nameof(VkPushConstantRange)}[{count}]";
+            }
+        }
+    }
+
     public unsafe struct SingleGroup {
         public UInt32 count;
         public Single* array;

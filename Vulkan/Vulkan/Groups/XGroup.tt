@@ -15,7 +15,7 @@ string[] arrayTypes = new string[] {
 	"VkVertexInputBindingDescription", "VkViewport", "VkImageView",
 	"VkSwapchainKHR", "VkSemaphore", "VkClearValue", "VkAttachmentDescription",
 	"VkSubpassDescription", "VkSubpassDependency", "VkCommandBuffer",
-	"VkAttachmentReference",
+	"VkAttachmentReference", "VkPushConstantRange",
 	"Single", "UInt32",
 	};
 #>
