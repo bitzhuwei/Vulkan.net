@@ -7,15 +7,15 @@ namespace Vulkan {
         /// <summary>VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV
         /// requests the memory requirement for the VkAccelerationStructureNV
         /// backing store.</summary>
-        ObjectNv = 0,
+        ObjectNV = 0,
         /// <summary>VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV
         /// requests the memory requirement for scratch space during the initial
         /// build.</summary>
-        BuildScratchNv = 1,
+        BuildScratchNV = 1,
         /// <summary>VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV
         /// requests the memory requirement for scratch space during an update.</summary>
-        UpdateScratchNv = 2,
-        MaxEnumNv = 0x7FFFFFFF,
+        UpdateScratchNV = 2,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 1
     /// <summary>VkAccelerationStructureTypeNV - Type of acceleration structure</summary>
@@ -23,12 +23,12 @@ namespace Vulkan {
         /// <summary>VK_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL_NV is a top-level
         /// acceleration structure containing instance data referring to
         /// bottom-level level acceleration structures.</summary>
-        TopLevelNv = 0,
+        TopLevelNV = 0,
         /// <summary>VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_NV is a bottom-level
         /// acceleration structure containing the AABBs or geometry to be
         /// intersected.</summary>
-        BottomLevelNv = 1,
-        MaxEnumNv = 0x7FFFFFFF,
+        BottomLevelNV = 1,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 2
     /// <summary>VkAccessFlagBits - Bitmask specifying memory access types that will participate in a memory dependency</summary>
@@ -124,18 +124,18 @@ namespace Vulkan {
         MemoryWrite = 0x00010000,
         /// <summary>VK_ACCESS_TRANSFORM_FEEDBACK_WRITE_BIT_EXT specifies write access
         /// to a transform feedback buffer made when transform feedback is active.</summary>
-        TransformFeedbackWriteExt = 0x02000000,
+        TransformFeedbackWriteEXT = 0x02000000,
         /// <summary>VK_ACCESS_TRANSFORM_FEEDBACK_COUNTER_READ_BIT_EXT specifies read
         /// access to a transform feedback counter buffer which is read when
         /// vkCmdBeginTransformFeedbackEXT executes.</summary>
-        TransformFeedbackCounterReadExt = 0x04000000,
+        TransformFeedbackCounterReadEXT = 0x04000000,
         /// <summary>VK_ACCESS_TRANSFORM_FEEDBACK_COUNTER_WRITE_BIT_EXT specifies write
         /// access to a transform feedback counter buffer which is written when
         /// vkCmdEndTransformFeedbackEXT executes.</summary>
-        TransformFeedbackCounterWriteExt = 0x08000000,
+        TransformFeedbackCounterWriteEXT = 0x08000000,
         /// <summary>VK_ACCESS_CONDITIONAL_RENDERING_READ_BIT_EXT specifies read access
         /// to a predicate as part of conditional rendering.</summary>
-        ConditionalRenderingReadExt = 0x00100000,
+        ConditionalRenderingReadEXT = 0x00100000,
         /// <summary>VK_ACCESS_COMMAND_PROCESS_READ_BIT_NVX specifies reads from
         /// VkBuffer inputs to vkCmdProcessCommandsNVX.</summary>
         CommandProcessReadNvx = 0x00020000,
@@ -145,22 +145,22 @@ namespace Vulkan {
         /// <summary>VK_ACCESS_COLOR_ATTACHMENT_READ_NONCOHERENT_BIT_EXT is similar to
         /// VK_ACCESS_COLOR_ATTACHMENT_READ_BIT, but also includes
         /// advanced blend operations.</summary>
-        ColorAttachmentReadNoncoherentExt = 0x00080000,
+        ColorAttachmentReadNoncoherentEXT = 0x00080000,
         /// <summary>VK_ACCESS_SHADING_RATE_IMAGE_READ_BIT_NV specifies read access to
         /// a shading rate image as part of a drawing command, as bound by
         /// vkCmdBindShadingRateImageNV.</summary>
-        ShadingRateImageReadNv = 0x00800000,
+        ShadingRateImageReadNV = 0x00800000,
         /// <summary>VK_ACCESS_ACCELERATION_STRUCTURE_READ_BIT_NV specifies read access
         /// to an acceleration structure as part of a trace or build command.</summary>
-        AccelerationStructureReadNv = 0x00200000,
+        AccelerationStructureReadNV = 0x00200000,
         /// <summary>VK_ACCESS_ACCELERATION_STRUCTURE_WRITE_BIT_NV specifies write
         /// access to an acceleration structure as part of a build command.</summary>
-        AccelerationStructureWriteNv = 0x00400000,
+        AccelerationStructureWriteNV = 0x00400000,
         /// <summary>VK_ACCESS_FRAGMENT_DENSITY_MAP_READ_BIT_EXT specifies read access
         /// to a fragment density map
         /// attachment during dynamic fragment density
         /// map operations</summary>
-        FragmentDensityMapReadExt = 0x01000000,
+        FragmentDensityMapReadEXT = 0x01000000,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 3
@@ -300,52 +300,52 @@ namespace Vulkan {
         /// <summary>class="tableblock"
         ///   VK_BLEND_OP_MAX</summary>
         Max = 4,
-        ZeroExt = 1000148000,
-        SrcExt = 1000148001,
-        DstExt = 1000148002,
-        SrcOverExt = 1000148003,
-        DstOverExt = 1000148004,
-        SrcInExt = 1000148005,
-        DstInExt = 1000148006,
-        SrcOutExt = 1000148007,
-        DstOutExt = 1000148008,
-        SrcAtopExt = 1000148009,
-        DstAtopExt = 1000148010,
-        XorExt = 1000148011,
-        MultiplyExt = 1000148012,
-        ScreenExt = 1000148013,
-        OverlayExt = 1000148014,
-        DarkenExt = 1000148015,
-        LightenExt = 1000148016,
-        ColordodgeExt = 1000148017,
-        ColorburnExt = 1000148018,
-        HardlightExt = 1000148019,
-        SoftlightExt = 1000148020,
-        DifferenceExt = 1000148021,
-        ExclusionExt = 1000148022,
-        InvertExt = 1000148023,
-        InvertRgbExt = 1000148024,
-        LineardodgeExt = 1000148025,
-        LinearburnExt = 1000148026,
-        VividlightExt = 1000148027,
-        LinearlightExt = 1000148028,
-        PinlightExt = 1000148029,
-        HardmixExt = 1000148030,
-        HslHueExt = 1000148031,
-        HslSaturationExt = 1000148032,
-        HslColorExt = 1000148033,
-        HslLuminosityExt = 1000148034,
-        PlusExt = 1000148035,
-        PlusClampedExt = 1000148036,
-        PlusClampedAlphaExt = 1000148037,
-        PlusDarkerExt = 1000148038,
-        MinusExt = 1000148039,
-        MinusClampedExt = 1000148040,
-        ContrastExt = 1000148041,
-        InvertOvgExt = 1000148042,
-        RedExt = 1000148043,
-        GreenExt = 1000148044,
-        BlueExt = 1000148045,
+        ZeroEXT = 1000148000,
+        SrcEXT = 1000148001,
+        DstEXT = 1000148002,
+        SrcOverEXT = 1000148003,
+        DstOverEXT = 1000148004,
+        SrcInEXT = 1000148005,
+        DstInEXT = 1000148006,
+        SrcOutEXT = 1000148007,
+        DstOutEXT = 1000148008,
+        SrcAtopEXT = 1000148009,
+        DstAtopEXT = 1000148010,
+        XorEXT = 1000148011,
+        MultiplyEXT = 1000148012,
+        ScreenEXT = 1000148013,
+        OverlayEXT = 1000148014,
+        DarkenEXT = 1000148015,
+        LightenEXT = 1000148016,
+        ColordodgeEXT = 1000148017,
+        ColorburnEXT = 1000148018,
+        HardlightEXT = 1000148019,
+        SoftlightEXT = 1000148020,
+        DifferenceEXT = 1000148021,
+        ExclusionEXT = 1000148022,
+        InvertEXT = 1000148023,
+        InvertRgbEXT = 1000148024,
+        LineardodgeEXT = 1000148025,
+        LinearburnEXT = 1000148026,
+        VividlightEXT = 1000148027,
+        LinearlightEXT = 1000148028,
+        PinlightEXT = 1000148029,
+        HardmixEXT = 1000148030,
+        HslHueEXT = 1000148031,
+        HslSaturationEXT = 1000148032,
+        HslColorEXT = 1000148033,
+        HslLuminosityEXT = 1000148034,
+        PlusEXT = 1000148035,
+        PlusClampedEXT = 1000148036,
+        PlusClampedAlphaEXT = 1000148037,
+        PlusDarkerEXT = 1000148038,
+        MinusEXT = 1000148039,
+        MinusClampedEXT = 1000148040,
+        ContrastEXT = 1000148041,
+        InvertOvgEXT = 1000148042,
+        RedEXT = 1000148043,
+        GreenEXT = 1000148044,
+        BlueEXT = 1000148045,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 8
@@ -353,14 +353,14 @@ namespace Vulkan {
     public enum VkBlendOverlapEXT {
         /// <summary>VK_BLEND_OVERLAP_UNCORRELATED_EXT specifies that there is no
         /// correlation between the source and destination coverage.</summary>
-        UncorrelatedExt = 0,
+        UncorrelatedEXT = 0,
         /// <summary>VK_BLEND_OVERLAP_DISJOINT_EXT specifies that the source and
         /// destination coverage are considered to have minimal overlap.</summary>
-        DisjointExt = 1,
+        DisjointEXT = 1,
         /// <summary>VK_BLEND_OVERLAP_CONJOINT_EXT specifies that the source and
         /// destination coverage are considered to have maximal overlap.</summary>
-        ConjointExt = 2,
-        MaxEnumExt = 0x7FFFFFFF,
+        ConjointEXT = 2,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 9
     /// <summary>VkBorderColor - Specify border color used for texture lookups</summary>
@@ -411,7 +411,7 @@ namespace Vulkan {
         /// that the buffer¡¯s address can be saved and reused on a subsequent run
         /// (e.g. for trace capture and replay), see
         /// VkBufferDeviceAddressCreateInfoEXT for more detail.</summary>
-        DeviceAddressCaptureReplayExt = 0x00000010,
+        DeviceAddressCaptureReplayEXT = 0x00000010,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 11
@@ -468,25 +468,25 @@ namespace Vulkan {
         /// <summary>VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_BUFFER_BIT_EXT specifies that
         /// the buffer is suitable for using for binding as a transform feedback
         /// buffer with vkCmdBindTransformFeedbackBuffersEXT.</summary>
-        TransformFeedbackBufferExt = 0x00000800,
+        TransformFeedbackBufferEXT = 0x00000800,
         /// <summary>VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_COUNTER_BUFFER_BIT_EXT
         /// specifies that the buffer is suitable for using as a counter buffer with
         /// vkCmdBeginTransformFeedbackEXT and
         /// vkCmdEndTransformFeedbackEXT.</summary>
-        TransformFeedbackCounterBufferExt = 0x00001000,
+        TransformFeedbackCounterBufferEXT = 0x00001000,
         /// <summary>VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT specifies that the
         /// buffer is suitable for passing as the buffer parameter to
         /// vkCmdBeginConditionalRenderingEXT.</summary>
-        ConditionalRenderingExt = 0x00000200,
+        ConditionalRenderingEXT = 0x00000200,
         /// <summary>VK_BUFFER_USAGE_RAY_TRACING_BIT_NV specifies that the buffer is
         /// suitable for use in vkCmdTraceRaysNV and
         /// vkCmdBuildAccelerationStructureNV.</summary>
-        RayTracingNv = 0x00000400,
+        RayTracingNV = 0x00000400,
         /// <summary>VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_EXT specifies that the
         /// buffer can be used to retrieve a buffer device address via
         /// vkGetBufferDeviceAddressEXT and use that address to access the
         /// buffer¡¯s memory from a shader.</summary>
-        ShaderDeviceAddressExt = 0x00020000,
+        ShaderDeviceAddressEXT = 0x00020000,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 12
@@ -496,27 +496,27 @@ namespace Vulkan {
         /// <summary>VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_NV indicates that
         /// the specified acceleration structure can be updated with update
         /// of VK_TRUE in vkCmdBuildAccelerationStructureNV.</summary>
-        AllowUpdateNv = 0x00000001,
+        AllowUpdateNV = 0x00000001,
         /// <summary>VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_COMPACTION_BIT_NV indicates
         /// that the specified acceleration structure can act as the source for
         /// vkCmdCopyAccelerationStructureNV with mode of
         /// VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV to produce a
         /// compacted acceleration structure.</summary>
-        AllowCompactionNv = 0x00000002,
+        AllowCompactionNV = 0x00000002,
         /// <summary>VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_TRACE_BIT_NV indicates
         /// that the given acceleration structure build should prioritize trace
         /// performance over build time.</summary>
-        PreferFastTraceNv = 0x00000004,
+        PreferFastTraceNV = 0x00000004,
         /// <summary>VK_BUILD_ACCELERATION_STRUCTURE_PREFER_FAST_BUILD_BIT_NV indicates
         /// that the given acceleration structure build should prioritize build
         /// time over trace performance.</summary>
-        PreferFastBuildNv = 0x00000008,
+        PreferFastBuildNV = 0x00000008,
         /// <summary>VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_NV indicates that
         /// this acceleration structure should minimize the size of the scratch
         /// memory and the final result build, potentially at the expense of build
         /// time or trace performance.</summary>
-        LowMemoryNv = 0x00000010,
-        MaxEnumNv = 0x7FFFFFFF,
+        LowMemoryNV = 0x00000010,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 13
     /// <summary>VkChromaLocation - Position of downsampled chroma samples</summary>
@@ -537,22 +537,22 @@ namespace Vulkan {
     public enum VkCoarseSampleOrderTypeNV {
         /// <summary>VK_COARSE_SAMPLE_ORDER_TYPE_DEFAULT_NV specifies that coverage
         /// samples will be ordered in an implementation-dependent manner.</summary>
-        DefaultNv = 0,
+        DefaultNV = 0,
         /// <summary>VK_COARSE_SAMPLE_ORDER_TYPE_CUSTOM_NV specifies that coverage
         /// samples will be ordered according to the array of custom orderings
         /// provided in either the pCustomSampleOrders member of
         /// VkPipelineViewportCoarseSampleOrderStateCreateInfoNV or the
         /// pCustomSampleOrders member of vkCmdSetCoarseSampleOrderNV.</summary>
-        CustomNv = 1,
+        CustomNV = 1,
         /// <summary>VK_COARSE_SAMPLE_ORDER_TYPE_PIXEL_MAJOR_NV specifies that coverage
         /// samples will be ordered sequentially, sorted first by pixel coordinate
         /// (in row-major order) and then by coverage sample number.</summary>
-        PixelMajorNv = 2,
+        PixelMajorNV = 2,
         /// <summary>VK_COARSE_SAMPLE_ORDER_TYPE_SAMPLE_MAJOR_NV specifies that
         /// coverage samples will be ordered sequentially, sorted first by coverage
         /// sample number and then by pixel coordinate (in row-major order).</summary>
-        SampleMajorNv = 3,
-        MaxEnumNv = 0x7FFFFFFF,
+        SampleMajorNV = 3,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 15
     /// <summary>VkColorComponentFlagBits - Bitmask controlling which components are written to the framebuffer</summary>
@@ -585,50 +585,50 @@ namespace Vulkan {
         /// <summary>VK_COLOR_SPACE_DISPLAY_P3_NONLINEAR_EXT specifies support for the
         /// Display-P3 color space and applies an sRGB-like transfer function
         /// (defined below).</summary>
-        DisplayP3NonlinearExt = 1000104001,
+        DisplayP3NonlinearEXT = 1000104001,
         /// <summary>VK_COLOR_SPACE_EXTENDED_SRGB_LINEAR_EXT specifies support for the
         /// extended sRGB color space and applies a linear transfer function.</summary>
-        ExtendedSrgbLinearExt = 1000104002,
+        ExtendedSrgbLinearEXT = 1000104002,
         /// <summary>VK_COLOR_SPACE_DCI_P3_LINEAR_EXT specifies support for the DCI-P3
         /// color space and applies a linear OETF.</summary>
-        DciP3LinearExt = 1000104003,
+        DciP3LinearEXT = 1000104003,
         /// <summary>VK_COLOR_SPACE_DCI_P3_NONLINEAR_EXT specifies support for the
         /// DCI-P3 color space and applies the Gamma 2.6 OETF.</summary>
-        DciP3NonlinearExt = 1000104004,
+        DciP3NonlinearEXT = 1000104004,
         /// <summary>VK_COLOR_SPACE_BT709_LINEAR_EXT specifies support for the BT709
         /// color space and applies a linear OETF.</summary>
-        Bt709LinearExt = 1000104005,
+        Bt709LinearEXT = 1000104005,
         /// <summary>VK_COLOR_SPACE_BT709_NONLINEAR_EXT specifies support for the BT709
         /// color space and applies the SMPTE 170M OETF.</summary>
-        Bt709NonlinearExt = 1000104006,
+        Bt709NonlinearEXT = 1000104006,
         /// <summary>VK_COLOR_SPACE_BT2020_LINEAR_EXT specifies support for the BT2020
         /// color space and applies a linear OETF.</summary>
-        Bt2020LinearExt = 1000104007,
+        Bt2020LinearEXT = 1000104007,
         /// <summary>VK_COLOR_SPACE_HDR10_ST2084_EXT specifies support for the HDR10
         /// (BT2020 color) space and applies the SMPTE ST2084 Perceptual Quantizer
         /// (PQ) OETF.</summary>
-        Hdr10St2084Ext = 1000104008,
+        Hdr10St2084EXT = 1000104008,
         /// <summary>VK_COLOR_SPACE_DOLBYVISION_EXT specifies support for the Dolby
         /// Vision (BT2020 color space), proprietary encoding, and applies the SMPTE
         /// ST2084 OETF.</summary>
-        DolbyvisionExt = 1000104009,
+        DolbyvisionEXT = 1000104009,
         /// <summary>VK_COLOR_SPACE_HDR10_HLG_EXT specifies support for the HDR10
         /// (BT2020 color space) and applies the Hybrid Log Gamma (HLG) OETF.</summary>
-        Hdr10HlgExt = 1000104010,
+        Hdr10HlgEXT = 1000104010,
         /// <summary>VK_COLOR_SPACE_ADOBERGB_LINEAR_EXT specifies support for the
         /// AdobeRGB color space and applies a linear OETF.</summary>
-        AdobergbLinearExt = 1000104011,
+        AdobergbLinearEXT = 1000104011,
         /// <summary>VK_COLOR_SPACE_ADOBERGB_NONLINEAR_EXT specifies support for the
         /// AdobeRGB color space and applies the Gamma 2.2 OETF.</summary>
-        AdobergbNonlinearExt = 1000104012,
+        AdobergbNonlinearEXT = 1000104012,
         /// <summary>VK_COLOR_SPACE_PASS_THROUGH_EXT specifies that color components
         /// are used ¡°as is¡±.
         /// This is intended to allow applications to supply data for color spaces
         /// not described here.</summary>
-        PassThroughExt = 1000104013,
+        PassThroughEXT = 1000104013,
         /// <summary>VK_COLOR_SPACE_EXTENDED_SRGB_NONLINEAR_EXT specifies support for
         /// the extended sRGB color space and applies an sRGB transfer function.</summary>
-        ExtendedSrgbNonlinearExt = 1000104014,
+        ExtendedSrgbNonlinearEXT = 1000104014,
         /// <summary>VK_COLOR_SPACE_DISPLAY_NATIVE_AMD specifies support for the
         /// display¡¯s native color space.
         /// This matches the color space expectations of AMD¡¯s FreeSync2 standard,
@@ -778,38 +778,38 @@ namespace Vulkan {
     public enum VkComponentTypeNV {
         /// <summary>VK_COMPONENT_TYPE_FLOAT16_NV corresponds to SPIR-V
         /// OpTypeFloat 16.</summary>
-        Float16Nv = 0,
+        Float16NV = 0,
         /// <summary>VK_COMPONENT_TYPE_FLOAT32_NV corresponds to SPIR-V
         /// OpTypeFloat 32.</summary>
-        Float32Nv = 1,
+        Float32NV = 1,
         /// <summary>VK_COMPONENT_TYPE_FLOAT64_NV corresponds to SPIR-V
         /// OpTypeFloat 64.</summary>
-        Float64Nv = 2,
+        Float64NV = 2,
         /// <summary>VK_COMPONENT_TYPE_SINT8_NV corresponds to SPIR-V OpTypeInt 8
         /// 1.</summary>
-        Sint8Nv = 3,
+        Sint8NV = 3,
         /// <summary>VK_COMPONENT_TYPE_SINT16_NV corresponds to SPIR-V OpTypeInt
         /// 16 1.</summary>
-        Sint16Nv = 4,
+        Sint16NV = 4,
         /// <summary>VK_COMPONENT_TYPE_SINT32_NV corresponds to SPIR-V OpTypeInt
         /// 32 1.</summary>
-        Sint32Nv = 5,
+        Sint32NV = 5,
         /// <summary>VK_COMPONENT_TYPE_SINT64_NV corresponds to SPIR-V OpTypeInt
         /// 64 1.</summary>
-        Sint64Nv = 6,
+        Sint64NV = 6,
         /// <summary>VK_COMPONENT_TYPE_UINT8_NV corresponds to SPIR-V OpTypeInt 8
         /// 0.</summary>
-        Uint8Nv = 7,
+        Uint8NV = 7,
         /// <summary>VK_COMPONENT_TYPE_UINT16_NV corresponds to SPIR-V OpTypeInt
         /// 16 0.</summary>
-        Uint16Nv = 8,
+        Uint16NV = 8,
         /// <summary>VK_COMPONENT_TYPE_UINT32_NV corresponds to SPIR-V OpTypeInt
         /// 32 0.</summary>
-        Uint32Nv = 9,
+        Uint32NV = 9,
         /// <summary>VK_COMPONENT_TYPE_UINT64_NV corresponds to SPIR-V OpTypeInt
         /// 64 0.</summary>
-        Uint64Nv = 10,
-        MaxEnumNv = 0x7FFFFFFF,
+        Uint64NV = 10,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 25
     /// <summary>VkCompositeAlphaFlagBitsKHR - alpha compositing modes supported on a device</summary>
@@ -850,8 +850,8 @@ namespace Vulkan {
         /// That is, if the 32-bit predicate read from buffer memory at
         /// offset is zero, the rendering commands are not discarded, and if
         /// non zero, then they are discarded.</summary>
-        InvertedExt = 0x00000001,
-        MaxEnumExt = 0x7FFFFFFF,
+        InvertedEXT = 0x00000001,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 27
     /// <summary>VkConservativeRasterizationModeEXT - Specify the conservative rasterization mode</summary>
@@ -859,14 +859,14 @@ namespace Vulkan {
         /// <summary>VK_CONSERVATIVE_RASTERIZATION_MODE_DISABLED_EXT specifies that
         /// conservative rasterization is disabled and rasterization proceeds as
         /// normal.</summary>
-        DisabledExt = 0,
+        DisabledEXT = 0,
         /// <summary>VK_CONSERVATIVE_RASTERIZATION_MODE_OVERESTIMATE_EXT specifies that
         /// conservative rasterization is enabled in overestimation mode.</summary>
-        OverestimateExt = 1,
+        OverestimateEXT = 1,
         /// <summary>VK_CONSERVATIVE_RASTERIZATION_MODE_UNDERESTIMATE_EXT specifies
         /// that conservative rasterization is enabled in underestimation mode.</summary>
-        UnderestimateExt = 2,
-        MaxEnumExt = 0x7FFFFFFF,
+        UnderestimateEXT = 2,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 28
     /// <summary>VkCopyAccelerationStructureModeNV - Acceleration structure copy mode</summary>
@@ -876,32 +876,32 @@ namespace Vulkan {
         /// specified by dst.
         /// The dst acceleration structure must have been created with the
         /// same parameters as src.</summary>
-        CloneNv = 0,
+        CloneNV = 0,
         /// <summary>VK_COPY_ACCELERATION_STRUCTURE_MODE_COMPACT_NV creates a more
         /// compact version of an acceleration structure src into dst.
         /// The acceleration structure dstmust have been created with a
         /// compactedSize corresponding to the one returned by
         /// vkCmdWriteAccelerationStructuresPropertiesNV after the build of
         /// the acceleration structure specified by src.</summary>
-        CompactNv = 1,
-        MaxEnumNv = 0x7FFFFFFF,
+        CompactNV = 1,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 29
     /// <summary>VkCoverageModulationModeNV - Specify the discard rectangle mode</summary>
     public enum VkCoverageModulationModeNV {
         /// <summary>VK_COVERAGE_MODULATION_MODE_NONE_NV specifies that no components
         /// are multiplied by the modulation factor.</summary>
-        NoneNv = 0,
+        NoneNV = 0,
         /// <summary>VK_COVERAGE_MODULATION_MODE_RGB_NV specifies that the red, green,
         /// and blue components are multiplied by the modulation factor.</summary>
-        RgbNv = 1,
+        RgbNV = 1,
         /// <summary>VK_COVERAGE_MODULATION_MODE_ALPHA_NV specifies that the alpha
         /// component is multiplied by the modulation factor.</summary>
-        AlphaNv = 2,
+        AlphaNV = 2,
         /// <summary>VK_COVERAGE_MODULATION_MODE_RGBA_NV specifies that all components
         /// are multiplied by the modulation factor.</summary>
-        RgbaNv = 3,
-        MaxEnumNv = 0x7FFFFFFF,
+        RgbaNV = 3,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 30
     /// <summary>VkCullModeFlagBits - Bitmask controlling triangle culling</summary>
@@ -927,7 +927,7 @@ namespace Vulkan {
         /// <summary>VK_DEBUG_REPORT_INFORMATION_BIT_EXT specifies an informational
         /// message such as resource details that may be handy when debugging an
         /// application.</summary>
-        InformationExt = 0x00000001,
+        InformationEXT = 0x00000001,
         /// <summary>VK_DEBUG_REPORT_WARNING_BIT_EXT specifies use of Vulkan that may
         /// expose an app bug.
         /// Such cases may not be immediately harmful, such as a fragment shader
@@ -936,134 +936,134 @@ namespace Vulkan {
         /// unintended such as using an image whose memory has not been filled.
         /// In general if you see a warning but you know that the behavior is
         /// intended/desired, then simply ignore the warning.</summary>
-        WarningExt = 0x00000002,
+        WarningEXT = 0x00000002,
         /// <summary>VK_DEBUG_REPORT_PERFORMANCE_WARNING_BIT_EXT specifies a
         /// potentially non-optimal use of Vulkan, e.g. using
         /// vkCmdClearColorImage when setting
         /// VkAttachmentDescription::loadOp to
         /// VK_ATTACHMENT_LOAD_OP_CLEAR would have worked.</summary>
-        PerformanceWarningExt = 0x00000004,
+        PerformanceWarningEXT = 0x00000004,
         /// <summary>VK_DEBUG_REPORT_ERROR_BIT_EXT specifies that the application has
         /// violated a valid usage condition of the specification.</summary>
-        ErrorExt = 0x00000008,
+        ErrorEXT = 0x00000008,
         /// <summary>VK_DEBUG_REPORT_DEBUG_BIT_EXT specifies diagnostic information
         /// from the implementation and layers.</summary>
-        DebugExt = 0x00000010,
-        MaxEnumExt = 0x7FFFFFFF,
+        DebugEXT = 0x00000010,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 32
     /// <summary>VkDebugReportObjectTypeEXT - Specify the type of an object handle</summary>
     public enum VkDebugReportObjectTypeEXT {
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_UNKNOWN_EXT</summary>
-        UnknownExt = 0,
+        UnknownEXT = 0,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_INSTANCE_EXT</summary>
-        InstanceExt = 1,
+        InstanceEXT = 1,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_PHYSICAL_DEVICE_EXT</summary>
-        PhysicalDeviceExt = 2,
+        PhysicalDeviceEXT = 2,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_DEVICE_EXT</summary>
-        DeviceExt = 3,
+        DeviceEXT = 3,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_QUEUE_EXT</summary>
-        QueueExt = 4,
+        QueueEXT = 4,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_SEMAPHORE_EXT</summary>
-        SemaphoreExt = 5,
+        SemaphoreEXT = 5,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_COMMAND_BUFFER_EXT</summary>
-        CommandBufferExt = 6,
+        CommandBufferEXT = 6,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_FENCE_EXT</summary>
-        FenceExt = 7,
+        FenceEXT = 7,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_DEVICE_MEMORY_EXT</summary>
-        DeviceMemoryExt = 8,
+        DeviceMemoryEXT = 8,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_BUFFER_EXT</summary>
-        BufferExt = 9,
+        BufferEXT = 9,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_IMAGE_EXT</summary>
-        ImageExt = 10,
+        ImageEXT = 10,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_EVENT_EXT</summary>
-        EventExt = 11,
+        EventEXT = 11,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_QUERY_POOL_EXT</summary>
-        QueryPoolExt = 12,
+        QueryPoolEXT = 12,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_BUFFER_VIEW_EXT</summary>
-        BufferViewExt = 13,
+        BufferViewEXT = 13,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_IMAGE_VIEW_EXT</summary>
-        ImageViewExt = 14,
+        ImageViewEXT = 14,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_SHADER_MODULE_EXT</summary>
-        ShaderModuleExt = 15,
+        ShaderModuleEXT = 15,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_PIPELINE_CACHE_EXT</summary>
-        PipelineCacheExt = 16,
+        PipelineCacheEXT = 16,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_PIPELINE_LAYOUT_EXT</summary>
-        PipelineLayoutExt = 17,
+        PipelineLayoutEXT = 17,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_RENDER_PASS_EXT</summary>
-        RenderPassExt = 18,
+        RenderPassEXT = 18,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_PIPELINE_EXT</summary>
-        PipelineExt = 19,
+        PipelineEXT = 19,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_SET_LAYOUT_EXT</summary>
-        DescriptorSetLayoutExt = 20,
+        DescriptorSetLayoutEXT = 20,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_SAMPLER_EXT</summary>
-        SamplerExt = 21,
+        SamplerEXT = 21,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_POOL_EXT</summary>
-        DescriptorPoolExt = 22,
+        DescriptorPoolEXT = 22,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_SET_EXT</summary>
-        DescriptorSetExt = 23,
+        DescriptorSetEXT = 23,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_FRAMEBUFFER_EXT</summary>
-        FramebufferExt = 24,
+        FramebufferEXT = 24,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_COMMAND_POOL_EXT</summary>
-        CommandPoolExt = 25,
+        CommandPoolEXT = 25,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_SURFACE_KHR_EXT</summary>
-        SurfaceKhrExt = 26,
+        SurfaceKhrEXT = 26,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_SWAPCHAIN_KHR_EXT</summary>
-        SwapchainKhrExt = 27,
+        SwapchainKhrEXT = 27,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_DEBUG_REPORT_CALLBACK_EXT_EXT</summary>
-        DebugReportCallbackExtExt = 28,
+        DebugReportCallbackExtEXT = 28,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_DISPLAY_KHR_EXT</summary>
-        DisplayKhrExt = 29,
+        DisplayKhrEXT = 29,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_DISPLAY_MODE_KHR_EXT</summary>
-        DisplayModeKhrExt = 30,
+        DisplayModeKhrEXT = 30,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_OBJECT_TABLE_NVX_EXT</summary>
-        ObjectTableNvxExt = 31,
+        ObjectTableNvxEXT = 31,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_INDIRECT_COMMANDS_LAYOUT_NVX_EXT</summary>
-        IndirectCommandsLayoutNvxExt = 32,
-        ValidationCacheExtExt = 33,
-        SamplerYcbcrConversionExt = 1000156000,
+        IndirectCommandsLayoutNvxEXT = 32,
+        ValidationCacheExtEXT = 33,
+        SamplerYcbcrConversionEXT = 1000156000,
         /// <summary>class="tableblock"
         ///   VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_EXT</summary>
-        DescriptorUpdateTemplateExt = 1000085000,
-        AccelerationStructureNvExt = 1000165000,
-        DebugReportExt = DebugReportCallbackExtExt,
-        ValidationCacheExt = ValidationCacheExtExt,
-        DescriptorUpdateTemplateKhrExt = DescriptorUpdateTemplateExt,
-        SamplerYcbcrConversionKhrExt = SamplerYcbcrConversionExt,
-        MaxEnumExt = 0x7FFFFFFF,
+        DescriptorUpdateTemplateEXT = 1000085000,
+        AccelerationStructureNvEXT = 1000165000,
+        DebugReportEXT = DebugReportCallbackExtEXT,
+        ValidationCacheEXT = ValidationCacheExtEXT,
+        DescriptorUpdateTemplateKhrEXT = DescriptorUpdateTemplateEXT,
+        SamplerYcbcrConversionKhrEXT = SamplerYcbcrConversionEXT,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 33
     /// <summary>VkDebugUtilsMessageSeverityFlagBitsEXT - Bitmask specifying which severities of events cause a debug messenger callback</summary>
@@ -1072,11 +1072,11 @@ namespace Vulkan {
         /// <summary>VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT specifies the most
         /// verbose output indicating all diagnostic messages from the Vulkan
         /// loader, layers, and drivers should be captured.</summary>
-        VerboseExt = 0x00000001,
+        VerboseEXT = 0x00000001,
         /// <summary>VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT specifies an
         /// informational message such as resource details that may be handy when
         /// debugging an application.</summary>
-        InfoExt = 0x00000010,
+        InfoEXT = 0x00000010,
         /// <summary>VK_DEBUG_UTILS_MESSAGE_SEVERITY_WARNING_BIT_EXT specifies use of
         /// Vulkan that may expose an app bug.
         /// Such cases may not be immediately harmful, such as a fragment shader
@@ -1085,11 +1085,11 @@ namespace Vulkan {
         /// unintended such as using an image whose memory has not been filled.
         /// In general if you see a warning but you know that the behavior is
         /// intended/desired, then simply ignore the warning.</summary>
-        WarningExt = 0x00000100,
+        WarningEXT = 0x00000100,
         /// <summary>VK_DEBUG_UTILS_MESSAGE_SEVERITY_ERROR_BIT_EXT specifies that the
         /// application has violated a valid usage condition of the specification.</summary>
-        ErrorExt = 0x00001000,
-        MaxEnumExt = 0x7FFFFFFF,
+        ErrorEXT = 0x00001000,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 34
     /// <summary>VkDebugUtilsMessageTypeFlagBitsEXT - Bitmask specifying which types of events cause a debug messenger callback</summary>
@@ -1098,18 +1098,18 @@ namespace Vulkan {
         /// <summary>VK_DEBUG_UTILS_MESSAGE_TYPE_GENERAL_BIT_EXT specifies that some
         /// general event has occurred.
         /// This is typically a non-specification, non-performance event.</summary>
-        GeneralExt = 0x00000001,
+        GeneralEXT = 0x00000001,
         /// <summary>VK_DEBUG_UTILS_MESSAGE_TYPE_VALIDATION_BIT_EXT specifies that
         /// something has occurred during validation against the Vulkan
         /// specification that may indicate invalid behavior.</summary>
-        ValidationExt = 0x00000002,
+        ValidationEXT = 0x00000002,
         /// <summary>VK_DEBUG_UTILS_MESSAGE_TYPE_PERFORMANCE_BIT_EXT specifies a
         /// potentially non-optimal use of Vulkan, e.g. using
         /// vkCmdClearColorImage when setting
         /// VkAttachmentDescription::loadOp to
         /// VK_ATTACHMENT_LOAD_OP_CLEAR would have worked.</summary>
-        PerformanceExt = 0x00000004,
-        MaxEnumExt = 0x7FFFFFFF,
+        PerformanceEXT = 0x00000004,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 35
     /// <summary>VkDependencyFlagBits - Bitmask specifying how execution and memory dependencies are formed</summary>
@@ -1147,7 +1147,7 @@ namespace Vulkan {
         /// They can be updated concurrently with the set being bound to a command
         /// buffer in another thread, but not concurrently with the set being reset
         /// or freed.</summary>
-        UpdateAfterBindExt = 0x00000001,
+        UpdateAfterBindEXT = 0x00000001,
         /// <summary>VK_DESCRIPTOR_BINDING_UPDATE_UNUSED_WHILE_PENDING_BIT_EXT
         /// indicates that descriptors in this binding can be updated after a
         /// command buffer has bound this descriptor set, or while a command buffer
@@ -1159,13 +1159,13 @@ namespace Vulkan {
         /// If VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT_EXT is not set, then
         /// descriptors can be updated as long as they are not statically used by
         /// any shader invocations.</summary>
-        UpdateUnusedWhilePendingExt = 0x00000002,
+        UpdateUnusedWhilePendingEXT = 0x00000002,
         /// <summary>VK_DESCRIPTOR_BINDING_PARTIALLY_BOUND_BIT_EXT indicates that
         /// descriptors in this binding that are not dynamically used need not
         /// contain valid descriptors at the time the descriptors are consumed.
         /// A descriptor is dynamically used if any shader invocation executes an
         /// instruction that performs any memory access using the descriptor.</summary>
-        PartiallyBoundExt = 0x00000004,
+        PartiallyBoundEXT = 0x00000004,
         /// <summary>VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT_EXT indicates
         /// that this descriptor binding has a variable size that will be specified
         /// when a descriptor set is allocated using this layout.
@@ -1181,8 +1181,8 @@ namespace Vulkan {
         /// descriptorCount specifies the upper bound on the byte size of the
         /// binding, thus it counts against the maxInlineUniformBlockSize limit instead.
         /// .</summary>
-        VariableDescriptorCountExt = 0x00000008,
-        MaxEnumExt = 0x7FFFFFFF,
+        VariableDescriptorCountEXT = 0x00000008,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 37
     /// <summary>VkDescriptorPoolCreateFlagBits - Bitmask specifying certain supported operations on a descriptor pool</summary>
@@ -1204,7 +1204,7 @@ namespace Vulkan {
         /// set the VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT_EXT bit from a
         /// pool that has VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT_EXT
         /// set.</summary>
-        UpdateAfterBindExt = 0x00000002,
+        UpdateAfterBindEXT = 0x00000002,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 38
@@ -1225,7 +1225,7 @@ namespace Vulkan {
         /// without this flag.
         /// The UpdateAfterBind limits count all descriptors, but the limits may be
         /// higher than the non-UpdateAfterBind limits.</summary>
-        UpdateAfterBindPoolExt = 0x00000002,
+        UpdateAfterBindPoolEXT = 0x00000002,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 39
@@ -1268,8 +1268,8 @@ namespace Vulkan {
         InputAttachment = 10,
         /// <summary>VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT specifies an
         /// inline uniform block.</summary>
-        InlineUniformBlockExt = 1000138000,
-        AccelerationStructureNv = 1000165000,
+        InlineUniformBlockEXT = 1000138000,
+        AccelerationStructureNV = 1000165000,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 40
@@ -1294,8 +1294,8 @@ namespace Vulkan {
         /// specified device.
         /// Applications can use this notification to determine when they need to
         /// re-enumerate the available displays on a device.</summary>
-        DisplayHotplugExt = 0,
-        MaxEnumExt = 0x7FFFFFFF,
+        DisplayHotplugEXT = 0,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 42
     /// <summary>VkDeviceGroupPresentModeFlagBitsKHR - Bitmask specifying supported device group present modes</summary>
@@ -1336,11 +1336,11 @@ namespace Vulkan {
     public enum VkDiscardRectangleModeEXT {
         /// <summary>VK_DISCARD_RECTANGLE_MODE_INCLUSIVE_EXT specifies that a fragment
         /// within any discard rectangle satisfies the test.</summary>
-        InclusiveExt = 0,
+        InclusiveEXT = 0,
         /// <summary>VK_DISCARD_RECTANGLE_MODE_EXCLUSIVE_EXT specifies that a fragment
         /// not within any of the discard rectangles satisfies the test.</summary>
-        ExclusiveExt = 1,
-        MaxEnumExt = 0x7FFFFFFF,
+        ExclusiveEXT = 1,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 45
     /// <summary>VkDisplayEventTypeEXT - Events that can occur on a display object</summary>
@@ -1348,8 +1348,8 @@ namespace Vulkan {
         /// <summary>VK_DISPLAY_EVENT_TYPE_FIRST_PIXEL_OUT_EXT specifies that the fence
         /// is signaled when the first pixel of the next display refresh cycle
         /// leaves the display engine for the display.</summary>
-        FirstPixelOutExt = 0,
-        MaxEnumExt = 0x7FFFFFFF,
+        FirstPixelOutEXT = 0,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 46
     /// <summary>VkDisplayPlaneAlphaFlagBitsKHR - Alpha blending type</summary>
@@ -1382,17 +1382,17 @@ namespace Vulkan {
     public enum VkDisplayPowerStateEXT {
         /// <summary>VK_DISPLAY_POWER_STATE_OFF_EXT specifies that the display is
         /// powered down.</summary>
-        OffExt = 0,
+        OffEXT = 0,
         /// <summary>VK_DISPLAY_POWER_STATE_SUSPEND_EXT specifies that the display is
         /// put into a low power mode, from which it may be able to transition back
         /// to VK_DISPLAY_POWER_STATE_ON_EXT more quickly than if it were in
         /// VK_DISPLAY_POWER_STATE_OFF_EXT.
         /// This state may be the same as VK_DISPLAY_POWER_STATE_OFF_EXT.</summary>
-        SuspendExt = 1,
+        SuspendEXT = 1,
         /// <summary>VK_DISPLAY_POWER_STATE_ON_EXT specifies that the display is
         /// powered on.</summary>
-        OnExt = 2,
-        MaxEnumExt = 0x7FFFFFFF,
+        OnEXT = 2,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 48
     /// <summary>VkDriverIdKHR - Khronos driver IDs</summary>
@@ -1487,7 +1487,7 @@ namespace Vulkan {
         /// any draws are performed with a pipeline state with
         /// VkPipelineViewportWScalingStateCreateInfoNV member
         /// viewportScalingEnable set to VK_TRUE</summary>
-        ViewportWScalingNv = 1000087000,
+        ViewportWScalingNV = 1000087000,
         /// <summary>VK_DYNAMIC_STATE_DISCARD_RECTANGLE_EXT specifies that the
         /// pDiscardRectangles state in
         /// VkPipelineDiscardRectangleStateCreateInfoEXT will be ignored and
@@ -1497,7 +1497,7 @@ namespace Vulkan {
         /// rectangles is still specified by the discardRectangleMode and
         /// discardRectangleCount members of
         /// VkPipelineDiscardRectangleStateCreateInfoEXT.</summary>
-        DiscardRectangleExt = 1000099000,
+        DiscardRectangleEXT = 1000099000,
         /// <summary>VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_EXT specifies that the
         /// sampleLocationsInfo state in
         /// VkPipelineSampleLocationsStateCreateInfoEXT will be ignored and
@@ -1506,19 +1506,19 @@ namespace Vulkan {
         /// Enabling custom sample locations is still indicated by the
         /// sampleLocationsEnable member of
         /// VkPipelineSampleLocationsStateCreateInfoEXT.</summary>
-        SampleLocationsExt = 1000143000,
+        SampleLocationsEXT = 1000143000,
         /// <summary>VK_DYNAMIC_STATE_VIEWPORT_SHADING_RATE_PALETTE_NV specifies that
         /// the pShadingRatePalettes state in
         /// VkPipelineViewportShadingRateImageStateCreateInfoNV will be
         /// ignored and must be set dynamically with
         /// vkCmdSetViewportShadingRatePaletteNV before any draw commands.</summary>
-        ViewportShadingRatePaletteNv = 1000164004,
+        ViewportShadingRatePaletteNV = 1000164004,
         /// <summary>VK_DYNAMIC_STATE_VIEWPORT_COARSE_SAMPLE_ORDER_NV specifies that
         /// the coarse sample order state in
         /// VkPipelineViewportCoarseSampleOrderStateCreateInfoNV will be
         /// ignored and must be set dynamically with
         /// vkCmdSetCoarseSampleOrderNV before any draw commands.</summary>
-        ViewportCoarseSampleOrderNv = 1000164006,
+        ViewportCoarseSampleOrderNV = 1000164006,
         /// <summary>VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_NV specifies that the
         /// pExclusiveScissors state in
         /// VkPipelineViewportExclusiveScissorStateCreateInfoNV will be
@@ -1527,7 +1527,7 @@ namespace Vulkan {
         /// The number of exclusive scissor rectangles used by a pipeline is still
         /// specified by the exclusiveScissorCount member of
         /// VkPipelineViewportExclusiveScissorStateCreateInfoNV.</summary>
-        ExclusiveScissorNv = 1000205001,
+        ExclusiveScissorNV = 1000205001,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 50
@@ -1619,14 +1619,14 @@ namespace Vulkan {
         /// <summary>VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT_NV specifies that
         /// external memory of the specified type must be created as a dedicated
         /// allocation when used in the manner specified.</summary>
-        DedicatedOnlyNv = 0x00000001,
+        DedicatedOnlyNV = 0x00000001,
         /// <summary>VK_EXTERNAL_MEMORY_FEATURE_EXPORTABLE_BIT_NV specifies that the
         /// implementation supports exporting handles of the specified type.</summary>
-        ExportableNv = 0x00000002,
+        ExportableNV = 0x00000002,
         /// <summary>VK_EXTERNAL_MEMORY_FEATURE_IMPORTABLE_BIT_NV specifies that the
         /// implementation supports importing handles of the specified type.</summary>
-        ImportableNv = 0x00000004,
-        MaxEnumNv = 0x7FFFFFFF,
+        ImportableNV = 0x00000004,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 54
     /// <summary>VkExternalMemoryHandleTypeFlagBits - Bit specifying external memory handle types</summary>
@@ -1685,7 +1685,7 @@ namespace Vulkan {
         /// descriptor for a Linux dma_buf.
         /// It owns a reference to the underlying memory resource represented by its
         /// Vulkan memory object.</summary>
-        DmaBufExt = 0x00000200,
+        DmaBufEXT = 0x00000200,
         /// <summary>VK_EXTERNAL_MEMORY_HANDLE_TYPE_ANDROID_HARDWARE_BUFFER_BIT_ANDROID
         /// specifies an AHardwareBuffer object defined by the Android NDK.
         /// See Android Hardware Buffers
@@ -1695,13 +1695,13 @@ namespace Vulkan {
         /// host pointer returned by a host memory allocation command.
         /// It does not own a reference to the underlying memory resource, and will
         /// therefore become invalid if the host memory is freed.</summary>
-        HostAllocationExt = 0x00000080,
+        HostAllocationEXT = 0x00000080,
         /// <summary>VK_EXTERNAL_MEMORY_HANDLE_TYPE_HOST_MAPPED_FOREIGN_MEMORY_BIT_EXT
         /// specifies a host pointer to host mapped foreign memory.
         /// It does not own a reference to the underlying memory resource, and will
         /// therefore become invalid if the foreign memory is unmapped or otherwise
         /// becomes no longer available.</summary>
-        HostMappedForeignMemoryExt = 0x00000100,
+        HostMappedForeignMemoryEXT = 0x00000100,
         OpaqueFdKHR = OpaqueFd,
         OpaqueWin32KHR = OpaqueWin32,
         OpaqueWin32KmtKHR = OpaqueWin32Kmt,
@@ -1718,19 +1718,19 @@ namespace Vulkan {
         /// <summary>VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_NV specifies a
         /// handle to memory returned by vkGetMemoryWin32HandleNV, or one
         /// duplicated from such a handle using DuplicateHandle().</summary>
-        OpaqueWin32Nv = 0x00000001,
+        OpaqueWin32NV = 0x00000001,
         /// <summary>VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_KMT_BIT_NV specifies a
         /// handle to memory returned by vkGetMemoryWin32HandleNV.</summary>
-        OpaqueWin32KmtNv = 0x00000002,
+        OpaqueWin32KmtNV = 0x00000002,
         /// <summary>VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_IMAGE_BIT_NV specifies a
         /// valid NT handle to memory returned by
         /// IDXGIResource1::CreateSharedHandle, or a handle duplicated from such a
         /// handle using DuplicateHandle().</summary>
-        D3d11ImageNv = 0x00000004,
+        D3d11ImageNV = 0x00000004,
         /// <summary>VK_EXTERNAL_MEMORY_HANDLE_TYPE_D3D11_IMAGE_KMT_BIT_NV specifies a
         /// handle to memory returned by IDXGIResource::GetSharedHandle().</summary>
-        D3d11ImageKmtNv = 0x00000008,
-        MaxEnumNv = 0x7FFFFFFF,
+        D3d11ImageKmtNV = 0x00000008,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 56
     /// <summary>VkExternalSemaphoreFeatureFlagBits - Bitfield describing features of an external semaphore handle type</summary>
@@ -1832,7 +1832,7 @@ namespace Vulkan {
         Linear = 1,
         CubicImg = 1000015000,
         /// <summary>VK_FILTER_CUBIC_EXT specifies cubic filtering.</summary>
-        CubicExt = CubicImg,
+        CubicEXT = CubicImg,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 61
@@ -3321,12 +3321,12 @@ namespace Vulkan {
         /// VkSamplerReductionModeEXT.
         /// This bit must only be exposed for formats that also support the
         /// VK_FORMAT_FEATURE_SAMPLED_IMAGE_BIT.</summary>
-        SampledImageFilterMinmaxExt = 0x00010000,
+        SampledImageFilterMinmaxEXT = 0x00010000,
         /// <summary>VK_FORMAT_FEATURE_FRAGMENT_DENSITY_MAP_BIT_EXT specifies that an
         /// image view can be used as a
         /// fragment density map
         /// attachment.</summary>
-        FragmentDensityMapExt = 0x01000000,
+        FragmentDensityMapEXT = 0x01000000,
         TransferSrcKHR = TransferSrc,
         TransferDstKHR = TransferDst,
         MidpointChromaSamplesKHR = MidpointChromaSamples,
@@ -3345,7 +3345,7 @@ namespace Vulkan {
         /// VK_FORMAT_FEATURE_SAMPLED_IMAGE_BIT.
         /// If the format being queried is a depth/stencil format, this only
         /// specifies that the depth aspect is cubic filterable.</summary>
-        SampledImageFilterCubicExt = SampledImageFilterCubicImg,
+        SampledImageFilterCubicEXT = SampledImageFilterCubicImg,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 63
@@ -3365,24 +3365,24 @@ namespace Vulkan {
         /// <summary>VK_FULL_SCREEN_EXCLUSIVE_DEFAULT_EXT indicates the implementation
         /// should determine the appropriate full-screen method by whatever means
         /// it deems appropriate.</summary>
-        DefaultExt = 0,
+        DefaultEXT = 0,
         /// <summary>VK_FULL_SCREEN_EXCLUSIVE_ALLOWED_EXT indicates the implementation
         /// may use full-screen exclusive mechanisms when available.
         /// Such mechanisms may result in better performance and/or the
         /// availability of different presentation capabilities, but may require a
         /// more disruptive transition during swapchain initialization, first
         /// presentation and/or destruction.</summary>
-        AllowedExt = 1,
+        AllowedEXT = 1,
         /// <summary>VK_FULL_SCREEN_EXCLUSIVE_DISALLOWED_EXT indicates the
         /// implementation should avoid using full-screen mechanisms which rely on
         /// disruptive transitions.</summary>
-        DisallowedExt = 2,
+        DisallowedEXT = 2,
         /// <summary>VK_FULL_SCREEN_EXCLUSIVE_APPLICATION_CONTROLLED_EXT indicates the
         /// application will manage full-screen exclusive mode by using the
         /// vkAcquireFullScreenExclusiveModeEXT and
         /// vkReleaseFullScreenExclusiveModeEXT commands.</summary>
-        ApplicationControlledExt = 3,
-        MaxEnumExt = 0x7FFFFFFF,
+        ApplicationControlledEXT = 3,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 65
     /// <summary>VkGeometryFlagBitsNV - Bitmask specifying additional parameters for a geometry</summary>
@@ -3390,14 +3390,14 @@ namespace Vulkan {
     public enum VkGeometryFlagBitsNV {
         /// <summary>VK_GEOMETRY_OPAQUE_BIT_NV indicates that this geometry does not
         /// invoke the any-hit shaders even if present in a hit group.</summary>
-        OpaqueNv = 0x00000001,
+        OpaqueNV = 0x00000001,
         /// <summary>VK_GEOMETRY_NO_DUPLICATE_ANY_HIT_INVOCATION_BIT_NV indicates that
         /// the implementation must only call the any-hit shader a single time for
         /// each primitive in this geometry.
         /// If this bit is absent an implementation may invoke the any-hit shader
         /// more than once for this geometry.</summary>
-        NoDuplicateAnyHitInvocationNv = 0x00000002,
-        MaxEnumNv = 0x7FFFFFFF,
+        NoDuplicateAnyHitInvocationNV = 0x00000002,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 66
     /// <summary>VkGeometryInstanceFlagBitsNV - Instance flag bits</summary>
@@ -3405,38 +3405,38 @@ namespace Vulkan {
     public enum VkGeometryInstanceFlagBitsNV {
         /// <summary>VK_GEOMETRY_INSTANCE_TRIANGLE_CULL_DISABLE_BIT_NV disables face
         /// culling for this instance.</summary>
-        TriangleCullDisableNv = 0x00000001,
+        TriangleCullDisableNV = 0x00000001,
         /// <summary>VK_GEOMETRY_INSTANCE_TRIANGLE_FRONT_COUNTERCLOCKWISE_BIT_NV
         /// indicates that the front face of the triangle for culling purposes is
         /// the face that is counter clockwise in object space relative to the ray
         /// origin.
         /// Because the facing is determined in object space, an instance transform
         /// matrix does not change the winding, but a geometry transform does.</summary>
-        TriangleFrontCounterclockwiseNv = 0x00000002,
+        TriangleFrontCounterclockwiseNV = 0x00000002,
         /// <summary>VK_GEOMETRY_INSTANCE_FORCE_OPAQUE_BIT_NV causes this instance to
         /// act as though VK_GEOMETRY_OPAQUE_BIT_NV were specified on all
         /// geometries referenced by this instance.
         /// This behavior can be overridden by the ray flag
         /// gl_RayFlagsNoOpaqueNV.</summary>
-        ForceOpaqueNv = 0x00000004,
+        ForceOpaqueNV = 0x00000004,
         /// <summary>VK_GEOMETRY_INSTANCE_FORCE_NO_OPAQUE_BIT_NV causes this instance
         /// to act as though VK_GEOMETRY_OPAQUE_BIT_NV were not specified on
         /// all geometries referenced by this instance.
         /// This behavior can be overridden by the ray flag
         /// gl_RayFlagsOpaqueNV.</summary>
-        ForceNoOpaqueNv = 0x00000008,
-        MaxEnumNv = 0x7FFFFFFF,
+        ForceNoOpaqueNV = 0x00000008,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 67
     /// <summary>VkGeometryTypeNV - Enum specifying which type of geometry is provided</summary>
     public enum VkGeometryTypeNV {
         /// <summary>VK_GEOMETRY_TYPE_TRIANGLES_NV indicates that the triangles
         /// of VkGeometryDataNV contains valid data.</summary>
-        TrianglesNv = 0,
+        TrianglesNV = 0,
         /// <summary>VK_GEOMETRY_TYPE_AABBS_NV indicates that the aabbs of
         /// VkGeometryDataNV contains valid data.</summary>
-        AabbsNv = 1,
-        MaxEnumNv = 0x7FFFFFFF,
+        AabbsNV = 1,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 68
     /// <summary>VkImageAspectFlagBits - Bitmask specifying which aspects of an image are included in a view</summary>
@@ -3454,10 +3454,10 @@ namespace Vulkan {
         Plane0 = 0x00000010,
         Plane1 = 0x00000020,
         Plane2 = 0x00000040,
-        MemoryPlane0Ext = 0x00000080,
-        MemoryPlane1Ext = 0x00000100,
-        MemoryPlane2Ext = 0x00000200,
-        MemoryPlane3Ext = 0x00000400,
+        MemoryPlane0EXT = 0x00000080,
+        MemoryPlane1EXT = 0x00000100,
+        MemoryPlane2EXT = 0x00000200,
+        MemoryPlane3EXT = 0x00000400,
         Plane0KHR = Plane0,
         Plane1KHR = Plane1,
         Plane2KHR = Plane2,
@@ -3543,17 +3543,17 @@ namespace Vulkan {
         Disjoint = 0x00000200,
         /// <summary>VK_IMAGE_CREATE_CORNER_SAMPLED_BIT_NV specifies that the image is
         /// a corner-sampled image.</summary>
-        CornerSampledNv = 0x00002000,
+        CornerSampledNV = 0x00002000,
         /// <summary>VK_IMAGE_CREATE_SAMPLE_LOCATIONS_COMPATIBLE_DEPTH_BIT_EXT
         /// specifies that an image with a depth or depth/stencil format can be
         /// used with custom sample locations when used as a depth/stencil
         /// attachment.</summary>
-        SampleLocationsCompatibleDepthExt = 0x00001000,
+        SampleLocationsCompatibleDepthEXT = 0x00001000,
         /// <summary>VK_IMAGE_CREATE_SUBSAMPLED_BIT_EXT specifies that an image can be
         /// in a subsampled format which may be more optimal when written as an
         /// attachment by a render pass that has a fragment density map attachment.
         /// Accessing a subsampled image has additional considerations:</summary>
-        SubsampledExt = 0x00004000,
+        SubsampledEXT = 0x00004000,
         SplitInstanceBindRegionsKHR = SplitInstanceBindRegions,
         _2dArrayCompatibleKHR = _2dArrayCompatible,
         BlockTexelViewCompatibleKHR = BlockTexelViewCompatible,
@@ -3680,13 +3680,13 @@ namespace Vulkan {
         /// read-only shading-rate-image.
         /// This layout is valid only for image subresources of images created with
         /// the VK_IMAGE_USAGE_SHADING_RATE_IMAGE_BIT_NV usage bit enabled.</summary>
-        ShadingRateOptimalNv = 1000164003,
+        ShadingRateOptimalNV = 1000164003,
         /// <summary>VK_IMAGE_LAYOUT_FRAGMENT_DENSITY_MAP_OPTIMAL_EXT
         ///   must only be
         /// used as a fragment density map attachment in a VkRenderPass.
         /// This layout is valid only for image subresources of images created with
         /// the VK_IMAGE_USAGE_FRAGMENT_DENSITY_MAP_BIT_EXT usage bit enabled.</summary>
-        FragmentDensityMapOptimalExt = 1000218000,
+        FragmentDensityMapOptimalEXT = 1000218000,
         DepthReadOnlyStencilAttachmentOptimalKHR = DepthReadOnlyStencilAttachmentOptimal,
         DepthAttachmentStencilReadOnlyOptimalKHR = DepthAttachmentStencilReadOnlyOptimal,
         MaxEnum = 0x7FFFFFFF,
@@ -3709,7 +3709,7 @@ namespace Vulkan {
         /// VkImageDrmFormatModifierListCreateInfoEXT or
         /// VkImageDrmFormatModifierExplicitCreateInfoEXT, and can be queried
         /// with vkGetImageDrmFormatModifierPropertiesEXT.</summary>
-        DrmFormatModifierExt = 1000158000,
+        DrmFormatModifierEXT = 1000158000,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 72
@@ -3772,8 +3772,8 @@ namespace Vulkan {
         /// <summary>VK_IMAGE_USAGE_SHADING_RATE_IMAGE_BIT_NV specifies that the image
         /// can be used to create a VkImageView suitable for use as a
         /// shading rate image.</summary>
-        ShadingRateImageNv = 0x00000100,
-        FragmentDensityMapExt = 0x00000200,
+        ShadingRateImageNV = 0x00000100,
+        FragmentDensityMapEXT = 0x00000200,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 74
@@ -3784,7 +3784,7 @@ namespace Vulkan {
         /// prohibits the implementation from accessing the fragment density map by
         /// the host during vkCmdBeginRenderPass as the contents are expected
         /// to change after recording</summary>
-        FragmentDensityMapDynamicExt = 0x00000001,
+        FragmentDensityMapDynamicEXT = 0x00000001,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 75
@@ -3809,7 +3809,7 @@ namespace Vulkan {
         /// integer values.</summary>
         Uint32 = 1,
         /// <summary>VK_INDEX_TYPE_NONE_NV specifies that no indices are provided.</summary>
-        NoneNv = 1000165000,
+        NoneNV = 1000165000,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 77
@@ -4150,7 +4150,7 @@ namespace Vulkan {
         DisplayModeKHR = 1000002001,
         /// <summary>class="tableblock"
         ///   VK_OBJECT_TYPE_DEBUG_REPORT_CALLBACK_EXT</summary>
-        DebugReportCallbackExt = 1000011000,
+        DebugReportCallbackEXT = 1000011000,
         /// <summary>class="tableblock"
         ///   VK_OBJECT_TYPE_OBJECT_TABLE_NVX</summary>
         ObjectTableNvx = 1000086000,
@@ -4159,13 +4159,13 @@ namespace Vulkan {
         IndirectCommandsLayoutNvx = 1000086001,
         /// <summary>class="tableblock"
         ///   VK_OBJECT_TYPE_DEBUG_UTILS_MESSENGER_EXT</summary>
-        DebugUtilsMessengerExt = 1000128000,
+        DebugUtilsMessengerEXT = 1000128000,
         /// <summary>class="tableblock"
         ///   VK_OBJECT_TYPE_VALIDATION_CACHE_EXT</summary>
-        ValidationCacheExt = 1000160000,
+        ValidationCacheEXT = 1000160000,
         /// <summary>class="tableblock"
         ///   VK_OBJECT_TYPE_ACCELERATION_STRUCTURE_NV</summary>
-        AccelerationStructureNv = 1000165000,
+        AccelerationStructureNV = 1000165000,
         DescriptorUpdateTemplateKHR = DescriptorUpdateTemplate,
         SamplerYcbcrConversionKHR = SamplerYcbcrConversion,
         MaxEnum = 0x7FFFFFFF,
@@ -4228,7 +4228,7 @@ namespace Vulkan {
         Compute = 1,
         /// <summary>VK_PIPELINE_BIND_POINT_RAY_TRACING_NV specifies binding as a ray
         /// tracing pipeline.</summary>
-        RayTracingNv = 1000165000,
+        RayTracingNV = 1000165000,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 91
@@ -4268,7 +4268,7 @@ namespace Vulkan {
         /// Before using the pipeline the application must call
         /// vkCompileDeferredNV exactly once on each shader in the pipeline
         /// before using the pipeline.</summary>
-        DeferCompileNv = 0x00000020,
+        DeferCompileNV = 0x00000020,
         ViewIndexFromDeviceIndexKHR = ViewIndexFromDeviceIndex,
         DispatchBaseKHR = DispatchBase,
         MaxEnum = 0x7FFFFFFF,
@@ -4279,19 +4279,19 @@ namespace Vulkan {
     public enum VkPipelineCreationFeedbackFlagBitsEXT {
         /// <summary>VK_PIPELINE_CREATION_FEEDBACK_VALID_BIT_EXT indicates that the
         /// feedback information is valid.</summary>
-        ValidExt = 0x00000001,
+        ValidEXT = 0x00000001,
         /// <summary>VK_PIPELINE_CREATION_FEEDBACK_APPLICATION_PIPELINE_CACHE_HIT_BIT_EXT
         /// indicates that a readily usable pipeline or pipeline stage was found in
         /// the pipelineCache specified by the application in the pipeline
         /// creation command.</summary>
-        ApplicationPipelineCacheHitExt = 0x00000002,
+        ApplicationPipelineCacheHitEXT = 0x00000002,
         /// <summary>VK_PIPELINE_CREATION_FEEDBACK_BASE_PIPELINE_ACCELERATION_BIT_EXT
         /// indicates that the base pipeline specified by the
         /// basePipelineHandle or basePipelineIndex member of the
         /// Vk*PipelineCreateInfo structure was used to accelerate the
         /// creation of the pipeline.</summary>
-        BasePipelineAccelerationExt = 0x00000004,
-        MaxEnumExt = 0x7FFFFFFF,
+        BasePipelineAccelerationEXT = 0x00000004,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 94
     /// <summary>VkPipelineStageFlagBits - Bitmask specifying pipeline stages</summary>
@@ -4370,31 +4370,31 @@ namespace Vulkan {
         /// used with.</summary>
         AllCommands = 0x00010000,
         /// <summary>VK_PIPELINE_STAGE_TRANSFORM_FEEDBACK_BIT_EXT</summary>
-        TransformFeedbackExt = 0x01000000,
+        TransformFeedbackEXT = 0x01000000,
         /// <summary>VK_PIPELINE_STAGE_CONDITIONAL_RENDERING_BIT_EXT</summary>
-        ConditionalRenderingExt = 0x00040000,
+        ConditionalRenderingEXT = 0x00040000,
         /// <summary>VK_PIPELINE_STAGE_COMMAND_PROCESS_BIT_NVX specifies the stage of
         /// the pipeline where device-side generation of commands via
         /// vkCmdProcessCommandsNVX is handled.</summary>
         CommandProcessNvx = 0x00020000,
         /// <summary>VK_PIPELINE_STAGE_SHADING_RATE_IMAGE_BIT_NV</summary>
-        ShadingRateImageNv = 0x00400000,
+        ShadingRateImageNV = 0x00400000,
         /// <summary>VK_PIPELINE_STAGE_RAY_TRACING_SHADER_BIT_NV specifies the
         /// execution of the ray tracing shader stages.</summary>
-        RayTracingShaderNv = 0x00200000,
+        RayTracingShaderNV = 0x00200000,
         /// <summary>VK_PIPELINE_STAGE_ACCELERATION_STRUCTURE_BUILD_BIT_NV specifies
         /// the execution of vkCmdBuildAccelerationStructureNV,
         /// vkCmdCopyAccelerationStructureNV, and
         /// vkCmdWriteAccelerationStructuresPropertiesNV.</summary>
-        AccelerationStructureBuildNv = 0x02000000,
+        AccelerationStructureBuildNV = 0x02000000,
         /// <summary>VK_PIPELINE_STAGE_TASK_SHADER_BIT_NV specifies the task shader
         /// stage.</summary>
-        TaskShaderNv = 0x00080000,
+        TaskShaderNV = 0x00080000,
         /// <summary>VK_PIPELINE_STAGE_MESH_SHADER_BIT_NV specifies the mesh shader
         /// stage.</summary>
-        MeshShaderNv = 0x00100000,
+        MeshShaderNV = 0x00100000,
         /// <summary>VK_PIPELINE_STAGE_FRAGMENT_DENSITY_PROCESS_BIT_EXT</summary>
-        FragmentDensityProcessExt = 0x00800000,
+        FragmentDensityProcessEXT = 0x00800000,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 95
@@ -4436,7 +4436,7 @@ namespace Vulkan {
         /// (with identical endpoints) on which a sample position lies, then exactly
         /// one of the triangles must produce a fragment that covers that sample
         /// during rasterization.</summary>
-        FillRectangleNv = 1000153000,
+        FillRectangleNV = 1000153000,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 97
@@ -4685,8 +4685,8 @@ namespace Vulkan {
         Timestamp = 2,
         /// <summary>VK_QUERY_TYPE_TRANSFORM_FEEDBACK_STREAM_EXT specifies a
         /// transform feedback query.</summary>
-        TransformFeedbackStreamExt = 1000028004,
-        AccelerationStructureCompactedSizeNv = 1000165000,
+        TransformFeedbackStreamEXT = 1000028004,
+        AccelerationStructureCompactedSizeNV = 1000165000,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 103
@@ -4722,16 +4722,16 @@ namespace Vulkan {
     public enum VkQueueGlobalPriorityEXT {
         /// <summary>VK_QUEUE_GLOBAL_PRIORITY_LOW_EXT is below the system default.
         /// Useful for non-interactive tasks.</summary>
-        LowExt = 128,
+        LowEXT = 128,
         /// <summary>VK_QUEUE_GLOBAL_PRIORITY_MEDIUM_EXT is the system default
         /// priority.</summary>
-        MediumExt = 256,
+        MediumEXT = 256,
         /// <summary>VK_QUEUE_GLOBAL_PRIORITY_HIGH_EXT is above the system default.</summary>
-        HighExt = 512,
+        HighEXT = 512,
         /// <summary>VK_QUEUE_GLOBAL_PRIORITY_REALTIME_EXT is the highest priority.
         /// Useful for critical tasks.</summary>
-        RealtimeExt = 1024,
-        MaxEnumExt = 0x7FFFFFFF,
+        RealtimeEXT = 1024,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 105
     /// <summary>VkRasterizationOrderAMD - Specify rasterization order for a graphics pipeline</summary>
@@ -4751,17 +4751,17 @@ namespace Vulkan {
         /// group with a single VK_SHADER_STAGE_RAYGEN_BIT_NV,
         /// VK_SHADER_STAGE_MISS_BIT_NV, or
         /// VK_SHADER_STAGE_CALLABLE_BIT_NV shader in it.</summary>
-        GeneralNv = 0,
+        GeneralNV = 0,
         /// <summary>VK_RAY_TRACING_SHADER_GROUP_TYPE_TRIANGLES_HIT_GROUP_NV specifies
         /// a shader group that only hits triangles and must not contain an
         /// intersection shader, only closest hit and any-hit.</summary>
-        TrianglesHitGroupNv = 1,
+        TrianglesHitGroupNV = 1,
         /// <summary>VK_RAY_TRACING_SHADER_GROUP_TYPE_PROCEDURAL_HIT_GROUP_NV specifies
         /// a shader group that only intersects with custom geometry and must
         /// contain an intersection shader and may contain closest hit and any-hit
         /// shaders.</summary>
-        ProceduralHitGroupNv = 2,
-        MaxEnumNv = 0x7FFFFFFF,
+        ProceduralHitGroupNV = 2,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 107
     /// <summary>VkResolveModeFlagBitsKHR - Bitmask indicating supported depth and stencil resolve modes</summary>
@@ -4868,27 +4868,27 @@ namespace Vulkan {
         /// does not use the same presentable image layout, or is incompatible in a
         /// way that prevents sharing an image.</summary>
         ErrorIncompatibleDisplayKHR = -1000003001,
-        ErrorValidationFailedExt = -1000011001,
+        ErrorValidationFailedEXT = -1000011001,
         /// <summary>VK_ERROR_INVALID_SHADER_NV One or more shaders failed to compile
         /// or link.
         /// More details are reported back to the application via
         /// html/vkspec.html#VK_EXT_debug_report if enabled.</summary>
-        ErrorInvalidShaderNv = -1000012000,
-        ErrorInvalidDrmFormatModifierPlaneLayoutExt = -1000158000,
+        ErrorInvalidShaderNV = -1000012000,
+        ErrorInvalidDrmFormatModifierPlaneLayoutEXT = -1000158000,
         /// <summary>VK_ERROR_FRAGMENTATION_EXT A descriptor pool creation has failed
         /// due to fragmentation.</summary>
-        ErrorFragmentationExt = -1000161000,
-        ErrorNotPermittedExt = -1000174001,
+        ErrorFragmentationEXT = -1000161000,
+        ErrorNotPermittedEXT = -1000174001,
         /// <summary>VK_ERROR_INVALID_DEVICE_ADDRESS_EXT A buffer creation failed
         /// because the requested address is not available.</summary>
-        ErrorInvalidDeviceAddressExt = -1000244000,
+        ErrorInvalidDeviceAddressEXT = -1000244000,
         /// <summary>VK_ERROR_FULL_SCREEN_EXCLUSIVE_MODE_LOST_EXT An operation on a
         /// swapchain created with
         /// VK_FULL_SCREEN_EXCLUSIVE_APPLICATION_CONTROLLED_EXT failed as it
         /// did not have exlusive full-screen access.
         /// This may occur due to implementation-dependent reasons, outside of the
         /// application¡¯s control.</summary>
-        ErrorFullScreenExclusiveModeLostExt = -1000255000,
+        ErrorFullScreenExclusiveModeLostEXT = -1000255000,
         ErrorOutOfPoolMemoryKHR = ErrorOutOfPoolMemory,
         ErrorInvalidExternalHandleKHR = ErrorInvalidExternalHandle,
         MaxEnum = 0x7FFFFFFF,
@@ -4947,12 +4947,12 @@ namespace Vulkan {
         ///   VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT
         /// specifies that the sampler will read from an image created with
         /// flags containing VK_IMAGE_CREATE_SUBSAMPLED_BIT_EXT.</summary>
-        SubsampledExt = 0x00000001,
+        SubsampledEXT = 0x00000001,
         /// <summary>VK_SAMPLER_CREATE_SUBSAMPLED_COARSE_RECONSTRUCTION_BIT_EXT
         /// specifies that the implementation may use approximations when
         /// reconstructing a full color value for texture access from a subsampled
         /// image.</summary>
-        SubsampledCoarseReconstructionExt = 0x00000002,
+        SubsampledCoarseReconstructionEXT = 0x00000002,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 112
@@ -4971,16 +4971,16 @@ namespace Vulkan {
         /// texel values are combined by computing a weighted average of values in
         /// the footprint, using weights as specified in
         /// the image operations chapter.</summary>
-        WeightedAverageExt = 0,
+        WeightedAverageEXT = 0,
         /// <summary>VK_SAMPLER_REDUCTION_MODE_MIN_EXT specifies that texel values are
         /// combined by taking the component-wise minimum of values in the footprint
         /// with non-zero weights.</summary>
-        MinExt = 1,
+        MinEXT = 1,
         /// <summary>VK_SAMPLER_REDUCTION_MODE_MAX_EXT specifies that texel values are
         /// combined by taking the component-wise maximum of values in the footprint
         /// with non-zero weights.</summary>
-        MaxExt = 2,
-        MaxEnumExt = 0x7FFFFFFF,
+        MaxEXT = 2,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 114
     /// <summary>VkSamplerYcbcrModelConversion - Color model component of a color space</summary>
@@ -5033,15 +5033,15 @@ namespace Vulkan {
     /// <summary>VkScopeNV - Specify SPIR-V scope</summary>
     public enum VkScopeNV {
         /// <summary>VK_SCOPE_DEVICE_NV corresponds to SPIR-V Device scope.</summary>
-        DeviceNv = 1,
+        DeviceNV = 1,
         /// <summary>VK_SCOPE_WORKGROUP_NV corresponds to SPIR-V Workgroup scope.</summary>
-        WorkgroupNv = 2,
+        WorkgroupNV = 2,
         /// <summary>VK_SCOPE_SUBGROUP_NV corresponds to SPIR-V Subgroup scope.</summary>
-        SubgroupNv = 3,
+        SubgroupNV = 3,
         /// <summary>VK_SCOPE_QUEUE_FAMILY_NV corresponds to SPIR-V QueueFamilyKHR
         /// scope.</summary>
-        QueueFamilyNv = 5,
-        MaxEnumNv = 0x7FFFFFFF,
+        QueueFamilyNV = 5,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 117
     /// <summary>VkSemaphoreImportFlagBits - Bitmask specifying additional parameters of semaphore payload import</summary>
@@ -5096,23 +5096,23 @@ namespace Vulkan {
         /// additional stages which are introduced by extensions.</summary>
         All = 0x7FFFFFFF,
         /// <summary>VK_SHADER_STAGE_RAYGEN_BIT_NV specifies the ray generation stage.</summary>
-        RaygenNv = 0x00000100,
+        RaygenNV = 0x00000100,
         /// <summary>VK_SHADER_STAGE_ANY_HIT_BIT_NV specifies the any-hit stage.</summary>
-        AnyHitNv = 0x00000200,
+        AnyHitNV = 0x00000200,
         /// <summary>VK_SHADER_STAGE_CLOSEST_HIT_BIT_NV specifies the closest hit
         /// stage.</summary>
-        ClosestHitNv = 0x00000400,
+        ClosestHitNV = 0x00000400,
         /// <summary>VK_SHADER_STAGE_MISS_BIT_NV specifies the miss stage.</summary>
-        MissNv = 0x00000800,
+        MissNV = 0x00000800,
         /// <summary>VK_SHADER_STAGE_INTERSECTION_BIT_NV specifies the intersection
         /// stage.</summary>
-        IntersectionNv = 0x00001000,
+        IntersectionNV = 0x00001000,
         /// <summary>VK_SHADER_STAGE_CALLABLE_BIT_NV specifies the callable stage.</summary>
-        CallableNv = 0x00002000,
+        CallableNV = 0x00002000,
         /// <summary>VK_SHADER_STAGE_TASK_BIT_NV specifies the task stage.</summary>
-        TaskNv = 0x00000040,
+        TaskNV = 0x00000040,
         /// <summary>VK_SHADER_STAGE_MESH_BIT_NV specifies the mesh stage.</summary>
-        MeshNv = 0x00000080,
+        MeshNV = 0x00000080,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 120
@@ -5124,41 +5124,41 @@ namespace Vulkan {
         /// When processing regions of a primitive that have a shading rate of
         /// VK_SHADING_RATE_PALETTE_ENTRY_NO_INVOCATIONS_NV, no fragments will be
         /// generated in that region.</summary>
-        NoInvocationsNv = 0,
+        NoInvocationsNV = 0,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_16_INVOCATIONS_PER_PIXEL_NV</summary>
-        _16InvocationsPerPixelNv = 1,
+        _16InvocationsPerPixelNV = 1,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_8_INVOCATIONS_PER_PIXEL_NV</summary>
-        _8InvocationsPerPixelNv = 2,
+        _8InvocationsPerPixelNV = 2,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_4_INVOCATIONS_PER_PIXEL_NV</summary>
-        _4InvocationsPerPixelNv = 3,
+        _4InvocationsPerPixelNV = 3,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_2_INVOCATIONS_PER_PIXEL_NV</summary>
-        _2InvocationsPerPixelNv = 4,
+        _2InvocationsPerPixelNV = 4,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_PIXEL_NV</summary>
-        _1InvocationPerPixelNv = 5,
+        _1InvocationPerPixelNV = 5,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X1_PIXELS_NV</summary>
-        _1InvocationPer2x1PixelsNv = 6,
+        _1InvocationPer2x1PixelsNV = 6,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_1X2_PIXELS_NV</summary>
-        _1InvocationPer1x2PixelsNv = 7,
+        _1InvocationPer1x2PixelsNV = 7,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X2_PIXELS_NV</summary>
-        _1InvocationPer2x2PixelsNv = 8,
+        _1InvocationPer2x2PixelsNV = 8,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_4X2_PIXELS_NV</summary>
-        _1InvocationPer4x2PixelsNv = 9,
+        _1InvocationPer4x2PixelsNV = 9,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_2X4_PIXELS_NV</summary>
-        _1InvocationPer2x4PixelsNv = 10,
+        _1InvocationPer2x4PixelsNV = 10,
         /// <summary>class="tableblock"
         ///   VK_SHADING_RATE_PALETTE_ENTRY_1_INVOCATION_PER_4X4_PIXELS_NV</summary>
-        _1InvocationPer4x4PixelsNv = 11,
-        MaxEnumNv = 0x7FFFFFFF,
+        _1InvocationPer4x4PixelsNV = 11,
+        MaxEnumNV = 0x7FFFFFFF,
     }
     // Enum: 121
     /// <summary>VkSharingMode - Buffer and image sharing modes</summary>
@@ -5379,30 +5379,30 @@ namespace Vulkan {
         WaylandSurfaceCreateInfoKHR = 1000006000,
         AndroidSurfaceCreateInfoKHR = 1000008000,
         Win32SurfaceCreateInfoKHR = 1000009000,
-        DebugReportCallbackCreateInfoExt = 1000011000,
+        DebugReportCallbackCreateInfoEXT = 1000011000,
         PipelineRasterizationStateRasterizationOrderAmd = 1000018000,
-        DebugMarkerObjectNameInfoExt = 1000022000,
-        DebugMarkerObjectTagInfoExt = 1000022001,
-        DebugMarkerMarkerInfoExt = 1000022002,
-        DedicatedAllocationImageCreateInfoNv = 1000026000,
-        DedicatedAllocationBufferCreateInfoNv = 1000026001,
-        DedicatedAllocationMemoryAllocateInfoNv = 1000026002,
-        PhysicalDeviceTransformFeedbackFeaturesExt = 1000028000,
-        PhysicalDeviceTransformFeedbackPropertiesExt = 1000028001,
-        PipelineRasterizationStateStreamCreateInfoExt = 1000028002,
+        DebugMarkerObjectNameInfoEXT = 1000022000,
+        DebugMarkerObjectTagInfoEXT = 1000022001,
+        DebugMarkerMarkerInfoEXT = 1000022002,
+        DedicatedAllocationImageCreateInfoNV = 1000026000,
+        DedicatedAllocationBufferCreateInfoNV = 1000026001,
+        DedicatedAllocationMemoryAllocateInfoNV = 1000026002,
+        PhysicalDeviceTransformFeedbackFeaturesEXT = 1000028000,
+        PhysicalDeviceTransformFeedbackPropertiesEXT = 1000028001,
+        PipelineRasterizationStateStreamCreateInfoEXT = 1000028002,
         ImageViewHandleInfoNvx = 1000030000,
         TextureLodGatherFormatPropertiesAmd = 1000041000,
         StreamDescriptorSurfaceCreateInfoGgp = 1000049000,
-        PhysicalDeviceCornerSampledImageFeaturesNv = 1000050000,
-        ExternalMemoryImageCreateInfoNv = 1000056000,
-        ExportMemoryAllocateInfoNv = 1000056001,
-        ImportMemoryWin32HandleInfoNv = 1000057000,
-        ExportMemoryWin32HandleInfoNv = 1000057001,
-        Win32KeyedMutexAcquireReleaseInfoNv = 1000058000,
-        ValidationFlagsExt = 1000061000,
+        PhysicalDeviceCornerSampledImageFeaturesNV = 1000050000,
+        ExternalMemoryImageCreateInfoNV = 1000056000,
+        ExportMemoryAllocateInfoNV = 1000056001,
+        ImportMemoryWin32HandleInfoNV = 1000057000,
+        ExportMemoryWin32HandleInfoNV = 1000057001,
+        Win32KeyedMutexAcquireReleaseInfoNV = 1000058000,
+        ValidationFlagsEXT = 1000061000,
         ViSurfaceCreateInfoNn = 1000062000,
-        ImageViewAstcDecodeModeExt = 1000067000,
-        PhysicalDeviceAstcDecodeFeaturesExt = 1000067001,
+        ImageViewAstcDecodeModeEXT = 1000067000,
+        PhysicalDeviceAstcDecodeFeaturesEXT = 1000067001,
         ImportMemoryWin32HandleInfoKHR = 1000073000,
         ExportMemoryWin32HandleInfoKHR = 1000073001,
         MemoryWin32HandlePropertiesKHR = 1000073002,
@@ -5418,9 +5418,9 @@ namespace Vulkan {
         ImportSemaphoreFdInfoKHR = 1000079000,
         SemaphoreGetFdInfoKHR = 1000079001,
         PhysicalDevicePushDescriptorPropertiesKHR = 1000080000,
-        CommandBufferInheritanceConditionalRenderingInfoExt = 1000081000,
-        PhysicalDeviceConditionalRenderingFeaturesExt = 1000081001,
-        ConditionalRenderingBeginInfoExt = 1000081002,
+        CommandBufferInheritanceConditionalRenderingInfoEXT = 1000081000,
+        PhysicalDeviceConditionalRenderingFeaturesEXT = 1000081001,
+        ConditionalRenderingBeginInfoEXT = 1000081002,
         PhysicalDeviceFloat16Int8FeaturesKHR = 1000082000,
         PresentRegionsKHR = 1000084000,
         ObjectTableCreateInfoNvx = 1000086000,
@@ -5429,22 +5429,22 @@ namespace Vulkan {
         CmdReserveSpaceForCommandsInfoNvx = 1000086003,
         DeviceGeneratedCommandsLimitsNvx = 1000086004,
         DeviceGeneratedCommandsFeaturesNvx = 1000086005,
-        PipelineViewportWScalingStateCreateInfoNv = 1000087000,
-        SurfaceCapabilities2Ext = 1000090000,
-        DisplayPowerInfoExt = 1000091000,
-        DeviceEventInfoExt = 1000091001,
-        DisplayEventInfoExt = 1000091002,
-        SwapchainCounterCreateInfoExt = 1000091003,
+        PipelineViewportWScalingStateCreateInfoNV = 1000087000,
+        SurfaceCapabilities2EXT = 1000090000,
+        DisplayPowerInfoEXT = 1000091000,
+        DeviceEventInfoEXT = 1000091001,
+        DisplayEventInfoEXT = 1000091002,
+        SwapchainCounterCreateInfoEXT = 1000091003,
         PresentTimesInfoGoogle = 1000092000,
         PhysicalDeviceMultiviewPerViewAttributesPropertiesNvx = 1000097000,
-        PipelineViewportSwizzleStateCreateInfoNv = 1000098000,
-        PhysicalDeviceDiscardRectanglePropertiesExt = 1000099000,
-        PipelineDiscardRectangleStateCreateInfoExt = 1000099001,
-        PhysicalDeviceConservativeRasterizationPropertiesExt = 1000101000,
-        PipelineRasterizationConservativeStateCreateInfoExt = 1000101001,
-        PhysicalDeviceDepthClipEnableFeaturesExt = 1000102000,
-        PipelineRasterizationDepthClipStateCreateInfoExt = 1000102001,
-        HdrMetadataExt = 1000105000,
+        PipelineViewportSwizzleStateCreateInfoNV = 1000098000,
+        PhysicalDeviceDiscardRectanglePropertiesEXT = 1000099000,
+        PipelineDiscardRectangleStateCreateInfoEXT = 1000099001,
+        PhysicalDeviceConservativeRasterizationPropertiesEXT = 1000101000,
+        PipelineRasterizationConservativeStateCreateInfoEXT = 1000101001,
+        PhysicalDeviceDepthClipEnableFeaturesEXT = 1000102000,
+        PipelineRasterizationDepthClipStateCreateInfoEXT = 1000102001,
+        HdrMetadataEXT = 1000105000,
         AttachmentDescription2KHR = 1000109000,
         AttachmentReference2KHR = 1000109001,
         SubpassDescription2KHR = 1000109002,
@@ -5468,124 +5468,124 @@ namespace Vulkan {
         DisplayPlaneCapabilities2KHR = 1000121004,
         IosSurfaceCreateInfoMvk = 1000122000,
         MacosSurfaceCreateInfoMvk = 1000123000,
-        DebugUtilsObjectNameInfoExt = 1000128000,
-        DebugUtilsObjectTagInfoExt = 1000128001,
-        DebugUtilsLabelExt = 1000128002,
-        DebugUtilsMessengerCallbackDataExt = 1000128003,
-        DebugUtilsMessengerCreateInfoExt = 1000128004,
+        DebugUtilsObjectNameInfoEXT = 1000128000,
+        DebugUtilsObjectTagInfoEXT = 1000128001,
+        DebugUtilsLabelEXT = 1000128002,
+        DebugUtilsMessengerCallbackDataEXT = 1000128003,
+        DebugUtilsMessengerCreateInfoEXT = 1000128004,
         AndroidHardwareBufferUsageAndroid = 1000129000,
         AndroidHardwareBufferPropertiesAndroid = 1000129001,
         AndroidHardwareBufferFormatPropertiesAndroid = 1000129002,
         ImportAndroidHardwareBufferInfoAndroid = 1000129003,
         MemoryGetAndroidHardwareBufferInfoAndroid = 1000129004,
         ExternalFormatAndroid = 1000129005,
-        PhysicalDeviceSamplerFilterMinmaxPropertiesExt = 1000130000,
-        SamplerReductionModeCreateInfoExt = 1000130001,
-        PhysicalDeviceInlineUniformBlockFeaturesExt = 1000138000,
-        PhysicalDeviceInlineUniformBlockPropertiesExt = 1000138001,
-        WriteDescriptorSetInlineUniformBlockExt = 1000138002,
-        DescriptorPoolInlineUniformBlockCreateInfoExt = 1000138003,
-        SampleLocationsInfoExt = 1000143000,
-        RenderPassSampleLocationsBeginInfoExt = 1000143001,
-        PipelineSampleLocationsStateCreateInfoExt = 1000143002,
-        PhysicalDeviceSampleLocationsPropertiesExt = 1000143003,
-        MultisamplePropertiesExt = 1000143004,
+        PhysicalDeviceSamplerFilterMinmaxPropertiesEXT = 1000130000,
+        SamplerReductionModeCreateInfoEXT = 1000130001,
+        PhysicalDeviceInlineUniformBlockFeaturesEXT = 1000138000,
+        PhysicalDeviceInlineUniformBlockPropertiesEXT = 1000138001,
+        WriteDescriptorSetInlineUniformBlockEXT = 1000138002,
+        DescriptorPoolInlineUniformBlockCreateInfoEXT = 1000138003,
+        SampleLocationsInfoEXT = 1000143000,
+        RenderPassSampleLocationsBeginInfoEXT = 1000143001,
+        PipelineSampleLocationsStateCreateInfoEXT = 1000143002,
+        PhysicalDeviceSampleLocationsPropertiesEXT = 1000143003,
+        MultisamplePropertiesEXT = 1000143004,
         ImageFormatListCreateInfoKHR = 1000147000,
-        PhysicalDeviceBlendOperationAdvancedFeaturesExt = 1000148000,
-        PhysicalDeviceBlendOperationAdvancedPropertiesExt = 1000148001,
-        PipelineColorBlendAdvancedStateCreateInfoExt = 1000148002,
-        PipelineCoverageToColorStateCreateInfoNv = 1000149000,
-        PipelineCoverageModulationStateCreateInfoNv = 1000152000,
-        DrmFormatModifierPropertiesListExt = 1000158000,
-        DrmFormatModifierPropertiesExt = 1000158001,
-        PhysicalDeviceImageDrmFormatModifierInfoExt = 1000158002,
-        ImageDrmFormatModifierListCreateInfoExt = 1000158003,
-        ImageDrmFormatModifierExplicitCreateInfoExt = 1000158004,
-        ImageDrmFormatModifierPropertiesExt = 1000158005,
-        ValidationCacheCreateInfoExt = 1000160000,
-        ShaderModuleValidationCacheCreateInfoExt = 1000160001,
-        DescriptorSetLayoutBindingFlagsCreateInfoExt = 1000161000,
-        PhysicalDeviceDescriptorIndexingFeaturesExt = 1000161001,
-        PhysicalDeviceDescriptorIndexingPropertiesExt = 1000161002,
-        DescriptorSetVariableDescriptorCountAllocateInfoExt = 1000161003,
-        DescriptorSetVariableDescriptorCountLayoutSupportExt = 1000161004,
-        PipelineViewportShadingRateImageStateCreateInfoNv = 1000164000,
-        PhysicalDeviceShadingRateImageFeaturesNv = 1000164001,
-        PhysicalDeviceShadingRateImagePropertiesNv = 1000164002,
-        PipelineViewportCoarseSampleOrderStateCreateInfoNv = 1000164005,
-        RayTracingPipelineCreateInfoNv = 1000165000,
-        AccelerationStructureCreateInfoNv = 1000165001,
-        GeometryNv = 1000165003,
-        GeometryTrianglesNv = 1000165004,
-        GeometryAabbNv = 1000165005,
-        BindAccelerationStructureMemoryInfoNv = 1000165006,
-        WriteDescriptorSetAccelerationStructureNv = 1000165007,
-        AccelerationStructureMemoryRequirementsInfoNv = 1000165008,
-        PhysicalDeviceRayTracingPropertiesNv = 1000165009,
-        RayTracingShaderGroupCreateInfoNv = 1000165011,
-        AccelerationStructureInfoNv = 1000165012,
-        PhysicalDeviceRepresentativeFragmentTestFeaturesNv = 1000166000,
-        PipelineRepresentativeFragmentTestStateCreateInfoNv = 1000166001,
-        PhysicalDeviceImageViewImageFormatInfoExt = 1000170000,
-        FilterCubicImageViewImageFormatPropertiesExt = 1000170001,
-        DeviceQueueGlobalPriorityCreateInfoExt = 1000174000,
+        PhysicalDeviceBlendOperationAdvancedFeaturesEXT = 1000148000,
+        PhysicalDeviceBlendOperationAdvancedPropertiesEXT = 1000148001,
+        PipelineColorBlendAdvancedStateCreateInfoEXT = 1000148002,
+        PipelineCoverageToColorStateCreateInfoNV = 1000149000,
+        PipelineCoverageModulationStateCreateInfoNV = 1000152000,
+        DrmFormatModifierPropertiesListEXT = 1000158000,
+        DrmFormatModifierPropertiesEXT = 1000158001,
+        PhysicalDeviceImageDrmFormatModifierInfoEXT = 1000158002,
+        ImageDrmFormatModifierListCreateInfoEXT = 1000158003,
+        ImageDrmFormatModifierExplicitCreateInfoEXT = 1000158004,
+        ImageDrmFormatModifierPropertiesEXT = 1000158005,
+        ValidationCacheCreateInfoEXT = 1000160000,
+        ShaderModuleValidationCacheCreateInfoEXT = 1000160001,
+        DescriptorSetLayoutBindingFlagsCreateInfoEXT = 1000161000,
+        PhysicalDeviceDescriptorIndexingFeaturesEXT = 1000161001,
+        PhysicalDeviceDescriptorIndexingPropertiesEXT = 1000161002,
+        DescriptorSetVariableDescriptorCountAllocateInfoEXT = 1000161003,
+        DescriptorSetVariableDescriptorCountLayoutSupportEXT = 1000161004,
+        PipelineViewportShadingRateImageStateCreateInfoNV = 1000164000,
+        PhysicalDeviceShadingRateImageFeaturesNV = 1000164001,
+        PhysicalDeviceShadingRateImagePropertiesNV = 1000164002,
+        PipelineViewportCoarseSampleOrderStateCreateInfoNV = 1000164005,
+        RayTracingPipelineCreateInfoNV = 1000165000,
+        AccelerationStructureCreateInfoNV = 1000165001,
+        GeometryNV = 1000165003,
+        GeometryTrianglesNV = 1000165004,
+        GeometryAabbNV = 1000165005,
+        BindAccelerationStructureMemoryInfoNV = 1000165006,
+        WriteDescriptorSetAccelerationStructureNV = 1000165007,
+        AccelerationStructureMemoryRequirementsInfoNV = 1000165008,
+        PhysicalDeviceRayTracingPropertiesNV = 1000165009,
+        RayTracingShaderGroupCreateInfoNV = 1000165011,
+        AccelerationStructureInfoNV = 1000165012,
+        PhysicalDeviceRepresentativeFragmentTestFeaturesNV = 1000166000,
+        PipelineRepresentativeFragmentTestStateCreateInfoNV = 1000166001,
+        PhysicalDeviceImageViewImageFormatInfoEXT = 1000170000,
+        FilterCubicImageViewImageFormatPropertiesEXT = 1000170001,
+        DeviceQueueGlobalPriorityCreateInfoEXT = 1000174000,
         PhysicalDevice8bitStorageFeaturesKHR = 1000177000,
-        ImportMemoryHostPointerInfoExt = 1000178000,
-        MemoryHostPointerPropertiesExt = 1000178001,
-        PhysicalDeviceExternalMemoryHostPropertiesExt = 1000178002,
+        ImportMemoryHostPointerInfoEXT = 1000178000,
+        MemoryHostPointerPropertiesEXT = 1000178001,
+        PhysicalDeviceExternalMemoryHostPropertiesEXT = 1000178002,
         PhysicalDeviceShaderAtomicInt64FeaturesKHR = 1000180000,
-        CalibratedTimestampInfoExt = 1000184000,
+        CalibratedTimestampInfoEXT = 1000184000,
         PhysicalDeviceShaderCorePropertiesAmd = 1000185000,
         DeviceMemoryOverallocationCreateInfoAmd = 1000189000,
-        PhysicalDeviceVertexAttributeDivisorPropertiesExt = 1000190000,
-        PipelineVertexInputDivisorStateCreateInfoExt = 1000190001,
-        PhysicalDeviceVertexAttributeDivisorFeaturesExt = 1000190002,
+        PhysicalDeviceVertexAttributeDivisorPropertiesEXT = 1000190000,
+        PipelineVertexInputDivisorStateCreateInfoEXT = 1000190001,
+        PhysicalDeviceVertexAttributeDivisorFeaturesEXT = 1000190002,
         PresentFrameTokenGgp = 1000191000,
-        PipelineCreationFeedbackCreateInfoExt = 1000192000,
+        PipelineCreationFeedbackCreateInfoEXT = 1000192000,
         PhysicalDeviceDriverPropertiesKHR = 1000196000,
         PhysicalDeviceFloatControlsPropertiesKHR = 1000197000,
         PhysicalDeviceDepthStencilResolvePropertiesKHR = 1000199000,
         SubpassDescriptionDepthStencilResolveKHR = 1000199001,
-        PhysicalDeviceComputeShaderDerivativesFeaturesNv = 1000201000,
-        PhysicalDeviceMeshShaderFeaturesNv = 1000202000,
-        PhysicalDeviceMeshShaderPropertiesNv = 1000202001,
-        PhysicalDeviceFragmentShaderBarycentricFeaturesNv = 1000203000,
-        PhysicalDeviceShaderImageFootprintFeaturesNv = 1000204000,
-        PipelineViewportExclusiveScissorStateCreateInfoNv = 1000205000,
-        PhysicalDeviceExclusiveScissorFeaturesNv = 1000205002,
-        CheckpointDataNv = 1000206000,
-        QueueFamilyCheckpointPropertiesNv = 1000206001,
+        PhysicalDeviceComputeShaderDerivativesFeaturesNV = 1000201000,
+        PhysicalDeviceMeshShaderFeaturesNV = 1000202000,
+        PhysicalDeviceMeshShaderPropertiesNV = 1000202001,
+        PhysicalDeviceFragmentShaderBarycentricFeaturesNV = 1000203000,
+        PhysicalDeviceShaderImageFootprintFeaturesNV = 1000204000,
+        PipelineViewportExclusiveScissorStateCreateInfoNV = 1000205000,
+        PhysicalDeviceExclusiveScissorFeaturesNV = 1000205002,
+        CheckpointDataNV = 1000206000,
+        QueueFamilyCheckpointPropertiesNV = 1000206001,
         PhysicalDeviceVulkanMemoryModelFeaturesKHR = 1000211000,
-        PhysicalDevicePciBusInfoPropertiesExt = 1000212000,
+        PhysicalDevicePciBusInfoPropertiesEXT = 1000212000,
         DisplayNativeHdrSurfaceCapabilitiesAmd = 1000213000,
         SwapchainDisplayNativeHdrCreateInfoAmd = 1000213001,
         ImagepipeSurfaceCreateInfoFuchsia = 1000214000,
-        MetalSurfaceCreateInfoExt = 1000217000,
-        PhysicalDeviceFragmentDensityMapFeaturesExt = 1000218000,
-        PhysicalDeviceFragmentDensityMapPropertiesExt = 1000218001,
-        RenderPassFragmentDensityMapCreateInfoExt = 1000218002,
-        PhysicalDeviceScalarBlockLayoutFeaturesExt = 1000221000,
-        PhysicalDeviceMemoryBudgetPropertiesExt = 1000237000,
-        PhysicalDeviceMemoryPriorityFeaturesExt = 1000238000,
-        MemoryPriorityAllocateInfoExt = 1000238001,
+        MetalSurfaceCreateInfoEXT = 1000217000,
+        PhysicalDeviceFragmentDensityMapFeaturesEXT = 1000218000,
+        PhysicalDeviceFragmentDensityMapPropertiesEXT = 1000218001,
+        RenderPassFragmentDensityMapCreateInfoEXT = 1000218002,
+        PhysicalDeviceScalarBlockLayoutFeaturesEXT = 1000221000,
+        PhysicalDeviceMemoryBudgetPropertiesEXT = 1000237000,
+        PhysicalDeviceMemoryPriorityFeaturesEXT = 1000238000,
+        MemoryPriorityAllocateInfoEXT = 1000238001,
         SurfaceProtectedCapabilitiesKHR = 1000239000,
-        PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNv = 1000240000,
-        PhysicalDeviceBufferDeviceAddressFeaturesExt = 1000244000,
-        BufferDeviceAddressInfoExt = 1000244001,
-        BufferDeviceAddressCreateInfoExt = 1000244002,
-        ImageStencilUsageCreateInfoExt = 1000246000,
-        ValidationFeaturesExt = 1000247000,
-        PhysicalDeviceCooperativeMatrixFeaturesNv = 1000249000,
-        CooperativeMatrixPropertiesNv = 1000249001,
-        PhysicalDeviceCooperativeMatrixPropertiesNv = 1000249002,
-        PhysicalDeviceYcbcrImageArraysFeaturesExt = 1000252000,
-        SurfaceFullScreenExclusiveInfoExt = 1000255000,
-        SurfaceCapabilitiesFullScreenExclusiveExt = 1000255002,
-        SurfaceFullScreenExclusiveWin32InfoExt = 1000255001,
-        PhysicalDeviceHostQueryResetFeaturesExt = 1000261000,
+        PhysicalDeviceDedicatedAllocationImageAliasingFeaturesNV = 1000240000,
+        PhysicalDeviceBufferDeviceAddressFeaturesEXT = 1000244000,
+        BufferDeviceAddressInfoEXT = 1000244001,
+        BufferDeviceAddressCreateInfoEXT = 1000244002,
+        ImageStencilUsageCreateInfoEXT = 1000246000,
+        ValidationFeaturesEXT = 1000247000,
+        PhysicalDeviceCooperativeMatrixFeaturesNV = 1000249000,
+        CooperativeMatrixPropertiesNV = 1000249001,
+        PhysicalDeviceCooperativeMatrixPropertiesNV = 1000249002,
+        PhysicalDeviceYcbcrImageArraysFeaturesEXT = 1000252000,
+        SurfaceFullScreenExclusiveInfoEXT = 1000255000,
+        SurfaceCapabilitiesFullScreenExclusiveEXT = 1000255002,
+        SurfaceFullScreenExclusiveWin32InfoEXT = 1000255001,
+        PhysicalDeviceHostQueryResetFeaturesEXT = 1000261000,
         PhysicalDeviceVariablePointerFeatures = PhysicalDeviceVariablePointersFeatures,
         PhysicalDeviceShaderDrawParameterFeatures = PhysicalDeviceShaderDrawParametersFeatures,
-        DebugReportCreateInfoExt = DebugReportCallbackCreateInfoExt,
+        DebugReportCreateInfoEXT = DebugReportCallbackCreateInfoEXT,
         RenderPassMultiviewCreateInfoKHR = RenderPassMultiviewCreateInfo,
         PhysicalDeviceMultiviewFeaturesKHR = PhysicalDeviceMultiviewFeatures,
         PhysicalDeviceMultiviewPropertiesKHR = PhysicalDeviceMultiviewProperties,
@@ -5647,7 +5647,7 @@ namespace Vulkan {
         BindImageMemoryInfoKHR = BindImageMemoryInfo,
         PhysicalDeviceMaintenance3PropertiesKHR = PhysicalDeviceMaintenance3Properties,
         DescriptorSetLayoutSupportKHR = DescriptorSetLayoutSupport,
-        PhysicalDeviceBufferAddressFeaturesExt = PhysicalDeviceBufferDeviceAddressFeaturesExt,
+        PhysicalDeviceBufferAddressFeaturesEXT = PhysicalDeviceBufferDeviceAddressFeaturesEXT,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 127
@@ -5698,7 +5698,7 @@ namespace Vulkan {
         ///   VK_SUBGROUP_FEATURE_PARTITIONED_BIT_NV specifies the device will
         /// accept SPIR-V shader modules that contain the
         /// GroupNonUniformPartitionedNV capability.</summary>
-        PartitionedNv = 0x00000100,
+        PartitionedNV = 0x00000100,
         MaxEnum = 0x7FFFFFFF,
     }
     // Enum: 128
@@ -5741,8 +5741,8 @@ namespace Vulkan {
         /// <summary>VK_SURFACE_COUNTER_VBLANK_EXT specifies a counter incrementing
         /// once every time a vertical blanking period occurs on the display
         /// associated with the surface.</summary>
-        VblankExt = 0x00000001,
-        MaxEnumExt = 0x7FFFFFFF,
+        VblankEXT = 0x00000001,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 131
     /// <summary>VkSurfaceTransformFlagBitsKHR - presentation transforms supported on a device</summary>
@@ -5852,71 +5852,71 @@ namespace Vulkan {
         /// timestamp values captured using vkCmdWriteTimestamp and are
         /// defined to be incrementing according to the
         /// timestampPeriod of the device.</summary>
-        DeviceExt = 0,
+        DeviceEXT = 0,
         /// <summary>VK_TIME_DOMAIN_CLOCK_MONOTONIC_EXT specifies the CLOCK_MONOTONIC
         /// time domain available on POSIX platforms.</summary>
-        ClockMonotonicExt = 1,
+        ClockMonotonicEXT = 1,
         /// <summary>VK_TIME_DOMAIN_CLOCK_MONOTONIC_RAW_EXT specifies the
         /// CLOCK_MONOTONIC_RAW time domain available on POSIX platforms.</summary>
-        ClockMonotonicRawExt = 2,
+        ClockMonotonicRawEXT = 2,
         /// <summary>VK_TIME_DOMAIN_QUERY_PERFORMANCE_COUNTER_EXT specifies the
         /// performance counter (QPC) time domain available on Windows.</summary>
-        QueryPerformanceCounterExt = 3,
-        MaxEnumExt = 0x7FFFFFFF,
+        QueryPerformanceCounterEXT = 3,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 136
     /// <summary>VkValidationCacheHeaderVersionEXT - Encode validation cache version</summary>
     public enum VkValidationCacheHeaderVersionEXT {
         /// <summary>VK_VALIDATION_CACHE_HEADER_VERSION_ONE_EXT specifies version one
         /// of the validation cache.</summary>
-        OneExt = 1,
-        MaxEnumExt = 0x7FFFFFFF,
+        OneEXT = 1,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 137
     /// <summary>VkValidationCheckEXT - Specify validation checks to disable</summary>
     public enum VkValidationCheckEXT {
         /// <summary>VK_VALIDATION_CHECK_ALL_EXT specifies that all validation checks
         /// are disabled.</summary>
-        AllExt = 0,
+        AllEXT = 0,
         /// <summary>VK_VALIDATION_CHECK_SHADERS_EXT specifies that shader validation
         /// is disabled.</summary>
-        ShadersExt = 1,
-        MaxEnumExt = 0x7FFFFFFF,
+        ShadersEXT = 1,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 138
     /// <summary>VkValidationFeatureDisableEXT - Specify validation features to disable</summary>
     public enum VkValidationFeatureDisableEXT {
         /// <summary>VK_VALIDATION_FEATURE_DISABLE_ALL_EXT specifies that all
         /// validation checks are disabled.</summary>
-        AllExt = 0,
+        AllEXT = 0,
         /// <summary>VK_VALIDATION_FEATURE_DISABLE_SHADERS_EXT specifies that shader
         /// validation is disabled.
         /// This feature is enabled by default.</summary>
-        ShadersExt = 1,
+        ShadersEXT = 1,
         /// <summary>VK_VALIDATION_FEATURE_DISABLE_THREAD_SAFETY_EXT specifies that
         /// thread safety validation is disabled.
         /// This feature is enabled by default.</summary>
-        ThreadSafetyExt = 2,
+        ThreadSafetyEXT = 2,
         /// <summary>VK_VALIDATION_FEATURE_DISABLE_API_PARAMETERS_EXT specifies that
         /// stateless parameter validation is disabled.
         /// This feature is enabled by default.</summary>
-        ApiParametersExt = 3,
+        ApiParametersEXT = 3,
         /// <summary>VK_VALIDATION_FEATURE_DISABLE_OBJECT_LIFETIMES_EXT specifies that
         /// object lifetime validation is disabled.
         /// This feature is enabled by default.</summary>
-        ObjectLifetimesExt = 4,
+        ObjectLifetimesEXT = 4,
         /// <summary>VK_VALIDATION_FEATURE_DISABLE_CORE_CHECKS_EXT specifies that core
         /// validation checks are disabled.
         /// This feature is enabled by default.
         /// If this feature is disabled, the shader validation and GPU-assisted
         /// validation features are also disabled.</summary>
-        CoreChecksExt = 5,
+        CoreChecksEXT = 5,
         /// <summary>VK_VALIDATION_FEATURE_DISABLE_UNIQUE_HANDLES_EXT specifies that
         /// protection against duplicate non-dispatchable object handles is
         /// disabled.
         /// This feature is enabled by default.</summary>
-        UniqueHandlesExt = 6,
-        MaxEnumExt = 0x7FFFFFFF,
+        UniqueHandlesEXT = 6,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 139
     /// <summary>VkValidationFeatureEnableEXT - Specify validation features to enable</summary>
@@ -5926,7 +5926,7 @@ namespace Vulkan {
         /// Activating this feature instruments shader programs to generate
         /// additional diagnostic data.
         /// This feature is disabled by default.</summary>
-        GpuAssistedExt = 0,
+        GpuAssistedEXT = 0,
         /// <summary>VK_VALIDATION_FEATURE_ENABLE_GPU_ASSISTED_RESERVE_BINDING_SLOT_EXT
         /// specifies that the validation layers reserve a descriptor set binding
         /// slot for their own use.
@@ -5938,8 +5938,8 @@ namespace Vulkan {
         /// This feature is disabled by default.
         /// The GPU-assisted validation feature must be enabled in order to use this
         /// feature.</summary>
-        GpuAssistedReserveBindingSlotExt = 1,
-        MaxEnumExt = 0x7FFFFFFF,
+        GpuAssistedReserveBindingSlotEXT = 1,
+        MaxEnumEXT = 0x7FFFFFFF,
     }
     // Enum: 140
     /// <summary>VkVendorId - Khronos vendor IDs</summary>
@@ -5963,15 +5963,15 @@ namespace Vulkan {
     // Enum: 142
     /// <summary>VkViewportCoordinateSwizzleNV - Specify how a viewport coordinate is swizzled</summary>
     public enum VkViewportCoordinateSwizzleNV {
-        PositiveXNv = 0,
-        NegativeXNv = 1,
-        PositiveYNv = 2,
-        NegativeYNv = 3,
-        PositiveZNv = 4,
-        NegativeZNv = 5,
-        PositiveWNv = 6,
-        NegativeWNv = 7,
-        MaxEnumNv = 0x7FFFFFFF,
+        PositiveXNV = 0,
+        NegativeXNV = 1,
+        PositiveYNV = 2,
+        NegativeYNV = 3,
+        PositiveZNV = 4,
+        NegativeZNV = 5,
+        PositiveWNV = 6,
+        NegativeWNV = 7,
+        MaxEnumNV = 0x7FFFFFFF,
     }
 
 }

@@ -197,21 +197,20 @@ namespace Demo.HelloVulkan {
 
         string debugFilename = "HelloVulkanDump.txt";
 
-        PFN_vkDebugReportCallbackEXT delDebugCallback;
 
+        //IntPtr ptrCallback;
         private void InitDebugCallback(VkInstance instance) {
-            if (delDebugCallback == null) {
-                delDebugCallback = new PFN_vkDebugReportCallbackEXT(DebugCallback);
-            }
-            var info = VkDebugReportCallbackCreateInfoEXT.Alloc();
-            info->flags = VkDebugReportFlagBitsEXT.DebugExt | VkDebugReportFlagBitsEXT.ErrorExt
-                | VkDebugReportFlagBitsEXT.PerformanceWarningExt | VkDebugReportFlagBitsEXT.WarningExt
-                | VkDebugReportFlagBitsEXT.InformationExt;
-            info->pfnCallback = Marshal.GetFunctionPointerForDelegate(delDebugCallback);
+            var delDebugCallback = new PFN_vkDebugReportCallbackEXT(DebugCallback);
+            var info = new VkDebugReportCallbackCreateInfoEXT { sType = VkStructureType.DebugReportCallbackCreateInfoEXT };
+            info.flags = VkDebugReportFlagBitsEXT.DebugEXT | VkDebugReportFlagBitsEXT.ErrorEXT
+                | VkDebugReportFlagBitsEXT.PerformanceWarningEXT | VkDebugReportFlagBitsEXT.WarningEXT
+                | VkDebugReportFlagBitsEXT.InformationEXT;
+            var ptrCallback = Marshal.GetFunctionPointerForDelegate(delDebugCallback);
+            info.pfnCallback = ptrCallback;
 
             VkDebugReportCallbackEXT callback;
-            vkAPI.CreateDebugReportCallbackEXT(instance, info, null, &callback).Check();
-            // or: instance.CreateDebugReportCallbackEXT(info, null, &callback).Check();
+            vkAPI.CreateDebugReportCallbackEXT(instance, &info, null, &callback).Check();
+            // or: instance.CreateDebugReportCallbackEXT(&info, null, &callback).Check();
             this.debugReportcallback = callback;
         }
 
