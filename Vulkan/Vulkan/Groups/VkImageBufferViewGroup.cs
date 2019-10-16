@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Vulkan {
 
-    public unsafe struct VkImageBufferViewsGroup {
+    public unsafe struct VkImageBufferViewGroup {
         /// <summary> count is the number of descriptors to update (the number
         /// of elements in pImageInfo, pBufferInfo, or
         /// pTexelBufferView

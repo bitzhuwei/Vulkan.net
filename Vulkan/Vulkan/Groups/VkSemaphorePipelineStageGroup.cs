@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Vulkan {
 
-    public unsafe struct VkSemaphoresPipelineStagesGroup {
+    public unsafe struct VkSemaphorePipelineStageGroup {
         public UInt32 count;
         public VkSemaphore* waitSemaphores;
         public VkPipelineStageFlagBits* waitDstStageMask;

@@ -692,14 +692,15 @@ namespace Demo.HelloVulkan {
             return vkSurface;
         }
 
+        private const string VK_LAYER_LUNARG_standard_validation = "VK_LAYER_LUNARG_standard_validation";
         private VkInstance InitInstance() {
             var extensions = new string[] { Vk.VK_KHR_surface, Vk.VK_KHR_win32_surface, Vk.VK_EXT_debug_report };
 
             VkLayerProperties[] layerProperties = Vk.InstanceLayerProperties();
-            string[] layers = layerProperties.Any(
-                l => Marshal.PtrToStringAnsi((IntPtr)l.layerName) == "VK_LAYER_LUNARG_standard_validation")
-                ? new[] { "VK_LAYER_LUNARG_standard_validation" }
-                : new string[0];
+            string layers = layerProperties.Any(
+                l => Marshal.PtrToStringAnsi((IntPtr)l.layerName) == VK_LAYER_LUNARG_standard_validation)
+                ? VK_LAYER_LUNARG_standard_validation
+                : null;
 
             var appInfo = VkApplicationInfo.Alloc();
             UInt32 version = Vulkan.VkVersion.Make(1, 0, 0);
@@ -709,9 +710,7 @@ namespace Demo.HelloVulkan {
 
             var info = VkInstanceCreateInfo.Alloc();
             info->EnabledExtensions = extensions;
-            //extensions.SetExtensions(info);
             info->EnabledLayers = layers;
-            //layers.SetLayers(info);
             info->pApplicationInfo = appInfo;
 
             VkInstance vkInstance;

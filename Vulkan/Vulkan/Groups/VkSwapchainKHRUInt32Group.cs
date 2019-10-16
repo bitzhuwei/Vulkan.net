@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 
 namespace Vulkan {
 
-    public unsafe struct VkSwapchainKHRsUInt32sGroup {
+    public unsafe struct VkSwapchainKHRUInt32Group {
         public UInt32 count;
         public VkSwapchainKHR* swapchains;
         public UInt32* imageIndices;

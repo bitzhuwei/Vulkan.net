@@ -360,14 +360,14 @@ namespace Vulkan {
         public /*-const-*/ void* pNext;
         /// <summary> pApplicationName is NULL or is a pointer to a null-terminated
         /// UTF-8 string containing the name of the application.</summary>
-        public /*IntPtr*/StringGroup pApplicationName;
+        public /*IntPtr*/GlobalString pApplicationName;
         /// <summary> applicationVersion is an unsigned integer variable containing the
         /// developer-supplied version number of the application.</summary>
         public UInt32 applicationVersion;
         /// <summary> pEngineName is NULL or is a pointer to a null-terminated UTF-8
         /// string containing the name of the engine (if any) used to create the
         /// application.</summary>
-        public /*IntPtr*/StringGroup pEngineName;
+        public /*IntPtr*/GlobalString pEngineName;
         /// <summary> engineVersion is an unsigned integer variable containing the
         /// developer-supplied version number of the engine used to create the
         /// application.</summary>
@@ -735,7 +735,7 @@ namespace Vulkan {
         /// a list of queue families that will access this buffer 
         /// (ignored if sharingMode is not VK_SHARING_MODE_CONCURRENT).
         /// /// </summary>
-        public UInt32sGroup queueFamilyIndices;
+        public UInt32Group queueFamilyIndices;
     }
     // Struct: 27
     /// <summary>VkBufferDeviceAddressCreateInfoEXT - Request a specific address for a buffer
@@ -1638,7 +1638,7 @@ namespace Vulkan {
         /// structures, each containing a descriptor type and number of descriptors
         /// of that type to be allocated in the pool.
         /// </summary>
-        public VkDescriptorPoolSizesGroup poolSizes;
+        public VkDescriptorPoolSizeGroup poolSizes;
     }
     // Struct: 71
     /// <summary>VkDescriptorPoolInlineUniformBlockCreateInfoEXT - Structure specifying the maximum number of inline uniform block bindings of a newly created descriptor pool
@@ -1685,7 +1685,7 @@ namespace Vulkan {
         /// an array of descriptor set layouts, with each
         /// member specifying how the corresponding descriptor set is allocated.
         /// </summary>
-        public VkDescriptorSetLayoutsGroup setLayouts;
+        public VkDescriptorSetLayoutGroup setLayouts;
     }
     // Struct: 74
     /// <summary>VkDescriptorSetLayoutBinding - Structure specifying a descriptor set layout binding
@@ -1753,7 +1753,7 @@ namespace Vulkan {
         ///  an array of
         /// VkDescriptorSetLayoutBinding structures.
         /// </summary>
-        public VkDescriptorSetLayoutBindingsGroup bindings;
+        public VkDescriptorSetLayoutBindingGroup bindings;
     }
     // Struct: 77
     /// <summary>VkDescriptorSetLayoutSupport - Structure returning information about whether a descriptor set layout can be supported
@@ -1918,13 +1918,13 @@ namespace Vulkan {
         /// Refer to the Queue Creation section
         /// below for further details.
         /// </summary>
-        public VkDeviceQueueCreateInfosGroup queueCreateInfos;
+        public VkDeviceQueueCreateInfoGroup queueCreateInfos;
         ///// <summary> enabledLayerCount is deprecated and ignored.</summary>
         //public UInt32 enabledLayerCount;
         ///// <summary> ppEnabledLayerNames is deprecated and ignored.
         ///// See html/vkspec.html#extendingvulkan-layers-devicelayerdeprecation.</summary>
         //public IntPtr /*-const-*/ * ppEnabledLayerNames;
-        public StringsGroup EnabledLayers;
+        public GlobalStrings EnabledLayers;
         ///// <summary> enabledExtensionCount is the number of device extensions to
         ///// enable.</summary>
         //public UInt32 enabledExtensionCount;
@@ -1933,7 +1933,7 @@ namespace Vulkan {
         ///// names of extensions to enable for the created device.
         ///// See the html/vkspec.html#extendingvulkan-extensions section for further details.</summary>
         //public IntPtr /*-const-*/ * ppEnabledExtensionNames;
-        public StringsGroup EnabledExtensions;
+        public GlobalStrings EnabledExtensions;
         /// <summary> pEnabledFeatures is NULL or a pointer to a
         /// VkPhysicalDeviceFeatures structure that contains boolean
         /// indicators of all the features to be enabled.
@@ -2166,7 +2166,7 @@ namespace Vulkan {
         /// submitted to each created queue.
         /// See Queue Priority for more information.
         /// </summary>
-        public SinglesGroup queuePriorities;
+        public SingleGroup queuePriorities;
     }
     // Struct: 96
     /// <summary>VkDeviceQueueGlobalPriorityCreateInfoEXT - Specify a system wide priority
@@ -3016,7 +3016,7 @@ namespace Vulkan {
         /// which will be used as the corresponding attachment in a render pass
         /// instance.
         /// </summary>
-        public VkImageViewsGroup attachments;
+        public VkImageViewGroup attachments;
         /// <summary> width, height and layers define the dimensions of the
         /// framebuffer.
         /// If the render pass uses multiview, then layers must be one and
@@ -3132,7 +3132,7 @@ namespace Vulkan {
         /// VkPipelineShaderStageCreateInfo describing the set of the shader
         /// stages to be included in the graphics pipeline.
         /// </summary>
-        public VkPipelineShaderStageCreateInfosGroup stages;
+        public VkPipelineShaderStageCreateInfoGroup stages;
         /// <summary> pVertexInputState is a pointer to an instance of the
         /// VkPipelineVertexInputStateCreateInfo structure.
         /// It is ignored if the pipeline includes a mesh shader stage.</summary>
@@ -3919,7 +3919,7 @@ namespace Vulkan {
         /// names of layers to enable for the created instance.
         /// See the html/vkspec.html#extendingvulkan-layers section for further details.
         /// </summary>
-        public StringsGroup EnabledLayers;
+        public GlobalStrings EnabledLayers;
         ///// <summary> enabledExtensionCount is the number of global extensions to
         ///// enable.</summary>
         //public UInt32 enabledExtensionCount;
@@ -3930,7 +3930,7 @@ namespace Vulkan {
         /// <summary>
         /// an array of strings containing the names of extensions to enable.
         /// </summary>
-        public StringsGroup EnabledExtensions;
+        public GlobalStrings EnabledExtensions;
     }
     // Struct: 194
     /// <summary>VkLayerProperties - Structure specifying layer properties
@@ -6645,7 +6645,7 @@ namespace Vulkan {
         /// array: per target attachment
         /// states.
         /// </summary>
-        public VkPipelineColorBlendAttachmentStatesGroup attachments;
+        public VkPipelineColorBlendAttachmentStateGroup attachments;
         public fixed float blendConstants[4];
     }
     // Struct: 310
@@ -6798,7 +6798,7 @@ namespace Vulkan {
         /// specifying which pieces of pipeline state will use the values from
         /// dynamic state commands rather than from pipeline state creation info.
         /// </summary>
-        public VkDynamicStatesGroup dynamicStates;
+        public VkDynamicStateGroup dynamicStates;
     }
     // Struct: 317
     /// <summary>VkPipelineInputAssemblyStateCreateInfo - Structure specifying parameters of a newly created pipeline input assembly state
@@ -6842,7 +6842,7 @@ namespace Vulkan {
         /// <summary>
         /// an array of VkDescriptorSetLayout objects.
         /// </summary>
-        public VkDescriptorSetLayoutsGroup setLayouts;
+        public VkDescriptorSetLayoutGroup setLayouts;
         /// <summary> pushConstantRangeCount is the number of push constant ranges
         /// included in the pipeline layout.</summary>
         public UInt32 pushConstantRangeCount;
@@ -7043,7 +7043,7 @@ namespace Vulkan {
         public VkShaderModule module;
         /// <summary> pName is a pointer to a null-terminated UTF-8 string specifying
         /// the entry point name of the shader for this stage.</summary>
-        public /*IntPtr*/StringGroup pName;
+        public /*IntPtr*/GlobalString pName;
         /// <summary> pSpecializationInfo is a pointer to VkSpecializationInfo, as
         /// described in Specialization
         /// Constants, and can be NULL.</summary>
@@ -7110,14 +7110,14 @@ namespace Vulkan {
         /// an array of
         /// VkVertexInputBindingDescription structures.
         /// </summary>
-        public VkVertexInputBindingDescriptionsGroup vertexBindingDescriptions;
+        public VkVertexInputBindingDescriptionGroup vertexBindingDescriptions;
         ///// <summary> vertexAttributeDescriptionCount is the number of vertex attribute
         ///// descriptions provided in pVertexAttributeDescriptions.</summary>
         //public UInt32 vertexAttributeDescriptionCount;
         ///// <summary> pVertexAttributeDescriptions is a pointer to an array of
         ///// VkVertexInputAttributeDescription structures.</summary>
         //public /*-const-*/ VkVertexInputAttributeDescription* pVertexAttributeDescriptions;
-        public VkVertexInputAttributeDescriptionsGroup vertexAttributeDescriptions;
+        public VkVertexInputAttributeDescriptionGroup vertexAttributeDescriptions;
     }
     // Struct: 332
     /// <summary>VkPipelineViewportCoarseSampleOrderStateCreateInfoNV - Structure specifying parameters controlling sample order in coarse fragments
@@ -7196,7 +7196,7 @@ namespace Vulkan {
         /// structures, defining the viewport transforms.
         /// If the viewport state is dynamic, this member is ignored.
         /// </summary>
-        public VkViewportsGroup viewports;
+        public VkViewportGroup viewports;
         ///// <summary> scissorCount is the number of scissors and
         ///// must match the number of viewports.</summary>
         //public UInt32 scissorCount;
@@ -7211,7 +7211,7 @@ namespace Vulkan {
         /// viewport.
         /// If the scissor state is dynamic, this member is ignored.
         /// </summary>
-        public VkRect2DsGroup scissors;
+        public VkRect2DGroup scissors;
     }
     // Struct: 336
     /// <summary>VkPipelineViewportSwizzleStateCreateInfoNV - Structure specifying swizzle applied to primitive clip coordinates
@@ -7287,7 +7287,7 @@ namespace Vulkan {
         /// semaphores to wait for before issuing the present request.
         /// </summary>
         [FieldOffset(4 + 4)] // 4 + 4
-        public VkSemaphoresGroup waitSemaphores;
+        public VkSemaphoreGroup waitSemaphores;
         ///// <summary> swapchainCount is the number of swapchains being presented to by
         ///// this command.</summary>
         //public UInt32 swapchainCount;
@@ -7301,7 +7301,7 @@ namespace Vulkan {
         /// A given swapchain must not appear in this list more than once.
         /// </summary>
         [FieldOffset(4 + 4 + (4 + 4))] // 4 + 4
-        public VkSwapchainKHRsGroup swapchains;
+        public VkSwapchainKHRGroup swapchains;
         ///// <summary>
         ///// an array of VkSwapchainKHR objects with
         ///// count entries.
@@ -7323,7 +7323,7 @@ namespace Vulkan {
         /// corresponding entry in the pSwapchains array.
         /// </summary>
         [FieldOffset(4 + 4 + (4 + 4))] // 4 + 4 + 4
-        public VkSwapchainKHRsUInt32sGroup swapchainsImages;
+        public VkSwapchainKHRUInt32Group swapchainsImages;
         /// <summary> pResults is an array of VkResult typed elements with
         /// swapchainCount entries.
         /// Applications that do not need per-swapchain results can use NULL for
@@ -7647,7 +7647,7 @@ namespace Vulkan {
         /// Only elements corresponding to cleared attachments are used.
         /// Other elements of pClearValues are ignored.
         /// </summary>
-        public VkClearValuesGroup clearValues;
+        public VkClearValueGroup clearValues;
     }
     // Struct: 356
     /// <summary>VkRenderPassCreateInfo - Structure specifying parameters of a newly created render pass
@@ -7669,7 +7669,7 @@ namespace Vulkan {
         /// an array of attachmentCount VkAttachmentDescription structures describing the attachments used
         /// by the render pass.
         /// </summary>
-        public VkAttachmentDescriptionsGroup attachments;
+        public VkAttachmentDescriptionGroup attachments;
         ///// <summary> subpassCount is the number of subpasses to create.</summary>
         //public UInt32 subpassCount;
         ///// <summary> pSubpasses points to an array of subpassCount VkSubpassDescription structures describing each subpass.</summary>
@@ -7677,7 +7677,7 @@ namespace Vulkan {
         /// <summary>
         /// an array of subpassCount VkSubpassDescription structures describing each subpass.
         /// </summary>
-        public VkSubpassDescriptionsGroup subpasses;
+        public VkSubpassDescriptionGroup subpasses;
         ///// <summary> dependencyCount is the number of memory dependencies between pairs
         ///// of subpasses.</summary>
         //public UInt32 dependencyCount;
@@ -7688,7 +7688,7 @@ namespace Vulkan {
         /// an array of dependencyCount VkSubpassDependency structures describing dependencies between
         /// pairs of subpasses.
         /// </summary>
-        public VkSubpassDependencysGroup dependencies;
+        public VkSubpassDependencyGroup dependencies;
     }
     // Struct: 357
     /// <summary>VkRenderPassCreateInfo2KHR - Structure specifying parameters of a newly created render pass
@@ -8406,14 +8406,14 @@ namespace Vulkan {
         /// waitDstStageMask: is a pointer to an array of pipeline stages at
         /// which each corresponding semaphore wait will occur.
         /// </summary>
-        public VkSemaphoresPipelineStagesGroup waitSemaphoresDstStageMasks;
+        public VkSemaphorePipelineStageGroup waitSemaphoresDstStageMasks;
         ///// <summary> commandBufferCount is the number of command buffers to execute in
         ///// the batch.</summary>
         //public UInt32 commandBufferCount;
         ///// <summary> pCommandBuffers is a pointer to an array of command buffers to
         ///// execute in the batch.</summary>
         //public /*-const-*/ VkCommandBuffer* pCommandBuffers;
-        public VkCommandBuffersGroup commandBuffers;
+        public VkCommandBufferGroup commandBuffers;
         ///// <summary> signalSemaphoreCount is the number of semaphores to be signaled
         ///// once the commands specified in pCommandBuffers have completed
         ///// execution.</summary>
@@ -8431,7 +8431,7 @@ namespace Vulkan {
         /// If semaphores to be signaled are provided, they define a
         /// semaphore signal operation.
         /// </summary>
-        public VkSemaphoresGroup signalSemaphores;
+        public VkSemaphoreGroup signalSemaphores;
     }
     // Struct: 392
     /// <summary>VkSubpassBeginInfoKHR - Structure specifying subpass begin info
@@ -8509,12 +8509,15 @@ namespace Vulkan {
     // Struct: 395
     /// <summary>VkSubpassDescription - Structure specifying a subpass description
     /// </summary>
+    [StructLayout(LayoutKind.Explicit)]
     public unsafe partial struct VkSubpassDescription {
         /// <summary> flags is a bitmask of VkSubpassDescriptionFlagBits
         /// specifying usage of the subpass.</summary>
+        [FieldOffset(0)] // 4
         public VkSubpassDescriptionFlags flags;
         /// <summary> pipelineBindPoint is a VkPipelineBindPoint value specifying
         /// the pipeline type supported for this subpass.</summary>
+        [FieldOffset(4)] // 4
         public VkPipelineBindPoint pipelineBindPoint;
         ///// <summary> inputAttachmentCount is the number of input attachments.</summary>
         //public UInt32 inputAttachmentCount;
@@ -8527,13 +8530,21 @@ namespace Vulkan {
         /// structures defining the input attachments for this subpass and their
         /// layouts.
         /// </summary>
-        public VkAttachmentReferencesGroup inputAttachments;
+        [FieldOffset(4 + 4)] // 4 + 4
+        public VkAttachmentReferenceGroup inputAttachments;
         ///// <summary> colorAttachmentCount is the number of color attachments.</summary>
         //public UInt32 colorAttachmentCount;
         ///// <summary> pColorAttachments is an array of VkAttachmentReference
         ///// structures defining the color attachments for this subpass and their
         ///// layouts.</summary>
         //public /*-const-*/ VkAttachmentReference* pColorAttachments;
+        /// <summary>
+        /// an array of VkAttachmentReference
+        /// structures defining the color attachments for this subpass and their
+        /// layouts.
+        /// </summary>
+        [FieldOffset(4 + 4 + (4 + 4))] // 4 + 4
+        public VkAttachmentReferenceGroup colorAttachments;
         ///// <summary> pResolveAttachments is an optional array of
         ///// colorAttachmentCount VkAttachmentReference structures
         ///// defining the resolve attachments for this subpass and their layouts.</summary>
@@ -8547,10 +8558,12 @@ namespace Vulkan {
         /// colorAttachmentCount VkAttachmentReference structures
         /// defining the resolve attachments for this subpass and their layouts.
         /// </summary>
-        public /*-const-*/ VkColorResolveAttachmentsGroup colorResolveAttachments;
+        [FieldOffset(4 + 4 + (4 + 4))] // 4 + 4 + 4
+        public /*-const-*/ VkColorResolveAttachmentGroup colorResolveAttachments;
         /// <summary> pDepthStencilAttachment is a pointer to a
         /// VkAttachmentReference specifying the depth/stencil attachment for
         /// this subpass and its layout.</summary>
+        [FieldOffset(4 + 4 + (4 + 4) + (4 + 4 + 4))] // 4
         public /*-const-*/ VkAttachmentReference* pDepthStencilAttachment;
         ///// <summary> preserveAttachmentCount is the number of preserved attachments.</summary>
         //public UInt32 preserveAttachmentCount;
@@ -8565,7 +8578,8 @@ namespace Vulkan {
         /// by this subpass, but whose contents must be preserved throughout the
         /// subpass.
         /// </summary>
-        public /*-const-*/ UInt32sGroup preserveAttachments;
+        [FieldOffset(4 + 4 + (4 + 4) + (4 + 4 + 4) + 4)] // 4
+        public /*-const-*/ UInt32Group preserveAttachments;
     }
     // Struct: 396
     /// <summary>VkSubpassDescription2KHR - Structure specifying a subpass description
@@ -8898,7 +8912,7 @@ namespace Vulkan {
         public VkSharingMode imageSharingMode;
         //public UInt32 queueFamilyIndexCount;
         //public /*-const-*/ UInt32* pQueueFamilyIndices;
-        public /*-const-*/ UInt32sGroup queueFamilyIndices;
+        public /*-const-*/ UInt32Group queueFamilyIndices;
         public VkSurfaceTransformFlagBitsKHR preTransform;
         public VkCompositeAlphaFlagBitsKHR compositeAlpha;
         public VkPresentModeKHR presentMode;
@@ -9239,7 +9253,7 @@ namespace Vulkan {
         ///// as described in the Buffer Views section or
         ///// is ignored, as described below.</summary>
         //public /*-const-*/ VkBufferView* pTexelBufferView;
-        public VkImageBufferViewsGroup data;
+        public VkImageBufferViewGroup data;
     }
     // Struct: 429
     /// <summary>VkWriteDescriptorSetAccelerationStructureNV - Structure specifying acceleration to query for memory requirements

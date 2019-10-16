@@ -2,25 +2,26 @@
 using System.Runtime.InteropServices;
 
 namespace Vulkan {
-    public unsafe struct StringsGroup {
+    public unsafe struct GlobalStrings {
         public UInt32 count;
         public IntPtr pStrings;
 
-        public StringsGroup(params String[] value) {
+        public GlobalStrings(params String[] value) {
             count = 0;
             pStrings = IntPtr.Zero;
             if (value != null) {
-                count = (UInt32)value.Length;
-                if (count > 0) {
+                int length = value.Length;
+                if (length > 0) {
                     int elementSize = Marshal.SizeOf(typeof(IntPtr));
-                    int byteLength = (int)(count * elementSize);
+                    int byteLength = length * elementSize;
                     IntPtr array = Marshal.AllocHGlobal(byteLength);
                     IntPtr* pointer = (IntPtr*)array;
-                    for (int i = 0; i < count; i++) {
+                    for (int i = 0; i < length; i++) {
                         IntPtr str = Marshal.StringToHGlobalAnsi(value[i]);
                         pointer[i] = str;
                     }
                     this.pStrings = (IntPtr)pointer;
+                    count = (UInt32)length;
                 }
             }
         }
@@ -29,7 +30,7 @@ namespace Vulkan {
             {   // free unmanaged memory.
                 IntPtr* target = (IntPtr*)this.pStrings;
                 if (target != null) {
-                    for (int i = 0; i < count; i++) {
+                    for (int i = 0; i < this.count; i++) {
                         Marshal.FreeHGlobal(target[i]);
                     }
                 }
@@ -51,15 +52,21 @@ namespace Vulkan {
                     }
                     this.pStrings = (IntPtr)pointer;
                 }
-                count = (UInt32)length;
+                this.count = (UInt32)length;
             }
         }
-        public static implicit operator StringsGroup(String v) {
-            return new StringsGroup(new String[] { v });
+
+        public static implicit operator GlobalStrings(String v) {
+            if (v != null) {
+                return new GlobalStrings(new String[] { v });
+            }
+            else {
+                return new GlobalStrings(null);
+            }
         }
 
-        public static implicit operator StringsGroup(String[] v) {
-            return new StringsGroup(v);
+        public static implicit operator GlobalStrings(String[] v) {
+            return new GlobalStrings(v);
         }
 
         public override string ToString() {

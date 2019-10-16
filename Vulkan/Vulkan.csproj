@@ -34,9 +34,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Vulkan\Groups\XsGroup.tt">
+    <None Update="Vulkan\Groups\XGroup.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>XsGroup.cs</LastGenOutput>
+      <LastGenOutput>XGroup.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -45,10 +45,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Vulkan\Groups\XsGroup.cs">
+    <Compile Update="Vulkan\Groups\XGroup.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>XsGroup.tt</DependentUpon>
+      <DependentUpon>XGroup.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

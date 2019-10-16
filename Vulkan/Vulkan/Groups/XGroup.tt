@@ -23,7 +23,7 @@ namespace Vulkan {
 <#
 for (int i = 0; i < arrayTypes.Length; i++) {
     string arrayType = arrayTypes[i];
-    string structType = arrayType + "s" + "Group";
+    string structType = arrayType + "Group";
 #>
 <# /* body starts */ #>
     public unsafe struct <#=structType#> {
@@ -33,9 +33,11 @@ for (int i = 0; i < arrayTypes.Length; i++) {
         public <#=structType#>(params <#=arrayType#>[] value) {
             count = 0;
             array = null;
-            IntPtr ptr = IntPtr.Zero;
-            value.Set(ref ptr, ref this.count);
-            this.array = (<#=arrayType#>*)ptr;
+			if (value != null) {
+				IntPtr ptr = IntPtr.Zero;
+				value.Set(ref ptr, ref this.count);
+				this.array = (<#=arrayType#>*)ptr;
+			}
         }
 
         public void Set(params <#=arrayType#>[] value) {
