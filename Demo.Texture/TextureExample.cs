@@ -552,7 +552,7 @@ namespace Demo.Texture {
             info[0].renderArea.extent.width = width;
             info[0].renderArea.extent.height = height;
             info[0].clearValues.count = 2;
-            info[0].clearValues.array = clearValues;
+            info[0].clearValues.pointer = clearValues;
 
             for (int i = 0; i < drawCmdBuffers.Length; ++i) {
                 // Set target frame buffer
@@ -667,9 +667,9 @@ namespace Demo.Texture {
 
             vDescription.inputState = VkPipelineVertexInputStateCreateInfo.Alloc();
             vDescription.inputState[0].vertexBindingDescriptions.count = 1;
-            vDescription.inputState[0].vertexBindingDescriptions.array = vDescription.bindingDescriptions;
+            vDescription.inputState[0].vertexBindingDescriptions.pointer = vDescription.bindingDescriptions;
             vDescription.inputState[0].vertexAttributeDescriptions.count = 3;
-            vDescription.inputState[0].vertexAttributeDescriptions.array = vDescription.attributeDescriptions;
+            vDescription.inputState[0].vertexAttributeDescriptions.pointer = vDescription.attributeDescriptions;
         }
 
         void setupDescriptorPool() {
@@ -708,7 +708,7 @@ namespace Demo.Texture {
             {
                 var info = VkDescriptorSetLayoutCreateInfo.Alloc();
                 info[0].bindings.count = 2;
-                info[0].bindings.array = bindings;
+                info[0].bindings.pointer = bindings;
                 VkDescriptorSetLayout layout;
                 vkCreateDescriptorSetLayout(device, info, null, &layout);
                 this.layout = layout;
@@ -777,7 +777,7 @@ namespace Demo.Texture {
 
             var colorBlendState = VkPipelineColorBlendStateCreateInfo.Alloc();
             colorBlendState[0].attachments.count = 1;
-            colorBlendState[0].attachments.array = blendAttachmentState;
+            colorBlendState[0].attachments.pointer = blendAttachmentState;
 
             var depthStencilState = VkPipelineDepthStencilStateCreateInfo.Alloc();
             depthStencilState[0].depthTestEnable = true;
@@ -821,7 +821,7 @@ namespace Demo.Texture {
             pipelineCreateInfo[0].pDepthStencilState = depthStencilState;
             pipelineCreateInfo[0].pDynamicState = dynamicState;
             pipelineCreateInfo[0].stages.count = 2;
-            pipelineCreateInfo[0].stages.array = shaderStages;
+            pipelineCreateInfo[0].stages.pointer = shaderStages;
             {
                 VkPipeline pipeline;
                 vkCreateGraphicsPipelines(device, pipelineCache, 1, pipelineCreateInfo, null, &pipeline);

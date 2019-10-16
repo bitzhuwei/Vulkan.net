@@ -22,7 +22,7 @@ namespace Vulkan_Tutorial {
 
             var createInfo = VkDeviceCreateInfo.Alloc();
             createInfo[0].queueCreateInfos.count = 1;
-            createInfo[0].queueCreateInfos.array = queueCreateInfo;
+            createInfo[0].queueCreateInfos.pointer = queueCreateInfo;
 
             createInfo[0].pEnabledFeatures = deviceFeatures;
 

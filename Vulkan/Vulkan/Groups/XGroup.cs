@@ -4,22 +4,22 @@ using System.Runtime.InteropServices;
 namespace Vulkan {
     public unsafe struct VkDescriptorPoolSizeGroup {
         public UInt32 count;
-        public VkDescriptorPoolSize* array;
+        public VkDescriptorPoolSize* pointer;
 
         public VkDescriptorPoolSizeGroup(params VkDescriptorPoolSize[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkDescriptorPoolSize*)ptr;
+				this.pointer = (VkDescriptorPoolSize*)ptr;
 			}
         }
 
         public void Set(params VkDescriptorPoolSize[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkDescriptorPoolSize*)ptr;
+            this.pointer = (VkDescriptorPoolSize*)ptr;
         }
 
         public static implicit operator VkDescriptorPoolSizeGroup(VkDescriptorPoolSize v) {
@@ -32,7 +32,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkDescriptorPoolSize)}[{count}]";
@@ -42,22 +42,22 @@ namespace Vulkan {
 
     public unsafe struct VkDescriptorSetLayoutBindingGroup {
         public UInt32 count;
-        public VkDescriptorSetLayoutBinding* array;
+        public VkDescriptorSetLayoutBinding* pointer;
 
         public VkDescriptorSetLayoutBindingGroup(params VkDescriptorSetLayoutBinding[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkDescriptorSetLayoutBinding*)ptr;
+				this.pointer = (VkDescriptorSetLayoutBinding*)ptr;
 			}
         }
 
         public void Set(params VkDescriptorSetLayoutBinding[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkDescriptorSetLayoutBinding*)ptr;
+            this.pointer = (VkDescriptorSetLayoutBinding*)ptr;
         }
 
         public static implicit operator VkDescriptorSetLayoutBindingGroup(VkDescriptorSetLayoutBinding v) {
@@ -70,7 +70,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkDescriptorSetLayoutBinding)}[{count}]";
@@ -80,22 +80,22 @@ namespace Vulkan {
 
     public unsafe struct VkDescriptorSetLayoutGroup {
         public UInt32 count;
-        public VkDescriptorSetLayout* array;
+        public VkDescriptorSetLayout* pointer;
 
         public VkDescriptorSetLayoutGroup(params VkDescriptorSetLayout[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkDescriptorSetLayout*)ptr;
+				this.pointer = (VkDescriptorSetLayout*)ptr;
 			}
         }
 
         public void Set(params VkDescriptorSetLayout[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkDescriptorSetLayout*)ptr;
+            this.pointer = (VkDescriptorSetLayout*)ptr;
         }
 
         public static implicit operator VkDescriptorSetLayoutGroup(VkDescriptorSetLayout v) {
@@ -108,7 +108,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkDescriptorSetLayout)}[{count}]";
@@ -118,22 +118,22 @@ namespace Vulkan {
 
     public unsafe struct VkDeviceQueueCreateInfoGroup {
         public UInt32 count;
-        public VkDeviceQueueCreateInfo* array;
+        public VkDeviceQueueCreateInfo* pointer;
 
         public VkDeviceQueueCreateInfoGroup(params VkDeviceQueueCreateInfo[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkDeviceQueueCreateInfo*)ptr;
+				this.pointer = (VkDeviceQueueCreateInfo*)ptr;
 			}
         }
 
         public void Set(params VkDeviceQueueCreateInfo[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkDeviceQueueCreateInfo*)ptr;
+            this.pointer = (VkDeviceQueueCreateInfo*)ptr;
         }
 
         public static implicit operator VkDeviceQueueCreateInfoGroup(VkDeviceQueueCreateInfo v) {
@@ -146,7 +146,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkDeviceQueueCreateInfo)}[{count}]";
@@ -156,22 +156,22 @@ namespace Vulkan {
 
     public unsafe struct VkDynamicStateGroup {
         public UInt32 count;
-        public VkDynamicState* array;
+        public VkDynamicState* pointer;
 
         public VkDynamicStateGroup(params VkDynamicState[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkDynamicState*)ptr;
+				this.pointer = (VkDynamicState*)ptr;
 			}
         }
 
         public void Set(params VkDynamicState[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkDynamicState*)ptr;
+            this.pointer = (VkDynamicState*)ptr;
         }
 
         public static implicit operator VkDynamicStateGroup(VkDynamicState v) {
@@ -184,7 +184,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkDynamicState)}[{count}]";
@@ -194,22 +194,22 @@ namespace Vulkan {
 
     public unsafe struct VkPipelineColorBlendAttachmentStateGroup {
         public UInt32 count;
-        public VkPipelineColorBlendAttachmentState* array;
+        public VkPipelineColorBlendAttachmentState* pointer;
 
         public VkPipelineColorBlendAttachmentStateGroup(params VkPipelineColorBlendAttachmentState[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkPipelineColorBlendAttachmentState*)ptr;
+				this.pointer = (VkPipelineColorBlendAttachmentState*)ptr;
 			}
         }
 
         public void Set(params VkPipelineColorBlendAttachmentState[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkPipelineColorBlendAttachmentState*)ptr;
+            this.pointer = (VkPipelineColorBlendAttachmentState*)ptr;
         }
 
         public static implicit operator VkPipelineColorBlendAttachmentStateGroup(VkPipelineColorBlendAttachmentState v) {
@@ -222,7 +222,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkPipelineColorBlendAttachmentState)}[{count}]";
@@ -232,22 +232,22 @@ namespace Vulkan {
 
     public unsafe struct VkPipelineShaderStageCreateInfoGroup {
         public UInt32 count;
-        public VkPipelineShaderStageCreateInfo* array;
+        public VkPipelineShaderStageCreateInfo* pointer;
 
         public VkPipelineShaderStageCreateInfoGroup(params VkPipelineShaderStageCreateInfo[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkPipelineShaderStageCreateInfo*)ptr;
+				this.pointer = (VkPipelineShaderStageCreateInfo*)ptr;
 			}
         }
 
         public void Set(params VkPipelineShaderStageCreateInfo[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkPipelineShaderStageCreateInfo*)ptr;
+            this.pointer = (VkPipelineShaderStageCreateInfo*)ptr;
         }
 
         public static implicit operator VkPipelineShaderStageCreateInfoGroup(VkPipelineShaderStageCreateInfo v) {
@@ -260,7 +260,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkPipelineShaderStageCreateInfo)}[{count}]";
@@ -270,22 +270,22 @@ namespace Vulkan {
 
     public unsafe struct VkRect2DGroup {
         public UInt32 count;
-        public VkRect2D* array;
+        public VkRect2D* pointer;
 
         public VkRect2DGroup(params VkRect2D[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkRect2D*)ptr;
+				this.pointer = (VkRect2D*)ptr;
 			}
         }
 
         public void Set(params VkRect2D[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkRect2D*)ptr;
+            this.pointer = (VkRect2D*)ptr;
         }
 
         public static implicit operator VkRect2DGroup(VkRect2D v) {
@@ -298,7 +298,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkRect2D)}[{count}]";
@@ -308,22 +308,22 @@ namespace Vulkan {
 
     public unsafe struct VkVertexInputAttributeDescriptionGroup {
         public UInt32 count;
-        public VkVertexInputAttributeDescription* array;
+        public VkVertexInputAttributeDescription* pointer;
 
         public VkVertexInputAttributeDescriptionGroup(params VkVertexInputAttributeDescription[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkVertexInputAttributeDescription*)ptr;
+				this.pointer = (VkVertexInputAttributeDescription*)ptr;
 			}
         }
 
         public void Set(params VkVertexInputAttributeDescription[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkVertexInputAttributeDescription*)ptr;
+            this.pointer = (VkVertexInputAttributeDescription*)ptr;
         }
 
         public static implicit operator VkVertexInputAttributeDescriptionGroup(VkVertexInputAttributeDescription v) {
@@ -336,7 +336,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkVertexInputAttributeDescription)}[{count}]";
@@ -346,22 +346,22 @@ namespace Vulkan {
 
     public unsafe struct VkVertexInputBindingDescriptionGroup {
         public UInt32 count;
-        public VkVertexInputBindingDescription* array;
+        public VkVertexInputBindingDescription* pointer;
 
         public VkVertexInputBindingDescriptionGroup(params VkVertexInputBindingDescription[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkVertexInputBindingDescription*)ptr;
+				this.pointer = (VkVertexInputBindingDescription*)ptr;
 			}
         }
 
         public void Set(params VkVertexInputBindingDescription[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkVertexInputBindingDescription*)ptr;
+            this.pointer = (VkVertexInputBindingDescription*)ptr;
         }
 
         public static implicit operator VkVertexInputBindingDescriptionGroup(VkVertexInputBindingDescription v) {
@@ -374,7 +374,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkVertexInputBindingDescription)}[{count}]";
@@ -384,22 +384,22 @@ namespace Vulkan {
 
     public unsafe struct VkViewportGroup {
         public UInt32 count;
-        public VkViewport* array;
+        public VkViewport* pointer;
 
         public VkViewportGroup(params VkViewport[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkViewport*)ptr;
+				this.pointer = (VkViewport*)ptr;
 			}
         }
 
         public void Set(params VkViewport[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkViewport*)ptr;
+            this.pointer = (VkViewport*)ptr;
         }
 
         public static implicit operator VkViewportGroup(VkViewport v) {
@@ -412,7 +412,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkViewport)}[{count}]";
@@ -422,22 +422,22 @@ namespace Vulkan {
 
     public unsafe struct VkImageViewGroup {
         public UInt32 count;
-        public VkImageView* array;
+        public VkImageView* pointer;
 
         public VkImageViewGroup(params VkImageView[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkImageView*)ptr;
+				this.pointer = (VkImageView*)ptr;
 			}
         }
 
         public void Set(params VkImageView[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkImageView*)ptr;
+            this.pointer = (VkImageView*)ptr;
         }
 
         public static implicit operator VkImageViewGroup(VkImageView v) {
@@ -450,7 +450,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkImageView)}[{count}]";
@@ -460,22 +460,22 @@ namespace Vulkan {
 
     public unsafe struct VkSwapchainKHRGroup {
         public UInt32 count;
-        public VkSwapchainKHR* array;
+        public VkSwapchainKHR* pointer;
 
         public VkSwapchainKHRGroup(params VkSwapchainKHR[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkSwapchainKHR*)ptr;
+				this.pointer = (VkSwapchainKHR*)ptr;
 			}
         }
 
         public void Set(params VkSwapchainKHR[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkSwapchainKHR*)ptr;
+            this.pointer = (VkSwapchainKHR*)ptr;
         }
 
         public static implicit operator VkSwapchainKHRGroup(VkSwapchainKHR v) {
@@ -488,7 +488,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkSwapchainKHR)}[{count}]";
@@ -498,22 +498,22 @@ namespace Vulkan {
 
     public unsafe struct VkSemaphoreGroup {
         public UInt32 count;
-        public VkSemaphore* array;
+        public VkSemaphore* pointer;
 
         public VkSemaphoreGroup(params VkSemaphore[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkSemaphore*)ptr;
+				this.pointer = (VkSemaphore*)ptr;
 			}
         }
 
         public void Set(params VkSemaphore[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkSemaphore*)ptr;
+            this.pointer = (VkSemaphore*)ptr;
         }
 
         public static implicit operator VkSemaphoreGroup(VkSemaphore v) {
@@ -526,7 +526,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkSemaphore)}[{count}]";
@@ -536,22 +536,22 @@ namespace Vulkan {
 
     public unsafe struct VkClearValueGroup {
         public UInt32 count;
-        public VkClearValue* array;
+        public VkClearValue* pointer;
 
         public VkClearValueGroup(params VkClearValue[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkClearValue*)ptr;
+				this.pointer = (VkClearValue*)ptr;
 			}
         }
 
         public void Set(params VkClearValue[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkClearValue*)ptr;
+            this.pointer = (VkClearValue*)ptr;
         }
 
         public static implicit operator VkClearValueGroup(VkClearValue v) {
@@ -564,7 +564,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkClearValue)}[{count}]";
@@ -574,22 +574,22 @@ namespace Vulkan {
 
     public unsafe struct VkAttachmentDescriptionGroup {
         public UInt32 count;
-        public VkAttachmentDescription* array;
+        public VkAttachmentDescription* pointer;
 
         public VkAttachmentDescriptionGroup(params VkAttachmentDescription[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkAttachmentDescription*)ptr;
+				this.pointer = (VkAttachmentDescription*)ptr;
 			}
         }
 
         public void Set(params VkAttachmentDescription[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkAttachmentDescription*)ptr;
+            this.pointer = (VkAttachmentDescription*)ptr;
         }
 
         public static implicit operator VkAttachmentDescriptionGroup(VkAttachmentDescription v) {
@@ -602,7 +602,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkAttachmentDescription)}[{count}]";
@@ -612,22 +612,22 @@ namespace Vulkan {
 
     public unsafe struct VkSubpassDescriptionGroup {
         public UInt32 count;
-        public VkSubpassDescription* array;
+        public VkSubpassDescription* pointer;
 
         public VkSubpassDescriptionGroup(params VkSubpassDescription[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkSubpassDescription*)ptr;
+				this.pointer = (VkSubpassDescription*)ptr;
 			}
         }
 
         public void Set(params VkSubpassDescription[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkSubpassDescription*)ptr;
+            this.pointer = (VkSubpassDescription*)ptr;
         }
 
         public static implicit operator VkSubpassDescriptionGroup(VkSubpassDescription v) {
@@ -640,7 +640,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkSubpassDescription)}[{count}]";
@@ -650,22 +650,22 @@ namespace Vulkan {
 
     public unsafe struct VkSubpassDependencyGroup {
         public UInt32 count;
-        public VkSubpassDependency* array;
+        public VkSubpassDependency* pointer;
 
         public VkSubpassDependencyGroup(params VkSubpassDependency[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkSubpassDependency*)ptr;
+				this.pointer = (VkSubpassDependency*)ptr;
 			}
         }
 
         public void Set(params VkSubpassDependency[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkSubpassDependency*)ptr;
+            this.pointer = (VkSubpassDependency*)ptr;
         }
 
         public static implicit operator VkSubpassDependencyGroup(VkSubpassDependency v) {
@@ -678,7 +678,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkSubpassDependency)}[{count}]";
@@ -688,22 +688,22 @@ namespace Vulkan {
 
     public unsafe struct VkCommandBufferGroup {
         public UInt32 count;
-        public VkCommandBuffer* array;
+        public VkCommandBuffer* pointer;
 
         public VkCommandBufferGroup(params VkCommandBuffer[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkCommandBuffer*)ptr;
+				this.pointer = (VkCommandBuffer*)ptr;
 			}
         }
 
         public void Set(params VkCommandBuffer[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkCommandBuffer*)ptr;
+            this.pointer = (VkCommandBuffer*)ptr;
         }
 
         public static implicit operator VkCommandBufferGroup(VkCommandBuffer v) {
@@ -716,7 +716,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkCommandBuffer)}[{count}]";
@@ -726,22 +726,22 @@ namespace Vulkan {
 
     public unsafe struct VkAttachmentReferenceGroup {
         public UInt32 count;
-        public VkAttachmentReference* array;
+        public VkAttachmentReference* pointer;
 
         public VkAttachmentReferenceGroup(params VkAttachmentReference[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkAttachmentReference*)ptr;
+				this.pointer = (VkAttachmentReference*)ptr;
 			}
         }
 
         public void Set(params VkAttachmentReference[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkAttachmentReference*)ptr;
+            this.pointer = (VkAttachmentReference*)ptr;
         }
 
         public static implicit operator VkAttachmentReferenceGroup(VkAttachmentReference v) {
@@ -754,7 +754,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkAttachmentReference)}[{count}]";
@@ -764,22 +764,22 @@ namespace Vulkan {
 
     public unsafe struct VkPushConstantRangeGroup {
         public UInt32 count;
-        public VkPushConstantRange* array;
+        public VkPushConstantRange* pointer;
 
         public VkPushConstantRangeGroup(params VkPushConstantRange[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (VkPushConstantRange*)ptr;
+				this.pointer = (VkPushConstantRange*)ptr;
 			}
         }
 
         public void Set(params VkPushConstantRange[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (VkPushConstantRange*)ptr;
+            this.pointer = (VkPushConstantRange*)ptr;
         }
 
         public static implicit operator VkPushConstantRangeGroup(VkPushConstantRange v) {
@@ -792,7 +792,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(VkPushConstantRange)}[{count}]";
@@ -802,22 +802,22 @@ namespace Vulkan {
 
     public unsafe struct SingleGroup {
         public UInt32 count;
-        public Single* array;
+        public Single* pointer;
 
         public SingleGroup(params Single[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (Single*)ptr;
+				this.pointer = (Single*)ptr;
 			}
         }
 
         public void Set(params Single[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (Single*)ptr;
+            this.pointer = (Single*)ptr;
         }
 
         public static implicit operator SingleGroup(Single v) {
@@ -830,7 +830,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(Single)}[{count}]";
@@ -840,22 +840,22 @@ namespace Vulkan {
 
     public unsafe struct UInt32Group {
         public UInt32 count;
-        public UInt32* array;
+        public UInt32* pointer;
 
         public UInt32Group(params UInt32[] value) {
             count = 0;
-            array = null;
+            pointer = null;
 			if (value != null) {
 				IntPtr ptr = IntPtr.Zero;
 				value.Set(ref ptr, ref this.count);
-				this.array = (UInt32*)ptr;
+				this.pointer = (UInt32*)ptr;
 			}
         }
 
         public void Set(params UInt32[] value) {
-            IntPtr ptr = (IntPtr)this.array;
+            IntPtr ptr = (IntPtr)this.pointer;
             value.Set(ref ptr, ref this.count);
-            this.array = (UInt32*)ptr;
+            this.pointer = (UInt32*)ptr;
         }
 
         public static implicit operator UInt32Group(UInt32 v) {
@@ -868,7 +868,7 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{array[0]}";
+                return $"{pointer[0]}";
             }
             else {
                 return $"{nameof(UInt32)}[{count}]";

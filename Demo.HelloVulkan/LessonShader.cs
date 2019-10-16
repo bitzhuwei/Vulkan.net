@@ -536,64 +536,66 @@ namespace Demo.HelloVulkan {
             VkSurfaceFormatKHR surfaceFormat, VkRenderPass renderPass,
             VkSurfaceCapabilitiesKHR surfaceCapabilities) {
             var displayViews = new VkImageView[images.Length];
+            var viewInfo = new VkImageViewCreateInfo { sType = VkStructureType.ImageViewCreateInfo };
+            viewInfo.viewType = VkImageViewType._2d;
+            viewInfo.format = surfaceFormat.format;
+            viewInfo.components = new VkComponentMapping {
+                r = VkComponentSwizzle.R,
+                g = VkComponentSwizzle.G,
+                b = VkComponentSwizzle.B,
+                a = VkComponentSwizzle.A
+            };
+            viewInfo.subresourceRange = new VkImageSubresourceRange {
+                aspectMask = VkImageAspectFlagBits.Color,
+                levelCount = 1,
+                layerCount = 1
+            };
             for (int i = 0; i < images.Length; i++) {
-                var info = VkImageViewCreateInfo.Alloc();
-                info->image = images[i];
-                info->viewType = VkImageViewType._2d;
-                info->format = surfaceFormat.format;
-                info->components = new VkComponentMapping {
-                    r = VkComponentSwizzle.R,
-                    g = VkComponentSwizzle.G,
-                    b = VkComponentSwizzle.B,
-                    a = VkComponentSwizzle.A
-                };
-                info->subresourceRange = new VkImageSubresourceRange {
-                    aspectMask = VkImageAspectFlagBits.Color,
-                    levelCount = 1,
-                    layerCount = 1
-                };
+                viewInfo.image = images[i];
                 //displayViews[i] = device.CreateImageView(ref info);
                 VkImageView view;
-                vkAPI.vkCreateImageView(device, info, null, &view).Check();
+                vkAPI.vkCreateImageView(device, &viewInfo, null, &view).Check();
                 displayViews[i] = view;
             }
 
             var framebuffers = new VkFramebuffer[images.Length];
+            var fbInfo = new VkFramebufferCreateInfo { sType = VkStructureType.FramebufferCreateInfo };
+            fbInfo.layers = 1;
+            fbInfo.renderPass = renderPass;
+            fbInfo.width = surfaceCapabilities.currentExtent.width;
+            fbInfo.height = surfaceCapabilities.currentExtent.height;
             for (int i = 0; i < images.Length; i++) {
-                var info = VkFramebufferCreateInfo.Alloc();
-                info->layers = 1;
-                info->renderPass = renderPass;
-                info->attachments = displayViews[i];
-                info->width = surfaceCapabilities.currentExtent.width;
-                info->height = surfaceCapabilities.currentExtent.height;
+                fbInfo.attachments = displayViews[i];
                 //framebuffers[i] = device.CreateFramebuffer(ref info);
                 VkFramebuffer framebuffer;
-                vkAPI.vkCreateFramebuffer(device, info, null, &framebuffer).Check();
+                vkAPI.vkCreateFramebuffer(device, &fbInfo, null, &framebuffer).Check();
                 framebuffers[i] = framebuffer;
             }
+
+            fbInfo.Free();
 
             return framebuffers;
         }
 
         protected VkRenderPass CreateRenderPass(VkDevice device, VkSurfaceFormatKHR surfaceFormat) {
-            var info = VkRenderPassCreateInfo.Alloc();
-            {
-                var attDesc = new VkAttachmentDescription(surfaceFormat.format, VkSampleCountFlagBits._1,
-                     VkAttachmentLoadOp.Clear, VkAttachmentStoreOp.Store,
-                     VkAttachmentLoadOp.DontCare, VkAttachmentStoreOp.DontCare,
-                     VkImageLayout.Undefined, VkImageLayout.PresentSrcKHR, 0);
-                info->attachments = attDesc;
-                var subpassDesc = new VkSubpassDescription(VkPipelineBindPoint.Graphics);
-                {
-                    var attRef = new VkAttachmentReference(VkImageLayout.ColorAttachmentOptimal, 0);
-                    subpassDesc.colorResolveAttachments.SetColorAttachments(attRef);
-                }
-                info->subpasses = subpassDesc;
-            }
+            var info = new VkRenderPassCreateInfo { sType = VkStructureType.RenderPassCreateInfo };
+            var attDesc = new VkAttachmentDescription(surfaceFormat.format, VkSampleCountFlagBits._1,
+                 VkAttachmentLoadOp.Clear, VkAttachmentStoreOp.Store,
+                 VkAttachmentLoadOp.DontCare, VkAttachmentStoreOp.DontCare,
+                 VkImageLayout.Undefined, VkImageLayout.PresentSrcKHR, 0);
+            info.attachments = attDesc;
+            var subpassDesc = new VkSubpassDescription(VkPipelineBindPoint.Graphics);
+            var attRef = new VkAttachmentReference(VkImageLayout.ColorAttachmentOptimal, 0);
+            subpassDesc.colorAttachments = attRef;
+            info.subpasses = subpassDesc;
 
             //return device.CreateRenderPass(ref info);
             VkRenderPass renderPass;
-            vkAPI.vkCreateRenderPass(device, info, null, &renderPass).Check();
+            vkAPI.vkCreateRenderPass(device, &info, null, &renderPass).Check();
+
+            info.Free();
+            subpassDesc.Free();
+
             return renderPass;
         }
 
@@ -604,22 +606,23 @@ namespace Demo.HelloVulkan {
                 ? VkCompositeAlphaFlagBitsKHR.InheritKHR
                 : VkCompositeAlphaFlagBitsKHR.OpaqueKHR;
             UInt32 index = 0;
-            var info = VkSwapchainCreateInfoKHR.Alloc();
-            info->surface = surface;
-            info->minImageCount = surfaceCapabilities.minImageCount;
-            info->imageFormat = surfaceFormat.format;
-            info->imageColorSpace = surfaceFormat.colorSpace;
-            info->imageExtent = surfaceCapabilities.currentExtent;
-            info->imageUsage = VkImageUsageFlagBits.ColorAttachment;
-            info->preTransform = VkSurfaceTransformFlagBitsKHR.IdentityKHR;
-            info->imageArrayLayers = 1;
-            info->imageSharingMode = VkSharingMode.Exclusive;
-            info->queueFamilyIndices = index;
-            info->presentMode = VkPresentModeKHR.FifoKHR;
-            info->compositeAlpha = compositeAlpha;
+            var info = new VkSwapchainCreateInfoKHR { sType = VkStructureType.SwapchainCreateInfoKHR };
+            info.surface = surface;
+            info.minImageCount = surfaceCapabilities.minImageCount;
+            info.imageFormat = surfaceFormat.format;
+            info.imageColorSpace = surfaceFormat.colorSpace;
+            info.imageExtent = surfaceCapabilities.currentExtent;
+            info.imageUsage = VkImageUsageFlagBits.ColorAttachment;
+            info.preTransform = VkSurfaceTransformFlagBitsKHR.IdentityKHR;
+            info.imageArrayLayers = 1;
+            info.imageSharingMode = VkSharingMode.Exclusive;
+            info.queueFamilyIndices = index;
+            info.presentMode = VkPresentModeKHR.FifoKHR;
+            info.compositeAlpha = compositeAlpha;
             //return device.CreateSwapchainKHR(ref info, null);
             VkSwapchainKHR swapchain;
-            vkAPI.vkCreateSwapchainKHR(device, info, null, &swapchain).Check();
+            vkAPI.vkCreateSwapchainKHR(device, &info, null, &swapchain).Check();
+
             return swapchain;
         }
 
@@ -654,22 +657,24 @@ namespace Demo.HelloVulkan {
                 if (properties[index].queueFlags.HasFlag(VkQueueFlagBits.Graphics)) break;
             }
 
-            var queueInfo = VkDeviceQueueCreateInfo.Alloc();
+            var queueInfo = new VkDeviceQueueCreateInfo { sType = VkStructureType.DeviceQueueCreateInfo };
             {
-                queueInfo->queuePriorities = 1.0f;
-                queueInfo->queueFamilyIndex = index;
+                queueInfo.queuePriorities = 1.0f;
+                queueInfo.queueFamilyIndex = index;
             }
 
-            var info = VkDeviceCreateInfo.Alloc();
+            var info = new VkDeviceCreateInfo { sType = VkStructureType.DeviceCreateInfo };
             {
-                info[0].EnabledExtensions = Vk.VK_KHR_swapchain;
-                info->queueCreateInfos.count = 1;
-                info->queueCreateInfos.array = queueInfo;
+                info.EnabledExtensions = Vk.VK_KHR_swapchain;
+                info.queueCreateInfos = queueInfo;
             }
 
             VkDevice vkDevice;
             //physicalDevice.CreateDevice(ref deviceInfo, null, out device);
-            vkAPI.vkCreateDevice(physicalDevice, info, null, &vkDevice).Check();
+            vkAPI.vkCreateDevice(physicalDevice, &info, null, &vkDevice).Check();
+
+            info.Free();
+            queueInfo.Free();
 
             return vkDevice;
         }
