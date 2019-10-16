@@ -48,18 +48,20 @@ namespace Vulkan {
         /// Free unmanaged memory and reset all members to 0.
         /// </summary>
         public void Reset() {
-            {
+            if (this.waitSemaphores != null) {
                 UInt32 count = this.count;
                 IntPtr ptr = (IntPtr)this.waitSemaphores;
                 Helper.Set<VkSemaphore>(null, ref ptr, ref count);
-                this.waitSemaphores = (VkSemaphore*)ptr;
+                this.waitSemaphores = null;
             }
-            {
+
+            if (this.waitDstStageMask != null) {
                 UInt32 count = this.count;
                 IntPtr ptr = (IntPtr)this.waitDstStageMask;
                 Helper.Set<VkPipelineStageFlagBits>(null, ref ptr, ref count);
-                this.waitDstStageMask = (VkPipelineStageFlagBits*)ptr;
+                this.waitDstStageMask = null;
             }
+
             {
                 this.count = 0;
             }

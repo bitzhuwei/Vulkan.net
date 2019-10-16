@@ -48,18 +48,20 @@ namespace Vulkan {
         /// Free unmanaged memory and reset all members to 0.
         /// </summary>
         public void Reset() {
-            {
+            if (this.colorAttachments != null) {
                 UInt32 count = this.count;
                 IntPtr ptr = (IntPtr)this.colorAttachments;
                 Helper.Set<VkAttachmentReference>(null, ref ptr, ref count);
-                this.colorAttachments = (VkAttachmentReference*)ptr;
+                this.colorAttachments = null;
             }
-            {
+
+            if (this.resolveAttachments != null) {
                 UInt32 count = this.count;
                 IntPtr ptr = (IntPtr)this.resolveAttachments;
                 Helper.Set<VkAttachmentReference>(null, ref ptr, ref count);
-                this.resolveAttachments = (VkAttachmentReference*)ptr;
+                this.resolveAttachments = null;
             }
+
             {
                 this.count = 0;
             }

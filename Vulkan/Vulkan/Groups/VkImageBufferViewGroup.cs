@@ -59,24 +59,27 @@ namespace Vulkan {
         /// Free unmanaged memory and reset all members to 0.
         /// </summary>
         public void Reset() {
-            {
+            if (this.imageInfo != null) {
                 UInt32 count = this.count;
                 IntPtr ptr = (IntPtr)this.imageInfo;
                 Helper.Set<VkDescriptorImageInfo>(null, ref ptr, ref count);
-                this.imageInfo = (VkDescriptorImageInfo*)ptr;
+                this.imageInfo = null;
             }
-            {
+
+            if (this.bufferInfo != null) {
                 UInt32 count = this.count;
                 IntPtr ptr = (IntPtr)this.bufferInfo;
                 Helper.Set<VkDescriptorBufferInfo>(null, ref ptr, ref count);
-                this.bufferInfo = (VkDescriptorBufferInfo*)ptr;
+                this.bufferInfo = null;
             }
-            {
+
+            if (this.texelBufferView != null) {
                 UInt32 count = this.count;
                 IntPtr ptr = (IntPtr)this.texelBufferView;
                 Helper.Set<VkBufferView>(null, ref ptr, ref count);
-                this.texelBufferView = (VkBufferView*)ptr;
+                this.texelBufferView = null;
             }
+
             {
                 this.count = 0;
             }

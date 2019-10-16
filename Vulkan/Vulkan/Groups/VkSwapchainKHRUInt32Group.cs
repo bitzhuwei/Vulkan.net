@@ -48,18 +48,20 @@ namespace Vulkan {
         /// Free unmanaged memory and reset all members to 0.
         /// </summary>
         public void Reset() {
-            {
+            if (this.swapchains != null) {
                 UInt32 count = this.count;
                 IntPtr ptr = (IntPtr)this.swapchains;
                 Helper.Set<VkSwapchainKHR>(null, ref ptr, ref count);
-                this.swapchains = (VkSwapchainKHR*)ptr;
+                this.swapchains = null;
             }
-            {
+
+            if (this.imageIndices != null) {
                 UInt32 count = this.count;
                 IntPtr ptr = (IntPtr)this.imageIndices;
                 Helper.Set<UInt32>(null, ref ptr, ref count);
-                this.imageIndices = (UInt32*)ptr;
+                this.imageIndices = null;
             }
+
             {
                 this.count = 0;
             }

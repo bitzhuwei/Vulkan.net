@@ -394,6 +394,7 @@ namespace Demo.HelloVulkan {
             {
                 var info = VkPipelineCacheCreateInfo.Alloc();
                 vkAPI.vkCreatePipelineCache(device, info, null, &cache).Check();
+                Marshal.FreeHGlobal((IntPtr)info);
             }
             //var infos = new VkGraphicsPipelineCreateInfo[] { pipelineCreateInfo };
             //return device.CreateGraphicsPipelines(ref cache, infos);
