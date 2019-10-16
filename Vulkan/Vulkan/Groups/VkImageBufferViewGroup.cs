@@ -87,7 +87,10 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{descriptorType}, {imageInfo[0]}, {bufferInfo[0]}, {texelBufferView[0]}";
+                var a = imageInfo != null ? imageInfo[0].ToString() : "<null>";
+                var b = bufferInfo != null ? bufferInfo[0].ToString() : "<null>";
+                var c = texelBufferView != null ? texelBufferView[0].ToString() : "<null>";
+                return $"{descriptorType}, {a}, {b}, {c}";
             }
             else {
                 return $"{nameof(VkDescriptorImageInfo)}[{count}], {nameof(VkDescriptorBufferInfo)}[{count}], {nameof(VkBufferView)}[{count}]";

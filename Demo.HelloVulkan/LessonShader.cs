@@ -253,16 +253,14 @@ namespace Demo.HelloVulkan {
                 vkAPI.vkBeginCommandBuffer(cmds, &cmdBeginInfo).Check();
                 begin.framebuffer = framebuffers[i];
                 vkAPI.vkCmdBeginRenderPass(cmds, &begin, VkSubpassContents.Inline);
-                {
-                    vkAPI.vkCmdBindDescriptorSets(cmds, VkPipelineBindPoint.Graphics, pipelineLayout,
-                        0, 1, &descriptorSet,
-                        0, null);
-                    vkAPI.vkCmdBindPipeline(cmds, VkPipelineBindPoint.Graphics, pipeline);
-                    VkDeviceSize offset = 0;
-                    vkAPI.vkCmdBindVertexBuffers(cmds, 0, 1, &vertexBuffer, &offset);
-                    vkAPI.vkCmdBindIndexBuffer(cmds, indexBuffer, offset, VkIndexType.Uint16);
-                    vkAPI.vkCmdDrawIndexed(cmds, indexLength, 1, 0, 0, 0);
-                }
+                vkAPI.vkCmdBindDescriptorSets(cmds, VkPipelineBindPoint.Graphics, pipelineLayout,
+                    0, 1, &descriptorSet,
+                    0, null);
+                vkAPI.vkCmdBindPipeline(cmds, VkPipelineBindPoint.Graphics, pipeline);
+                VkDeviceSize offset = 0;
+                vkAPI.vkCmdBindVertexBuffers(cmds, 0, 1, &vertexBuffer, &offset);
+                vkAPI.vkCmdBindIndexBuffer(cmds, indexBuffer, offset, VkIndexType.Uint16);
+                vkAPI.vkCmdDrawIndexed(cmds, indexLength, 1, 0, 0, 0);
                 vkAPI.vkCmdEndRenderPass(cmds);
                 vkAPI.vkEndCommandBuffer(cmds).Check();
             }
@@ -345,12 +343,8 @@ namespace Demo.HelloVulkan {
                 shaderStages[1].pName = "main";
             }
             var viewport = new VkPipelineViewportStateCreateInfo { sType = VkStructureType.PipelineViewportStateCreateInfo };
-            {
-                var vp = new VkViewport(surfaceCapabilities.currentExtent, 0.0f, 1.0f);
-                viewport.viewports = vp;
-                var scissor = new VkRect2D(surfaceCapabilities.currentExtent);
-                viewport.scissors = scissor;
-            }
+            viewport.viewports = new VkViewport(surfaceCapabilities.currentExtent, 0.0f, 1.0f);
+            viewport.scissors = new VkRect2D(surfaceCapabilities.currentExtent);
 
             var multisample = new VkPipelineMultisampleStateCreateInfo { sType = VkStructureType.PipelineMultisampleStateCreateInfo };
             multisample.rasterizationSamples = VkSampleCountFlagBits._1;
@@ -373,21 +367,17 @@ namespace Demo.HelloVulkan {
             inputAssem.topology = VkPrimitiveTopology.TriangleList;
 
             var input = new VkPipelineVertexInputStateCreateInfo { sType = VkStructureType.PipelineVertexInputStateCreateInfo };
-            {
-                // static readonly float[] Vertices = { .. }
-                var binding = new VkVertexInputBindingDescription(
-                    binding: 0,
-                    stride: 2 * sizeof(float),
-                    inputRate: VkVertexInputRate.Vertex);
-                input.vertexBindingDescriptions = binding;
-                // layout(location = 0) in vec2 inPos;
-                var attribute = new VkVertexInputAttributeDescription(
-                    location: 0,
-                    binding: 0,
-                    format: VkFormat.R32g32Sfloat,
-                    offset: 0);
-                input.vertexAttributeDescriptions = attribute;
-            }
+            // static readonly float[] Vertices = { .. }
+            input.vertexBindingDescriptions = new VkVertexInputBindingDescription(
+                binding: 0,
+                stride: 2 * sizeof(float),
+                inputRate: VkVertexInputRate.Vertex);
+            // layout(location = 0) in vec2 inPos;
+            input.vertexAttributeDescriptions = new VkVertexInputAttributeDescription(
+                location: 0,
+                binding: 0,
+                format: VkFormat.R32g32Sfloat,
+                offset: 0);
 
             //VkPipelineCache cache = device.CreatePipelineCache(ref cacheInfo);
             VkPipelineCache cache;
@@ -453,12 +443,11 @@ namespace Demo.HelloVulkan {
         } area;
              */
             var info = new VkDescriptorSetLayoutCreateInfo { sType = VkStructureType.DescriptorSetLayoutCreateInfo };
-            var binding = new VkDescriptorSetLayoutBinding(
+            info.bindings = new VkDescriptorSetLayoutBinding(
                 binding: 0,
                 descriptorType: VkDescriptorType.UniformBuffer, // uniform 
                 descriptorCount: 1, // single variable, not array.
                 stageFlags: VkShaderStageFlagBits.Vertex); // in a vertex shader.
-            info.bindings = binding;
 
             //return device.CreateDescriptorSetLayout(ref info);
             VkDescriptorSetLayout layout;
@@ -595,15 +584,14 @@ namespace Demo.HelloVulkan {
         }
 
         protected VkRenderPass CreateRenderPass(VkDevice device, VkSurfaceFormatKHR surfaceFormat) {
-            var info = new VkRenderPassCreateInfo { sType = VkStructureType.RenderPassCreateInfo };
             var attDesc = new VkAttachmentDescription(surfaceFormat.format, VkSampleCountFlagBits._1,
                  VkAttachmentLoadOp.Clear, VkAttachmentStoreOp.Store,
                  VkAttachmentLoadOp.DontCare, VkAttachmentStoreOp.DontCare,
                  VkImageLayout.Undefined, VkImageLayout.PresentSrcKHR, 0);
-            info.attachments = attDesc;
             var subpassDesc = new VkSubpassDescription(VkPipelineBindPoint.Graphics);
-            var attRef = new VkAttachmentReference(VkImageLayout.ColorAttachmentOptimal, 0);
-            subpassDesc.colorAttachments = attRef;
+            subpassDesc.colorAttachments = new VkAttachmentReference(VkImageLayout.ColorAttachmentOptimal, 0);
+            var info = new VkRenderPassCreateInfo { sType = VkStructureType.RenderPassCreateInfo };
+            info.attachments = attDesc;
             info.subpasses = subpassDesc;
 
             //return device.CreateRenderPass(ref info);
@@ -721,8 +709,7 @@ namespace Demo.HelloVulkan {
                 : null;
 
             var appInfo = new VkApplicationInfo { sType = VkStructureType.ApplicationInfo };
-            UInt32 version = Vulkan.VkVersion.Make(1, 0, 0);
-            appInfo.apiVersion = version;
+            appInfo.apiVersion = Vulkan.VkVersion.Make(1, 0, 0);
             appInfo.pApplicationName = "Hello Vulkan";
             appInfo.pEngineName = "Hello Engine";
 

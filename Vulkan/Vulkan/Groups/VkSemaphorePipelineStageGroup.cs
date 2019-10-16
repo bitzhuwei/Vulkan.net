@@ -69,7 +69,9 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{waitSemaphores[0]}, {waitDstStageMask[0]}";
+                var a = waitSemaphores != null ? waitSemaphores[0].ToString() : "<null>";
+                var b = waitDstStageMask != null ? waitDstStageMask[0].ToString() : "<null>";
+                return $"{a}, {b}";
             }
             else {
                 return $"{nameof(VkSemaphore)}[{count}], {nameof(VkPipelineStageFlagBits)}[{count}],";
