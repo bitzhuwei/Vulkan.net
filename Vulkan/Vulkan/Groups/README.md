@@ -13,7 +13,7 @@ to
     var clearValues = new VkClearValue[] { ... }
     var info = new VkRenderPassBeginInfo();
 
-	info.clearValues = clearValues;
+    info.clearValues = clearValues;
     // or: clearValues.Set(&info);
 ```
 where `Set(..)` is:
