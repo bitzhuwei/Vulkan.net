@@ -159,7 +159,7 @@ using System.Collections.Generic;
 // VkValidationCacheCreateFlagsEXT - Reserved for future use
 
 namespace Vulkan {
-    public unsafe partial class vkAPI {
+    public unsafe static partial class vkAPI {
         // Command: 0
         // GetInstanceProcAddr: 0
         /// <summary>vkAcquireFullScreenExclusiveModeEXT - Acquire full-screen exclusive mode for a swapchain
@@ -168,9 +168,9 @@ namespace Vulkan {
         /// <param name="swapchain">swapchain is the swapchain to acquire exclusive full-screen access
         /// for.</param>
         public static VkResult AcquireFullScreenExclusiveModeEXT(
-            this VkInstance instance,
-            VkDevice device,
-            VkSwapchainKHR swapchain) {
+        this VkInstance instance,
+        VkDevice device,
+        VkSwapchainKHR swapchain) {
             IntPtr addr = vkAPI.vkGetInstanceProcAddr(instance, "vkAcquireFullScreenExclusiveModeEXT");
             var func = (vkAcquireFullScreenExclusiveModeEXT)Marshal.GetDelegateForFunctionPointer(addr, typeof(vkAcquireFullScreenExclusiveModeEXT));
 

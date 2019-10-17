@@ -133,7 +133,7 @@ namespace Demo.DynamicUniformBuffer {
             var deviceExtensions = new List<string>();
             if (useSwapChain) {
                 // If the device will be used for presenting to a display via a swapchain we need to request the swapchain extension
-                deviceExtensions.Add(Vk.VK_KHR_swapchain);
+                deviceExtensions.Add(vkAPI.VK_KHR_swapchain);
             }
 
             var deviceCreateInfo = VkDeviceCreateInfo.Alloc();

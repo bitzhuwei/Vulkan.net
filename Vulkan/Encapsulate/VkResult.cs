@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 namespace Vulkan {
-    public static partial class Vk {
+    public static partial class vkAPI {
         public static VkResult Check(this VkResult result) {
             if (result != VkResult.Success) { throw new ResultException(result); }
 

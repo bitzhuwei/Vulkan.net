@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Vulkan {
-    public unsafe static partial class Vk {
+    public unsafe static partial class vkAPI {
         /// <summary>
         /// Reports properties of the queues of the specified physical device.
         /// </summary>

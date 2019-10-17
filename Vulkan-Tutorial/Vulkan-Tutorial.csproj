@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,17 +54,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Renderer.Cleanup.cs" />
-    <Compile Include="Renderer.CreateInstance.cs" />
-    <Compile Include="Renderer.CreateLogicalDevice.cs" />
-    <Compile Include="Renderer.Surface.cs" />
-    <Compile Include="Renderer.PickPhysicalDevice.cs" />
-    <Compile Include="Renderer.SetupDebugMessenger.cs" />
-    <Compile Include="Renderer.Init.cs" />
     <Compile Include="Renderer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="VkExtensionProperties[].cs" />
     <Compile Include="VkWinCanvas.cs">
       <SubType>UserControl</SubType>
     </Compile>

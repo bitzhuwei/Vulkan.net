@@ -19,7 +19,7 @@ namespace Vulkan_Tutorial {
         }
 
         private void PickPhysicalDevice() {
-            VkPhysicalDevice[] devices = Vk.PhysicalDevices(instance);
+            VkPhysicalDevice[] devices = vkAPI.PhysicalDevices(instance);
             foreach (var device in devices) {
                 if (isDeviceSuitable(device)) {
                     physicalDevice = device;

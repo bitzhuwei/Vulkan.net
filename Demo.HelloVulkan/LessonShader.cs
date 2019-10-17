@@ -201,7 +201,9 @@ namespace Demo.HelloVulkan {
         //IntPtr ptrCallback;
         private void InitDebugCallback(VkInstance instance) {
             var delDebugCallback = new PFN_vkDebugReportCallbackEXT(DebugCallback);
-            var info = new VkDebugReportCallbackCreateInfoEXT { sType = VkStructureType.DebugReportCallbackCreateInfoEXT };
+            //var info = new VkDebugReportCallbackCreateInfoEXT { sType = VkStructureType.DebugReportCallbackCreateInfoEXT };
+            VkDebugReportCallbackCreateInfoEXT info;
+            info.sType = VkStructureType.DebugReportCallbackCreateInfoEXT;
             info.flags = VkDebugReportFlagBitsEXT.DebugEXT | VkDebugReportFlagBitsEXT.ErrorEXT
                 | VkDebugReportFlagBitsEXT.PerformanceWarningEXT | VkDebugReportFlagBitsEXT.WarningEXT
                 | VkDebugReportFlagBitsEXT.InformationEXT;
@@ -651,7 +653,7 @@ namespace Demo.HelloVulkan {
 
         private VkDevice CreateDevice(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface) {
             //VkQueueFamilyProperties[] properties = physicalDevice.GetQueueFamilyProperties();
-            VkQueueFamilyProperties[] properties = Vk.QueueFamilyProperties(physicalDevice);
+            VkQueueFamilyProperties[] properties = vkAPI.QueueFamilyProperties(physicalDevice);
             uint index;
             for (index = 0; index < properties.Length; ++index) {
                 VkBool32 supported;
@@ -667,7 +669,7 @@ namespace Demo.HelloVulkan {
             queueInfo.queueFamilyIndex = index;
 
             var info = new VkDeviceCreateInfo { sType = VkStructureType.DeviceCreateInfo };
-            info.EnabledExtensions = Vk.VK_KHR_swapchain;
+            info.EnabledExtensions = vkAPI.VK_KHR_swapchain;
             info.queueCreateInfos = queueInfo;
 
             VkDevice vkDevice;
@@ -682,7 +684,7 @@ namespace Demo.HelloVulkan {
 
         private VkPhysicalDevice InitPhysicalDevice(VkInstance instance) {
 
-            VkPhysicalDevice[] physicalDevices = Vk.PhysicalDevices(instance);
+            VkPhysicalDevice[] physicalDevices = vkAPI.PhysicalDevices(instance);
 
             return physicalDevices[0];
         }
@@ -700,9 +702,9 @@ namespace Demo.HelloVulkan {
 
         private const string VK_LAYER_LUNARG_standard_validation = "VK_LAYER_LUNARG_standard_validation";
         private VkInstance InitInstance() {
-            var extensions = new string[] { Vk.VK_KHR_surface, Vk.VK_KHR_win32_surface, Vk.VK_EXT_debug_report };
+            var extensions = new string[] { vkAPI.VK_KHR_surface, vkAPI.VK_KHR_win32_surface, vkAPI.VK_EXT_debug_report };
 
-            VkLayerProperties[] layerProperties = Vk.InstanceLayerProperties();
+            VkLayerProperties[] layerProperties = vkAPI.InstanceLayerProperties();
             string layers = layerProperties.Any(
                 l => Marshal.PtrToStringAnsi((IntPtr)l.layerName) == VK_LAYER_LUNARG_standard_validation)
                 ? VK_LAYER_LUNARG_standard_validation

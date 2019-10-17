@@ -20,7 +20,7 @@ namespace Vulkan_Tutorial {
         };
 
         bool checkValidationLayerSupport() {
-            VkLayerProperties[] availableLayers = Vk.InstanceLayerProperties();
+            VkLayerProperties[] availableLayers = vkAPI.InstanceLayerProperties();
             foreach (var layerName in validationLayers) {
                 bool layerFound = false;
 
@@ -81,14 +81,14 @@ namespace Vulkan_Tutorial {
             string[] extensions;
             if (enableValidationLayers) {
                 extensions = new string[] {
-                    Vk.VK_KHR_surface, Vk.VK_KHR_win32_surface,
-                    Vk.VK_EXT_debug_report, Vk.VK_EXT_debug_utils
+                    vkAPI.VK_KHR_surface, vkAPI.VK_KHR_win32_surface,
+                    vkAPI.VK_EXT_debug_report, vkAPI.VK_EXT_debug_utils
                 };
             }
             else {
                 extensions = new string[] {
-                    Vk.VK_KHR_surface, Vk.VK_KHR_win32_surface,
-                    Vk.VK_EXT_debug_report
+                    vkAPI.VK_KHR_surface, vkAPI.VK_KHR_win32_surface,
+                    vkAPI.VK_EXT_debug_report
                 };
             }
             //extensions.Set(ref createInfo[0].ppEnabledExtensionNames, ref createInfo[0].enabledExtensionCount);
