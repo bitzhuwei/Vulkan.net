@@ -11,7 +11,7 @@ using Vulkan;
 using static Vulkan.vkAPI;
 
 namespace Vulkan_Tutorial {
-    unsafe partial class Renderer : IDisposable {
+    unsafe partial class VulkanTutorial : IDisposable {
 
         const string logFile = "debugInfo.log";
         const string MODEL_PATH = "models/chalet.obj";
@@ -728,7 +728,7 @@ namespace Vulkan_Tutorial {
         }
 
         void createTextureImage() {
-            Int32 texWidth, texHeight, texChannels;
+            Int32 texWidth, texHeight;
             byte[] pixels;
             //stbi_uc* pixels = stbi_load(TEXTURE_PATH.c_str(), &texWidth, &texHeight, &texChannels, STBI_rgb_alpha);
             VkDeviceSize imageSize;
@@ -740,19 +740,9 @@ namespace Vulkan_Tutorial {
                 pixels = image.Data;
                 texWidth = image.Width;
                 texHeight = image.Height;
-                texChannels = 4;
                 imageSize = texWidth * texHeight * 4;
                 mipLevels = (UInt32)(Math.Floor(Math.Log(2, Math.Max(texWidth, texHeight)))) + 1;
             }
-            //KtxFile tex2D;
-            //using (var fs = File.OpenRead(TEXTURE_PATH)) {
-            //    tex2D = KtxFile.Load(fs, false);
-            //}
-
-            //int texWidth, texHeight, texChannels;
-            //texWidth = (int)tex2D.Header.PixelWidth;
-            //texHeight = (int)tex2D.Header.PixelHeight;
-            //mipLevels = tex2D.Header.NumberOfMipmapLevels;
 
             VkBuffer stagingBuffer;
             VkDeviceMemory stagingBufferMemory;

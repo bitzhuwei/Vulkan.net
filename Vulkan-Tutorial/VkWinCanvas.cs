@@ -13,7 +13,7 @@ using Vulkan_Tutorial;
 namespace Vulkan {
     public partial class VkWinCanvas : UserControl {
 
-        Renderer renderer;
+        VulkanTutorial renderer;
 
         protected readonly bool designMode;
 
@@ -32,7 +32,7 @@ namespace Vulkan {
             base.OnLoad(e);
 
             if (!this.designMode) {
-                this.renderer = new Renderer();
+                this.renderer = new VulkanTutorial();
                 this.renderer.Init(this.Handle, Process.GetCurrentProcess().Handle);
                 this.timer.Interval = 50;
                 this.timer.Tick += Timer_Tick;
