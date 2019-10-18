@@ -3250,18 +3250,22 @@ namespace Vulkan {
         /// <summary> srcSubresource is the subresource to blit from.</summary>
         public VkImageSubresourceLayers srcSubresource;
 
-        /// <summary>use <see cref="VkOffset3D"/> instead of byte.
-        /// </summary>
-        public fixed Int32 srcOffsets[2 * 3 * sizeof(Int32)];
+        ///// <summary>use <see cref="VkOffset3D"/> instead of byte.
+        ///// </summary>
+        //public fixed Int32 srcOffsets[2 * 3 * sizeof(Int32)];
         //public fixed VkOffset3D srcOffsets[2];
+        public VkOffset3D srcOffsets0;
+        public VkOffset3D srcOffsets1;
 
         /// <summary> dstSubresource is the subresource to blit into.</summary>
         public VkImageSubresourceLayers dstSubresource;
 
-        /// <summary>use <see cref="VkOffset3D"/> instead of byte.
-        /// </summary>
-        public fixed Int32 dstOffsets[2 * 3 * sizeof(Int32)];
+        ///// <summary>use <see cref="VkOffset3D"/> instead of byte.
+        ///// </summary>
+        //public fixed Int32 dstOffsets[2 * 3 * sizeof(Int32)];
         //public fixed VkOffset3D dstOffsets[2];
+        public VkOffset3D dstOffsets0;
+        public VkOffset3D dstOffsets1;
     }
     // Struct: 157
     /// <summary>VkImageCopy - Structure specifying an image copy operation

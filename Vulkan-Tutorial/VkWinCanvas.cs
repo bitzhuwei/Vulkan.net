@@ -33,7 +33,7 @@ namespace Vulkan {
 
             if (!this.designMode) {
                 this.renderer = new Renderer();
-                this.renderer.Init(this.Handle);
+                this.renderer.Init(this.Handle, Process.GetCurrentProcess().Handle);
                 this.timer.Interval = 50;
                 this.timer.Tick += Timer_Tick;
                 this.timer.Enabled = true;
