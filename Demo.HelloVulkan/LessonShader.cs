@@ -195,7 +195,7 @@ namespace Demo.HelloVulkan {
             return true;
         }
 
-        string debugFilename = "HelloVulkanDump.txt";
+        string debugFilename = "HelloVulkanDump.log";
 
 
         //IntPtr ptrCallback;

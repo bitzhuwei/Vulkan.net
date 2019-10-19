@@ -338,8 +338,9 @@ namespace Vulkan_Tutorial {
             var createInfo = new VkDebugUtilsMessengerCreateInfoEXT();
             populateDebugMessengerCreateInfo(ref createInfo);
 
-            var messenger = debugMessenger;
+            VkDebugUtilsMessengerEXT messenger;
             vkAPI.CreateDebugUtilsMessengerEXT(instance, &createInfo, null, &messenger).Check();
+            this.debugMessenger = messenger;
         }
 
         void createSurface(IntPtr hwnd, IntPtr processHandle) {
@@ -371,7 +372,13 @@ namespace Vulkan_Tutorial {
             QueueFamilyIndices indices = findQueueFamilies(physicalDevice);
 
             var queueCreateInfos = new List<VkDeviceQueueCreateInfo>();
-            var uniqueQueueFamilies = new UInt32[] { indices.graphicsFamily.Value, indices.presentFamily.Value };
+            UInt32[] uniqueQueueFamilies = null;
+            if (indices.graphicsFamily.Value != indices.presentFamily.Value) {
+                uniqueQueueFamilies = new UInt32[] { indices.graphicsFamily.Value, indices.presentFamily.Value };
+            }
+            else {
+                uniqueQueueFamilies = new UInt32[] { indices.graphicsFamily.Value };
+            }
 
             float queuePriority = 1.0f;
             foreach (var queueFamily in uniqueQueueFamilies) {
@@ -398,13 +405,16 @@ namespace Vulkan_Tutorial {
             //    createInfo.enabledLayerCount = 0;
             //}
 
-            VkDevice device = this.device;
+            VkDevice device;
             vkCreateDevice(physicalDevice, &createInfo, null, &device).Check();
+            this.device = device;
 
-            VkQueue graphicsQueue = this.graphicsQueue;
+            VkQueue graphicsQueue;
             vkGetDeviceQueue(device, indices.graphicsFamily.Value, 0, &graphicsQueue);
-            VkQueue presentQueue = this.presentQueue;
+            this.graphicsQueue = graphicsQueue;
+            VkQueue presentQueue;
             vkGetDeviceQueue(device, indices.presentFamily.Value, 0, &presentQueue);
+            this.presentQueue = presentQueue;
         }
 
         void createSwapChain() {
@@ -438,6 +448,7 @@ namespace Vulkan_Tutorial {
             }
             else {
                 createInfo.imageSharingMode = VkSharingMode.Exclusive;
+                createInfo.queueFamilyIndices = indices.graphicsFamily.Value;
             }
 
             createInfo.preTransform = swapChainSupport.capabilities.currentTransform;
@@ -636,8 +647,9 @@ namespace Vulkan_Tutorial {
             pipelineLayoutInfo.sType = VkStructureType.PipelineLayoutCreateInfo;
             pipelineLayoutInfo.setLayouts = descriptorSetLayout;
 
-            VkPipelineLayout pipelineLayout = this.pipelineLayout;
+            VkPipelineLayout pipelineLayout;
             vkCreatePipelineLayout(device, &pipelineLayoutInfo, null, &pipelineLayout).Check();
+            this.pipelineLayout = pipelineLayout;
 
             var pipelineInfo = new VkGraphicsPipelineCreateInfo();
             pipelineInfo.sType = VkStructureType.GraphicsPipelineCreateInfo;
@@ -741,7 +753,7 @@ namespace Vulkan_Tutorial {
                 texWidth = image.Width;
                 texHeight = image.Height;
                 imageSize = texWidth * texHeight * 4;
-                mipLevels = (UInt32)(Math.Floor(Math.Log(2, Math.Max(texWidth, texHeight)))) + 1;
+                mipLevels = (UInt32)Math.Floor(Math.Log(Math.Max(texWidth, texHeight), 2)) + 1;
             }
 
             VkBuffer stagingBuffer;
@@ -777,7 +789,7 @@ namespace Vulkan_Tutorial {
             VkFormatProperties formatProperties;
             vkGetPhysicalDeviceFormatProperties(physicalDevice, imageFormat, &formatProperties);
 
-            if ((formatProperties.optimalTilingFeatures & VkFormatFeatureFlagBits.SampledImageFilterLinear) != 0) {
+            if (!formatProperties.optimalTilingFeatures.HasFlag(VkFormatFeatureFlagBits.SampledImageFilterLinear)) {
                 throw new Exception("texture image format does not support linear blitting!");
             }
 
@@ -1403,7 +1415,7 @@ namespace Vulkan_Tutorial {
 
         VkSurfaceFormatKHR chooseSwapSurfaceFormat(VkSurfaceFormatKHR[] availableFormats) {
             foreach (var availableFormat in availableFormats) {
-                if (availableFormat.format == VkFormat.R8g8b8a8Unorm && availableFormat.colorSpace == VkColorSpaceKHR.SrgbNonlinearKHR) {
+                if (availableFormat.format == VkFormat.B8g8r8a8Unorm && availableFormat.colorSpace == VkColorSpaceKHR.SrgbNonlinearKHR) {
                     return availableFormat;
                 }
             }
@@ -1440,20 +1452,9 @@ namespace Vulkan_Tutorial {
 
         SwapChainSupportDetails querySwapChainSupport(VkPhysicalDevice device) {
             var details = new SwapChainSupportDetails();
-
             vkGetPhysicalDeviceSurfaceCapabilitiesKHR(device, surface, &details.capabilities);
-
             details.formats = vkAPI.Formats(device, surface);
-
-            UInt32 presentModeCount;
-            vkGetPhysicalDeviceSurfacePresentModesKHR(device, surface, &presentModeCount, null);
-
-            if (presentModeCount != 0) {
-                details.presentModes = new VkPresentModeKHR[presentModeCount];
-                fixed (VkPresentModeKHR* pointer = details.presentModes) {
-                    vkGetPhysicalDeviceSurfacePresentModesKHR(device, surface, &presentModeCount, pointer);
-                }
-            }
+            details.presentModes = vkAPI.PresentModesKHR(device, surface);
 
             return details;
         }
@@ -1495,17 +1496,17 @@ namespace Vulkan_Tutorial {
         QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device) {
             var indices = new QueueFamilyIndices();
 
-            var queueFamilies = vkAPI.QueueFamilyProperties(device);
+            var properties = vkAPI.QueueFamilyProperties(device);
             UInt32 index = 0;
-            foreach (var queueFamily in queueFamilies) {
-                if (queueFamily.queueCount > 0 && queueFamily.queueFlags.HasFlag(VkQueueFlagBits.Graphics)) {
+            foreach (var property in properties) {
+                if (property.queueCount > 0 && property.queueFlags.HasFlag(VkQueueFlagBits.Graphics)) {
                     indices.graphicsFamily = index;
                 }
 
                 VkBool32 presentSupport = false;
-                vkGetPhysicalDeviceSurfaceSupportKHR(device, index, surface, &presentSupport);
+                vkGetPhysicalDeviceSurfaceSupportKHR(device, index, surface, &presentSupport).Check();
 
-                if (queueFamily.queueCount > 0 && presentSupport) {
+                if (property.queueCount > 0 && presentSupport) {
                     indices.presentFamily = index;
                 }
 
@@ -1572,7 +1573,8 @@ namespace Vulkan_Tutorial {
         //}
 
         static VkBool32 debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity, VkDebugUtilsMessageTypeFlagBitsEXT messageType, VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, void* pUserData) {
-            Console.WriteLine("validation layer: {0}", Marshal.PtrToStringAnsi(pCallbackData->pMessage));
+            string text = string.Format("validation layer: {0}", Marshal.PtrToStringAnsi(pCallbackData->pMessage));
+            File.AppendAllText(logFile, text);
 
             return false;
         }

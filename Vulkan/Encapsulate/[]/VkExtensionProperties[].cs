@@ -6,20 +6,20 @@ using System.Text;
 namespace Vulkan {
     public unsafe static partial class vkAPI {
         public static VkExtensionProperties[] InstanceExtensionProperties(string layerName = null) {
-            VkExtensionProperties[] layerProperties;
+            VkExtensionProperties[] result;
             IntPtr pLayerName = Marshal.StringToHGlobalAnsi(layerName);
             UInt32 count;
             vkAPI.vkEnumerateInstanceExtensionProperties(pLayerName, &count, null).Check();
-            layerProperties = new VkExtensionProperties[count];
+            result = new VkExtensionProperties[count];
             if (count > 0) {
-                fixed (VkExtensionProperties* pointer = layerProperties) {
+                fixed (VkExtensionProperties* pointer = result) {
                     vkAPI.vkEnumerateInstanceExtensionProperties(pLayerName, &count, pointer).Check();
                 }
             }
 
             Marshal.FreeHGlobal(pLayerName);
 
-            return layerProperties;
+            return result;
         }
 
         public static VkExtensionProperties[] DeviceExtensionProperties(this VkPhysicalDevice device, string layerName = null) {

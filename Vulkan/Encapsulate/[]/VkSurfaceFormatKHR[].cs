@@ -10,16 +10,13 @@ namespace Vulkan {
         /// <param name="surface"></param>
         /// <returns></returns>
         public static VkSurfaceFormatKHR[] Formats(this VkPhysicalDevice device, VkSurfaceKHR surface) {
-            VkSurfaceFormatKHR[] result = null;
-            {
-                UInt32 count;
-                vkGetPhysicalDeviceSurfaceFormatsKHR(device, surface, &count, null);
-
-                if (count != 0) {
-                    result = new VkSurfaceFormatKHR[count];
-                    fixed (VkSurfaceFormatKHR* pointer = result) {
-                        vkGetPhysicalDeviceSurfaceFormatsKHR(device, surface, &count, pointer);
-                    }
+            VkSurfaceFormatKHR[] result;
+            UInt32 count;
+            vkGetPhysicalDeviceSurfaceFormatsKHR(device, surface, &count, null);
+            result = new VkSurfaceFormatKHR[count];
+            if (count != 0) {
+                fixed (VkSurfaceFormatKHR* pointer = result) {
+                    vkGetPhysicalDeviceSurfaceFormatsKHR(device, surface, &count, pointer);
                 }
             }
 

@@ -10,17 +10,17 @@ namespace Vulkan {
         /// <param name="physicalDevice"></param>
         /// <returns></returns>
         public static VkQueueFamilyProperties[] QueueFamilyProperties(this VkPhysicalDevice physicalDevice) {
-            VkQueueFamilyProperties[] properties;
-            {
-                UInt32 count;
-                vkAPI.vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &count, null);
-                properties = new VkQueueFamilyProperties[count];
-                fixed (VkQueueFamilyProperties* pointer = properties) {
+            VkQueueFamilyProperties[] result;
+            UInt32 count;
+            vkAPI.vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &count, null);
+            result = new VkQueueFamilyProperties[count];
+            if (count > 0) {
+                fixed (VkQueueFamilyProperties* pointer = result) {
                     vkAPI.vkGetPhysicalDeviceQueueFamilyProperties(physicalDevice, &count, pointer);
                 }
             }
 
-            return properties;
+            return result;
         }
     }
 }
