@@ -1573,7 +1573,8 @@ namespace Vulkan_Tutorial {
         //}
 
         static VkBool32 debugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity, VkDebugUtilsMessageTypeFlagBitsEXT messageType, VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, void* pUserData) {
-            string text = string.Format("validation layer: {0}", Marshal.PtrToStringAnsi(pCallbackData->pMessage));
+            string text = string.Format("validation layer: {0}{1}",
+                Marshal.PtrToStringAnsi(pCallbackData->pMessage), Environment.NewLine);
             File.AppendAllText(logFile, text);
 
             return false;
