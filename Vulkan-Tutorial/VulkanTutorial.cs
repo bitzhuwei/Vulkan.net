@@ -13,6 +13,8 @@ using static Vulkan.vkAPI;
 namespace Vulkan_Tutorial {
     unsafe partial class VulkanTutorial : IDisposable {
 
+        private bool initialized = false;
+
         const string logFile = "debugInfo.log";
         const string MODEL_PATH = "models/chalet.obj";
         const string TEXTURE_PATH = "textures/chalet.jpg";
@@ -147,7 +149,10 @@ namespace Vulkan_Tutorial {
         bool framebufferResized = false;
 
         public void Init(IntPtr hwnd, IntPtr proecessHandle) {
-            this.initVulkan(hwnd, proecessHandle);
+            if (!this.initialized) {
+                this.initVulkan(hwnd, proecessHandle);
+                this.initialized = true;
+            }
         }
 
         void initVulkan(IntPtr hwnd, IntPtr proecessHandle) {
@@ -178,7 +183,9 @@ namespace Vulkan_Tutorial {
         }
 
         public void Render() {
-            drawFrame();
+            if (this.initialized) {
+                drawFrame();
+            }
         }
 
         public void Dispose() {
