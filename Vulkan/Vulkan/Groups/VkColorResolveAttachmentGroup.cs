@@ -69,7 +69,9 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{colorAttachments[0]}, {resolveAttachments[0]}";
+                var a = colorAttachments != null ? colorAttachments[0].ToString() : "<null>";
+                var b = resolveAttachments != null ? resolveAttachments[0].ToString() : "<null>";
+                return $"{a}, {b}";
             }
             else {
                 return $"{nameof(VkAttachmentReference)}[{count}], {nameof(VkAttachmentReference)}[{count}],";

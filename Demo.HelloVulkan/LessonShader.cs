@@ -195,13 +195,15 @@ namespace Demo.HelloVulkan {
             return true;
         }
 
-        string debugFilename = "HelloVulkanDump.txt";
+        string debugFilename = "HelloVulkanDump.log";
 
 
         //IntPtr ptrCallback;
         private void InitDebugCallback(VkInstance instance) {
             var delDebugCallback = new PFN_vkDebugReportCallbackEXT(DebugCallback);
-            var info = new VkDebugReportCallbackCreateInfoEXT { sType = VkStructureType.DebugReportCallbackCreateInfoEXT };
+            //var info = new VkDebugReportCallbackCreateInfoEXT { sType = VkStructureType.DebugReportCallbackCreateInfoEXT };
+            VkDebugReportCallbackCreateInfoEXT info;
+            info.sType = VkStructureType.DebugReportCallbackCreateInfoEXT;
             info.flags = VkDebugReportFlagBitsEXT.DebugEXT | VkDebugReportFlagBitsEXT.ErrorEXT
                 | VkDebugReportFlagBitsEXT.PerformanceWarningEXT | VkDebugReportFlagBitsEXT.WarningEXT
                 | VkDebugReportFlagBitsEXT.InformationEXT;
@@ -253,16 +255,14 @@ namespace Demo.HelloVulkan {
                 vkAPI.vkBeginCommandBuffer(cmds, &cmdBeginInfo).Check();
                 begin.framebuffer = framebuffers[i];
                 vkAPI.vkCmdBeginRenderPass(cmds, &begin, VkSubpassContents.Inline);
-                {
-                    vkAPI.vkCmdBindDescriptorSets(cmds, VkPipelineBindPoint.Graphics, pipelineLayout,
-                        0, 1, &descriptorSet,
-                        0, null);
-                    vkAPI.vkCmdBindPipeline(cmds, VkPipelineBindPoint.Graphics, pipeline);
-                    VkDeviceSize offset = 0;
-                    vkAPI.vkCmdBindVertexBuffers(cmds, 0, 1, &vertexBuffer, &offset);
-                    vkAPI.vkCmdBindIndexBuffer(cmds, indexBuffer, offset, VkIndexType.Uint16);
-                    vkAPI.vkCmdDrawIndexed(cmds, indexLength, 1, 0, 0, 0);
-                }
+                vkAPI.vkCmdBindDescriptorSets(cmds, VkPipelineBindPoint.Graphics, pipelineLayout,
+                    0, 1, &descriptorSet,
+                    0, null);
+                vkAPI.vkCmdBindPipeline(cmds, VkPipelineBindPoint.Graphics, pipeline);
+                VkDeviceSize offset = 0;
+                vkAPI.vkCmdBindVertexBuffers(cmds, 0, 1, &vertexBuffer, &offset);
+                vkAPI.vkCmdBindIndexBuffer(cmds, indexBuffer, offset, VkIndexType.Uint16);
+                vkAPI.vkCmdDrawIndexed(cmds, indexLength, 1, 0, 0, 0);
                 vkAPI.vkCmdEndRenderPass(cmds);
                 vkAPI.vkEndCommandBuffer(cmds).Check();
             }
@@ -345,12 +345,8 @@ namespace Demo.HelloVulkan {
                 shaderStages[1].pName = "main";
             }
             var viewport = new VkPipelineViewportStateCreateInfo { sType = VkStructureType.PipelineViewportStateCreateInfo };
-            {
-                var vp = new VkViewport(surfaceCapabilities.currentExtent, 0.0f, 1.0f);
-                viewport.viewports = vp;
-                var scissor = new VkRect2D(surfaceCapabilities.currentExtent);
-                viewport.scissors = scissor;
-            }
+            viewport.viewports = new VkViewport(surfaceCapabilities.currentExtent, 0.0f, 1.0f);
+            viewport.scissors = new VkRect2D(surfaceCapabilities.currentExtent);
 
             var multisample = new VkPipelineMultisampleStateCreateInfo { sType = VkStructureType.PipelineMultisampleStateCreateInfo };
             multisample.rasterizationSamples = VkSampleCountFlagBits._1;
@@ -373,21 +369,17 @@ namespace Demo.HelloVulkan {
             inputAssem.topology = VkPrimitiveTopology.TriangleList;
 
             var input = new VkPipelineVertexInputStateCreateInfo { sType = VkStructureType.PipelineVertexInputStateCreateInfo };
-            {
-                // static readonly float[] Vertices = { .. }
-                var binding = new VkVertexInputBindingDescription(
-                    binding: 0,
-                    stride: 2 * sizeof(float),
-                    inputRate: VkVertexInputRate.Vertex);
-                input.vertexBindingDescriptions = binding;
-                // layout(location = 0) in vec2 inPos;
-                var attribute = new VkVertexInputAttributeDescription(
-                    location: 0,
-                    binding: 0,
-                    format: VkFormat.R32g32Sfloat,
-                    offset: 0);
-                input.vertexAttributeDescriptions = attribute;
-            }
+            // static readonly float[] Vertices = { .. }
+            input.vertexBindingDescriptions = new VkVertexInputBindingDescription(
+                binding: 0,
+                stride: 2 * sizeof(float),
+                inputRate: VkVertexInputRate.Vertex);
+            // layout(location = 0) in vec2 inPos;
+            input.vertexAttributeDescriptions = new VkVertexInputAttributeDescription(
+                location: 0,
+                binding: 0,
+                format: VkFormat.R32g32Sfloat,
+                offset: 0);
 
             //VkPipelineCache cache = device.CreatePipelineCache(ref cacheInfo);
             VkPipelineCache cache;
@@ -453,12 +445,11 @@ namespace Demo.HelloVulkan {
         } area;
              */
             var info = new VkDescriptorSetLayoutCreateInfo { sType = VkStructureType.DescriptorSetLayoutCreateInfo };
-            var binding = new VkDescriptorSetLayoutBinding(
+            info.bindings = new VkDescriptorSetLayoutBinding(
                 binding: 0,
                 descriptorType: VkDescriptorType.UniformBuffer, // uniform 
                 descriptorCount: 1, // single variable, not array.
                 stageFlags: VkShaderStageFlagBits.Vertex); // in a vertex shader.
-            info.bindings = binding;
 
             //return device.CreateDescriptorSetLayout(ref info);
             VkDescriptorSetLayout layout;
@@ -595,15 +586,14 @@ namespace Demo.HelloVulkan {
         }
 
         protected VkRenderPass CreateRenderPass(VkDevice device, VkSurfaceFormatKHR surfaceFormat) {
-            var info = new VkRenderPassCreateInfo { sType = VkStructureType.RenderPassCreateInfo };
             var attDesc = new VkAttachmentDescription(surfaceFormat.format, VkSampleCountFlagBits._1,
                  VkAttachmentLoadOp.Clear, VkAttachmentStoreOp.Store,
                  VkAttachmentLoadOp.DontCare, VkAttachmentStoreOp.DontCare,
                  VkImageLayout.Undefined, VkImageLayout.PresentSrcKHR, 0);
-            info.attachments = attDesc;
             var subpassDesc = new VkSubpassDescription(VkPipelineBindPoint.Graphics);
-            var attRef = new VkAttachmentReference(VkImageLayout.ColorAttachmentOptimal, 0);
-            subpassDesc.colorAttachments = attRef;
+            subpassDesc.colorAttachments = new VkAttachmentReference(VkImageLayout.ColorAttachmentOptimal, 0);
+            var info = new VkRenderPassCreateInfo { sType = VkStructureType.RenderPassCreateInfo };
+            info.attachments = attDesc;
             info.subpasses = subpassDesc;
 
             //return device.CreateRenderPass(ref info);
@@ -663,7 +653,7 @@ namespace Demo.HelloVulkan {
 
         private VkDevice CreateDevice(VkPhysicalDevice physicalDevice, VkSurfaceKHR surface) {
             //VkQueueFamilyProperties[] properties = physicalDevice.GetQueueFamilyProperties();
-            VkQueueFamilyProperties[] properties = Vk.QueueFamilyProperties(physicalDevice);
+            VkQueueFamilyProperties[] properties = vkAPI.QueueFamilyProperties(physicalDevice);
             uint index;
             for (index = 0; index < properties.Length; ++index) {
                 VkBool32 supported;
@@ -679,7 +669,7 @@ namespace Demo.HelloVulkan {
             queueInfo.queueFamilyIndex = index;
 
             var info = new VkDeviceCreateInfo { sType = VkStructureType.DeviceCreateInfo };
-            info.EnabledExtensions = Vk.VK_KHR_swapchain;
+            info.EnabledExtensions = vkAPI.VK_KHR_swapchain;
             info.queueCreateInfos = queueInfo;
 
             VkDevice vkDevice;
@@ -694,7 +684,7 @@ namespace Demo.HelloVulkan {
 
         private VkPhysicalDevice InitPhysicalDevice(VkInstance instance) {
 
-            VkPhysicalDevice[] physicalDevices = Vk.PhysicalDevices(instance);
+            VkPhysicalDevice[] physicalDevices = vkAPI.PhysicalDevices(instance);
 
             return physicalDevices[0];
         }
@@ -712,17 +702,16 @@ namespace Demo.HelloVulkan {
 
         private const string VK_LAYER_LUNARG_standard_validation = "VK_LAYER_LUNARG_standard_validation";
         private VkInstance InitInstance() {
-            var extensions = new string[] { Vk.VK_KHR_surface, Vk.VK_KHR_win32_surface, Vk.VK_EXT_debug_report };
+            var extensions = new string[] { vkAPI.VK_KHR_surface, vkAPI.VK_KHR_win32_surface, vkAPI.VK_EXT_debug_report };
 
-            VkLayerProperties[] layerProperties = Vk.InstanceLayerProperties();
+            VkLayerProperties[] layerProperties = vkAPI.InstanceLayerProperties();
             string layers = layerProperties.Any(
                 l => Marshal.PtrToStringAnsi((IntPtr)l.layerName) == VK_LAYER_LUNARG_standard_validation)
                 ? VK_LAYER_LUNARG_standard_validation
                 : null;
 
             var appInfo = new VkApplicationInfo { sType = VkStructureType.ApplicationInfo };
-            UInt32 version = Vulkan.VkVersion.Make(1, 0, 0);
-            appInfo.apiVersion = version;
+            appInfo.apiVersion = Vulkan.VkVersion.Make(1, 0, 0);
             appInfo.pApplicationName = "Hello Vulkan";
             appInfo.pEngineName = "Hello Engine";
 

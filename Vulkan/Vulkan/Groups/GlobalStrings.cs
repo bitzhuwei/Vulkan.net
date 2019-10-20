@@ -79,10 +79,13 @@ namespace Vulkan {
         public override string ToString() {
             string[] result = null;
             var pointer = (IntPtr*)this.pStrings;
-            if (pointer != null) {
-                result = new String[count];
-                for (int i = 0; i < count; i++) {
-                    result[i] = Marshal.PtrToStringAnsi(pointer[i]);
+            result = new String[count];
+            if (pointer != null && count > 0) {
+                {
+                    result[0] = Marshal.PtrToStringAnsi(pointer[0]);
+                }
+                for (int i = 1; i < count; i++) {
+                    result[i * 2] = ", \"" + Marshal.PtrToStringAnsi(pointer[i]) + "\"";
                 }
             }
             return String.Concat(result);

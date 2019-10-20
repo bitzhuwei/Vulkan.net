@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 namespace Vulkan {
-    public unsafe static partial class Vk {
+    public unsafe static partial class vkAPI {
         public const string VK_KHR_16bit_storage = "VK_KHR_16bit_storage";
         public const string VK_KHR_8bit_storage = "VK_KHR_8bit_storage";
         public const string VK_KHR_android_surface = "VK_KHR_android_surface";

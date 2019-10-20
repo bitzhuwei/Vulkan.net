@@ -69,7 +69,9 @@ namespace Vulkan {
 
         public override string ToString() {
             if (count == 1) {
-                return $"{swapchains[0]}, {imageIndices[0]}";
+                var a = swapchains != null ? swapchains[0].ToString() : "<null>";
+                var b = imageIndices != null ? imageIndices[0].ToString() : "<null>";
+                return $"{a}, {b}";
             }
             else {
                 return $"{nameof(VkSwapchainKHR)}[{count}], {nameof(UInt32)}[{count}],";
