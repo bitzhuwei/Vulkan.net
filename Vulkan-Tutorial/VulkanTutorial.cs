@@ -14,15 +14,15 @@ namespace Vulkan_Tutorial {
     unsafe partial class VulkanTutorial : IDisposable {
 
         private bool initialized = false;
+        private const string logFile = "debugInfo.log";
 
-        const string logFile = "debugInfo.log";
-        const string MODEL_PATH = "models/chalet.obj";
-        const string TEXTURE_PATH = "textures/chalet.jpg";
+        private const string MODEL_PATH = "models/chalet.obj";
+        private const string TEXTURE_PATH = "textures/chalet.jpg";
+        private const int MAX_FRAMES_IN_FLIGHT = 2;
 
         private static string[] validationLayers = new string[] { "VK_LAYER_KHRONOS_validation" };
         private static string[] deviceExtensions = new string[] { vkAPI.VK_KHR_swapchain };
 
-        const int MAX_FRAMES_IN_FLIGHT = 2;
 
 #if NDEBUG
         bool enableValidationLayers = false;
@@ -47,9 +47,13 @@ namespace Vulkan_Tutorial {
         }
 
         struct Vertex {
-            public Vector3 pos;
-            public Vector3 color;
-            public Vector2 texCoord;
+            public Assimp.Vector3D pos;
+            public Assimp.Vector3D color;
+            public Assimp.Vector2D texCoord;
+
+            public Vertex(Assimp.Vector3D pos, Assimp.Vector3D color, Assimp.Vector2D texCoord) {
+                this.pos = pos; this.color = color; this.texCoord = texCoord;
+            }
 
             public static VkVertexInputBindingDescription getBindingDescription() {
                 VkVertexInputBindingDescription bindingDescription;
@@ -72,12 +76,12 @@ namespace Vulkan_Tutorial {
                 attributeDescriptions[1].binding = 0;
                 attributeDescriptions[1].location = 1;
                 attributeDescriptions[1].format = VkFormat.R32g32b32Sfloat;
-                attributeDescriptions[1].offset = (UInt32)Marshal.SizeOf(typeof(Vector3));
+                attributeDescriptions[1].offset = (UInt32)Marshal.SizeOf(typeof(Assimp.Vector3D));
 
                 attributeDescriptions[2].binding = 0;
                 attributeDescriptions[2].location = 2;
                 attributeDescriptions[2].format = VkFormat.R32g32Sfloat;
-                attributeDescriptions[2].offset = (UInt32)Marshal.SizeOf(typeof(Vector3)) + (UInt32)Marshal.SizeOf(typeof(Vector3)); ;
+                attributeDescriptions[2].offset = (UInt32)Marshal.SizeOf(typeof(Assimp.Vector3D)) * 2;
 
                 return attributeDescriptions;
             }
@@ -126,8 +130,8 @@ namespace Vulkan_Tutorial {
         VkImageView textureImageView;
         VkSampler textureSampler;
 
-        Assimp.Vector3D[] vertices;
-        List<UInt32> indices;
+        Vertex[] vertices;
+        UInt32[] indices;
         VkBuffer vertexBuffer;
         VkDeviceMemory vertexBufferMemory;
         VkBuffer indexBuffer;
@@ -1042,19 +1046,20 @@ namespace Vulkan_Tutorial {
             var importer = new Assimp.AssimpContext();
             Assimp.Scene scene = importer.ImportFile(MODEL_PATH, Assimp.PostProcessSteps.JoinIdenticalVertices);
             foreach (var mesh in scene.Meshes) {
-                this.vertices = mesh.Vertices.ToArray();
-
-                this.indices = new List<uint>();
-                foreach (var item in mesh.Faces) {
-                    this.indices.Add((uint)item.Indices[0]);
-                    this.indices.Add((uint)item.Indices[1]);
-                    this.indices.Add((uint)item.Indices[2]);
+                this.indices = mesh.GetUnsignedIndices();
+                List<Assimp.Vector3D> texCoords = mesh.TextureCoordinateChannels[0];
+                List<Assimp.Vector3D> positions = mesh.Vertices;
+                var vertices = new Vertex[positions.Count];
+                for (int i = 0; i < vertices.Length; i++) {
+                    vertices[i] = new Vertex(positions[i], new Assimp.Vector3D(1, 1, 1),
+                       new Assimp.Vector2D(texCoords[i].X, 1.0f - texCoords[i].Y));
                 }
+                this.vertices = vertices;
             }
         }
 
         void createVertexBuffer() {
-            int bufferSize = sizeof(float) * 3 * this.vertices.Length;
+            int bufferSize = Marshal.SizeOf(typeof(Vertex)) * this.vertices.Length;
 
             VkBuffer stagingBuffer;
             VkDeviceMemory stagingBufferMemory;
@@ -1075,7 +1080,7 @@ namespace Vulkan_Tutorial {
         }
 
         void createIndexBuffer() {
-            int bufferSize = sizeof(uint) * indices.Count;
+            int bufferSize = sizeof(uint) * indices.Length;
 
             VkBuffer stagingBuffer;
             VkDeviceMemory stagingBufferMemory;
@@ -1084,7 +1089,7 @@ namespace Vulkan_Tutorial {
             IntPtr data;
             vkMapMemory(device, stagingBufferMemory, 0, bufferSize, 0, &data);
             //memcpy(data, indices.data(), (size_t)bufferSize);
-            vkAPI.Copy(indices.ToArray(), data);
+            vkAPI.Copy(indices, data);
             vkUnmapMemory(device, stagingBufferMemory);
 
             createBuffer(bufferSize, VkBufferUsageFlagBits.TransferDst | VkBufferUsageFlagBits.IndexBuffer, VkMemoryPropertyFlagBits.DeviceLocal, out indexBuffer, out indexBufferMemory);
@@ -1305,7 +1310,7 @@ namespace Vulkan_Tutorial {
                         pipelineLayout, 0, 1, &set, 0, null);
                 }
 
-                vkCmdDrawIndexed(commandBuffers[i], (UInt32)indices.Count, 1, 0, 0, 0);
+                vkCmdDrawIndexed(commandBuffers[i], (UInt32)indices.Length, 1, 0, 0, 0);
 
                 vkCmdEndRenderPass(commandBuffers[i]);
 
@@ -1340,13 +1345,18 @@ namespace Vulkan_Tutorial {
         DateTime startTime = DateTime.Now;
         void updateUniformBuffer(UInt32 currentImage) {
             var currentTime = DateTime.Now;
-            float time = (float)(currentTime - startTime).TotalMilliseconds;
+            float time = (float)(currentTime - startTime).TotalSeconds;
 
             var ubo = new UniformBufferObject();
             //ubo.model = glm::rotate(glm::mat4(1.0f), time * glm::radians(90.0f), glm::vec3(0.0f, 0.0f, 1.0f));
             //ubo.view = glm::lookAt(glm::vec3(2.0f, 2.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f));
             //ubo.proj = glm::perspective(glm::radians(45.0f), swapChainExtent.width / (float)swapChainExtent.height, 0.1f, 10.0f);
             //ubo.proj[1][1] *= -1;
+            ubo.model = Matrix4x4.CreateRotationZ((float)(time * Math.PI / 180.0 * 10.0));
+            ubo.view = Matrix4x4.CreateLookAt(new Vector3(2.0f, 2.0f, 2.0f), new Vector3(), new Vector3(0, 0, -1));
+            ubo.proj = Matrix4x4.CreatePerspectiveFieldOfView((float)(Math.PI / 180.0 * 45.0),
+                swapChainExtent.width / swapChainExtent.height, 0.1f, 10.0f);
+            ubo.proj.M11 *= -1;
 
             int size = Marshal.SizeOf(ubo);
             IntPtr data;
